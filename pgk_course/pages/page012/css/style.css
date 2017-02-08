@@ -1,0 +1,58 @@
+.container {
+  position: relative;
+  padding-top: 0;
+  background: url("../img/1.png");
+  overflow: hidden;
+}
+
+.page__text {
+  padding: 10px 15px 0;
+  line-height: 1.3;
+  color: #C8C8C8;
+}
+
+.dialog__wrapper {
+  position: relative;
+}
+
+.dialog__wrapper-before {
+  position: absolute;
+  top: 229px;
+  left: 558px;
+  content: '';
+  width: 294px;
+  height: 62px;
+  background: url('../img/str_drag.png');
+}
+
+.dialog__item-block {
+  position: absolute;
+  content: '';
+  width: 212px;
+  height: 227px;
+}
+
+.dialog__item-block--1 {
+  top: 286px;
+  left: 404px;
+}
+
+.dialog__item-block--2 {
+  top: 278px;
+  left: 580px;
+  z-index: 1;
+}
+
+.dialog__item-block--3 {
+  top: 250px;
+  left: 770px;
+}
+
+.dialog__item-block--4 {
+  top: 365px;
+  left: 720px;
+}
+
+.unvisible {
+  visibility: hidden;
+}

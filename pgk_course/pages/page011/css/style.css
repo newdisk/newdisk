@@ -1,0 +1,50 @@
+.container {
+	padding-top: 0;
+	cursor: url("../img/marker.png"),default;
+	overflow: hidden;
+}
+
+.page__banner-img {
+	display: block;
+	margin: 0 auto 5px;
+}
+
+.page__table {
+	margin: 0 auto;
+}
+
+.page__table-cell {
+	width: 333px;
+	cursor: url("../img/marker.png"),pointer;
+}
+
+.page__item {
+	margin: 0;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.page__item-wrapper {
+	margin: 0 auto;
+	width: 312px;
+	height: 163px;
+	background: url("../img/wrapper.png") no-repeat;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.page__item-wrapper .page__text {
+	line-height: 19px;
+}
+
+.selected {
+	background: #85D7FF;
+}
+
+.btn {
+	cursor: pointer;
+}

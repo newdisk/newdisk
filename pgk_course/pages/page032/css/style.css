@@ -1,0 +1,51 @@
+.container {
+  padding-top: 0;
+  overflow: hidden;
+}
+
+.page__text {
+  padding-bottom: 3px;
+}
+
+.single-choice__table {
+  margin: 0 3px;
+  border-collapse: separate;
+}
+
+.single-choice__table td {
+  vertical-align: top;
+  background: #f2f2f2;
+  border: 7px solid #fff;
+}
+
+.single-choice__wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  cursor: pointer;
+}
+
+.single-choice__radio {
+  position: absolute;
+  top: 8px;
+  left: 6px;
+  z-index: 2;
+  content: '';
+  width: 22px;
+  height: 22px;
+  background: url('../../../img/radiobutton.png');
+  cursor: pointer;
+}
+
+.single-choice__text {
+  margin: 0;
+  padding: 6px 10px 10px 36px;
+  font-size: 16px;
+  font-family: "Arial", sans-serif;
+  line-height: 1.3;
+  cursor: pointer;
+}
+
+.selected {
+  background-position: 0 -24px;
+}

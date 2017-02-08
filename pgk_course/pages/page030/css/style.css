@@ -1,0 +1,56 @@
+.container {
+  padding-top: 0;
+  overflow: hidden;
+}
+
+.page__text b {
+  font-family: "Arial Bold", "Arial", sans-serif;
+  color: rgb(124,0,47);
+}
+
+.page__text--quest {
+  padding-bottom: 0;
+  font-weight: bold;
+}
+
+.single-choice__wrapper {
+  position: relative;
+  display: table;
+  width: 100%;
+  cursor: pointer;
+}
+
+.single-choice__radio {
+  position: absolute;
+  top: 12px;
+  left: 10px;
+  z-index: 2;
+  content: '';
+  width: 22px;
+  height: 22px;
+  background: url('../../../img/radiobutton.png');
+  cursor: pointer;
+}
+
+.single-choice__text {
+  margin: 0;
+  padding: 13px 10px 0 44px;
+  padding-left: 44px;
+  vertical-align: middle;
+  font-size: 16px;
+  font-family: "Arial", sans-serif;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.img-radio-button {
+  display: none;
+}
+
+.selected {
+  background-position: 0 -24px;
+}
+
+.btn-box {
+  padding: 20px 20px 10px;
+}

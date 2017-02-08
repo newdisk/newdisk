@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="../../css/style-components.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="page__block">
+			<p class="page__text text-1">В этом курсе вы научились определять ситуации, в которых могут быть допущены коррупционные нарушения. Старайтесь избегать их. Если возникают сомнения, всегда спрашивайте себя, правильно ли вы поступаете.</p>
+			<p class="page__text text-2">Задавайте вопросы, пока не получите на них исчерпывающий ответ.</p>
+			<p class="page__text text-3">Помните, что все сотрудники, независимо от занимаемой должности, несут <b>ответственность</b> за успех антикоррупционной политики АО «ПГК» и лично отвечают за свои действия.</p>
+		</div>
+		<div class="page__block page__block--bg"></div>
+		<button class="btn printBtn">Распечатать сертификат</button>
+	</div>
+	<script type="text/javascript">
+		var printBtn = document.getElementsByClassName('printBtn')[0];
+		if (printBtn.addEventListener) {
+	        printBtn.addEventListener('click', parent.ctrl.printCert, false);
+	      } else if (printBtn.attachEvent) {
+	        printBtn.attachEvent('click', parent.ctrl.printCert);
+	      }
+	</script>
+</body>
+</html>

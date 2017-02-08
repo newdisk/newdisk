@@ -1,0 +1,57 @@
+.container {
+  position: relative;
+  padding-top: 0;
+  background: url("../img/page023_bunner.png");
+  overflow: hidden;
+}
+
+.page__text {
+  padding: 10px 15px 0;
+  line-height: 1.3;
+}
+
+.dialog__wrapper {
+  position: relative;
+}
+
+.dialog__wrapper-comment {
+  position: absolute;
+  top: 194px;
+  left: 38px;
+  content: '';
+  width: 190px;
+  height: 60px;
+  background: url('../img/page023_comment.png');
+}
+
+.dialog__item-block {
+  position: absolute;
+  content: '';
+  width: 212px;
+  height: 227px;
+}
+
+.dialog__item-block--1 {
+  top: 270px;
+  left: 128px;
+}
+
+.dialog__item-block--2 {
+  top: 233px;
+  left: 500px;
+}
+
+.dialog__item-block--3 {
+  top: 135px;
+  left: 746px;
+}
+
+.dialog__item-block--4 {
+  top: 321px;
+  left: 663px;
+  z-index: 1;
+}
+
+.unvisible {
+  visibility: hidden;
+}

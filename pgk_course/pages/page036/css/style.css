@@ -1,0 +1,71 @@
+.container {
+	overflow: hidden;
+}
+
+.page__text b {
+	color: rgb(124,0,47);
+}
+
+.page__header {
+	margin-bottom: 20px;
+	padding: 16px 15px;
+	text-align: center;
+	text-transform: uppercase;
+	background: rgb(124,0,47);
+}
+
+.page__header b {
+	color: #fff;
+}
+
+.points__list {
+	padding-left: 274px;
+}
+
+.points__item {
+	position: relative;
+	margin: 10px 0;
+}
+
+.points__item-icon {
+	position: absolute;
+	top: 2px;
+	left: 0;
+	content: '';
+	margin-left: -50px;
+	width: 40px;
+	height: 40px;
+	background: url('../img/contacts_sprite.png') no-repeat;
+}
+
+.points__item-icon--phone {
+	background-position: 0 0;
+}
+
+.points__item-icon--email {
+	background-position: 0 -43px;
+}
+
+.points__item-icon--post {
+	background-position: 0 -80px;
+}
+
+.points__item a {
+	text-decoration: none;
+}
+
+.bubble-block__bubble {
+	float: left;
+	margin-left: 15px;
+	padding: 15px 10px 0 0;
+	width: 863px;
+	height: 148px;
+	background: url('../img/36_bubble.png') no-repeat;
+}
+
+.bubble-block__logo {
+	float: right;
+	padding-top: 24px;
+	padding-right: 10px;
+	text-align: center;
+}

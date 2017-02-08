@@ -1,0 +1,17 @@
+.animation-page {
+	text-align: center;
+}
+.animation-href {  
+  text-decoration: none;
+  text-transform: uppercase;  
+}
+.animation-href__block {
+	display: block;
+	margin: 20px;
+	padding: 28px;
+	font-size: 18px;	    
+	font-family: 'Verdana', 'Arial', sans-serif;
+  line-height: 1.4;
+ 	background: rgb(221,224,94);
+ 	color: rgb(0,62,121);
+}

@@ -1,0 +1,94 @@
+.page__block {
+  margin: 0 auto;
+  width: 640px;
+}
+
+.page__quest {
+  text-align: center;
+}
+
+.page__wrapper {
+  margin: 15px auto;
+  padding: 15px 0;
+  width: 542px;
+  border-top: 2px solid #7c002f;
+  border-bottom: 2px solid #7c002f;
+}
+
+.page__block-person {
+  float: left;
+  padding-top: 31px;
+  width: 136px;
+  text-align: center;
+}
+
+.page__list {
+  float: left;
+  width: 406px;
+}
+
+.page__btn-wrapper {
+  padding: 15px 0;
+  text-align: center;
+}
+
+.btn {
+  margin: 0;
+  width: 88px;
+  height: 40px;
+  font-size: 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn--yes {
+  background: url('../img/page035_yes.png');
+}
+
+.btn--yes:hover {
+  background-position-y: -40px;
+}
+
+.btn--no {
+  background: url('../img/page035_no.png');
+}
+
+.btn--no:hover {
+  background-position-y: -40px;
+}
+
+.btn-disabled,
+.btn-disabled:hover {
+  background-position-y: -80px;
+}
+
+.page__yes-block {
+  position: relative;
+  margin: 24px 20px 23px 30px;
+  padding: 40px 0;
+  padding-left: 30px;
+}
+
+.page__yes-exclam {
+  position: absolute;
+  top: 38px;
+  left: 0;
+  content: '';
+  width: 9px;
+  height: 45px;
+  background: url('../../../img/exclam.png') no-repeat;
+}
+
+.page__no-block {
+  padding: 10px 0 5px;
+}
+
+.invisible {
+  display: none;
+}
+
+.page__href,
+.page__highlight-text {
+  color: #7c002f;
+}

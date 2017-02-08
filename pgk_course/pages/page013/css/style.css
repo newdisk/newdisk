@@ -1,0 +1,129 @@
+li {
+    margin-bottom: 10px;
+}
+
+li {
+    list-style-type: none;
+    width: 966px;
+    height: 52px;
+    background-color: #ffffff;
+
+    border: 2px solid #999999;
+    cursor: pointer;
+}
+ul {
+    margin-left: 15px;
+    border-color: #7C002F;
+}
+
+.container {
+    padding-top: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.slide-block__toggle {
+    position: relative;
+    border: 1px solid transparent;
+}
+
+.page__text {
+    line-height: 1.2;
+}
+
+.page__img {
+    display: block;
+    margin: 0 auto;
+}
+
+#myBtn{
+    margin-left: 15px;
+    width: 966px;
+    height: 52px;
+    background-color: #ebf2f2;
+    border: 2px solid #999999;
+    cursor: pointer;
+    margin-bottom: 0px;
+    position: absolute;
+    top: 470px;
+    display: table;
+}
+#myBtn div {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+
+#myBtn div p {
+    padding: 0px 10px;
+}
+
+#myElem_text{
+    position: absolute;
+    top: 322px;
+}
+
+#myElem_list {
+    position: absolute;
+    bottom: 128px;
+    display: none;
+}
+
+.m_answer :hover{
+    background-color: #7C002F;
+    color: #ffffff;
+}
+
+.m_answer {
+    list-style-type: none;
+    width: 966px;
+    height: 52px;
+    background-color: #ffffff;
+    border: 2px solid #999999;
+    cursor: pointer;
+    margin-bottom: -2px;
+}
+
+.m_answer p {
+    padding: 5px;
+}
+.m_answer--border{
+    list-style-type: none;
+    width: 966px;
+    height: 52px;
+    background-color: #ffffff;
+    border: 2px solid #999999;
+    cursor: pointer;
+    margin-bottom: -2px;
+}
+
+.m_answer--border--bot{
+    list-style-type: none;
+    width: 966px;
+    height: 52px;
+    background-color: #ffffff;
+    border: 2px solid #999999;
+    cursor: pointer;
+    margin-bottom: -2px;
+}
+
+.btn-box{
+    position: absolute;
+    bottom: 13px;
+    padding-left: 359px;
+}
+
+.btn1-btn--choice:before {
+    position: absolute;
+    top: 20px;
+    left: 930px;
+    content: '';
+    width: 18px;
+    height: 11px;
+    background: url(../img/str.png);
+
+}
+
+.active.btn1-btn--choice:before {
+    background-position: 0px 11px;
+}

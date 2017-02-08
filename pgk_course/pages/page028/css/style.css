@@ -1,0 +1,280 @@
+li {
+  margin-bottom: 10px;
+}
+
+.container {
+  width: 980px;
+}
+
+.ui-accordion-header {
+  text-align: center;
+}
+
+#accordion .ui-state-active {
+  background: rgb(124,0,47);
+  border: none;
+  outline: none;
+}
+
+.ui-accordion .ui-accordion-content {
+  padding: 10px;
+}
+
+.accordion__header-note {
+  padding-left: 120px;
+  margin-bottom: 30px;
+}
+
+.accordion__img-header {
+  margin-bottom: 20px;
+  height: 70px;
+}
+
+.accordion__img-header img {
+  height: 100%;
+}
+
+.accordion__img-header-1 {
+  float: left;
+}
+
+.accordion__img-header-2 {
+  float: right;
+}
+
+.accordion__header div {
+  float: right;
+  width: 400px;
+}
+
+.accordion__header-input {
+  margin-top: 14px;
+  margin-bottom: 28px;
+  padding: 0 28px;
+  width: 390px;
+  text-align: center;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #5c676b;
+  outline: none;
+}
+
+.accordion__header-input--small {
+  width: 370px;
+}
+
+.accordion__footer-input {
+  margin-top: 14px;
+  margin-bottom: 28px;
+  padding: 0 28px;
+  width: 230px;
+  text-align: center;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #5c676b;
+  outline: none;
+}
+
+.accordion__header-input-hint {
+  position: absolute;
+  bottom: -25px;
+  left: 10px;
+  content: "";
+  width: 100%;
+  text-align: center;
+}
+
+.accordion__header-label {
+  position: relative;
+  margin-bottom: 30px;
+  width: 100%;
+  font-weight: 400;
+}
+
+.accordion__header-title {
+  margin-top: 30px;
+  margin-bottom: 24px;
+  width: 100%;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.accordion__header-text {
+  padding: 0 10px;
+  width: 100%;
+  text-align: left;
+}
+
+.accordion-list {
+  padding: 0;
+  padding-left: 10px;
+  list-style: none;
+  counter-reset: li;
+}
+
+.accordion-list ol {
+  margin-left: 20px;
+}
+
+.accordion-list--1 > li:before,
+.accordion-list--1 ol > li:before {
+  counter-increment: li;
+  content: "1."counters(li,".")". ";
+}
+
+.accordion-list--2 > li:before,
+.accordion-list--2 ol > li:before {
+  counter-increment: li;
+  content: "2."counters(li,".")". ";
+}
+
+.accordion-list--3 > li:before,
+.accordion-list--3 ol > li:before {
+  counter-increment: li;
+  content: "3."counters(li,".")". ";
+}
+
+.accordion-list--4 > li:before,
+.accordion-list--4 ol > li:before {
+  counter-increment: li;
+  content: "4."counters(li,".")". ";
+}
+
+.accordion-list--5 > li:before,
+.accordion-list--5 ol > li:before {
+  counter-increment: li;
+  content: "5."counters(li,".")". ";
+}
+
+.accordion-list--6 > li:before,
+.accordion-list--6 ol > li:before {
+  counter-increment: li;
+  content: "6."counters(li,".")". ";
+}
+
+.accordion-list--7 > li:before,
+.accordion-list--7 ol > li:before {
+  counter-increment: li;
+  content: "7."counters(li,".")". ";
+}
+
+.accordion-list--8 > li:before,
+.accordion-list--8 ol > li:before {
+  counter-increment: li;
+  content: "8."counters(li,".")". ";
+}
+
+.accordion-input {
+  width: 80px;
+  text-align: center;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #5c676b;
+  outline: none;
+}
+
+.accordion-input::-webkit-input-placeholder {
+  color: #888;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.accordion-input::-moz-placeholder {
+  color: #888;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.accordion-input:-moz-placeholder {
+  color: #888;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.accordion-input:-ms-input-placeholder {
+  color: #888;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.accordion-input:focus::-webkit-input-placeholder {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.accordion-input:focus::-moz-placeholder {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.accordion-input:focus:-moz-placeholder {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.accordion-input:focus:-ms-input-placeholder {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default,
+.ui-button,
+html .ui-button.ui-state-disabled:hover,
+html .ui-button.ui-state-disabled:active {
+  background: rgb(124,124,124);
+  color: #fff;
+  border: none;
+  outline: none;
+}
+
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active {
+  background: rgb(124,0,47);
+  border: none;
+  outline: none;
+}
+
+.accordion__signature {
+  float: right;
+  margin-top: 20px;
+  width: 40%;
+}
+
+.answer-comment {
+  display: none;
+  color: rgb(124,0,47);
+}
+
+.btn-box {
+  padding: 20px;
+}
+
+.check-list {
+  padding: 10px 15px 0 40px;
+  list-style: none;
+}
+
+.check-item {
+  position: relative;
+  cursor: pointer;
+}
+
+.check-item__marker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  margin-left: -30px;
+  width: 20px;
+  height: 20px;
+  background: url('../../../img/checkbox.png') no-repeat;
+  cursor: pointer;
+}
+
+.checked .check-item__marker {
+  background-position: 0 -22px;
+}

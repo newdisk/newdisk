@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+	<link rel="stylesheet" href="css/jquery-ui.min.css">
+	<link rel="stylesheet" href="css/video-js.min.css">
+	<link rel="stylesheet" href="css/style.css">
+
+	<link rel="stylesheet" href="pages/templates/templ_test.css">
+	<link rel="stylesheet" href="pages/templates/templ_page.css">
+	<link rel="stylesheet" href="pages/templates/templ_videoPage.css">
+
+	<title>РОССТАТ</title>
+</head>
+<body>
+	
+	<!-- <div id="intro">
+		<div id="intro-play">Пропустить</div>
+		Course starting... no Flash Player...
+		<object width="1024" height="768">
+			<param name='AllowScriptAccess' value='always'/>
+			<param name="movie" value="flash/intro.swf">
+			<embed src="flash/intro.swf" width="1024" height="768">
+			</embed>
+		</object>
+	
+	</div> -->
+	<div id="qrHolder"></div>
+	<div id="container">
+		<div id="main-preloader">
+			<img src="img/preloader/pre_pic.png" class="preload-wheel">
+			<div class="preload-msg"></div>
+		</div>
+		<div id="header">
+			<div id="logo"></div>
+			<div class="btn helpBtn"></div>
+			<div class="btn statsBtn"></div>
+			<div class="btn exitBtn"></div>
+			<div class="btn homeBtn"></div>
+			<div id="course-title"><p>Добро пожаловать в обучающий курс!</p></div>
+			<!-- <div id="glossaryBtn">gloss</div> -->
+			<div id="page-title"><!-- <div id="page-num"></div>--><p></p></div>
+			
+		</div>
+		<div id="progress-bar"></div>
+		<!--  -->
+		<div id="hello">Course starting...</div>
+		
+		<div id="course-nav">
+			<div class="paginator">0/0</div>
+			<div class="btn nextBtn navBtn"></div>
+			<div class="btn prevBtn navBtn"></div>
+			<div class="cousre-nav_audioCtrl">
+				<div class="btn audioCtrl_soundBtn"></div>
+				<div class="audioCtrl_slider"></div>
+			</div>
+
+			<div class="menuBtn_fon"></div>
+			<div class="menuBtn"></div>
+
+			<!-- / -->
+			<!-- <div class="exs_ctrl exercisesLegend_fon"></div>
+			<div class="exs_ctrl btn exercisesLegend"></div>
+
+			<div class="exs_ctrl exercisesNav_fon"></div>
+			<div class="exs_ctrl btn exercisesNav"></div>
+
+			<div class="exs_ctrl exercises_restart">restart</div>
+
+			<div class="exs_ctrl exercises_check">check</div> -->
+		</div>
+		<div class="exBack"></div>
+		
+		<div id="page-container-wr">
+		<!-- // -->
+			<div id="page-preloader">
+				<img src="img/preloader/pre_pic.png" class="preload-wheel">
+				<div class="preload-msg"></div>
+			</div>
+			<div id="page-container">
+				<!--  -->
+			</div>
+		</div>
+		
+
+		<div id="footer">
+			<!--  -->
+		</div>
+		<div id="dark"></div>
+		<div id="menu">
+			<div id="menu-head">
+				<p>Содержание</p>
+				<div class="btn closeAssetBtn menu_closeBtn"></div>
+				<div class="menu_closeBtnFon"></div>
+			</div>
+			<div id="menu-body">
+				<!-- <ul id="menu-list">
+					classi>btn 
+						<p>item1</p>
+						<div class="menu-item-status"></div>
+					</li> 
+				</ul>-->
+			</div>
+			<div id="menu-foot"></div>
+		</div>
+		<div class="mainPage">
+			<div class="mainPage_head">Мультимедийное пособие для обучения интервьюверов</div>
+			<div class="mainPage_body">
+				<div class="mainPage_body_item specLink">
+					<div class="mainPage_body_item_ico intro"></div>
+					<div class="mainPage_body_item_caption intro">Введение</div>
+				</div>
+				<div class="mainPage_body_item ">
+					<div class="mainPage_body_item_ico multimedia"></div>
+					<div class="mainPage_body_item_caption multimedia">Мультимедийный курс</div>
+				</div>
+				<div class="mainPage_body_item specLink">
+					<div class="mainPage_body_item_ico video"></div>
+					<div class="mainPage_body_item_caption video">Видеосюжет</div>
+				</div>
+				<div class="mainPage_body_item specLink">
+					<div class="mainPage_body_item_ico examples"></div>
+					<div class="mainPage_body_item_caption examples">Примеры заполнения вопросников</div>
+				</div>
+				<div class="mainPage_body_item specLink">
+					<div class="mainPage_body_item_ico practical"></div>
+					<div class="mainPage_body_item_caption practical">Практические упражнения</div>
+				</div>
+				<div class="mainPage_body_item ">
+					<div class="mainPage_body_item_ico final-test"></div>
+					<div class="mainPage_body_item_caption final-test">Итоговый тест</div>
+				</div>
+				<div class="mainPage_body_item specLink">
+					<div class="mainPage_body_item_ico lection-txt"></div>
+					<div class="mainPage_body_item_caption lection-txt">Тексты лекций</div>
+				</div>
+				<div class="mainPage_body_item specLink">
+					<div class="mainPage_body_item_ico materials"></div>
+					<div class="mainPage_body_item_caption materials">Материалы для очного обучения</div>
+				</div>
+				<div class="mainPage_body_item specLink">
+					<div class="mainPage_body_item_ico faq"></div>
+					<div class="mainPage_body_item_caption faq">Справочные материалы</div>
+				</div>
+			</div>
+		</div>
+		<div id="stats">
+			<div id="stats-head">
+				<div id="closeStatsBtn" class="btn closeAssetBtn"></div>
+				<p>Статистика</p>
+			</div>
+			<div id="stats-exs">
+				<div id="stats-msg">Вы еще не выполнили ни одного упражнения</div>
+				<div id="stats-progress"><div class="progress-label">0%</div></div>
+			</div>
+			<div id="stats-tests">
+				<div id="stats-tests-msg">Итоговое тестирование</div>
+				<div id="tests-progress"><div class="progress-label">0%</div></div>
+			</div>
+		</div>
+		<div id="feedback">
+			<div id="feedback-head">
+				<div id="closeFeedBtn" class="btn closeAssetBtn"></div>
+				<p>Комментарий к ответу</p>
+			</div>
+			<div id="feedback-body"></div>
+			<div id="feedback-foot">
+				<div class="btn againBtn"></div>
+				<div class="btn continueBtn"></div>
+			</div>
+		</div>
+		<div id="glossary"></div>
+		<div id="help">
+			<div id="help-head">
+				<div id="closeHelpBtn" class="btn closeAssetBtn"></div>
+				<p>навигация в курсе</p>
+			</div>
+			<div id="help-body">
+				<div id="help-body-img"></div>
+			</div>
+		</div>
+
+		
+	</div>
+
+<script type="text/javascript" src='js/APIWrapper.js'></script>
+<script type="text/javascript" src='js/courseStructure.js'></script>
+<script type="text/javascript" src='js/courseStructure_intro.js'></script>
+<script type="text/javascript" src='js/testStructure.js'></script>
+<script type="text/javascript" src='js/jquery.min.js'></script>
+<script type="text/javascript" src='js/jquery-ui.min.js'></script>
+<script type="text/javascript" src='js/pdfmake.min.js'></script>
+<script type="text/javascript" src='js/vfs_fonts.js'></script>
+<script type="text/javascript" src='js/qrcode.js'></script>
+<!-- <script type="text/javascript" src='js/qrcode_UTF8.js'></script> -->
+<script type="text/javascript" src='js/underscore-min.js'></script>
+<script type="text/javascript" src='js/video.js'></script>
+
+<script type="text/javascript" src='js/main.js'></script>
+<script type="text/javascript" src='pages/templates/templ_test.js'></script>
+<script type="text/javascript" src='pages/templates/templ_page.js'></script>
+<script type="text/javascript" src='pages/templates/templ_videoPage.js'></script>
+<script type="text/javascript" src='pages/templates/templ_examples.js'></script>
+
+</body>
+</html>

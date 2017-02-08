@@ -1,0 +1,57 @@
+.container {
+  position: relative;
+  padding-top: 0;
+  background: url("../img/21_bunner.png");
+  overflow: hidden;
+}
+
+.page__text {
+  padding: 10px 15px 0;
+  color: #C8C8C8;
+}
+
+.dialog__wrapper {
+  position: relative;
+}
+
+.dialog__wrapper-comment {
+  position: absolute;
+  top: 190px;
+  left: 254px;
+  content: '';
+  width: 261px;
+  height: 103px;
+  background: url('../img/str_drag.png');
+}
+
+.dialog__item-block {
+  position: absolute;
+  content: '';
+  width: 185px;
+  height: 223px;
+}
+
+.dialog__item-block--1 {
+  top: 286px;
+  left: 404px;
+}
+
+.dialog__item-block--2 {
+  top: 218px;
+  left: 583px;
+}
+
+.dialog__item-block--3 {
+  top: 324px;
+  left: 720px;
+  z-index: 1;
+}
+
+.dialog__item-block--4 {
+  top: 164px;
+  left: 794px;
+}
+
+.unvisible {
+  visibility: hidden;
+}

@@ -1,0 +1,130 @@
+.container {
+	background: url("../img/15_bunner.png");
+	cursor: url("../img/marker.png"),default;
+	padding-top: 0;
+}
+.text1 {
+	padding-top: 10px;
+}
+.page__wrapper {
+	position: relative;
+	width: 998px;
+	height: 500px;
+}
+
+.page__item {
+	padding: 0;
+	margin: 0;
+	line-height: 19px;
+}
+
+.selected {
+	background: #85D7FF;
+}
+
+.page016__item-wrapper {
+	position: absolute;
+	content: '';
+	z-index: 2;
+	text-align: center;
+	cursor: url("../img/marker.png"),pointer;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.page016__item-wrapper--1 {
+	top: 10px;
+	left: 48px;
+	padding: 34px 0 0;
+	width: 195px;
+	height: 140px;
+	background: url("../img/bubble_01.png") no-repeat;
+}
+
+.page016__item-wrapper--2 {
+	top: 20px;
+	left: 750px;
+	padding: 13px 0 0;
+	width: 197px;
+	height: 86px;
+	background: url("../img/bubble_02.png") no-repeat;
+}
+
+.page016__item-wrapper--3 {
+	top: 127px;
+	left: 238px;
+	padding: 12px 0 0;
+	width: 211px;
+	height: 83px;
+	background: url("../img/bubble_03.png") no-repeat;
+}
+
+.page016__item-wrapper--4 {
+	top: 215px;
+	left: 52px;
+	padding: 10px 0 0;
+	width: 197px;
+	height: 86px;
+	background: url("../img/bubble_04.png") no-repeat;
+}
+
+.page016__item-wrapper--5 {
+	top: 122px;
+	left: 825px;
+	padding: 15px 0 0;
+	width: 112px;
+	height: 90px;
+	background: url("../img/bubble_05.png") no-repeat;
+}
+
+.page016__item-wrapper--6 {
+	top: 249px;
+	left: 715px;
+	padding: 12px 0 0 26px;
+	width: 203px;
+	height: 85px;
+	background: url("../img/bubble_06.png") no-repeat;
+}
+
+.page016__item-wrapper--7 {
+	top: 379px;
+	left: 35px;
+	padding: 38px 0 0;
+	width: 200px;
+	height: 105px;
+	background: url("../img/bubble_07.png") no-repeat;
+}
+
+.page016__item-wrapper--8 {
+	top: 314px;
+	left: 253px;
+	padding: 21px 0 0 14px;
+	width: 174px;
+	height: 119px;
+    text-align: left;
+	background: url("../img/bubble_08.png") no-repeat;
+}
+
+.page016__item-wrapper--9 {
+	top: 291px;
+	left: 453px;
+	padding-top: 4px;
+	width: 167px;
+	height: 97px;
+	background: url("../img/bubble_09.png") no-repeat;
+}
+
+.page016__item-wrapper--10 {
+	top: 370px;
+	left: 609px;
+	padding: 7px 0 0;
+	width: 221px;
+	height: 75px;
+	background: url("../img/bubble_10.png") no-repeat;
+}
+
+.btn {
+	cursor: pointer;
+}

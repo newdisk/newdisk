@@ -1,0 +1,70 @@
+{
+	"all_img":[
+		{
+			"type":"image",
+			"key":"map",
+			"url":"img/map.png",
+			"overwrite": false
+		},{
+			"type":"image",
+			"key":"check",
+			"url":"img/btn_check.png",
+			"overwrite": false
+		},{
+			"type":"image",
+			"key":"repeat",
+			"url":"img/btn_again.png",
+			"overwrite": false
+		},{
+			"type":"image",
+			"key":"show_answer",
+			"url":"img/btn_show.png",
+			"overwrite": false
+		},{
+			"type":"image",
+			"key":"zoom",
+			"url":"img/btn_zoom.png",
+			"overwrite": false
+		},{
+			"type":"image",
+			"key":"region_1",
+			"url":"img/area_1.png",
+			"overwrite": false
+		},{
+			"type":"image",
+			"key":"region_2",
+			"url":"img/area_2.png",
+			"overwrite": false
+		},{
+			"type":"image",
+			"key":"region_3",
+			"url":"img/area_3.png",
+			"overwrite": false
+		},{
+			"type":"image",
+			"key":"region_4",
+			"url":"img/area_4.png",
+			"overwrite": false
+		},{
+			"type":"image",
+			"key":"volk_1",
+			"url":"img/b1.png",
+			"overwrite": false
+		},{
+			"type":"image",
+			"key":"volk_2",
+			"url":"img/b2.png",
+			"overwrite": false
+		},{
+			"type":"image",
+			"key":"volk_3",
+			"url":"img/b3.png",
+			"overwrite": false
+		},{
+			"type":"image",
+			"key":"volk_4",
+			"url":"img/b4.png",
+			"overwrite": false
+		}
+	]
+}

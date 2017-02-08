@@ -1,0 +1,29 @@
+a {
+    color: #7c002f;
+}
+a:visited {
+    color: #000;
+}
+.container {
+	overflow: hidden;
+	padding-top: 0;
+}
+.clearfix {
+	margin-top: 10px;
+}
+.page__block--left {
+	float: left;
+	width: 430px;	
+}
+
+.page__block--right {
+	float: right;
+	padding-top: 7px;
+	padding-right: 15px;
+	width: 529px;
+}
+
+.page__list {
+	margin-bottom: 10px;
+    padding-left: 30px;
+}

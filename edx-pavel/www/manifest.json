@@ -158,21 +158,42 @@
   "page2": {
     "template": "royal",
     "context": {
-      "id": "royal-page2",
-      "panels": [
-        {
-          "title": "Finn1",
-          "content": "<img src='./img/6.png' alt='no image'>"
-        },
-        {
-          "title": "Finn2",
-          "content": "<img src='./img/1.jpg' alt='no image'>"
-        },
-        {
-          "title": "Finn3",
-          "content": "<img src='./img/5.jpg' alt='no image'>"
-        }
-      ]
+      "id": "royal",
+      "tree": {
+        "title": "Finn",
+        "content": [
+          {
+            "title": "Finn_1",
+            "content": "Cont_1"
+          },
+          {
+            "title": "Finn_2",
+            "content": [
+              {
+                "title": "Finn_2.1",
+                "content": "Cont 2.1"
+              },
+              {
+                "title": "Finn_2.2",
+                "content": [
+                  {
+                    "title": "Finn_3.1",
+                    "content": "Cont 3.1"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Finn_3",
+            "content": "Cont_3"
+          },
+          {
+            "title": "Finn_4",
+            "content": "Cont_4"
+          }
+        ]
+      }
     }
   }
 }

@@ -1,0 +1,68 @@
+.container {
+	position: relative;
+	background: url('../img/8.png') no-repeat;
+	background-position: -7px 122px;
+	padding-top: 0;
+}
+.text1 {
+	padding-top: 10px;
+}
+
+.page__block {
+	position: absolute;
+	content: '';
+	font-size: 14px;
+	font-family: "Arial", sans-serif;
+	line-height: 1.4;
+}
+
+.page__block--1 {
+	top: 153px;
+	left: 305px;
+	width: 176px;
+}
+
+.page__block--2 {
+	top: 294px;
+	left: 305px;
+	width: 156px;
+}
+
+.page__block--3 {
+	top: 455px;
+	left: 305px;
+	width: 180px;
+}
+
+.page__block--4 {
+	top: 151px;
+	left: 695px;
+	width: 290px;
+}
+
+.page__block--5 {
+	top: 466px;
+	left: 696px;
+	width: 268px;
+}
+
+.page__head-block {
+	position: absolute;
+	content: '';
+	width: 166px;
+	font-size: 16px;
+	font-family: "Arial", sans-serif;
+	line-height: 1.4;
+	text-align: center;
+	color: #fff;
+}
+
+.page__head-block--1 {
+	top: 301px;
+	left: 53px;
+}
+
+.page__head-block--2 {
+	top: 299px;
+	left: 498px;
+}

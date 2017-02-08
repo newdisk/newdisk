@@ -1,0 +1,73 @@
+#task-container {
+	background: url(../img/bunner.png) no-repeat;
+	background-position: 0 bottom;
+}
+#task-body {
+	padding: 4px 14px 0px 14px;
+	font-family: "Arial", sans-serif;
+}
+.answer {
+	position: relative;
+	font-size: 16px;
+	padding: 5px;
+	padding-left: 35px;
+	cursor: pointer;
+	margin-bottom: 10px;
+}
+.answer.selected .check-item.box {
+	background-position-y: -22px;
+}
+.answer.selected .check-item.radio {
+	background-position-y: -24px;
+}
+.check-item {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+}
+.check-item.box {
+	background: url(../../../img/checkbox.png);
+	width: 20px;
+	height: 20px;
+}
+.check-item.radio {
+	background: url(../../../img/radiobutton.png);
+	width: 22px;
+	height: 22px;
+}
+#test-quest-num {
+	color: #7C002F;
+	background: url(../../../img/paginaciya.png) no-repeat;
+	width: 72px;
+	height: 40px;
+	line-height: 2;
+	text-align: center;
+}
+#test-quest-txt {
+	margin-top: 2px;
+	margin-bottom: 10px;
+}
+#test-quest-txt span {
+	font-style: italic;
+}
+#task-btns {
+	text-align: center;
+	margin-top: 15px;
+}
+#test-answBtn {
+	background: url('../../../img/accept_answer.png');
+}
+#test-restartBtn {
+	background: url('../../../img/start_again.png');
+}
+#test-answBtn:hover,
+#test-restartBtn:hover {
+	background-position-y: -40px;
+}
+#test-answBtn:hover.disabled,
+#test-restartBtn:hover.disabled,
+#test-answBtn.disabled,
+#test-restartBtn.disabled {
+	background-position-y: -80px;
+	cursor: default;
+}
