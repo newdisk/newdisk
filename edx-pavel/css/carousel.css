@@ -1,0 +1,40 @@
+.carousel-caption{
+    position: relative;
+    right:auto;
+    left: auto;
+    margin-top: 20px;
+    font-size: 24px;
+    font-family:"Arial",sans-serif;
+    color: black;
+    text-shadow: none;
+}
+
+.carousel__img{
+    margin:0 auto;
+}
+
+.carousel-indicators{
+    position: relative;
+    bottom: auto;
+    margin-top:10px;
+
+}
+.carousel-indicators .indicator{
+
+    background-color: #CCCCCC;
+    padding: 0px;
+    border-style:none ;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    margin: 0px 10px;
+    vertical-align: middle;
+}
+
+.carousel-indicators .indicator.active{
+    background-color: #8F999C;
+    padding: 0px;
+    width: 26px;
+    height: 26px;
+    border-radius: 13px;
+}

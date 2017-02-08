@@ -1,0 +1,86 @@
+{	
+	"game_w":850,
+	"game_h":800,
+	"words":[
+		{
+			"word": "Велосипед",
+			"orientation": "h",
+			"startX": 3,
+			"startY": 3,
+			"number": "1",
+			"numberPos": 4
+		},
+		{
+			"word": "Перекресток",
+			"orientation": "h",
+			"startX": 0,
+			"startY": 6,
+			"number": "2",
+			"numberPos": 4
+		},
+		{
+			"word": "Зебра",
+			"orientation": "h",
+			"startX": 4,
+			"startY": 8,
+			"number": "3",
+			"numberPos": 4
+		},
+		{
+			"word": "Остановка",
+			"orientation": "h",
+			"startX": 5,
+			"startY": 10,
+			"number": "4",
+			"numberPos": 4
+		},
+		{
+			"word": "Вечер",
+			"orientation": "v",
+			"startX": 3,
+			"startY": 3,
+			"number": "1",
+			"numberPos": 1
+		},
+		{
+			"word": "Троллейбус",
+			"orientation": "v",
+			"startX": 6,
+			"startY": 1,
+			"number": "2",
+			"numberPos": 1
+		},
+		{
+			"word": "Жилет",
+			"orientation": "v",
+			"startX": 8,
+			"startY": 2,
+			"number": "3",
+			"numberPos": 1
+		},
+		{
+			"word": "Авария",
+			"orientation": "v",
+			"startX": 8,
+			"startY": 8,
+			"number": "4",
+			"numberPos": 1
+		},
+		{
+			"word": "Ребенок",
+			"orientation": "v",
+			"startX": 10,
+			"startY": 0,
+			"number": "5",
+			"numberPos": 1
+		},
+		{
+			"word": "пробка",
+			"orientation": "v",
+			"startX": 10,
+			"startY": 8,
+			"number": "6",
+			"numberPos": 1
+		}
+	]
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>page title</title>
+
+    <link rel="stylesheet" href="css/main.css">
+    <script async src="js/main.js"></script>
+</head>
+<body>
+    <h1 style="text-align: center;">Helen pages</h1>
+    <hr>
+    <ul class="nd-ex-list">
+        <li>
+            <a href="./www/index.html?data=page0">page0</a>
+        </li>
+        <li>
+            <a href="./www/index.html?data=page1">page1</a>
+        </li>
+        <li>
+            <a href="./www/index.html?data=page3">page3</a>
+        </li>
+        <li>
+            <a href="./www/index.html?data=page4">page4</a>
+        </li>
+        <li>
+            <a href="./www/index.html?data=page5">page5</a>
+        </li>
+        <li>
+            <a href="./www/index.html?data=page7">page7</a>
+        </li>
+        <li>
+            <a href="./www/index.html?data=page6">page6</a>
+        </li>
+        <li>
+            <a href="./www/index.html?data=page8">page8</a>
+        </li>
+    </ul>
+    <form method="get" target="example-frame">
+        <p><b>Что будем смотреть?</b></p>
+        <ul class="nd-ex-list">
+            <li>
+                <label><input type="radio" name="data" value="page0" checked> Carousel </label>
+            </li>
+            <li>
+                <label><input type="radio" name="data" value="page1"> Accordion </label>
+            </li>
+            <li>
+                <label><input type="radio" name="data" value="page2"> чтото </label>
+            </li>
+        </ul>
+        <button type="submit" formaction="./www/index.html">Показать</button>
+    </form>
+    <!--<iframe name="example-frame" frameborder="0" style="width:900px; height:700px; margin:10px"></iframe>-->
+</body>
+</html>

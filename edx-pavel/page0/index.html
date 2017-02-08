@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>page title</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <!-- Handlebars Подключение шаблонизатора -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+
+
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/carousel.css">
+    <script async src="../js/main.js"></script>
+
+    <link rel="stylesheet" href="./css/page.css">
+    <script async src="./js/page.js"></script>
+</head>
+<body>
+
+
+<script id="entry-template2" type="text/x-handlebars-template">
+    <div id="carousel-template-generic" class="carousel slide" data-ride="carousel" data-interval="false">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            {{#each images}}
+            {{#if @index}}
+            <div class="item">
+                {{else}}
+                <div class="item active">
+                    {{/if}}
+                    <img class="carousel__img" src={{src}} alt="no">
+                    <div class="carousel-caption">
+                        {{description}}
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                {{#each images}}
+                {{#if @index}}
+                <li class="indicator" data-target="#carousel-template-generic" data-slide-to="{{@index}}"></li>
+                {{else}}
+                <li class="indicator active" data-target="#carousel-template-generic" data-slide-to="{{@index}}"></li>
+                {{/if}}
+                {{/each}}
+            </ol>
+        </div>
+    </div>
+</script>
+
+<script>
+    var source = document.getElementById('entry-template2').innerHTML;
+    var template = Handlebars.compile(source);
+    var context = {
+
+        id: "carousel-page0",
+        images: [
+            {
+                src: "./img/02_05_01.jpg",
+                description: "Finn1"
+            },
+            {
+                src: "./img/02_05_02.jpg",
+                description: "Finn2"
+            },
+            {
+                src: "./img/02_05_03.jpg",
+                description: "Finn3"
+            }
+        ]
+    };
+
+    var html = template(context);
+    var carousel = document.createElement('div');
+    carousel.innerHTML = html;
+    console.log(carousel)
+    document.body.appendChild(carousel);
+</script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+{
+  "page0":{
+    "template":"carousel",
+    "context":{
+      "id":"carousel-page0",
+      "intro": {
+        "title": "",
+        "text": "",
+        "src": "./img/6.png",
+        "description": ""
+      },
+      "images":[
+        {
+          "header":{
+            "title":"Finn1",
+            "text":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+          },
+          "src":"./img/1.jpg",
+          "description":"Finn1"
+        },
+        {
+          "header":{
+            "title":"Finn2",
+            "text":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+          },
+          "src":"./img/3.jpg",
+          "description":"Finn2"
+        },
+        {
+          "header":{
+            "title":"Finn3",
+            "text":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+          },
+          "src":"./img/4.jpg",
+          "description":"Finn3"
+        }
+      ]
+    }
+  },
+  "page1":{
+    "template":"accordion",
+    "context":{
+      "id":"accordion-page1",
+      "panels":[
+        {
+          "title":"Finn1",
+          "content":"<img src='./img/6.png' alt='no image'>"
+        },
+        {
+          "title":"Finn2",
+          "content":"<img src='./img/1.jpg' alt='no image'>"
+        },
+        {
+          "title":"Finn3",
+          "content":"<img src='./img/5.jpg' alt='no image'>"
+        }
+      ]
+    }
+  },
+  "page2":{
+    "template":"royal",
+    "context":{
+      "id":"royal-page2",
+      "panels":[
+        {
+          "title":"Finn1",
+          "content":"<img src='./img/6.png' alt='no image'>"
+        },
+        {
+          "title":"Finn2",
+          "content":"<img src='./img/1.jpg' alt='no image'>"
+        },
+        {
+          "title":"Finn3",
+          "content":"<img src='./img/5.jpg' alt='no image'>"
+        }
+      ]
+    }
+  }
+}

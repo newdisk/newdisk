@@ -1,0 +1,27 @@
+<div id="{{id}}" class="panel-group" role="tablist" aria-multiselectable="true">
+  {{#each panels}}
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="heading{{@index}}">
+      <h4 class="panel-title">
+        <a role="button"
+            data-toggle="collapse"
+            data-parent="#{{../id}}"
+            href="#collapse{{@index}}"
+            aria-expanded="false"
+            aria-controls="collapse{{@index}}">
+          {{this.title}}
+        </a>
+      </h4>
+    </div>
+      {{#if this.open}}
+        <div id="collapse{{@index}}" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading{{@index}}">
+      {{else}}
+        <div id="collapse{{@index}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{@index}}">
+      {{/if}}
+      <div class="panel-body">
+        {{{this.content}}}
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</div>

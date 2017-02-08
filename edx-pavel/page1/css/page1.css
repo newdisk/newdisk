@@ -1,0 +1,27 @@
+.carousel2{
+     color: #1f18ec;
+     background: rgba(237, 29, 162, 0.55);
+
+
+ }
+.carousel-caption:hover{
+    background: #ec3e7f;
+    cursor: pointer;
+    border:1px solid #1bff06;
+    border-radius:0px ;
+}
+
+.carousel-caption{
+    border:10px double yellow;
+    border-radius:10px ;
+    bottom: auto;
+    top:20px;
+    transition: all .5s;
+}
+
+.carousel__img{
+    margin:0 auto;
+}
+.right.carousel-control:hover{
+    background: rgba(56, 43, 237, 0.55);
+}

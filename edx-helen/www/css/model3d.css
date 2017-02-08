@@ -1,0 +1,125 @@
+@charset "UTF-8";
+
+/*  Сбрасываем все  */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp, small, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset,
+form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td
+{vertical-align: baseline; background: transparent; text-align: left; text-indent: 0; font-size: 100%; text-decoration: none; list-style-type: none; list-style: none; outline: 0; border: 0; margin: 0; padding: 0}
+
+
+body    {line-height: 1; background-color: #fff; font: normal 15px/20px "Lucida Grande", "Lucida Sans Unicode", Lucida, arial, sans-serif}
+
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display:block}
+
+img     {vertical-align: middle}
+
+
+
+ins { background-color:#ff9; color:#000; text-decoration:none; }
+
+mark { background-color:#ff9; color:#000; font-style:italic; font-weight:bold; }
+
+del { text-decoration: line-through; }
+
+
+
+abbr,acronym {cursor: help; border-bottom: 1px dotted #999}
+
+
+address,cite,dfn {font-style: normal}
+
+
+code,pre {white-space: pre-wrap}
+
+
+legend    {margin: 0 0 -2px;}
+
+
+/*  quotes  */
+blockquote,q {quotes: none}
+blockquote:before,blockquote:after,q:before,q:after {content: ''; content: none}
+
+q          {quotes: "\00ab" "\00bb" "\201e" "\201c"}
+q:after    {content: "\00bb"}
+q:before   {content: "\00ab"}
+q q:after  {content: "\201c"}
+q q:before {content: "\201e"}
+
+
+/*   Списки   */
+ul li       {display: block}
+
+ol          {list-style-type: decimal}
+
+dl dd       {margin-left: 1em}
+
+
+
+nav ul, nav li { margin: 0; }
+
+
+/*	headers  */
+h1 						    {font-size: 138.5%}
+h2 						    {font-size: 123.1%}
+h3 						    {font-size: 108%}
+h1,h2,h3 				    {margin: 1em 0}
+h1,h2,h3,h4,h5,h6,strong    {font-weight:bold}
+
+
+abbr[title], dfn[title],acronym { border-bottom: 1px dotted; cursor:help; }
+em           {font-style: italic}
+
+
+/*  tables  */
+table 		    {border-collapse: collapse; border-spacing: 0; width: 100%}
+th,td           {vertical-align: top}
+th              {text-align: center; font-weight: bold}
+caption         {text-align: center}
+
+hr { display:block; height:1px; border:0; border-top:1px solid #ccc; margin:1em 0; padding:0; }
+
+
+pre, code, kbd, samp { font-family: monospace, sans-serif; }
+
+/* www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap/ */
+/*pre {white-space: pre; white-space: pre-wrap; white-space: pre-line; word-wrap: break-word; padding: 15px}*/
+
+
+/* set sub, sup without affecting line-height: gist.github.com/413930*/
+sub, sup { font-size: 75%; line-height: 0; position: relative; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+/*  input, textarea, buttons, select, option  */
+optgroup option         {padding-left: 22px;}
+
+input,select,button     {overflow: visible; vertical-align: middle}
+
+textarea                {vertical-align: top; resize: none; overflow: auto}
+
+
+.ie6 legend, .ie7 legend { margin-left: -7px; } /* thnx ivannikolic! */
+
+:focus  {outline: 0}
+/* IE8+ */
+input[type="submit"]:focus, input[type="button"]:focus {outline: none}
+/* Firefox */
+button::-moz-focus-inner {border: 0}
+input::-moz-focus-inner {border: 0}
+
+
+
+
+/* align checkboxes, radios, text inputs with their label by: Thierry Koblentz tjkdesign.com/ez-css/css/base.css */
+input[type="radio"] { vertical-align: text-bottom; }
+input[type="checkbox"] { vertical-align: bottom; }
+.ie7 input[type="checkbox"] { vertical-align: baseline; }
+.ie6 input { vertical-align: text-bottom; }
+
+/* hand cursor on clickable input elements */
+label, input[type="button"], input[type="submit"], input[type="image"], button { cursor: pointer; }
+
+/* webkit browsers add a 2px margin outside the chrome of form elements */
+button, input, select, textarea { margin: 0; }
+button {width: auto; overflow: visible}

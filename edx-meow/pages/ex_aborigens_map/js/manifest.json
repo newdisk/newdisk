@@ -1,0 +1,60 @@
+{
+	"all_img":[
+		{
+			"type":"image",
+			"key":"map",
+			"url":"img/4.png",
+			"overwrite": false
+		},{
+			"type":"image",
+			"key":"check",
+			"url":"img/10.png",
+			"overwrite": false
+		},{
+			"type":"image",
+			"key":"repeat",
+			"url":"img/1_1.png",
+			"overwrite": false
+		},{
+			"type":"image",
+			"key":"show_answer",
+			"url":"img/11.png",
+			"overwrite": false
+		},{
+			"type":"image",
+			"key":"zoom",
+			"url":"img/9.png",
+			"overwrite": false
+		},{
+			"type":"image",
+			"key":"region_1",
+			"url":"img/1.png",
+			"overwrite": false
+		},{
+			"type":"image",
+			"key":"region_2",
+			"url":"img/2.png",
+			"overwrite": false
+		},{
+			"type":"image",
+			"key":"region_3",
+			"url":"img/3.png",
+			"overwrite": false
+		},{
+			"type":"image",
+			"key":"volk_1",
+			"url":"img/b1.png",
+			"overwrite": false
+		},{
+			"type":"image",
+			"key":"volk_2",
+			"url":"img/b2.png",
+			"overwrite": false
+		},{
+			"type":"image",
+			"key":"volk_3",
+			"url":"img/b3.png",
+			"overwrite": false
+		}
+	]
+}

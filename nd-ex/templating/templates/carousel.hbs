@@ -1,0 +1,52 @@
+<div data-target="#{{id}}" class="carousel-intro">
+    <h2 class="carousel-intro__title"> {{intro.title}}</h2>
+    <p class="carousel-intro__text">{{intro.text}}</p>
+
+    <img class="carousel-intro__img" src="{{intro.src}}" alt="no image">
+    <div class="carousel-intro__caption">
+        <p>{{intro.description}}</p>
+    </div>
+    <div class="carousel-intro__start-btn_wrapper">
+        <button class="carousel-intro__start-btn glyphicon glyphicon-play"></button>
+    </div>
+
+</div>
+
+{{#if intro}}
+    <div id="{{id}}" class="carousel slide hidden" data-ride="carousel">
+{{else}}
+    <div id="{{id}}" class="carousel slide" data-ride="carousel">
+{{/if}}
+    <!-- Wrapper for slides -->
+    <div id="mega-carousel" class="carousel-inner" role="listbox">
+        {{#each images}}
+            {{#if @index}}
+            <div class="item">
+            {{else}}
+            <div class="item active">
+            {{/if}}
+            <div class="carousel-header">
+                <h2 class="carousel-header__title"> {{this.header.title}}</h2>
+                <p class="carousel-header__text">{{this.header.text}}</p>
+            </div>
+            <img class="carousel__img" src="{{this.src}}" alt="no image">
+            <div class="carousel-caption">
+                <p>{{this.description}}</p>
+            </div>
+
+        </div>
+        {{/each}}
+    </div>
+
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            {{#each images}}
+                {{#if @index}}
+                    <li class="indicator" data-target="#{{../id}}" data-slide-to="{{@index}}"></li>
+                {{else}}
+                    <li data-target="#{{../id}}" data-slide-to="{{@index}}" class="indicator active"></li>
+                {{/if}}
+            {{/each}}
+        </ol>
+
+    </div>

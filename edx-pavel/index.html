@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>page title</title>
+
+    <link rel="stylesheet" href="css/main.css">
+    <script async src="js/main.js"></script>
+</head>
+<body>
+    <h1 style="text-align: center;">Pavel pages</h1>
+    <iframe name="example-frame" src="./www/index.html?data=page0" frameborder="0" style="width:830px; height:760px; margin:10px auto; display: block"></iframe>
+
+    <hr>
+    <ul class="nd-ex-list">
+        <li>
+            <a href="./www/index.html?data=page0">page0</a>
+        </li>
+        <li>
+            <a href="./www/index.html?data=page1">page1</a>
+        </li>
+        <li>
+            <a href="./www/index.html?data=page2">page2</a>
+        </li>
+    </ul>
+    <form method="get" target="example-frame">
+        <p><b>Что будем смотреть?</b></p>
+        <ul class="nd-ex-list">
+            <li>
+                <label><input type="radio" name="data" value="page0" checked> Carousel </label>
+            </li>
+            <li>
+                <label><input type="radio" name="data" value="page1"> Accordion </label>
+            </li>
+            <li>
+                <label><input type="radio" name="data" value="page2"> чтото </label>
+            </li>
+        </ul>
+        <button type="submit" formaction="./www/index.html">Показать</button>
+    </form>
+    <!--<iframe name="example-frame" frameborder="0" style="width:900px; height:700px; margin:10px"></iframe>-->
+</body>
+</html>

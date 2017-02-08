@@ -1,0 +1,11 @@
+
+.model3d .hide{display:none}
+.model3d .current{display:block}
+
+/*.clearfix{clear:both;}*/
+
+.model3d .outer-center {float: right;right: 50%;position: relative;}
+.model3d .inner-center {float: right;right: -50%;position: relative;}
+
+
+/*.item img{position:relative;}*/

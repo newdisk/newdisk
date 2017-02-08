@@ -1,0 +1,67 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: Arial;
+	font-size: 20px;
+}
+input {
+	font-size: 0px;
+}
+#task {
+	max-width: 1024px;
+}
+
+.round-wrap {
+	box-shadow: 0px 0px 3px #ccc;
+	padding: 5px;
+	margin-bottom: 45px;
+}
+
+.task-submit {
+	color: #0182BB;
+	font-size: 18px;
+	width: 163px;
+	height: 47px;
+	border: 4px solid #FFE01F;
+	border-radius: 10px;
+	text-align: center;
+	line-height: 2;
+	margin: 15px auto;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select:none;
+	cursor: pointer;
+}
+
+.task-submit.disabled {
+	border: 4px solid #FFF08F;
+	color: #cdcdcd;
+	pointer-events: none;
+	cursor: not-allowed;
+}
+.task-submit:hover,
+.task-submit:active {
+	background: #FFE01F;
+	box-shadow: inset 4px 4px 0px #fff, inset -4px -4px 0px #fff, inset -4px 4px 0px #fff, inset 4px -4px 0px #fff;
+}
+.cross-description {
+	background: #F2F9FF;
+	border: 1px solid #B5DDF7;
+	border-radius: 5px;
+	padding: 5px;
+	box-shadow: 0px 0px 3px #00aeff;
+}
+.cross-description ol {
+	margin-bottom: 10px;
+}
+.cross-description li {
+	margin-left: 30px;
+}
+@media (max-width: 767px) {
+	.hint,
+	.petya-wrap {
+		width: 100%;
+		margin-bottom: 15px;
+	}
+}

@@ -1,0 +1,40 @@
+{
+	"all_img":[
+		{
+			"type":"image",
+			"key":"stage_1",
+			"url":"img/102_015_480_1.png",
+			"overwrite": false
+		},
+		{
+			"type":"image",
+			"key":"tolpa",
+			"url":"img/102_015_480_2.png",
+			"overwrite": false
+		},
+		{
+			"type":"image",
+			"key":"car",
+			"url":"img/102_015_480_3.png",
+			"overwrite": false
+		},
+		{
+			"type":"image",
+			"key":"brake_way",
+			"url":"img/102_015_480_5.png",
+			"overwrite": false
+		},
+		{
+			"type":"image",
+			"key":"sign",
+			"url":"img/102_015_480_6.png",
+			"overwrite": false
+		},
+		{
+			"type":"image",
+			"key":"smoke",
+			"url":"img/smoke.png",
+			"overwrite": false
+		}
+	]
+}

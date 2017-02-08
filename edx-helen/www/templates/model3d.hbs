@@ -1,0 +1,16 @@
+<div id="{{id}}" class="model3d contents">
+   <div class="content outer-center">
+      <div class="inner-center">
+         <div class="images">
+          {{#for 0 60 1}}
+            {{#ifCond this 0}}
+              <div data-pos-y="0" data-pos-x="0" class="item hide current"><img src={{../folder}}({{this}}){{../format}} class="model-image" style="height: 881px;"></div>
+            {{else}}
+              <div data-pos-y="0" data-pos-x="{{this}}" class="item hide"><img src={{../folder}}({{this}}){{../format}} class="model-image" style="height: 881px;"></div>
+            {{/ifCond}}
+          {{/for}}
+         </div>
+         <div class="property" data-move-buffer-x="1" data-move-buffer-y="5" data-continius-x-moving="true" data-scaling-step="50" data-y-reversed="true"></div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,34 @@
+{
+  "name": "docxtemplater",
+  "version": "2.1.3",
+  "homepage": "https://github.com/open-xml-templating/docxtemplater",
+  "authors": [
+    "Edgar HIPP <hipp.edg@gmail.com>"
+  ],
+  "description": "Generate docx from templates",
+  "main": "build/docxtemplater-latest.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "docx"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "2.1.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.1.3",
+    "commit": "bce82d7664d011bbab7c5ec6ce6dedd8b6deec2d"
+  },
+  "_source": "https://github.com/open-xml-templating/docxtemplater-build.git",
+  "_target": "^2.1.3",
+  "_originalSource": "docxtemplater",
+  "_direct": true
+}

@@ -1,0 +1,11 @@
+{
+	"all_img":[
+		{
+            "type":"spritesheet",
+            "key":"box",
+            "url":"img/box2.png",
+            "frameWidth": 106,
+            "frameHeight": 108
+        }
+	]
+}
