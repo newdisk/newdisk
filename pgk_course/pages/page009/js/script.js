@@ -60,6 +60,7 @@
             $(sliderLine).addClass('activated');
             $(parent.frames['myframe'].document).find('.page010__main-text').removeAttr('style');
         }
+        ctrl.sendResult(1,100,"Все посмотренно");
     }
 
     // function init() {}

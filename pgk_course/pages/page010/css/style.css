@@ -40,6 +40,28 @@
 	padding: 20px 15px;
 }
 
+.subtext-person {
+	position: absolute;
+	bottom: 16px;
+	left: -268px;
+	display: none;
+	padding: 14px 30px;
+	padding-right: 30px;
+	width: 779px;
+	height: 234px;
+	background: url(../img/shafl_01.png) no-repeat;
+	background-size: 100% 100%;
+}
+
+.text-person {
+	position: relative;
+	text-decoration: underline;
+}
+
+.text-person:hover .subtext-person {
+	display: block;
+}
+
 .page__text--important-before {
 	position: absolute;
 	top: 7px;
