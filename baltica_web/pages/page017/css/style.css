@@ -4,16 +4,10 @@
 	padding-top: 0px;
 }
 .container_page1{
-	position: relative;
-	background: url('../img/14_1.jpg')  no-repeat;
-	padding-top: 0px;
+display: block;
+
 }
-.container_page2{
-	display: none;
-	position: relative;
-	background: url('../img/14_2.jpg')  no-repeat;
-	padding-top: 0px;
-}
+
 .page__bubble_right_top{
 	top: 10px;
 	left: 235px;
