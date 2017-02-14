@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="../../css/style-components.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="page__bubble_down_left_employee">
+			<p class="page__text_bubble">Слушай, у меня до сих пор нет аккаунта в социальной сети «ВКонтакте» – а так хочется его завести. И указать, что в «Балтике» работаю, чтобы все друзья знали. Можешь посмотреть – все ли правильно я делаю при регистрации? </p>
+		</div>
+		<div class="page__bubble_down_left_employee page__bubble_down_left_employee--bg"></div>
+
+		<div class="page__question_container">
+			<p class="page__text__question"><i>Помоги коллеге создать аккаунт в соответствии с Политикой по поведению в социальных сетях</i> </p>
+		</div>
+		<div class="page__question_container_clarify1">
+			<p class="page__text__question"><i>Помоги коллеге выбрать подходящую фотографию профиля:</i> </p>
+		</div>
+		<div class="page__question_container_clarify2">
+			<p class="page__text__question"><i>Помоги коллеге указать имя и фамилию:</i> </p>
+		</div>
+		<div class="page__question_container_clarify3">
+			<p class="page__text__question"><i>Помоги коллеге указать место работы:</i> </p>
+		</div>
+		<div class="page__question_container_clarify4">
+			<p class="page__text__question"><i>Помоги коллеге указать информацию о себе:</i> </p>
+		</div>
+
+
+		<div id="task-foto" class="singlechoice_foto" useAttempt="0">
+			<div class="foto_0">
+			</div>
+			<div class="foto_1">
+			</div>
+			<div class="foto_2">
+			</div>
+			<div class="foto_3">
+			</div>
+		</div>
+
+		<div  id="question_container1" class="question_container">
+			<div class="btn1-btn--choice" id="myBtn_question_1">
+				<div class="container_m_question_3">
+					<p  id="ansWerT1" class="m_question_3">Выберите вариант ответа.</p>
+				</div>
+			</div>
+			<div id="myElem_list_the_name" class="my_question_3" >
+				<div id="1_0" class="m_answer_1" useAttempt="true">
+					<p  class="m_question_3">Иван Пивоваров</p>
+				</div>
+				<div id="1_1" class="m_answer_1" useAttempt="false">
+					<p  class="m_question_3">Злой Джон</p>
+				</div>
+				<div id="1_2" class="m_answer_1" useAttempt="false">
+					<p  class="m_question_3">Дюк</p>
+				</div>
+			</div>
+		</div>
+
+		<div  id="question_container2" class="question_container">
+			<div class="btn1-btn--choice" id="myBtn_question_2">
+				<div class="container_m_question_3">
+					<p  id="ansWerT2" class="m_question_3">Выберите вариант ответа.</p>
+				</div>
+			</div>
+			<div id="myElem_list_place_of_work" class="my_question_3" >
+				<div id="2_0" class="m_answer_2"useAttempt="true">
+					<p  class="m_question_3">Я работаю в пивоваренной компании «Балтика», но мои личные взгляды могут </p>
+				</div>
+				<div id="2_1" class="m_answer_2"useAttempt="false">
+					<p  class="m_question_3">Пивной OOOOOOO</p>
+				</div>
+				<div id="2_2" class="m_answer_2"useAttempt="false">
+					<p  class="m_question_3">Работаю TTTTTTTTTTTT</p>
+				</div>
+			</div>
+		</div>
+
+		<div  id="question_container3" class="question_container">
+			<div class="btn1-btn--choice" id="myBtn_question_3">
+				<div class="container_m_question_3">
+					<p  id="ansWerT3" class="m_question_3">Выберите вариант ответа.</p>
+				</div>
+			</div>
+			<div id="myElem_list_name_about_me" class="my_question_3" >
+				<div id="3_0" class="m_answer_3"useAttempt="true">
+					<p  class="m_question_3">Я работаю в пивоваренной компании «Балтика», но мои личные взгляды могут не совпадать с мнением моего работодателя </p>
+				</div>
+				<div id="3_1" class="m_answer_3"useAttempt="false">
+					<p  class="m_question_3">Пивной эксперт</p>
+				</div>
+				<div id="3_2" class="m_answer_3"useAttempt="false">
+					<p  class="m_question_3">Работаю в сфере 18+</p>
+				</div>
+			</div>
+		</div>
+
+		<div id="task-btns" class="btn-box">
+			<button id="btn--answer" class="btn">Ответить</button>
+			<button id="btn--restart" class="btn">Начать заново</button>
+		</div>
+	</div>
+
+
+	</div>
+	<!--<script type="text/javascript" src="js/script.js"></script>-->
+<script src="js/main.js"></script>
+</body>
+</html>

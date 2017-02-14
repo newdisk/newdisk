@@ -1,0 +1,1 @@
+!function(a,e){"use strict";var t=a(parent.frames.myframe.document).find(".animate");t.animate({opacity:0},0);for(var n=0;n<t.length;n++)a(t[n]).animate({opacity:0},0).delay(1e3*(n+1)).animate({opacity:1},500);e.coursePage={play:function(){},stop:function(){t.finish(),e.coursePage=null}},e.coursePage.play()}(parent.jQuery,parent.ctrl);

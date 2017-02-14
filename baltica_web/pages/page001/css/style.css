@@ -1,0 +1,124 @@
+.container {
+	position: relative;
+	font: 14px/1.4 "Verdana Regular", sans-serif;
+	background: url('../img/page001-bg.jpg')  no-repeat;
+	padding-top: 0px;
+	overflow: hidden;
+}
+.page__intro-block {
+	position: relative;
+	margin-bottom: 12px;
+	padding-right: 26px;
+	padding-left: 5px;
+	font: 14px/1.4 "Verdana Regular", sans-serif;
+	font-style: italic;
+}
+.page__intro-block::before {
+	position: absolute;
+	top: 15px;
+	left: -63px;
+	content: '';
+	width: 52px;
+	height: 70px;
+	background: url(../img/page001-sprite.png);
+}
+.page__intro-block::after {
+	position: absolute;
+	top: 9px;
+	right: -24px;
+	content: '';
+	width: 41px;
+	height: 52px;
+	background: url(../img/page001-sprite.png) -96px 0;
+}
+.bubble {
+	margin-bottom: 10px;
+	padding: 0 6px;
+	background: #fff;
+}
+.bubble_shape-lr {
+	border-radius: 7px 0;
+}
+.bubble_shape-rl {
+	border-radius: 0 7px;
+}
+.bubble_color-1 {
+	border: 1px solid #003076;
+}
+.bubble_color-2 {
+	border: 1px solid #967938;
+}
+.question-block {
+	margin-bottom: 10px;
+	padding: 2px 10px 4px;
+	background: #967938;
+}
+.text-question {
+	font-size: 14px;
+	line-height: 1.4;
+	font-family: 'Verdana Regular', sans-serif;
+	font-style: italic;
+	color: #fff;
+}
+.page__decor-block-wrapper {
+	margin-bottom: 10px;
+	padding: 6px;
+	border: 4px solid #fff;
+}
+.page__decor-block {
+	position: relative;
+	background: #fff;
+}
+.page__decor-block-list {
+	padding: 2px;
+	padding-left: 30px;
+	list-style: none;
+}
+.page__decor-block-item {
+	position: relative;
+	padding-left: 10px;
+	font-size: 14px;
+}
+.page__decor-block-item::before {
+	position: absolute;
+	top: 3px;
+	left: -21px;
+	content: '';
+	width: 10px;
+	height: 10px;
+	border: 2px solid #003076;
+}
+.page__decor-block-item::after {
+	position: absolute;
+	top: -5px;
+	left: -22px;
+	content: '';
+	width: 24px;
+	height: 22px;
+  background: url(../img/page001-sprite.png) -7px 21px;
+  background-size: 112px;
+}
+
+/* Unique styles */
+
+.wrapper_page-001 {
+	width: 800px;
+	margin: auto;
+	margin-top: 17px;
+}
+.page001__text {
+	position: relative;
+	padding-left: 100px;
+}
+.page001__text::before {
+	position: absolute;
+	top: 2px;
+	left: 7px;
+	content: '';
+	width: 82px;
+	height: 63px;
+	background: url(../img/page001-sprite.png) -80px -53px;
+}
+.question-block_page001 {
+	width: 340px;
+}

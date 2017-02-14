@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Сертификат. Курс Антикоррупционная политика АО «ПГК»</title>
+
+	<style type="text/css">
+			
+		* {
+			margin: 0;
+			padding: 0;
+			font-family: Arial;
+			color: #000;
+			pointer-events: none;
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			user-select: none;
+		}
+		#cert-student {
+			font-size: 36px;
+			font-weight: bold;
+			color: #7C002F;
+			position: absolute;
+			top: 415px;
+			width: 100%;
+			text-align: center;
+			text-transform: uppercase;
+		}
+		#cert-date {
+			position: absolute;
+			top: 630px;
+			font-size: 24px;
+			right: 70px;
+		}
+
+		@media print {
+			@page {
+				size: landscape;
+				size: 11in 8.5in;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div id="cert-container">
+		<img src="../../img/cert.jpg" alt="" width="1024">
+		<div id="cert-student">ИМЯ ОБУЧАЕМОГО</div>
+		<div id="cert-date">ДАТА ПРОХОЖДЕНИЯ</div>
+	</div>
+
+	<script type="text/javascript">
+		window.onload = function() {
+			document.getElementById('cert-student').innerHTML = window.opener.ctrl.learner;
+
+			var now = new Date();
+			var year = now.getFullYear();
+			var month = now.getMonth()+1;
+			month = String(month).length > 1 ? month : '0'+month;
+			var day = now.getDate();
+			day = String(day).length > 1 ? day : '0'+day;
+
+			document.getElementById('cert-date').innerHTML = [day, month, year].join('.')+' г.';
+
+			window.print();
+		}
+	</script>
+	
+</body>
+</html>

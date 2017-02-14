@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="../../css/style-components.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="page__bubble_down_left_employee">
+			<p class="page__text_bubble">Слушай, у меня до сих пор нет аккаунта в социальной сети «ВКонтакте» – а так хочется его завести. И указать, что в «Балтике» работаю, чтобы все друзья знали. Можешь посмотреть – все ли правильно я делаю при регистрации? </p>
+		</div>
+		<div class="page__bubble_down_left_employee page__bubble_down_left_employee--bg"></div>
+
+		<div class="page__question_container">
+			<p class="page__text__question"><i>Помоги коллеге создать аккаунт в соответствии с Политикой по поведению в социальных сетях</i> </p>
+		</div>
+		<div class="page__question_container_clarify1">
+			<p class="page__text__question"><i>Помоги коллеге выбрать подходящую фотографию профиля:</i> </p>
+		</div>
+		<div class="page__question_container_clarify2">
+			<p class="page__text__question"><i>Помоги коллеге указать имя и фамилию:</i> </p>
+		</div>
+		<div class="page__question_container_clarify3">
+			<p class="page__text__question"><i>Помоги коллеге указать место работы:</i> </p>
+		</div>
+		<div class="page__question_container_clarify4">
+			<p class="page__text__question"><i>Помоги коллеге указать информацию о себе:</i> </p>
+		</div>
+
+
+
+		<div class="foto_0">
+		</div>
+		<div class="foto_1">
+		</div>
+		<div class="foto_2">
+		</div>
+		<div class="foto_3">
+		</div>
+
+
+
+		<div class="question_3">
+			<div class="btn1-btn--choice" id="myBtn_question_3">
+				<div class="container_m_question_3">
+					<p  id="ansWerT" class="m_question_3">Выберите вариант ответа.</p>
+				</div>
+			</div>
+			<div id="myElem_list_name_about_me" >
+				<div id="3_0" class="m_answer_3">
+					<p  class="m_question_3">Я работаю в пивоваренной компании «Балтика», но мои личные взгляды могут не совпадать с мнением моего работодателя </p>
+				</div>
+				<div id="3_1" class="m_answer_3">
+					<p  class="m_question_3">Пивной эксперт</p>
+				</div>
+				<div id="3_2" class="m_answer_3">
+					<p  class="m_question_3">Работаю в сфере 18+</p>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+	<!--<script type="text/javascript" src="js/script.js"></script>-->
+<script src="js/main.js"></script>
+</body>
+</html>

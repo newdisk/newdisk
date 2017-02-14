@@ -1,0 +1,12 @@
+.container {
+	position: relative;
+	background: url('../img/14_1.jpg')  no-repeat;
+  padding-top: 0px;
+}
+.container_carousel{
+top: 49px;
+left: 238px;
+width: 546px;
+height: 316px;
+
+}

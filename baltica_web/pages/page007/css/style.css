@@ -1,0 +1,61 @@
+.container {
+	position: relative;
+	background: url('../img/7_01.jpg')  no-repeat;
+  padding-top: 0px;
+}
+.page__bubble_right_top{
+	top:101px;
+	left: 344px;
+	width: 474px;
+	height: 57px;
+
+}
+.page__bubble_left_lower{
+	top:38px;
+	left: 166px;
+	width: 521px;
+	height: 57px;
+}
+.page__bubble_right_top:after{
+	 bottom: 4px;
+ }
+.page__question_container{
+	top: 174px;
+	left: 174px;
+}
+.number_question{
+	/*display: inline-block;*/
+	position: absolute;
+	padding-left: 13px;
+	padding-top: 17px;
+	/*vertical-align: super;*/
+	font-family: 'Verdana Bold';
+	font-size: 37px;
+	color: #967938;
+}
+.question_question{
+	padding-left: 52px;
+	/*display: inline-block;*/
+	width: 630px;
+	font-family: 'Verdana Regular', sans-serif;
+	font-size: 16px;
+	color: #000000;
+	display: table-cell;
+	vertical-align: middle;
+}
+.ans_btn_field{
+	left: 526px;
+}
+
+.ans_btn_right, .ans_btn_left {
+	cursor: pointer;
+	border: none;
+	background: url(../img/radiobutton.png);
+	margin-top: 5px;
+	margin-left: 107px;
+	width: 20px;
+	height: 20px;
+}
+.ans_btn_right:hover, .ans_btn_left:hover{
+	background-position-y: -22px;
+}

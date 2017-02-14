@@ -1,0 +1,22 @@
+.container {
+	position: relative;
+background: url('../img/5_1.jpg')  no-repeat;
+	padding-top: 0px;
+}
+.container_page1{
+	position: relative;
+	background: url('../img/5_1.jpg')  no-repeat;
+	padding-top: 0px;
+}
+.container_page2{
+	display: none;
+	position: relative;
+	background: url('../img/6_1.jpg')  no-repeat;
+  padding-top: 0px;
+}
+
+.page__bubble_square {
+	left: 187px;
+	top: 7px;
+	height: 120px;
+}

@@ -1,0 +1,56 @@
+
+/*.policy_Header{*/
+	/*position: absolute;*/
+	/*!*width: 100%;*!*/
+	/*height: 43px;*/
+	/*margin-top: 5px;*/
+
+/*}*/
+/*.policy_Logo {*/
+	/*position: relative;*/
+	/*background: url(../img/logo_min.png);*/
+	/*width: 181px;*/
+	/*height: 33px;*/
+	/*top: 5px;*/
+	/*left: 14px;*/
+/*}*/
+/*.dok{*/
+	/*position: relative;*/
+	/*top:47px;*/
+/*}*/
+
+/*.titleFirstLevel, .titleSecondLevel, .titleThirdLevel{*/
+	/*font-family: 'Verdana Bold', sans-serif;*/
+/*}*/
+/*.titleFirstLevel{*/
+	/*text-align: center;*/
+/*}*/
+/*.paragraph, .ListNumTitle,.ListMarkText, .Signature, .TheHead{*/
+	/*font-family: "Verdana Regular";*/
+	/*font-size: 17px;*/
+/*}*/
+
+/*.ListMarkTitle.noneStyle{*/
+	/*list-style: none;*/
+/*}*/
+/*.Signature{*/
+	/*position: relative;*/
+	/*font-size: 19px;*/
+/*}*/
+/*.TheHead{*/
+	/*position: relative;*/
+	/*left: 260px;*/
+	/*font-size: 19px;*/
+/*}*/
+/*.SignatureOfTheHead{*/
+	/*!*width:100%;*!*/
+	/*margin: 30px 50px 20px 30px ;*/
+/*}*/
+/*.documentationOfTheHead{*/
+	/*!*width:100%;*!*/
+	/*margin: 0px 50px 20px 30px ;*/
+/*}*/
+/*.docNumber, .docRelease, .docData{*/
+	/*!*position: relative;*!*/
+	/*padding-right: 20px;*/
+/*}*/
