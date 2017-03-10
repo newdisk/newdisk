@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="183px"
+	 height="183px" viewBox="0 0 183 183" enable-background="new 0 0 183 183" xml:space="preserve">
+<symbol  id="plashka" viewBox="3.5 -184.9 217.05 182.35">
+	<g id="Layer_4_1_">
+		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" points="219.55,-183.9 4.5,-183.9 4.5,-3.55 219.55,-3.55 		"/>
+		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" points="
+			219.55,-183.9 4.5,-183.9 4.5,-3.55 219.55,-3.55 		"/>
+	</g>
+</symbol>
+<symbol  id="video" viewBox="-0.5 -79.5 75 80">
+	<g id="fon_1_">
+		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" points="72.75,-78.5 1.25,-78.5 1.25,-0.5 72.75,-0.5 		"/>
+		
+			<polygon fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="3" points="
+			72.75,-78.5 1.25,-78.5 1.25,-0.5 72.75,-0.5 		"/>
+	</g>
+	<g id="black_1_">
+		<path fill-rule="evenodd" clip-rule="evenodd" fill="#1E2B33" d="M61-13h3.55v-5.5H61h3.55v5.5H61V0h13v-79H61v13.5h5.55v5.5H61
+			v41.5H13H9.55v5.5H13H9.55v-5.5H13V-60H4.05v-5.5H13V-79H0V0h13v-13H61z M61-60h5.55v-5.5H61H13H4.05v5.5H13H61z"/>
+		
+			<path fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#1E2B33" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="3" d="
+			M61-13h3.55v-5.5H61V-60h5.55v-5.5H61V-79h13V0H61V-13z M13-18.5H9.55v5.5H13V0H0v-79h13v13.5H4.05v5.5H13V-18.5z M13-60h48
+			 M61-65.5H13 M13-13h48 M61-18.5H13"/>
+	</g>
+	<g id="white_1_">
+		
+			<path fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="3" d="
+			M66.3-7.75h2.75 M66.3-19.5h2.75 M66.3-31.75h2.75 M66.3-45.25h2.75 M5.3-45.25h2.75 M5.3-31.75h2.75 M5.3-19.5h2.75 M5.3-7.75
+			h2.75 M5.3-71.5h2.75 M5.3-59h2.75 M66.3-59h2.75 M66.3-71.5h2.75"/>
+	</g>
+	<g id="play_1_">
+		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#444A98" points="46.9,-39.65 46.85,-40.65 29.1,-51.25 28.85,-28.4 		"/>
+		
+			<polygon fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#444A98" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="3" points="
+			46.9,-39.65 28.85,-28.4 29.1,-51.25 46.85,-40.65 		"/>
+	</g>
+	<g id="text_1_">
+	</g>
+</symbol>
+<g id="plashki">
+	
+		<use xlink:href="#plashka"  width="217.05" height="182.35" x="3.5" y="-184.9" transform="matrix(0.8424 0 0 -1 -2.7002 -2.8999)" overflow="visible"/>
+</g>
+<g id="Layer_5">
+	
+		<use xlink:href="#video"  width="75" height="80" x="-0.5" y="-79.5" transform="matrix(1.3303 0 0 -1.2328 43.9502 26.25)" overflow="visible"/>
+	<rect x="27.25" y="126.672" fill="none" width="130.543" height="51.188"/>
+	<text transform="matrix(1 0 0 1 33.8877 142.0508)"><tspan x="0" y="0" font-family="'Consolas'" font-size="19.39">Корпоратив_</tspan><tspan x="15.991" y="24.625" font-family="'Consolas'" font-size="19.39">Танцы!!!</tspan></text>
+</g>
+</svg>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="183px"
+	 height="183px" viewBox="0 0 183 183" enable-background="new 0 0 183 183" xml:space="preserve">
+<symbol  id="Duplicate_Items_Folder_x2F_arhiv" viewBox="51.708 -59.708 123.801 159.004">
+	<g id="Layer_2_2_">
+		
+			<use xlink:href="#arhi"  width="94.604" height="122.467" x="-0.004" y="-122.45" transform="matrix(1.3304 0.0525 -0.0525 1.3304 49.3496 98.5996)" overflow="visible"/>
+	</g>
+	<g id="text_1_">
+		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" points="164.45,21.95 164.45,-34.95 85.55,-34.95 85.55,21.95 		
+			"/>
+		
+			<polygon fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="3" points="
+			164.45,21.95 164.45,-34.95 85.55,-34.95 85.55,21.95 		"/>
+	</g>
+	<g id="arh_1_">
+		<polygon fill="none" points="161.45,-33.52 85.9,-33.52 85.9,17.581 161.45,17.581 		"/>
+		<text transform="matrix(1 0 0 -1 92.2153 1.5806)"><tspan x="0" y="0" fill="#594A37" font-family="'PragmaticaCondC-Bold'" font-size="20">Сдать в </tspan><tspan x="7.19" y="24.55" fill="#594A37" font-family="'PragmaticaCondC-Bold'" font-size="20">архив</tspan></text>
+	</g>
+</symbol>
+<symbol  id="arhi" viewBox="-0.004 -122.45 94.604 122.467">
+	<g id="Layer_1_2_">
+		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" points="15.85,-2.75 29.65,-3.25 28.55,-30.6 16.9,-52.4 
+			14.5,-114.55 11.6,-114.4 		"/>
+		<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFA538" d="M15.85-2.75L11.6-114.4l2.9-0.15l2.4,62.15l11.65,21.8l1.1,27.35
+			L15.85-2.75z M1.5-7.45C1.467-5.317,2.35-3.5,4.15-2C5.817-0.533,7.8,0.133,10.1,0l19.65-0.75v0.1l64.85-2.6L90-122.45L7.75-119.3
+			l2.45,66.05L8.15-53.2c-2.3,0.1-4.217,0.967-5.75,2.6C0.733-49-0.067-47.117,0-44.95L1.5-7.45z"/>
+	</g>
+</symbol>
+<symbol  id="plashka" viewBox="3.5 -184.9 217.05 182.35">
+	<g id="Layer_4_1_">
+		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" points="219.55,-183.9 4.5,-183.9 4.5,-3.55 219.55,-3.55 		"/>
+		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" points="
+			219.55,-183.9 4.5,-183.9 4.5,-3.55 219.55,-3.55 		"/>
+	</g>
+</symbol>
+<g id="plashki">
+	
+		<use xlink:href="#plashka"  width="217.05" height="182.35" x="3.5" y="-184.9" transform="matrix(0.8424 0 0 -1 -2.7002 -2.8999)" overflow="visible"/>
+</g>
+<g id="papka">
+	
+		<use xlink:href="#Duplicate_Items_Folder_x2F_arhiv"  width="123.801" height="159.004" x="51.708" y="-59.708" transform="matrix(0.789 0 0 -0.789 -1.2002 113.4502)" overflow="visible"/>
+</g>
+</svg>

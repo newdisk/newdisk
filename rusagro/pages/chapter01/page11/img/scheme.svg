@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="785.023px" height="272.95px" viewBox="0 0 785.023 272.95" enable-background="new 0 0 785.023 272.95"
+	 xml:space="preserve">
+<symbol  id="arrow" viewBox="5.8 -118.2 28.95 81">
+	<g id="Layer_1_6_">
+		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#5F63AA" points="13.45,-37.2 27.5,-37.2 27.5,-97.95 34.75,-97.95 
+			20.25,-118.2 5.8,-97.95 13.45,-97.95 		"/>
+	</g>
+</symbol>
+<symbol  id="fade" viewBox="169 -371 149.75 99">
+	<g id="Layer_1_5_">
+		
+			<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-2625.7412" y1="-2751.4146" x2="-2235.7336" y2="-2751.4146" gradientTransform="matrix(0.9592 -0.2827 0.4603 0.9069 3965.5889 1450.0938)">
+			<stop  offset="0" style="stop-color:#FFFFFF;stop-opacity:0"/>
+			<stop  offset="1" style="stop-color:#FFFFFF"/>
+		</linearGradient>
+		<path fill-rule="evenodd" clip-rule="evenodd" fill="url(#SVGID_1_)" d="M169-300v28h149.75c-3.162-9.315-6.271-18.648-9.325-28
+			H169h140.425c-7.662-23.548-14.962-47.214-21.9-71H169V-300z"/>
+	</g>
+</symbol>
+<symbol  id="fade1" viewBox="98.95 -467 247.45 272">
+	<g id="Layer_1_8_">
+		
+			<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="-2625.7412" y1="-2766.52" x2="-2235.7336" y2="-2766.52" gradientTransform="matrix(0.9592 -0.2827 0.4603 0.9069 3965.5889 1450.0938)">
+			<stop  offset="0" style="stop-color:#FFFFFF;stop-opacity:0"/>
+			<stop  offset="1" style="stop-color:#FFFFFF"/>
+		</linearGradient>
+		<path fill-rule="evenodd" clip-rule="evenodd" fill="url(#SVGID_2_)" d="M160.55-283.2l1.65,33h19.4h1.85l1.65,33h21.25l1.1,22.2
+			H346.4c-29.271-77.341-54.446-156.008-75.525-236c-1.754-6.641-3.479-13.291-5.175-19.95c-1.36-5.344-2.702-10.694-4.025-16.05
+			H98.95v117.75h15.75l1.5,30.25l0.15,2.8h21.25l1.7,33H160.55z"/>
+	</g>
+</symbol>
+<symbol  id="fade2" viewBox="109.95 -410 221.35 174">
+	<g id="Layer_1_9_">
+		
+			<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="-2625.7412" y1="-2759.4258" x2="-2235.7336" y2="-2759.4258" gradientTransform="matrix(0.9592 -0.2827 0.4603 0.9069 3965.5889 1450.0938)">
+			<stop  offset="0" style="stop-color:#FFFFFF;stop-opacity:0"/>
+			<stop  offset="1" style="stop-color:#FFFFFF"/>
+		</linearGradient>
+		<path fill-rule="evenodd" clip-rule="evenodd" fill="url(#SVGID_3_)" d="M161.25-269l0.95,18.8h19.4h1.85l0.45,9.2l0.25,5H331.3
+			c-3.923-10.974-7.765-21.974-11.525-33c-8.341-24.453-16.283-49.036-23.825-73.75c-6.809-22.31-13.292-44.727-19.45-67.25H109.95
+			v60.75h4.75l1.65,33.05h21.25l1.7,33h21.25L161.25-269z"/>
+	</g>
+</symbol>
+<symbol  id="image_1_" viewBox="203.6 -484.75 785.023 272.95">
+	<g id="Layer_1_10_">
+		
+			<use xlink:href="#line"  width="257" height="83.95" x="-1" y="-82.95" transform="matrix(1.0235 0 0 1 726.5996 -212.7998)" overflow="visible"/>
+		
+			<use xlink:href="#line"  width="257" height="83.95" x="-1" y="-82.95" transform="matrix(1.0235 0 0 1 726.5996 -307.2998)" overflow="visible"/>
+		
+			<use xlink:href="#line"  width="257" height="83.95" x="-1" y="-82.95" transform="matrix(1.0235 0 0 1 726.5996 -401.7998)" overflow="visible"/>
+		
+			<use xlink:href="#line2"  width="207" height="50" x="-1" y="-49" transform="matrix(1.1468 0 0 1 427.4995 -261.7998)" overflow="visible"/>
+		
+			<use xlink:href="#line2"  width="207" height="50" x="-1" y="-49" transform="matrix(1.1468 0 0 1 427.4995 -324.2998)" overflow="visible"/>
+		
+			<use xlink:href="#line2"  width="207" height="50" x="-1" y="-49" transform="matrix(1.1468 0 0 1 427.4995 -386.7998)" overflow="visible"/>
+		
+			<use xlink:href="#line0"  width="163" height="101" x="-1" y="-100" transform="matrix(1 0 0 1 204.6001 -298.2998)" overflow="visible"/>
+		<use xlink:href="#fade"  width="149.75" height="99" x="169" y="-371" transform="matrix(1 0 0 1 35 -26)" overflow="visible"/>
+		<polygon fill="none" points="355.6,-387.454 212.6,-387.454 212.6,-309.254 355.6,-309.254 		"/>
+		<text transform="matrix(1 0 0 -1 214.6001 -325.0537)"><tspan x="0" y="0" font-family="'Consolas'" font-size="20">Как часто </tspan><tspan x="0" y="25.4" font-family="'Consolas'" font-size="20">используется </tspan><tspan x="0" y="50.8" font-family="'Consolas'" font-size="20">предмет?</tspan></text>
+		<polygon fill="none" points="650.6,-301.253 436.6,-301.253 436.6,-273.854 650.6,-273.854 		"/>
+		<text transform="matrix(1 0 0 -1 438.6001 -289.6533)" font-family="'Consolas'" font-size="20">Используется редко</text>
+		<polygon fill="none" points="650.6,-362.753 436.6,-362.753 436.6,-335.354 650.6,-335.354 		"/>
+		<text transform="matrix(1 0 0 -1 438.6001 -351.1533)" font-family="'Consolas'" font-size="20">Используется иногда</text>
+		<polygon fill="none" points="651.05,-425.704 437.05,-425.704 437.05,-398.304 651.05,-398.304 		"/>
+		<text transform="matrix(1 0 0 -1 439.0498 -414.1035)" font-family="'Consolas'" font-size="20">Используется часто</text>
+		<polygon fill="none" points="965.6,-280.653 737.6,-280.653 737.6,-227.854 965.6,-227.854 		"/>
+		<text transform="matrix(1 0 0 -1 739.6001 -243.6533)"><tspan x="0" y="0" font-family="'Consolas'" font-size="20">Расположить вдали от </tspan><tspan x="0" y="25.4" font-family="'Consolas'" font-size="20">рабочего места</tspan></text>
+		<polygon fill="none" points="965.6,-374.153 737.6,-374.153 737.6,-321.354 965.6,-321.354 		"/>
+		<text transform="matrix(1 0 0 -1 739.6001 -337.1533)"><tspan x="0" y="0" font-family="'Consolas'" font-size="20">Расположить рядом с </tspan><tspan x="0" y="25.4" font-family="'Consolas'" font-size="20">рабочим местом</tspan></text>
+		<polygon fill="none" points="973.6,-483.004 737.6,-483.004 737.6,-404.804 973.6,-404.804 		"/>
+		<text transform="matrix(1 0 0 -1 739.6001 -420.6035)"><tspan x="0" y="0" font-family="'Consolas'" font-size="20">Расположить </tspan><tspan x="0" y="25.4" font-family="'Consolas'" font-size="20">непосредственно в </tspan><tspan x="0" y="50.8" font-family="'Consolas'" font-size="20">зоне работы</tspan></text>
+		
+			<use xlink:href="#arrow"  width="28.95" height="81" x="5.8" y="-118.2" transform="matrix(0 0.7111 -0.7111 0 637.2998 -300.1499)" overflow="visible"/>
+		
+			<use xlink:href="#arrow"  width="28.95" height="81" x="5.8" y="-118.2" transform="matrix(0 0.7111 -0.7111 0 637.2998 -363.2993)" overflow="visible"/>
+		
+			<use xlink:href="#arrow"  width="28.95" height="81" x="5.8" y="-118.2" transform="matrix(0 0.7111 -0.7111 0 637.2998 -426.3999)" overflow="visible"/>
+		
+			<use xlink:href="#line3"  width="41.9" height="10" y="-10" transform="matrix(1.4344 0 0 1 366.3501 -342.7998)" overflow="visible"/>
+		
+			<use xlink:href="#line3"  width="41.9" height="10" y="-10" transform="matrix(0.7947 0 0 1 393.1499 -280.2002)" overflow="visible"/>
+		
+			<use xlink:href="#line3"  width="41.9" height="10" y="-10" transform="matrix(0.7947 0 0 1 393.1499 -406.9502)" overflow="visible"/>
+		
+			<use xlink:href="#line3"  width="41.9" height="10" y="-10" transform="matrix(0 3.1255 -1 0 393.1504 -414.249)" overflow="visible"/>
+		
+			<use xlink:href="#fade1"  width="247.45" height="272" x="98.95" y="-467" transform="matrix(1 0 0 1 628 -17)" overflow="visible"/>
+		
+			<use xlink:href="#fade2"  width="221.35" height="174" x="109.95" y="-410" transform="matrix(1 0 0 1 318 -26)" overflow="visible"/>
+	</g>
+</symbol>
+<symbol  id="line" viewBox="-1 -82.95 257 83.95">
+	<g id="Layer_1_2_">
+		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#A2B0BB" points="255,-81.95 0,-81.95 0,0 255,0 		"/>
+		
+			<polygon fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#8A9CAA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="3" points="
+			255,-81.95 0,-81.95 0,0 255,0 		"/>
+	</g>
+</symbol>
+<symbol  id="line0" viewBox="-1 -100 163 101">
+	<g id="Layer_1_4_">
+		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#CCD2D9" points="161,0 161,-99 0,-99 0,0 		"/>
+		
+			<polygon fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#BAC5CD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="3" points="
+			161,0 161,-99 0,-99 0,0 		"/>
+	</g>
+</symbol>
+<symbol  id="line2" viewBox="-1 -49 207 50">
+	<g id="Layer_1_3_">
+		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#B8C2CB" points="205,-48 0,-48 0,0 205,0 		"/>
+		
+			<polygon fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#A0AEBA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="3" points="
+			205,-48 0,-48 0,0 205,0 		"/>
+	</g>
+</symbol>
+<symbol  id="line3" viewBox="0 -10 41.9 10">
+	<g id="Layer_1_7_">
+		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#5F63AA" points="41.9,0 41.9,-10 0,-10 0,0 		"/>
+	</g>
+</symbol>
+<g id="fon">
+	<text transform="matrix(1 0 0 1 -81.9502 -218.8022)" font-family="'Consolas'" font-size="14">7</text>
+	
+		<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="-36.1006" y1="-135.4248" x2="826.8999" y2="-135.4248" gradientTransform="matrix(1.0088 0 0 0.9537 -4.1708 80.7864)">
+		<stop  offset="0" style="stop-color:#AED345"/>
+		<stop  offset="1" style="stop-color:#8DB321"/>
+	</linearGradient>
+	<rect x="-40.588" y="-68.986" fill-rule="evenodd" clip-rule="evenodd" fill="url(#SVGID_4_)" width="870.572" height="41.246"/>
+	<rect x="-55.595" y="-256.773" fill-rule="evenodd" clip-rule="evenodd" fill="#8DB321" width="15" height="15"/>
+	<rect x="-69.595" y="-173.304" fill-rule="evenodd" clip-rule="evenodd" fill="#8DB321" width="15" height="7"/>
+	<rect x="-69.595" y="-76.004" fill-rule="evenodd" clip-rule="evenodd" fill="#8DB321" width="15" height="7"/>
+	<rect x="-40.606" y="-218.699" fill-rule="evenodd" clip-rule="evenodd" fill="#E8EBE4" width="869.447" height="45.397"/>
+	<rect x="-35.6" y="-67.862" fill="none" width="845.5" height="38.8"/>
+	<text transform="matrix(1 0 0 1 -33.6001 -56.2021)"><tspan x="0" y="0" font-family="'Consolas'" font-size="14">Главный вопрос, на который нужно ответить при упорядочении, – как часто используется предмет во время работы? </tspan><tspan x="0" y="18.4" font-family="'Consolas'" font-size="14">От него зависят </tspan><tspan x="123.156" y="18.4" font-family="'Consolas-Bold'" font-size="14">принципы упорядочения</tspan><tspan x="284.799" y="18.4" font-family="'Consolas'" font-size="14">.</tspan></text>
+	<rect x="-35.6" y="-114.062" fill="none" width="514.1" height="38.8"/>
+	<text transform="matrix(1 0 0 1 -33.6001 -102.4023)"><tspan x="0" y="0" fill="#FF6600" font-family="'Consolas'" font-size="14">• </tspan><tspan x="15.395" y="0" font-family="'Consolas'" font-size="14">к повышению эффективности труда;</tspan><tspan x="0" y="18.4" fill="#FF6600" font-family="'Consolas'" font-size="14">•</tspan><tspan x="7.697" y="18.4" font-family="'Consolas'" font-size="14"> улучшению безопасности рабочего места.</tspan></text>
+	<rect x="-69.595" y="-27.754" fill-rule="evenodd" clip-rule="evenodd" fill="#8DB321" width="15" height="7"/>
+</g>
+<g id="text">
+	<rect x="-35.6" y="-214.962" fill="none" width="849.95" height="38.8"/>
+	<text transform="matrix(1 0 0 1 -33.6001 -203.3022)"><tspan x="0" y="0" font-family="'Consolas'" font-size="14">Слова «систематизация» и «упорядочение» говорят сами за себя – это расположение в удобном порядке </tspan><tspan x="0" y="18.4" font-family="'Consolas'" font-size="14">существенных предметов, оставшихся на рабочем месте после сортировки.</tspan></text>
+	<rect x="-35.6" y="-172.562" fill="none" width="864.95" height="57.2"/>
+	<text transform="matrix(1 0 0 1 -33.6001 -160.9023)"><tspan x="0" y="0" font-family="'Consolas'" font-size="14">Вам приходилось тратить много времени на поиск нужных инструментов, документов и материалов? А может быть, вы </tspan><tspan x="0" y="18.4" font-family="'Consolas'" font-size="14">даже спотыкались в офисе или цеху о предметы и коробки, расставленные в хаотичном порядке? Тогда упорядочение – </tspan><tspan x="0" y="36.8" font-family="'Consolas'" font-size="14">это то, что вам жизненно необходимо. Иными словами, систематизация приводит: </tspan></text>
+</g>
+<g id="image">
+	
+		<use xlink:href="#image_1_"  width="785.023" height="272.95" x="203.6" y="-484.75" transform="matrix(1 0 0 -1 -203.6001 -211.7998)" overflow="visible"/>
+</g>
+</svg>

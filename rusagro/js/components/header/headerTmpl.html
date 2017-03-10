@@ -1,0 +1,35 @@
+<header class="header">
+	<div class="header__content">
+		<button class="btn btn_close-course"></button>
+		<p class="header__title-course">{{$ctrl.title.module}}</p>
+		<div class="header__btn-box">
+			<button class="btn btn_menu" ng-click="$ctrl.showMenu = !$ctrl.showMenu"></button>
+			<button class="btn btn_glossary" ng-click="$ctrl.toggleGlossary()"></button>
+			<button class="btn btn_statistics" ng-click="$ctrl.toggleStatistics()"></button>
+		</div>
+		<p class="header__title-exercise">{{$ctrl.title.exercise}}</p>
+	</div>
+	<div class="course-popup-menu course-popup-menu_menu" ng-show="$ctrl.showMenu">
+		<ul class="course-popup-menu__main-list">
+			<li class="course-popup-menu__main-item">
+				<a class="course-popup-menu__href" ui-sref="contents">
+					<p class="course-popup-menu__main-title">
+						<span class="course-popup-menu__main-title-text">
+							Главная страница
+						</span>
+					</p>
+				</a>
+			</li>
+			<li class="course-popup-menu__main-item">
+				<p class="course-popup-menu__main-title">
+					<span class="course-popup-menu__main-title-text">{{$ctrl.chapterPages.title}}</span>
+				</p>
+				<ul class="course-popup-menu__sub-list">
+					<li class="course-popup-menu__sub-item" ng-repeat="page in $ctrl.chapterPages.pages"><a class="course-popup-menu__href" ui-sref-active="four" ui-sref="page({module: $ctrl.chapterPages.id, path: page.id})"><p class="course-popup-menu__sub-item-text">{{page.id}} {{page.title}}</p></a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<div class="course-popup-menu course-popup-menu_glossary"></div>
+	<div class="course-popup-menu course-popup-menu_statistics"></div>
+</header>

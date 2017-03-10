@@ -1,0 +1,17 @@
+<p class="text">{{$ctrl.taskText}}</p>
+<div class="task__single-choice-block" ng-repeat="question in $ctrl.questionList">
+  <p class="task__single-choice-question">
+    {{question.question}}
+  </p>
+  <ul class="task__single-choice-list">
+    {{$ctrl.number}}
+    <li class="task__single-choice-item" data-number="{{$index}}" ng-class="{'radio-checked': $ctrl.active[$parent.$index].answer === $index}" ng-click="$ctrl.getNumber($event, $index, $parent.$index)" ng-repeat="item in question.variant">
+      <span class="task__single-choice-variant">{{item}}</span>
+    </li>
+  </ul>
+</div>
+<div class="btn-box">
+	<button class="btn btn_restart" ng-click="$ctrl.removeRestart()">Начать заново</button>
+	<button class="btn btn_answer" ng-click="$ctrl.checkAnswer()">Принять ответ</button>
+</div>
+<div ng-show="$ctrl.state === $ctrl.questionList.length">The end</div>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="183px"
+	 height="183px" viewBox="0 0 183 183" enable-background="new 0 0 183 183" xml:space="preserve">
+<symbol  id="flash0.ai_x2F__1_x2F__x3C_Group_x3E__x5F_1" viewBox="-4.35 -19.6 81.1 19.6">
+	<g id="Layer_1_2_">
+		<g>
+			<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="36.2002" y1="-2.8999" x2="36.2002" y2="-20.7999">
+				<stop  offset="0" style="stop-color:#FFFFBF"/>
+				<stop  offset="0.9529" style="stop-color:#FFFFFF;stop-opacity:0"/>
+			</linearGradient>
+			<polygon fill-rule="evenodd" clip-rule="evenodd" fill="url(#SVGID_1_)" points="76.75,-19.6 -4.35,-19.6 2.1,0 70.1,0 			"/>
+		</g>
+	</g>
+</symbol>
+<symbol  id="lamp_good" viewBox="-12.428 -172.994 231.69 172.994">
+	<g id="Layer_1_3_">
+		<g>
+			<g>
+				<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#CCCBCB" points="200.164,-122.844 5.898,-122.844 5.898,-117.13 
+					200.164,-117.13 				"/>
+			</g>
+			
+				<use xlink:href="#flash0.ai_x2F__1_x2F__x3C_Group_x3E__x5F_1"  width="81.1" height="19.6" x="-4.35" y="-19.6" transform="matrix(2.8568 0 0 2.8568 0 -116.9995)" overflow="visible" opacity="0.6016" enable-background="new    "/>
+			<g>
+				<g>
+					<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#546E7A" points="200.164,-117.13 5.898,-117.13 5.898,-105.703 
+						200.164,-105.703 					"/>
+				</g>
+				<g>
+					<g>
+						<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#626261" points="163.025,-105.703 157.311,-105.703 157.311,0 
+							163.025,0 						"/>
+					</g>
+					<g>
+						<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#546E7A" points="165.881,-105.703 154.454,-105.703 
+							154.454,-102.846 165.881,-102.846 						"/>
+					</g>
+				</g>
+				<g>
+					<g>
+						<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#626261" points="51.608,-105.703 45.894,-105.703 45.894,0 51.608,0 
+													"/>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</symbol>
+<symbol  id="plashka" viewBox="3.5 -184.9 217.05 182.35">
+	<g id="Layer_4_1_">
+		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" points="219.55,-183.9 4.5,-183.9 4.5,-3.55 219.55,-3.55 		"/>
+		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" points="
+			219.55,-183.9 4.5,-183.9 4.5,-3.55 219.55,-3.55 		"/>
+	</g>
+</symbol>
+<g id="plashki">
+	
+		<use xlink:href="#plashka"  width="217.05" height="182.35" x="3.5" y="-184.9" transform="matrix(0.8424 0 0 -1 -2.7002 -2.8999)" overflow="visible"/>
+</g>
+<g id="papka">
+	
+		<use xlink:href="#lamp_good"  width="231.69" height="172.994" x="-12.428" y="-172.994" transform="matrix(0.5851 0 0 -0.6452 12.75 54.6499)" overflow="visible"/>
+	
+		<use xlink:href="#lamp_good"  width="231.69" height="172.994" x="-12.428" y="-172.994" transform="matrix(0.5851 0 0 -0.6452 26.8999 44.4502)" overflow="visible"/>
+	
+		<use xlink:href="#lamp_good"  width="231.69" height="172.994" x="-12.428" y="-172.994" transform="matrix(0.5851 0 0 -0.6452 46.3999 33.0498)" overflow="visible"/>
+</g>
+</svg>

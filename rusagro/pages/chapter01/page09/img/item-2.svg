@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="183px"
+	 height="183px" viewBox="0 0 183 183" enable-background="new 0 0 183 183" xml:space="preserve">
+<symbol  id="plashka" viewBox="3.5 -184.9 217.05 182.35">
+	<g id="Layer_4_1_">
+		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" points="219.55,-183.9 4.5,-183.9 4.5,-3.55 219.55,-3.55 		"/>
+		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" points="
+			219.55,-183.9 4.5,-183.9 4.5,-3.55 219.55,-3.55 		"/>
+	</g>
+</symbol>
+<symbol  id="truba" viewBox="-0.5 -142 129.55 142">
+	<g id="Layer_1_2_">
+		<path fill-rule="evenodd" clip-rule="evenodd" fill="#7E939C" d="M30.85-93.4v-15.75V-93.4c1.133-0.133,2.333-0.2,3.6-0.2h37
+			v-15.65v15.65h28.6c7.934-0.1,14.184-1.883,18.75-5.35c5-3.8,7.983-9.617,8.95-17.45c0.033-0.367,0.05-0.717,0.05-1.05v-24.05
+			v-0.3h-15.65v0.3h15.65h-15.65v23.3c-0.533,2.6-1.65,4.633-3.35,6.1c-2.066,1.833-5.017,2.783-8.85,2.85h-28.5h-37
+			c-1.233,0-2.434,0.033-3.6,0.1c-15.7,0.9-25.35,7.8-28.95,20.7l15.15,4.7L1.9-88.45c-0.4,1.367-0.717,2.8-0.95,4.3
+			c-0.133,0.467-0.2,0.95-0.2,1.45v27.2h15.7H0.75v34.75h15.7H0.75v12.9c0,2.167,0.767,4.017,2.3,5.55C4.583-0.767,6.433,0,8.6,0
+			c2.167,0,4.017-0.767,5.55-2.3c1.533-1.534,2.3-3.383,2.3-5.55v-12.9V-55.5v-26.35c0.167-0.667,0.367-1.3,0.6-1.9
+			C19.15-89.383,23.75-92.6,30.85-93.4z M108.8-112.1l7.2,9.45L108.8-112.1z M118.8-98.95l-2.8-3.7
+			c-2.9,2.267-6.517,3.433-10.85,3.5c4.333-0.067,7.95-1.233,10.85-3.5L118.8-98.95z M116-102.65c3.133-2.467,5.45-6.217,6.95-11.25
+			C121.45-108.867,119.133-105.117,116-102.65z M5.9-87.65c2.4-7.867,8.317-12.883,17.75-15.05C14.217-100.533,8.3-95.517,5.9-87.65
+			z"/>
+		
+			<path fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#647C8A" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="3" d="
+			M118.8-98.95l0.35,0.45 M71.45-93.6v-15.65 M108.8-112.1l7.2,9.45 M0.75-20.75h15.7h0.5 M0.35-20.75h0.4 M0-55.5h0.75 M16.45-55.5
+			H0.75 M1.9-88.45l15.15,4.7l0.45,0.15 M16.45-55.5h0.5 M0.95-88.75l0.95,0.3 M30.85-93.4v-15.75 M71.45-93.6v0.4 M71.45-109.95
+			v0.7 M30.85-109.95v0.8 M127.8-141.5h0.75 M118.8-98.95l-2.8-3.7 M127.8-141.5h-15.65 M111.75-141.5h0.4 M108.8-112.1l-0.35-0.45"
+			/>
+		
+			<path fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="3" d="
+			M116-102.65c-2.9,2.267-6.517,3.433-10.85,3.5 M116-102.65c3.133-2.467,5.45-6.217,6.95-11.25 M5.9-87.65
+			c2.4-7.867,8.317-12.883,17.75-15.05"/>
+	</g>
+</symbol>
+<g id="plashki">
+	
+		<use xlink:href="#plashka"  width="217.05" height="182.35" x="3.5" y="-184.9" transform="matrix(0.8424 0 0 -1 -2.7002 -2.8999)" overflow="visible"/>
+</g>
+<g id="papka">
+	
+		<use xlink:href="#truba"  width="129.55" height="142" x="-0.5" y="-142" transform="matrix(1.1212 0 0 -1.1212 20.4502 24.0498)" overflow="visible"/>
+</g>
+</svg>

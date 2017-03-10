@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="183px"
+	 height="183px" viewBox="0 0 183 183" enable-background="new 0 0 183 183" xml:space="preserve">
+<symbol  id="flash0.ai_x5F_2_x2F_objects_x2F__x3C_Path_x3E__x5F_4" viewBox="0 -8.3 26.2 8.3">
+	<g id="Layer_1_5_">
+		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#8E4F00" points="0,-8.3 0,0 26.2,0 26.2,-8.3 		"/>
+	</g>
+</symbol>
+<symbol  id="flash0.ai_x5F_2_x2F_objects_x2F__x3C_Path_x3E__x5F_5" viewBox="0 -3.6 11.35 3.6">
+	<g id="Layer_1_4_">
+		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#8E4F00" points="0,-3.6 0,0 11.35,0 11.35,-3.6 		"/>
+	</g>
+</symbol>
+<symbol  id="flash0.ai_x5F_2_x2F_objects_x2F__x3C_Path_x3E__x5F_6" viewBox="0 -3.6 11.35 3.6">
+	<g id="Layer_1_3_">
+		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#8E4F00" points="0,-3.6 0,0 11.35,0 11.35,-3.6 		"/>
+	</g>
+</symbol>
+<symbol  id="flash0.ai_x5F_2_x2F_objects_x2F__x3C_Path_x3E__x5F_7" viewBox="0 -3.6 11.4 3.6">
+	<g id="Layer_1_2_">
+		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#8E4F00" points="0,-3.6 0,0 11.4,0 11.4,-3.6 		"/>
+	</g>
+</symbol>
+<symbol  id="plashka" viewBox="3.5 -184.9 217.05 182.35">
+	<g id="Layer_4_1_">
+		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" points="219.55,-183.9 4.5,-183.9 4.5,-3.55 219.55,-3.55 		"/>
+		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" points="
+			219.55,-183.9 4.5,-183.9 4.5,-3.55 219.55,-3.55 		"/>
+	</g>
+</symbol>
+<g id="plashki">
+	
+		<use xlink:href="#plashka"  width="217.05" height="182.35" x="3.5" y="-184.9" transform="matrix(0.8424 0 0 -1 -2.7002 -2.8999)" overflow="visible"/>
+</g>
+<g id="papka">
+	<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#B67634" points="155.2,75.05 158.7,75.05 158.7,183.45 28.95,183.45 
+		28.95,76.25 28.95,75.05 	"/>
+	
+		<path fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#B67634" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="3" d="
+		M28.95,76.25L0,47.15 M155.2,75.05l27.85-27.9"/>
+	<rect x="31.362" y="75.116" fill-rule="evenodd" clip-rule="evenodd" fill="#DFD1BF" width="120.86" height="103.852"/>
+	
+		<use xlink:href="#flash0.ai_x5F_2_x2F_objects_x2F__x3C_Path_x3E__x5F_7"  width="11.4" height="3.6" y="-3.6" transform="matrix(2.3912 0 0 -2.3946 42.6499 112.2998)" overflow="visible" opacity="0.4688" enable-background="new    "/>
+	
+		<use xlink:href="#flash0.ai_x5F_2_x2F_objects_x2F__x3C_Path_x3E__x5F_6"  width="11.35" height="3.6" y="-3.6" transform="matrix(2.3912 0 0 -2.3946 118.25 85.0498)" overflow="visible" opacity="0.4688" enable-background="new    "/>
+	
+		<use xlink:href="#flash0.ai_x5F_2_x2F_objects_x2F__x3C_Path_x3E__x5F_5"  width="11.35" height="3.6" y="-3.6" transform="matrix(2.3912 0 0 -1.92 118.25 167.0996)" overflow="visible" opacity="0.4688" enable-background="new    "/>
+	
+		<use xlink:href="#flash0.ai_x5F_2_x2F_objects_x2F__x3C_Path_x3E__x5F_4"  width="26.2" height="8.3" y="-8.3" transform="matrix(1.0447 0 0 -2.3946 35.8501 106)" overflow="visible" opacity="0.4688" enable-background="new    "/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#8E4F00" d="M109.082,96.356V86.299h5.38v10.058
+		c0,1.438-0.717,2.315-2.153,2.636v7.422h2.153v0.599h-5.38v-0.599h2.152v-7.422C109.799,98.672,109.082,97.795,109.082,96.356z"/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#8E4F00" d="M101.311,89.652c2.071,1.436,3.666,3.393,4.782,5.868
+		c-1.913-0.639-3.825-0.88-5.74-0.719c-1.912,0.239-3.547,0.758-4.901,1.556v10.177l0.119,0.241l-0.357,0.238h-1.555l-0.357-0.238
+		l0.357-0.241h1.195V96.356c-1.275-0.798-2.949-1.316-5.021-1.556c-1.833-0.161-3.746,0.08-5.74,0.719
+		c1.516-2.715,3.148-4.67,4.902-5.868c1.515-1.038,3.309-1.756,5.38-2.156l0.598-1.555h0.359l0.479,1.555
+		C97.962,87.896,99.795,88.614,101.311,89.652z"/>
+	<rect x="59.7" y="115.142" fill="none" width="66.904" height="31.164"/>
+	<text transform="matrix(1 0 0 1 70.3691 131.4365)" font-family="'Consolas'" font-size="20.7188">брак</text>
+</g>
+</svg>

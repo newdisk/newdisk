@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="183px"
+	 height="183px" viewBox="0 0 183 183" enable-background="new 0 0 183 183" xml:space="preserve">
+<symbol  id="Duplicate_Items_Folder_x2F_palett" viewBox="-0.5 -29 157 29.5">
+	<g id="skleik_1_">
+		<path fill-rule="evenodd" clip-rule="evenodd" fill="#B67634" d="M156-8.75v-11h-18.5v11H156z M88.5-19.75H70v11h18.5V-19.75z
+			 M18.5-8.75v-11H0v11H18.5z"/>
+		
+			<path fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#B67634" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="3" d="
+			M156-8.75v-11h-18.5v11H156z M88.5-19.75H70v11h18.5V-19.75z M18.5-8.75v-11H0v11H18.5z"/>
+	</g>
+	<g id="bej_1_">
+		<path fill-rule="evenodd" clip-rule="evenodd" fill="#EDBB7C" d="M156-8.75H0V0h156V-8.75z M156-28.5H0v8.75h156V-28.5z"/>
+		
+			<path fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#EDBB7C" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="3" d="
+			M156-8.75H0V0h156V-8.75z M156-28.5H0v8.75h156V-28.5z"/>
+	</g>
+</symbol>
+<symbol  id="palett_copy" viewBox="0 -28.5 156 28.5">
+	<g id="skleik_2_">
+		<path fill-rule="evenodd" clip-rule="evenodd" fill="#B67634" d="M156-8.75v-11h-18.5v11H156z M88.5-19.75H70v11h18.5V-19.75z
+			 M18.5-8.75v-11H0v11H18.5z"/>
+	</g>
+	<g id="bej_2_">
+		<path fill-rule="evenodd" clip-rule="evenodd" fill="#B67634" d="M156-28.5H0v8.75h156V-28.5z M156-8.75H0V0h156V-8.75z"/>
+	</g>
+</symbol>
+<symbol  id="palettts3" viewBox="-0.324 -151.816 145.48 151.828">
+	<g id="Layer_1_2_">
+		
+			<use xlink:href="#product_clean_copy"  width="172.371" height="65.375" x="-33.5" y="-100.7" transform="matrix(0.629 0 0 0.8248 57.7998 -5.8501)" overflow="visible"/>
+		
+			<use xlink:href="#product_clean_copy"  width="172.371" height="65.375" x="-33.5" y="-100.7" transform="matrix(0.629 0 0 0.8248 57.7998 11.3999)" overflow="visible"/>
+		
+			<use xlink:href="#product_clean_copy"  width="172.371" height="65.375" x="-33.5" y="-100.7" transform="matrix(0.6739 0 0 0.9679 22.25 -54.3501)" overflow="visible"/>
+		
+			<use xlink:href="#product_clean_copy"  width="172.371" height="65.375" x="-33.5" y="-100.7" transform="matrix(0.629 0 0 0.8248 57.7998 29.1499)" overflow="visible"/>
+	</g>
+</symbol>
+<symbol  id="plashka" viewBox="3.5 -184.9 217.05 182.35">
+	<g id="Layer_4_1_">
+		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" points="219.55,-183.9 4.5,-183.9 4.5,-3.55 219.55,-3.55 		"/>
+		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" points="
+			219.55,-183.9 4.5,-183.9 4.5,-3.55 219.55,-3.55 		"/>
+	</g>
+</symbol>
+<symbol  id="product_clean_copy" viewBox="-33.5 -100.7 172.371 65.375">
+	<g id="palett_1_">
+		
+			<use xlink:href="#Duplicate_Items_Folder_x2F_palett"  width="157" height="29.5" x="-0.5" y="-29" transform="matrix(1 0 0 1 -33 -71.7002)" overflow="visible"/>
+		
+			<use xlink:href="#palett_copy"  width="156" height="28.5" y="-28.5" transform="matrix(0.9444 0 0 0.744 -8.4502 -35.4004)" overflow="visible"/>
+	</g>
+	<g id="meshki_copy_1_">
+	</g>
+	<g id="meshki_1_">
+		<path fill-rule="evenodd" clip-rule="evenodd" fill="#DAC092" d="M138.8-35.4l-16.05-35.7h-16.825l16.925,35.7H138.8z
+			 M112.5-35.375L95.1-71.1H78.2l18.3,35.725H112.5z M59.325-35.35L38.975-71.1H22.1l21.125,35.75H59.325z M33.475-35.35L11.8-71.1
+			H-5.125L17.45-35.325L33.475-35.35z M49.875-71.1l19.75,35.75L85.6-35.375L66.775-71.1H49.875z M-33-71.1l24.05,35.775H7.075
+			L-16-71.1H-33z"/>
+	</g>
+</symbol>
+<g id="plashki">
+	
+		<use xlink:href="#plashka"  width="217.05" height="182.35" x="3.5" y="-184.9" transform="matrix(0.8424 0 0 -1 -2.7002 -2.8999)" overflow="visible"/>
+</g>
+<g id="papka">
+	
+		<use xlink:href="#palettts3"  width="145.48" height="151.828" x="-0.324" y="-151.816" transform="matrix(-1.2082 0 0 -1.2208 176.4502 -1.3999)" overflow="visible"/>
+</g>
+</svg>

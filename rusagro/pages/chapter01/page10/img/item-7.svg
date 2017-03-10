@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="183px"
+	 height="183px" viewBox="0 0 183 183" enable-background="new 0 0 183 183" xml:space="preserve">
+<symbol  id="foto" viewBox="-0.35 -62 81.45 70">
+	<g id="Layer_1_2_">
+		
+			<use xlink:href="#papka1"  width="81.45" height="70" x="-0.5" y="-59.5" transform="matrix(1 0 0 1 0.1499 -2.5)" overflow="visible"/>
+	</g>
+	<g id="Layer_2_2_">
+	</g>
+</symbol>
+<symbol  id="papka1" viewBox="-0.5 -59.5 81.45 70">
+	<g id="base_1_">
+		<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFAB43" d="M32.05,10l5.5-10H74v-59H0V0h0.05v10H32.05z M37.55,0l-5.5-4h-32
+			v4v-4h32L37.55,0z"/>
+		
+			<path fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#FFAB43" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="3" d="
+			M32.05,10l5.5-10H74v-59H0V0h0.05v10H32.05z M37.55,0l-5.5-4h-32v4"/>
+	</g>
+	<g id="verh_1_">
+		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FFDB91" points="80.45,-11.3 74.1,-58.95 0.1,-58.95 8.9,-10 		"/>
+		
+			<polygon fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#FFDB91" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="3" points="
+			80.45,-11.3 74.1,-58.95 0.1,-58.95 8.9,-10 		"/>
+	</g>
+</symbol>
+<symbol  id="plashka" viewBox="3.5 -184.9 217.05 182.35">
+	<g id="Layer_4_1_">
+		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" points="219.55,-183.9 4.5,-183.9 4.5,-3.55 219.55,-3.55 		"/>
+		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" points="
+			219.55,-183.9 4.5,-183.9 4.5,-3.55 219.55,-3.55 		"/>
+	</g>
+</symbol>
+<g id="plashki">
+	
+		<use xlink:href="#plashka"  width="217.05" height="182.35" x="3.5" y="-184.9" transform="matrix(0.8424 0 0 -1 -2.7002 -2.8999)" overflow="visible"/>
+</g>
+<g id="Layer_6">
+	
+		<use xlink:href="#foto"  width="81.45" height="70" x="-0.35" y="-62" transform="matrix(1.3286 0 0 -1.3286 37.0498 42)" overflow="visible"/>
+	<rect x="24.5" y="126.672" fill="none" width="122.156" height="51.188"/>
+	<text transform="matrix(1 0 0 1 48.2656 142.0508)"><tspan x="0" y="0" font-family="'Consolas'" font-size="19.39">Фото из </tspan><tspan x="0" y="24.625" font-family="'Consolas'" font-size="19.39">отпуска</tspan></text>
+</g>
+</svg>

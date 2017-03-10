@@ -1,0 +1,17 @@
+<div class="gallery">
+	<p class="text">{{$ctrl.taskText}}</p>
+	<div class="gallery-wrapper">
+		<div class="gallery-bunner">
+			<img class="gallery-bunner__img" ng-src="{{$ctrl.bunner.src}}" alt="{{$ctrl.bunner.alt}}">
+		</div>
+		<div class="gallery-block">
+		  <div class="gallery-item" ng-repeat="item in $ctrl.imageList" ng-click="$ctrl.check($index)" ng-class="{checked: item.checkedBlock}" data-number="{{$index}}">
+		    <img class="gallery-img" ng-src="{{item.src}}" width="92" height="92" alt="{{item.alt}}"> 
+		  </div>
+		</div>
+	</div>
+</div>
+<div class="btn-box">
+	<button class="btn btn_restart" ng-click="$ctrl.removeRestart()">Начать заново</button>
+	<button class="btn btn_answer" ng-click="$ctrl.checkAnswer()">Принять ответ</button>
+</div>

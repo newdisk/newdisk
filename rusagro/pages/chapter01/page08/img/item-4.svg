@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="183px"
+	 height="183px" viewBox="0 0 183 183" enable-background="new 0 0 183 183" xml:space="preserve">
+<symbol  id="Duplicate_Items_Folder_x2F_cancelar_vse" viewBox="-21.35 -195.1 118.928 155.634">
+	<g id="Layer_1_5_">
+		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#A7AEB8" points="38.75,-193.575 38.75,-193.6 22.85,-193.3 7.65,-131.6 
+			38.95,-131.9 		"/>
+		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#7E7E81" points="38.75,-193.575 38.95,-131.9 38.95,-131.875 
+			69.3,-131.6 54,-193.3 		"/>
+		
+			<polyline fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#A7AEB8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="3" points="
+			38.95,-131.9 7.65,-131.6 22.85,-193.3 38.75,-193.6 		"/>
+		
+			<path fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#7E7E81" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="3" d="
+			M38.75-193.575L54-193.3l15.3,61.7l-30.35-0.275v-0.025L38.75-193.575z M38.75-193.6v0.025"/>
+		
+			<use xlink:href="#Duplicate_Items_Folder_x2F_lineika"  width="36.425" height="98.6" x="-9.35" y="-95.95" transform="matrix(0.879 -0.4769 0.4769 0.879 84.5 -42.9502)" overflow="visible"/>
+		
+			<use xlink:href="#Duplicate_Items_Folder_x2F_pens"  width="45.961" height="47.836" x="-0.011" y="-47.85" transform="matrix(1 0 0 1 -1.7002 -82.6001)" overflow="visible"/>
+		
+			<use xlink:href="#Duplicate_Items_Folder_x2F_crayon2"  width="52.95" height="21.15" y="-21.15" transform="matrix(1 0.0042 -0.0042 1 -21.3501 -109.5)" overflow="visible"/>
+	</g>
+</symbol>
+<symbol  id="Duplicate_Items_Folder_x2F_crayon2" viewBox="0 -21.15 52.95 21.15">
+	<g id="Layer_1_4_">
+		<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M46.05-21.15L10.2-3.1C9.9-4.067,9.45-4.95,8.85-5.75l30.85-15.4
+			h-1.95L8.5-6.6L8.3-6.4C7.833-6.9,7.333-7.367,6.8-7.8L2.85-2.85c0.267,0.067,0.5,0.25,0.7,0.55C3.983-1.833,4.067-1.317,3.8-0.75
+			l6.7,0.2v-0.5c0-0.367-0.05-0.784-0.15-1.25c0.133,0,0.217-0.017,0.25-0.05l37.35-18.8H46.05z"/>
+		<path fill-rule="evenodd" clip-rule="evenodd" fill="#DE4653" d="M39.7-21.15L8.85-5.75c0.6,0.8,1.05,1.683,1.35,2.65l35.85-18.05
+			H39.7z M37.75-21.15h-6.5L6.45-8.65L0,0l10.9-0.05l42.05-21.1h-5L10.6-2.35c-0.033,0.033-0.117,0.05-0.25,0.05
+			c0.1,0.466,0.15,0.883,0.15,1.25v0.5l-6.7-0.2C4.067-1.317,3.983-1.833,3.55-2.3c-0.2-0.3-0.433-0.483-0.7-0.55L6.8-7.8
+			c0.534,0.433,1.034,0.9,1.5,1.4l0.2-0.2L37.75-21.15z"/>
+	</g>
+</symbol>
+<symbol  id="Duplicate_Items_Folder_x2F_lineika" viewBox="-9.35 -95.95 36.425 98.6">
+	<g id="Layer_1_2_">
+		<path fill-rule="evenodd" clip-rule="evenodd" fill="#5157A5" d="M1.35-60.35l-1.15,7.4l-1.1,7.05l-1.15,7.45L-3.1-31.5l-1.15,7.4
+			l-1.05,7.05L-6.45-9.6L-7.6-2.15l20,3.05l12.925-84.325L6.5-94.2l-0.65,4.3l-1.1,7.4l-1.1,7.05l-1.15,7.4L1.35-60.35l6.1,0.95
+			L1.35-60.35z M2.5-68.05l6.1,0.95L2.5-68.05z M0.2-52.95L6.3-52L0.2-52.95z M3.65-75.45l6.1,0.95L3.65-75.45z M5.85-89.9l6.1,0.95
+			L5.85-89.9z M4.75-82.5l6.1,0.95L4.75-82.5z M-6.45-9.6l6.1,0.95L-6.45-9.6z M-3.1-31.5L3-30.55L-3.1-31.5z M-2.05-38.45l6.1,0.95
+			L-2.05-38.45z M-0.9-45.9l6.1,0.95L-0.9-45.9z M-5.3-17.05l6.1,0.95L-5.3-17.05z M-4.25-24.1l6.1,0.95L-4.25-24.1z"/>
+		
+			<polygon fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#5157A5" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="3" points="
+			1.35,-60.35 0.2,-52.95 -0.9,-45.9 -2.05,-38.45 -3.1,-31.5 -4.25,-24.1 -5.3,-17.05 -6.45,-9.6 -7.6,-2.15 12.4,0.9 
+			25.325,-83.425 6.5,-94.2 5.85,-89.9 4.75,-82.5 3.65,-75.45 2.5,-68.05 		"/>
+		
+			<path fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="3" d="
+			M1.35-60.35l6.1,0.95 M2.5-68.05l6.1,0.95 M0.2-52.95L6.3-52 M3.65-75.45l6.1,0.95 M5.85-89.9l6.1,0.95 M4.75-82.5l6.1,0.95
+			 M-6.45-9.6l6.1,0.95 M-3.1-31.5L3-30.55 M-2.05-38.45l6.1,0.95 M-0.9-45.9l6.1,0.95 M-5.3-17.05l6.1,0.95 M-4.25-24.1l6.1,0.95"
+			/>
+	</g>
+</symbol>
+<symbol  id="Duplicate_Items_Folder_x2F_pens" viewBox="-0.011 -47.85 45.961 47.836">
+	<g id="Layer_1_3_">
+		<path fill-rule="evenodd" clip-rule="evenodd" fill="#BCDF67" d="M30.05-17.8c1.733,0.167,3.017,1.15,3.85,2.95l12.05-33h-7.1
+			L27.7-17.4C28.433-17.733,29.217-17.867,30.05-17.8z M32.05-15.6c-1.033-1.233-2.55-1.35-4.55-0.35l-0.7,9.9l6.25-7.4L32.05-15.6z
+			"/>
+		<path fill-rule="evenodd" clip-rule="evenodd" fill="#5157A5" d="M5.45-14.4l2.75-3.05c-0.9,0.167-1.883-0.2-2.95-1.1
+			c-1.133-0.967-1.733-2.034-1.8-3.2l-2.7,3.05C0.183-18.1-0.067-17.383,0-16.55c0.033,0.833,0.35,1.5,0.95,2l0.35,0.3
+			c0.567,0.567,1.284,0.833,2.15,0.8C4.25-13.517,4.917-13.833,5.45-14.4z M10.6-8.35c1.1,1.467,2.667,1.733,4.7,0.8l20.9-40.3
+			h-9.35L5.05-24l0.4,2.65c0.7,1.667,2.15,2.317,4.35,1.95L19.45-30L9.5-10.75L10.6-8.35z M14.25-5.3
+			c-0.8,0.433-1.85,0.35-3.15-0.25C9.767-6.183,8.917-7.067,8.55-8.2L6.7-4.55C6.333-3.817,6.283-3.067,6.55-2.3
+			C6.783-1.5,7.267-0.917,8-0.55l0.4,0.2c0.7,0.367,1.467,0.434,2.3,0.2c0.767-0.267,1.333-0.75,1.7-1.45L14.25-5.3z"/>
+	</g>
+</symbol>
+<symbol  id="plashka" viewBox="3.5 -184.9 217.05 182.35">
+	<g id="Layer_4_1_">
+		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" points="219.55,-183.9 4.5,-183.9 4.5,-3.55 219.55,-3.55 		"/>
+		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" points="
+			219.55,-183.9 4.5,-183.9 4.5,-3.55 219.55,-3.55 		"/>
+	</g>
+</symbol>
+<g id="plashki">
+	
+		<use xlink:href="#plashka"  width="217.05" height="182.35" x="3.5" y="-184.9" transform="matrix(0.8424 0 0 -1 -2.7002 -2.8999)" overflow="visible"/>
+</g>
+<g id="papka">
+	
+		<use xlink:href="#Duplicate_Items_Folder_x2F_cancelar_vse"  width="118.928" height="155.634" x="-21.35" y="-195.1" transform="matrix(0.6955 0 0 -0.6955 62.6499 16.25)" overflow="visible"/>
+</g>
+</svg>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ru" ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Программа производства мирового класса ЭВЕРЕСТ</title>
+</head>
+<body>	
+	<div class="course-wrapper" ng-controller="IndexCtrl">
+		<div ui-view="header" ng-cloak></div>
+		<div ui-view="content" class="page" ng-cloak></div>
+		<div ui-view="footer" ng-cloak></div>
+	</div>	
+	<script src="js/lib.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
