@@ -434,6 +434,7 @@ body {
 
 .header__content {
   position: relative;
+  height: 86px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row-reverse;
@@ -956,6 +957,8 @@ h2 {
     height: calc(750px - 59px - 58px); }
   .course-popup-menu_comment{
     width: 50%; }
+  .header__content{
+    height: auto; }
   .header__btn-box{
     width: 190px; }
   .header__title-course{
