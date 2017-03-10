@@ -21,5 +21,6 @@
 </div>
 <div class="btn-box">
   <button class="btn btn_restart" ng-click="$ctrl.removeRestart()">Начать заново</button>
-  <button class="btn btn_answer" ng-click="$ctrl.checkAnswer()">Принять ответ</button>  
+  <button class="btn btn_answer" ng-click="$ctrl.checkAnswer()">Принять ответ</button>
 </div>
+<popup-menu-comment title="{{$ctrl.commentTitle}}" text="{{$ctrl.commentText}}" visible="$ctrl.showComment" ng-show="$ctrl.showComment"></popup-menu-comment>

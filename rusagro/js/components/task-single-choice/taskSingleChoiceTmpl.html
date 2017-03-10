@@ -1,5 +1,5 @@
 <p class="text">{{$ctrl.taskText}}</p>
-<div class="task__single-choice-block" ng-repeat="question in $ctrl.questionList">
+<div class="task__single-choice-block task__single-choice-block_{{$index + 1}}" ng-repeat="question in $ctrl.questionList">
   <p class="task__single-choice-question">
     {{question.question}}
   </p>
@@ -12,6 +12,6 @@
 </div>
 <div class="btn-box">
 	<button class="btn btn_restart" ng-click="$ctrl.removeRestart()">Начать заново</button>
-	<button class="btn btn_answer" ng-click="$ctrl.checkAnswer()">Принять ответ</button>
+	<button class="btn btn_answer" ng-class="{'btn_disabled': $ctrl.state !== $ctrl.questionList.length}" ng-click="$ctrl.checkAnswer()">Принять ответ</button>
 </div>
-<div ng-show="$ctrl.state === $ctrl.questionList.length">The end</div>
+<popup-menu-comment title="{{$ctrl.commentTitle}}" text="{{$ctrl.commentText}}" visible="$ctrl.showComment" ng-show="$ctrl.showComment"></popup-menu-comment>

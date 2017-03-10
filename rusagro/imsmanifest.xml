@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<manifest identifier="Rusagro" version="1" xmlns="http://www.imsglobal.org/xsd/imscp_v1p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_v1p3" xmlns:adlseq="http://www.adlnet.org/xsd/adlseq_v1p3" xmlns:adlnav="http://www.adlnet.org/xsd/adlnav_v1p3" xmlns:imsss="http://www.imsglobal.org/xsd/imsss" xsi:schemaLocation="http://www.imsglobal.org/xsd/imscp_v1p1 imscp_v1p1.xsd http://www.adlnet.org/xsd/adlcp_v1p3 adlcp_v1p3.xsd http://www.adlnet.org/xsd/adlseq_v1p3 adlseq_v1p3.xsd http://www.adlnet.org/xsd/adlnav_v1p3 adlnav_v1p3.xsd http://www.imsglobal.org/xsd/imsss imsss_v1p0.xsd">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>2004 3rd Edition</schemaversion>
+  </metadata>
+  <organizations default="Rusagro-org">
+    <organization identifier="Rusagro-org">
+      <title>Программа производства мирового класса «ЭВЕРЕСТ»</title>
+      <item identifier="item_1" identifierref="resource_1">
+        <title>Программа производства мирового класса «ЭВЕРЕСТ»</title>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="resource_1" type="webcontent" href="index.html" adlcp:scormType="sco">
+      <file href="index.html"/>
+      <file href="css/style.css"/>
+      <file href="css/style.min.css"/>
+      <file href="fonts/Consolas.eot"/>
+      <file href="fonts/Consolas.ttf"/>
+      <file href="fonts/ConsolasBold.ttf"/>
+      <file href="fonts/MyriadProRegular.eot"/>
+      <file href="fonts/MyriadProRegular.ttf"/>
+      <file href="fonts/MyriadProRegular.woff"/>
+      <file href="img/interface-sprite.svg"/>
+      <file href="img/nav-buttons.svg"/>
+      <file href="img/triangle-decor.svg"/>
+      <file href="js/courseStructure.json"/>
+      <file href="js/lib.js"/>
+      <file href="js/main.js"/>
+      <file href="pages/contents/index.html"/>
+      <file href="js/components/accordion/accordionPanelTmpl.html"/>
+      <file href="js/components/footer/footerTmpl.html"/>
+      <file href="js/components/header/headerContentsTmpl.html"/>
+      <file href="js/components/header/headerTmpl.html"/>
+      <file href="js/components/popup-menu-comment/popupMenuCommentTmpl.html"/>
+      <file href="js/components/task-image-check/taskImageCheckTmpl.html"/>
+      <file href="js/components/task-range-blocks-with-shelves/taskRangeBlocksWithShelvesTmpl.html"/>
+      <file href="js/components/task-range-text-blocks/taskRangeTextBlocksTmpl.html"/>
+      <file href="js/components/task-single-choice/taskSingleChoiceTmpl.html"/>
+      <file href="js/components/task-single-choice-img/TaskSingleChoiceImgTmpl.html"/>
+      <file href="pages/chapter01/page01/index.html"/>
+      <file href="pages/chapter01/page02/index.html"/>
+      <file href="pages/chapter01/page03/index.html"/>
+      <file href="pages/chapter01/page04/index.html"/>
+      <file href="pages/chapter01/page05/index.html"/>
+      <file href="pages/chapter01/page06/index.html"/>
+      <file href="pages/chapter01/page07/index.html"/>
+      <file href="pages/chapter01/page08/index.html"/>
+      <file href="pages/chapter01/page09/index.html"/>
+      <file href="pages/chapter01/page10/index.html"/>
+      <file href="pages/chapter01/page11/index.html"/>
+      <file href="pages/chapter01/page12/index.html"/>
+      <file href="pages/chapter01/page13/index.html"/>
+      <file href="pages/chapter01/page14/index.html"/>
+      <file href="pages/chapter01/page15/index.html"/>
+      <file href="pages/chapter01/page16/index.html"/>
+      <file href="pages/chapter01/page17/index.html"/>
+      <file href="pages/chapter01/page18/index.html"/>
+      <file href="pages/chapter01/page19/index.html"/>
+      <file href="pages/chapter01/page20/index.html"/>
+      <file href="pages/chapter01/page21/index.html"/>
+      <file href="pages/chapter01/page22/index.html"/>
+      <file href="pages/chapter01/page23/index.html"/>
+      <file href="pages/chapter01/page24/index.html"/>
+      <file href="pages/chapter01/page25/index.html"/>
+      <file href="pages/chapter01/page26/index.html"/>
+      <file href="pages/chapter01/page27/index.html"/>
+      <file href="pages/chapter01/page28/index.html"/>
+      <file href="pages/contents/img/background-img.svg"/>
+      <file href="pages/contents/img/icon-person_01.svg"/>
+      <file href="pages/contents/img/icon-person_02.svg"/>
+      <file href="pages/contents/img/icon-person_03.svg"/>
+      <file href="pages/contents/img/icon-person_04.svg"/>
+      <file href="pages/contents/img/icon-person_05.svg"/>
+      <file href="pages/contents/img/icon-person_06.svg"/>
+      <file href="pages/contents/img/icon-person_07.svg"/>
+      <file href="pages/contents/img/icon-person_08.svg"/>
+      <file href="pages/contents/img/icon-person_09.svg"/>
+      <file href="pages/contents/img/icon-person_10.svg"/>
+      <file href="pages/contents/img/icon-person_11.svg"/>
+      <file href="pages/contents/img/icon-person_12.svg"/>
+      <file href="pages/contents/img/icon-person_13.svg"/>
+      <file href="pages/contents/img/icon-person_14.svg"/>
+      <file href="pages/contents/img/logo.png"/>
+      <file href="pages/contents/img/main-menu-hover.png"/>
+      <file href="pages/contents/img/main-menu-hover_mobile.png"/>
+      <file href="pages/contents/img/main-menu.png"/>
+      <file href="pages/contents/img/main-menu_mobile.png"/>
+      <file href="pages/chapter01/page01/img/background-img.svg"/>
+      <file href="pages/chapter01/page01/img/background-img_mobile.svg"/>
+      <file href="pages/chapter01/page02/img/5S-cicle.svg"/>
+      <file href="pages/chapter01/page02/img/bg-01-02.svg"/>
+      <file href="pages/chapter01/page03/img/5S-system-circle.svg"/>
+      <file href="pages/chapter01/page03/img/radiance.svg"/>
+      <file href="pages/chapter01/page03/img/sorting.svg"/>
+      <file href="pages/chapter01/page03/img/standardization.svg"/>
+      <file href="pages/chapter01/page03/img/systematization.svg"/>
+      <file href="pages/chapter01/page04/img/5S-scheme.svg"/>
+      <file href="pages/chapter01/page04/img/bg-01-04.svg"/>
+      <file href="pages/chapter01/page05/img/icons.svg"/>
+      <file href="pages/chapter01/page06/img/RACI-matrix.svg"/>
+      <file href="pages/chapter01/page07/img/things.svg"/>
+      <file href="pages/chapter01/page08/img/bg_clear.svg"/>
+      <file href="pages/chapter01/page08/img/bg_dirty.svg"/>
+      <file href="pages/chapter01/page08/img/comment.svg"/>
+      <file href="pages/chapter01/page08/img/item-1.svg"/>
+      <file href="pages/chapter01/page08/img/item-2.svg"/>
+      <file href="pages/chapter01/page08/img/item-3.svg"/>
+      <file href="pages/chapter01/page08/img/item-4.svg"/>
+      <file href="pages/chapter01/page08/img/item-5.svg"/>
+      <file href="pages/chapter01/page08/img/item-6.svg"/>
+      <file href="pages/chapter01/page08/img/item-7.svg"/>
+      <file href="pages/chapter01/page08/img/item-8.svg"/>
+      <file href="pages/chapter01/page08/img/label.svg"/>
+      <file href="pages/chapter01/page09/img/bg_clear.svg"/>
+      <file href="pages/chapter01/page09/img/bg_dirty.svg"/>
+      <file href="pages/chapter01/page09/img/comment.svg"/>
+      <file href="pages/chapter01/page09/img/item-1.svg"/>
+      <file href="pages/chapter01/page09/img/item-2.svg"/>
+      <file href="pages/chapter01/page09/img/item-3.svg"/>
+      <file href="pages/chapter01/page09/img/item-4.svg"/>
+      <file href="pages/chapter01/page09/img/item-5.svg"/>
+      <file href="pages/chapter01/page09/img/item-6.svg"/>
+      <file href="pages/chapter01/page09/img/label.svg"/>
+      <file href="pages/chapter01/page10/img/bg_clear.svg"/>
+      <file href="pages/chapter01/page10/img/bg_dirty.svg"/>
+      <file href="pages/chapter01/page10/img/comment.svg"/>
+      <file href="pages/chapter01/page10/img/item-1.svg"/>
+      <file href="pages/chapter01/page10/img/item-2.svg"/>
+      <file href="pages/chapter01/page10/img/item-3.svg"/>
+      <file href="pages/chapter01/page10/img/item-4.svg"/>
+      <file href="pages/chapter01/page10/img/item-5.svg"/>
+      <file href="pages/chapter01/page10/img/item-6.svg"/>
+      <file href="pages/chapter01/page10/img/item-7.svg"/>
+      <file href="pages/chapter01/page10/img/item-8.svg"/>
+      <file href="pages/chapter01/page10/img/label.svg"/>
+      <file href="pages/chapter01/page11/img/scheme.svg"/>
+      <file href="pages/chapter01/page12/img/stillage.svg"/>
+      <file href="pages/chapter01/page13/img/page_13L.svg"/>
+      <file href="pages/chapter01/page14/img/tools.svg"/>
+      <file href="pages/chapter01/page15/img/15.png"/>
+      <file href="pages/chapter01/page15/img/15_2.png"/>
+      <file href="pages/chapter01/page15/img/bg_main.svg"/>
+      <file href="pages/chapter01/page15/img/bg_minor.svg"/>
+      <file href="pages/chapter01/page15/img/buttons.png"/>
+      <file href="pages/chapter01/page15/img/item-1.png"/>
+      <file href="pages/chapter01/page15/img/item-2.png"/>
+      <file href="pages/chapter01/page15/img/item-3.png"/>
+      <file href="pages/chapter01/page15/img/item-4.png"/>
+      <file href="pages/chapter01/page15/img/item-5.png"/>
+      <file href="pages/chapter01/page15/img/item-6.png"/>
+      <file href="pages/chapter01/page16/img/employee.svg"/>
+      <file href="pages/chapter01/page19/img/shelves.svg"/>
+      <file href="pages/chapter01/page20/img/territory-scheme.svg"/>
+      <file href="pages/chapter01/page21/img/defective-things-box.svg"/>
+      <file href="pages/chapter01/page21/img/dumpster.svg"/>
+      <file href="pages/chapter01/page21/img/extinguisher.svg"/>
+      <file href="pages/chapter01/page21/img/manufactory-clean.svg"/>
+      <file href="pages/chapter01/page21/img/manufactory-dirty.svg"/>
+      <file href="pages/chapter01/page21/img/pallet.svg"/>
+      <file href="pages/chapter01/page21/img/passage.svg"/>
+      <file href="pages/chapter01/page22/img/5S-system.svg"/>
+      <file href="pages/chapter01/page23/img/check-sheet.svg"/>
+      <file href="pages/chapter01/page24/img/day-5S-big.svg"/>
+      <file href="pages/chapter01/page24/img/day-5S-small.svg"/>
+      <file href="pages/chapter01/page25/img/5s-board.svg"/>
+      <file href="pages/chapter01/page26/img/table-docs-location.svg"/>
+      <file href="pages/chapter01/page28/img/progress-chart.svg"/>
+    </resource>
+  </resources>
+</manifest>

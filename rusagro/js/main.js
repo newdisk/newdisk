@@ -136,6 +136,10 @@ angular
 		return courseDataObj.chapters[$stateParams.module - 1].pages[$stateParams.path - 1].data[prop];
 	}
 
+	this.getMessage = function($stateParams, num) {
+		return courseDataObj.chapters[$stateParams.module - 1].pages[$stateParams.path - 1].messages[num];
+	}
+
 	/**
 	*	1. Navigation through pages using buttons
 	*
@@ -276,6 +280,24 @@ angular
   }
 })
 
+angular
+.module('app')
+.component('popupMenuComment', {
+	bindings: {
+		title: '@',
+		text: '@',
+		visible: '='
+	},
+	templateUrl: 'js/components/popup-menu-comment/popupMenuCommentTmpl.html',
+	controller: function() {
+		var self = this;
+
+		self.closeWindow = function() {
+			self.visible = false;
+		}
+	},
+	controllerAs: '$ctrl'
+})
 angular.module('app')
   .component('taskImageCheck', {
     templateUrl: 'js/components/task-image-check/taskImageCheckTmpl.html',
@@ -354,6 +376,8 @@ angular.module('app')
     var self = this;
     
     self.state = false;
+    self.attemptNum = 0;
+    self.showComment = false;
     
     /**
     * Task: There are shelves with boxes. User needs to sort it on sections.
@@ -462,12 +486,23 @@ angular.module('app')
       
       // Click function on button "Check answer"
       self.checkAnswer = function(){
+        if (self.attemptNum === 3) {
+          self.attemptNum = 0;
+        }  
+        self.attemptNum = self.attemptNum + 1;
+
        for (i = 0; i < blockList.length; i++) {
          if ($(blockList[i]).attr('data-section') !== self.answerList[i].section) {
-           return alert('False');
+          self.commentTitle = 'Неправильный ответ';
+          self.commentText = staticService.getMessage($stateParams, self.attemptNum);
+          self.showComment = !self.showComment;
+          if (self.attemptNum === 3) self.setRightOrder();
+          return false;
          }
-       }
-       return alert('True');
+        }
+        self.commentTitle = 'Правильный ответ';
+        self.commentText = staticService.getMessage($stateParams, 0);
+        self.showComment = !self.showComment;
       };
       
       // Click function on buttom "Restart"
@@ -503,6 +538,22 @@ angular.module('app')
           $(blockList[i]).css('margin-top', self.answerList[i].marginTop);
         }
       };
+
+      self.setRightOrder = function () {
+      //   for (var i = 0; i < self.answerList.length; i++) {
+      //     blockList = $('.moving-blocks__item');
+      //     for (var j = 0; j < self.answerList.length; j++) {
+      //       console.log($(blockList[j]).attr('data-section') === self.answerList[i].section)
+      //       if ($(blockList[j]).attr('data-section') === self.answerList[i].section) {
+      //         $(blockList[j]).after(blockList[self.answerList.length - 1]);
+      //       }
+      //     }
+      //   }   
+      //   blockList = $('.moving-blocks__item');
+      //   for (i = 0; i < blockList.length; i++) {
+      //     $(blockList[i]).css('margin-top', self.answerList[i].marginTop);
+      //   }     
+      }
     });
   });
 angular.module('app')
@@ -681,12 +732,15 @@ angular
   
   self.active = [];
   self.state = 0;
+  self.attemptNum = 0;
 
   for (var i = 0; i < self.questionList.length; i++) {
     self.active[i] = {};
     self.active[i].state = false;
     self.active[i].answer = '';
   }
+
+  self.showComment = false;
 
   angular.element(document).ready(function() {
 
@@ -706,12 +760,29 @@ angular
     }
 
     self.checkAnswer = function() {
+      if (self.attemptNum === 3) {
+        self.attemptNum = 0;
+      }  
+      self.attemptNum = self.attemptNum + 1;
+
       for (var i = 0; i < self.questionList.length; i++) {
         if (self.questionList[i].rightAnswer !== Number(self.active[i].answer)) {
-          return alert('false');
+          self.commentTitle = 'Неправильный ответ';
+          self.commentText = staticService.getMessage($stateParams, self.attemptNum);
+          self.showComment = !self.showComment;
+          if (self.attemptNum === 3) {
+            for(var j = 0; j < self.questionList.length; j++) {
+              self.active[j].state = true;
+              self.active[j].answer = self.questionList[j].rightAnswer;
+            }
+          }
+          return false;
         }
       }
-      return alert('true');
+      self.commentTitle = 'Правильный ответ';
+      self.commentText = staticService.getMessage($stateParams, 0);
+      self.showComment = !self.showComment;
+      
     }
 
     self.removeRestart = function() {
@@ -719,7 +790,7 @@ angular
     //   var numberArr,
     //       currentElemIndex;
 
-      for (var i = 0; i < self.active[i]; i++) {
+      for (var i = 0; i < self.active.length; i++) {
         self.active[i].state = false;
         self.active[i].answer = '';
       }
@@ -781,12 +852,15 @@ angular
 
   self.active = [];
   self.state = 0;
+  self.attemptNum = 0;
 
   for (var i = 0; i < self.answerList.length; i++) {
     self.active[i] = {};
     self.active[i].state = false;
     self.active[i].answer = '';
   }
+
+  self.showComment = false;
 
   angular.element(document).ready(function() {
 
@@ -807,14 +881,30 @@ angular
     }
 
     self.checkAnswer = function() {
+      if (self.attemptNum === 3) {
+        self.attemptNum = 0;
+      }  
+      self.attemptNum = self.attemptNum + 1;
+
       for (var i = 0; i < self.answerList.length; i++) {
         if (self.answerList[i].rightAnswer !== Number(self.active[i].answer)) {
-          return alert('false');
+          self.commentTitle = 'Неправильный ответ';
+          self.commentText = staticService.getMessage($stateParams, self.attemptNum);
+          self.showComment = !self.showComment;
+          if (self.attemptNum === 3) {
+            for(var j = 0; j < self.questionList.length; j++) {
+              self.active[j].state = true;
+              self.active[j].answer = self.questionList[j].rightAnswer;
+            }
+          }
+          return false;
         }
       }
+      self.commentTitle = 'Правильный ответ';
+      self.commentText = staticService.getMessage($stateParams, 0);
+      self.showComment = !self.showComment;
       self.banner.src = self.bannerEnd.src;
 		  self.banner.alt = self.bannerEnd.alt;
-      return alert('true');
     }
 
     self.removeRestart = function() {
@@ -822,11 +912,13 @@ angular
     //   var numberArr,
     //       currentElemIndex;
 
-      for (var i = 0; i < self.active[i]; i++) {
+      for (var i = 0; i < self.active.length; i++) {
         self.active[i].state = false;
         self.active[i].answer = '';
       }
       self.state = 0;
+      self.banner.src = self.bannerStart.src;
+      self.banner.alt = self.bannerStart.alt;
       
     //   Array.prototype.shuffle = function() {
     //     for (var i = this.length - 1; i > 0; i--) {
