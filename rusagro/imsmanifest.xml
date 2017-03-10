@@ -15,8 +15,6 @@
   <resources>
     <resource identifier="resource_1" type="webcontent" href="index.html" adlcp:scormType="sco">
       <file href="index.html"/>
-      <file href="css/style.css"/>
-      <file href="css/style.min.css"/>
       <file href="fonts/Consolas.eot"/>
       <file href="fonts/Consolas.ttf"/>
       <file href="fonts/ConsolasBold.ttf"/>
@@ -100,8 +98,8 @@
       <file href="pages/chapter01/page04/img/5S-scheme.svg"/>
       <file href="pages/chapter01/page04/img/bg-01-04.svg"/>
       <file href="pages/chapter01/page05/img/icons.svg"/>
-      <file href="pages/chapter01/page07/img/things.svg"/>
       <file href="pages/chapter01/page06/img/RACI-matrix.svg"/>
+      <file href="pages/chapter01/page07/img/things.svg"/>
       <file href="pages/chapter01/page08/img/bg_clear.svg"/>
       <file href="pages/chapter01/page08/img/bg_dirty.svg"/>
       <file href="pages/chapter01/page08/img/comment.svg"/>
@@ -166,8 +164,8 @@
       <file href="pages/chapter01/page24/img/day-5S-big.svg"/>
       <file href="pages/chapter01/page24/img/day-5S-small.svg"/>
       <file href="pages/chapter01/page25/img/5s-board.svg"/>
-      <file href="pages/chapter01/page28/img/progress-chart.svg"/>
       <file href="pages/chapter01/page26/img/table-docs-location.svg"/>
+      <file href="pages/chapter01/page28/img/progress-chart.svg"/>
     </resource>
   </resources>
 </manifest>
