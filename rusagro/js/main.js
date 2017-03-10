@@ -37,7 +37,7 @@ angular
 		      			pageName = Number($stateParams.path) > 9 ? 'page' + $stateParams.path 
 		      																							 : 'page0' + $stateParams.path;
 
-		        return '/pages/' + chapterName + '/' + pageName + '/index.html';
+		        return 'pages/' + chapterName + '/' + pageName + '/index.html';
 		      },
 		      controller: 'PageCtrl',
 		      controllerAs: '$ctrl'
@@ -345,12 +345,12 @@ angular.module('app')
     });
   });
 angular.module('app')
-  .component('taskRangeTextBlocks', {
-    templateUrl: 'js/components/task-range-text-blocks/taskRangeTextBlocksTmpl.html',
-    controller: 'TaskRangeTextBlocksCtrl',
+  .component('taskRangeBlocksWithShelves', {
+    templateUrl: 'js/components/task-range-blocks-with-shelves/taskRangeBlocksWithShelvesTmpl.html',
+    controller: 'TaskRangeMovingBlocksCtrl',
     controllerAs: '$ctrl'
   })
-  .controller('TaskRangeTextBlocksCtrl', function($stateParams, staticService) {
+  .controller('TaskRangeMovingBlocksCtrl', function($stateParams, staticService) {
     var self = this;
     
     self.state = false;
@@ -506,12 +506,12 @@ angular.module('app')
     });
   });
 angular.module('app')
-  .component('taskRangeBlocksWithShelves', {
-    templateUrl: 'js/components/task-range-blocks-with-shelves/taskRangeBlocksWithShelvesTmpl.html',
-    controller: 'TaskRangeMovingBlocksCtrl',
+  .component('taskRangeTextBlocks', {
+    templateUrl: 'js/components/task-range-text-blocks/taskRangeTextBlocksTmpl.html',
+    controller: 'TaskRangeTextBlocksCtrl',
     controllerAs: '$ctrl'
   })
-  .controller('TaskRangeMovingBlocksCtrl', function($stateParams, staticService) {
+  .controller('TaskRangeTextBlocksCtrl', function($stateParams, staticService) {
     var self = this;
     
     self.state = false;
