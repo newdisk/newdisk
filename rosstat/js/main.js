@@ -1879,22 +1879,23 @@ function Ctrl() {
       audio.addEventListener('timeupdate', function() {
         // console.log(audio.currentTime/audio.duration*100)
         if (audioProgressChange) {
-          audioProgress.slider( "value", audio.currentTime/audio.duration*100 );
+          if (audio) {
+            audioProgress.slider( "value", audio.currentTime/audio.duration*100 );
+          }
         }
-        audio.addEventListener('error', function() {
-          alert('er!')
-          alert(audio.error.code)
-        })
-        audio.addEventListener('stalled', function() {
-          alert('stalled')
-        })
-        audio.addEventListener('waiting', function() {
-          alert('waiting')
-        })
-        audio.addEventListener('canplay', function() {
-          alert('canplay')
-        })
-        
+      })
+      audio.addEventListener('error', function() {
+        alert('er!')
+        alert(audio.error.code)
+      })
+      audio.addEventListener('stalled', function() {
+        alert('stalled')
+      })
+      audio.addEventListener('waiting', function() {
+        alert('waiting')
+      })
+      audio.addEventListener('canplay', function() {
+        alert('canplay')
       })
 
       function pagePlay() {
@@ -1904,9 +1905,9 @@ function Ctrl() {
         audio.volume = ctrl.volume;
         // audio.load();
 
-        SPTimeout = window.setTimeout(function(){
-          // audio.play(); 
-          cls.coursePage.soundCtrl('play')
+        SPTimeout = window.setTimeout(function() {
+          audio.load();
+          audio.play();
         }, 1000);
         // audio.play();
       }
