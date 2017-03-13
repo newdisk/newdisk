@@ -1890,6 +1890,9 @@ function Ctrl() {
         audio.addEventListener('waiting', function() {
           alert('waiting')
         })
+        audio.addEventListener('canplay', function() {
+          alert('canplay')
+        })
         
       })
 
