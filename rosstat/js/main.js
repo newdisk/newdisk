@@ -1868,6 +1868,7 @@ function Ctrl() {
                                                           '"></audio>';
     
       var audio = document.querySelector('.simplePage_audio');
+      // audio.preload = "auto";
       audioProgressChange = true;
       audioProgress.slider('value', 0)
 
@@ -1892,9 +1893,6 @@ function Ctrl() {
         })
         audio.addEventListener('canplay', function() {
           alert('canplay')
-          SPTimeout = window.setTimeout(function(){
-            audio.play(); 
-          }, 500);
         })
         
       })
@@ -1904,11 +1902,12 @@ function Ctrl() {
         $('.audioCtrl_soundBtn, .audioCtrl_soundBtn25, .audioCtrl_soundBtn50, .audioCtrl_soundBtn75, .audioCtrl_soundBtn100, .audioCtrl_play, .audioCtrl_bg').removeClass('disabled');
         audioProgress.removeClass('disabled');
         audio.volume = ctrl.volume;
-        audio.load();
+        // audio.load();
 
-        /*SPTimeout = window.setTimeout(function(){
-          audio.play(); 
-        }, 1000);*/
+        SPTimeout = window.setTimeout(function(){
+          // audio.play(); 
+          cls.coursePage.soundCtrl('play')
+        }, 1000);
         // audio.play();
       }
 
