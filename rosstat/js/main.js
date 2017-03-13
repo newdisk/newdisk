@@ -1881,7 +1881,14 @@ function Ctrl() {
           audioProgress.slider( "value", audio.currentTime/audio.duration*100 );
         }
         audio.addEventListener('error', function() {
+          alert('er!')
           alert(audio.error.code)
+        })
+        audio.addEventListener('stalled', function() {
+          alert('stalled')
+        })
+        audio.addEventListener('waiting', function() {
+          alert('waiting')
         })
         
       })
@@ -1891,6 +1898,7 @@ function Ctrl() {
         $('.audioCtrl_soundBtn, .audioCtrl_soundBtn25, .audioCtrl_soundBtn50, .audioCtrl_soundBtn75, .audioCtrl_soundBtn100, .audioCtrl_play, .audioCtrl_bg').removeClass('disabled');
         audioProgress.removeClass('disabled');
         audio.volume = ctrl.volume;
+        audio.load();
 
         SPTimeout = window.setTimeout(function(){
           audio.play(); 
