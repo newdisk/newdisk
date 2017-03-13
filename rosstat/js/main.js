@@ -1858,6 +1858,7 @@ function Ctrl() {
 
     // 
     function initSimplePage() {
+      var SPTimeout;
       pageCont.innerHTML = ctrl.templates.page;
 
       pageCont.querySelector('.container').innerHTML = '<img class="simplePage_img" src="pages/'+
@@ -1887,7 +1888,9 @@ function Ctrl() {
         $('.audioCtrl_soundBtn, .audioCtrl_soundBtn25, .audioCtrl_soundBtn50, .audioCtrl_soundBtn75, .audioCtrl_soundBtn100, .audioCtrl_play, .audioCtrl_bg').removeClass('disabled');
         audioProgress.removeClass('disabled');
         audio.volume = ctrl.volume;
-        audio.play();
+
+        SPTimeout = window.setTimeout(audio.play(), 500);
+        // audio.play();
       }
 
       pagePlay();
@@ -1898,6 +1901,7 @@ function Ctrl() {
         },
         stop: function() {
           ctrl.coursePage = null;
+          window.clearTimeout();
         },
         restart: function(){
           // btnRestartHandler()
@@ -1936,10 +1940,10 @@ function Ctrl() {
         height = '589';
       }
       if (!url || url == undefined || url == 'undefined') {
-        url = 'video/Video_READY_2017-02-02.mp4';
+        url = 'video/video.mp4';
       }
       if (!posterURL || posterURL == undefined || posterURL == 'undefined') {
-        posterURL = 'video/myPoster.jpg';
+        posterURL = 'video/video.jpg';
       }
       
       pageCont.innerHTML = ctrl.templates.videoPage;
