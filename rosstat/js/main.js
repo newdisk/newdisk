@@ -1889,7 +1889,7 @@ function Ctrl() {
         audioProgress.removeClass('disabled');
         audio.volume = ctrl.volume;
 
-        SPTimeout = window.setTimeout(function(){ audio.play() }, 1000);
+        SPTimeout = window.setTimeout(function(){ audio.play(); alert('play'); }, 1000);
         // audio.play();
       }
 
