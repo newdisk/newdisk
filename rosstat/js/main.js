@@ -1892,6 +1892,9 @@ function Ctrl() {
         })
         audio.addEventListener('canplay', function() {
           alert('canplay')
+          SPTimeout = window.setTimeout(function(){
+            audio.play(); 
+          }, 500);
         })
         
       })
@@ -1903,9 +1906,9 @@ function Ctrl() {
         audio.volume = ctrl.volume;
         audio.load();
 
-        SPTimeout = window.setTimeout(function(){
+        /*SPTimeout = window.setTimeout(function(){
           audio.play(); 
-        }, 1000);
+        }, 1000);*/
         // audio.play();
       }
 
