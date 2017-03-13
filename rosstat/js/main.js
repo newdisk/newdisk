@@ -1858,7 +1858,6 @@ function Ctrl() {
 
     // 
     function initSimplePage() {
-      var SPTimeout;
       pageCont.innerHTML = ctrl.templates.page;
 
       pageCont.querySelector('.container').innerHTML = '<img class="simplePage_img" src="pages/'+
@@ -1891,25 +1890,22 @@ function Ctrl() {
       audio.addEventListener('stalled', function() {
         alert('stalled')
       })
-      audio.addEventListener('waiting', function() {
-        alert('waiting')
-      })
-      audio.addEventListener('canplay', function() {
-        alert('canplay')
-      })
+      // audio.addEventListener('waiting', function() {
+      //   alert('waiting')
+      // })
+      // audio.addEventListener('canplay', function() {
+      //   alert('canplay')
+      // })
 
       function pagePlay() {
         $('.audioCtrl_slider').slider('value', ctrl.volume*100).slider('enable');
         $('.audioCtrl_soundBtn, .audioCtrl_soundBtn25, .audioCtrl_soundBtn50, .audioCtrl_soundBtn75, .audioCtrl_soundBtn100, .audioCtrl_play, .audioCtrl_bg').removeClass('disabled');
         audioProgress.removeClass('disabled');
         audio.volume = ctrl.volume;
-        // audio.load();
 
-        SPTimeout = window.setTimeout(function() {
-          audio.load();
+        window.setTimeout(function() {
           audio.play();
         }, 1000);
-        // audio.play();
       }
 
       pagePlay();
