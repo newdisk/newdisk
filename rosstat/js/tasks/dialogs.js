@@ -1,1 +1,117 @@
-!function(e,t){"use strict";function a(t){e(m).hasClass("active")?(e(parent.frames.myframe.document).find(".slide-block").slideDown(),e(m).removeClass("active"),e(l).removeClass("activated"),e(parent.frames.myframe.document).find(".dialog__wrapper").attr("style","display: none")):(e(parent.frames.myframe.document).find(".slide-block").slideUp(),e(m).addClass("active"),e(l).addClass("activated"),e(parent.frames.myframe.document).find(".dialog__wrapper").removeAttr("style")),0===o&&r(),o++}function r(){var t=e(parent.frames.myframe.document).find(".animate");if(0!==t.length)for(var a=0;a<t.length;a++)e(t[a]).animate({opacity:0},0).delay(2e3*(a+1)).animate({opacity:1},500)}function n(a,r){u=r.draggable,p=e(u[0]).clone().addClass("clone").appendTo(e(parent.frames.myframe.document).find(".dialog__wrapper")),u.addClass("unvisible");var n=e(f[0]).find(".dialog__item"),s=e(p[0]).find(".dialog__item");s.context.style.position="absolute",s.context.style.top=n.offset().top+"px",s.context.style.left=n.offset().left+"px",e(u).attr("id")==d?t.sendResult(1,100,'<p class="feedback__text">'+i[parseFloat(e(u).attr("id"))-1]+"</p>"):t.sendResult(-1,0,'<p class="feedback__text">'+i[parseFloat(e(u).attr("id"))-1]+"</p>"),c.draggable({disabled:!0})}function s(){e(p).remove(),e(u).removeClass("unvisible"),c=e(parent.frames.myframe.document).find(".item");for(var t=0;t<c.length;t++)if(Math.random()<.5&&0!==t){var a=e(c[t]).attr("src"),r=e(c[t]).attr("id");e(c[t]).attr("src",e.trim(e(c[t-1]).attr("src"))).attr("id",e.trim(e(c[t-1]).attr("id"))),e(c[t-1]).attr("src",e.trim(a)).attr("id",e.trim(r))}else if(t!==c.length-1){var a=e(c[t]).attr("src"),r=e(c[t]).attr("id");e(c[t]).attr("src",e.trim(e(c[t+1]).attr("src"))).attr("id",e.trim(e(c[t+1]).attr("id"))),e(c[t+1]).attr("src",e.trim(a)).attr("id",e.trim(r))}c.draggable({disabled:!1}),c.load()}var i=t.structure.pages[t.bookmark].messages,d=t.structure.pages[t.bookmark].answers,o=0,m=e(parent.frames.myframe.document).find(".slide-block__arrow");m.on("click",a);var l=e(parent.frames.myframe.document).find(".slide-block__toggle"),c=e(parent.frames.myframe.document).find(".item");c.draggable({zIndex:2,containment:"document",revert:!0});var f=e(parent.frames.myframe.document).find(".basket");f.droppable({drop:n});var p,u,g=e(parent.frames.myframe.document).find(".btn--restart");g.on("click",s),t.coursePage={play:function(){s()},stop:function(){e(m).off("click"),g.off("click"),c.draggable("destroy"),f.droppable("destroy"),t.coursePage=null},restart:function(){s()}}}(parent.jQuery,parent.ctrl),parent.ctrl.coursePage.play();
+;(function($, ctrl){
+'use strict';
+
+	/* Get comments from JSON */
+	var commentMessage = ctrl.structure.pages[ctrl.bookmark].messages;
+	var rightAnswer = ctrl.structure.pages[ctrl.bookmark].answers;
+
+	var numClick = 0;
+	var arrow = $(parent.frames['myframe'].document).find('.slide-block__arrow');
+	arrow.on('click',btnArrowClicker);
+	var sliderLine = $(parent.frames['myframe'].document).find('.slide-block__toggle');
+
+	function btnArrowClicker(e) {
+		if ($(arrow).hasClass('active')) {
+			$(parent.frames['myframe'].document).find('.slide-block').slideDown();
+			$(arrow).removeClass('active');
+			$(sliderLine).removeClass('activated');
+			$(parent.frames['myframe'].document).find('.dialog__wrapper').attr('style','display: none');
+		} else {
+			$(parent.frames['myframe'].document).find('.slide-block').slideUp();
+			$(arrow).addClass('active');
+			$(sliderLine).addClass('activated');
+			$(parent.frames['myframe'].document).find('.dialog__wrapper').removeAttr('style');
+		}
+		if (numClick === 0) {
+			animateThis();
+		}; 
+		numClick++;
+	}
+
+	function animateThis() {
+		var animateList = $(parent.frames['myframe'].document).find('.animate');
+		if (animateList.length !== 0) {
+			for (var i = 0; i < animateList.length; i++){
+				$(animateList[i]).animate({opacity: 0},0).delay(2000*(i+1)).animate({opacity: 1},500);
+			}
+		}
+	}
+
+	var itemList = $(parent.frames['myframe'].document).find('.item');
+	itemList.draggable({
+		zIndex: 2,
+		containment: 'document',
+		revert: true
+	});
+
+	var basketsList = $(parent.frames['myframe'].document).find(".basket");
+	basketsList.droppable({
+	    drop: handleDropEvent
+	});
+
+	var cloneDrag;
+	var draggable;
+
+	var btnRestart = $(parent.frames['myframe'].document).find('.btn--restart');
+	btnRestart.on("click", btnRestartHandler);
+
+	function handleDropEvent( event, ui ) {
+	  draggable = ui.draggable;
+	  cloneDrag = $(draggable[0]).clone()
+	  								 .addClass('clone')
+	  								 .appendTo($(parent.frames['myframe'].document).find('.dialog__wrapper'));
+	  draggable.addClass('unvisible'); 
+	  var basket = $(basketsList[0]).find('.dialog__item');
+	  var clone = $(cloneDrag[0]).find('.dialog__item');
+	  clone.context.style.position = 'absolute';
+	  clone.context.style.top = basket.offset().top + 'px';
+	  clone.context.style.left = basket.offset().left + 'px';
+
+	  if ($(draggable).attr('id') == rightAnswer) {
+	  	ctrl.sendResult(1,100,'<p class="feedback__text">' + commentMessage[parseFloat($(draggable).attr('id')) - 1] + '</p>')
+	  } else {
+	  	ctrl.sendResult(-1,0,'<p class="feedback__text">' + commentMessage[parseFloat($(draggable).attr('id')) - 1] + '</p>')
+	  }
+	  itemList.draggable({disabled: true});
+	}
+
+	function btnRestartHandler() {
+		$(cloneDrag).remove();
+		$(draggable).removeClass('unvisible'); 
+		itemList = $(parent.frames['myframe'].document).find('.item');
+		var numArray = [];
+		for (var i = 0; i < itemList.length; i++) {
+			if (Math.random() < 0.5 && i !== 0) {
+				var d = $(itemList[i]).attr('src');
+				var f = $(itemList[i]).attr('id');
+				$(itemList[i]).attr('src',$.trim($(itemList[i-1]).attr('src'))).attr('id',$.trim($(itemList[i-1]).attr('id')));
+				$(itemList[i-1]).attr('src',$.trim(d)).attr('id',$.trim(f));
+			} else if(i !== itemList.length - 1) {
+				var d = $(itemList[i]).attr('src');
+				var f = $(itemList[i]).attr('id');
+				$(itemList[i]).attr('src',$.trim($(itemList[i+1]).attr('src'))).attr('id',$.trim($(itemList[i+1]).attr('id')));
+				$(itemList[i+1]).attr('src',$.trim(d)).attr('id',$.trim(f));
+			};
+		}
+
+		itemList.draggable({disabled: false});
+		itemList.load();
+	}
+
+ctrl.coursePage = {
+	play: function() {
+		btnRestartHandler()
+	},
+	stop: function(){
+		$(arrow).off('click');
+		btnRestart.off('click');
+		itemList.draggable("destroy");
+		basketsList.droppable("destroy");
+		ctrl.coursePage = null;
+	},
+	restart: function(){
+		btnRestartHandler()
+	}
+}
+})(parent.jQuery, parent.ctrl);
+parent.ctrl.coursePage.play();
