@@ -1867,12 +1867,13 @@ function Ctrl() {
                                                           '"></audio>';
     
       var audio = document.querySelector('.simplePage_audio');
-      // audio.preload = "auto";
+      
       audioProgressChange = true;
       audioProgress.slider('value', 0)
 
       audio.addEventListener('ended', function() {
         // nextBtn.addClass('animating');
+        audio.pause()
         goToPage(cls.bookmark+1);
       })
       audio.addEventListener('timeupdate', function() {
@@ -1883,19 +1884,6 @@ function Ctrl() {
           }
         }
       })
-      audio.addEventListener('error', function() {
-        alert('er!')
-        alert(audio.error.code)
-      })
-      audio.addEventListener('stalled', function() {
-        alert('stalled')
-      })
-      // audio.addEventListener('waiting', function() {
-      //   alert('waiting')
-      // })
-      // audio.addEventListener('canplay', function() {
-      //   alert('canplay')
-      // })
 
       function pagePlay() {
         $('.audioCtrl_slider').slider('value', ctrl.volume*100).slider('enable');
