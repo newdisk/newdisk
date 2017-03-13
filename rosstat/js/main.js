@@ -1884,6 +1884,9 @@ function Ctrl() {
           }
         }
       })
+      audio.addEventListener('canplaythrough', function() {
+        audio.play()
+      })
 
       function pagePlay() {
         $('.audioCtrl_slider').slider('value', ctrl.volume*100).slider('enable');
@@ -1891,9 +1894,9 @@ function Ctrl() {
         audioProgress.removeClass('disabled');
         audio.volume = ctrl.volume;
 
-        window.setTimeout(function() {
-          audio.play();
-        }, 1000);
+        // window.setTimeout(function() {
+        //   audio.play();
+        // }, 1000);
       }
 
       pagePlay();
