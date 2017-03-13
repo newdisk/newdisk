@@ -1880,6 +1880,9 @@ function Ctrl() {
         if (audioProgressChange) {
           audioProgress.slider( "value", audio.currentTime/audio.duration*100 );
         }
+        audio.addEventListener('error', function() {
+          alert(audio.error.code)
+        })
         
       })
 
