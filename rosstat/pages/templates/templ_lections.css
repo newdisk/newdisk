@@ -1,0 +1,25 @@
+.lections-page {
+	overflow: auto;
+	height: 594px;
+}
+.lec-text-href {  
+  text-decoration: none;
+  text-transform: uppercase;  
+}
+.lec-text-href__block {
+	display: block;
+	margin: 20px;
+	padding: 28px;
+	font-size: 18px;	    
+	font-family: 'Verdana', 'Arial', sans-serif;
+  line-height: 1.4;
+ 	background: rgb(221,224,94);
+ 	box-shadow: 3px 3px 2px rgba(0,0,0,.30);
+ 	color: rgb(0,62,121);
+ 	cursor: pointer;
+ 	transition: background 400ms;
+}
+.lec-text-href__block:hover {
+    background: rgb(239,121,97);
+    box-shadow: 3px 3px 5px rgba(0,0,0,.30);
+}

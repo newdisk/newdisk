@@ -2,6 +2,7 @@
 
 angular.module('questionnaire-person', ['ui.router'])
 .controller('CtrlTask', ['$scope', '$state', 'myService', function($scope, $state, myService) {
+	$scope.isStarted = false;
 
 	$scope.actNavigation = function() {
 		$scope.currentPageNav = myService.toggleNav();
@@ -16,6 +17,11 @@ angular.module('questionnaire-person', ['ui.router'])
 	
 	$scope.scrollTo = function(scrollLocation) {
 		myService.scroll(scrollLocation);
+	}
+
+	$scope.startTask = function() {
+		$scope.isStarted = myService.start();
+		$state.go("chapter_1");
 	}
 
 	$scope.checkAnswer = function() {
@@ -35,6 +41,7 @@ angular.module('questionnaire-person', ['ui.router'])
 	*
 	*			LIST of FUNCTIONS for 'myService'
 	*
+	*			0. Start task
 	*			1. Find anchors and include data in array of objects
 	*			2. Navigation menu toggle and page position
 	*			3. Navigation menu, click buttons and scroll to page position
@@ -48,6 +55,16 @@ angular.module('questionnaire-person', ['ui.router'])
 	*				 Click on empty field to close '.popup-navigation' 
 	*
 	*----------------------------------------------------*/
+
+	// 0. Start task
+
+	this.start = function() {
+		$('.btn_start-task').css('display','none');
+		$('.btn_navigation')[0].removeAttribute('disabled');
+		$('.btn_legend')[0].removeAttribute('disabled');
+		$('.btn_answer')[0].removeAttribute('disabled');
+		return true;
+	};
 
 	/*
 	* 1. Find all anchors and create such array of objects:
@@ -127,9 +144,6 @@ angular.module('questionnaire-person', ['ui.router'])
     if (!$('.popup-navigation').attr('style')) {
   		$('.popup-navigation').slideToggle();
   	};
-  	if ($('.btn_restart').attr('disabled') || $('.btn_answer').attr('disabled')) {
-  		$('.btn_answer')[0].removeAttribute('disabled');
-  	}
   	if ($('.wrapper-legend').attr('style') === 'display: none;') {
 	    currentPage = visitedList.length + 1;
 
@@ -170,10 +184,20 @@ angular.module('questionnaire-person', ['ui.router'])
 		return indicatorRightAnswer = false;
 	};
 
+	function checkFieldsFilled(elem, indicatorRightAnswer) {
+		if (!elem.value) {
+			$(elem).addClass('false-ans_input');
+			return indicatorRightAnswer = false;
+		}
+		return indicatorRightAnswer;
+	}
+
 	function checkFields(arr, indicatorRightAnswer) {
 		for (i = 0; i < arr.length; i++) {
 			if ($(arr[i]).hasClass('check-multiple')) {
 				indicatorRightAnswer = checkFieldsMultipleAns(arr[i],indicatorRightAnswer);
+			} else if ($(arr[i]).hasClass('check-fill')) {
+				indicatorRightAnswer = checkFieldsFilled(arr[i],indicatorRightAnswer);
 			} else if ($(arr[i]).attr('data-answer') || arr[i].value) {
 				if (!$(arr[i]).attr('data-answer')) {
 					$(arr[i]).addClass('false-ans_input');
@@ -211,8 +235,6 @@ angular.module('questionnaire-person', ['ui.router'])
 		if (!$('.popup-navigation').attr('style')) {
 			$('.popup-navigation').slideToggle();
 		}
-		$('.btn_navigation')[0].setAttribute('disabled','disabled');
-		$('.btn_legend')[0].setAttribute('disabled','disabled');
 
 		if (indicatorRightAnswer) {
 			$('.popup-comment').css('display','block');
@@ -221,6 +243,9 @@ angular.module('questionnaire-person', ['ui.router'])
 			$('.popup-comment').css('display','block');
 			$('.popup-comment__text').text('Обратите внимание на элементы, выделенные красным цветом. В них допущены ошибки: либо неверно указано значение, либо элемент не должен быть выделен. Пройдите задание ещё раз, нажав кнопку "Начать заново".')
 		}
+
+		// Make disabled state on the pages
+		$('.wrapper').css('pointer-events','none');
 	};
 
 	// 5.1 Remove comment
@@ -234,7 +259,9 @@ angular.module('questionnaire-person', ['ui.router'])
 
   function clearFields(arr) {
 		for (i = 0; i < arr.length; i++) {
-			arr[i].value = '';
+			if (!$(arr[i]).attr('value')) {
+				arr[i].value = '';
+			}
 			$(arr[i]).removeClass('false-ans_input');
 		}
 	}
@@ -245,14 +272,15 @@ angular.module('questionnaire-person', ['ui.router'])
 		$('.btn_restart')[0].setAttribute('disabled','disabled');
 		$('.popup-comment').css('display','none');
 		$('.popup-comment__text').text('');
-		$('.btn_navigation')[0].removeAttribute('disabled');
-		$('.btn_legend')[0].removeAttribute('disabled');
 
 		for (i = 0; i < spanList.length; i++) {
 			$(spanList[i]).removeClass('false-ans_circle').removeClass('visible-circle');
 		}
 		clearFields(inputList);
 		clearFields(textAreaList);
+		
+		// Make unebled state on the pages
+		$('.wrapper').css('pointer-events','auto');
 	}
 
 	// 7. Snippets
@@ -305,20 +333,27 @@ angular.module('questionnaire-person', ['ui.router'])
 	$stateProvider
 		.state('task', {
 	    url: '/task',
-	    template: '<p>Уважаемый коллега!</p>' +
-								'<p>Предлагаем вам проверить и закрепить свои знания, заполнив <em class="text_bold">Индивидуальный вопросник</em> по данным, описанным в легенде.</p>' +
-								'<p>Перед началом работы внимательно ознакомьтесь с легендой. Вернуться к ней вы сможете в любой момент, нажав кнопку &laquo;Легенда&raquo;.</p>' +
-								'<p>Для перехода по страницам используйте колесо мыши или для быстрого перехода к необходимой странице воспользуйтесь кнопкой &laquo;Навигация&raquo;.</p>' +
-								'<p>После заполнения всех полей нажмите кнопку &laquo;Проверить&raquo;.</p>' +
-								'<p>В случае ошибок, допущенных при заполнении вопросника, неверно заполненные поля будут отмечены красным цветом. Проанализируйте эти вопросы, сверьтесь с легендой. Подумайте и посмотрите еще раз материал посвященный этому разделу(ам).</p>' +
-								'<p>Кнопка &laquo;Начать заново&raquo; очищает все заполненные поля и ошибки, и вы сможете заполнить вопросник заново.</p>' +
+			template: '<p>Уважаемый коллега! Предлагаем вам проверить и закрепить свои знания, заполнив <em class="text_bold">Индивидуальный вопросник</em>.</p>' +
+								'<p>Перед началом работы внимательно ознакомьтесь с легендой. В учебных целях легенда разбита на разделы, в соответствии с вопросником. Открыть легенду вы сможете в любой момент, нажав кнопку <img class="paragraph-attention__img" height="26" src="img/mainPage_faq_icon.png" alt="Легенда"> &nbsp;&laquo;Легенда&raquo;. Для того чтобы скрыть легенду нажмите на кнопку еще раз.</p>' +
+								'<p>В упражнении заполнение вопросника реализуется с помощью интерактивных полей. Достаточно нажать на место заполнения и поле ввода станет активным.</p>' +
+								'<p>Для ввода текстового или числового значения в вопроснике нажмите на поле ввода (пример 1 на рисунке). Для редактирования (изменения, удаления) введенного значения снова нажмите на поле, которое требуется изменить. Установив в поле необходимое значение, для перехода к следующему полю можно воспользоваться клавишей табуляции.</p>' +
+								'<p>В закрытых вопросах для осуществления выбора варианта ответа нажмите на нужный вариант (пример 2 на рисунке). Чтобы отменить сделанный выбор, нажмите на ранее выбранный ответ еще раз.</p>' +
+								'<p class="paragraph-image"><img width="700" src="img/task_frame.png" alt="Пример выбора ответов"></p>' +
+								'<p>Для перехода по страницам вопросника скроллируйте страницы вниз или вверх, или для быстрого перехода к необходимой странице воспользуйтесь кнопкой <img class="paragraph-attention__img" width="28" src="img/but_menu_icon.png" alt="Меню навигации"> &nbsp;&laquo;Меню навигации&raquo;.</p>' +
+								'<p>После заполнения всего вопросника целиком, проверьте заполнение вопросника и нажмите кнопку &laquo;Принять ответ&raquo;.</p>' +
+								'<div class="paragraph-attention">' +
+									'<p class="paragraph-attention__text">Внимание!</p>' +
+									'<p class="paragraph-attention__text">Исправить неверно введенные ответы после нажатия кнопки &laquo;Принять ответ&raquo; нельзя.</p>' +
+								'</div>	' +
+								'<p>В случае ошибок, допущенных при заполнении вопросника, неверно заполненные ответы будут отмечены красным цветом. Проанализируйте эти ответы, сверьтесь с легендой. Подумайте и посмотрите еще раз материал посвященный этому разделу(ам).</p>' +
+								'<p>Кнопка &laquo;Начать заново&raquo; очищает весь вопросник от всех заполненных ответов, и вы сможете заполнить вопросник заново.</p>' +
 								'<p>Желаем вам успехов!</p>' +
-								'<div class="wrapper-legend__btn-block"><button class="btn btn_start-course" ng-click="actLegend()"></button></div>'							
+								'<div class="wrapper-legend__btn-block"><button class="btn btn_start-task" ng-click="startTask()" ng-hide="isStarted"></button></div>'							
 	  })
 
 		.state('chapter_1', {
 	    url: '/chapter_1',
-	    template: '<p>Мужчина, 41 год, проживает в Тульской области (код 401364000), совместно с супругой в домохозяйстве, работает в издательском центре специалистом по компьютерным сетям, имеет высшее образование.</p>' +
+	    template: '<p>Мужчина, 41 год, проживает в Тульской области (код субъекта РФ – 70, код населенного пункта – 401364000), совместно с супругой в домохозяйстве, работает в издательском центре специалистом по компьютерным сетям, имеет высшее образование.</p>' +
 								'<p>В 2016 году отработал полный год.</p>' +
 								'<p>В 2016 году нигде не обучался, посещал курсы иностранного языка, за которые оплатил не полностью из своих средств. Близкие родственники выделили 10&nbsp;000 рублей на оплату курсов иностранного языка.</p>' +
 								'<p>Респондент имеет возможность регулярно отдыхать вне дома (несколько раз за определенный период времени &ndash; месяц, год). Имеет возможность хотя бы раз в месяц встречаться с друзьями, но не может тратить небольшую сумму денег на себя, не согласовывая с супругой.</p>'
@@ -335,7 +370,7 @@ angular.module('questionnaire-person', ['ui.router'])
 
 	  .state('chapter_3', {
 	    url: '/chapter_3',
-	    template: '<p>Респондент работал в 2016 году в издательском центре, который имеет статус юридического лица, в должности специалиста по компьютерным сетям (в качестве наемного работника за заработную плату). Трудовой договор заключен на неопределенный срок.</p>' +
+	    template: '<p>Респондент работал в 2016 году в издательском центре (код экономической деятельности – 58), который имеет статус юридического лица, в должности специалиста по компьютерным сетям (код профессии 2523), в качестве наемного работника за заработную плату. Трудовой договор заключен на неопределенный срок.</p>' +
 								'<p>В среднем сумма заработной платы составляла 35&nbsp;000 рублей в месяц, выплачивалась ежемесячно.</p>' +
 								'<p>Респондент имеет нормальную продолжительность рабочей недели, в среднем за месяц число рабочих дней составляет 21 день, число рабочих часов (без учета обеденного перерыва и времени на дорогу на работу и обратно) составляет 8 часов в день.</p>' +
 								'<p>В 2016 году был в оплачиваемом отпуске 28 календарных дней.</p>' +

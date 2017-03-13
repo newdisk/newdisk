@@ -1,3 +1,14 @@
+.hack-ie-video-block {
+  position: relative;
+}
+.hack-ie-video-block:after {
+  position: absolute;
+  z-index: 2;
+  content: '';
+  height: 30px;
+  width: 100%;
+  background: #fff;
+}
 .video-js {
   margin: auto;
   background: #fff;

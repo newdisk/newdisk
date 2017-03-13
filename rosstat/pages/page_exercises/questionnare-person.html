@@ -6,15 +6,15 @@
 	<link rel="stylesheet" href="style/style.css">
 	<title>Индивидуальный вопросник</title>
 </head>
-<body ng-controller="CtrlTask">
+<body ng-controller="CtrlTask" ng-cloak>
 <div class="container">
 	<p class="wrapper-title visited" id="2">Страница 2</p>
 	<div class="wrapper wrapper-02">
 		<div data-question="1">
 			<div data-row="1">
 				<div class="input-box" style="top: 159px;left: 796px;width: 47px;">
-					<input type="text" class="input-2 check" maxlength="1" data-answer="0">
-					<input type="text" class="input-2 check" maxlength="1" data-answer="1">
+					<input type="text" class="input-2" value="0" maxlength="1" data-answer="0" disabled>
+					<input type="text" class="input-2" value="1" maxlength="1" data-answer="1" disabled>
 				</div>
 			</div>
 		</div>
@@ -29,14 +29,14 @@
 		<div data-question="3">
 			<div data-row="1">
 				<div class="input-box" style="top: 250px;left: 802px;width: 33px;">
-					<input type="text" class="input-1 check" maxlength="1" data-answer="3">
+					<input type="text" class="input-1" value="3" maxlength="1" data-answer="3" disabled>
 				</div>
 			</div>
 		</div>
 		<div data-question="4">
 			<div data-row="1">
 				<div class="input-box" style="top: 289px;left: 802px;width: 33px;">
-					<input type="text" class="input-1 check" maxlength="1" data-answer="1">
+					<input type="text" class="input-1" value="1" maxlength="1" data-answer="1" disabled>
 				</div>
 			</div>
 		</div>
@@ -803,7 +803,7 @@
 		<div data-question="6">
 			<div data-row="1">
 				<div class="input-box" style="top: 1392px;left: 120px;width: 563px;">
-					<input type="text" class="input-1 check" data-answer="издательство">
+					<input type="text" class="input-1 check check-fill" data-answer="издательство">
 				</div>
 				<div class="input-box" style="top: 1402px;left: 788px;width: 80px;">
 					<input type="text" class="input-2 check" maxlength="1" data-answer="5">
@@ -848,7 +848,7 @@
 		<div data-question="8">
 			<div data-row="1">
 				<div class="input-box" style="top: 682px;left: 90px;width: 578px;">
-					<input type="text" class="input-1 check" data-answer="IT-специалист по компьютерным сетям">
+					<input type="text" class="input-1 check check-fill" data-answer="IT-специалист по компьютерным сетям">
 				</div>
 			</div>
 			<div data-row="2">
@@ -1476,7 +1476,7 @@
 		<div data-question="30">
 			<div data-row="1">
 				<div class="input-box" style="top: 572px;left: 94px;width: 316px;">
-					<input type="text" class="input-1 check check-multiple" data-answer="Тульская обл.;Тульская обл;Тульская область">
+					<input type="text" class="input-1 check check-multiple" data-answer="Тульская обл.;Тульская обл;Тульская область;Тульская">
 				</div>
 			</div>
 			<div data-row="2">
@@ -1488,9 +1488,9 @@
 					<input type="text" class="input-9 check" maxlength="1" data-answer="4">
 					<input type="text" class="input-9 check" maxlength="1" data-answer="0">
 					<input type="text" class="input-9 check" maxlength="1" data-answer="1">
-					<input type="text" class="input-9 check" maxlength="1" data-answer="0">
-					<input type="text" class="input-9 check" maxlength="1" data-answer="0">
-					<input type="text" class="input-9 check" maxlength="1" data-answer="0">
+					<input type="text" class="input-9 check" maxlength="1" data-answer="3">
+					<input type="text" class="input-9 check" maxlength="1" data-answer="6">
+					<input type="text" class="input-9 check" maxlength="1" data-answer="4">
 					<input type="text" class="input-9 check" maxlength="1" data-answer="0">
 					<input type="text" class="input-9 check" maxlength="1" data-answer="0">
 					<input type="text" class="input-9 check" maxlength="1" data-answer="0">
@@ -1814,14 +1814,14 @@
 	</div>
 </div>
 <div class="popup-comment">
-	<span class="popup-comment__close" ng-click="closeComment()">Закрыть</span>
+	<span class="popup-comment__close" title="Закрыть" ng-click="closeComment()">Закрыть</span>
 	<p class="popup-comment__text"></p>
 </div>
 <div class="popup-navigation" style="display: none;">
 	<ol class="popup-navigation__list">
 		<li>
 			<p class="popup-navigation__title">Раздел 1. Социальное положение и образование</p>
-			<p class="popup-navigation__text">Страницы: 
+			<p class="popup-navigation__text"> 
 				<button class="popup-navigation__href" ng-click="scrollTo('2')" ng-class="{'popup-navigation__href_active': currentPageNav === 2}">2</button>
 				<button class="popup-navigation__href" ng-click="scrollTo('3')" ng-class="{'popup-navigation__href_active': currentPageNav === 3}">3</button>
 				<button class="popup-navigation__href" ng-click="scrollTo('3')" ng-class="{'popup-navigation__href_active': currentPageNav === 4}">4</button>
@@ -1830,7 +1830,7 @@
 		</li>
 		<li>
 			<p class="popup-navigation__title">Раздел 2. Пенсионное обеспечение и социальная поддержка</p>
-			<p class="popup-navigation__text">Страницы: 
+			<p class="popup-navigation__text">
 				<button class="popup-navigation__href" ng-click="scrollTo('6')" ng-class="{'popup-navigation__href_active': currentPageNav === 6}">6</button>
 				<button class="popup-navigation__href" ng-click="scrollTo('7')" ng-class="{'popup-navigation__href_active': currentPageNav === 7}">7</button>
 				<button class="popup-navigation__href" ng-click="scrollTo('8')" ng-class="{'popup-navigation__href_active': currentPageNav === 8}">8</button>
@@ -1839,7 +1839,7 @@
 		</li>
 		<li>
 			<p class="popup-navigation__title">Раздел 3. Работа и доходы от трудовой деятельности</p>
-			<p class="popup-navigation__text">Страницы: 
+			<p class="popup-navigation__text">
 				<button class="popup-navigation__href" ng-click="scrollTo('10')" ng-class="{'popup-navigation__href_active': currentPageNav === 10}">10</button>
 				<button class="popup-navigation__href" ng-click="scrollTo('11')" ng-class="{'popup-navigation__href_active': currentPageNav === 11}">11</button>
 				<button class="popup-navigation__href" ng-click="scrollTo('12')" ng-class="{'popup-navigation__href_active': currentPageNav === 12}">12</button>
@@ -1871,11 +1871,11 @@
 	</ul>
 	<div class="wrapper-legend__content" ui-view></div>
 </div>
-<div class="btn-box">	
+<div class="btn-box">
 	<div class="btn_navigation_bg"></div>
-	<button class="btn btn_navigation" ng-click="actNavigation()"></button>
+	<button class="btn btn_navigation" title="Меню навигации" ng-click="actNavigation()" disabled></button>
 	<div class="btn_legend_bg"></div>
-	<button class="btn btn_legend" ng-click="actLegend()"></button>
+	<button class="btn btn_legend" title="Легенда" ng-click="actLegend()" disabled></button>
 	<button class="btn btn_answer" ng-click="checkAnswer()" disabled></button>
 	<button class="btn btn_restart" ng-click="removeRestart()" disabled></button>
 </div>

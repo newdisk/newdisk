@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="style/style.css">
 	<title>Вопросник по домохозяйству</title>
 </head>
-<body ng-controller="CtrlTask">
+<body ng-controller="CtrlTask" ng-cloak>
 <div class="container">
 	<p class="wrapper-title visited" id="2">Страница 2</p>
 	<div class="wrapper wrapper-2">
@@ -3429,21 +3429,21 @@
 	</div>
 </div>
 <div class="popup-comment">
-	<button class="popup-comment__close" ng-click="closeComment()">Закрыть</button>
+	<button class="popup-comment__close" title="Закрыть" ng-click="closeComment()">Закрыть</button>
 	<p class="popup-comment__text"></p>
 </div>
 <div class="popup-navigation" style="display: none;">
 	<ol class="popup-navigation__list">
 		<li>
 			<p class="popup-navigation__title">Раздел 1. Состав домохозяйства</p>
-			<p class="popup-navigation__text">Страницы: 
+			<p class="popup-navigation__text"> 
 				<button class="popup-navigation__href" ng-click="scrollTo('2')" ng-class="{'popup-navigation__href_active': currentPageNav === 2}">2</button>
 				<button class="popup-navigation__href" ng-click="scrollTo('3')" ng-class="{'popup-navigation__href_active': currentPageNav === 3}">3</button>
 			</p>
 		</li>
 		<li>
 			<p class="popup-navigation__title">Раздел 2. Выплаты на детей в возрасте до 16 лет</p>
-			<p class="popup-navigation__text">Страницы: 
+			<p class="popup-navigation__text">
 				<button class="popup-navigation__href" ng-click="scrollTo('4')" ng-class="{'popup-navigation__href_active': currentPageNav === 4}">4</button>
 				<button class="popup-navigation__href" ng-click="scrollTo('5')" ng-class="{'popup-navigation__href_active': currentPageNav === 5}">5</button>
 				<button class="popup-navigation__href" ng-click="scrollTo('6')" ng-class="{'popup-navigation__href_active': currentPageNav === 6}">6</button>
@@ -3454,14 +3454,14 @@
 		</li>
 		<li>
 			<p class="popup-navigation__title">Раздел 3. Социальные выплаты и иная помощь домохозяйству</p>
-			<p class="popup-navigation__text">Страницы: 
+			<p class="popup-navigation__text">
 				<button class="popup-navigation__href" ng-click="scrollTo('10')" ng-class="{'popup-navigation__href_active': currentPageNav === 10}">10</button>
 				<button class="popup-navigation__href" ng-click="scrollTo('11')" ng-class="{'popup-navigation__href_active': currentPageNav === 11}">11</button>
 			</p>
 		</li>
 		<li>
 			<p class="popup-navigation__title">Раздел 4. Условия проживания</p>
-			<p class="popup-navigation__text">Страницы: 
+			<p class="popup-navigation__text">
 				<button class="popup-navigation__href" ng-click="scrollTo('12')" ng-class="{'popup-navigation__href_active': currentPageNav === 12}">12</button>
 				<button class="popup-navigation__href" ng-click="scrollTo('13')" ng-class="{'popup-navigation__href_active': currentPageNav === 13}">13</button>
 				<button class="popup-navigation__href" ng-click="scrollTo('14')" ng-class="{'popup-navigation__href_active': currentPageNav === 14}">14</button>
@@ -3469,14 +3469,14 @@
 		</li>
 		<li>
 			<p class="popup-navigation__title">Раздел 5. Доходы от собственности и налоги</p>
-			<p class="popup-navigation__text">Страницы: 
+			<p class="popup-navigation__text">
 				<button class="popup-navigation__href" ng-click="scrollTo('15')" ng-class="{'popup-navigation__href_active': currentPageNav === 15}">15</button>
 				<button class="popup-navigation__href" ng-click="scrollTo('16')" ng-class="{'popup-navigation__href_active': currentPageNav === 16}">16</button>
 			</p>
 		</li>
 		<li>
 			<p class="popup-navigation__title">Раздел 6. Сельскохозяйственная деятельность</p>
-			<p class="popup-navigation__text">Страницы: 
+			<p class="popup-navigation__text">
 				<button class="popup-navigation__href" ng-click="scrollTo('17')" ng-class="{'popup-navigation__href_active': currentPageNav === 17}">17</button>
 				<button class="popup-navigation__href" ng-click="scrollTo('18')" ng-class="{'popup-navigation__href_active': currentPageNav === 18}">18</button>
 				<button class="popup-navigation__href" ng-click="scrollTo('19')" ng-class="{'popup-navigation__href_active': currentPageNav === 19}">19</button>
@@ -3485,7 +3485,7 @@
 		</li>
 		<li>
 			<p class="popup-navigation__title">Раздел 7. Финансовое положение домохозяйства</p>
-			<p class="popup-navigation__text">Страницы: 
+			<p class="popup-navigation__text">
 				<button class="popup-navigation__href" ng-click="scrollTo('21')" ng-class="{'popup-navigation__href_active': currentPageNav === 21}">21</button>
 				<button class="popup-navigation__href" ng-click="scrollTo('22')" ng-class="{'popup-navigation__href_active': currentPageNav === 22}">22</button>
 			</p>
@@ -3523,9 +3523,9 @@
 </div>
 <div class="btn-box">
 	<div class="btn_navigation_bg"></div>
-	<button class="btn btn_navigation" ng-click="actNavigation()"></button>
+	<button class="btn btn_navigation" title="Меню навигации" ng-click="actNavigation()" disabled></button>
 	<div class="btn_legend_bg"></div>
-	<button class="btn btn_legend" ng-click="actLegend()"></button>
+	<button class="btn btn_legend" title="Легенда" ng-click="actLegend()" disabled></button>
 	<button class="btn btn_answer" ng-click="checkAnswer()" disabled></button>
 	<button class="btn btn_restart" ng-click="removeRestart()" disabled></button>
 </div>

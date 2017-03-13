@@ -11,6 +11,11 @@
 	<link rel="stylesheet" href="pages/templates/templ_test.css">
 	<link rel="stylesheet" href="pages/templates/templ_page.css">
 	<link rel="stylesheet" href="pages/templates/templ_videoPage.css">
+	<link rel="stylesheet" href="pages/templates/templ_examples.css">
+	<link rel="stylesheet" href="pages/templates/templ_lections.css">
+	<link rel="stylesheet" href="pages/templates/templ_addMaterials.css">
+	<link rel="stylesheet" href="pages/templates/templ_materials.css">
+	<link rel="stylesheet" href="pages/templates/templ_objectPage.css">
 
 	<title>РОССТАТ</title>
 </head>
@@ -37,8 +42,8 @@
 			<div id="logo"></div>
 			<div class="btn helpBtn"></div>
 			<div class="btn statsBtn"></div>
-			<div class="btn exitBtn"></div>
-			<div class="btn homeBtn"></div>
+			<div class="btn exitBtn" jqtitle="Закрыть курс"></div>
+			<div class="btn homeBtn" jqtitle="Вернуться на главную"></div>
 			<div id="course-title"><p>Добро пожаловать в обучающий курс!</p></div>
 			<!-- <div id="glossaryBtn">gloss</div> -->
 			<div id="page-title"><!-- <div id="page-num"></div>--><p></p></div>
@@ -50,15 +55,24 @@
 		
 		<div id="course-nav">
 			<div class="paginator">0/0</div>
-			<div class="btn nextBtn navBtn"></div>
-			<div class="btn prevBtn navBtn"></div>
+			<div class="btn nextBtn navBtn" jqtitle="Следующая страница"></div>
+			<div class="btn prevBtn navBtn" jqtitle="Предыдущая страница"></div>
+			<div class="btn nextChapBtn navBtn" jqtitle="Следующая лекция"></div>
+			<div class="btn prevChapBtn navBtn" jqtitle="Предыдущая лекция"></div>
 			<div class="cousre-nav_audioCtrl">
-				<div class="btn audioCtrl_soundBtn"></div>
-				<div class="audioCtrl_slider"></div>
+				<div class="audioCtrl_bg"></div>
+				<div class="btn audioCtrl_soundBtn" jqtitle="Вкл/выкл звук"></div>
+				<div class="btn audioCtrl_soundBtn25" jqtitle="25%"></div>
+				<div class="btn audioCtrl_soundBtn50" jqtitle="50%"></div>
+				<div class="btn audioCtrl_soundBtn75" jqtitle="75%"></div>
+				<div class="btn audioCtrl_soundBtn100" jqtitle="100%"></div>
+				<div class="btn audioCtrl_play" jqtitle="Воспроизведение/пауза"></div>
+				<!-- <div class="audioCtrl_slider"></div> -->
+				<div class="audioCtrl_progress"></div>
 			</div>
 
-			<div class="menuBtn_fon"></div>
-			<div class="menuBtn"></div>
+			<!-- <div class="menuBtn_fon"></div> -->
+			<div class="menuBtn" jqtitle="Меню"></div>
 
 			<!-- / -->
 			<!-- <div class="exs_ctrl exercisesLegend_fon"></div>
@@ -110,39 +124,56 @@
 			<div class="mainPage_body">
 				<div class="mainPage_body_item specLink">
 					<div class="mainPage_body_item_ico intro"></div>
-					<div class="mainPage_body_item_caption intro">Введение</div>
+					<div class="mainPage_body_item_caption">программа курса</div>
 				</div>
 				<div class="mainPage_body_item ">
 					<div class="mainPage_body_item_ico multimedia"></div>
-					<div class="mainPage_body_item_caption multimedia">Мультимедийный курс</div>
+					<div class="mainPage_body_item_caption">курс лекций</div>
 				</div>
 				<div class="mainPage_body_item specLink">
 					<div class="mainPage_body_item_ico video"></div>
-					<div class="mainPage_body_item_caption video">Видеосюжет</div>
+					<div class="mainPage_body_item_caption">Видеосюжет</div>
 				</div>
 				<div class="mainPage_body_item specLink">
 					<div class="mainPage_body_item_ico examples"></div>
-					<div class="mainPage_body_item_caption examples">Примеры заполнения вопросников</div>
+					<div class="mainPage_body_item_caption">Примеры заполнения вопросников</div>
 				</div>
 				<div class="mainPage_body_item specLink">
 					<div class="mainPage_body_item_ico practical"></div>
-					<div class="mainPage_body_item_caption practical">Практические упражнения</div>
+					<div class="mainPage_body_item_caption">Практические упражнения</div>
+				</div>
+				<div class="mainPage_body_item specLink">
+					<div class="mainPage_body_item_ico add-materials"></div>
+					<div class="mainPage_body_item_caption">Справочные материалы</div>
 				</div>
 				<div class="mainPage_body_item ">
 					<div class="mainPage_body_item_ico final-test"></div>
-					<div class="mainPage_body_item_caption final-test">Итоговый тест</div>
+					<div class="mainPage_body_item_caption">Итоговое тестирование</div>
 				</div>
-				<div class="mainPage_body_item specLink">
+				<!-- <div class="mainPage_body_item specLink">
 					<div class="mainPage_body_item_ico lection-txt"></div>
 					<div class="mainPage_body_item_caption lection-txt">Тексты лекций</div>
 				</div>
 				<div class="mainPage_body_item specLink">
 					<div class="mainPage_body_item_ico materials"></div>
 					<div class="mainPage_body_item_caption materials">Материалы для очного обучения</div>
+				</div> -->
+			</div>
+			<div class="logo-section">
+				<div class="logo-section__rs">
+					<!-- <img src="img/logo/logo_rs.svg" alt="" width="60" height="84"> -->
+					<div class="logo-section_img logo-section_img__rs"></div>
+					<div class="logo-section_text">
+						<p>© 2017 Федеральная служба государственной статистики</p>
+					</div>
 				</div>
-				<div class="mainPage_body_item specLink">
-					<div class="mainPage_body_item_ico faq"></div>
-					<div class="mainPage_body_item_caption faq">Справочные материалы</div>
+				<div class="logo-section__iro">
+					<!-- <img src="img/logo/logo_iro.svg" alt="" width="60" height="84"> -->
+					<div class="logo-section_img logo-section_img__iro"></div>
+					<div class="logo-section_text">
+						<p>Разработано:</p>
+						<p>ФГБНУ «Институт управления образованием Российской академии образования»</p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -162,13 +193,14 @@
 		</div>
 		<div id="feedback">
 			<div id="feedback-head">
-				<div id="closeFeedBtn" class="btn closeAssetBtn"></div>
-				<p>Комментарий к ответу</p>
+				<p class="feedback_headComment">Комментарий к ответу</p>
 			</div>
 			<div id="feedback-body"></div>
 			<div id="feedback-foot">
-				<div class="btn againBtn"></div>
-				<div class="btn continueBtn"></div>
+				<button id="closeFeedBtn" class="btn closeAssetBtn"></button>
+				<button class="btn againBtn"></button>
+				<button class="btn continueBtn"></button>
+				<button class="btn printCertBtn"></button>
 			</div>
 		</div>
 		<div id="glossary"></div>
@@ -194,6 +226,7 @@
 <script type="text/javascript" src='js/pdfmake.min.js'></script>
 <script type="text/javascript" src='js/vfs_fonts.js'></script>
 <script type="text/javascript" src='js/qrcode.js'></script>
+<script type="text/javascript" src="js/pdf.js"></script>
 <!-- <script type="text/javascript" src='js/qrcode_UTF8.js'></script> -->
 <script type="text/javascript" src='js/underscore-min.js'></script>
 <script type="text/javascript" src='js/video.js'></script>
@@ -203,6 +236,10 @@
 <script type="text/javascript" src='pages/templates/templ_page.js'></script>
 <script type="text/javascript" src='pages/templates/templ_videoPage.js'></script>
 <script type="text/javascript" src='pages/templates/templ_examples.js'></script>
+<script type="text/javascript" src='pages/templates/templ_lections.js'></script>
+<script type="text/javascript" src='pages/templates/templ_objectPage.js'></script>
+<script type="text/javascript" src='pages/templates/templ_addMaterials.js'></script>
+<script type="text/javascript" src='pages/templates/templ_materials.js'></script>
 
 </body>
 </html>

@@ -32,6 +32,8 @@ body {
 	position: relative;
 	margin: 0;
 	padding: 0;
+	width: 995px;
+	overflow: hidden;
 }
 
 /* styles for index.html in /page_exercises */
@@ -46,10 +48,16 @@ body {
 	padding: 28px;
 	font-size: 18px;	    
 	font-family: 'Verdana', 'Arial', sans-serif;
-  line-height: 1.4;
+	line-height: 1.4;
  	background: rgb(221,224,94);
  	color: rgb(0,62,121);
+ 	cursor: pointer;
+ 	transition: background 400ms;
 }
+.questionnaire-href__block:hover {
+    background: rgb(239,121,97);
+}
+/*
 
 /* styles for questionnaire-home.html, questionnaire-person.html */
 
@@ -355,6 +363,9 @@ textarea {
   border: 1px solid #000;
   overflow: auto;
 }
+.popup-navigation__title {
+	margin: 0;
+}
 .popup-navigation__list {
 	margin: 0;
 	padding: 0 5px;
@@ -362,6 +373,7 @@ textarea {
 	font-size: 16px;
 }
 .popup-navigation__text {
+  margin: 3px 0 16px;
 	padding-left: 5px;
 }
 .popup-navigation__href {
@@ -474,21 +486,22 @@ textarea {
 	border: none;
 	outline: none;
 }
-.btn_start-course {
+.btn_start-task {
 	position: static;
+	margin-bottom: 20px;
 	width: 154px;
   height: 48px;
 	background: url(../../../img/start.png);
   background-position: 0 -1px;
 }
-.btn_start-course:hover {
+.btn_start-task:hover {
   background-position: 0px -48px;
 }
 .btn_answer {
 	width: 192px;
   height: 48px;
   top: -25px;
-  right: 200px;
+  right: 9px;
 	background: url(../../../img/accept_answer.png);
   background-position-y: -8px;    
 }
@@ -496,6 +509,7 @@ textarea {
 	background-position-y: -61px;
 }
 .btn_answer[disabled] {
+	display: none; /* we solved to remain only one functional button on the page (watch .btn_restart) */
 	background-position-y: -113px;
 	cursor: auto;
 }
@@ -511,6 +525,7 @@ textarea {
 	background-position-y: -61px;
 }
 .btn_restart[disabled] {
+	display: none; /* we solved to remain only one functional button on the page (watch .btn_answer) */
 	background-position-y: -113px;
 	cursor: auto;
 }
@@ -544,4 +559,54 @@ textarea {
 }
 .btn_legend_bg {
 	left: 130px;
+}
+/* styles for legend */
+.paragraph-image {
+	text-align: center;
+}
+.paragraph-attention {
+	padding: 0 10px;
+	color: #f47c65;
+	border: 2px solid #f47c65;
+}
+.paragraph-attention__text {
+	font-weight: bold;
+}
+.paragraph-attention__img {
+  position: relative;
+  top: 4px;
+  left: 3px;
+}
+.legend-table {
+	width: 100%;
+}
+.legend-table__cell {
+	padding: 0 10px;
+	width: 50%;
+}
+.legend-table__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: hidden;
+}
+.legend-table__item:before {
+  float: left;
+  width: 0;
+  white-space: nowrap;
+  content:
+	 ". . . . . . . . . . . . . . . . . . . . "
+	 ". . . . . . . . . . . . . . . . . . . . "
+	 ". . . . . . . . . . . . . . . . . . . . "
+	 ". . . . . . . . . . . . . . . . . . . . ";
+	 color: #ccc;
+}
+.legend-table__item-product {
+  padding-right: 0.33em;
+  background: #fff;
+}
+.legend-table__item-number {
+  float: right;
+  padding-left: 0.33em;
+  background: #fff;
 }

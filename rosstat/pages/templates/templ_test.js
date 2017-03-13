@@ -1,6 +1,33 @@
 ;(function() {
 
-	ctrl.templates.test = '<div id="task-container">'+
+	ctrl.templates.test = 	'<div class="prefinaltestpage">'+
+								'<p class="prefinaltestpage_head">Перед прохождением итогового тестирования заполните все поля:</p>'+
+								'<div class="prefinaltestpage_region">'+
+									'<p>Наименование субъекта Российской Федерации</p>'+
+									'<input type="text">'+
+								'</div>'+
+								'<div class="prefinaltestpage_surname">'+
+									'<p>Фамилия</p>'+
+									'<input type="text">'+
+								'</div>'+
+								'<div class="prefinaltestpage_name">'+
+									'<p>Имя</p>'+
+									'<input type="text">'+
+								'</div>'+
+								'<div class="prefinaltestpage_patronymiс">'+
+									'<p>Отчество</p>'+
+									'<input type="text">'+
+								'</div>'+
+								'<div class="prefinaltestpage_age">'+
+									'<p>Возраст</p>'+
+									'<input type="text">'+
+								'</div>'+
+								'<div class="prefinaltestpage_btns">'+
+									'<button class="prefinaltestpage_readyBtn"></button>'+
+								'</div>'+
+								'<div class="prefinaltestpage_warn"></div>'+
+							'</div>'+
+							'<div id="task-container">'+
 								'<p class="testTitle">Тестирование по лекции</p>'+
 								'<div id="task-body">'+
 								'</div>'+

@@ -2,6 +2,7 @@
 
 angular.module('questionnaire-home', ['ui.router'])
 .controller('CtrlTask', ['$scope', '$state', 'myService', function($scope, $state, myService) {
+	$scope.isStarted = false;
 
 	$scope.actNavigation = function() {
 		$scope.currentPageNav = myService.toggleNav();
@@ -16,6 +17,11 @@ angular.module('questionnaire-home', ['ui.router'])
 	
 	$scope.scrollTo = function(scrollLocation) {
 		myService.scroll(scrollLocation);
+	}
+
+	$scope.startTask = function() {
+		$scope.isStarted = myService.start();
+		$state.go("chapter_1");
 	}
 
 	$scope.checkAnswer = function() {
@@ -35,6 +41,7 @@ angular.module('questionnaire-home', ['ui.router'])
 	*
 	*			LIST of FUNCTIONS for 'myService'
 	*
+	*			0. Start task
 	*			1. Find anchors and include data in array of objects
 	*			2. Navigation menu toggle and page position
 	*			3. Navigation menu, click buttons and scroll to page position
@@ -48,6 +55,16 @@ angular.module('questionnaire-home', ['ui.router'])
 	*				 Click on empty field to close '.popup-navigation' 
 	*
 	*----------------------------------------------------*/
+
+	// 0. Start task
+
+	this.start = function() {
+		$('.btn_start-task').css('display','none');
+		$('.btn_navigation')[0].removeAttribute('disabled');
+		$('.btn_legend')[0].removeAttribute('disabled');
+		$('.btn_answer')[0].removeAttribute('disabled');
+		return true;
+	};
 
 	/*
 	* 1. Find all anchors and create such array of objects:
@@ -127,9 +144,6 @@ angular.module('questionnaire-home', ['ui.router'])
     if (!$('.popup-navigation').attr('style')) {
   		$('.popup-navigation').slideToggle();
   	};
-  	if ($('.btn_restart').attr('disabled') || $('.btn_answer').attr('disabled')) {
-  		$('.btn_answer')[0].removeAttribute('disabled');
-  	}
   	if ($('.wrapper-legend').attr('style') === 'display: none;') {
 	    currentPage = visitedList.length + 1;
 
@@ -197,8 +211,6 @@ angular.module('questionnaire-home', ['ui.router'])
 		if (!$('.popup-navigation').attr('style')) {
 			$('.popup-navigation').slideToggle();
 		}
-		$('.btn_navigation')[0].setAttribute('disabled','disabled');
-		$('.btn_legend')[0].setAttribute('disabled','disabled');
 
 		if (indicatorRightAnswer) {
 			$('.popup-comment').css('display','block');
@@ -207,6 +219,9 @@ angular.module('questionnaire-home', ['ui.router'])
 			$('.popup-comment').css('display','block');
 			$('.popup-comment__text').text('Обратите внимание на элементы, выделенные красным цветом. В них допущены ошибки: либо неверно указано значение, либо элемент не должен быть выделен. Пройдите задание ещё раз, нажав кнопку "Начать заново".')
 		}
+
+		// Make disabled state on the pages
+		$('.wrapper').css('pointer-events','none');
 	};
 
 	// 5.1 Remove comment
@@ -231,14 +246,15 @@ angular.module('questionnaire-home', ['ui.router'])
 		$('.btn_restart')[0].setAttribute('disabled','disabled');
 		$('.popup-comment').css('display','none');
 		$('.popup-comment__text').text('');
-		$('.btn_navigation')[0].removeAttribute('disabled');
-		$('.btn_legend')[0].removeAttribute('disabled');
 
 		for (i = 0; i < spanList.length; i++) {
 			$(spanList[i]).removeClass('false-ans_circle').removeClass('visible-circle');
 		}
 		clearFields(inputList);
 		clearFields(textAreaList);
+
+		// Make unebled state on the pages
+		$('.wrapper').css('pointer-events','auto');
 	}
 
 	// 7. Snippets
@@ -291,15 +307,22 @@ angular.module('questionnaire-home', ['ui.router'])
 	$stateProvider
 		.state('task', {
 	    url: '/task',
-	    template: '<p>Уважаемый коллега!</p>' +
-								'<p>Предлагаем вам проверить и закрепить свои знания, заполнив <em class="text_bold">Вопросник для домохозяйства</em> по данным, описанным в легенде.</p>' +
-								'<p>Перед началом работы внимательно ознакомьтесь с легендой. Вернуться к ней вы сможете в любой момент, нажав кнопку &laquo;Легенда&raquo;.</p>' +
-								'<p>Для перехода по страницам используйте колесо мыши или для быстрого перехода к необходимой странице воспользуйтесь кнопкой &laquo;Навигация&raquo;.</p>' +
-								'<p>После заполнения всех полей нажмите кнопку &laquo;Принять ответ&raquo;.</p>' +
-								'<p>В случае ошибок, допущенных при заполнении вопросника, неверно заполненные поля будут отмечены красным цветом. Проанализируйте эти вопросы, сверьтесь с легендой. Подумайте и посмотрите еще раз материал посвященный этому разделу(ам).</p>' +
-								'<p>Кнопка &laquo;Начать заново&raquo; очищает все заполненные поля и ошибки, и вы сможете заполнить вопросник заново.</p>' +
+	    template: '<p>Уважаемый коллега! Предлагаем вам проверить и закрепить свои знания, заполнив <em class="text_bold">Вопросник для домохозяйства</em>.</p>' +
+								'<p>Перед началом работы внимательно ознакомьтесь с легендой. В учебных целях легенда разбита на разделы, в соответствии с Вопросником для домохозяйства. Открыть легенду вы сможете в любой момент, нажав кнопку <img class="paragraph-attention__img" height="26" src="img/mainPage_faq_icon.png" alt="Легенда"> &nbsp;&laquo;Легенда&raquo;. Для того чтобы скрыть легенду нажмите на кнопку еще раз.</p>' +
+								'<p>В упражнении заполнение вопросника реализуется с помощью интерактивных полей. Достаточно нажать на место заполнения и поле ввода станет активным.</p>' +
+								'<p>Для ввода текстового или числового значения в вопроснике нажмите на поле ввода (пример 1 на рисунке). Для редактирования (изменения, удаления) введенного значения снова нажмите на поле, которое требуется изменить. Установив в поле необходимое значение, для перехода к следующему полю можно воспользоваться клавишей табуляции.</p>' +
+								'<p>В закрытых вопросах для осуществления выбора варианта ответа нажмите на нужный вариант (пример 2 на рисунке). Чтобы отменить сделанный выбор, нажмите на ранее выбранный ответ еще раз.</p>' +
+								'<p class="paragraph-image"><img width="700" src="img/task_frame.png" alt="Пример выбора ответов"></p>' +
+								'<p>Для перехода по страницам вопросника скроллируйте страницы вниз или вверх, или для быстрого перехода к необходимой странице воспользуйтесь кнопкой <img class="paragraph-attention__img" width="28" src="img/but_menu_icon.png" alt="Меню навигации"> &nbsp;&laquo;Меню навигации&raquo;.</p>' +
+								'<p>После заполнения всего вопросника целиком, проверьте заполнение вопросника и нажмите кнопку &laquo;Принять ответ&raquo;.</p>' +
+								'<div class="paragraph-attention">' +
+									'<p class="paragraph-attention__text">Внимание!</p>' +
+									'<p class="paragraph-attention__text">Исправить неверно введенные ответы после нажатия кнопки &laquo;Принять ответ&raquo; нельзя.</p>' +
+								'</div>	' +
+								'<p>В случае ошибок, допущенных при заполнении вопросника, неверно заполненные ответы будут отмечены красным цветом. Проанализируйте эти ответы, сверьтесь с легендой. Подумайте и посмотрите еще раз материал посвященный этому разделу(ам).</p>' +
+								'<p>Кнопка &laquo;Начать заново&raquo; очищает весь вопросник от всех заполненных ответов, и вы сможете заполнить вопросник заново.</p>' +
 								'<p>Желаем вам успехов!</p>' +
-								'<div class="wrapper-legend__btn-block"><button class="btn btn_start-course" ng-click="actLegend()"></button></div>'							
+								'<div class="wrapper-legend__btn-block"><button class="btn btn_start-task" ng-click="startTask()" ng-hide="{{isStarted}}"></button></div>'							
 	  })
 
 		.state('chapter_1', {
@@ -368,22 +391,76 @@ angular.module('questionnaire-home', ['ui.router'])
 	  .state('chapter_6', {
 	    url: '/chapter_6',
 	    template: '<p>В собственности домохозяйства находится садовый участок размером в 6 соток, налоги и платежи по страхованию за который в прошлом году не платились. В аренду домохозяйство участок не сдавало.</p>' +
-								'<p>Домохозяйство занимается растениеводством, как для собственного потребления, так и для продажи. Размер выручки от продажи продукции растениеводства составил в 2016 году 17&nbsp;000 рублей и эта сумма соответствует чистому доходу.</p>' +
+								'<p>Домохозяйство занимается растениеводством, как для собственного потребления, так и для продажи. Домохозяйство реализовало картофель на 10&nbsp;000 рублей и свежие овощи на 7&nbsp;000 рублей. Эта сумма соответствует чистому доходу.</p>' +
 								'<p>Количество самостоятельно выращенных овощей и фруктов, потребляемых домохозяйством в прошлом году:</p>' +
-								'<p>Огурцы (свежие) &ndash; 8 кг.</p>' +
-								'<p>Огурцы (соленые, маринованные) &ndash; 5 кг.</p>' +
-								'<p>Капуста (свежая) &ndash; 5 кг.</p>' +
-								'<p>Помидоры (свежие) &ndash; 10 кг.</p>' +
-								'<p>Помидоры (соленые, маринованные) &ndash; 8 кг.</p>' +
-								'<p>Картофель &ndash; 11 кг.</p>' +
-								'<p>Кабачки, тыквы &ndash; 6 кг.</p>' +
-								'<p>Лук репчатый &ndash; 2 кг.</p>' +
-								'<p>Перец, баклажаны &ndash; 3 кг.</p>' +
-								'<p>Свекла, редис, морковь и другие корнеплоды &ndash; 7 кг.</p>' +
-								'<p>Укроп, салат, лук, чеснок и др. &ndash; 1 кг.</p>' +
-								'<p>Яблоки, груши &ndash; 3 кг.</p>' +
-								'<p>Клубника &ndash; 7 кг.</p>' +
-								'<p>Другая свежая садовая ягода &ndash; 3 кг.</p>' +
+								'<table class="legend-table">' +
+									'<tr>' +
+										'<td class="legend-table__cell">' +
+											'<ul class="legend-table__list">' +
+										    '<li class="legend-table__item">' +
+										    	'<span class="legend-table__item-product">Огурцы (свежие)</span>' +
+									        '<span class="legend-table__item-number">8 кг</span>' +
+										    '</li>' +
+										    '<li class="legend-table__item">' +
+										    	'<span class="legend-table__item-product">Огурцы (соленые, маринованные)</span>' +
+									        '<span class="legend-table__item-number">5 кг</span>' +
+										    '</li>' +
+										    '<li class="legend-table__item">' +
+										    	'<span class="legend-table__item-product">Капуста (свежая)</span>' +
+									        '<span class="legend-table__item-number">5 кг</span>' +
+										    '</li>' +
+										    '<li class="legend-table__item">' +
+										    	'<span class="legend-table__item-product">Помидоры (свежие)</span>' +
+									        '<span class="legend-table__item-number">10 кг</span>' +
+										    '</li>' +
+										    '<li class="legend-table__item">' +
+										    	'<span class="legend-table__item-product">Помидоры (соленые, маринованные)</span>' +
+									        '<span class="legend-table__item-number">8 кг</span>' +
+										    '</li>' +
+										    '<li class="legend-table__item">' +
+										    	'<span class="legend-table__item-product">Картофель</span>' +
+									        '<span class="legend-table__item-number">11 кг</span>' +
+										    '</li>' +
+										    '<li class="legend-table__item">' +
+										    	'<span class="legend-table__item-product">Кабачки, тыквы</span>' +
+									        '<span class="legend-table__item-number">6 кг</span>' +
+										    '</li>' +
+											'</ul>' +
+										'</td>' +
+										'<td class="legend-table__cell">' +
+											'<ul class="legend-table__list">' +
+										   '<li class="legend-table__item">' +
+										    	'<span class="legend-table__item-product">Лук репчатый</span>' +
+									        '<span class="legend-table__item-number">2 кг</span>' +
+										    '</li>' +
+										    '<li class="legend-table__item">' +
+										    	'<span class="legend-table__item-product">Перец, баклажаны</span>' +
+									        '<span class="legend-table__item-number">3 кг</span>' +
+										    '</li>' +
+										    '<li class="legend-table__item">' +
+										    	'<span class="legend-table__item-product">Свекла, редис, морковь и другие корнеплоды</span>' +
+									        '<span class="legend-table__item-number">7 кг</span>' +
+										    '</li>' +
+										    '<li class="legend-table__item">' +
+										    	'<span class="legend-table__item-product">Укроп, салат, лук, чеснок и др.</span>' +
+									        '<span class="legend-table__item-number">1 кг</span>' +
+										    '</li>' +
+										    '<li class="legend-table__item">' +
+										    	'<span class="legend-table__item-product">Яблоки, груши</span>' +
+									        '<span class="legend-table__item-number">3 кг</span>' +
+										    '</li>' +
+										    '<li class="legend-table__item">' +
+										    	'<span class="legend-table__item-product">Клубника</span>' +
+									        '<span class="legend-table__item-number">7 кг</span>' +
+										    '</li>' +
+										    '<li class="legend-table__item">' +
+										    	'<span class="legend-table__item-product">Другая свежая садовая ягода</span>' +
+									        '<span class="legend-table__item-number">3 кг</span>' +
+										    '</li>' +
+											'</ul>' +
+										'</td>' +
+									'</tr>' +
+								'</table>' +
 								'<p>Скот и птицу в прошлом году домохозяйство не содержало.</p>' +
 								'<p>Также домохозяйство занималось сбором грибов, ягод и рыбной ловлей для собственного потребления. Домохозяйство израсходовало на собственное потребление грибов свежих &ndash; 4 кг, переработанных грибов &ndash; 3 кг, ягод свежих &ndash; 5 кг, рыбы свежей и соленой &ndash; 3 кг.</p>' +
 								'<p>Платежей и сборов, не связанных с жильем, землей и транспортными средствами, домохозяйство в прошлом году не платило.</p>'
