@@ -756,7 +756,7 @@ function Ctrl() {
       try {
         if (localStorage.rosstat_data != undefined) {
           localStorage_data = JSON.parse(localStorage.rosstat_data);
-          console.info('load from local', localStorage_data)
+          // console.info('load from local', localStorage_data)
         }
       } catch(e) {}
         
@@ -841,7 +841,7 @@ function Ctrl() {
         }
       }
  
-      console.warn('chapters_main',chapters_main)
+      // console.warn('chapters_main',chapters_main)
       pagesCount = cls.structure.pages.length;
 
       // полоса прогресса
@@ -990,8 +990,9 @@ function Ctrl() {
         buildList(cls.structure.pages);
 
         $('#container').attr('data-style', 'course');
-
+        alert(cls.bookmark + ' <= go to')
         goToPage(cls.bookmark);
+        alert('переход завершён')
         $('.mainPage').css({'display':'none'});
       })
       $mainPage_body_item.eq(2).on('click', function(){
@@ -1218,7 +1219,7 @@ function Ctrl() {
 
         }
       }
-        console.warn('chapters_intro',chapters_intro)
+        // console.warn('chapters_intro',chapters_intro)
         pagesCount = courseStructure_intro.pages.length;
 
       // buildSuspend(courseStructure_intro.pages);
@@ -1885,7 +1886,7 @@ function Ctrl() {
       }
     })
     function initSimplePage() {
-
+      alert('init SP')
       pageCont.innerHTML = ctrl.templates.page;
 
       pageCont.querySelector('.container').innerHTML = '<img class="simplePage_img" src="pages/'+
