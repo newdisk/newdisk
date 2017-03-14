@@ -1739,34 +1739,34 @@ function Ctrl() {
         nextChapBtn.removeClass('disabled');
         prevChapBtn.removeClass('disabled');
       }
-      alert('nav buttons colors set')
+      // alert('nav buttons colors set')
       if (assetOpened) { closeAsset(); }
 
       // показ номера страницы из всех
       // paginator.text(String(page+1) +'/'+ String(cls.structure.pages.length));
       // показ номера страницы в главе
-      alert('pagination...'+suspend.pages[page].orderInChapter+'/'+String(chapters[cls.structure.pages[page].chapterIndex].pagesTotal))
+      // alert('pagination...'+suspend.pages[page].orderInChapter+'/'+String(chapters[cls.structure.pages[page].chapterIndex].pagesTotal))
       paginator.text(String(suspend.pages[page].orderInChapter) +'/'+ String(chapters[cls.structure.pages[page].chapterIndex].pagesTotal));
 
       // стоп анимации на странице и удаление слушателей
       // подразумевается, что на странице санимацией есть метод, который экстренно её завершает
-      if (ctrl.coursePage) { alert('stop prev page'); ctrl.coursePage.stop(); };
+      if (ctrl.coursePage) { ctrl.coursePage.stop(); };
 
       // удаление прошлой страницы из DOM
-      alert('try to del')
+      // alert('try to del')
       var delPage =  document.getElementById(frameName);
       if (delPage) {
         pageCont.removeChild(delPage);
       }
       pageCont.innerHTML = '';
-      alert('del ok')
+      // alert('del ok')
       
       if ($('#container').attr('data-style') == 'intro') {
         cls.bookmark_intro = cls.bookmark = page;
       } else {
         cls.bookmark_main = cls.bookmark = page;
       }
-      alert('try to set title')
+      // alert('try to set title')
       $(pageTitle).find('p').text(cls.structure.pages[page].title);
 
       // отключение звуковой кнопки, страница её сама включает
@@ -1785,7 +1785,7 @@ function Ctrl() {
 
       // показываем загрузку
       pagePreloader.css('display','block');
-      alert('try to load page')
+      // alert('try to load page')
       // добавляем страницу
       if (suspend.pages[page].type == 't') {
         initTestPage();
@@ -1793,7 +1793,7 @@ function Ctrl() {
         if (cls.structure.pages[page].video) {
           initVideoPage(cls.structure.pages[page].video_width, cls.structure.pages[page].video_height, cls.structure.pages[page].video, cls.structure.pages[page].video_poster);
         } else {
-          alert('try load SP')
+          // alert('try load SP')
           initSimplePage();
         }
         
@@ -1891,7 +1891,7 @@ function Ctrl() {
       }
     })
     function initSimplePage() {
-      alert('init SP')
+      // alert('init SP')
       pageCont.innerHTML = ctrl.templates.page;
 
       pageCont.querySelector('.container').innerHTML = '<img class="simplePage_img" src="pages/'+
