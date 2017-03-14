@@ -12,8 +12,8 @@ function Ctrl() {
   cls.successScore = 80;
   cls.pageSuccessScore = 1;
   cls.strongNavigation = false;
+  cls.soundBank = [];
   cls.volume = .75;
-  cls.soundBank;
   cls.learner = 'Имя обучаемого';
   cls.learner_age = 0;
   cls.templates = {};
@@ -24,6 +24,11 @@ function Ctrl() {
   cls.pdfvars.name = '';
   cls.pdfvars.patronymiс = '';
   cls.pdfvars.age = '';
+
+  var isMobile = false;
+  if (/Mobi/.test(navigator.userAgent)) {
+      isMobile = true;
+  }
 
   /**
   *   Получает результаты прохождения упражнения из файла страницы
@@ -771,7 +776,7 @@ function Ctrl() {
 
       // добавление звуков
       var tmpSound = '';
-      for (var i = 0; i < cls.structure.pages.length; i++) {
+      for (var i = 0; i < courseStructure.pages.length; i++) {
         if (!cls.structure.pages[i].sound) {
           tmpSound += '<audio class="course-audio" src="pages/'+cls.structure.pages[0].sound+'"></audio>';
         } else {
@@ -779,7 +784,7 @@ function Ctrl() {
         }
         
       }
-      courseAudioCont.innerHTML = tmpSound;
+      courseAudioCont.querySelector('.course-audio-container_main').innerHTML = tmpSound;
 
       courseAudio = document.querySelectorAll('.course-audio')
 
@@ -1020,6 +1025,12 @@ function Ctrl() {
         buildList(cls.structure.pages);
 
         $('#container').attr('data-style', 'course');
+
+        // трогаем все звуки, чтобы работало автовоиспроизведение в мобильном хроме
+        courseAudio.forEach(function(e,i,a) {
+          e.play();
+          e.pause();
+        })
         
         goToPage(cls.bookmark);
         
@@ -1906,9 +1917,7 @@ function Ctrl() {
 
       pageCont.querySelector('.container').innerHTML = '<img class="simplePage_img" src="pages/'+
                                                           ctrl.structure.pages[ctrl.bookmark].image+
-                                                          '"><audio class="simplePage_audio" src="pages/'+
-                                                          ctrl.structure.pages[ctrl.bookmark].sound+
-                                                          '"></audio>';
+                                                          '">';
     
       audio = courseAudio[cls.bookmark];
       audio.currentTime = 0;
@@ -1929,7 +1938,9 @@ function Ctrl() {
         audio.play();
       }
 
-      pagePlay();
+      if ($('#container').attr('data-style') != 'intro') {
+        pagePlay();
+      }
 
       ctrl.coursePage = {
         play: function() {
@@ -2092,10 +2103,13 @@ function Ctrl() {
     }
 
     function initObjOnPage(url) {
-
-      pageCont.innerHTML = ctrl.templates.objectPage;
-
-      $('.object-page_text_link').attr('href', url);
+      if (isMobile) {
+        pageCont.innerHTML = ctrl.templates.objectPage;
+        $('.object-page_text_link').attr('href', url);
+      } else {
+        pageCont.innerHTML = ctrl.templates.objectPageDesktop;
+        $('.object-page').append('<object width="100%" height="594" type="application/pdf" data="'+url+'"></object>');
+      }
     }
 
     function sendData () {

@@ -7,4 +7,6 @@
 									'</div>'+
 								'</div>'
 
+	ctrl.templates.objectPageDesktop = '<div class="object-page"></div>'
+
 })();
