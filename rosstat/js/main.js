@@ -13,6 +13,7 @@ function Ctrl() {
   cls.pageSuccessScore = 1;
   cls.strongNavigation = false;
   cls.volume = .75;
+  cls.currSound;
   cls.learner = 'Имя обучаемого';
   cls.learner_age = 0;
   cls.templates = {};
@@ -709,7 +710,8 @@ function Ctrl() {
         chapters_intro = [],
         chapters_main = [],
         lastAudioLvl = 75,
-        lastAudioAttr = 'vol_75';
+        lastAudioAttr = 'vol_75',
+        courseAudio = document.querySelector('.course-audio');
 
 
     // start here
@@ -1866,7 +1868,9 @@ function Ctrl() {
                                                           ctrl.structure.pages[ctrl.bookmark].sound+
                                                           '"></audio>';
     
-      var audio = document.querySelector('.simplePage_audio');
+      // var audio = document.querySelector('.simplePage_audio');
+      var audio = courseAudio;
+      audio.setAttribute('src', 'pages/'+ctrl.structure.pages[ctrl.bookmark].sound)
       
       audioProgressChange = true;
       audioProgress.slider('value', 0)
@@ -1907,8 +1911,8 @@ function Ctrl() {
         },
         stop: function() {
           ctrl.coursePage = null;
-          audio = null;
-          window.clearTimeout();
+          audio.pause();
+          // window.clearTimeout();
         },
         restart: function(){
           // btnRestartHandler()
