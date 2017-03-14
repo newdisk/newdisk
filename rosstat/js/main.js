@@ -990,9 +990,9 @@ function Ctrl() {
         buildList(cls.structure.pages);
 
         $('#container').attr('data-style', 'course');
-        alert(cls.bookmark + ' <= go to')
+        // alert(cls.bookmark + ' <= go to')
         goToPage(cls.bookmark);
-        alert('переход завершён')
+        // alert('переход завершён')
         $('.mainPage').css({'display':'none'});
       })
       $mainPage_body_item.eq(2).on('click', function(){
@@ -1688,7 +1688,7 @@ function Ctrl() {
         if (cls.strongNavigation && suspend.pages[page-1].score < cls.pageSuccessScore) { return; }
       }
       // статус «пройдено» для не упражнений
-      alert('curr page type = ' + suspend.pages[page].type)
+      // alert('curr page type = ' + suspend.pages[page].type)
       if (suspend.pages[page].type == 's') {
         suspend.pages[page].status = 1;
         suspend.pages[page].score = 100;
