@@ -139,7 +139,7 @@
 }
 
 /*#header,
-#footer {
+.footer {
 	background: url(../img/footheadback.jpg);
 	height: 60px;
 	z-index: 1;
@@ -150,7 +150,7 @@
 	height: 74px;
 	border-bottom: 3px solid rgb(221,224,94);
 }
-#footer {
+.footer {
 	position: absolute;
 	height: 63px;
 	bottom: 0px;
@@ -868,16 +868,16 @@
 	display: none;
 }
 
-#container[data-style="video"] #footer,
-#container[data-style="examples"] #footer,
-#container[data-style="examples_in"] #footer,
-#container[data-style="exercises"] #footer,
-#container[data-style="lections"] #footer,
-#container[data-style="lections_in"] #footer,
-#container[data-style="materials"] #footer,
-#container[data-style="materials_in"] #footer,
-#container[data-style="add-materials"] #footer,
-#container[data-style="add-materials_in"] #footer {
+#container[data-style="video"] .footer,
+#container[data-style="examples"] .footer,
+#container[data-style="examples_in"] .footer,
+#container[data-style="exercises"] .footer,
+#container[data-style="lections"] .footer,
+#container[data-style="lections_in"] .footer,
+#container[data-style="materials"] .footer,
+#container[data-style="materials_in"] .footer,
+#container[data-style="add-materials"] .footer,
+#container[data-style="add-materials_in"] .footer {
 	display: none;
 }
 

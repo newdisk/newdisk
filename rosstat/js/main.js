@@ -1745,6 +1745,7 @@ function Ctrl() {
       // показ номера страницы из всех
       // paginator.text(String(page+1) +'/'+ String(cls.structure.pages.length));
       // показ номера страницы в главе
+      alert('pagination...'+suspend.pages[page].orderInChapter+'/'+String(chapters[cls.structure.pages[page].chapterIndex].pagesTotal))
       paginator.text(String(suspend.pages[page].orderInChapter) +'/'+ String(chapters[cls.structure.pages[page].chapterIndex].pagesTotal));
 
       // стоп анимации на странице и удаление слушателей
