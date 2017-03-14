@@ -1749,21 +1749,23 @@ function Ctrl() {
 
       // стоп анимации на странице и удаление слушателей
       // подразумевается, что на странице санимацией есть метод, который экстренно её завершает
-      if (ctrl.coursePage) { ctrl.coursePage.stop(); };
+      if (ctrl.coursePage) { alert('stop prev page'); ctrl.coursePage.stop(); };
 
       // удаление прошлой страницы из DOM
+      alert('try to del')
       var delPage =  document.getElementById(frameName);
       if (delPage) {
         pageCont.removeChild(delPage);
       }
       pageCont.innerHTML = '';
+      alert('del ok')
       
       if ($('#container').attr('data-style') == 'intro') {
         cls.bookmark_intro = cls.bookmark = page;
       } else {
         cls.bookmark_main = cls.bookmark = page;
       }
-      
+      alert('try to set title')
       $(pageTitle).find('p').text(cls.structure.pages[page].title);
 
       // отключение звуковой кнопки, страница её сама включает
@@ -1778,11 +1780,11 @@ function Ctrl() {
       // стоп анимации моргания nextBtn
       // nextBtn.removeClass('animating');
 
-      updateProgressBar();
+      // updateProgressBar();
 
       // показываем загрузку
       pagePreloader.css('display','block');
-
+      alert('try to load page')
       // добавляем страницу
       if (suspend.pages[page].type == 't') {
         initTestPage();
