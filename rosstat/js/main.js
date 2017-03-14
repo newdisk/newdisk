@@ -801,8 +801,6 @@ function Ctrl() {
             
           }
         })
-        e.play()
-        e.pause()
       })
       
       // подсчёт страниц и глав в курсе
@@ -1027,10 +1025,16 @@ function Ctrl() {
         buildList(cls.structure.pages);
 
         $('#container').attr('data-style', 'course');
-        
-        goToPage(cls.bookmark);
-        
         $('.mainPage').css({'display':'none'});
+        // трогаем все звуки, чтобы работало автовоиспроизведение в мобильном хроме
+        courseAudio.forEach(function(e,i,a) {
+          // e.play();
+          e.pause();
+          if (i == courseAudio.length-1) {
+            goToPage(cls.bookmark);
+
+          }
+        })
       })
       $mainPage_body_item.eq(2).on('click', function(){
         // видео
