@@ -1889,7 +1889,7 @@ function Ctrl() {
         }
       })
       audio.addEventListener('canplaythrough', function() {
-        audio.play()
+        // audio.play()
       })
 
       function pagePlay() {
@@ -1901,6 +1901,7 @@ function Ctrl() {
         // window.setTimeout(function() {
         //   audio.play();
         // }, 1000);
+        audio.play();
       }
 
       pagePlay();
