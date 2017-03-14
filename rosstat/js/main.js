@@ -801,6 +801,8 @@ function Ctrl() {
             
           }
         })
+        e.play()
+        e.pause()
       })
       
       // подсчёт страниц и глав в курсе
@@ -1025,12 +1027,6 @@ function Ctrl() {
         buildList(cls.structure.pages);
 
         $('#container').attr('data-style', 'course');
-
-        // трогаем все звуки, чтобы работало автовоиспроизведение в мобильном хроме
-        courseAudio.forEach(function(e,i,a) {
-          e.play();
-          e.pause();
-        })
         
         goToPage(cls.bookmark);
         
