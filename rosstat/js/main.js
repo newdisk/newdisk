@@ -1860,6 +1860,9 @@ function Ctrl() {
 
     // 
     function initSimplePage() {
+      var onplaying = true;
+      var onpause = false;
+
       pageCont.innerHTML = ctrl.templates.page;
 
       pageCont.querySelector('.container').innerHTML = '<img class="simplePage_img" src="pages/'+
@@ -1891,6 +1894,33 @@ function Ctrl() {
       audio.addEventListener('canplaythrough', function() {
         // audio.play()
       })
+      ////////////////////////////
+      // On video playing toggle values
+      audio.onplaying = function() {
+          onplaying = true;
+          onpause = false;
+      };
+
+      // On video pause toggle values
+      audio.onpause = function() {
+          onplaying = false;
+          onpause = true;
+      };
+
+      // Play video function
+      function playVid() {      
+          if (audio.paused && !onplaying) {
+              audio.play();
+          }
+      } 
+
+      // Pause video function
+      function pauseVid() {     
+          if (!audio.paused && !onpause) {
+              audio.pause();
+          }
+      }
+      ////////////////////////////
 
       function pagePlay() {
         $('.audioCtrl_slider').slider('value', ctrl.volume*100).slider('enable');
