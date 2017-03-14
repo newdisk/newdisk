@@ -1028,7 +1028,7 @@ function Ctrl() {
         $('.mainPage').css({'display':'none'});
         // трогаем все звуки, чтобы работало автовоиспроизведение в мобильном хроме
         courseAudio.forEach(function(e,i,a) {
-          // e.play();
+          e.play();
           e.pause();
           if (i == courseAudio.length-1) {
             goToPage(cls.bookmark);
