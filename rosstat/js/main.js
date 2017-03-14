@@ -14,6 +14,7 @@ function Ctrl() {
   cls.strongNavigation = false;
   cls.volume = .75;
   cls.currSound;
+  cls.lastSound;
   cls.learner = 'Имя обучаемого';
   cls.learner_age = 0;
   cls.templates = {};
@@ -711,7 +712,8 @@ function Ctrl() {
         chapters_main = [],
         lastAudioLvl = 75,
         lastAudioAttr = 'vol_75',
-        courseAudio = document.querySelector('.course-audio');
+        audio = document.querySelector('.course-audio'),
+        courseAudioCont = document.querySelector('.course-audio-container');
 
 
     // start here
@@ -962,6 +964,15 @@ function Ctrl() {
         cls.structure = courseStructure_intro;
         chapters = chapters_intro;
         buildList(cls.structure.pages);
+
+        // courseAudioCont.innerHTML = '';
+        // var soundBank = '';
+        // for (var i = 0; i < cls.structure.pages.length; i++) {
+
+        //   cls.structure.pages[i].sound
+        // }
+
+        // $(courseAudioCont)
 
         $('#container').attr('data-style', 'intro');
 
@@ -1859,9 +1870,21 @@ function Ctrl() {
     }
 
     // 
+    audio.addEventListener('ended', function() {
+      // nextBtn.addClass('animating');
+      console.log(cls.bookmark+1)
+      goToPage(cls.bookmark+1);
+    })
+    audio.addEventListener('timeupdate', function() {
+      // console.log(audio.currentTime/audio.duration*100)
+      if (audioProgressChange) {
+        if (audio) {
+          audioProgress.slider( "value", audio.currentTime/audio.duration*100 );
+        }
+        
+      }
+    })
     function initSimplePage() {
-      var onplaying = true;
-      var onpause = false;
 
       pageCont.innerHTML = ctrl.templates.page;
 
@@ -1872,15 +1895,17 @@ function Ctrl() {
                                                           '"></audio>';
     
       // var audio = document.querySelector('.simplePage_audio');
-      var audio = courseAudio;
-      audio.setAttribute('src', 'pages/'+ctrl.structure.pages[ctrl.bookmark].sound)
+      // var audio = courseAudio;
+      console.log('audio', audio)
+      audio.currentTime = 0;
+      // audio.src = 'pages/'+ctrl.structure.pages[ctrl.bookmark].sound;
       
       audioProgressChange = true;
       audioProgress.slider('value', 0)
 
-      audio.addEventListener('ended', function() {
+      /*audio.addEventListener('ended', function() {
         // nextBtn.addClass('animating');
-        audio.pause()
+        console.log(cls.bookmark+1)
         goToPage(cls.bookmark+1);
       })
       audio.addEventListener('timeupdate', function() {
@@ -1889,38 +1914,9 @@ function Ctrl() {
           if (audio) {
             audioProgress.slider( "value", audio.currentTime/audio.duration*100 );
           }
+          
         }
-      })
-      audio.addEventListener('canplaythrough', function() {
-        // audio.play()
-      })
-      ////////////////////////////
-      // On video playing toggle values
-      audio.onplaying = function() {
-          onplaying = true;
-          onpause = false;
-      };
-
-      // On video pause toggle values
-      audio.onpause = function() {
-          onplaying = false;
-          onpause = true;
-      };
-
-      // Play video function
-      function playVid() {      
-          if (audio.paused && !onplaying) {
-              audio.play();
-          }
-      } 
-
-      // Pause video function
-      function pauseVid() {     
-          if (!audio.paused && !onpause) {
-              audio.pause();
-          }
-      }
-      ////////////////////////////
+      })*/
 
       function pagePlay() {
         $('.audioCtrl_slider').slider('value', ctrl.volume*100).slider('enable');
