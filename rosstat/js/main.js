@@ -13,8 +13,7 @@ function Ctrl() {
   cls.pageSuccessScore = 1;
   cls.strongNavigation = false;
   cls.volume = .75;
-  cls.currSound;
-  cls.lastSound;
+  cls.soundBank;
   cls.learner = 'Имя обучаемого';
   cls.learner_age = 0;
   cls.templates = {};
@@ -712,7 +711,9 @@ function Ctrl() {
         chapters_main = [],
         lastAudioLvl = 75,
         lastAudioAttr = 'vol_75',
-        audio = document.querySelector('.course-audio'),
+        lastAudio = 0,
+        currAudio = 0,
+        courseAudio,
         courseAudioCont = document.querySelector('.course-audio-container');
 
 
@@ -767,6 +768,35 @@ function Ctrl() {
     }
 
     function init() {
+
+      // добавление звуков
+      var tmpSound = '';
+      for (var i = 0; i < cls.structure.pages.length; i++) {
+        if (!cls.structure.pages[i].sound) {
+          tmpSound += '<audio class="course-audio" src="pages/'+cls.structure.pages[0].sound+'"></audio>';
+        } else {
+          tmpSound += '<audio class="course-audio" src="pages/'+cls.structure.pages[i].sound+'"></audio>';
+        }
+        
+      }
+      courseAudioCont.innerHTML = tmpSound;
+
+      courseAudio = document.querySelectorAll('.course-audio')
+
+      courseAudio.forEach(function(e,i,a) {
+        e.addEventListener('ended', function() {
+          goToPage(cls.bookmark+1);
+        })
+        e.addEventListener('timeupdate', function() {
+          // console.log(audio.currentTime/audio.duration*100)
+          if (audioProgressChange) {
+            if (audio) {
+              audioProgress.slider( "value", audio.currentTime/audio.duration*100 );
+            }
+            
+          }
+        })
+      })
       
       // подсчёт страниц и глав в курсе
       var chapterIndex = 0;
@@ -990,9 +1020,9 @@ function Ctrl() {
         buildList(cls.structure.pages);
 
         $('#container').attr('data-style', 'course');
-        // alert(cls.bookmark + ' <= go to')
+        
         goToPage(cls.bookmark);
-        // alert('переход завершён')
+        
         $('.mainPage').css({'display':'none'});
       })
       $mainPage_body_item.eq(2).on('click', function(){
@@ -1688,7 +1718,6 @@ function Ctrl() {
         if (cls.strongNavigation && suspend.pages[page-1].score < cls.pageSuccessScore) { return; }
       }
       // статус «пройдено» для не упражнений
-      // alert('curr page type = ' + suspend.pages[page].type)
       if (suspend.pages[page].type == 's') {
         suspend.pages[page].status = 1;
         suspend.pages[page].score = 100;
@@ -1739,13 +1768,12 @@ function Ctrl() {
         nextChapBtn.removeClass('disabled');
         prevChapBtn.removeClass('disabled');
       }
-      // alert('nav buttons colors set')
+      
       if (assetOpened) { closeAsset(); }
 
       // показ номера страницы из всех
       // paginator.text(String(page+1) +'/'+ String(cls.structure.pages.length));
       // показ номера страницы в главе
-      // alert('pagination...'+suspend.pages[page].orderInChapter+'/'+String(chapters[cls.structure.pages[page].chapterIndex].pagesTotal))
       paginator.text(String(suspend.pages[page].orderInChapter) +'/'+ String(chapters[cls.structure.pages[page].chapterIndex].pagesTotal));
 
       // стоп анимации на странице и удаление слушателей
@@ -1753,20 +1781,18 @@ function Ctrl() {
       if (ctrl.coursePage) { ctrl.coursePage.stop(); };
 
       // удаление прошлой страницы из DOM
-      // alert('try to del')
       var delPage =  document.getElementById(frameName);
       if (delPage) {
         pageCont.removeChild(delPage);
       }
       pageCont.innerHTML = '';
-      // alert('del ok')
       
       if ($('#container').attr('data-style') == 'intro') {
         cls.bookmark_intro = cls.bookmark = page;
       } else {
         cls.bookmark_main = cls.bookmark = page;
       }
-      // alert('try to set title')
+      
       $(pageTitle).find('p').text(cls.structure.pages[page].title);
 
       // отключение звуковой кнопки, страница её сама включает
@@ -1785,7 +1811,7 @@ function Ctrl() {
 
       // показываем загрузку
       pagePreloader.css('display','block');
-      // alert('try to load page')
+      
       // добавляем страницу
       if (suspend.pages[page].type == 't') {
         initTestPage();
@@ -1793,7 +1819,6 @@ function Ctrl() {
         if (cls.structure.pages[page].video) {
           initVideoPage(cls.structure.pages[page].video_width, cls.structure.pages[page].video_height, cls.structure.pages[page].video, cls.structure.pages[page].video_poster);
         } else {
-          // alert('try load SP')
           initSimplePage();
         }
         
@@ -1876,22 +1901,7 @@ function Ctrl() {
     }
 
     // 
-    audio.addEventListener('ended', function() {
-      // nextBtn.addClass('animating');
-      console.log(cls.bookmark+1)
-      goToPage(cls.bookmark+1);
-    })
-    audio.addEventListener('timeupdate', function() {
-      // console.log(audio.currentTime/audio.duration*100)
-      if (audioProgressChange) {
-        if (audio) {
-          audioProgress.slider( "value", audio.currentTime/audio.duration*100 );
-        }
-        
-      }
-    })
     function initSimplePage() {
-      // alert('init SP')
       pageCont.innerHTML = ctrl.templates.page;
 
       pageCont.querySelector('.container').innerHTML = '<img class="simplePage_img" src="pages/'+
@@ -1900,29 +1910,12 @@ function Ctrl() {
                                                           ctrl.structure.pages[ctrl.bookmark].sound+
                                                           '"></audio>';
     
-      // var audio = document.querySelector('.simplePage_audio');
-      // var audio = courseAudio;
-      console.log('audio', audio)
+      audio = courseAudio[cls.bookmark];
       audio.currentTime = 0;
       // audio.src = 'pages/'+ctrl.structure.pages[ctrl.bookmark].sound;
       
       audioProgressChange = true;
       audioProgress.slider('value', 0)
-
-      /*audio.addEventListener('ended', function() {
-        // nextBtn.addClass('animating');
-        console.log(cls.bookmark+1)
-        goToPage(cls.bookmark+1);
-      })
-      audio.addEventListener('timeupdate', function() {
-        // console.log(audio.currentTime/audio.duration*100)
-        if (audioProgressChange) {
-          if (audio) {
-            audioProgress.slider( "value", audio.currentTime/audio.duration*100 );
-          }
-          
-        }
-      })*/
 
       function pagePlay() {
         $('.audioCtrl_slider').slider('value', ctrl.volume*100).slider('enable');
@@ -2106,7 +2099,6 @@ function Ctrl() {
     }
 
     function sendData () {
-      // alert('send')
       suspend_main.bookmark = cls.bookmark_main;
       suspend_main.chapters = chapters_main;
       suspend_main.learner = cls.learner;
