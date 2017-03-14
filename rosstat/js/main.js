@@ -1789,6 +1789,7 @@ function Ctrl() {
         if (cls.structure.pages[page].video) {
           initVideoPage(cls.structure.pages[page].video_width, cls.structure.pages[page].video_height, cls.structure.pages[page].video, cls.structure.pages[page].video_poster);
         } else {
+          alert('try load SP')
           initSimplePage();
         }
         
