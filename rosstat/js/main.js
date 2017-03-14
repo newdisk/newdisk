@@ -1688,6 +1688,7 @@ function Ctrl() {
         if (cls.strongNavigation && suspend.pages[page-1].score < cls.pageSuccessScore) { return; }
       }
       // статус «пройдено» для не упражнений
+      alert('curr page type = ' + suspend.pages[page].type)
       if (suspend.pages[page].type == 's') {
         suspend.pages[page].status = 1;
         suspend.pages[page].score = 100;
@@ -1738,7 +1739,7 @@ function Ctrl() {
         nextChapBtn.removeClass('disabled');
         prevChapBtn.removeClass('disabled');
       }
-      
+      alert('nav buttons colors set')
       if (assetOpened) { closeAsset(); }
 
       // показ номера страницы из всех
