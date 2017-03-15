@@ -2,7 +2,7 @@
 	font-family: verdana;
 }
 #task-container {
-	background: url(../img/bunner.png) no-repeat;
+	/*background: url(../img/bunner.png) no-repeat;*/
 	background-position: 0 bottom;
 	padding: 10px 0 0 20px;
 }
@@ -233,11 +233,22 @@
 .prefinaltestpage_name input,
 .prefinaltestpage_patronymiс input,
 .prefinaltestpage_age input {
+	width: 300px;
 	height: 35px;
 	flex-grow: 10;
 	font-size: 18px;
 	padding: 5px;
 	border: 1px solid #000;
+}
+.age-wrap {
+	position: relative;
+	width: 300px;
+	flex-grow: 10;
+}
+.age-wrap .age-wrap_input {
+	width: 70px;
+	flex-grow: initial;
+	-moz-appearance: textfield;
 }
 .prefinaltestpage_btns {
 	display: flex;

@@ -774,33 +774,33 @@ function Ctrl() {
 
     function init() {
 
-      // добавление звуков
-      var tmpSound = '';
-      for (var i = 0; i < courseStructure.pages.length; i++) {
-        if (!cls.structure.pages[i].sound) {
-          tmpSound += '<audio class="course-audio" src="pages/'+cls.structure.pages[0].sound+'"></audio>';
-        } else {
-          tmpSound += '<audio class="course-audio" src="pages/'+cls.structure.pages[i].sound+'" preload="auto"></audio>';
-        }
+      // // добавление звуков
+      // var tmpSound = '';
+      // for (var i = 0; i < courseStructure.pages.length; i++) {
+      //   if (!cls.structure.pages[i].sound) {
+      //     tmpSound += '<audio class="course-audio" src="pages/'+cls.structure.pages[0].sound+'"></audio>';
+      //   } else {
+      //     tmpSound += '<audio class="course-audio" src="pages/'+cls.structure.pages[i].sound+'" preload="auto"></audio>';
+      //   }
         
-      }
-      courseAudioCont.querySelector('.course-audio-container_main').innerHTML = tmpSound;
+      // }
+      // courseAudioCont.querySelector('.course-audio-container_main').innerHTML = tmpSound;
 
-      courseAudio = document.querySelectorAll('.course-audio')
+      // courseAudio = document.querySelectorAll('.course-audio')
 
-      courseAudio.forEach(function(e,i,a) {
-        e.addEventListener('ended', function() {
-          goToPage(cls.bookmark+1);
-        })
-        e.addEventListener('timeupdate', function(i) {
-          // console.log(audio.currentTime/audio.duration*100)
-          if (audioProgressChange) {
-            if (e) {
-              audioProgress.slider( "value", e.currentTime/e.duration*100 );
-            }
-          }
-        })
-      })
+      // courseAudio.forEach(function(e,i,a) {
+      //   e.addEventListener('ended', function() {
+      //     goToPage(cls.bookmark+1);
+      //   })
+      //   e.addEventListener('timeupdate', function(i) {
+      //     // console.log(audio.currentTime/audio.duration*100)
+      //     if (audioProgressChange) {
+      //       if (e) {
+      //         audioProgress.slider( "value", e.currentTime/e.duration*100 );
+      //       }
+      //     }
+      //   })
+      // })
       
       // подсчёт страниц и глав в курсе
       var chapterIndex = 0;
@@ -1026,15 +1026,7 @@ function Ctrl() {
         $('#container').attr('data-style', 'course');
         $('.mainPage').css({'display':'none'});
 
-        // трогаем все звуки, чтобы работало автовоиспроизведение в мобильном хроме
-        var chapPages = chapters[cls.structure.pages[cls.bookmark].chapterIndex].pagesTotal-2;
-
-        for (var i = suspend.pages[cls.bookmark].orderInChapter; i < chapPages; i++) {
-          courseAudio[i].play();
-          courseAudio[i].pause();
-        }
-
-        goToPage(cls.bookmark);
+        initSounds(cls.bookmark);
       })
 
       $mainPage_body_item.eq(2).on('click', function(){
@@ -1114,25 +1106,22 @@ function Ctrl() {
       })
 
       nextChapBtn.on('click', function() {
-
         if (cls.structure.pages[cls.bookmark].chapterIndex == chapters.length-1) { return; }
 
-        // трогаем страницы в главе для автовоспроизведения
-        var chapPages = chapters[cls.structure.pages[cls.bookmark].chapterIndex+1].pagesTotal-2;
-
-        for (var i = chapters[cls.structure.pages[cls.bookmark].chapterIndex+1].startPage; i < chapPages; i++) {
-          courseAudio[i].play();
-          courseAudio[i].pause();
+        if($('#container').attr('data-style') == 'course') {
+          initSounds(chapters[cls.structure.pages[cls.bookmark].chapterIndex+1].startPage);
+        } else {
+          goToPage(chapters[cls.structure.pages[cls.bookmark].chapterIndex+1].startPage);
         }
-
-        goToPage(chapters[cls.structure.pages[cls.bookmark].chapterIndex+1].startPage);
-  
       })
       prevChapBtn.on('click', function() {
-
         if (cls.structure.pages[cls.bookmark].chapterIndex == 0) { return; }
 
-        goToPage(chapters[cls.structure.pages[cls.bookmark].chapterIndex-1].startPage);
+        if($('#container').attr('data-style') == 'course') {
+          initSounds(chapters[cls.structure.pages[cls.bookmark].chapterIndex-1].startPage);
+        } else {
+          goToPage(chapters[cls.structure.pages[cls.bookmark].chapterIndex-1].startPage);
+        }
       })
 
       $('.menuBtn').on('click', function() {
@@ -1425,15 +1414,12 @@ function Ctrl() {
 
       $('.menu-list_page, #stats-list li').on('click', function(e) {
         var targetPage = $(this).attr('order');
-        // трогаем страницы в главе для автовоспроизведения
-        var chapPages = chapters[cls.structure.pages[targetPage].chapterIndex].pagesTotal-2;
-
-        for (var i = chapters[cls.structure.pages[targetPage].chapterIndex].startPage; i < chapPages; i++) {
-          courseAudio[i].play();
-          courseAudio[i].pause();
+        
+        if($('#container').attr('data-style') == 'course') {
+          initSounds(targetPage);
+        } else {
+          goToPage(targetPage);
         }
-
-        goToPage(targetPage);
       })
 
 
@@ -1902,6 +1888,57 @@ function Ctrl() {
     }
     //===--
 
+    /**
+    * создаёт звуки для главы и проходися по ним, чтобы работало автовоспроизведение в мобильном хроме
+    */
+    function initSounds(pageID) {
+      pageID = Number(pageID);
+
+      var chapPages = chapters[cls.structure.pages[pageID].chapterIndex].pagesTotal-1,
+          startPage = chapters[cls.structure.pages[pageID].chapterIndex].startPage,
+          courseAudioCont_main = courseAudioCont.querySelector('.course-audio-container_main'),
+          tmpSound = '',
+          playing = false;
+
+      for (var i = startPage; i < startPage + chapPages; i++) {
+        if (!cls.structure.pages[i].sound || cls.structure.pages[i].sound == '') {
+          tmpSound += '<audio class="course-audio" src="pages/'+cls.structure.pages[0].sound+'"></audio>';
+        } else {
+          tmpSound += '<audio class="course-audio" src="pages/'+cls.structure.pages[i].sound+'"></audio>';
+        }
+      }
+      
+      courseAudioCont_main.innerHTML = '';
+      courseAudioCont_main.innerHTML = tmpSound;
+
+      courseAudio = document.querySelectorAll('.course-audio');
+
+      courseAudio.forEach(function(e,i,a) {
+        e.addEventListener('ended', function() {
+          goToPage(cls.bookmark+1);
+        })
+        e.addEventListener('timeupdate', function(i) {
+          // console.log(audio.currentTime/audio.duration*100)
+          if (audioProgressChange) {
+            if (e) {
+              audioProgress.slider( "value", e.currentTime/e.duration*100 );
+            }
+          }
+        })
+        e.play();
+        e.pause();
+      })
+      console.log(courseAudio[suspend.pages[cls.bookmark].orderInChapter-1])
+      courseAudio[suspend.pages[cls.bookmark].orderInChapter-1].addEventListener('canplaythrough', function() {
+        if (!playing) {
+          goToPage(pageID)
+          playing = true;
+        }
+      })
+      courseAudio[suspend.pages[cls.bookmark].orderInChapter-1].load()
+
+    }
+
     function initTestPage() {
       pagePreloader.css('display','none');
       pageCont.innerHTML = ctrl.templates.test;
@@ -1937,7 +1974,7 @@ function Ctrl() {
                                                           ctrl.structure.pages[ctrl.bookmark].image+
                                                           '">';
     
-      audio = courseAudio[cls.bookmark];
+      audio = courseAudio[suspend.pages[cls.bookmark].orderInChapter-1]; 
       audio.currentTime = 0;
       // audio.src = 'pages/'+ctrl.structure.pages[ctrl.bookmark].sound;
       

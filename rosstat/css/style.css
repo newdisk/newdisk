@@ -1058,9 +1058,10 @@
 	list-style: none;
 	border-bottom: 1px solid #0077c0;
 	padding: 2px 0px 2px 30px;
+	font-size: 18px;
 }
 .menu-list_page p {
-	font-size: 16px;
+	font-size: 18px;
 }
 .menu-list_page.current {
 	font-weight: bold;
@@ -1077,7 +1078,7 @@
 	width: 20px;
 	/*display: inline-block;*/
 	float: left;
-	margin-right: 5px;
+	margin-right: 12px;
 }
 .menu-list_page p {
 	display: inline-block;

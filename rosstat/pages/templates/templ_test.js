@@ -20,7 +20,11 @@
 								'</div>'+
 								'<div class="prefinaltestpage_age">'+
 									'<p>Возраст</p>'+
-									'<input type="number" placeholder="0" min="0">'+
+									'<div class="age-wrap">'+
+										'<input class="age-wrap_input" type="number" placeholder="0" min="18" max="120">'+
+										'<div class="age-wrap_incr"></div>'+
+										'<div class="age-wrap_decr"></div>'+
+									'</div>'+
 								'</div>'+
 								'<div class="prefinaltestpage_btns">'+
 									'<button class="prefinaltestpage_readyBtn"></button>'+
