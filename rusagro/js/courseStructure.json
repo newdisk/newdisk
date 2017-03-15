@@ -386,26 +386,27 @@
 					"alt": "Цех с разметкой"
 				},
 				"answerList": [{
-				"src": "pages/chapter01/page21/img/passage.svg",
-				"alt": "Проход",
-				"rightAnswer": 0
-			},{
-				"src": "pages/chapter01/page21/img/pallet.svg",
-				"alt": "Паллет",
-				"rightAnswer": 1
-			},{
-				"src": "pages/chapter01/page21/img/dumpster.svg",
-				"alt": "Мусорный контейнер",
-				"rightAnswer": 2
-			},{
-				"src": "pages/chapter01/page21/img/defective-things-box.svg",
-				"alt": "Коробка с надписью «Брак»",
-				"rightAnswer": 3
-			},{
-				"src": "pages/chapter01/page21/img/extinguisher.svg",
-				"alt": "Огнетушитель",
-				"rightAnswer": 4
-			}]},
+					"src": "pages/chapter01/page21/img/passage.svg",
+					"alt": "Проход",
+					"rightAnswer": 0
+				}, {
+					"src": "pages/chapter01/page21/img/pallet.svg",
+					"alt": "Паллет",
+					"rightAnswer": 1
+				}, {
+					"src": "pages/chapter01/page21/img/dumpster.svg",
+					"alt": "Мусорный контейнер",
+					"rightAnswer": 2
+				}, {
+					"src": "pages/chapter01/page21/img/defective-things-box.svg",
+					"alt": "Коробка с надписью «Брак»",
+					"rightAnswer": 3
+				}, {
+					"src": "pages/chapter01/page21/img/extinguisher.svg",
+					"alt": "Огнетушитель",
+					"rightAnswer": 4
+				}]
+			},
 			"messages": [
 				"Отличный результат! Теперь разметка нанесена правильно.",
 				"Что-то перепутано. Нанесите цветовую разметку заново.",
@@ -482,6 +483,146 @@
 			"id": 1,
 			"title": "Введение",
 			"location": "page01",
+			"type": "simple_page",
+			"messages": [""]
+		}]
+	}, {
+		"id": 5,
+		"title": "5 курс",
+		"pages": [{
+			"id": 1,
+			"title": "Введение",
+			"location": "page01",
+			"type": "simple_page",
+			"messages": [""]
+		}]
+	}, {
+		"id": 6,
+		"title": "Карты процессов",
+		"pages": [{
+			"id": 1,
+			"title": "",
+			"location": "page01",
+			"type": "simple_page",
+			"messages": [""]
+		}, {
+			"id": 2,
+			"title": "",
+			"location": "page02",
+			"type": "simple_page",
+			"messages": [""]
+		}, {
+			"id": 3,
+			"title": "",
+			"location": "page03",
+			"type": "simple_page",
+			"messages": [""]
+		}, {
+			"id": 4,
+			"title": "",
+			"location": "page04",
+			"type": "simple_page",
+			"messages": [""]
+		}, {
+			"id": 5,
+			"title": "",
+			"location": "page05",
+			"type": "simple_page",
+			"messages": [""]
+		}, {
+			"id": 6,
+			"title": "",
+			"location": "page06",
+			"type": "simple_page",
+			"messages": [""]
+		}, {
+			"id": 7,
+			"title": "",
+			"location": "page07",
+			"type": "simple_page",
+			"messages": [""]
+		}, {
+			"id": 8,
+			"title": "",
+			"location": "page08",
+			"type": "simple_page",
+			"messages": [""]
+		}, {
+			"id": 9,
+			"title": "",
+			"location": "page09",
+			"type": "simple_page",
+			"messages": [""]
+		}, {
+			"id": 10,
+			"title": "",
+			"location": "page10",
+			"type": "simple_page",
+			"messages": [""]
+		}, {
+			"id": 11,
+			"title": "",
+			"location": "page11",
+			"type": "simple_page",
+			"messages": [""]
+		}, {
+			"id": 12,
+			"title": "",
+			"location": "page12",
+			"type": "simple_page",
+			"messages": [""]
+		}, {
+			"id": 13,
+			"title": "",
+			"location": "page13",
+			"type": "simple_page",
+			"messages": [""]
+		}, {
+			"id": 14,
+			"title": "",
+			"location": "page14",
+			"type": "simple_page",
+			"messages": [""]
+		}, {
+			"id": 15,
+			"title": "",
+			"location": "page15",
+			"type": "simple_page",
+			"messages": [""]
+		}, {
+			"id": 16,
+			"title": "",
+			"location": "page16",
+			"type": "simple_page",
+			"messages": [""]
+		}, {
+			"id": 17,
+			"title": "",
+			"location": "page17",
+			"type": "simple_page",
+			"messages": [""]
+		}, {
+			"id": 18,
+			"title": "",
+			"location": "page18",
+			"type": "simple_page",
+			"messages": [""]
+		}, {
+			"id": 19,
+			"title": "",
+			"location": "page19",
+			"type": "simple_page",
+			"messages": [""]
+		}, {
+			"id": 20,
+			"title": "",
+			"location": "page20",
+			"type": "simple_page",
+			"messages": [""]
+		}, {
+			"id": 21,
+			"title": "",
+			"location": "page21",
 			"type": "simple_page",
 			"messages": [""]
 		}]

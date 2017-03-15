@@ -123,10 +123,6 @@ angular
 		alert('Error! Failure with courseStructure.json loading.')
 	});
 
-	// this.getTitle = function(prop) {
-	// 	if (prop === 'course') return courseDataObj[prop];
-	// }
-
 	this.getCourseObj = function() {
 		return courseDataObj;
 	};
@@ -383,6 +379,167 @@ angular.module('app')
     });
   });
 angular.module('app')
+  .component('taskRangeTextBlocks', {
+    templateUrl: 'js/components/task-range-text-blocks/taskRangeTextBlocksTmpl.html',
+    controller: 'TaskRangeTextBlocksCtrl',
+    controllerAs: '$ctrl'
+  })
+  .controller('TaskRangeTextBlocksCtrl', function($stateParams, staticService) {
+    var self = this;
+    
+    self.state = false;
+    
+    /**
+    * Task: There are shelves with boxes. User needs to sort it on sections.
+    *
+    * Logic: 1. Fill blocks with true answers (add elements content and attribute [data-section])
+    *        2. Start restart function to shuffle blocks with answers
+    *        3. After click on the arrow change state arrow (they become disabled) during animation
+    *        4. After "Check answer" we cover task new layer so events become disabled
+    *        5. After "Restart" shuffle blocks with answers and stash covered layer
+    */
+    
+    self.taskText = staticService.getData($stateParams, 'taskText');
+    self.answerList = staticService.getData($stateParams, 'answerList');    
+    
+    angular.element(document).ready(function() {
+    
+      var blockList = $('.moving-blocks__item'),
+          arrowUpList = $('.arrow_up'),
+          arrowDownList = $('.arrow_down'),
+          i;
+      
+      function animate(dir, thisH, thatH, thisStyle, thatStyle, thisElem, thatElem ) {
+  
+      	var duration = dir === -1 && thatStyle !== 0 || dir === 1 && thisStyle !== 0 ? 500 : 300,
+          thisTik = thisH/duration,
+      		thatTik = thatH/duration,
+          thisStyleTik = thisStyle / duration,
+          thatStyleTik = thatStyle / duration,
+      		start = Date.now();
+      	
+      	// Disabled user actions, events during animation
+      	var wrapper = $('.moving-blocks').css('pointer-events','none');
+      	
+      	// Add z-index to clicked element moves above another
+      	thisElem.css('z-index','1');
+      
+      	var timer = setInterval(function() {
+      	  
+      	  var timePassed = Date.now() - start;
+      
+      	  if (timePassed >= duration) {
+      	    clearInterval(timer);
+      	    thisElem[0].style.top = '0px';
+      	  	thatElem[0].style.top = '0px';
+      	    if (dir > 0) {
+      	    	thisElem.after( thatElem );
+      	    } else {
+      	    	thisElem.before( thatElem );
+      	    }
+      	    blockList = $('.moving-blocks__item');
+      	    thisElem.css('z-index','0');
+      	    wrapper = $('.moving-blocks').css('pointer-events','auto');
+            thisElem.css('margin-top', thatStyle + 'px');
+            thatElem.css('margin-top', thisStyle + 'px');
+      	    return;
+      	  }
+      
+      	  if (dir > 0) {
+            thisElem[0].style.top = -timePassed * (thatTik + thisStyleTik) + 'px';
+            thatElem[0].style.top = timePassed * (thisTik + thisStyleTik) + 'px';
+      	  } else {
+            thisElem[0].style.top = timePassed * (thatTik + thatStyleTik) + 'px';
+            thatElem[0].style.top = -timePassed * (thisTik + thatStyleTik) + 'px';
+      	  }      
+      	}, 20);
+      }
+      
+      // Function for block vertical size correction
+      function findVerticalSize(elem) {
+        var bordT = elem.outerWidth() - elem.innerWidth(),
+            paddT = elem.innerWidth() - elem.width(),
+            margT = elem.outerWidth(true) - elem.outerWidth(),
+            height = elem.height();
+            
+        return {size: bordT + paddT + margT + height,
+                style: Number($(elem).css('margin-top').split('px')[0])};
+      }
+      
+      // Click function on arrows "Up"
+      self.toArrowUp = function($event){
+        var elem = $event.currentTarget,
+            indexArrow = $.inArray(elem,arrowUpList);
+  
+        // not the top arrow
+        if (indexArrow === 0 || indexArrow === -1) {
+          return false;
+        }
+        
+        animate(1, findVerticalSize(blockList.eq(indexArrow)).size, findVerticalSize(blockList.eq(indexArrow - 1)).size,
+                             findVerticalSize(blockList.eq(indexArrow)).style, findVerticalSize(blockList.eq(indexArrow - 1)).style,
+                             blockList.eq(indexArrow), blockList.eq(indexArrow - 1));
+      }
+      
+      // Click function on arrows "Down"
+      self.toArrowDown = function($event){
+        var indexArrow = $.inArray($event.currentTarget,arrowDownList);
+        
+        // not the bottom arrow
+        if (indexArrow === (arrowDownList.length - 1) || indexArrow === -1) {
+          return;
+        }
+        animate(-1, findVerticalSize(blockList.eq(indexArrow)).size, findVerticalSize(blockList.eq(indexArrow + 1)).size,
+                              findVerticalSize(blockList.eq(indexArrow)).style, findVerticalSize(blockList.eq(indexArrow + 1)).style,
+                              blockList.eq(indexArrow), blockList.eq(indexArrow + 1));
+      }
+      
+      // Click function on button "Check answer"
+      self.checkAnswer = function(){
+       for (i = 0; i < blockList.length; i++) {
+         if ($(blockList[i]).attr('data-section') !== self.answerList[i].section) {
+           return alert('False');
+         }
+       }
+       return alert('True');
+      };
+      
+      // Click function on buttom "Restart"
+      self.removeRestart = function(){
+        
+        var numberArr = [],
+            currentElemIndex;
+        for (var i = 0; i < blockList.length; i++) {
+            numberArr.push(i);
+        }
+        
+        Array.prototype.shuffle = function() {
+        	for (var i = this.length - 1; i > 0; i--) {
+        		var num = Math.floor(Math.random() * (i + 1));
+        		var d = this[num];
+        		this[num] = this[i];
+        		this[i] = d;
+        	};
+        };
+  
+        numberArr.shuffle();
+        
+        // Element displacement
+        currentElemIndex = numberArr[0];
+        for (i = 1; i < blockList.length; i++) {
+          $(blockList[currentElemIndex]).after(blockList[numberArr[i]]);
+          currentElemIndex = numberArr[i];
+        }
+        
+        // Add inline styles to place them on the true place
+        blockList = $('.moving-blocks__item');
+        for (i = 0; i < blockList.length; i++) {
+          $(blockList[i]).css('margin-top', self.answerList[i].marginTop);
+        }
+      };
+    });
+  });
+angular.module('app')
   .component('taskRangeBlocksWithShelves', {
     templateUrl: 'js/components/task-range-blocks-with-shelves/taskRangeBlocksWithShelvesTmpl.html',
     controller: 'TaskRangeMovingBlocksCtrl',
@@ -570,167 +727,6 @@ angular.module('app')
       //     $(blockList[i]).css('margin-top', self.answerList[i].marginTop);
       //   }     
       }
-    });
-  });
-angular.module('app')
-  .component('taskRangeTextBlocks', {
-    templateUrl: 'js/components/task-range-text-blocks/taskRangeTextBlocksTmpl.html',
-    controller: 'TaskRangeTextBlocksCtrl',
-    controllerAs: '$ctrl'
-  })
-  .controller('TaskRangeTextBlocksCtrl', function($stateParams, staticService) {
-    var self = this;
-    
-    self.state = false;
-    
-    /**
-    * Task: There are shelves with boxes. User needs to sort it on sections.
-    *
-    * Logic: 1. Fill blocks with true answers (add elements content and attribute [data-section])
-    *        2. Start restart function to shuffle blocks with answers
-    *        3. After click on the arrow change state arrow (they become disabled) during animation
-    *        4. After "Check answer" we cover task new layer so events become disabled
-    *        5. After "Restart" shuffle blocks with answers and stash covered layer
-    */
-    
-    self.taskText = staticService.getData($stateParams, 'taskText');
-    self.answerList = staticService.getData($stateParams, 'answerList');    
-    
-    angular.element(document).ready(function() {
-    
-      var blockList = $('.moving-blocks__item'),
-          arrowUpList = $('.arrow_up'),
-          arrowDownList = $('.arrow_down'),
-          i;
-      
-      function animate(dir, thisH, thatH, thisStyle, thatStyle, thisElem, thatElem ) {
-  
-      	var duration = dir === -1 && thatStyle !== 0 || dir === 1 && thisStyle !== 0 ? 500 : 300,
-          thisTik = thisH/duration,
-      		thatTik = thatH/duration,
-          thisStyleTik = thisStyle / duration,
-          thatStyleTik = thatStyle / duration,
-      		start = Date.now();
-      	
-      	// Disabled user actions, events during animation
-      	var wrapper = $('.moving-blocks').css('pointer-events','none');
-      	
-      	// Add z-index to clicked element moves above another
-      	thisElem.css('z-index','1');
-      
-      	var timer = setInterval(function() {
-      	  
-      	  var timePassed = Date.now() - start;
-      
-      	  if (timePassed >= duration) {
-      	    clearInterval(timer);
-      	    thisElem[0].style.top = '0px';
-      	  	thatElem[0].style.top = '0px';
-      	    if (dir > 0) {
-      	    	thisElem.after( thatElem );
-      	    } else {
-      	    	thisElem.before( thatElem );
-      	    }
-      	    blockList = $('.moving-blocks__item');
-      	    thisElem.css('z-index','0');
-      	    wrapper = $('.moving-blocks').css('pointer-events','auto');
-            thisElem.css('margin-top', thatStyle + 'px');
-            thatElem.css('margin-top', thisStyle + 'px');
-      	    return;
-      	  }
-      
-      	  if (dir > 0) {
-            thisElem[0].style.top = -timePassed * (thatTik + thisStyleTik) + 'px';
-            thatElem[0].style.top = timePassed * (thisTik + thisStyleTik) + 'px';
-      	  } else {
-            thisElem[0].style.top = timePassed * (thatTik + thatStyleTik) + 'px';
-            thatElem[0].style.top = -timePassed * (thisTik + thatStyleTik) + 'px';
-      	  }      
-      	}, 20);
-      }
-      
-      // Function for block vertical size correction
-      function findVerticalSize(elem) {
-        var bordT = elem.outerWidth() - elem.innerWidth(),
-            paddT = elem.innerWidth() - elem.width(),
-            margT = elem.outerWidth(true) - elem.outerWidth(),
-            height = elem.height();
-            
-        return {size: bordT + paddT + margT + height,
-                style: Number($(elem).css('margin-top').split('px')[0])};
-      }
-      
-      // Click function on arrows "Up"
-      self.toArrowUp = function($event){
-        var elem = $event.currentTarget,
-            indexArrow = $.inArray(elem,arrowUpList);
-  
-        // not the top arrow
-        if (indexArrow === 0 || indexArrow === -1) {
-          return false;
-        }
-        
-        animate(1, findVerticalSize(blockList.eq(indexArrow)).size, findVerticalSize(blockList.eq(indexArrow - 1)).size,
-                             findVerticalSize(blockList.eq(indexArrow)).style, findVerticalSize(blockList.eq(indexArrow - 1)).style,
-                             blockList.eq(indexArrow), blockList.eq(indexArrow - 1));
-      }
-      
-      // Click function on arrows "Down"
-      self.toArrowDown = function($event){
-        var indexArrow = $.inArray($event.currentTarget,arrowDownList);
-        
-        // not the bottom arrow
-        if (indexArrow === (arrowDownList.length - 1) || indexArrow === -1) {
-          return;
-        }
-        animate(-1, findVerticalSize(blockList.eq(indexArrow)).size, findVerticalSize(blockList.eq(indexArrow + 1)).size,
-                              findVerticalSize(blockList.eq(indexArrow)).style, findVerticalSize(blockList.eq(indexArrow + 1)).style,
-                              blockList.eq(indexArrow), blockList.eq(indexArrow + 1));
-      }
-      
-      // Click function on button "Check answer"
-      self.checkAnswer = function(){
-       for (i = 0; i < blockList.length; i++) {
-         if ($(blockList[i]).attr('data-section') !== self.answerList[i].section) {
-           return alert('False');
-         }
-       }
-       return alert('True');
-      };
-      
-      // Click function on buttom "Restart"
-      self.removeRestart = function(){
-        
-        var numberArr = [],
-            currentElemIndex;
-        for (var i = 0; i < blockList.length; i++) {
-            numberArr.push(i);
-        }
-        
-        Array.prototype.shuffle = function() {
-        	for (var i = this.length - 1; i > 0; i--) {
-        		var num = Math.floor(Math.random() * (i + 1));
-        		var d = this[num];
-        		this[num] = this[i];
-        		this[i] = d;
-        	};
-        };
-  
-        numberArr.shuffle();
-        
-        // Element displacement
-        currentElemIndex = numberArr[0];
-        for (i = 1; i < blockList.length; i++) {
-          $(blockList[currentElemIndex]).after(blockList[numberArr[i]]);
-          currentElemIndex = numberArr[i];
-        }
-        
-        // Add inline styles to place them on the true place
-        blockList = $('.moving-blocks__item');
-        for (i = 0; i < blockList.length; i++) {
-          $(blockList[i]).css('margin-top', self.answerList[i].marginTop);
-        }
-      };
     });
   });
 angular
