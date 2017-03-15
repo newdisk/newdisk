@@ -4,20 +4,29 @@ var courseStructure_intro = {
 	],
 	"pages": [
 		{
-			"id":"01_00",
+			"id":"00_01",
 			"chapterIndex":0,
-			"title":"Intro 1",
+			"title":"Введение",
 			"location":"page",
 			"image":"intro_01/00_00.png",
 			"sound":"",
 			"type": "simple_page",
 			"messages":[""]
 		},{
-			"id":"01_01",
+			"id":"00_02",
 			"chapterIndex":0,
-			"title":"Intro 1",
+			"title":"Состав мультимедийного пособия",
 			"location":"page",
-			"image":"intro_01/00_00.png",
+			"image":"intro_01/00_01.png",
+			"sound":"",
+			"type": "simple_page",
+			"messages":[""]
+		},{
+			"id":"00_03",
+			"chapterIndex":0,
+			"title":"Элементы управления",
+			"location":"page",
+			"image":"intro_01/00_02.png",
 			"sound":"",
 			"type": "simple_page",
 			"messages":[""]

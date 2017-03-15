@@ -692,9 +692,9 @@ var courseStructure = {
 		"title":"Вопросник для домохозяйства: состав домохозяйства. Пример заполнения",
 		"location":"page",
 		"video":"video/animation_04.mp4",
-		"video_width":"960",
-		"video_height":"598",
-		"video_poster":"animation_04.png",
+		"video_width":"940",
+		"video_height":"520",
+		"video_poster":"animation_04.jpg",
 		"type": "simple_page",
 		"messages":[""]
 	},{
@@ -891,9 +891,9 @@ var courseStructure = {
 		"title":"Вопросник для домохозяйства: выплаты на детей в возрасте до 16 лет. Пример заполнения",
 		"location":"page",
 		"video":"video/animation_05.mp4",
-		"video_width":"960",
-		"video_height":"598",
-		"video_poster":"animation_05.png",
+		"video_width":"970",
+		"video_height":"580",
+		"video_poster":"animation_05.jpg",
 		"type": "simple_page",
 		"messages":[""]
 	},{
@@ -1758,9 +1758,9 @@ var courseStructure = {
 		"title":"Индивидуальный вопросник. Раздел 2. Пример заполнения",
 		"location":"page",
 		"video":"video/animation_12.mp4",
-		"video_width":"960",
-		"video_height":"598",
-		"video_poster":"animation_12.png",
+		"video_width":"970",
+		"video_height":"580",
+		"video_poster":"animation_12.jpg",
 		"type": "simple_page",
 		"messages":[""]
 	},{
@@ -2029,9 +2029,9 @@ var courseStructure = {
 		"title":"Индивидуальный вопросник. Раздел 3. Пример заполнения",
 		"location":"page",
 		"video":"video/animation_13_2.mp4",
-		"video_width":"960",
-		"video_height":"598",
-		"video_poster":"animation_13_2.png",
+		"video_width":"970",
+		"video_height":"580",
+		"video_poster":"animation_13_2.jpg",
 		"type": "simple_page",
 		"messages":[""]
 	},{
@@ -2040,9 +2040,9 @@ var courseStructure = {
 		"title":"Индивидуальный вопросник. Пример заполнения",
 		"location":"page",
 		"video":"video/animation_13_1.mp4",
-		"video_width":"960",
-		"video_height":"598",
-		"video_poster":"animation_13_1.png",
+		"video_width":"970",
+		"video_height":"580",
+		"video_poster":"animation_13_1.jpg",
 		"type": "simple_page",
 		"messages":[""]
 	},{

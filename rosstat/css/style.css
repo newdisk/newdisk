@@ -1011,7 +1011,7 @@
 	padding-left: 25px;
 	padding-right: 30px;
 	padding-bottom: 5px;
-	font-size: 15px;
+	font-size: 18px;
 }
 .menu-list_section_plus {
 	position: absolute;
@@ -1055,7 +1055,7 @@
 }
 
 .menu-list_page {
-	font-size: 14px;
+	font-size: 16px;
 	list-style: none;
 	border-bottom: 1px solid #0077c0;
 	padding: 2px 0px 2px 30px;

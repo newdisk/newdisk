@@ -780,7 +780,7 @@ function Ctrl() {
         if (!cls.structure.pages[i].sound) {
           tmpSound += '<audio class="course-audio" src="pages/'+cls.structure.pages[0].sound+'"></audio>';
         } else {
-          tmpSound += '<audio class="course-audio" src="pages/'+cls.structure.pages[i].sound+'"></audio>';
+          tmpSound += '<audio class="course-audio" src="pages/'+cls.structure.pages[i].sound+'" preload="auto"></audio>';
         }
         
       }
@@ -792,13 +792,12 @@ function Ctrl() {
         e.addEventListener('ended', function() {
           goToPage(cls.bookmark+1);
         })
-        e.addEventListener('timeupdate', function() {
+        e.addEventListener('timeupdate', function(i) {
           // console.log(audio.currentTime/audio.duration*100)
           if (audioProgressChange) {
-            if (audio) {
-              audioProgress.slider( "value", audio.currentTime/audio.duration*100 );
+            if (e) {
+              audioProgress.slider( "value", e.currentTime/e.duration*100 );
             }
-            
           }
         })
       })
@@ -876,7 +875,7 @@ function Ctrl() {
         }
       }
  
-      // console.warn('chapters_main',chapters_main)
+      console.warn('chapters_main',chapters_main)
       pagesCount = cls.structure.pages.length;
 
       // полоса прогресса
@@ -1026,16 +1025,18 @@ function Ctrl() {
 
         $('#container').attr('data-style', 'course');
         $('.mainPage').css({'display':'none'});
-        // трогаем все звуки, чтобы работало автовоиспроизведение в мобильном хроме
-        courseAudio.forEach(function(e,i,a) {
-          e.play();
-          e.pause();
-          if (i == courseAudio.length-1) {
-            goToPage(cls.bookmark);
 
-          }
-        })
+        // трогаем все звуки, чтобы работало автовоиспроизведение в мобильном хроме
+        var chapPages = chapters[cls.structure.pages[cls.bookmark].chapterIndex].pagesTotal-2;
+
+        for (var i = suspend.pages[cls.bookmark].orderInChapter; i < chapPages; i++) {
+          courseAudio[i].play();
+          courseAudio[i].pause();
+        }
+
+        goToPage(cls.bookmark);
       })
+
       $mainPage_body_item.eq(2).on('click', function(){
         // видео
         $('#container').attr('data-style', 'video');
@@ -1260,7 +1261,7 @@ function Ctrl() {
 
         }
       }
-        // console.warn('chapters_intro',chapters_intro)
+        console.warn('chapters_intro',chapters_intro)
         pagesCount = courseStructure_intro.pages.length;
 
       // buildSuspend(courseStructure_intro.pages);
@@ -1458,7 +1459,7 @@ function Ctrl() {
             
             switch(chapters[i].status) {
               case -1: 
-                  $(v).addClass('clean').attr('jqtitle', 'Тестирование не проходилось')
+                  $(v).addClass('clean').attr('jqtitle', 'Тестирование не проводилось')
                 break;
               case 0: 
                   $(v).addClass('red').attr('jqtitle', 'Тест не пройден')
