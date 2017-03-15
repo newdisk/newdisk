@@ -192,7 +192,7 @@ function Ctrl() {
     }
 
     // pre final-test page
-    $('.prefinaltestpage_readyBtn').click(function() {
+    $('.prefinaltestpage_readyBtn').on('click', function() {
       var check = true,
           warnMsg = '',
           inputs = $('.prefinaltestpage').find('input');
@@ -1117,6 +1117,14 @@ function Ctrl() {
 
         if (cls.structure.pages[cls.bookmark].chapterIndex == chapters.length-1) { return; }
 
+        // трогаем страницы в главе для автовоспроизведения
+        var chapPages = chapters[cls.structure.pages[cls.bookmark].chapterIndex+1].pagesTotal-2;
+
+        for (var i = chapters[cls.structure.pages[cls.bookmark].chapterIndex+1].startPage; i < chapPages; i++) {
+          courseAudio[i].play();
+          courseAudio[i].pause();
+        }
+
         goToPage(chapters[cls.structure.pages[cls.bookmark].chapterIndex+1].startPage);
   
       })
@@ -1415,8 +1423,17 @@ function Ctrl() {
 
       })
 
-      $('.menu-list_page, #stats-list li').on('click', function(e){
-        goToPage($(this).attr('order'));
+      $('.menu-list_page, #stats-list li').on('click', function(e) {
+        var targetPage = $(this).attr('order');
+        // трогаем страницы в главе для автовоспроизведения
+        var chapPages = chapters[cls.structure.pages[targetPage].chapterIndex].pagesTotal-2;
+
+        for (var i = chapters[cls.structure.pages[targetPage].chapterIndex].startPage; i < chapPages; i++) {
+          courseAudio[i].play();
+          courseAudio[i].pause();
+        }
+
+        goToPage(targetPage);
       })
 
 

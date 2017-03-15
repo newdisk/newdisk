@@ -20,7 +20,7 @@
 								'</div>'+
 								'<div class="prefinaltestpage_age">'+
 									'<p>Возраст</p>'+
-									'<input type="text">'+
+									'<input type="number" placeholder="0" min="0">'+
 								'</div>'+
 								'<div class="prefinaltestpage_btns">'+
 									'<button class="prefinaltestpage_readyBtn"></button>'+

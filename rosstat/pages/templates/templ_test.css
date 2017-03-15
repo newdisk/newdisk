@@ -237,6 +237,7 @@
 	flex-grow: 10;
 	font-size: 18px;
 	padding: 5px;
+	border: 1px solid #000;
 }
 .prefinaltestpage_btns {
 	display: flex;

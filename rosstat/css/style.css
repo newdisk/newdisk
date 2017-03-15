@@ -1055,10 +1055,12 @@
 }
 
 .menu-list_page {
-	font-size: 16px;
 	list-style: none;
 	border-bottom: 1px solid #0077c0;
 	padding: 2px 0px 2px 30px;
+}
+.menu-list_page p {
+	font-size: 16px;
 }
 .menu-list_page.current {
 	font-weight: bold;
