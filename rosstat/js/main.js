@@ -1925,18 +1925,17 @@ function Ctrl() {
             }
           }
         })
-        e.play();
-        e.pause();
       })
-      console.log(courseAudio[suspend.pages[cls.bookmark].orderInChapter-1])
-      courseAudio[suspend.pages[cls.bookmark].orderInChapter-1].addEventListener('canplaythrough', function() {
+      
+      courseAudio[suspend.pages[pageID].orderInChapter-1].addEventListener('canplaythrough', function() {
         if (!playing) {
+          courseAudio.forEach(function(e,i,a) {
+            e.load()
+          })
           goToPage(pageID)
           playing = true;
         }
       })
-      courseAudio[suspend.pages[cls.bookmark].orderInChapter-1].load()
-
     }
 
     function initTestPage() {
