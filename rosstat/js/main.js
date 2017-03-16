@@ -1925,9 +1925,23 @@ function Ctrl() {
             }
           }
         })
+        if (i == suspend.pages[pageID].orderInChapter-1) {
+          e.addEventListener('canplaythrough', function() {
+            if (!playing) {
+              courseAudio.forEach(function(e,i,a) {
+                e.load()
+              })
+              goToPage(pageID)
+              playing = true;
+            }
+          })
+          return;
+        }
+        e.play()
+        e.pause()
       })
       
-      courseAudio[suspend.pages[pageID].orderInChapter-1].addEventListener('canplaythrough', function() {
+      /*courseAudio[suspend.pages[pageID].orderInChapter-1].addEventListener('canplaythrough', function() {
         if (!playing) {
           courseAudio.forEach(function(e,i,a) {
             e.load()
@@ -1935,7 +1949,7 @@ function Ctrl() {
           goToPage(pageID)
           playing = true;
         }
-      })
+      })*/
     }
 
     function initTestPage() {
