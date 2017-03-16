@@ -59,7 +59,7 @@
     if (!inputFilled || !checkboxFilled) {
       inputFilled = inputFilled ? '' : 'Заполните все текстовые поля.';
       checkboxFilled = checkboxFilled ? '' : 'Выберите варианты ответа в VIII разделе. <br><br>';
-      return ctrl.sendResult(-1,0,'<p class="feedback__text">' + inputFilled + ' ' + checkboxFilled + 
+      return ctrl.sendResult(-1,2,'<p class="feedback__text">' + inputFilled + ' ' + checkboxFilled + 
                     '</p>', true);
     }
 
@@ -100,7 +100,7 @@
       parent.ctrl.sendResult(1,100,commentMessage[0]);
     } else {
       if (numAttempt !== 3) {
-          return ctrl.sendResult(-1,0,'<p class="feedback__text">' + commentMessage[1] + 
+          return ctrl.sendResult(-1,2,'<p class="feedback__text">' + commentMessage[1] + 
             '</p>',true)
         } else {
           inputList = $(parent.frames['myframe'].document).find('.accordion-input');

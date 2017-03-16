@@ -1,1 +1,155 @@
-!function(e,a,s){"use strict";function t(){g.on("click",l).addClass("disabled").attr("disabled",!0),h.on("click",d);var e="";u=s.shuffle(u);for(var a=0;a<u.length;a++)e+='<div class="page__item-wrapper1"><div class="page__item-wrapper2"><div class="page__item" right="'+u[a].right+'"><div class="page__item-before"></div><p>'+u[a].label+"</p>",e+=u[a].image.length>0?'<img src="'+u[a].image+'" class="page__item-wrapper--image"></div></div></div>':"</div></div></div>";f.empty().append(e),n=o.find(".page__item"),n.on("click",i)}function i(a){if(!k){g.attr("disabled",!1).removeClass("disabled"),e(this).hasClass("selected")?e(this).removeClass("selected"):e(this).addClass("selected");var s=!1;n.each(function(a,t){e(t).hasClass("selected")&&(s=!0)}),s?g.attr("disabled",!1).removeClass("disabled"):g.attr("disabled",!0).addClass("disabled")}}function r(){g.off("click"),h.off("click"),n.off("click")}function d(){k=!1,r(),t()}function l(){k=!0,n.addClass("disabled"),g.attr("disabled",!0).addClass("disabled");var s=!0,t=0,i=0;n.each(function(a,r){"true"===e(r).attr("right")&&i++,e(r).hasClass("selected")&&"true"!==e(r).attr("right")&&(s=!1),e(r).hasClass("selected")&&"true"===e(r).attr("right")&&t++}),s&&t==i?(b=1,v=100,C=p[0],c()):(b=-1,v=0,C=p[m],m++,m==p.length&&(v=2,m=1,_=!0,c())),a.sendResult(b,v,C,_)}function c(){n.each(function(a,s){e(s).removeClass("selected"),"true"==e(s).attr("right")&&e(s).addClass("show-right")})}var n,o=e(parent.frames.myframe.document),f=o.find("#task-body"),u=a.structure.pages[a.bookmark].answers,p=a.structure.pages[a.bookmark].messages,g=o.find("#btn--answer"),h=o.find("#btn--restart"),m=1,v=0,b=-1,C="",_=!1,k=!1;a.coursePage={play:function(){t()},stop:function(){r(),a.coursePage=null},restart:function(){d()}}}(parent.jQuery,parent.ctrl,parent._),parent.ctrl.coursePage.play();
+;(function($, ctrl, _){
+'use strict';
+	
+	var pageDocument = $(parent.frames['myframe'].document),
+		taskBody = pageDocument.find('#task-body'),
+		itemList;
+
+	var answersList = ctrl.structure.pages[ctrl.bookmark].answers,
+		comments = ctrl.structure.pages[ctrl.bookmark].messages;
+
+	var ansBtn = pageDocument.find('#btn--answer'),
+		restartBtn = pageDocument.find('#btn--restart');
+
+	// попытка №...
+	var attemptNum = 1,
+		score = 0,
+		status = -1,
+		msg = '',
+		lastTry = false,
+		answered = false;
+
+	function buildTask() {
+		ansBtn.on('click', checkAnswer).addClass('disabled').attr('disabled', true);
+		restartBtn.on('click', restart);
+
+		var tmpStr = ''
+		
+		answersList = _.shuffle(answersList);
+		for (var i = 0; i < answersList.length; i++) {
+			tmpStr += '<div class="page__item-wrapper1"><div class="page__item-wrapper2"><div class="page__item" right="'+answersList[i].right+'"><div class="page__item-before"></div><p>'+answersList[i].label+'</p>';
+			if (answersList[i].image.length > 0) {
+				tmpStr += '<img src="'+answersList[i].image+'" class="page__item-wrapper--image"></div></div></div>';
+			} else {
+				tmpStr += '</div></div></div>';
+			}
+	    }
+	    taskBody.empty().append(tmpStr);
+
+	    itemList = pageDocument.find('.page__item');
+	    itemList.on('click', onItemClick);
+	}
+
+	function onItemClick(e) {
+
+
+		if (!answered) {
+			ansBtn.attr('disabled',false).removeClass('disabled');
+		} else {
+			return;
+		}
+
+	    if ($(this).hasClass('selected')) {
+	        $(this).removeClass('selected');
+	    } else {
+	        $(this).addClass('selected');
+	    }
+
+	    var justAnswered = false;
+	    itemList.each(function(i,v) {
+	        if($(v).hasClass('selected')) {
+	          justAnswered = true;
+	        }
+	    })
+    	if (justAnswered) {
+    		ansBtn.attr('disabled',false).removeClass('disabled');
+    	} else {
+    		ansBtn.attr('disabled',true).addClass('disabled');
+    	}
+    }
+	
+
+	function destroy() {
+		ansBtn.off('click');
+		restartBtn.off('click');
+		itemList.off('click');
+	}
+
+	function restart() {
+		
+		answered = false;
+
+		destroy();
+		buildTask();
+	}
+
+	function checkAnswer() {
+
+		answered = true;
+
+		itemList.addClass('disabled');
+		ansBtn.attr('disabled',true).addClass('disabled');
+
+		var checker = true;
+		var userAnswer = 0;
+		var rightAnswer = 0;
+		itemList.each(function (i,v) {
+			if ($(v).attr('right') === 'true') {
+				rightAnswer++;
+			}
+			if ($(v).hasClass('selected') && $(v).attr('right') !== 'true') {
+				checker = false;
+			}
+			if ($(v).hasClass('selected') && $(v).attr('right') === 'true') {
+				userAnswer++;
+			}
+
+		})
+
+		if (checker && userAnswer == rightAnswer) {
+			status = 1;
+			score = 100;
+			msg = comments[0];
+			showRight();
+			// ctrl.sendResult(1, 100, comments[0], false)
+		} else {
+			// ctrl.sendResult(-1, 0, comments[attemptNum], false)
+			status = -1;
+			score = 0;
+			msg = comments[attemptNum];
+			attemptNum++;
+
+			if (attemptNum == comments.length) {
+				score = 2;
+				attemptNum = 1;
+				lastTry = true;
+				showRight();
+			}
+		}
+		ctrl.sendResult(status, score, msg, lastTry)
+	}
+
+	function showRight() {
+		itemList.each(function(i,v){
+			$(v).removeClass('selected');
+			if ($(v).attr('right') == 'true') {
+				$(v).addClass('show-right');
+			}
+		})
+	}
+
+
+	ctrl.coursePage = {
+		play: function() {
+			buildTask();
+		},
+		stop: function(){
+			destroy();
+			ctrl.coursePage = null;
+		},
+		restart: function(){
+			restart();
+		}
+	}
+})(parent.jQuery, parent.ctrl, parent._);
+parent.ctrl.coursePage.play();

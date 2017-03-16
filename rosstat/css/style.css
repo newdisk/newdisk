@@ -34,13 +34,13 @@
 }
 
 #page-preloader {
-	width: 1000px;
-	height: 598px;
+	width: 100%;
+	height: 100%;
 	position: absolute;
 	background: #fff;
-	top: 3px;
-	left: 12px;
-	cursor: wait;
+	top: 0px;
+	left: 0px;
+	/*cursor: wait;*/
 }
 
 @keyframes rotateSpin {
