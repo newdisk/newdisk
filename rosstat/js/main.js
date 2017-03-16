@@ -1894,7 +1894,9 @@ function Ctrl() {
     function initSounds(pageID) {
       pageID = Number(pageID);
 
-      var chapPages = chapters[cls.structure.pages[pageID].chapterIndex].pagesTotal-1,
+      pageCont.style.display = 'none';
+
+      var chapPages = chapters[cls.structure.pages[pageID].chapterIndex].pagesTotal,
           startPage = chapters[cls.structure.pages[pageID].chapterIndex].startPage,
           courseAudioCont_main = courseAudioCont.querySelector('.course-audio-container_main'),
           tmpSound = '',
@@ -1915,7 +1917,6 @@ function Ctrl() {
 
       courseAudio.forEach(function(e,i,a) {
         e.addEventListener('ended', function() {
-          console.log('sound end')
           goToPage(cls.bookmark+1);
         })
         e.addEventListener('timeupdate', function(i) {
@@ -1929,6 +1930,7 @@ function Ctrl() {
         if (i == suspend.pages[pageID].orderInChapter-1) {
           e.addEventListener('canplaythrough', function() {
             if (!playing) {
+              pageCont.style.display = 'block';
               goToPage(pageID)
               playing = true;
             }
@@ -1940,17 +1942,8 @@ function Ctrl() {
         
       })
       courseAudio[suspend.pages[cls.bookmark].orderInChapter-1].load()
-      /*courseAudio[suspend.pages[pageID].orderInChapter-1].addEventListener('canplaythrough', function() {
-        if (!playing) {
-          courseAudio.forEach(function(e,i,a) {
-            e.load()
-          })
-          goToPage(pageID)
-          playing = true;
-        }
-      })*/
+
       function canPlayOthersSounds() {
-        console.log('other sound loaded', this)
         this.play()
         this.pause()
         this.removeEventListener('canplaythrough', canPlayOthersSounds)
@@ -1958,7 +1951,7 @@ function Ctrl() {
     }
 
     function initTestPage() {
-      pagePreloader.css('display','none');
+      // pagePreloader.css('display','none');
       pageCont.innerHTML = ctrl.templates.test;
       ctrl.makeMeTestQuestionList();
       ctrl.makeTask(window.document, ctrl.currentQuest, false);
@@ -2000,7 +1993,6 @@ function Ctrl() {
       audioProgress.slider('value', 0)
 
       function pagePlay() {
-        console.log('pagePlay', audio.play())
         $('.audioCtrl_slider').slider('value', ctrl.volume*100).slider('enable');
         $('.audioCtrl_soundBtn, .audioCtrl_soundBtn25, .audioCtrl_soundBtn50, .audioCtrl_soundBtn75, .audioCtrl_soundBtn100, .audioCtrl_play, .audioCtrl_bg').removeClass('disabled');
         audioProgress.removeClass('disabled');
