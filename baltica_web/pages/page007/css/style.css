@@ -1,61 +1,192 @@
 .container {
 	position: relative;
-	background: url('../img/7_01.jpg')  no-repeat;
+	background: url('../img/8_1.jpg')  no-repeat;
   padding-top: 0px;
+  overflow: hidden;
 }
-.page__bubble_right_top{
-	top:101px;
-	left: 344px;
-	width: 474px;
-	height: 57px;
-
+.page__bubble {
+	position: relative;
+	width: 576px;
+	margin-left: 100px;
+	margin-bottom: 13px;
+	padding: 0px 5px;
+	background: #fff;
+	border: 1px solid #967938;
+	border-radius: 7px 0;
 }
-.page__bubble_left_lower{
-	top:38px;
-	left: 166px;
-	width: 521px;
-	height: 57px;
-}
-.page__bubble_right_top:after{
-	 bottom: 4px;
- }
-.page__question_container{
-	top: 174px;
-	left: 174px;
-}
-.number_question{
-	/*display: inline-block;*/
+.page__bubble::before {
 	position: absolute;
-	padding-left: 13px;
-	padding-top: 17px;
-	/*vertical-align: super;*/
+	left: 35px;
+	bottom: -16px;
+  content: '';
+  width: 24px;
+  height: 16px;
+  background: url(../../../img/bubble_Down_Left_gold.png) no-repeat;
+}
+.social-block-wrapper {
+	width: 602px;
+	margin: auto;
+	font: 12px 'Verdana Regular', sans-serif;
+}
+.avatar-block__item,
+.social-network-block__label,
+.social-network-block__select {
+	display: inline-block;
+	vertical-align: top;
+}
+.avatar-block__item {
+	margin-right: 1px;
+}
+.avatar-block__img_variants {
+	cursor: pointer;
+}
+.social-network-block {
+	margin-bottom: 10px;
+	text-align: right;
+}
+.social-network-block__label {
+	position: relative;
+	padding-top: 4px;
+	color: #999;
+}
+.social-network-block__option {
+	width: 270px;
+	padding: 6px;
+	background: #fff;
+	border: 1px solid #999;
+	cursor: pointer;
+}
+.avatar-block {
+	padding-left: 233px;
+	text-align: left;
+}
+.popup-comment {
+	position: absolute;
+	top: 30px;
+	left: 50%;
+	display: none;
+	width: 400px;
+	height: 400px;
+	background: red;
+	border: 1px solid #000;
+	transform: translate(-50%, 0);
+}
+.social-network-block__wrapper {
+	position: relative;
+}
+.slider-block {
+	position: absolute;
+	top: 0;
+	z-index: 2;
+	text-align: left;
+}
+.slider-block__title {
+	position: relative;
+	padding-right: 34px;
+	text-align: left;
+}
+.slider-block__title::after {
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	content: '';
+	width: 18px;
+	height: 11px;
+	background: url(../img/str.png);
+	background-position: 0 11px;
+	transform: translate(0,-50%);
+}
+.active.slider-block__title::after {
+	background-position: 0 0;
+}
+.slider-block__item {
+	border-top: none;
+}
+.slider-block__item:hover {
+	background: #eee;
+}
+.page__question_container {
+	position: absolute;
+	top: 375px;
+	left: 100px;
+	background-color: #967938;
+	border: 1px solid #967938;
+	width: 650px;
+}
+.page__text__question1 {
+  margin: 2px;
+  font-family: 'Verdana Regular', sans-serif;
+  font-size: 12px;
+  color: #191919;
+  width: 136px;
+}
+.hint {
+	position: absolute;
+	padding: 2px;
+	font-family: 12px 'Verdana Regular', sans-serif;
+	text-align: left;
+	color: #ffffff;
+	background: rgba(23, 67, 130, .75);
+} 
+.hint_avatar {
+	top: 24px;
+	right: 3px;
+	width: 171px;	
+}
+.hint_name {
+	top: 0;
+	right: 110px;
+	width: 160px;
+}
+.hint_company {
+	top: 0;
+	right: 110px;
+	width: 160px;
+}
+.hint_about {
+	top: 0;
+	right: 55px;
+	width: 215px;
+}
+#feedback_ex {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 6;
+	width: 500px;
+	padding-bottom: 15px;
+	background: #fff;	
+	transform: translate(-50%,-50%);
+}
+#feedback-head p {
+	margin-left: 3px;
+	padding-top: 12px;
+	font-size: 18px;
 	font-family: 'Verdana Bold';
-	font-size: 37px;
-	color: #967938;
+	text-align: center;
+	text-transform: uppercase;
 }
-.question_question{
-	padding-left: 52px;
-	/*display: inline-block;*/
-	width: 630px;
-	font-family: 'Verdana Regular', sans-serif;
+#feedback-body {
+	padding: 12px;
+	min-height: 100px;
 	font-size: 16px;
+	font-family: 'Verdana Regular', sans-serif;
+	text-align: center;
 	color: #000000;
-	display: table-cell;
-	vertical-align: middle;
-}
-.ans_btn_field{
-	left: 526px;
 }
 
-.ans_btn_right, .ans_btn_left {
-	cursor: pointer;
-	border: none;
-	background: url(../img/radiobutton.png);
-	margin-top: 5px;
-	margin-left: 107px;
-	width: 20px;
-	height: 20px;
+#feedback-foot {
+	text-align: center;
 }
-.ans_btn_right:hover, .ans_btn_left:hover{
-	background-position-y: -22px;
+.politicBtn {
+	display: inline-block;
+	width: 235px;
+	height: 32px;
+	background: url(../img/btn_politic_comp.png);
+}
+.continueBtn {
+	display: inline-block;
+	width: 171px;
+	height: 32px;
+	background: url(../img/continueBtn.png);
 }

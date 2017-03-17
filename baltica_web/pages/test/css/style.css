@@ -1,7 +1,8 @@
 #task-container {
 	font: 14px "Verdana Regular", sans-serif;
 	background: url(../img/test_bunner.jpg) no-repeat;
-	background-position: 0 bottom;
+	height: 455px;
+	display: none;
 }
 #task-body {
 	padding: 4px 14px 0px 14px;
@@ -50,15 +51,15 @@
 	margin: 2px auto 10px;
 	padding: 8px 6px;
 	width: 740px;
-	font: 12px/1.4 "Verdana Bold", sans-serif;
-	font-style: italic;
-	background: #dbdcdd;
-	color: #848484;
+	font: 14px/1.4 "Verdana Bold", sans-serif;
+	background: #003366;
+	color: #ffffff;
 }
 #test-quest-txt span {
-	font-style: italic;
+	font: 12px "Verdana";
+	font-style: light;
 }
-#task-btns {
+.task-btns {
 	text-align: center;
 	margin-top: 15px;
 }
@@ -83,7 +84,24 @@
 	margin: auto;
 	padding: 6px 40px;
 	width: 815px;
-	background: rgba(255,255,255,.5);
+	background: rgba(255,255,255,.75);
 	border: 1px solid #003076;
 	border-radius: 20px 0;
+}
+
+.pre-test {
+	padding-top: 55px;
+	font: 14px "Verdana Regular", sans-serif;
+	background: url(../img/test_bunner.jpg) no-repeat;
+	height: 455px;
+}
+.test-startBtn {
+	height: 32px;
+	width: 171px;
+	background: url(../../../img/continueBtn.png);
+	display: inline-block;
+	position: relative;
+}
+.test-startBtn:hover{
+	background-position-y: -35px;
 }

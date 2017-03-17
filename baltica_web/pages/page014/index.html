@@ -1,52 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" href="../../css/bootstrap.min.css">
 	<link rel="stylesheet" href="../../css/style-components.css">
 	<link rel="stylesheet" href="css/style.css">
-
+	<script type="text/javascript" src="../../js/tasks/multichoice.js" defer></script>
 </head>
 <body>
 <div class="container">
-	<div class="container_carousel">
-		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-			<!-- Индикаторы для карусели -->
-			<!--<ol class="carousel-indicators">-->
-			<!--&lt;!&ndash; Перейти к 0 слайду карусели с помощью соответствующего индекса data-slide-to="0" &ndash;&gt;-->
-			<!--<li data-target="#myCarousel" data-slide-to="0" class="active"></li>-->
-			<!--&lt;!&ndash; Перейти к 1 слайду карусели с помощью соответствующего индекса data-slide-to="1" &ndash;&gt;-->
-			<!--<li data-target="#myCarousel" data-slide-to="1"></li>-->
-			<!--&lt;!&ndash; Перейти к 2 слайду карусели с помощью соответствующего индекса data-slide-to="2" &ndash;&gt;-->
-			<!--<li data-target="#myCarousel" data-slide-to="2"></li>-->
-			<!--</ol>-->
 
-			<div class="carousel-inner">
-				<div class="item active">
-					<img src="img/14_2_1.jpg" >
-				</div>
-				<div class="item">
-					<img src="img/14_2_2.jpg" >
-				</div>
-				<div class="item">
-					<img src="img/14_2_3.jpg" >
-				</div>
-				<div class="item">
-					<img src="img/14_2_4.jpg" >
-				</div>
+	<div class="page__bubble_left_lower page__bubble_left_lower--bg animated">
+		<p class="page__text_bubble">Хорошо зажгли вчера на корпоративе – некоторых коллег было и вовсе не узнать. Фотографии получились – просто отпад.</p>
+	</div>
+
+	<div class="page__bubble_right_lower page__bubble_right_lower--bg animated">
+		<p class="page__text_bubble">Слушай, а что если я выложу их в Instagram? Но у меня там столько деловых партнеров! Какие же настройки приватности поставить?</p>
+	</div>
+
+	<div class="page__question_container animated">
+		<p class="page__text__question"><i>Помоги своим коллегам выбрать правильный вариант.</i> </p>
+	</div>
+	<div class="page__bubble_down_left page__bubble_down_left--bg animated">
+		<div id="task-container" class="singlechoice" useAttempt="2">
+
+			<div class="page__wrapper page__wrapper--left">
+
+				<div id="task-body"></div>
 
 			</div>
-			<!-- Controls -->
-			<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-				<!--<span class="glyphicon glyphicon-chevron-left"></span>-->
-			</a>
-			<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-				<!--<span class="glyphicon glyphicon-chevron-right"></span>-->
-			</a>
+
+			<div id="task-btns" class=".btn-box">
+				<button id="btn--answer" class="btn">Ответить</button>
+				<button id="btn--restart" class="btn">Начать заново</button>
+			</div>
 		</div>
 	</div>
+
 </div>
-<script src="../../js/jquery-1.11.3.min.js"></script>
-<script src="../../js/bootstrap.min.js"></script>
+
 <script src="js/main.js"></script>
 </body>
 </html>

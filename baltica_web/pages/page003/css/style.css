@@ -4,7 +4,7 @@
 	padding-top: 0px;
 }
 .page__bubble_right_top {
-	height: 93px;
+	height: 80px;
 	left: 294px;
 	width: 550px;
 }
@@ -18,77 +18,16 @@
 .page__bubble_down_left{
 	top: 281px;
 	height: 136px;
-	width: 566px;
+	width: 576px;
 }
-/*.singlechoice{*/
-	/*height: 94px;*/
-/*}*/
-.btn-box{
-	left:20px;
-}
+
+
 #task-container{
 	height: 94px;
 }
 #task-btns{
 	margin-left: 76px;
 	margin-top: 40px;
-	left: 30px;
-}
-#task-container {
-	margin-top: 5px;
-	padding: 0;
-	height: auto;
-}
-/*.page__wrapper {*/
-	/*margin-top: 4px;*/
-/*}*/
-
-.page__item {
-	height: 100%;
-	margin: 0;
-	padding-left: 38px;
-	cursor: pointer;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	display: table;
-	width: 100%;
-}
-
-.page__item p {
-	padding: 8px 0px;
-	height: 100%;
-	display: table-cell;
-	vertical-align: middle;
-}
-
-.page__item-before {
-	position: absolute;
-	top: 50%;
-	left: 0;
-	width: 20px;
-	height: 20px;
-	margin-top: -10px;
-	background: url('../img/radiobutton.png');
-}
-
-.page__item.selected .page__item-before {
-	background-position: 0 42px;
-}
-.page__item.show-right .page__item-before {
-	background-position: 0 42px;
-}
-.page__text strong {
-	font-family: "Arial Bold", sans-serif;
-}
-
-.page__text {
-	padding: 0px 10px;
-}
-
-.disabled {
-	color: #999;
 }
 
 .page__wrapper--right {
@@ -98,22 +37,12 @@
 }
 
 .page__wrapper--left {
-	/*float: left;*/
 	width: 516px;
 	margin-left: 10px;
 }
 .page__item-wrapper1 {
 	height: 57px;
 	width: 550px;
-	/*display: table;*/
-}
-.page__item-wrapper2 {
-	position: relative;
-	width: 100%;
-	height: 100%;
-	cursor: pointer;
-	/*display: table-cell;*/
-	/*vertical-align: middle;*/
 }
 
 .page__item-wrapper--image {
@@ -124,9 +53,6 @@
 	margin-top: -19px;
 }
 
-#task-btns {
-	/*text-align:center;*/
-}
 .page__question_container{
 	top: 231px;
 	left: 241px;

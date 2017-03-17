@@ -1,40 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" href="../../css/bootstrap.min.css">
 	<link rel="stylesheet" href="../../css/style-components.css">
 	<link rel="stylesheet" href="css/style.css">
-	<script type="text/javascript" src="../../js/tasks/multichoice.js" defer></script>
+
 </head>
 <body>
 <div class="container">
+	<div class="container_carousel">
+		<div id="carousel-example-generic" data-interval="false" data-wrap="false" class="carousel slide" >
 
-	<div class="page__bubble_left_lower">
-		<p class="page__text_bubble">Слушай, <span class="user_name">name</span>, а как быть с такими сообщениями в социальных сетях? Смотри, сколько лайков… Так и хочется написать в ответ «пару ласковых».</p>
-	</div>
-	<div class="page__bubble_left_lower page__bubble_left_lower--bg"></div>
+			<div class="carousel-inner">
+				<div class="item active">
+					<div class="bubble bubble_shape-lr bubble_color-2 item__text-content item__text-content_page-13-1">В сети твоя личная переписка и деловая информация могут часто пересекаться. Не забывай об этом и соблюдай рекомендации Политик, чтобы избежать рисков для себя и компании в таких ситуациях.</div>
+					<img src="img/13_1.jpg" >
+				</div>
+				<div class="item">
+					<div class="bubble bubble_shape-lr bubble_color-2 item__text-content">Вся информация, размещенная в социальных сетях, становится публичной.</div>
+					<img src="img/13_2.jpg" >
+				</div>
+				<div class="item">
+					<div class="bubble bubble_shape-lr bubble_color-2 item__text-content">
+						<p class="item__text-important">Помни:</p>
+						<p>Твои записи для близких и друзей могут увидеть коллеги, клиенты и конкуренты.</p>
+					</div>
+					<img src="img/13_3.jpg" >
+				</div>
+				<div class="item">
+					<div class="bubble bubble_shape-lr bubble_color-2 item__text-content">
+						<p class="item__text-important">Помни!</p>
+						<p>Каждая социальная сеть имеет свои настройки приватности. Желательно изучить их внимательно - и не забывать ими пользоваться.</p>
+					</div>
+					<img src="img/13_4.jpg" >
+				</div>
+				<div class="item">
+					<div class="bubble bubble_shape-lr bubble_color-2 item__text-content">
+						<p class="item__text-important">Избегай:</p>
+						<p>Использовать логотипы и торговые знаки, чтобы выдать личный профиль за официальный профиль компании.</p>
+					</div>
+					<img src="img/13_5.jpg" >
+				</div>
 
-	<div class="page__question_container">
-		<p class="page__text__question"><i>Ты ведь знаешь, что делать в подобных случаях? Выбери правильный ответ:</i> </p>
-	</div>
-	<div class="page__bubble_down_left">
-		<div id="task-container" class="singlechoice" useAttempt="2">
-
-			<div class="page__wrapper page__wrapper--left">
-				<!-- / -->
-				<div id="task-body"><!-- / --></div>
-				<!-- / -->
 			</div>
-
-			<div id="task-btns" class=".btn-box">
-				<button id="btn--answer" class="btn">Ответить</button>
-				<button id="btn--restart" class="btn">Начать заново</button>
-			</div>
+			<!-- Controls -->
+			<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+			</a>
+			<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+			</a>
 		</div>
 	</div>
-	<div class="page__bubble_down_left page__bubble_down_left--bg"></div>
-
 </div>
-
+<script src="../../js/jquery-1.11.3.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

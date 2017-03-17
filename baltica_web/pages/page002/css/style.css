@@ -16,7 +16,8 @@
     width: 435px;
     height: 135px;
     z-index: 1;
-    background: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    background: rgba(0,48,116,0.9);
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
     filter: alpha(opacity=70);
     -moz-opacity: 0.7;
@@ -27,7 +28,8 @@
     /*background: #ffffff;*/
 }
 .page__block_2_input{
-    margin: 14px 0 0 125px;
+    margin: 19px 0 0;
+    width: 280px;
     text-align: center;
     /*margin: 50px;*/
     /*color: #fff;*/
@@ -37,7 +39,6 @@
 }
 .page__block_2_btn{
     padding: 2px 5px 2px 5px;
-    margin: 14px 0 0 136px;
     font-family: 'Verdana Bold', sans-serif;
     text-transform: uppercase;
     font-size: 14px;
@@ -64,6 +65,9 @@
 }
 .page__text.text-1 {
     padding-top: 10px;
+    margin-bottom: 17px;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
 }
 .page__text.text-3 {
     padding-bottom: 10px;

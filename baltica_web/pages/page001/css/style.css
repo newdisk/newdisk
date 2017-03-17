@@ -106,11 +106,11 @@
 	margin: auto;
 	margin-top: 17px;
 }
-.page001__text {
+.text_page-001 {
 	position: relative;
 	padding-left: 100px;
 }
-.page001__text::before {
+.text_page-001::before {
 	position: absolute;
 	top: 2px;
 	left: 7px;
@@ -119,6 +119,6 @@
 	height: 63px;
 	background: url(../img/page001-sprite.png) -80px -53px;
 }
-.question-block_page001 {
+.question-block_page-001 {
 	width: 340px;
 }

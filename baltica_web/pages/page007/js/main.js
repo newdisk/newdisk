@@ -1,108 +1,123 @@
 ;(function($, ctrl, _){
   'use strict';
 
-  var bubble_user_name = $(parent.frames['myframe'].document).find('.user_name');
-  var bubble_number_question = $(parent.frames['myframe'].document).find('.number_question');
-  var bubble_question_question = $(parent.frames['myframe'].document).find('.question_question');
-  var btn_yes = $(parent.frames['myframe'].document).find('.ans_btn_left');
-  var btn_no = $(parent.frames['myframe'].document).find('.ans_btn_right');
+  var pageDocument = $(parent.frames['myframe'].document),
+      feedback = pageDocument.find('#feedback_ex'),
+      selectList = pageDocument.find('.social-network-block__select'),
+      commentList = ctrl.structure.pages[ctrl.bookmark].messages,
+      headCommentList = ctrl.structure.pages[ctrl.bookmark].headComment,
+      glossaryArticleList = ctrl.structure.pages[ctrl.bookmark].linkParagr,
+      linkDoc = ctrl.structure.pages[ctrl.bookmark].linkDoc;
+  var avatarAnswer = '2',
+      answer = '1',
+      taskNumberAccess = 4,
+      successNumber = 0,
+      defaultAvatarSrc;
 
+  pageDocument.find('.avatar-block__img_variants').on('click', chooseAvatar);
+  pageDocument.find('.slider-block__title').on('click', slideSelect);
+  pageDocument.find('.slider-block__item').on('click', chooseSelectOption);
 
-  var answersList = ctrl.structure.pages[ctrl.bookmark].answers;
-  var comments = ctrl.structure.pages[ctrl.bookmark].messages;
-  var headComments = ctrl.structure.pages[ctrl.bookmark].headComment;
-  var random_question;
-  var attemptNum = 0;// попытка №...
-  var msg = '';
-  var headComment = 'Комментарий к ответу';
-  var valio__number_question; // поле - номер вопроса
-  var valio__question_question;// поле - вопрос
-  var counter_random_question;
-  var lastTry =0;
+  function success(successNumber, indexBlock, comment, msg) {
+    var btn = pageDocument.find('.continueBtn'),
+        hintList = pageDocument.find('.hint');
 
+    feedback.find('.feedback_headComment').html(comment).css('color','rgb(43, 124, 0)');
+    feedback.find('#feedback-body').html(msg);
+    btn.toggle();
+    
+    successNumber++;
+    if (successNumber === taskNumberAccess) {
+      btn.on('click', function() {
+        pageDocument.find('.social-block-wrapper').css('pointer-events','auto');
+        btn.toggle();
+        feedback.toggle();
+        $(hintList[indexBlock]).toggle();
+        ctrl.sendResult(1,100,'Задание выполнено успешно!', false,'Результат');
+        btn.off();
+      })
+    } else {
+      btn.on('click', function() {
+        pageDocument.find('.social-block-wrapper').css('pointer-events','auto');
+        btn.toggle();
+        feedback.toggle();
+        $(hintList[indexBlock]).toggle();
+        btn.off();
+      })
+    }
+    return successNumber;
+  }
 
+  function failure(indexBlock, comment, msg) {
+    var btn = pageDocument.find('.politicBtn');
 
-  function buildTask() {
-    lastTry =0;
-    attemptNum++;
-    var checkered =0;
-    var status =0;// -1,1,0
-    var scope =0; // 0-100
-
-    random_question =_.shuffle(answersList); // рандомный массив вопросов
-    var counter =0;
-   // var ansverArray;
-    var valio__number_question;
-    var valio__question_question;
-    var valio__question_right;
-    valio__number_question = counter + 1;
-    valio__question_question=random_question[counter].label;
-    valio__question_right =random_question[counter].right;
-    bubble_number_question.html(valio__number_question);
-    bubble_question_question.html(valio__question_question);
-
-    btn_yes.on("click",{checker:true},handler);
-    btn_no.on("click",{checker:false},handler);
-
-
-    function handler(event){
-
-      //console.info("event.data.checker- ",event.data.checker);
-      if(event.data.checker === valio__question_right){
-        console.info("правильно");
-        checkered++;
-
+    feedback.find('.feedback_headComment').html(comment).css('color','rgb(124,0,47)');
+    feedback.find('#feedback-body').html(msg);
+    btn.toggle();
+    btn.on('click', function() {
+      pageDocument.find('.social-block-wrapper').css('pointer-events','auto');
+      btn.toggle();
+      feedback.toggle();
+      if (indexBlock === 0) {
+        pageDocument.find('.avatar-block__img_main').attr('src', defaultAvatarSrc);
+        pageDocument.find('.avatar-block__img_variants').parent().removeAttr('style');
+      } else {
+        $(pageDocument.find('.slider-block__title')[indexBlock - 1]).html('Выберите вариант ответа.');
       }
-      counter++;
-      console.info("random_question.length",random_question.length);
-      if(counter < random_question.length){
-        valio__number_question= counter +1;
-        valio__question_question=random_question[counter].label;
-        valio__question_right =random_question[counter].right;
-        bubble_number_question.html(valio__number_question);
-        bubble_question_question.html(valio__question_question);
-      }else {
+      ctrl.openPolitics(linkDoc,glossaryArticleList[indexBlock]);
+      btn.off();
+    })
+  }
 
-        if(checkered==random_question.length){
-          console.info("правильно сОВСЕМ");
-          status =1;
-          scope = 100;
-          msg = comments[0];
-          headComment = headComments[0];
-        }else{
-          console.info("нЕПРАВИЛЬНО");
-          if(attemptNum==2){
-            lastTry =1;
-          }
-          status = -1;
-          scope = 0;
-          msg = comments[attemptNum];
-          headComment = headComments[1];
-        }
-        console.info("checkered++ ",checkered);
-        console.info("counter - ",counter);
+  function chooseAvatar(e) {
+    pageDocument.find('.social-block-wrapper').css('pointer-events','none');
+    defaultAvatarSrc = pageDocument.find('.avatar-block__img_main').attr('src');
+    pageDocument.find('.avatar-block__img_main').attr('src',$(e.target).attr('src'));
+    pageDocument.find('.avatar-block__img_variants').parent().css('display','none');
+    if ($(e.target).attr('data-answer') === avatarAnswer) {
+      feedback.toggle();
+      successNumber = success(successNumber, 0, headCommentList[0], commentList[0]);
+    } else {
+      feedback.toggle();
+      failure(0, headCommentList[1], commentList[1]);
+    } 
+  }
 
-        ctrl.sendResult(status,scope,msg,lastTry, headComment);
+  function slideSelect(e) {
+    var activeSelectList = pageDocument.find('.active'),
+        elem = e.target ? e.target : $(e).parents('.social-network-block__select').find('.slider-block__title');
+    
+    if ($(elem).parents('.social-network-block__select').find('.slider-block')[0].style.display === 'none') {
+      if (activeSelectList.length) return;
+      $(elem).addClass('active');
+    } else {
+      $(elem).removeClass('active');
+    }
+    $(elem).parents('.social-network-block__select').find('.slider-block').slideToggle('fast');
+  }
 
-        btn_yes.off('click');
-        btn_no.off('click');
-        ctrl.coursePage.taskAttemp++;
-        console.info("taskAttemp- ",ctrl.coursePage.taskAttemp);
+  function chooseSelectOption(e) {
+    var index,
+        i;
+    
+    for (i = 0; i < selectList.length; i++) {
+      if ($(e.target).parents('.social-network-block__select').position().top === $(selectList[i]).position().top) {
+        index = i;
       }
     }
 
+    pageDocument.find('.social-block-wrapper').css('pointer-events','none');
+    $(e.target).parents('.social-network-block__select').find('.slider-block__title').html($(e.target).text());
+    slideSelect(e.target);
+    if ($(e.target).attr('data-answer') === answer) {
+      feedback.toggle();
+      successNumber = success(successNumber, index + 1, headCommentList[2*(index + 1)], commentList[2*(index + 1)]);
+      $(e.target).parents('.social-network-block__select').find('.slider-block__title').css('pointer-events','none');
+    } else {
+      feedback.toggle();
+      failure(index + 1, headCommentList[2*(index + 1) + 1], commentList[2*(index + 1) + 1]);
+    } 
   }
-
-
-
-  // valio__number_question="1";
-  //valio__question_question=random_question[valio__number_question].label;
-
-  buildTask();
-  bubble_user_name.html(ctrl.learner);
-  //bubble_number_question.html(valio__number_question);
-  //bubble_question_question.html(valio__question_question);
-
 
   ctrl.coursePage = {
     play: function() {
@@ -112,8 +127,7 @@
       ctrl.coursePage = null;
     },
     restart: function(){
-
-      buildTask();
+      restart();
     },
     taskAttemp:1
   }

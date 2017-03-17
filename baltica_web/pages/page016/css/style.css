@@ -1,29 +1,50 @@
 .container {
 	position: relative;
-	background: url('../img/16_01.jpg')  no-repeat;
+	background: url('../img/14_1.jpg')  no-repeat;
 	padding-top: 0px;
 }
-.page__bubble_left_lower{
+.container_page1{
+display: block;
+
+}
+
+.page__bubble_right_top{
 	top: 10px;
+	left: 235px;
 	height: 60px;
+	width: 420px;
 }
-.page__bubble_right_lower{
-	top: 322px;
-	height: 94px;
+.page__bubble_left_lower{
+	top: 75px;
+	left: 320px;
+	height: 60px;
+	width: 320px;
 }
-.page__bubble_right_top--bubble2 {
-	top: 160px;
-	height: 41px;
+.page__bubble_right_lower1{
+	top: 270px;
+	left: 490px;
+	height: 40px;
+	width: 380px;
+}
+.page__bubble_left_top{
+	top: 305px;
+	left: 150px;
+	height: 40px;
+	width: 320px;
+}
+.page__bubble_right_lower2{
+	top: 350px;
+	left: 450px;
+	height: 40px;
+	width: 300px;
 }
 .page__bubble_down_left{
-	left: 350px;
-	top: 170px;
-	height: 255px;
-	width: 615px;
+	left: 225px;
+	top: 395px;
+	height: 57px;
+	width: 550px;
 }
-.page__bubble_down_left:after {
-	right: 200px;
-}
+
 .btn-box{
 	left:20px;
 }
@@ -31,10 +52,10 @@
 	height: 94px;
 }
 #task-btns{
-	margin-left: -30px;
+	margin-left: 218px;
 	/*margin-top: 40px;*/
-	margin-top: 144px;
-	left: 0px;
+	margin-top: 29px;
+	left: 30px;
 }
 #task-container {
 	/*margin-top: 5px;*/
@@ -101,17 +122,17 @@
 
 .page__wrapper--left {
 	/*float: left;*/
-	width: 590px;
+	width: 700px;
 	margin-left: 10px;
 	height: 125px;
 }
 .page__item-wrapper1 {
-	height: 77px;
-	width: 590px;
+	height: 42px;
+	width: 745px;
 
 }
 .page__item-wrapper2 {
-	position: relative;
+	//position: relative;
 	width: 100%;
 	height: 100%;
 	cursor: pointer;
@@ -130,25 +151,29 @@
 #task-btns {
 	/*text-align:center;*/
 }
-.page__question_container{
-	top: 130px;
-	left: 350px;
+.contactBtn {
+	position: absolute;
+	top: 138px;
+	right: 428px;
+	display: inline-block;
+	height: 121px;
+	width: 167px;
+	background: url(../img/button.png) no-repeat;
+	background-position: center 11px;
+	border: 2px solid #013177;
+	border-radius: 62%;
+	cursor: pointer;
 }
-.page__bubble_right_lower{
-	top: 180px;
-	left: 217px;
-	width: 550px;
-	height: 60px;
+.contactBtn_active {
+	animation-name: appearance;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
 }
-.page__bubble_left_lower{
-	top: 15px;
-	left: 350px;
-	height: 90px;
-	width: 550px;
-}
-.page__bubble_right_lower2{
-	top: 158px;
-	height: 41px;
-	left: 350px;
-	width: 509px;
+@keyframes appearance {
+	0%, 100% {
+		box-shadow: 0 0 0 #886F33;
+	}
+	50% {
+		box-shadow: 0 0 6px #886F33;
+	}
 }

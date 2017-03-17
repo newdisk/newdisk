@@ -5,48 +5,118 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<div class="container">
-		<div class="container_page1">
-				<div class="page__bubble_left_lower">
-					<p class="page__text_bubble">Хочу рассказать друзьям и знакомым в социальных сетях о том, что происходит в Компании. Несколько постов уже придумал. </p>
-				</div>
-				<div class="page__bubble_left_lower page__bubble_left_lower--bg"></div>
-
-
-				<div class="page__bubble_right_top">
-					<p class="page__text_bubble">Подожди, а вдруг это конфиденциальная информация…  <span class="user_name">name</span>, давай обсудим вместе?</p>
-				</div>
-				<div class="page__bubble_right_top page__bubble_right_top--bg"></div>
-				<!--<div class="page__block">-->
-
-
-			<div class="page__question_container">
-				<p class="page__text__question"><i>Помоги коллегам отделить конфиденциальную информацию от <br>неконфиденциальной. Перед тобой последовательно появятся 8 ситуаций. </i> </p>
+<div class="container">
+	<!-- alexandrsashin -->
+	<div class="page__bubble">
+		<p class="page__text_bubble">Слушай, у меня до сих пор нет аккаунта в социальной сети «ВКонтакте»&nbsp;– а так хочется его завести. И указать, что в «Балтике» работаю, чтобы все друзья знали. Можешь посмотреть&nbsp;– все ли правильно я делаю при регистрации?</p>
+	</div>
+	<div class="social-block-wrapper">
+		<div class="social-network-block avatar-block">
+			<span class="social-network-block__label">
+				Фото профиля:
+			<div class="hint hint_avatar">
+				<i>Помоги коллеге выбрать подходящую фотографию профиля</i>
 			</div>
-
-				<div class="page__question_field">
-					 <div class="number_question"></div>
-					<div class="question_question"></div>
-				</div>
-
-				<div class="ans_btn_field_r">
-					<p><input type="button" class="ans_btn_left" ></p>
-					<p class="question__text_bubble">Эту информацию можно разместить в социальных сетях</p>
-				</div>
-
-				<div class="ans_btn_field">
-					<p><input type="button" class="ans_btn_right" ></p>
-					<p class="question__text_bubble">Это конфиденциальная информация</p>
-				</div>
-		<!--<div class="page__question_field page__question_field&#45;&#45;bg"></div>-->
-		<!--<div class="page__block">-->
-
+			</span>
+			<div class="avatar-block__item">
+				<img src="img/8_2_1.png" alt="Avatar" class="avatar-block__img avatar-block__img_main">
+			</div>
+			<div class="avatar-block__item">
+				<img src="img/8_2_2.png" alt="Avatar" class="avatar-block__img avatar-block__img_variants" data-answer="1">
+			</div>
+			<div class="avatar-block__item">
+				<img src="img/8_2_3.png" alt="Avatar" class="avatar-block__img avatar-block__img_variants" data-answer="2">
+			</div>
+			<div class="avatar-block__item">
+				<img src="img/8_2_4.png" alt="Avatar" class="avatar-block__img avatar-block__img_variants" data-answer="3">
+			</div>
 		</div>
-		<div class="container_page2">
+		<div class="social-network-block">
+			<span class="social-network-block__label">
+				Имя и фамилия:
+				<div class="hint hint_name">
+					<i>Помоги коллеге указать имя и фамилию</i>
+				</div>
+			</span>
+			<div class="social-network-block__select">
+				<div class="social-network-block__option slider-block__title">
+					Выберите варианты ответа.
+				</div>
+				<div class="social-network-block__wrapper">
+					<div class="slider-block" style="display: none;">
+						<div class="social-network-block__option slider-block__item" data-answer="1">Иван Петров</div>
+						<div class="social-network-block__option slider-block__item" data-answer="2">Пивной Супермен</div>
+						<div class="social-network-block__option slider-block__item" data-answer="3">Ваня Балтика</div>
+					</div>
+				</div>
+			</div>
 		</div>
+		<div class="social-network-block">
+			<span class="social-network-block__label">
+				Место работы:
+				<div class="hint hint_company">
+					<i>Помоги коллеге указать место работы:</i>
+				</div>
+			</span>
+			<div class="social-network-block__select">
+				<div class="social-network-block__option slider-block__title">
+					Выберите варианты ответа.
+				</div>
+				<div class="social-network-block__wrapper">
+					<div class="slider-block" style="display: none;">
+						<div class="social-network-block__option slider-block__item" data-answer="1">Пивоваренная компания «Балтика»/ Carlsberg Group</div>
+						<div class="social-network-block__option slider-block__item" data-answer="2">Beer company</div>
+						<div class="social-network-block__option slider-block__item" data-answer="3">Балтика</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="social-network-block">
+			<span class="social-network-block__label">
+				О себе:
+				<div class="hint hint_about">
+					<i>Помоги коллеге, который хочет писать о компании, указать более корректную информацию о себе:</i>
+				</div>
+			</span>			
+			<div class="social-network-block__select">
+				<div class="social-network-block__option slider-block__title">
+					Выберите варианты ответа.
+				</div>
+				<div class="social-network-block__wrapper">
+					<div class="slider-block" style="display: none;">
+						<div class="social-network-block__option slider-block__item" data-answer="1">Я работаю в пивоваренной компании «Балтика», но мои личные взгляды могут не совпадать с мнением моего работодателя</div>
+						<div class="social-network-block__option slider-block__item" data-answer="2">Пивной эксперт</div>
+						<div class="social-network-block__option slider-block__item" data-answer="3">Работаю в сфере 18+</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="popup-comment">
+			
+		</div>
+	</div>
+	<!-- alexandrsashin -->
 
+	<div id="feedback_ex" style="display: none;">
+		<div id="feedback-head">
+			<!--<div id="closeFeedBtn" class="btn closeAssetBtn"></div>-->
+			<p class="feedback_headComment">Комментарий к ответу</p>
+		</div>
+		<div id="feedback-body"></div>
+		<div id="feedback-foot">
+			<div class="btn politicBtn" style="display: none;"></div>
+			<div class="btn continueBtn" style="display: none;"></div>
+			<div class="btn againBtn"></div>
+		</div>
 	</div>
 
-	<script src="js/main.js"></script>
+
+
+
+	<div class="page__question_container">
+		<p class="page__text__question"><i>Помоги коллеге создать аккаунт в соответствии с Политикой по поведению в социальных сетях</i> </p>
+	</div>
+</div>
+<script src="js/main.js"></script>
 </body>
 </html>
