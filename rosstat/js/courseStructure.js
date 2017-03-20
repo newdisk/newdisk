@@ -1,5 +1,5 @@
 var courseStructure = {
-	"courseTitle":"Выборочное наблюдение доходов населения и участия в социальных программах 2017",
+	"courseTitle":"Выборочное наблюдение доходов населения и участия в социальных программах 2016",
 	"strongNavigation": false,
 	"successScore": 80,
 	"volumeLvl": 0.75,

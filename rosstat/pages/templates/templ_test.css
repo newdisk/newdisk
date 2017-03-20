@@ -99,6 +99,9 @@
 	background-position-y: -113px;
 	cursor: default;
 }
+#task-btns .printCertBtn {
+	display: none;
+}
 .test_questions_panel_btn {
 	background: url(../../img/test_panel_btn.png);
 	background-size: cover;
@@ -250,12 +253,43 @@
 	flex-grow: initial;
 	-moz-appearance: textfield;
 }
+.age-wrap_incr,
+.age-wrap_decr {
+	position: absolute;
+	top: 0px;
+	left: 80px;
+	height: 35px;
+	width: 35px;
+	box-sizing: border-box;
+	background: #fff;
+	border-radius: 50%;
+	border: 2px solid #DDE05E;
+	text-align: center;
+	font-size: 20px;
+	color: #003E79;
+}
+.age-wrap_incr:hover,
+.age-wrap_decr:hover {
+	background: #DDE05E;
+	color: #fff;
+	cursor: pointer;
+}
+.age-wrap_incr:active,
+.age-wrap_decr:active {
+	background: rgb(239, 121, 97);
+	border-color: rgb(239, 121, 97);
+	color: #000;
+}
+.age-wrap_decr {
+	left: 125px;
+}
 .prefinaltestpage_btns {
 	display: flex;
 	justify-content: center;
 	margin-top: 45px;
 }
 .prefinaltestpage_readyBtn {
+
 	background: url(../../img/start.png) no-repeat;
 	background-position: -4px -3px;
 	width: 148px;
@@ -265,6 +299,28 @@
 }
 .prefinaltestpage_readyBtn:hover {
 	background-position: -4px -50px;
+}
+.prefinaltestpage_restart {
+	background: url(../../img/start_again.png);
+	background-position: -5px -8px;
+	height: 46px;
+	width: 180px;
+	border: none;
+	cursor: pointer;
+}
+.prefinaltestpage_restart:hover {
+	background-position-y: -61px;
+}
+.prefinaltestpage_printCert {
+	background: url(../../img/formCertBtn.png);
+	background-position: 0px -5px;
+	height: 46px;
+	width: 248px;
+	border: none;
+	cursor: pointer;
+}
+.prefinaltestpage_printCert:hover {
+	background-position: 0px -53px;
 }
 
 [right='true'] {

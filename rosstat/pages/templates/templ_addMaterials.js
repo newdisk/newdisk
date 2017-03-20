@@ -34,7 +34,9 @@
 			'<div class="add-materials-href" data-href="pages/page_add-materials/pdf/typical_situation.pdf">'+
 				'<span class="add-materials-href__block">Примеры типичных ситуаций</span>'+
 			'</div>'+
-			
+			'<div class="add-materials-href" data-href="pages/page_add-materials/pdf/person_test.pdf">'+
+				'<span class="add-materials-href__block">Тест на определение личностных особенностей интервьюера</span>'+
+			'</div>'+			
 		'</div>'
 
 })();

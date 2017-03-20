@@ -267,17 +267,16 @@
 	width: 54px;
 }*/
 .nextBtn {
-	background: url(../img/but_next.png);
-	background-position-x: -16px;
-	background-size: cover;
+	background: url(../img/but_next.png) no-repeat;
+	background-position-x: -26px;
 	bottom: 11px;
-	height: 45px;
+	height: 43px;
 	right: 87px;
 	width: 16px;
 	z-index: 5;
 }
 .nextBtn:hover {
-	background-position-x: -32px;
+	background-position-x: -52px;
 }
 
 @keyframes nextBtn_animating {
@@ -303,22 +302,21 @@
 	pointer-events: none;
 }
 .prevBtn {
-	background: url(../img/but_back.png);
-	background-position-x: -16px;
-	background-size: cover;
+	background: url(../img/but_back.png) no-repeat;
+	background-position-x: -26px;
 	bottom: 11px;
-	height: 45px;
+	height: 43px;
 	right: 194px;
 	width: 16px;
 	z-index: 5;
 }
 .prevBtn:hover {
-	background-position-x: -1px;
+	background-position-x: -52px;
 }
 
 .prevBtn.disabled,
 .prevBtn.disabled:hover {
-	background-position-x: -32px;
+	background-position-x: 0px;
 	pointer-events: none;
 }
 .nextChapBtn {

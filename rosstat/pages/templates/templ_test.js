@@ -21,13 +21,15 @@
 								'<div class="prefinaltestpage_age">'+
 									'<p>Возраст</p>'+
 									'<div class="age-wrap">'+
-										'<input class="age-wrap_input" type="number" placeholder="0" min="18" max="120">'+
-										'<div class="age-wrap_incr"></div>'+
-										'<div class="age-wrap_decr"></div>'+
+										'<input class="age-wrap_input" type="number" placeholder="" min="18" max="120" step="1" defaulValue="18">'+
+										'<div class="age-wrap_incr">+</div>'+
+										'<div class="age-wrap_decr">-</div>'+
 									'</div>'+
 								'</div>'+
 								'<div class="prefinaltestpage_btns">'+
 									'<button class="prefinaltestpage_readyBtn"></button>'+
+									'<button class="prefinaltestpage_restart"></button>'+
+									'<button class="prefinaltestpage_printCert"></button>'+
 								'</div>'+
 								'<div class="prefinaltestpage_warn"></div>'+
 							'</div>'+
@@ -39,6 +41,7 @@
 									'<button class="test_answBtn"></button>'+
 									'<button class="test_restartBtn"></button>'+
 									'<button class="test_passBtn"></button>'+
+									'<button class="btn printCertBtn"></button>'+
 								'</div>'+
 								'<div class="test_questions_panel">'+
 									'<button class="test_questions_panel_btn"></button>'+
