@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html class="no-js" lang="ru" ng-csp>
+<head>
+
+    <meta charset="utf-8">
+    <title ng-bind="title"></title>
+    <meta name="description" content=" ">
+    <meta name="keywords" content=" ">
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *">-->
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta http-equiv="content-language" content="ru-Ru">
+
+    <link rel="shortcut icon" href="">
+    <!--Libraries-->
+    <!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
+    <!--Custom Styles-->
+    <link rel="stylesheet" href="css/lib.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body layout="column" layout-fill>
+  <div ng-if="false" class="preloader">Загрузка...</div>
+
+  <!--side menu above all-->
+  <crs-app-mainmenu ng-cloak></crs-app-mainmenu>
+  <!--fixed top menu-->
+  <crs-app-header ng-cloak  md-whiteframe="5"></crs-app-header>
+
+  <!--content container-->
+  <md-content class="crs-main-content"
+              crs-scroll-top flex="grow"
+              ng-cloak>
+      <crs-app flex></crs-app>
+  </md-content>
+  <span flex ng-cloak class="crs-main-content-spanner"></span>
+
+  <!--fixed bottom menu-->
+  <crs-app-footer ng-cloak  md-whiteframe="5"></crs-app-footer>
+
+  <div md-whiteframe="6" class="crs-cover-right"></div>
+  <!--<script src="cordova.js"></script>-->
+  <script src="js/lib.min.js"></script>
+  <script src="js/modernizr.js"></script>
+  <script src="js/main.min.js"></script>
+  <script src="js/MathJax/MathJax.js"></script>
+  <script src="js/MathJax/config/TeX-MML-AM_HTMLorMML-full.js"></script>
+  <script src="js/templates.js"></script>
+</body>
+</html>

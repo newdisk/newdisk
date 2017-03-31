@@ -1,0 +1,1777 @@
+@charset "UTF-8";
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\000031}}
+.md-button {
+  min-width: 44px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\000035}}
+.page-content {
+  height: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\000039}}
+md-toast._md-bottom {
+  bottom: 65px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\0000313}}
+md-toast._md-top {
+  top: 65px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\0000318}}
+md-toast.md-success-toast-theme .md-toast-content {
+  background-color: #0c880c;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\0000324}}
+md-toast.md-failed-toast-theme .md-toast-content {
+  background-color: #c1111e;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\0000330}}
+.dialogdemoBasicUsage #popupContainer {
+  position: relative;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\0000333}}
+.dialogdemoBasicUsage .footer {
+  width: 100%;
+  text-align: center;
+  margin-left: 20px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\0000338}}
+.dialogdemoBasicUsage .footer, .dialogdemoBasicUsage .footer > code {
+  font-size: 0.8em;
+  margin-top: 50px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\0000342}}
+.dialogdemoBasicUsage button {
+  width: 200px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\0000345}}
+.dialogdemoBasicUsage div#status {
+  color: #c60008;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\0000348}}
+.dialogdemoBasicUsage .dialog-demo-prerendered md-checkbox {
+  margin-bottom: 0;
+}
+
+/*md-dialog {
+  opacity: 0;
+  min-width: 80%;
+  max-width: 60%;
+  max-height: 60%;
+  position: relative;
+  overflow: auto;
+  box-shadow: 0 7px 8px -4px rgba(0,0,0,.2),0 13px 19px 2px rgba(0,0,0,.14),0 5px 24px 4px rgba(0,0,0,.12);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  align-items: center;
+  //margin-bottom: 20px;
+}*/
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\0000367}}
+md-dialog.md-failed-dialog-theme flex-gt-xs {
+  min-width: 60%;
+  max-width: 60%;
+  max-height: 50%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\0000373}}
+md-dialog.md-failed-dialog-theme flex-xs {
+  min-width: 90%;
+  max-width: 80%;
+  max-height: 50%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\0000379}}
+md-dialog.md-failed-dialog-theme {
+  border-radius: 4px;
+  background-color: white;
+  color: rgba(0, 0, 0, 0.87);
+  margin-bottom: 20px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\0000386}}
+md-dialog.md-failed-dialog-theme .md-dialog-content {
+  padding-bottom: 1px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\0000390}}
+.md-button.md-default-theme.md-primary, .md-button.md-primary {
+  color: #131212;
+}
+
+/*md-dialog .md-actions .md-button, md-dialog md-dialog-actions .md-button {
+  margin: 8px 0 8px 8px;
+}*/
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003100}}
+.md-button.md-failed-dialog-theme {
+  min-width: 44px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003103}}
+.md-button, .md-button:focus {
+  outline: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003106}}
+.md-button.md-failed-dialog-theme {
+  padding: 0 6px;
+  margin-top: 0px;
+  background: #c1111e !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003116}}
+.md-button.md-failed-dialog-theme {
+  letter-spacing: .01em;
+  color: #fff;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003121}}
+.md-button.md-failed-dialog-theme:hover {
+  background-color: rgba(192, 17, 64, 0.7) !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003125}}
+.name_lesson {
+  margin: 8px;
+  background-image: url("../img/tail3.png");
+  border-radius: 15px;
+  line-height: 1.6;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003134}}
+.rs-footer-form_about {
+  left: 20px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003140}}
+md-toolbar.md-hue-2:not(.md-menu-toolbar).md-accent md-icon {
+  color: rgba(0, 0, 0, 0.87);
+  fill: rgba(255, 255, 255, 0.87);
+  margin: 9px 0 9px 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003146}}
+.md-button.md-default-theme.md-accent.md-raised, .md-button.md-accent.md-raised, .md-button.md-default-theme.md-accent.md-fab, .md-button.md-accent.md-fab {
+  color: #2D1801;
+  background-color: transparent;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003151}}
+.md-button.md-default-theme.md-accent.md-raised:not([disabled]) md-icon, .md-button.md-accent.md-raised:not([disabled]) md-icon, .md-button.md-default-theme.md-accent.md-fab:not([disabled]) md-icon, .md-button.md-accent.md-fab:not([disabled]) md-icon {
+  color: rgba(76, 30, 0, 0.9);
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003157}}
+.md-tab {
+  /* font-size: 14px; */
+  /* text-align: center; */
+  padding: 8px 6px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003179}}
+.md-icon.md.md-font.fa.mdi-percent {
+  font-size: 15px;
+  color: #4c1207;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003186}}
+.form-with-batton-left {
+  padding-left: 15px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003190}}
+md-icon[md-font-icon] {
+  line-height: 6px;
+  width: auto;
+  /* bottom: 20px; */
+  margin-bottom: 9px;
+  text-shadow: 1px 1px 8px #cf8e23;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003199}}
+md-icon-car[md-font-icon] {
+  line-height: 6px;
+  width: auto;
+  /* bottom: 20px; */
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003207}}
+.md-button.md-default-theme.md-accent.md-fab:not([disabled]):hover {
+  color: black;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003212}}
+.md-button {
+  -webkit-transition: box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003259}}
+.tabsdemoDynamicTabs md-content {
+  background-color: transparent !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003261}}
+.tabsdemoDynamicTabs md-content md-tabs {
+  border: 1px solid #e1e1e1;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003263}}
+.tabsdemoDynamicTabs md-content md-tabs md-tab-content {
+  background: #f6f6f6;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003265}}
+.tabsdemoDynamicTabs md-content md-tabs md-tabs-wrapper {
+  background: white;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003267}}
+.tabsdemoDynamicTabs md-content h1:first-child {
+  margin-top: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003270}}
+.tabsdemoDynamicTabs md-input-container {
+  padding-bottom: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003273}}
+.tabsdemoDynamicTabs .remove-tab {
+  margin-bottom: 40px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003276}}
+.tabsdemoDynamicTabs .demo-tab > div > div {
+  padding: 25px;
+  box-sizing: border-box;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003280}}
+.tabsdemoDynamicTabs .edit-form input {
+  width: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003283}}
+.tabsdemoDynamicTabs md-tabs {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003286}}
+.tabsdemoDynamicTabs md-tab[disabled] {
+  opacity: 0.5;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003289}}
+.tabsdemoDynamicTabs label {
+  text-align: left;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003292}}
+.tabsdemoDynamicTabs .long > input {
+  width: 264px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003295}}
+.tabsdemoDynamicTabs .md-button.add-tab {
+  -webkit-transform: translateY(5px);
+          transform: translateY(5px);
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003306}}
+.menu-tub1 {
+  background: #1f31ed;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003310}}
+md-tabs {
+  height: 150px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003313}}
+md-tabs-canvas {
+  height: 150px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003317}}
+md-tabs-content-wrapper {
+  padding-bottom: 2;
+  /* overflow: hidden; */
+  height: 10px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003324}}
+md-pagination-wrapper {
+  height: 150px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003328}}
+mdi-chevron-left2 {
+  font-size: 60px;
+  height: 60px;
+  width: 60px;
+  color: #75391f;
+  text-shadow: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003336}}
+.carousel-indicators {
+  display: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003340}}
+.carousel-control {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 15%;
+  font-size: 71px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  filter: alpha(opacity=50);
+  opacity: .4;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003353}}
+.carousel-control__arrow .mdi:before {
+  color: #fff;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  text-shadow: 1px 1px 8px #030323;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003358}}
+.carousel-caption {
+  position: relative;
+  right: auto;
+  left: auto;
+  margin-top: 0px;
+  font-style: italic;
+  font-family: "Arial", sans-serif;
+  color: black;
+  text-shadow: none;
+  /* height: 90px; */
+  padding: 10px;
+  overflow-y: auto;
+  bottom: 10px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003372}}
+.carousel-signature {
+  margin-top: 20px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003376}}
+.carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right, .carousel-control .icon-next, .carousel-control .icon-prev {
+  width: 60px;
+  height: 60px;
+  margin-top: -10px;
+  font-size: 30px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003384}}
+.carousel-control.left {
+  background-image: none;
+  margin-left: -10%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003390}}
+.carousel-control.right {
+  background-image: none;
+  /*background-image: url('../img/tail3.png');*/
+  margin-right: -10%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003396}}
+.glyphicon-chevron-left:before {
+  background-image: url("../img/tail3.png");
+  /*content: "\e079";*/
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003404}}
+.crs-catalog-item {
+  margin-top: 10px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003417}}
+.crs-single-img-vertical-align {
+  vertical-align: middle;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003469}}
+.batton-clock-page_01_07new {
+  width: 256px;
+  height: 41px;
+  cursor: pointer;
+  border: none;
+  margin: 3px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003482}}
+#batton-clock_00 {
+  background-image: url("../img/07_04_00.png");
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003487}}
+#batton-clock_01 {
+  background-image: url("../img/07_04_01.png");
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003491}}
+#batton-clock_02 {
+  background-image: url("../img/07_04_02.png");
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003495}}
+#batton-clock_03 {
+  background-image: url("../img/07_04_03.png");
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003499}}
+#batton-clock_04 {
+  background-image: url("../img/07_04_04.png");
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003503}}
+#batton-clock_05 {
+  background-image: url("../img/07_04_05.png");
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003519}}
+.crs-content-page h3:first-child {
+  margin: 9px;
+  color: #2D1801;
+  text-shadow: 1px 1px 8px #cf8e23;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003524}}
+h3 {
+  /* font-family: "StampsProSolid"; */
+  font-family: "AAvanteTckMedium";
+  font-size: 26px;
+  color: #2D1801;
+  text-shadow: 1px 1px 8px #cf8e23;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003538}}
+.carousel-control__arrow .mdi:before {
+  color: #75391f;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003541}}
+.mdi:before, .mdi-set {
+  color: #75391f;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003545}}
+.crs-single-img .crs-img {
+  border-radius: 0px;
+}
+
+@font-face {
+  font-family: "AAvanteBs";
+  src: url('../fonts/aavantebs.woff?1476968290') format('woff'), url('../fonts/aavantebs.woff2?1476968290') format('woff2');
+}
+@font-face {
+  font-family: "AAvanteTckHeavy";
+  src: url('../fonts/aavantetck_heavy.woff2?1476968290') format('woff2'), url('../fonts/AAvanteTckHeavy.woff?1476968290') format('woff');
+}
+@font-face {
+  font-family: "AAvanteTckMedium";
+  src: url('../fonts/aavantetck_medium.ttf?1476968290') format('truetype'), url('../fonts/aavantebs.woff?1476968290') format('woff'), url('../fonts/aavantebs.woff2?1476968290') format('woff2');
+}
+@font-face {
+  font-family: "StampsProMetal";
+  src: url('../fonts/PFStampsPro-Metal.woff?1476968290') format('woff'), url('../fonts/PFStampsPro-Metal.woff2?1476968290') format('woff2');
+}
+@font-face {
+  font-family: "StampsProSolid";
+  src: url('../fonts/PFStampsPro-Solid.woff?1476968290') format('woff'), url('../fonts/PFStampsPro-Solid.woff2?1476968290') format('woff2');
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\000032}}
+.crs-container {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\000038}}
+.crs-single-img .crs-img {
+  border-radius: 0px;
+  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\0000324}}
+.crs-single-img .crs-img img {
+  box-shadow: none;
+  border-radius: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\0000332}}
+fi {
+  font-family: 'Times New Roman';
+  font-weight: bold;
+  font-size: 18px;
+  font-style: italic;
+  display: inline-block;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\0000341}}
+.crs-modal-search .crs-modal-search--wrapper {
+  position: relative;
+  width: 90%;
+  margin: 10px auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\0000345}}
+.crs-modal-search .crs-modal-search--wrapper .crs-modal-search--icon {
+  position: absolute;
+  font-size: 32px;
+  left: 5px;
+  top: 1px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\0000351}}
+.crs-modal-search .crs-modal-search--wrapper .crs-modal-search--input {
+  height: 36px;
+  border-radius: 2px;
+  border: 1px solid;
+  padding: 0;
+  padding-left: 44px;
+  font-size: 28px;
+  width: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\0000359}}
+.crs-modal-search .crs-modal-search--wrapper .crs-modal-search--input:hover {
+  cursor: initial;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\0000362}}
+.crs-modal-search .crs-modal-search--wrapper .crs-modal-search--input:focus {
+  box-shadow: 0 0 19px -5px #5c676b;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\0000369}}
+.crs-glossary-search__result {
+  overflow-x: hidden;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\0000375}}
+uib-accordion .panel-group .panel {
+  border-radius: 0;
+  border-color: transparent;
+  text-decoration: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\0000380}}
+uib-accordion .panel-group .panel a, uib-accordion .panel-group .panel a:hover {
+  text-decoration: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\0000385}}
+uib-accordion .panel-default > .panel-heading {
+  background-color: #728085;
+  color: white;
+  text-align: center;
+  padding: 0;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\0000394}}
+uib-accordion .panel-default > .panel-heading h4 {
+  min-height: 50px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "AAvanteBs";
+  font-size: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003101}}
+uib-accordion .panel-default > .panel-heading h4 a {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003109}}
+uib-accordion .panel-default > .panel-heading h4 a:before {
+  content: '';
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003113}}
+uib-accordion .panel-default > .panel-heading h4 a:after {
+  font-family: 'FontAwesome';
+  content: "\f0d8";
+  margin-right: 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003121}}
+uib-accordion .panel-default > .panel-heading:hover {
+  background-color: #C1111E;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003126}}
+uib-accordion .panel-collapse {
+  background-color: #DFE4E7;
+  color: #333333;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003132}}
+uib-accordion .panel-open .panel-heading {
+  background-color: #C1111E;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003134}}
+uib-accordion .panel-open .panel-heading h4 a:after {
+  content: "";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003141}}
+.crs-bullet-list {
+  text-align: left;
+  font-size: 16px;
+  color: #333333;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003148}}
+.crs-bullet-list p {
+  margin-bottom: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003152}}
+.crs-bullet-list ul {
+  margin-top: 5px;
+  list-style-type: none;
+  padding-left: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003156}}
+.crs-bullet-list ul li {
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003159}}
+.crs-bullet-list ul li:before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: -10px;
+  background-image: url("../img/bullet.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
+  width: 4px;
+  height: 4px;
+  border-radius: 2px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003181}}
+.crs-catalog .crs-catalog-item {
+  background: #DFE4E7;
+  border-radius: 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003185}}
+.crs-catalog .crs-catalog-item .crs-catalog-item-footer {
+  padding: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003188}}
+.crs-catalog .crs-catalog-item .crs-catalog-item-header {
+  font-family: "AAvanteBs";
+  font-size: 20px;
+  color: #000000;
+  text-align: center;
+  padding: 10px 10px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003200}}
+.crs-catalog .crs-catalog-item .crs-catalog-item-content {
+  color: #333333;
+  text-align: left;
+  padding: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003205}}
+.crs-catalog .crs-catalog-item .crs-catalog-item-content .crs-img {
+  background: white;
+  padding: 15px;
+  border-radius: 0px;
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003211}}
+.crs-catalog .crs-catalog-item .crs-catalog-item-content .crs-img img {
+  border: 0;
+  margin: 0 auto;
+  width: 80%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003224}}
+.crs-text-descr {
+  padding: 5px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003229}}
+.bullet-01_17 {
+  margin-top: 53px;
+  margin-left: 53px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003233}}
+.bullet-01_14 {
+  margin-top: 20px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003241}}
+.crs-page-footer-img {
+  margin-top: 15px;
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-bottom: -15px;
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  height: 472px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003254}}
+.crs-img-scale {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003261}}
+.crs-img-scale .crs-img-scale-magnify {
+  position: absolute;
+  bottom: 25px;
+  right: 5px;
+  z-index: 1;
+  font-size: 50px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003270}}
+.img-block {
+  display: block;
+  height: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003277}}
+.crs-table.table-responsive {
+  box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003281}}
+.crs-table table {
+  border-collapse: separate;
+  border-spacing: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003287}}
+.crs-table table thead > tr > th, .crs-table table tbody > tr > td, .crs-table table tbody > tr > th {
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 5px;
+  border: 1px solid #662C00;
+  color: #662C00;
+  /* ff3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f3bf54), color-stop(59%, #f2dd8f), color-stop(100%, #fffbd9));
+  /* safari4+,chrome */
+  background: -webkit-linear-gradient(90deg, #fffbd9 0%, #f2dd8f 41%, #f3bf54 100%);
+  /* safari5.1+,chrome10+ */
+  /* opera 11.10+ */
+  /* ie10+ */
+  background: linear-gradient(0deg, #fffbd9 0%, #f2dd8f 41%, #f3bf54 100%);
+  /* w3c */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F3BF54', endColorstr='#FFFBD9',GradientType=0 );
+  /* ie6-9 */
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003306}}
+.crs-formula {
+  padding: 5px;
+  margin: 9px auto;
+  display: inline-block;
+  border-radius: 4px;
+  box-shadow: 0 0 0 4px #DFE4E7;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003314}}
+.crs-formula-wrapper {
+  border-radius: 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003316}}
+.crs-formula-wrapper .crs-formula {
+  box-shadow: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003324}}
+page-counter .page-counter {
+  color: #2D1801;
+  text-shadow: 1px 1px 8px #cf8e23;
+  font-size: 15px;
+  font-family: "AAvanteBs";
+  border-radius: 50%;
+  border: 1px solid #4C1E00;
+  background: transparent;
+  padding: 4px 6px;
+  box-shadow: 1px 1px 10px #cf8e23;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003345}}
+.crs-footer-form-btn-accent {
+  color: #2D1801;
+  text-shadow: 1px 1px 8px #cf8e23;
+  font-size: 15px;
+  font-family: "AAvanteBs";
+  border-radius: 5px;
+  border: none;
+  background-color: transparent;
+  padding: 1px 6px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003357}}
+.crs-footer-form-btn-accent:hover {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003361}}
+.crs-footer-form-btn-revers, .crs-footer-form-btn-forward {
+  max-width: 100%;
+  box-sizing: border-box;
+  color: #2D1801;
+  text-shadow: 1px 1px 8px #cf8e23;
+  font-size: 15px;
+  font-family: "AAvanteBs";
+  border-radius: 5px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  min-height: 36px;
+  min-width: 88px;
+  line-height: 36px;
+  vertical-align: middle;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-grid-row-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  border: 0;
+  padding: 0 6px;
+  margin: 4px 8px;
+  background: transparent;
+  white-space: nowrap;
+  font-weight: 500;
+  font-style: inherit;
+  font-variant: inherit;
+  font-family: inherit;
+  letter-spacing: 1px;
+  overflow: hidden;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003398}}
+.crs-footer-form-btn-revers[disabled], .crs-footer-form-btn-forward[disabled] {
+  color: rgba(0, 0, 0, 0.26);
+  fill: transparent;
+  box-shadow: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003402}}
+.crs-footer-form-btn-revers[disabled] md-icon, .crs-footer-form-btn-forward[disabled] md-icon {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003406}}
+.crs-footer-form-btn-revers[disabled]:hover, .crs-footer-form-btn-forward[disabled]:hover {
+  box-shadow: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003410}}
+.crs-footer-form-btn-revers:hover, .crs-footer-form-btn-forward:hover {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003415}}
+.md-toolbar-tools {
+  width: 100%;
+  height: 66px;
+  max-height: 66px;
+  padding: 0;
+  margin: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003423}}
+.crs-footer-form-btn-nd {
+  background-image: url("../img/logo_1.png");
+  border: none;
+  width: 145px;
+  height: 66px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003432}}
+.crs-form-logo-nd {
+  background-image: url("../img/logo_4.png");
+  border: none;
+  width: 106px;
+  height: 40px;
+  margin-left: 10px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003443}}
+.crs-form-pixel-logo-nd {
+  background-image: url("../img/pixelcod.jpg");
+  border: none;
+  width: 105px;
+  height: 105px;
+  margin: 26px auto;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003452}}
+.crs-footer-form-btn-nd-S {
+  background-image: url("../img/logo_1_S.png");
+  border: none;
+  width: 64px;
+  height: 66px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003465}}
+.crs-footer-form-nd {
+  border: none;
+  width: 145px;
+  height: 66px;
+  margin: 0 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003474}}
+.md-toolbar-tools-left {
+  width: 200px;
+  height: 66px;
+  margin: 0 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003480}}
+.md-toolbar-tools-left-S {
+  width: 100px;
+  height: 66px;
+  margin: 0 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003486}}
+.crs-footer-form-nd-S {
+  border: none;
+  width: 85px;
+  height: 66px;
+  margin: 0 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003493}}
+.md-toolbar-tools-right {
+  width: 300px;
+  height: 66px;
+  margin: 0 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003498}}
+.crs-footer-form-btn-accent_little {
+  height: 36px;
+  width: 44px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003503}}
+.crs-footer-form-btn-accent_little:hover {
+  height: 36px;
+  width: 44px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003508}}
+.crs-footer-form_little:hover {
+  height: 37px;
+  width: 44px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003517}}
+md-tabs-wrapper md-next-button md-icon, md-tabs-wrapper md-prev-button md-icon {
+  height: 60px;
+  width: 60px;
+  color: #75391f;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003530}}
+.crs-menu-item .crs-menu-item__mark {
+  width: 20px;
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003537}}
+.crs-menu-item .mark-default {
+  opacity: 0.1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003541}}
+.crs-menu-item .has-na {
+  color: white;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003546}}
+.crs-menu-item .has-not-passed {
+  color: white;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003551}}
+.crs-menu-item .has-passed {
+  color: white;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003555}}
+.crs-menu-item .has-passed.has-na, .crs-menu-item .has-passed.has-not-passed {
+  color: white;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003564}}
+.no-touchevents .crs-menu-item:hover {
+  color: white;
+  background-color: #C1111E;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003568}}
+.no-touchevents .crs-menu-item:hover .has-na {
+  color: white;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003573}}
+.no-touchevents .crs-menu-item:hover .has-not-passed {
+  color: white;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003578}}
+.no-touchevents .crs-menu-item:hover .has-passed {
+  color: white;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003582}}
+.no-touchevents .crs-menu-item:hover .has-passed.has-na, .no-touchevents .crs-menu-item:hover .has-passed.has-not-passed {
+  color: white;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003589}}
+crs-app-header, crs-app-footer {
+  z-index: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003591}}
+crs-app-header h2, crs-app-footer h2 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003599}}
+.toolbar-bg-img {
+  background-image: url("../img/tail1.png");
+  background-size: contain;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003605}}
+.crs-menu-btn {
+  min-width: 44px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003609}}
+.md-toolbar-tools h2 {
+  text-align: left;
+  color: #4c1207;
+}
+@media (min-width: 600px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003609}}
+  .md-toolbar-tools h2 {
+    font-size: 34px;
+    text-align: center;
+    text-shadow: 1px 1px 8px #cf8e23;
+  }
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003622}}
+crs-app-mainmenu, .crs-app-menu {
+  background: inherit;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003627}}
+crs-app-mainmenu .crs-app-menu__toolbar-top,
+crs-app-mainmenu .crs-app-menu__toolbar-bottom, .crs-app-menu .crs-app-menu__toolbar-top,
+.crs-app-menu .crs-app-menu__toolbar-bottom {
+  max-height: 65px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003633}}
+.crs-app-menu-cover {
+  content: '';
+  position: absolute;
+  right: 100%;
+  top: 0;
+  background: inherit;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003644}}
+.crs-cover-right {
+  content: '';
+  position: absolute;
+  left: 100%;
+  top: 0;
+  background: inherit;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003655}}
+.crs-app-header-logo {
+  height: auto;
+  width: 180px;
+  padding: 5px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003661}}
+.crs-statistics--content md-list-item:before {
+  min-height: 5px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003667}}
+.crs-statistics__progressbar ._md-container {
+  background-color: #cfe2cf;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003670}}
+.crs-statistics__progressbar ._md-bar2 {
+  background-color: #008000;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003675}}
+.task-list {
+  list-style: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003679}}
+.task-list .task-list__item.has-na {
+  color: grey;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003683}}
+.task-list .task-list__item.has-not-passed {
+  color: #2D1801;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003688}}
+.task-list .task-list__item.has-passed {
+  color: green;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003692}}
+.task-list .task-list__item.has-passed.has-na, .task-list .task-list__item.has-passed.has-not-passed {
+  color: #2D1801;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003701}}
+.task-list .task-list__item .task-list__item__mark {
+  font-size: 32px;
+  margin-right: 15px;
+  text-align: center;
+  width: 32px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003710}}
+.variant-wrapper {
+  padding: 6px;
+}
+
+@media (min-width: 600px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003715}}
+  md-sidenav {
+    max-width: 80%;
+    width: auto;
+    padding: 10px;
+    padding: 10px;
+  }
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003724}}
+.crs-content-page h3 {
+  margin: inherit;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003729}}
+.crs-task__completed {
+  background-color: #0c880c;
+  color: white;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003737}}
+.crs-task-range-moving-blocks .form__list {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003743}}
+.crs-task-range-moving-blocks .form__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  font-size: 16px;
+  min-height: 40px;
+  background: #eef0f3;
+  border: 1px solid grey;
+  border-radius: 7px;
+  box-shadow: 0 1px 0 0 gray;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003755}}
+.crs-task-range-moving-blocks .form__arrow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 14px;
+  font-size: 20px;
+  min-height: 45px;
+  color: #2D1801;
+  cursor: pointer;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003765}}
+.crs-task-range-moving-blocks .form__item-text {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  text-align: center;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003773}}
+.crs-task-multiply-choice-disappeared {
+  /* Laces */
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003774}}
+.crs-task-multiply-choice-disappeared .list {
+  margin: 0;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  padding: 0;
+  list-style: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003782}}
+.crs-task-multiply-choice-disappeared .item {
+  margin-bottom: 3px;
+  padding: 5px;
+  padding-left: 20px;
+  font-size: 16px;
+  background: rgba(232, 236, 239, 0.7);
+  border: 1px solid grey;
+  border-radius: 7px;
+  box-shadow: 0 1px 0 0 gray;
+  -webkit-transition: opacity 0.35s ease-out, border-width 0.35s linear, padding 0.35s linear 0.28s, font-size 0.35s linear 0.28s;
+          transition: opacity 0.35s ease-out, border-width 0.35s linear, padding 0.35s linear 0.28s, font-size 0.35s linear 0.28s;
+  cursor: pointer;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003795}}
+.crs-task-multiply-choice-disappeared .variant {
+  margin: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003799}}
+.crs-task-multiply-choice-disappeared .item.disappeared {
+  padding: 0;
+  font-size: 0;
+  border-width: 0;
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003805}}
+.crs-task-multiply-choice-disappeared .right {
+  background: #0f0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003811}}
+.crs-task-multiply-choice-disappeared svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: table-cell;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003822}}
+.crs-task-multiply-choice-disappeared .task-container {
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003826}}
+.crs-task-multiply-choice-disappeared .task-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  font-size: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003832}}
+.crs-task-multiply-choice-disappeared .task-list {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  width: 50%;
+  vertical-align: top;
+  list-style: none;
+  font-size: 16px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003842}}
+.crs-task-multiply-choice-disappeared .task-item {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 20px;
+  padding: 5px 20px;
+  background: rgba(232, 236, 239, 0.7);
+  border: 1px solid gray;
+  border-radius: 7px;
+  box-shadow: 0 1px 0 0 gray;
+  cursor: pointer;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003854}}
+.crs-task-multiply-choice-disappeared .task-text {
+  margin: 10px 0;
+  width: calc(100% - 30px);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003859}}
+.crs-task-multiply-choice-disappeared .task-item--2 .task-text {
+  width: 100%;
+  padding-left: 30px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003864}}
+.crs-task-multiply-choice-disappeared .task-item-point {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  content: '';
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 1px 0 1px gray inset;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003877}}
+.crs-task-multiply-choice-disappeared .act {
+  background: gray;
+  box-shadow: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003882}}
+.crs-task-multiply-choice-disappeared .task-item--2 .task-item-point {
+  left: 12px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003888}}
+.crs-task-drag-choice img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003896}}
+.crs-task-drag-choice .wrapper {
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003900}}
+.crs-task-drag-choice .wrapper__cards-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 40px 0;
+  height: 170px;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003909}}
+.crs-task-drag-choice .wrapper__cards-clone--dark {
+  background: gray;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003913}}
+.crs-task-drag-choice .wrapper__cards-img {
+  margin: 0 19px 42px;
+  width: 160px;
+  height: 170px;
+  cursor: pointer;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003920}}
+.crs-task-drag-choice .wrapper__box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-bottom: 40px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003935}}
+.crs-single-img_16 {
+  border-radius: 0px;
+  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003941}}
+.crs-single-img_01-10 {
+  width: 100%;
+}
+
+@media (min-width: 960px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003945}}
+  .crs-single-img_01-10 {
+    width: 35%;
+  }
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003949}}
+.carousel {
+  width: 100%;
+  margin: auto;
+}
+
+@media (min-width: 960px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003955}}
+  .carousel {
+    width: 850px;
+  }
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003959}}
+.carousel__caption-text {
+  font-style: italic;
+  font-family: "Arial", sans-serif;
+  color: black;
+  font-size: 16px;
+  text-align: center;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003970}}
+.carousel_Small .carousel {
+  min-width: 480px;
+  max-width: 550px;
+  width: 100%;
+  margin: auto;
+}
+
+@media (min-width: 960px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/template\/_components\.scss}line{font-family:\00003978}}
+  .carousel_Small .carousel {
+    width: 550px;
+  }
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/animations\/_animations\.scss}line{font-family:\000032}}
+.sample-show-hide {
+  transition: .3s linear all;
+  -webkit-transition: .3s linear all;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/animations\/_animations\.scss}line{font-family:\000037}}
+.sample-show-hide.ng-enter {
+  opacity: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000311}}
+.sample-show-hide.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000315}}
+.sample-show-hide.ng-leave {
+  opacity: 1;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000319}}
+.sample-show-hide.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000325}}
+.slide-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000330}}
+.slide-left.ng-enter, .slide-left.ng-leave {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000335}}
+.slide-left.ng-enter {
+  left: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000338}}
+.slide-left.ng-enter-active {
+  left: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000341}}
+.slide-left.ng-leave {
+  left: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000344}}
+.slide-left.ng-leave-active {
+  left: -100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000349}}
+.slide-right {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000353}}
+.slide-right.ng-enter, .slide-right.ng-leave {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000358}}
+.slide-right.ng-enter {
+  left: -100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000361}}
+.slide-right.ng-enter-active {
+  left: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000364}}
+.slide-right.ng-leave {
+  left: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000367}}
+.slide-right.ng-leave-active {
+  left: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000372}}
+.fading {
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000375}}
+.fading.ng-enter, .fading.ng-leave {
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000380}}
+.fading.ng-enter {
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000383}}
+.fading.ng-enter-active {
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000386}}
+.fading.ng-leave {
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000389}}
+.fading.ng-leave-active {
+  opacity: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000394}}
+.slide-down {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/animations\/_animations\.scss}line{font-family:\00003100}}
+.slide-down.ng-enter, .slide-down.ng-leave {
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/animations\/_animations\.scss}line{font-family:\00003105}}
+.slide-down.ng-enter {
+  top: -100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/animations\/_animations\.scss}line{font-family:\00003108}}
+.slide-down.ng-enter-active {
+  top: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/animations\/_animations\.scss}line{font-family:\00003111}}
+.slide-down.ng-leave {
+  top: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/animations\/_animations\.scss}line{font-family:\00003114}}
+.slide-down.ng-leave-active {
+  top: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/main\.scss}line{font-family:\0000335}}
+html {
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  max-width: 1280px;
+  margin: 0 auto;
+  background-color: #FAFAFA;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/main\.scss}line{font-family:\0000338}}
+html *:focus {
+  outline: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/main\.scss}line{font-family:\0000349}}
+html body {
+  font-family: "AAvanteBs";
+  font-size: 16px;
+  overflow: hidden;
+  background: inherit;
+  background: url("../img/bg.jpg");
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/main\.scss}line{font-family:\0000357}}
+html body .crs-main-content, html body .crs-main-content-spanner {
+  background: transparent;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/main\.scss}line{font-family:\0000363}}
+html body .crs-content-page h3:first-child {
+  padding-bottom: 3px;
+  color: #2D1801;
+  text-shadow: 1px 1px 8px #cf8e23;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/main\.scss}line{font-family:\0000371}}
+html body .crs-content-page .crs-content-page-num {
+  border-radius: 50%;
+  border: 1px solid #4C1E00;
+  box-shadow: 1px 1px 10px #cf8e23;
+  background-image: url("../img/tail2.png");
+  margin: 5px;
+  margin-right: 15px;
+  width: 40px;
+  height: 40px;
+  padding: 4px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/main\.scss}line{font-family:\0000388}}
+html body .crs-content-page .crs-content-page-card {
+  box-shadow: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/main\.scss}line{font-family:\0000397}}
+html body crs-app-mainmenu md-sidenav {
+  padding: 0;
+  border-right: 2px solid #9a9596;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/main\.scss}line{font-family:\00003100}}
+html body crs-app-mainmenu md-sidenav md-content {
+  border-top: 2px solid #c1111e;
+  border-bottom: 2px solid #c1111e;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/main\.scss}line{font-family:\00003104}}
+html body crs-app-mainmenu md-sidenav h2 {
+  margin: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/main\.scss}line{font-family:\00003111}}
+html h2 {
+  font-family: "AAvanteTckMedium";
+  font-size: 20px;
+  text-transform: uppercase;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/main\.scss}line{font-family:\00003119}}
+html h3 {
+  font-family: "AAvanteTckMedium";
+  font-size: 20px;
+  color: #2D1801;
+  text-shadow: 1px 1px 8px #cf8e23;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/main\.scss}line{font-family:\00003128}}
+html h4 {
+  font-family: "AAvanteBs";
+  font-size: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/main\.scss}line{font-family:\00003133}}
+html img {
+  -webkit-user-drag: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/main\.scss}line{font-family:\00003141}}
+html .text-solid {
+  font-family: "AAvanteTckMedium";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/main\.scss}line{font-family:\00003148}}
+md-backdrop {
+  height: 100% !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/main\.scss}line{font-family:\00003152}}
+.md-dialog-container {
+  height: 100% !important;
+}
+
+/*
+ * IOS flex-shrink bugfix
+ * https://github.com/philipwalton/flexbugs#1-minimum-content-sizing-of-flex-items-not-honored
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/main\.scss}line{font-family:\00003160}}
+crs-app-footer, crs-app-header {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/main\.scss}line{font-family:\00003164}}
+.shrink-fix {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/main\.scss}line{font-family:\00003168}}
+.flex-min-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+/**
+ * Flexbug IE10-11 images + aspect ratio (workaround)
+ * Expected behavior: Flex item height reflects resized image
+ * Actual behavior: Flex item height reflects image height before resizing
+ *
+ * 1. Add min-height: 1px to the flex item.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/main\.scss}line{font-family:\00003180}}
+.flex * {
+  min-height: 1px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/WORK\/Welcome_to_Russia\/src\/sass\/main\.scss}line{font-family:\00003184}}
+.column-fix > * {
+  max-width: 100%;
+}

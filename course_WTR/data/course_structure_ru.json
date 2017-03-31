@@ -1,0 +1,313 @@
+{
+  "course": {
+    "title": "Welcome to Russia. Курс для иностранных специалистов",
+    "modals": {
+      "winContents": {
+        "title": "Содержание",
+        "buttons": {
+          "backBtn": {
+            "title": "Назад"
+          }
+        },
+        "placeholders": {
+          "findChapter": "найти урок",
+          "findPage": "найти тему"
+        }
+      },
+      "winHelp": {
+        "title": "Помощь"
+      },
+      "winAbout": {
+        "title": "О программе"
+      },
+      "winGlossary": {
+        "title": "Словарь"
+      },
+      "winStatistics": {
+        "title": "Статистика"
+      },
+      "winOptions": {
+        "title": "Настройки",
+        "buttons": {
+          "closeBtn": {
+            "title": "Закрыть"
+          },
+          "aboutBtn": {
+            "title": "О программе"
+          },
+          "glossaryBtn": {
+            "title": "Словарь"
+          },
+          "statsBtn": {
+            "title": "Статистика"
+          }
+        }
+      },
+      "winExit": {
+        "title": "Завершить работу с курсом?",
+        "buttons": {
+          "okBtn": {
+            "title": "OK"
+          },
+          "cancelBtn": {
+            "title": "Отмена"
+          }
+        }
+      }
+    },
+    "templatesConfig": {
+      "pageCounter": {
+        "text": ""
+      }
+    },
+    "chapters": [
+      {
+        "id": "",
+        "title": " «Welcome to Russia» ",
+        "pages": [
+          {
+            "id": "page_01_01",
+            "title": "Введение",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl":"page_01_01.html"
+              }
+            ]
+          },
+          {
+            "id": "page_01_02",
+            "title": "Почему иностранным специалистам необходима адаптация?",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_01_02.html"
+              }
+            ]
+          },
+          {
+            "id": "page_01_03",
+            "title": "Упражнение 1",
+            "type": "ex",
+            "components": [
+              {
+                "pageTemplateUrl": "page_01_03.html"
+              }
+            ]
+          },
+          {
+            "id": "page_01_04",
+            "title": "Виза и документы",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_01_04.html"
+              }
+            ]
+          },
+          {
+            "id": "page_01_05",
+            "title": "Безопасность в России",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_01_05.html"
+              }
+            ]
+          },
+          {
+            "id": "page_01_06",
+            "title": "Погодные условия",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_01_06.html"
+              }
+            ]
+          },
+          {
+            "id": "page_01_07",
+            "title": "Время",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_01_07.html"
+              }
+            ]
+          },
+          {
+            "id": "page_01_08",
+            "title": "Россия – многонациональная страна ",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_01_08.html"
+              }
+            ]
+          },
+          {
+            "id": "page_01_09",
+            "title": "Менталитет русского человека. Душевность",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_01_09.html"
+              }
+            ]
+          },
+          {
+            "id": "page_01_10",
+            "title": "Менталитет русского человека. Коллективизм",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_01_10.html"
+              }
+            ]
+          },
+          {
+            "id": "page_01_11",
+            "title": "Упражнение 2",
+            "type": "ex",
+            "components": [
+              {
+                "pageTemplateUrl": "page_01_11.html"
+              }
+            ]
+          },
+          {
+            "id": "page_01_12",
+            "title": "Упражнение 3",
+            "type": "ex",
+            "components": [
+              {
+                "pageTemplateUrl": "page_01_12.html"
+              }
+            ]
+          },
+          {
+            "id": "page_01_13",
+            "title": "Особенности общения",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_01_13.html"
+              }
+            ]
+          },
+          {
+            "id": "page_01_14",
+            "title": "Приметы и традиции",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_01_14.html"
+              }
+            ]
+          },
+          {
+            "id": "page_01_15",
+            "title": "Транспортная система России",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_01_15.html"
+              }
+            ]
+          },
+          {
+            "id": "page_01_16",
+            "title": "Общественный транспорт",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_01_16.html"
+              }
+            ]
+          },
+          {
+            "id": "page_01_17",
+            "title": "Образование",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_01_17.html"
+              }
+            ]
+          },
+          {
+            "id": "page_01_18",
+            "title": "Покупки",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_01_18.html"
+              }
+            ]
+          },
+          {
+            "id": "page_01_19",
+            "title": "Развлечения и отдых",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_01_19.html"
+              }
+            ]
+          },
+          {
+            "id": "page_01_20",
+            "title": "Деловые подарки и благодарности",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_01_20.html"
+              }
+            ]
+          },
+          {
+            "id": "page_01_21",
+            "title": "Упражнение 4",
+            "type": "ex",
+            "components": [
+              {
+                "pageTemplateUrl": "page_01_21.html"
+              }
+            ]
+          },
+          {
+            "id": "page_01_22",
+            "title": "Праздники в России",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_01_22.html"
+              }
+            ]
+          },
+          {
+            "id": "page_01_23",
+            "title": "Сувениры из России",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_01_23.html"
+              }
+            ]
+          },
+          {
+            "id": "page_01_24",
+            "title": "Заключение",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_01_24.html"
+              }
+            ]
+          }
+
+        ]
+      }
+    ]
+  }
+}
