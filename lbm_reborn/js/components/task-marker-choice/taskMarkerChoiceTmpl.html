@@ -1,0 +1,29 @@
+<p class="page_paragraph">{{$ctrl.taskText}}</p>
+<div class="task__marker-choice-body">
+  <div class="task__marker-choice_video" ng-if="$ctrl.useVideo">
+    <button class="btn btn_task-video">video</button>
+  </div>
+  <div class="task__marker-choice_items">
+    <div class="task__marker-choice-item" 
+        ng-repeat="question in $ctrl.questionList"  
+        ng-click="$ctrl.selectAnswer($index, $event)">
+      <div class="task__marker-choice-question" 
+          ng-class="{'marker-selected': $ctrl.active[$index].selected}"
+          ng-class="marker+$ctrl.marker">
+        {{question.question}}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="marker-box">
+  <button class="btn btn_task-marker btn_task-marker__green"
+          ng-click="$ctrl.selectMarker(0)"
+          ng-class="{'selected': $ctrl.marker == 0}"></button>
+  <button class="btn btn_task-marker btn_task-marker__red"
+          ng-click="$ctrl.selectMarker(1)"
+          ng-class="{'selected': $ctrl.marker == 1}"></button>
+</div>
+<div class="btn-box">
+  <button class="btn btn_restart" ng-click="$ctrl.removeRestart()">Начать заново</button>
+  <button class="btn btn_answer" ng-class="{'btn_disabled': $ctrl.state == 0 || $ctrl.state == 2}" ng-click="$ctrl.checkAnswer($event)">Принять ответ</button>
+</div>

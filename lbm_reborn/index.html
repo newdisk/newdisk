@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru" ng-app="courseApp">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/style.min.css">
+  <title>Легко ли быть менеджером</title>
+</head>
+<body>
+  <div class="course-wrapper">
+    <div class="modal modal_cloak" 
+        ng-controller="PageCtrl" 
+        ng-show="getModalState(5)"
+        ng-click="closeModals()"><!-- затмение --></div>
+    <div ui-view="header" ng-cloak></div>
+    <div class="page-wrapper">
+      <div ui-view="content" class="page" ng-cloak></div>
+    </div>
+    <div ui-view="footer" ng-cloak></div>
+  </div>
+  <div style="display: none" ng-bind-html="$ctrl.svgSprite" ng-controller="CourseCtrl as $ctrl"></div>
+  <script src="js/lib.min.js"></script>
+  <script src="js/main.min.js"></script>
+</body>
+</html>

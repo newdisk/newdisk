@@ -1,0 +1,108 @@
+<header class="header">
+  <div class="header__content">
+    <div class="header__btns">
+      <button class="btn btn_nav btn_nav-menu"
+              ng-click="$ctrl.toggleMenu()"><!-- меню курса -->
+        <svg viewBox="0 0 60 50" width="60" height="50">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" 
+               xlink:href="#menu">
+          </use>
+        </svg>
+      </button>
+      <button class="btn btn_nav btn_nav-stat"
+              ng-click="$ctrl.toggleStat()"><!-- статистика -->
+        <svg viewBox="0 0 60 50" width="60" height="50">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" 
+               xlink:href="#statistika2">
+          </use>
+        </svg>
+      </button>
+      <button class="btn btn_nav btn_nav-about"
+            ng-click="$ctrl.toggleAbout()"><!-- об авторах -->
+        <svg viewBox="0 0 60 50" width="60" height="50">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" 
+               xlink:href="#glossary2">
+          </use>
+        </svg>
+      </button>
+      <button class="btn btn_nav btn_nav-help"
+        ng-click="$ctrl.toggleHelp()"><!-- помощь -->
+        <svg viewBox="0 0 60 50" width="60" height="50">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" 
+               xlink:href="#vopros">
+          </use>
+        </svg>
+      </button>
+    </div>
+    <div class="header__title">
+      <p class="header__title-course">{{$ctrl.title.course}}</p>
+      <p class="header__title-chapter">{{$ctrl.title.chapter}}</p>
+    </div>
+  </div>
+  <!-- modal windows  -->
+  <!-- menu -->
+  <div class="modal modal_nav-menu" ng-show="$ctrl.getModalState(0)">
+    <p class="modal_nav-menu_head">Меню курса</p>
+    <ul class="modal_nav-menu_list">
+      <li ng-repeat="chapter in $ctrl.chapters" class="menu_list__chapter-item">
+        <div class="modal_nav-menu_chapter">{{ chapter.title }}</div>
+        <ul ng-if="chapter.pages" class="modal_nav-menu_list__pages">
+          <li ng-repeat="page in chapter.pages"
+              ng-init="num = $ctrl.countPages()"
+              ng-click="$ctrl.goFromMenu(page, chapter)"
+              class="menu_list__page-item"
+              ng-class="{'current': num == $ctrl.getCurrent()}">
+            {{num}}. {{ page.title }}
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <!-- stats -->
+  <div class="modal modal_nav-stats" ng-show="$ctrl.getModalState(1)">
+    <p class="modal_nav-stats_head">Статитсика</p>
+    <div class="modal_nav-stats_total">Выполнено упражнений: {{$ctrl.countDoneExs()}} из {{$ctrl.countExs()}}</div>
+    <div ng-repeat="item in $ctrl.getExs()" class="modal_nav-stats__item">
+          {{item.title}} {{item.score}}
+          <svg viewBox="0 0 28 28" 
+               width="16" 
+               height="16" 
+               fill="#989898"
+               ng-show="item.status === -1">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" 
+                 xlink:href="#minus">
+            </use>
+          </svg>
+          <svg viewBox="0 0 28 28" 
+               width="16" 
+               height="16" 
+               fill="#007300"
+               ng-show="item.status === 1">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" 
+                 xlink:href="#check">
+            </use>
+          </svg>
+          <svg viewBox="0 0 28 28" 
+               width="16" 
+               height="16" 
+               fill="#e50000"
+               ng-show="item.status === 0">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" 
+                 xlink:href="#cross_exercise">
+            </use>
+          </svg>
+    </div>
+  </div>
+  <!-- about -->
+  <div class="modal modal_nav-about" ng-show="$ctrl.getModalState(2)">
+    <p>Об авторах</p>
+  </div>
+  <!-- help -->
+  <div class="modal modal_nav-help" ng-show="$ctrl.getModalState(3)">
+    <p>Помощь</p>
+  </div>
+  <!-- exercise modal -->
+  <div class="modal modal_nav-ex" ng-show="$ctrl.getModalState(4)">
+    <p>Ваш результат</p>
+  </div>
+</header>

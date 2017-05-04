@@ -1,0 +1,31 @@
+<footer class="footer">
+  <div class="footer_audio-box">
+    <custom-audio module="{{$ctrl.moduleNum}}" page="{{$ctrl.pageNum}}"></custom-audio>
+  </div>
+  <div class="footer_btn-box">
+    <button class="btn btn_nav btn_nav-back"
+            ng-class="{'btn_nav-back-disabled': $ctrl.bookmark  === '-1'}"
+            ng-click="$ctrl.toBack()"><!-- ← zurück -->
+      <svg viewBox="0 0 104 40">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" 
+             xlink:href="#btn_nav-back">
+        </use>
+      </svg>
+    </button>
+    <div class="paginator">{{$ctrl.bookmark.page+1}} / {{$ctrl.pageAmountTotal}} </div>
+    <button class="btn btn_nav btn_nav-forward"
+            ng-class="{'btn_nav-forward-disabled': $ctrl.bookmark === '-1'}"
+            ng-click="$ctrl.toForward()"><!-- vorwärts → -->
+      <svg viewBox="0 0 104 40">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" 
+             xlink:href="#btn_nav-forward">
+        </use>
+      </svg>
+    </button>
+  </div>
+
+  <!-- <p>закладка: {{$ctrl.bookmark}}</p> -->
+  <!-- <p>текущая страница в главе: {{$ctrl.curPageNum}}</p> -->
+  <!-- <p>всего страниц в главе: {{$ctrl.pageAmountChapter}}</p> -->
+  
+</footer>
