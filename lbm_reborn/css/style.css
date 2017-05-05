@@ -8,6 +8,7 @@
 /* red */
 /* red */
 /* grey */
+/* бирюзовый */
 /* title text color in header */
 /* simple text color on light blocks */
 /* simple text color on dark blocks */
@@ -15,7 +16,6 @@
 /* Media Queries */
 .header {
   max-width: 1024px;
-  min-width: 480px;
   position: relative;
   border-bottom: 2px solid #104e99; }
 
@@ -25,7 +25,7 @@
   height: 60px; }
 
 .header__btns {
-  width: 275px;
+  width: 295px;
   padding-left: 15px; }
 
 .header__title {
@@ -45,7 +45,9 @@
 .header__title-course {
   background: #fff;
   color: #666;
-  font-weight: bold; }
+  font-family: Consolas;
+  font-weight: bold;
+  font-size: 22px; }
 
 body {
   margin: 0;
@@ -54,7 +56,6 @@ body {
 .course-wrapper {
   position: relative;
   max-width: 1024px;
-  min-width: 480px;
   margin: auto;
   box-shadow: 0 0 25px 0px rgba(60, 60, 60, 0.7);
   overflow: hidden; }
@@ -62,7 +63,6 @@ body {
 .page-wrapper {
   position: relative;
   max-width: 1024px;
-  min-width: 480px;
   min-height: 636px;
   overflow: hidden; }
 
@@ -100,14 +100,13 @@ body {
   justify-content: space-around;
   align-items: center;
   max-width: 1024px;
-  min-width: 480px;
   height: 58px;
   background: #e8ebe4; }
 
 .footer_btn-box {
   display: flex; }
   .footer_btn-box .paginator {
-    margin: 0 50px;
+    margin: 0 35px;
     background: #fff;
     font-family: Consolas;
     font-size: 18px;
@@ -455,6 +454,12 @@ body {
   margin: 10px;
   font-size: 18px; }
 
+.page-text__bold {
+  font-weight: bold; }
+
+.page-text__color-green {
+  color: #66cfb0; }
+
 .page_info {
   position: relative;
   width: 80%;
@@ -496,7 +501,7 @@ body {
       font-size: 80px;
       border-bottom: 20px solid #dce8f7; }
     .page-01-01 .intro-text .intro-text_subchapter {
-      color: #a3add8;
+      color: #596dc5;
       font-size: 32px; }
       .page-01-01 .intro-text .intro-text_subchapter p {
         margin: 15px 0px; }
@@ -540,6 +545,89 @@ body {
       color: #666;
       background: #edf9f5;
       border: 2px solid #66cfb0; }
+  .page-01-02_activity .activity-arrow {
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    background: url(../img/arrow.png) no-repeat 50% 50%; }
+    .page-01-02_activity .activity-arrow.activity-arrow__control {
+      top: calc(50% - 118px);
+      left: calc(50% - 285px);
+      transform: rotate(-32deg); }
+    .page-01-02_activity .activity-arrow.activity-arrow__plan {
+      top: calc(50% - 118px);
+      left: calc(50% + 85px);
+      transform: rotate(32deg); }
+    .page-01-02_activity .activity-arrow.activity-arrow__org {
+      bottom: calc(50% - 118px);
+      right: calc(50% - 285px);
+      transform: rotate(152deg); }
+      .page-01-02_activity .activity-arrow.activity-arrow__org p {
+        transform: rotate(180deg); }
+    .page-01-02_activity .activity-arrow.activity-arrow__motiv {
+      bottom: calc(50% - 118px);
+      left: calc(50% - 285px);
+      transform: rotate(-152deg); }
+      .page-01-02_activity .activity-arrow.activity-arrow__motiv p {
+        transform: rotate(180deg); }
+    .page-01-02_activity .activity-arrow p {
+      height: 30px;
+      margin: 0;
+      line-height: 30px;
+      color: #666;
+      text-align: center; }
+
+.page-02-01_content {
+  display: flex;
+  margin-top: 40px;
+  margin-bottom: 40px; }
+
+.page-02-01_activity {
+  position: relative;
+  width: 580px;
+  height: 300px;
+  margin: 0 0 30px 0; }
+  .page-02-01_activity .page-02-01_activity_item {
+    position: absolute; }
+    .page-02-01_activity .page-02-01_activity_item.page-02-01_activity_item__control {
+      top: calc(50% - 25px);
+      left: 15px; }
+    .page-02-01_activity .page-02-01_activity_item.page-02-01_activity_item__plan {
+      top: 0;
+      left: calc(50% - 95px); }
+    .page-02-01_activity .page-02-01_activity_item.page-02-01_activity_item__org {
+      top: calc(50% - 25px);
+      right: 15px; }
+    .page-02-01_activity .page-02-01_activity_item.page-02-01_activity_item__motiv {
+      bottom: 0;
+      left: calc(50% - 95px); }
+    .page-02-01_activity .page-02-01_activity_item .page-02-01_item__text {
+      width: 190px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 22px;
+      color: #666;
+      background: #edf9f5;
+      border: 2px solid #66cfb0; }
+
+.page-02-01_descript {
+  padding-left: 30px; }
+  .page-02-01_descript .page-02-01_descript_item {
+    position: relative;
+    width: 300px;
+    margin-bottom: 20px;
+    font-size: 18px; }
+    .page-02-01_descript .page-02-01_descript_item:before {
+      content: '';
+      position: absolute;
+      top: 7px;
+      left: -20px;
+      width: 7px;
+      height: 7px;
+      background: #989898;
+      border-radius: 50%; }
 
 .page-02-03 {
   overflow: auto; }
@@ -549,12 +637,13 @@ body {
   @media (max-width: 768px){
   .header .header__content{
     align-items: flex-start;
-    height: 85px; }
+    height: 80px; }
   .header .header__content .header__btns{
     position: absolute; }
   .header .header__content .header__title-course{
-    height: 55px;
-    padding-left: 85px; }
+    height: 50px;
+    padding-left: 85px;
+    line-height: 50px; }
   .header .header__content .header__title{
     width: 100%; }
   body, html{
@@ -586,10 +675,19 @@ body {
     padding-left: 10px; }
   .page_info:before{
     display: none; }
+  .page-01-01{
+    background-position: left bottom;
+    background-size: 85%; }
+  .page-01-01 .page-01-01_manager{
+    display: none; }
+  .page-01-01 .page-logo{
+    display: none; }
+  .page-01-01 .intro-text{
+    width: 320px; }
   .page-01-02{
     overflow: auto; }
   .page-01-02_activity{
-    width: 100%;
+    width: calc(100% - 30px);
     height: 275px; }
   .page-01-02_activity .page-01-02_activity_item.page-01-02_activity_item__control{
     top: calc(50% - 22px);
@@ -606,9 +704,34 @@ body {
   .page-01-02_activity .page-01-02_activity_item .page-01-02_item__text{
     width: 170px;
     height: 45px; }
+  .page-01-02_activity .activity-arrow{
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    background: url(../img/arrow.png) no-repeat 50% 50%; }
+  .page-01-02_activity .activity-arrow.activity-arrow__control{
+    left: calc(50% - 265px); }
+  .page-01-02_activity .activity-arrow.activity-arrow__plan{
+    left: calc(50% + 65px); }
+  .page-01-02_activity .activity-arrow.activity-arrow__org{
+    right: calc(50% - 265px); }
+  .page-01-02_activity .activity-arrow.activity-arrow__motiv{
+    left: calc(50% - 265px); }
+  .page-02-01{
+    overflow: auto; }
+  .page-02-01_content{
+    flex-direction: column-reverse;
+    align-items: center;
+    margin-bottom: 10px; }
+  .page-02-01_activity{
+    width: 100%; }
+  .page-02-01_descript{
+    padding-left: 45px; }
+  .page-02-01_descript .page-02-01_descript_item{
+    width: calc(100% - 50px); }
   .page-02-03 .task__marker-choice-body .task__marker-choice_items .task__marker-choice-item{
     margin-bottom: 15px; } }
-  @media (min-width: 768px){
+  @media (min-width: 769px){
   /***************************************************************
   /  Buttons for Header and modals
   /**************************************************************/
@@ -624,7 +747,8 @@ body {
   /**************************************************************/
   .btn_audio-mute,
   .btn_audio-restart{
-    display: flex; }
+    display: flex; } }
+  @media (min-width: 768px){
   .audio{
     width: 402px; }
   .audio__seek-slider{
