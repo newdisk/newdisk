@@ -17,11 +17,11 @@
 </div>
 <div class="marker-box">
   <button class="btn btn_task-marker btn_task-marker__green"
-          ng-click="$ctrl.selectMarker(0)"
-          ng-class="{'selected': $ctrl.marker == 0}"></button>
-  <button class="btn btn_task-marker btn_task-marker__red"
           ng-click="$ctrl.selectMarker(1)"
           ng-class="{'selected': $ctrl.marker == 1}"></button>
+  <button class="btn btn_task-marker btn_task-marker__red"
+          ng-click="$ctrl.selectMarker(0)"
+          ng-class="{'selected': $ctrl.marker == 0}"></button>
 </div>
 <div class="btn-box">
   <button class="btn btn_restart" ng-click="$ctrl.removeRestart()">Начать заново</button>

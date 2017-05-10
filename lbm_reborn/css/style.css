@@ -418,10 +418,10 @@ body {
   width: 130px;
   height: 90px; }
 
-[data='marker0'] {
+[data='marker1'] {
   background: #B3DF3E; }
 
-[data='marker1'] {
+[data='marker0'] {
   background: #EA4F33; }
 
 .btn_task-marker__red {
@@ -556,7 +556,7 @@ body {
       transform: rotate(-32deg); }
     .page-01-02_activity .activity-arrow.activity-arrow__plan {
       top: calc(50% - 118px);
-      left: calc(50% + 85px);
+      right: calc(50% - 285px);
       transform: rotate(32deg); }
     .page-01-02_activity .activity-arrow.activity-arrow__org {
       bottom: calc(50% - 118px);
@@ -611,6 +611,37 @@ body {
       color: #666;
       background: #edf9f5;
       border: 2px solid #66cfb0; }
+  .page-02-01_activity .activity-arrow {
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    background: url(../img/arrow.png) no-repeat 50% 50%; }
+    .page-02-01_activity .activity-arrow.activity-arrow__control {
+      top: calc(50% - 118px);
+      left: calc(50% - 285px);
+      transform: rotate(-32deg); }
+    .page-02-01_activity .activity-arrow.activity-arrow__plan {
+      top: calc(50% - 118px);
+      right: calc(50% - 285px);
+      transform: rotate(32deg); }
+    .page-02-01_activity .activity-arrow.activity-arrow__org {
+      bottom: calc(50% - 118px);
+      right: calc(50% - 285px);
+      transform: rotate(152deg); }
+      .page-02-01_activity .activity-arrow.activity-arrow__org p {
+        transform: rotate(180deg); }
+    .page-02-01_activity .activity-arrow.activity-arrow__motiv {
+      bottom: calc(50% - 118px);
+      left: calc(50% - 285px);
+      transform: rotate(-152deg); }
+      .page-02-01_activity .activity-arrow.activity-arrow__motiv p {
+        transform: rotate(180deg); }
+    .page-02-01_activity .activity-arrow p {
+      height: 30px;
+      margin: 0;
+      line-height: 30px;
+      color: #666;
+      text-align: center; }
 
 .page-02-01_descript {
   padding-left: 30px; }
@@ -629,12 +660,19 @@ body {
       background: #989898;
       border-radius: 50%; }
 
-.page-02-03 {
+.page-02-02 {
   overflow: auto; }
-  .page-02-03 .task__marker-choice_video {
+  .page-02-02 .task__marker-choice_video {
     margin-bottom: 20px;
     margin-left: 20px; }
-  @media (max-width: 768px){
+  .page-02-02 .task__marker-choice_items {
+    padding-right: 10px; }
+    .page-02-02 .task__marker-choice_items .task__marker-choice-item {
+      margin-bottom: 15px;
+      padding: 5px 0 5px 5px;
+      border: 1px solid #ccc;
+      border-radius: 10px; }
+    @media (max-width: 768px){
   .header .header__content{
     align-items: flex-start;
     height: 80px; }
@@ -651,7 +689,7 @@ body {
   .course-wrapper{
     height: 100%; }
   .page-wrapper{
-    height: calc(100% - 145px);
+    height: calc(100% - 140px);
     min-height: auto; }
   .footer_btn-box{
     flex-grow: 2;
@@ -712,7 +750,7 @@ body {
   .page-01-02_activity .activity-arrow.activity-arrow__control{
     left: calc(50% - 265px); }
   .page-01-02_activity .activity-arrow.activity-arrow__plan{
-    left: calc(50% + 65px); }
+    right: calc(50% - 265px); }
   .page-01-02_activity .activity-arrow.activity-arrow__org{
     right: calc(50% - 265px); }
   .page-01-02_activity .activity-arrow.activity-arrow__motiv{
@@ -724,14 +762,104 @@ body {
     align-items: center;
     margin-bottom: 10px; }
   .page-02-01_activity{
-    width: 100%; }
+    width: calc(100% - 30px);
+    height: 275px; }
+  .page-02-01_activity .page-02-01_activity_item.page-02-01_activity_item__control{
+    top: calc(50% - 22px);
+    left: 0; }
+  .page-02-01_activity .page-02-01_activity_item.page-02-01_activity_item__plan{
+    top: 0;
+    left: calc(50% - 85px); }
+  .page-02-01_activity .page-02-01_activity_item.page-02-01_activity_item__org{
+    top: calc(50% - 22px);
+    right: 0; }
+  .page-02-01_activity .page-02-01_activity_item.page-02-01_activity_item__motiv{
+    bottom: 0;
+    left: calc(50% - 85px); }
+  .page-02-01_activity .page-02-01_activity_item .page-02-01_item__text{
+    width: 170px;
+    height: 45px; }
+  .page-02-01_activity .activity-arrow{
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    background: url(../img/arrow.png) no-repeat 50% 50%; }
+  .page-02-01_activity .activity-arrow.activity-arrow__control{
+    left: calc(50% - 265px); }
+  .page-02-01_activity .activity-arrow.activity-arrow__plan{
+    right: calc(50% - 265px); }
+  .page-02-01_activity .activity-arrow.activity-arrow__org{
+    right: calc(50% - 265px); }
+  .page-02-01_activity .activity-arrow.activity-arrow__motiv{
+    left: calc(50% - 265px); }
   .page-02-01_descript{
     padding-left: 45px; }
   .page-02-01_descript .page-02-01_descript_item{
     width: calc(100% - 50px); }
-  .page-02-03 .task__marker-choice-body .task__marker-choice_items .task__marker-choice-item{
+  .page-02-02 .task__marker-choice-body .task__marker-choice_items .task__marker-choice-item{
     margin-bottom: 15px; } }
-  @media (min-width: 769px){
+    @media (max-width: 480px){
+  .header .header__content .header__title-course{
+    line-height: 19px;
+    display: table-cell;
+    vertical-align: middle; }
+  .page-01-02 .page-01-02_activity .page-01-02_activity_item .page-01-02_item__text{
+    width: 150px; }
+  .page-01-02 .page-01-02_activity .activity-arrow{
+    width: 165px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: url(../img/arrow_turn.png) no-repeat; }
+  .page-01-02 .page-01-02_activity .activity-arrow.activity-arrow__control{
+    top: calc(50% - 105px);
+    left: 0px;
+    transform: rotate(0deg); }
+  .page-01-02 .page-01-02_activity .activity-arrow.activity-arrow__plan{
+    top: calc(50% - 105px);
+    right: 0px;
+    transform: rotate(0deg); }
+  .page-01-02 .page-01-02_activity .activity-arrow.activity-arrow__org{
+    bottom: calc(50% - 105px);
+    right: 0px;
+    transform: rotate(180deg); }
+  .page-01-02 .page-01-02_activity .activity-arrow.activity-arrow__motiv{
+    bottom: calc(50% - 105px);
+    left: 0px;
+    transform: rotate(180deg); }
+  .page-01-02 .page-01-02_activity .activity-arrow p{
+    height: auto;
+    line-height: 1; }
+  .page-02-01 .page-02-01_activity .page-02-01_activity_item .page-02-01_item__text{
+    width: 150px; }
+  .page-02-01 .page-02-01_activity .activity-arrow{
+    width: 165px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: url(../img/arrow_turn.png) no-repeat; }
+  .page-02-01 .page-02-01_activity .activity-arrow.activity-arrow__control{
+    top: calc(50% - 105px);
+    left: 0px;
+    transform: rotate(0deg); }
+  .page-02-01 .page-02-01_activity .activity-arrow.activity-arrow__plan{
+    top: calc(50% - 105px);
+    right: 0px;
+    transform: rotate(0deg); }
+  .page-02-01 .page-02-01_activity .activity-arrow.activity-arrow__org{
+    bottom: calc(50% - 105px);
+    right: 0px;
+    transform: rotate(180deg); }
+  .page-02-01 .page-02-01_activity .activity-arrow.activity-arrow__motiv{
+    bottom: calc(50% - 105px);
+    left: 0px;
+    transform: rotate(180deg); }
+  .page-02-01 .page-02-01_activity .activity-arrow p{
+    height: auto;
+    line-height: 1; }
+  .task__marker-choice_video{
+    margin-left: 0px; } }
+    @media (min-width: 769px){
   /***************************************************************
   /  Buttons for Header and modals
   /**************************************************************/
@@ -748,7 +876,7 @@ body {
   .btn_audio-mute,
   .btn_audio-restart{
     display: flex; } }
-  @media (min-width: 768px){
+    @media (min-width: 768px){
   .audio{
     width: 402px; }
   .audio__seek-slider{
