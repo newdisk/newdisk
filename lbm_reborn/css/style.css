@@ -803,6 +803,9 @@ body {
     line-height: 19px;
     display: table-cell;
     vertical-align: middle; }
+  .page-01-01 .intro-text{
+    padding-left: 5px;
+    background: rgba(255, 255, 255, 0.7); }
   .page-01-02 .page-01-02_activity .page-01-02_activity_item .page-01-02_item__text{
     width: 150px; }
   .page-01-02 .page-01-02_activity .activity-arrow{
@@ -830,6 +833,8 @@ body {
   .page-01-02 .page-01-02_activity .activity-arrow p{
     height: auto;
     line-height: 1; }
+  .page-02-01{
+    overflow: auto; }
   .page-02-01 .page-02-01_activity .page-02-01_activity_item .page-02-01_item__text{
     width: 150px; }
   .page-02-01 .page-02-01_activity .activity-arrow{
