@@ -2,17 +2,25 @@
 <html lang="ru" ng-app="app">
 <head>
 	<meta charset="UTF-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style.min.css">
 	<title>Программа производства мирового класса ЭВЕРЕСТ</title>
 </head>
-<body>	
-	<div class="course-wrapper" ng-controller="IndexCtrl">
+<body ng-class="{'stashed': $ctrl.showModal(0) ||
+														$ctrl.showModal(1) ||
+														$ctrl.showModal(2) ||
+														$ctrl.showModal(3) ||
+														$ctrl.showModal(4)}" ng-controller="CourseCtrl as $ctrl">	
+	<div class="course-wrapper">
 		<div ui-view="header" ng-cloak></div>
 		<div ui-view="content" class="page" ng-cloak></div>
 		<div ui-view="footer" ng-cloak></div>
 	</div>	
-	<script src="js/lib.js"></script>
-	<script src="js/main.js"></script>
+	<div style="display: none" ng-bind-html="$ctrl.svgSprite"></div>
+	<script src="js/lib.min.js"></script>
+	<script src="js/courseStructure.js"></script>
+	<script src="js/testStructure.js"></script>
+	<script src="js/main.min.js"></script>
 </body>
 </html>

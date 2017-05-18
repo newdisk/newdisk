@@ -1,8 +1,8 @@
 <div class="accordion-panel">
   <div class="accordion-heading" ng-click="toggle()">
-    <h3 class="accordion-heading__title">{{$ctrl.heading}}</h3>
-    <div class="accordion-heading__toggler" ng-class="{'accordion-heading__toggler_active': isCollapsed}"></div>
+    <h3 class="accordion-heading__title" ng-bind-html="$ctrl.heading"></h3>
+    <div class="accordion-heading__toggler" ng-class="{'accordion-heading__toggler_active': !isCollapsed}"></div>
   </div>
-  <div class="accordion-content" collapse="isCollapsed" ng-transclude ng-controller="MyCtrl">
+  <div class="accordion-content" collapse="isCollapsed" ng-transclude ng-controller="AccordionContentCtrl">
   </div>
 </div>

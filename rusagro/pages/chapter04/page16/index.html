@@ -1,0 +1,28 @@
+<div class="page-container">
+	<button class="btn btn_animation"
+			ng-click="$ctrl.startAnimation()"
+			ng-show="$ctrl.getAudioTime() === 0">
+	</button>
+	<p class="text">Дерево KPIs – это схема, которая помогает произвести каскадирование показателей, то есть выявить важные причинно-следственные связи между более крупными KPIs и отдельными KPIs для конкретных сотрудников.</p>
+	<p class="text">Эта схема может выглядеть по-разному. Вот два примера.</p>
+	<div class="image-container">
+		<div class="image-container__wrapper image-container__wrapper_two">
+			<p class="text">Пример 1</p>
+			<img class="image-container__img"
+					 src="pages/chapter04/page16/img/scheme_1.svg"
+					 alt="Пример схемы"
+					 width="100%">
+		</div>
+		<div class="image-container__wrapper image-container__wrapper_two">
+			<p class="text">Пример 2</p>
+			<img class="image-container__img"
+					 src="pages/chapter04/page16/img/scheme_2.svg"
+					 alt="Пример схемы"
+					 width="100%">
+		</div>
+	</div>
+	<div ng-show="$ctrl.getAudioTime() >= 24">
+		<p class="text">На этих примерах мы видим, как показатель «Затраты на производство» ($/т) складывается из показателей более мелкого уровня – «Потребление» (в единицах за тонну) и «Цена» (в долларах за единицу). Цена складывается из таких показателей, как «Материалы» и «Трудозатраты», а «Потребление» – из «Эффективности» и «Выхода». В свою очередь, эти показатели также могут дробиться на более мелкие – чтобы каждый сотрудник знал, какой показатель относится именно к нему и как его KPI связан с более крупным показателем.</p>
+		<p class="text">После того как дерево KPIs для предприятия в целом и для отдельных подразделений составлено, все полученные показатели заносятся в общий список – <span class="text_bold">каталог KPIs.</span></p>
+	</div>
+</div>

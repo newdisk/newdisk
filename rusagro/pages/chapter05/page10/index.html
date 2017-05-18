@@ -1,0 +1,42 @@
+<div class="page-container" ng-controller="TaskRangingSortCtrl as $ctrl">
+	<p class="text">Расположите виды управленческих отчетов в порядке возрастания периода. Перетащите каждый вид отчета на соответствующее ему место.</p>
+	<div class="sort-wrapper">
+		<div class="custom-block_page-05-10 sort">
+			<div class="table-block table-block_page-05-10 sort__content">
+				<div class="table-block__cell table-block__cell_page-05-10">Смена</div>
+				<div class="table-block__cell table-block__cell_page-05-10">Отчет по передаче смены</div>
+				<div class="table-block__cell table-block__cell_page-05-10">KPIs и PIs за смену</div>
+			</div>
+			<div class="table-block table-block_page-05-10 sort__content">
+				<div class="table-block__cell table-block__cell_page-05-10">День</div>
+				<div class="table-block__cell table-block__cell_page-05-10">Отчет за сутки</div>
+				<div class="table-block__cell table-block__cell_page-05-10">KPIs и PIs за сутки</div>
+			</div>
+			<div class="table-block table-block_page-05-10 sort__content">
+				<div class="table-block__cell table-block__cell_page-05-10">Неделя</div>
+				<div class="table-block__cell table-block__cell_page-05-10">Отчет за неделю</div>
+				<div class="table-block__cell table-block__cell_page-05-10">KPIs за неделю</div>
+			</div>
+			<div class="table-block table-block_page-05-10 sort__content">
+				<div class="table-block__cell table-block__cell_page-05-10">Месяц</div>
+				<div class="table-block__cell table-block__cell_page-05-10">Отчет за месяц</div>
+				<div class="table-block__cell table-block__cell_page-05-10">KPIs за месяц</div>
+			</div>
+			<div class="table-block table-block_page-05-10 sort__content">
+				<div class="table-block__cell table-block__cell_page-05-10">Год</div>
+				<div class="table-block__cell table-block__cell_page-05-10">Годовой Отчет</div>
+				<div class="table-block__cell table-block__cell_page-05-10">Показатели за год</div>
+			</div>
+		</div>
+	</div>
+	<div class="btn-box">
+		<button class="btn btn_restart" 
+						ng-class="{'btn_disabled': $ctrl.getBtnState().restart}"
+	          ng-click="$ctrl.removeRestart()">Начать заново
+	  </button>
+		<button class="btn btn_answer" 
+	          ng-class="{'btn_disabled': $ctrl.getBtnState().answer}" 
+	          ng-click="$ctrl.checkAnswer()">Принять ответ
+	  </button>
+	</div>
+</div>

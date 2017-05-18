@@ -1,0 +1,86 @@
+<div class="page-container" ng-controller="TaskRangingSwapableCtrl as $ctrl">
+	<p class="text">Найти нужные инструменты и материалы на этом складе будет явно непросто. Попробуйте их упорядочить. С помощью стрелок переместите предметы на отведенные им полки.</p>
+	<div class="sort-wrapper sort-wrapper_page-02-16">
+		<div class="custom-block_page-02-16 sort">
+			<div class="table-block table-block_page-02-16 fixed fixed_page-02-16_1"></div>
+      <div class="table-block table-block_page-02-16 swapable">
+        <img src="pages/chapter02/page16/img/item-1.png"
+             alt="box" 
+             height="52">
+        <img src="pages/chapter02/page16/img/item-1.png"
+             alt="box" 
+             height="52">
+        <img src="pages/chapter02/page16/img/item-1.png"
+             alt="box" 
+             height="52">
+      </div>
+      <div class="table-block table-block_page-02-16 swapable">
+        <img src="pages/chapter02/page16/img/item-2.png"
+             alt="box" 
+             height="52">
+        <img src="pages/chapter02/page16/img/item-2.png"
+             alt="box" 
+             height="52">
+        <img src="pages/chapter02/page16/img/item-2.png"
+             alt="box" 
+             height="52">
+      </div>
+      <div class="table-block table-block_page-02-16 fixed fixed_page-02-16_2"></div>
+      <div class="table-block table-block_page-02-16 swapable">
+        <img src="pages/chapter02/page16/img/item-3.png"
+             alt="box" 
+             height="52">
+        <img src="pages/chapter02/page16/img/item-3.png"
+             alt="box" 
+             height="52">
+        <img src="pages/chapter02/page16/img/item-3.png"
+             alt="box" 
+             height="52">
+      </div>
+      <div class="table-block table-block_page-02-16 swapable">
+        <img src="pages/chapter02/page16/img/item-4.png"
+             alt="box" 
+             height="52">
+        <img src="pages/chapter02/page16/img/item-4.png"
+             alt="box" 
+             height="52">
+        <img src="pages/chapter02/page16/img/item-4.png"
+             alt="box" 
+             height="52">
+      </div>
+      <div class="table-block table-block_page-02-16 fixed fixed_page-02-16_3"></div>
+      <div class="table-block table-block_page-02-16 swapable">
+        <img src="pages/chapter02/page16/img/item-5.png"
+             alt="box" 
+             height="52">
+        <img src="pages/chapter02/page16/img/item-5.png"
+             alt="box" 
+             height="52">
+        <img src="pages/chapter02/page16/img/item-5.png"
+             alt="box" 
+             height="52">
+      </div>
+      <div class="table-block table-block_page-02-16 swapable">
+        <img src="pages/chapter02/page16/img/item-6.png"
+             alt="box" 
+             height="52">
+        <img src="pages/chapter02/page16/img/item-6.png"
+             alt="box" 
+             height="52">
+        <img src="pages/chapter02/page16/img/item-6.png"
+             alt="box" 
+             height="52">
+      </div>
+		</div> 
+	</div>
+	<div class="btn-box">
+		<button class="btn btn_restart" 
+						ng-class="{'btn_disabled': $ctrl.disabledBtn}"
+	          ng-click="$ctrl.removeRestart()">Начать заново
+	  </button>
+		<button class="btn btn_answer" 
+	          ng-class="{'btn_disabled': $ctrl.disabledBtn}" 
+	          ng-click="$ctrl.checkAnswer()">Принять ответ
+	  </button>
+	</div>
+</div>

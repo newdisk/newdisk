@@ -1,0 +1,90 @@
+<div class="page-container" ng-controller="TaskFillingFieldsCtrl as $ctrl">
+	<p class="text">Представьте себе, что вы сотрудник, ответственный за качество, в цеху, где производится сахар. KPI, который вы должны вносить в управленческий отчет, – это сумма примесей в сахаре. Единица измерения этого показателя – проценты. Вам нужно поддерживать плановое значение этого показателя на уровне не выше 0,2 %. Ведь превышение этого значения снижает цену сахара, а следовательно – прибыль предприятия. План совпадает с плановым значением, поскольку это поддерживающий показатель. Вы измеряли этот показатель четыре недели и получили следующие результаты: первая неделя – 0,1 %, вторая неделя – 0,2 %, третья неделя – 0,2 % и последняя, текущая неделя – 0,3 %.</p>
+	<p class="text">Заполните вашу строку в соответствующем отчете за последнюю неделю.</p>
+	<div class="table-wrapper table-wrapper_page-05-14">
+		<table class="table table_page-05-14">
+			<thead>
+				<tr>
+					<td rowspan="2" class="table-cell table-cell_page-05-14_2">Категория показателя</td>
+					<td rowspan="2" class="table-cell table-cell_page-05-14_2">Наименование показателя</td>
+					<td rowspan="2" class="table-cell table-cell_page-05-14_2">Ед. изм.</td>
+					<td rowspan="2" class="table-cell table-cell_page-05-14_2">База</td>
+					<td rowspan="2" class="table-cell table-cell_page-05-14_2">Плановое значение</td>
+					<td rowspan="2" colspan="2" class="table-cell table-cell_page-05-14_2">План и факт за неделю</td>
+					<td rowspan="2" class="table-cell table-cell_page-05-14_2">Отклонение</td>
+					<td colspan="3" class="table-cell table-cell_page-05-14_3">Тенденция</td>
+				</tr>
+				<tr>
+					<td class="table-cell table-cell_page-05-14_3">Неделя&nbsp;1</td>
+					<td class="table-cell table-cell_page-05-14_3">Неделя&nbsp;2</td>
+					<td class="table-cell table-cell_page-05-14_3">Неделя&nbsp;3</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td rowspan="2" class="table-cell table-cell_page-05-14_1">Качество</td>
+					<td rowspan="2" class="table-cell table-cell_page-05-14_1">Сумма примесей в сахаре</td>
+					<td rowspan="2" class="table-cell table-cell_page-05-14_1">%</td>
+					<td rowspan="2" class="table-cell table-cell_page-05-14_1">0,2</td>
+					<td rowspan="2" class="table-cell table-cell_page-05-14_1">&lt; 0,2</td>
+					<td class="table-cell table-cell_page-05-14_4">план</td>
+					<td class="table-cell table-cell_page-05-14_4">
+						<input type="text" 
+									 class="task-filling-fields__input"
+									 name="0" 
+									 tabindex="1" 
+									 ng-model="$ctrl.taskData.userList[0]">
+					</td>
+					<td rowspan="2" class="table-cell table-cell_page-05-14_6">
+						<input type="text" 
+									 class="task-filling-fields__input"
+									 name="2" 
+									 tabindex="3" 
+									 ng-model="$ctrl.taskData.userList[2]">
+					</td>
+					<td rowspan="2" class="table-cell table-cell_page-05-14_5">
+						<input type="text" 
+									 class="task-filling-fields__input"
+									 name="3" 
+									 tabindex="4" 
+									 ng-model="$ctrl.taskData.userList[3]">
+					</td>
+					<td rowspan="2" class="table-cell table-cell_page-05-14_5">
+						<input type="text" 
+									 class="task-filling-fields__input"
+									 name="4" 
+									 tabindex="5" 
+									 ng-model="$ctrl.taskData.userList[4]">
+					</td>
+					<td rowspan="2" class="table-cell table-cell_page-05-14_5">
+						<input type="text" 
+									 class="task-filling-fields__input"
+									 name="5" 
+									 tabindex="6" 
+									 ng-model="$ctrl.taskData.userList[5]">
+					</td>
+				</tr>
+				<tr>
+					<td class="table-cell table-cell_page-05-14_1">факт</td>
+					<td class="table-cell table-cell_page-05-14_1">
+						<input type="text" 
+									 class="task-filling-fields__input"
+									 name="1" 
+									 tabindex="2" 
+									 ng-model="$ctrl.taskData.userList[1]">
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="btn-box">
+		<button class="btn btn_restart" 
+						ng-class="{'btn_disabled': $ctrl.getBtnState().restart}"
+	          ng-click="$ctrl.removeRestart()">Начать заново
+	  </button>
+		<button class="btn btn_answer" 
+	          ng-class="{'btn_disabled': $ctrl.taskData.userList.length !== $ctrl.taskData.answerList.length || $ctrl.getBtnState().answer}" 
+	          ng-click="$ctrl.checkAnswer()">Принять ответ
+	  </button>
+	</div>
+</div>

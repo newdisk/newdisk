@@ -1,0 +1,39 @@
+<div class="page-container">
+<button class="btn btn_animation" 
+      ng-click="$ctrl.startAnimation()" 
+      ng-show="$ctrl.getAudioTime() === 0"> 
+</button>
+<div ng-show="$ctrl.getAudioTime() < 15">
+  <div class="banner-container_page-07-09_01">
+    <div class="banner-container banner-container_page-07-09_01">
+        <img class="banner-img banner-img_page-07-09_01" src="pages/chapter07/page09/img/07_09_00_text.svg" width="100%" alt="Начинаем построение процесса">
+    </div>
+</div>
+<p class="text text_comment">Шаг первый: определите текущую схему и поток материалов.</p>   
+</div>
+<div ng-show="$ctrl.getAudioTime() >= 15 && $ctrl.getAudioTime() < 20">
+    <div class="banner-container">
+        <img class="banner-img banner-img_page-07-09_02" src="pages/chapter07/page09/img/07_09_01.svg" width="100%" alt="Шаг первый">
+    </div>
+
+    <p class="text text_comment">Шаг второй: определите существующую очередность рабочего процесса.</p>
+</div>
+<div ng-show="$ctrl.getAudioTime() >= 20 && $ctrl.getAudioTime() < 29">
+    <div class="banner-container">
+        <img class="banner-img banner-img_page-07-09_02" src="pages/chapter07/page09/img/07_09_02.svg" width="100%" alt="Шаг второй">
+    </div>
+    <p class="text">Вы видите, что есть лишние операции (показаны пунктирными линиями), которые замедляют процесс и усложняют его.</p>
+</div>
+<div ng-show="$ctrl.getAudioTime() >= 29 && $ctrl.getAudioTime() < 35">
+    <p class="text text_comment">Шаг третий: определите длительность (цикла, постановки задачи, ожидания).</p>
+    <div class="banner-container">
+        <img class="banner-img banner-img_page-07-09_02" src="pages/chapter07/page09/img/07_09_03.svg" width="100%" alt="Шаг третий">
+    </div>
+</div>
+<div ng-show="$ctrl.getAudioTime() >= 35">
+    <p class="text text_comment">Шаг четвертый: установите наиболее эффективную очередность в рабочем процессе.</p>
+    <div class="banner-container">
+        <img class="banner-img banner-img_page-07-09_02" src="pages/chapter07/page09/img/07_09_04.svg" width="100%" alt="Шаг четвертый">
+    </div>
+</div>
+</div>

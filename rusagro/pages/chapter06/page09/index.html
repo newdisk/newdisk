@@ -1,3 +1,110 @@
 <div class="page-container">
+    <!--<span class="text_bold"></span>-->
+    <p class="text text_highlight">Чтобы сделать ваше совещание эффективным, нужно запомнить одно важное правило: совещание не ограничивается <span class="text_bold">проведением</span>, то есть простым собранием участников! Не менее важны такие этапы совещания, как <span class="text_bold">подготовка</span> и <span class="text_bold">отслеживание его результатов</span> (завершение). Если мы хотим, чтобы наше совещание было эффективным и результативным, то эти этапы должны занимать намного больше времени, чем само проведение совещания. Правильное соотношение времени на подготовку, проведение и отслеживание результатов совещания – это, соответственно, 40 – 20 – 40 %.</p>
+    <div class="banner-container ">
+        <img class="banner-container__img banner-container__img_page-06-09"
+             src="pages/chapter06/page09/img/06-09-01.svg"
+             alt="Этапы подготовки">
+    </div>
+
+    <div class="tabs">
+        <div class="tabs__item"
+             ng-class="{'tab__item_active tab__item_page-05-03_active': $ctrl.tabNum === 1}"
+             ng-click="$ctrl.tabNum = 1">
+            <p class="tabs__text">Подготовка </p>
+        </div>
+        <div class="tabs__item"
+             ng-class="{'tab__item_active tab__item_page-05-03_active': $ctrl.tabNum === 2}"
+             ng-click="$ctrl.tabNum = 2">
+            <p class="tabs__text">Проведение</p>
+        </div>
+        <div class="tabs__item"
+             ng-class="{'tab__item_active tab__item_page-05-03_active': $ctrl.tabNum === 3}"
+             ng-click="$ctrl.tabNum = 3">
+            <p class="tabs__text">Отслеживание</p>
+        </div>
+    </div>
+
+
+    <div class="tab-content" ng-show="$ctrl.tabNum === 1">
+        <div class="flex-container flex-container_page-06-09">
+            <div class="flex-container__item flex-container__item_page-06-09">
+                <ul class="simple-ul-list">
+                    <li class="simple-ul-item">
+                        <span class="simple-ul-text">Подготовка повестки</span>
+                    </li>
+                    <li class="simple-ul-item">
+                        <span class="simple-ul-text">Подготовка отчета и другой информации</span>
+                    </li>
+                    <li class="simple-ul-item">
+                        <span class="simple-ul-text">Инструктирование председателя </span>
+                    </li>
+                    <li class="simple-ul-item">
+                        <span class="simple-ul-text">Предварительное представление участников</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="flex-container__item flex-container__item_page-06-09">
+                <div class="banner-container ">
+                    <img class="banner-container__img"
+                         src="pages/chapter06/page09/img/06-09-02.svg"
+                         alt="Человек за столом"
+                         width="45%">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-content" ng-show="$ctrl.tabNum === 2">
+        <div class="flex-container flex-container_page-06-09">
+            <div class="flex-container__item flex-container__item_page-06-09">
+                <ul class="simple-ul-list">
+                    <li class="simple-ul-item">
+                        <span class="simple-ul-text">Управление совещанием </span>
+                    </li>
+                    <li class="simple-ul-item">
+                        <span class="simple-ul-text">Помощь участникам совещания</span>
+                    </li>
+                    <li class="simple-ul-item">
+                        <span class="simple-ul-text">Подготовка протокола действий </span>
+                    </li>
+                </ul>
+            </div>
+            <div class="flex-container__item flex-container__item_page-06-09">
+                <div class="banner-container ">
+                    <img class="banner-container__img"
+                         src="pages/chapter06/page09/img/06-09-03.svg"
+                         alt="Совещание"
+                         width="45%">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-content" ng-show="$ctrl.tabNum === 3">
+        <div class="flex-container flex-container_page-06-09">
+            <div class="flex-container__item flex-container__item_page-06-09">
+                <ul class="simple-ul-list">
+                    <li class="simple-ul-item">
+                        <span class="simple-ul-text">Оценка совещания </span>
+                    </li>
+                    <li class="simple-ul-item">
+                        <span class="simple-ul-text">Отслеживание действий, выполняемых по результатам совещания </span>
+                    </li>
+                    <li class="simple-ul-item">
+                        <span class="simple-ul-text">Завершение действий, связанных с проведением совещания</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="flex-container__item flex-container__item_page-06-09">
+                <div class="banner-container ">
+                    <img class="banner-container__img"
+                         src="pages/chapter06/page09/img/06-09-04.svg"
+                         alt="Чек-лист"
+                         width="45%">
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>

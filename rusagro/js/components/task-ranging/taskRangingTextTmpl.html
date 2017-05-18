@@ -1,0 +1,34 @@
+<p class="text">{{$ctrl.taskText}}</p>
+<div class="ranging-blocks ranging-blocks_text">
+  <div class="ranging-blocks__wrapper">
+    <div class="ranging-blocks__block-wrapper">
+      <div class="ranging-blocks__item ranging-blocks__item_text ranging-blocks__row" data-section="{{item.order}}" ng-repeat="item in $ctrl.answerList">
+        {{item.variant}}
+      </div>
+    </div>
+    <div class="ranging-blocks__btn-wrapper">
+      <div class="button-box ranging-blocks__row" ng-repeat="item in $ctrl.answerList">
+        <button class="arrow arrow_down" ng-click="$ctrl.toArrowDown($event)">
+          <img src="img/components/task-ranging/arrow_down.svg" 
+               alt="Стрелка вниз"
+               width="28" 
+               height="28">
+        </button>
+      </div>
+    </div>
+    <div class="ranging-blocks__btn-wrapper">
+      <div class="button-box ranging-blocks__row" ng-repeat="item in $ctrl.answerList">
+        <button class="arrow arrow_up" ng-click="$ctrl.toArrowUp($event)">
+          <img src="img/components/task-ranging/arrow_up.svg" 
+               alt="Стрелка вверх"
+               width="28" 
+               height="28">
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="btn-box">
+  <button class="btn btn_restart" ng-click="$ctrl.removeRestart()">Начать заново</button>
+  <button class="btn btn_answer" ng-click="$ctrl.checkAnswer()">Принять ответ</button>  
+</div>

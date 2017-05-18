@@ -1,0 +1,34 @@
+<div class="page-container">
+  <button class="btn btn_animation" 
+          ng-click="$ctrl.startAnimation()" 
+          ng-show="$ctrl.getAudioTime() === 0"> 
+  </button>
+  <div ng-show="$ctrl.getAudioTime() < 15">
+    <p class="text text_comment">Процесс - это любые средства, которые превращают входные данные в продукцию/услуги для потребителя (внутреннего клиента).</p>
+    <div class="banner-container">
+      <img class="banner-img banner-img_page-07-03_01" 
+           src="pages/chapter07/page03/img/img-07-03_01.svg" 
+           alt="Процесс" 
+           width="100%">
+    </div>
+  </div>
+  <div ng-show="$ctrl.getAudioTime() >= 15 && $ctrl.getAudioTime() < 23">
+    <p class="text text_comment">Рассмотрим процесс мытья посуды. В начале процесса – грязная посуда, на выходе – чистая посуда.</p>
+    <div class="banner-container">
+      <img class="banner-img banner-img_page-07-03_02" 
+           src="pages/chapter07/page03/img/img-07-03_02.svg"
+           alt="Процесс мытья посуды" 
+           width="100%">
+    </div>
+  </div>
+  <div ng-show="$ctrl.getAudioTime() >= 23">
+    <p class="text text_comment">А вот пример картирования этого процесса:</p>
+    <div class="banner-container">
+      <img class="banner-img banner-img_page-07-03_03" 
+           src="pages/chapter07/page03/img/img-07-03_03.svg" 
+           alt="Картирование процесса мытья посуды"
+           width="100%">
+    </div>
+    <p class="text text_comment">Помните - каждый процесс ассоциируется с поставкой продукта, т.е. с производством товара или предоставлением какой-либо услуги!</p>
+  </div>
+</div>

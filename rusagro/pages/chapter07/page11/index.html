@@ -1,0 +1,176 @@
+<div class="page-container page-container_page-07-11" >
+    <p class="text">При построении  карт процессов должны использоваться следующие символы:</p>
+    <div class="container container_head_page-07-11">
+        <div class="container-content container-content_heading_page-07-11-01" 
+             ng-class="{'active-07-11': $ctrl.tabNum === 1}"
+             ng-click="$ctrl.tabNum = 1">
+            <p class="text text_header-container-content_page-07-11-01">Уровень процессов</p>
+        </div>
+        <div class="container-content container-content_heading_page-07-11-02" 
+            ng-class="{'active-07-11': $ctrl.tabNum === 2}"
+            ng-click="$ctrl.tabNum = 2">
+            <p class="text text_header-container-content_page-07-11-01">Уровень активностей</p>
+        </div>
+        <div class="container-content container-content_heading_page-07-11-03" 
+                ng-class="{'active-07-11': $ctrl.tabNum === 3}"
+                ng-click="$ctrl.tabNum = 3">
+            <p class="text text_header-container-content_page-07-11-01">Уровень заданий</p>
+        </div>
+    </div>
+    <div class="container container_process_page-07-11" ng-show="$ctrl.tabNum === 1">
+        <div class="banner-container">
+            <img class="banner-img banner-img_page-07-11_01" src="pages/chapter07/page11/img/07_11_01.svg" width="100%" alt="Старт процесса">
+        </div>
+        <p class="text">Отображает старт процесса.<br>
+            Рекомендуемая ширина- 4,4 см.<br>
+            Рекомендуемая высота - 2,2 см.</p>
+        <div class="banner-container">
+            <img class="banner-img banner-img_page-07-11_01" src="pages/chapter07/page11/img/07_11_02.svg" width="100%" alt="Последующие процессы">
+        </div>
+        <p class="text">Отображает последующие процессы.Критичные Процессы выделяются жирной черной линией.</p>
+        <div class="banner-container">
+            <img class="banner-img banner-img_page-07-11_01" src="pages/chapter07/page11/img/07_11_03.svg" width="100%" alt="Совместный процесс">
+        </div>
+        <div class="banner-container">
+            <img class="banner-img banner-img_page-07-11_01" src="pages/chapter07/page11/img/07_11_04.svg" width="100%" alt="Совместный процесс">
+        </div>
+        <p class="text">Совместный процесс – участвуют несколько подразделений.</p>
+        <div class="banner-container">
+            <img class="banner-img banner-img_page-07-11_01" src="pages/chapter07/page11/img/07_11_05.svg" width="100%" alt="Процесс выполняется внешним подразделением">
+        </div>
+        <div class="banner-container">
+            <img class="banner-img banner-img_page-07-11_01" src="pages/chapter07/page11/img/07_11_06.svg" width="100%" alt="Процесс выполняется внешним подразделением">
+        </div>
+        <p class="text">Процесс выполняется внешним подразделением (включая аутсорсинг).</p>
+    </div>
+    <!--1 блок таб *******************************************-->
+
+
+
+
+    <!--2 блок таб *******************************************-->
+    <div class="container container_activity_page-07-11" ng-show="$ctrl.tabNum === 2">
+        <div class="banner-container">
+            <img class="banner-img banner-img_page-07-11_01" src="pages/chapter07/page11/img/07_11_07.svg" width="100%" alt="Старт активностей">
+        </div>
+        <p class="text">Отображает старт активностей.<br>
+            Рекомендуемая ширина- 4,4 см.<br>
+            Рекомендуемая высота - 2,2 см.</p>
+        <div class="banner-container">
+            <img class="banner-img banner-img_page-07-11_01" src="pages/chapter07/page11/img/07_11_08.svg" width="100%" alt="Последующие процессы">
+        </div>
+        <p class="text">Отображает последующие  активности. Критичные активности выделяются жирной черной линией.</p>
+        <div class="banner-container">
+            <img class="banner-img banner-img_page-07-11_01" src="pages/chapter07/page11/img/07_11_09.svg" width="100%" alt="Событие/Продукт">
+        </div>
+        <p class="text">Событие/Продукт или Полупродукт. Промежуточный результат. Описывает ситуацию. Условие начала работы.<br>
+            Рекомендуемая ширина – 3,86 см.<br>
+            Рекомендуемая высота – 2,2 см.
+        </p>
+
+    </div>
+    <!--2 блок таб *******************************************-->
+
+
+    <!--3-2 блок таб *******************************************-->
+    <div class="container container_task_page-07-11" ng-show="$ctrl.tabNum === 3">
+        <div class="container_container_page-07-11_block_01">
+
+            <div class="container_page-07-11_block_01">
+                <div class="banner-container">
+                    <img class="banner-img banner-img_page-07-11_01" src="pages/chapter07/page11/img/07_11_10.svg" width="100%" alt="Событие/Продукт">
+                </div>
+                <p class="text text_container_task_page-07-11">Событие/Продукт или Полупродукт/Промежуточный результат = условие начала работы.</p>
+            </div>
+            <div class="container_page-07-11_block_01">
+                <div class="banner-container">
+                    <img class="banner-img banner-img_page-07-11_01" src="pages/chapter07/page11/img/07_11_11.svg" width="100%" alt="Что надо делать">
+                </div>
+                <p class="textt text_container_task_page-07-11">Задача, описывающая, что надо делать. Критичные Задачи выделяются жирной красной линией.</p>
+            </div>
+            <div class="container_page-07-11_block_01">
+                <div class="banner-container">
+                    <img class="banner-img banner-img_page-07-11_01" src="pages/chapter07/page11/img/07_11_12.svg" width="100%" alt="Системная активность">
+                </div>
+                <p class="textt text_container_task_page-07-11">Системная активность, описывающаяся, что делается автоматически. Применяется при необходимости.</p>
+            </div>
+            <div class="container_page-07-11_block_01">
+                <div class="banner-container">
+                    <img class="banner-img banner-img_page-07-11_01" src="pages/chapter07/page11/img/07_11_13.svg" width="100%" alt="Отдел персонала">
+                </div>
+                <p class="text text_container_task_page-07-11">Подразделение.</p>
+            </div>
+            <div class="container_page-07-11_block_01">
+                <div class="banner-container">
+                    <img class="banner-img banner-img_page-07-11_01" src="pages/chapter07/page11/img/07_11_14.svg" width="100%" alt="Сотрудник">
+                </div>
+                <p class="text text_container_task_page-07-11">Должность, позиция.</p>
+            </div>
+            <div class="container_page-07-11_block_01">
+                <div class="banner-container">
+                    <img class="banner-img banner-img_page-07-11_01" src="pages/chapter07/page11/img/07_11_15.svg" width="100%" alt="Кто-то">
+                </div>
+                <p class="text text_container_task_page-07-11">Внешняя организация или лицо.</p>
+            </div>
+
+        </div>
+        <div class="container_container_page-07-11_block_01">
+            <div class="container_page-07-11_block_01">
+                <div class="banner-container">
+                    <img class="banner-img banner-img_page-07-11_01" src="pages/chapter07/page11/img/07_11_16.svg" width="100%" alt="ИТ система">
+                </div>
+                <p class="textt text_container_task_page-07-11">ИТ система, поддерживающая активность.</p>
+            </div>
+            <div class="container_page-07-11_block_01">
+                <div class="banner-container">
+                    <img class="banner-img banner-img_page-07-11_01" src="pages/chapter07/page11/img/07_11_17.svg" width="100%" alt="Документы, файлы">
+                </div>
+                <p class="textt text_container_task_page-07-11">Вход/выход: документы, файлы.</p>
+            </div>
+            <div class="container_page-07-11_block_01">
+                <p class="textt text_container_task_page-07-11 text4">Правила:</p>
+                <div class="container2_page-07-11">
+                    <div class="banner-container  banner-containe_page-07-11_02">
+                        <img class="banner-img banner-img_page-07-11_02" src="pages/chapter07/page11/img/07_11_18.svg" width="100%" alt="Только по одной ветке">
+                    </div>
+                    <p class="text text_container_task_page-07-11 text3">Процесс должен быть продолжен только по одной ветке.</p>
+                </div>
+
+                <div class="container2_page-07-11">
+                    <div class="banner-container  banner-containe_page-07-11_02">
+                        <img class="banner-img banner-img_page-07-11_02" src="pages/chapter07/page11/img/07_11_19.svg" width="100%" alt="По одной или нескольким веткам">
+                    </div>
+                    <p class="text text_container_task_page-07-11 text3">Процесс должен быть продолжен по одной или нескольким веткам.</p>
+                </div>
+
+                <div class="container2_page-07-11">
+                    <div class="banner-container  banner-containe_page-07-11_02">
+                        <img class="banner-img banner-img_page-07-11_02" src="pages/chapter07/page11/img/07_11_20.svg" width="100%" alt="По всем веткам">
+                    </div>
+                    <p class="text text_container_task_page-07-11 text3">Процесс должен быть продолжен по всем веткам.</p>
+                </div>
+
+
+            </div>
+
+            <div class="container_page-07-11_block_01">
+                <p class="textt text_container_task_page-07-11 text4">Роли:</p>
+
+                <p class="text text_container_task_page-07-11 text3"><span  class="">R</span> – Responsible – ответственный за исполнение</p>
+                <p class="text text_container_task_page-07-11 text3"><span>A</span> – Accountable – ответственный за результат</p>
+                <p class="text text_container_task_page-07-11 text3"><span>C</span> – Consulted – тот, кого консультируют</p>
+                <p class="text text_container_task_page-07-11 text3"><span>I</span> – Informed – тот, кого информируют</p>
+
+
+                <div class="container2_page-07-11">
+                    <div class="banner-container  banner-containe_page-07-11_02 banner-containe_3">
+                        <img class="banner-img banner-img_page-07-11_02 " src="pages/chapter07/page11/img/07_11_21.svg" width="100%" alt="Соединитель задач">
+                    </div>
+                    <p class="text text_container_task_page-07-11 text3">Соединитель задач</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--3-2 блок таб *******************************************-->
+</div>

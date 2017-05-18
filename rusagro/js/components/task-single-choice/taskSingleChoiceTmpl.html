@@ -1,17 +1,23 @@
-<p class="text">{{$ctrl.taskText}}</p>
-<div class="task__single-choice-block task__single-choice-block_{{$index + 1}}" ng-repeat="question in $ctrl.questionList">
-  <p class="task__single-choice-question">
-    {{question.question}}
-  </p>
+<p class="text text_highlight" ng-bind-html="$ctrl.taskText"></p>
+<div class="task__single-choice-block task__single-choice-block_{{$index + 1}}" 
+     ng-repeat="block in $ctrl.questionList">
+  <p class="task__single-choice-question" ng-bind-html="block.question"></p>
   <ul class="task__single-choice-list">
-    {{$ctrl.number}}
-    <li class="task__single-choice-item" data-number="{{$index}}" ng-class="{'radio-checked': $ctrl.active[$parent.$index].answer === $index}" ng-click="$ctrl.getNumber($event, $index, $parent.$index)" ng-repeat="item in question.variant">
-      <span class="task__single-choice-variant">{{item}}</span>
+    <li class="task__single-choice-item" 
+        ng-class="{'radio-checked': item.answer === true}" 
+        ng-click="$ctrl.checkVariant($index, $parent.$index)" 
+        ng-repeat="item in block.variant">
+      <span class="task__single-choice-variant" ng-bind-html="item.content"></span>
     </li>
   </ul>
 </div>
 <div class="btn-box">
-	<button class="btn btn_restart" ng-click="$ctrl.removeRestart()">Начать заново</button>
-	<button class="btn btn_answer" ng-class="{'btn_disabled': $ctrl.state !== $ctrl.questionList.length}" ng-click="$ctrl.checkAnswer()">Принять ответ</button>
+	<button class="btn btn_restart"
+          ng-class="{'btn_disabled': $ctrl.getBtnState().restart}" 
+          ng-click="$ctrl.removeRestart()">Начать заново
+  </button>
+	<button class="btn btn_answer" 
+          ng-class="{'btn_disabled': $ctrl.stateNum !== $ctrl.questionList.length || $ctrl.getBtnState().answer}" 
+          ng-click="$ctrl.checkAnswer()">Принять ответ
+  </button>
 </div>
-<popup-menu-comment title="{{$ctrl.commentTitle}}" text="{{$ctrl.commentText}}" visible="$ctrl.showComment" ng-show="$ctrl.showComment"></popup-menu-comment>

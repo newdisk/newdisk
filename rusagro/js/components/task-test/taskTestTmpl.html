@@ -1,0 +1,24 @@
+<div ng-class="{ 'task-multi-choice': block.type === 'multi-choice', 'task-single-choice': block.type === 'single-choice' }"
+     ng-repeat="block in $ctrl.taskList"
+     ng-show="$ctrl.getCurrentQuestNum() === $index">
+  <p>{{$ctrl.getCurrentQuestNum() + 1}} / {{$ctrl.taskList.length}} {{block.question}}</p>
+  <hr>
+  <ul>
+    <li ng-class="{'checked': $ctrl.taskList[$parent.$index].variant[$index].answer === true}" 
+        ng-click="$ctrl.checkItem($index, $parent.$index)" 
+        ng-repeat="item in block.variant">
+      <span ng-bind-html="item.content"></span>
+    </li>
+  </ul>
+</div>
+<div class="btn-box">
+  <button class="btn btn_restart" 
+          ng-click="$ctrl.removeRestart()">
+          Начать заново
+  </button>
+  <button class="btn btn_answer" 
+          ng-class="{'btn_disabled': $ctrl.state !== 1}" 
+          ng-click="$ctrl.checkAnswer()">
+          Принять ответ
+  </button>
+</div>

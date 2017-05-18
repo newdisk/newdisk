@@ -1,0 +1,19 @@
+<div class="page-container">
+    <button class="btn btn_animation" 
+          ng-click="$ctrl.startAnimation()" 
+          ng-show="$ctrl.getAudioTime() === 0"> 
+    </button>
+    <div class="banner-container banner-container_page-07-07_1" ng-show="$ctrl.getAudioTime() < 12">
+        <img class="banner-container__img" src="pages/chapter07/page07/img/img-07-07_1.svg" width="480" alt="Вы уже описали деятельность подразделения?">
+    </div>
+    <div class="banner-container banner-container_page-07-07_2" ng-show="$ctrl.getAudioTime() >= 12 && $ctrl.getAudioTime() < 14">
+        <img class="banner-container__img" src="pages/chapter07/page07/img/img-07-07_2.svg" width="480" alt="Нарисовали макропроцесс? ">
+    </div>
+    <div class="banner-container banner-container_page-07-07_3" ng-show="$ctrl.getAudioTime() >= 14 && $ctrl.getAudioTime() < 16">
+        <img class="banner-container__img" src="pages/chapter07/page07/img/img-07-07_3.svg" width="480" alt="Определили критичные процессы? ">
+    </div>
+    <div class="banner-container banner-container_page-07-07_4" ng-show="$ctrl.getAudioTime() >= 16">
+        <img class="banner-container__img" src="pages/chapter07/page07/img/img-07-07_4.svg" width="480" alt="…Тогда приступайте к рисованию карты процессов.">
+    </div>
+
+</div>

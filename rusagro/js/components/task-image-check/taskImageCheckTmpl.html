@@ -1,12 +1,22 @@
 <div class="gallery">
-	<p class="text">{{$ctrl.taskText}}</p>
+	<p class="text" ng-bind-html="$ctrl.taskText"></p>
 	<div class="gallery-wrapper">
-		<div class="gallery-bunner">
-			<img class="gallery-bunner__img" ng-src="{{$ctrl.bunner.src}}" alt="{{$ctrl.bunner.alt}}">
+		<div class="gallery-banner">
+			<img class="gallery-banner__img" 
+					 ng-src="{{$ctrl.banner.src}}" 
+					 alt="{{$ctrl.banner.alt}}">
 		</div>
 		<div class="gallery-block">
-		  <div class="gallery-item" ng-repeat="item in $ctrl.imageList" ng-click="$ctrl.check($index)" ng-class="{checked: item.checkedBlock}" data-number="{{$index}}">
-		    <img class="gallery-img" ng-src="{{item.src}}" width="92" height="92" alt="{{item.alt}}"> 
+		  <div class="gallery-item" 
+		  		 ng-class="{'checked': item.checkedBlock}" 
+		  		 ng-click="$ctrl.check($index)"  
+		  		 data-number="{{$index}}" 
+		  		 ng-repeat="item in $ctrl.imageList">
+		    <img class="gallery-img" 
+		    		 ng-src="{{item.src}}" 
+		    		 alt="{{item.alt}}" 
+		    		 width="92" 
+		    		 height="92"> 
 		  </div>
 		</div>
 	</div>
@@ -15,4 +25,3 @@
 	<button class="btn btn_restart" ng-click="$ctrl.removeRestart()">Начать заново</button>
 	<button class="btn btn_answer" ng-click="$ctrl.checkAnswer()">Принять ответ</button>
 </div>
-<popup-menu-comment title="{{$ctrl.commentTitle}}" text="{{$ctrl.commentText}}" visible="$ctrl.showComment" ng-show="$ctrl.showComment"></popup-menu-comment>

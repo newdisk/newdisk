@@ -1,0 +1,25 @@
+<div class="audio">
+	<button class="btn btn_audio-play" ng-click="$ctrl.changePlayPause()">
+		<svg width="24" height="24">
+			<use xlink:href="{{$ctrl.play}}"></use>
+		</svg>
+	</button>
+	<input class="audio__seek-slider" type="range" name="seekPos" min="0" max="100" value="0" step="1" ng-model="$ctrl.seekPos" ng-change="$ctrl.changeSeekPos()">
+	<!--если раскомметить <span class="audio__time-display"> и закомментить <span class="audio__time-display"> то будет показываться текущее время на аудио плеере-->
+	<!--<span>-->
+	<span class="audio__time-display">
+		<span class="audio__current-time">{{$ctrl.curTime}}</span> / 
+		<span class="audio__full-time">{{$ctrl.durTime}}</span>
+	</span>	
+	<button class="btn btn_audio-mute" ng-click="$ctrl.changeMuteState()">
+		<svg width="24" height="24">
+			<use xlink:href="{{$ctrl.mute}}"></use>
+		</svg>
+	</button>
+	<input class="audio__slider audio__volume-slider" type="range" name="volume" min="0" max="1" step="0.05" ng-model="$ctrl.volume" ng-change="$ctrl.changeVolume()">
+	<button class="btn btn_audio-restart" ng-click="$ctrl.restart()">
+		<svg width="24" height="24">
+			<use xlink:href="#restart"></use>
+		</svg>
+	</button>
+</div>

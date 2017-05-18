@@ -1,0 +1,15 @@
+<div class="page-container">
+<button class="btn btn_animation" 
+          ng-click="$ctrl.startAnimation()" 
+          ng-show="$ctrl.getAudioTime() === 0"> 
+  </button>
+    <p class="text">Существует как минимум три версии построения процесса.</p>
+    <div class="banner-container">
+        <img class="banner-img banner-img_page-07-08" src="pages/chapter07/page08/img/07_08_01.svg" width="100%" alt="Три версии процесса">
+        <div class="circle_page-07-08" ng-show="$ctrl.getAudioTime() >= 7"></div>
+
+    </div>
+    <p class="text" ng-show="$ctrl.getAudioTime() >= 7">Как мы можем достичь нашей цели?</p>
+    <p class="text" ng-show="$ctrl.getAudioTime() >= 7">Сначала нужно нарисовать процесс, как есть сейчас.</p>
+
+</div>

@@ -1,0 +1,15 @@
+<p class="text">{{$ctrl.taskText}}</p>
+<div class="task-sortable">
+  <div class="sortable-box variant-field">
+    <img class="task-sortable__img" ng-repeat="item in $ctrl.cards" ng-src="{{item.src}}" alt="{{item.alt}}">
+  </div>
+  <div class="wrapper-box-field">
+    <div class="box-field">
+      <div class="sortable-box" ng-repeat="item in $ctrl.cards"></div></div>
+    </div>
+  </div>
+</div>
+<div class="btn-box">
+  <button class="btn btn_restart" ng-click="$ctrl.removeRestart()">Начать заново</button>
+  <button class="btn btn_answer" ng-click="$ctrl.checkAnswer()" ng-class="{'btn_disabled': $ctrl.state === false}">Принять ответ</button>  
+</div>

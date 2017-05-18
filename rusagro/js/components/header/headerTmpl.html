@@ -1,35 +1,314 @@
 <header class="header">
 	<div class="header__content">
-		<button class="btn btn_close-course"></button>
+		<button class="btn btn_close btn_close-course">
+			<svg viewBox="0 0 28 28">
+				<use xmlns:xlink="http://www.w3.org/1999/xlink" 
+						 xlink:href="#cross">
+				</use>
+			</svg>
+		</button>
 		<p class="header__title-course">{{$ctrl.title.module}}</p>
 		<div class="header__btn-box">
-			<button class="btn btn_menu" ng-click="$ctrl.showMenu = !$ctrl.showMenu"></button>
-			<button class="btn btn_glossary" ng-click="$ctrl.toggleGlossary()"></button>
-			<button class="btn btn_statistics" ng-click="$ctrl.toggleStatistics()"></button>
+			<button class="btn btn_nav-menu" 
+							ng-class="{'btn_nav-active': $ctrl.showModal(0)}" 
+							ng-click="$ctrl.toggleNavigation()">
+				<svg viewBox="0 0 48 40" width="48" height="40">
+					<use xmlns:xlink="http://www.w3.org/1999/xlink" 
+							 xlink:href="#nav-menu">
+					</use>
+				</svg>
+			</button>
+			<button class="btn btn_glossary" 
+							ng-class="{'btn_nav-active': $ctrl.showModal(1)}" 
+							ng-click="$ctrl.toggleGlossary()">
+				<svg viewBox="0 0 48 40" width="48" height="40">
+					<use xmlns:xlink="http://www.w3.org/1999/xlink" 
+							 xlink:href="#glossary">
+					</use>
+				</svg>
+			</button>
+			<button class="btn btn_statistics" 
+							ng-class="{'btn_nav-active': $ctrl.showModal(2)}" 
+							ng-click="$ctrl.toggleStatistics()">
+				<svg viewBox="0 0 48 40" width="48" height="40">
+					<use xmlns:xlink="http://www.w3.org/1999/xlink" 
+							 xlink:href="#statistics">
+					</use>
+				</svg>
+			</button>
 		</div>
 		<p class="header__title-exercise">{{$ctrl.title.exercise}}</p>
 	</div>
-	<div class="course-popup-menu course-popup-menu_menu" ng-show="$ctrl.showMenu">
-		<ul class="course-popup-menu__main-list">
-			<li class="course-popup-menu__main-item">
-				<a class="course-popup-menu__href" ui-sref="contents">
-					<p class="course-popup-menu__main-title">
-						<span class="course-popup-menu__main-title-text">
-							Главная страница
-						</span>
-					</p>
-				</a>
-			</li>
-			<li class="course-popup-menu__main-item">
-				<p class="course-popup-menu__main-title">
-					<span class="course-popup-menu__main-title-text">{{$ctrl.chapterPages.title}}</span>
-				</p>
-				<ul class="course-popup-menu__sub-list">
-					<li class="course-popup-menu__sub-item" ng-repeat="page in $ctrl.chapterPages.pages"><a class="course-popup-menu__href" ui-sref-active="four" ui-sref="page({module: $ctrl.chapterPages.id, path: page.id})"><p class="course-popup-menu__sub-item-text">{{page.id}} {{page.title}}</p></a></li>
+	<!-- MODAL WINDOWS -->
+	<!-- NAVIGATION MODAL -->
+	<div class="modal modal_nav-menu" 
+					ng-class="{'no-stashed': $ctrl.showModal(0)}" 
+					ng-show="$ctrl.showModal(0)">
+		  <ul class="modal__main-list">
+		  	<li class="modal__main-item mobile" ng-click="$ctrl.toggleGlossary()">
+		  		<a class="modal__href" href="">
+			  		<p class="modal__main-title">
+				  		<svg viewBox="0 0 48 40" width="48" height="40">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" 
+										 xlink:href="#glossary_nav-menu">
+								</use>
+							</svg>
+							<span class="modal__main-title-text">
+								Глоссарий
+							</span>
+						</p>
+					</a>
+		  	</li>
+		  	<li class="modal__main-item mobile" ng-click="$ctrl.toggleStatistics()">
+		  		<a class="modal__href" href="">
+			  		<p class="modal__main-title">
+				  		<svg viewBox="0 0 48 40" width="48" height="40">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" 
+										 xlink:href="#statistics_nav-menu">
+								</use>
+							</svg>
+							<span class="modal__main-title-text">
+								Статистика
+							</span>
+						</p>
+					</a>
+		  	</li>
+		    <li class="modal__main-item">
+		      <a class="modal__href" ui-sref="contents">
+		        <p class="modal__main-title">
+		        	<svg viewBox="0 0 48 40" width="48" height="40">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" 
+										 xlink:href="#person">
+								</use>
+							</svg>
+		          <span class="modal__main-title-text">
+		            Главная страница
+		          </span>
+		        </p>
+		      </a>
+		    </li>
+		    <li class="modal__main-item">
+		      <p class="modal__main-title">
+		        <span class="modal__main-title-text">{{$ctrl.chapterPages.title}}</span>
+		      </p>
+		      <ul class="modal__sub-list">
+		        <li class="modal__sub-item" 
+		        		ng-class="{'visited': $ctrl.getPageVisit({{$index}})}" 
+		        		ng-repeat="page in $ctrl.chapterPages.pages">
+		        	<a class="modal__href" 
+		        		 ui-sref-active="four" 
+		        		 ui-sref="page({module: $ctrl.chapterPages.id, path: page.id})"
+		        		 ui-sref-opts="{reload: true, notify: true}">
+		        		<p class="modal__sub-item-text">{{page.id}} {{page.title}}</p>
+		        	</a>
+		        </li>
+		      </ul>
+		    </li>
+		  </ul>
+		</div>
+		<!-- GLOSSARY MODAL -->
+		<div class="modal modal_glossary" 
+				 ng-class="{'no-stashed': $ctrl.showModal(1)}" 
+				 ng-show="$ctrl.showModal(1)">
+			<div class="modal__container">
+				<div class="modal__title-container">
+					<p class="modal__title">Глоссарий</p>
+					<button class="btn btn_close" ng-click="$ctrl.closeModal()">
+						<svg viewBox="0 0 48 40">
+							<use xmlns:xlink="http://www.w3.org/1999/xlink" 
+									 xlink:href="#cross">
+							</use>
+						</svg>
+	        </button>
+				</div>
+				<div class="modal__subtitle-container modal__subtitle-container_glossary">
+					<input class="modal__subtitle-input" 
+								 type="text" 
+								 id="search"
+								 ng-model="$ctrl.text"
+								 autofocus>
+					<label class="modal__subtitle-input-icon"
+								 for="search">
+						<svg viewBox="0 0 48 40">
+							<use xmlns:xlink="http://www.w3.org/1999/xlink" 
+									 xlink:href="#loupe_search">
+							</use>
+						</svg>
+					</label>
+				</div>
+				<div class="modal__table-container modal__table-container_glossary">
+					<table class="modal__table">
+						<tr class="modal__table-row" ng-repeat="item in $ctrl.definition | filter : $ctrl.text">
+							<td class="modal__table-cell modal__table-cell_term">
+								{{item.term}}
+							</td>
+							<td class="modal__table-cell modal__table-cell_description">
+								{{item.description}}
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<!-- STATISTICS MODAL -->
+		<div class="modal modal_statistics" 
+				 ng-class="{'no-stashed': $ctrl.showModal(2)}" 
+				 ng-show="$ctrl.showModal(2)">
+			<div class="modal__container">
+				<div class="modal__title-container">
+					<p class="modal__title">Статистика</p>
+					<button class="btn btn_close" ng-click="$ctrl.closeModal()">
+						<svg viewBox="0 0 48 40">
+							<use xmlns:xlink="http://www.w3.org/1999/xlink" 
+									 xlink:href="#cross">
+							</use>
+						</svg>
+	        </button>
+				</div>
+				<div class="modal__subtitle-container">
+					Выполнено упражнений: {{$ctrl.getCompletedTaskNumber().length}} из {{$ctrl.getUserObj().length}}
+				</div>
+				<ul class="list_statistics">
+					<li class="item_statistics" 
+							ng-class="{'visited': $ctrl.getPageVisit({{item.id - 1}})}" 
+							ng-repeat="item in $ctrl.getUserObj()">
+						<a class="modal__href"
+							 ui-sref="page({module: $ctrl.chapterPages.id, path: item.id})"
+							 ui-sref-opts="{reload: true, notify: true}">
+							<svg viewBox="0 0 28 28" 
+									 width="16" 
+									 height="16" 
+									 fill="#989898"
+									 ng-show="item.completed === ''">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" 
+										 xlink:href="#minus">
+								</use>
+							</svg>
+							<svg viewBox="0 0 28 28" 
+									 width="16" 
+									 height="16" 
+									 fill="#007300"
+									 ng-show="item.completed === true">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" 
+										 xlink:href="#check">
+								</use>
+							</svg>
+							<svg viewBox="0 0 28 28" 
+									 width="16" 
+									 height="16" 
+									 fill="#e50000"
+									 ng-show="item.completed === false">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" 
+										 xlink:href="#cross_exercise">
+								</use>
+							</svg> {{item.title}} c.{{item.id}}
+						</a>
+					</li>
 				</ul>
-			</li>
-		</ul>
-	</div>
-	<div class="course-popup-menu course-popup-menu_glossary"></div>
-	<div class="course-popup-menu course-popup-menu_statistics"></div>
+			</div>
+		</div>
+		<!-- EXERCISE MODAL -->
+		<div class="modal modal_exercise" 
+				 ng-class="{'no-stashed': $ctrl.showModal(3)}" 
+				 ng-show="$ctrl.showModal(3)">
+			<div class="modal__container">
+				<div class="modal__title-container">
+					<p class="modal__title">{{$ctrl.getExerciseData().title}}</p>
+					<button class="btn btn_close" ng-click="$ctrl.closeModal()">
+						<svg viewBox="0 0 48 40">
+							<use xmlns:xlink="http://www.w3.org/1999/xlink" 
+									 xlink:href="#cross">
+							</use>
+						</svg>
+	        </button>
+				</div>
+				<div class="modal__content modal__content_exercise">{{$ctrl.getExerciseData().comment}}</div>
+				<div class="banner-container">
+					<img class="banner-container__img" 
+							 ng-show="$ctrl.getExerciseData().img === 'true'"
+							 src="img/components/modals/true-answer.svg" 
+							 alt="Правильный ответ"
+							 width="100%" 
+							 height="262">
+				</div>
+				<div class="banner-container">
+					<img class="banner-container__img" 
+							 ng-show="$ctrl.getExerciseData().img === 'false'"
+							 src="img/components/modals/false-answer.svg" 
+							 alt="Неправильный ответ"
+							 width="100%" 
+							 height="262">
+				</div>
+				<div class="banner-container">
+					<img class="banner-container__img" 
+							 ng-show="$ctrl.getExerciseData().img === 'last-attempt'"
+							 src="img/components/modals/last-attempt.svg" 
+							 alt="Последняя попытка"
+							 width="100%" 
+							 height="262">
+				</div>
+			</div>
+		</div>
+		<!-- ADD-INFO MODAL -->
+		<div class="modal modal_add-info" 
+				 ng-class="{'no-stashed': $ctrl.showModal(4)}" 
+				 ng-show="$ctrl.showModal(4)">
+			<div class="modal__container">
+				<div class="modal__title-container">
+					<p class="modal__title">{{$ctrl.addInfo(4).heading}}</p>
+					<button class="btn btn_close" ng-click="$ctrl.closeModal()">
+						<svg viewBox="0 0 48 40">
+							<use xmlns:xlink="http://www.w3.org/1999/xlink" 
+									 xlink:href="#cross">
+							</use>
+						</svg>
+	        </button>
+				</div>
+				<div class="modal__content modal__content_add-info" 
+						 ng-bind-html="$ctrl.addInfo().content">
+				</div>
+			</div>
+		</div>
+		<!-- ZOOM-IMG MODAL -->
+		<div class="modal modal_zoom-img" 
+				 ng-class="{'no-stashed': $ctrl.showModal(5)}" 
+				 ng-show="$ctrl.showModal(5)">
+			<div class="modal__container">
+				<div class="modal__title-container">
+					<p class="modal__title">{{$ctrl.picture().alt}}</p>
+					<button class="btn btn_close" ng-click="$ctrl.closeModal()">
+						<svg viewBox="0 0 48 40">
+							<use xmlns:xlink="http://www.w3.org/1999/xlink" 
+									 xlink:href="#cross">
+							</use>
+						</svg>
+	        </button>
+				</div>
+				<div class="modal__subtitle-container modal__subtitle-container_zoom-img">
+					<div class="modal__zoom-container">
+		        <button class="btn btn_loupe" ng-click="$ctrl.value = $ctrl.value === 100 ? 100 : $ctrl.value - 1">
+							<svg viewBox="0 0 48 40">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" 
+										 xlink:href="#loupe_decrease">
+								</use>
+							</svg>
+		        </button>
+		        <input class="modal__zoom-slider" type="range" min="100" max="300" step="1" ng-model="$ctrl.value"> 
+		        <button class="btn btn_loupe" ng-click="$ctrl.value = $ctrl.value === 300 ? 300 : $ctrl.value + 1">
+							<svg viewBox="0 0 48 40">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" 
+										 xlink:href="#loupe_increase">
+								</use>
+							</svg>
+		        </button>
+		      </div>
+				</div>
+				<div class="modal__zoom-img-container">
+	        <img class="modal__zoom-img" 
+	        		 ng-src="{{$ctrl.picture().src}}" 
+	        		 alt="{{$ctrl.picture().alt}}" 
+	        		 width="{{$ctrl.value}}%">
+	      </div>
+			</div>  
+    </div>
 </header>

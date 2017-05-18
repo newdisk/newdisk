@@ -1,0 +1,38 @@
+<div class="page-container page-container_page-07-02">
+	<button class="btn btn_animation" 
+          ng-click="$ctrl.startAnimation()" 
+          ng-show="$ctrl.getAudioTime() === 0"> 
+  </button>
+	  <div ng-show="$ctrl.getAudioTime() < 7">
+	    <div class="banner-container">
+	      <img class="banner-img " 
+	           src="pages/chapter07/page02/img/07-02-02.svg"
+	           alt="" 
+	           width="100%">
+	    </div>
+	  </div>
+	  <div ng-show="$ctrl.getAudioTime() >= 7 && $ctrl.getAudioTime() < 14">
+	    <div class="banner-container">
+	      <img class="banner-img banner-img_page-07-03_03" 
+	           src="pages/chapter07/page02/img/07-02-04.svg" 
+	           alt=""
+	           width="100%">
+	    </div>
+	  </div>
+	  <div ng-show="$ctrl.getAudioTime() >= 14 && $ctrl.getAudioTime() < 23">
+	    <div class="banner-container">
+	      <img class="banner-img banner-img_page-07-03_03" 
+	           src="pages/chapter07/page02/img/07-02-05.svg" 
+	           alt=""
+	           width="100%">
+	    </div>
+	  </div>
+	  <div ng-show="$ctrl.getAudioTime() >= 23">
+	    <div class="banner-container">
+	      <img class="banner-img banner-img_page-07-03_03" 
+	           src="pages/chapter07/page02/img/07-02-06.svg" 
+	           alt=""
+	           width="100%">
+	    </div>
+	  </div>
+</div>

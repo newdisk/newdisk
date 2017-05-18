@@ -1,0 +1,25 @@
+<div class="page-container">
+  <button class="btn btn_animation" 
+          ng-click="$ctrl.startAnimation()" 
+          ng-show="$ctrl.getAudioTime() === 0"> 
+  </button>
+  <div ng-show="$ctrl.getAudioTime() < 21">
+    <p class="text">Показатели KPIs/PIs используются для управления процессом. Система этих показателей позволяет определить нам, где мы находимся, где мы должны быть, и предоставляет нам возможность определить те действия, которые приведут нас к цели.</p>
+    <div class="banner-container">
+      <img class="banner-img banner-img_page-07-04_01" 
+           src="pages/chapter07/page04/img/img-07-04_01.svg" 
+           alt="Система показателей KPIs/PIs" 
+           width="100%">
+    </div>
+  </div>
+  <div ng-show="$ctrl.getAudioTime() >= 21">
+    <p class="text">На карте процесса мытья посуды вы видели, что для контроля установлены показатели процесса (PIs).</p>
+    <div class="banner-container">
+      <img class="banner-img banner-img_page-07-04_02" 
+           src="pages/chapter07/page04/img/img-07-04_02.svg" 
+           alt="Система показателей KPIs/PIs" 
+           width="100%">
+    </div>
+    <p class="text text_comment">PIs это измерение основных факторов (например, промежуточных продуктов или критических точек процесса), которые влияют на результаты. </p>
+  </div>
+</div>
