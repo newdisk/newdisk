@@ -6,11 +6,13 @@
       ng-click="$ctrl.selectAnswer($index)">
     <div class="task__single-choice-question" 
         ng-class="{'radio-selected': $ctrl.active[$index].selected}">
-      {{question.question}}
+      {{question.label}}
     </div>
   </div>
 </div>
-<div class="btn-box">
+<div class="btn-box" ng-if="!$ctrl.test">
   <button class="btn btn_restart" ng-click="$ctrl.removeRestart()">Начать заново</button>
   <button class="btn btn_answer" ng-class="{'btn_disabled': $ctrl.state == 0 || $ctrl.state == 2}" ng-click="$ctrl.checkAnswer($event)">Принять ответ</button>
 </div>
+
+<!-- ng-controller="TestCtrl as $ctrlT" -->

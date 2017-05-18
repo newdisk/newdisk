@@ -1,7 +1,8 @@
 <p class="page_paragraph">{{$ctrl.taskText}}</p>
 <div class="task__marker-choice-body">
   <div class="task__marker-choice_video" ng-if="$ctrl.useVideo">
-    <button class="btn btn_task-video">video</button>
+    <button class="btn btn_task-video"
+            ng-click="$ctrl.showVideo()">video</button>
   </div>
   <div class="task__marker-choice_items">
     <div class="task__marker-choice-item" 
@@ -14,14 +15,14 @@
       </div>
     </div>
   </div>
-</div>
-<div class="marker-box">
-  <button class="btn btn_task-marker btn_task-marker__green"
-          ng-click="$ctrl.selectMarker(1)"
-          ng-class="{'selected': $ctrl.marker == 1}"></button>
-  <button class="btn btn_task-marker btn_task-marker__red"
-          ng-click="$ctrl.selectMarker(0)"
-          ng-class="{'selected': $ctrl.marker == 0}"></button>
+  <div class="marker-box">
+    <button class="btn btn_task-marker btn_task-marker__green"
+            ng-click="$ctrl.selectMarker(1)"
+            ng-class="{'selected': $ctrl.marker == 1}"></button>
+    <button class="btn btn_task-marker btn_task-marker__red"
+            ng-click="$ctrl.selectMarker(0)"
+            ng-class="{'selected': $ctrl.marker == 0}"></button>
+  </div>
 </div>
 <div class="btn-box">
   <button class="btn btn_restart" ng-click="$ctrl.removeRestart()">Начать заново</button>
