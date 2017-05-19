@@ -1,4 +1,15 @@
 <header class="header">
+  <button class="btn btn_close-course"
+          ng-click="$ctrl.closeCourse()">
+    <svg viewBox="0 0 22 22" 
+         width="22" 
+         height="22" 
+         fill="#e50000">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" 
+           xlink:href="#cross_exercise">
+      </use>
+    </svg>
+  </button>
   <div class="header__content">
     <div class="header__btns">
       <button class="btn btn_nav btn_nav-menu"
@@ -60,6 +71,17 @@
   </div>
   <!-- stats -->
   <div class="modal modal_nav-stats" ng-show="$ctrl.getModalState(1)">
+    <button class="btn close-modal-btn"
+            ng-click="$ctrl.closeModals()">
+      <svg viewBox="0 0 40 40" 
+           width="40" 
+           height="40" 
+           fill="#e50000">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" 
+             xlink:href="#cross_exercise">
+        </use>
+      </svg>
+    </button>
     <p class="modal_nav-stats_head">Статитсика</p>
     <div class="modal_nav-stats_total">Выполнено упражнений: {{$ctrl.countDoneExs()}} из {{$ctrl.countExs()}}</div>
     <div ng-repeat="item in $ctrl.getExs()" class="modal_nav-stats__item">
@@ -103,10 +125,25 @@
   </div>
   <!-- exercise modal -->
   <div class="modal modal_nav-ex" ng-show="$ctrl.getModalState(4)">
-    <p>Ваш результат</p>
+    <button class="btn close-modal-btn"
+            ng-click="$ctrl.closeModals()">
+      <svg viewBox="0 0 40 40" 
+           width="40" 
+           height="40" 
+           fill="#e50000">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" 
+             xlink:href="#cross_exercise">
+        </use>
+      </svg>
+    </button>
+    <p class="modal_head">Результат</p>
+    <div class="modal_body">Далеко-далеко за словесными.</div>
+   <!--  <p class="modal_nav-ex_text__head">Ваш результат</p>
+    <p class="modal_nav-ex_text__result"></p>
+    <p class="modal_nav-ex_text__text"></p> -->
   </div>
   <!-- video modal -->
-  <div class="modal modal_video" ng-show="$ctrl.getModalState(6)">
+  <div class="modal modal_video" ng-show="$ctrl.getModalState(5)">
     <!-- <video class="video-js vjs-default-skin" controls preload="auto" vjs-video vjs-media="$ctrl.videoData">
     </video> -->
   </div>

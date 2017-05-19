@@ -4,7 +4,7 @@
   </div>
   <div class="footer_btn-box">
     <button class="btn btn_nav btn_nav-back"
-            ng-class="{'btn_nav-back-disabled': $ctrl.bookmark  === '-1'}"
+            ng-class="{'btn_nav-back-disabled': $ctrl.bookmark.page  === '1'}"
             ng-click="$ctrl.toBack()"><!-- ← zurück -->
       <svg viewBox="0 0 104 40">
         <use xmlns:xlink="http://www.w3.org/1999/xlink" 
@@ -12,7 +12,7 @@
         </use>
       </svg>
     </button>
-    <div class="paginator">{{$ctrl.bookmark.page+1}} / {{$ctrl.pageAmountTotal}} </div>
+    <div class="paginator">{{$ctrl.bookmark.page}} / {{$ctrl.pageAmountTotal}} </div>
     <button class="btn btn_nav btn_nav-forward"
             ng-class="{'btn_nav-forward-disabled': $ctrl.bookmark === '-1'}"
             ng-click="$ctrl.toForward()"><!-- vorwärts → -->
