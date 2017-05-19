@@ -10,7 +10,6 @@
 		  <div class="gallery-item" 
 		  		 ng-class="{'checked': item.checkedBlock}" 
 		  		 ng-click="$ctrl.check($index)"  
-		  		 data-number="{{$index}}" 
 		  		 ng-repeat="item in $ctrl.imageList">
 		    <img class="gallery-img" 
 		    		 ng-src="{{item.src}}" 
@@ -22,6 +21,12 @@
 	</div>
 </div>
 <div class="btn-box">
-	<button class="btn btn_restart" ng-click="$ctrl.removeRestart()">Начать заново</button>
-	<button class="btn btn_answer" ng-click="$ctrl.checkAnswer()">Принять ответ</button>
+	<button class="btn btn_restart"
+          ng-class="{'btn_disabled': $ctrl.getBtnState().restart}" 
+          ng-click="$ctrl.removeRestart()">Начать заново
+  </button>
+	<button class="btn btn_answer" 
+          ng-class="{'btn_disabled': $ctrl.stateNum === 0 || $ctrl.getBtnState().answer}" 
+          ng-click="$ctrl.checkAnswer()">Принять ответ
+  </button>
 </div>

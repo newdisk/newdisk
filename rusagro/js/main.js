@@ -1007,6 +1007,303 @@
 (function () {
   'use strict';
 
+  TaskImageCheckCtrl.$inject = ["$element", "$document", "$stateParams", "staticService", "userService"];
+  angular.module('app').component('taskImageCheck', {
+    templateUrl: 'js/components/task-image-check/taskImageCheckTmpl.html',
+    controller: 'TaskImageCheckCtrl',
+    controllerAs: '$ctrl'
+  }).controller('TaskImageCheckCtrl', TaskImageCheckCtrl);
+
+  /* @ngInject */
+  function TaskImageCheckCtrl($element, $document, $stateParams, staticService, userService) {
+    var self = this,
+        attemptNum = 0,
+        // attempt number
+    bannerStart,
+        // banner that is shown in the beginning
+    bannerEnd; // banner that is shown at right answer
+
+    self.taskData = staticService.getExerciseObject($stateParams);
+
+    /*
+    *  self.taskData - the main object for this exercise
+    *
+    *  self.taskData = {
+    *    attempts: 3,                                 amount of attempt
+    *    shuffle: true/false,                         shuffle or not answers variants
+    *    showAnswer: true/false,                      show/not show right answer after final attempt
+    *    taskText: "",                                text of the exercise
+    *    bannerStart: {                               banner that is shown in the beginning
+    *      src: "",
+    *      alt: ""
+    *    },
+    *    bannerEnd: {                                 banner that is shown at right answer
+    *      src: "",
+    *      alt: ""
+    *    },
+    *    imageList: [{                                image array
+    *      src: "",
+    *      alt: "",
+    *      checkedBlock: true/false,                  user answer
+    *      needCheckedAns: true/false                 task (right) answer
+    *    }]
+    *  }
+    */
+
+    self.taskText = self.taskData.taskText; // text for the exercise
+    self.imageList = self.taskData.imageList; // images data
+    self.stateNum = 0; // number of checked images
+    self.btnDisabledState = {
+      restart: false,
+      answer: false
+    };
+    bannerStart = self.taskData.bannerStart, bannerEnd = self.taskData.bannerEnd, self.banner = bannerStart;
+
+    angular.element($document).ready(function () {
+
+      // change item state on checked/unchecked
+      self.check = function (index) {
+        self.imageList[index].checkedBlock = !self.imageList[index].checkedBlock;
+        self.stateNum = self.imageList.reduce(function (sum, elem) {
+          if (elem.checkedBlock) {
+            sum++;
+          };
+          return sum;
+        }, 0);
+      };
+
+      self.getBtnState = function () {
+        return self.btnDisabledState;
+      };
+
+      // check answers
+      self.checkAnswer = function () {
+        console.log(self.imageList);
+        self.btnDisabledState.answer = true;
+        attemptNum = attemptNum + 1;
+
+        for (var i = 0; i < self.imageList.length; i++) {
+
+          if (self.imageList[i].checkedBlock !== self.imageList[i].needCheckedAns) {
+
+            // use data from courseStructure. Property .attempts need to show comment and show correct answers if this option is activated in courseStructure
+            if (attemptNum === self.taskData.attempts) {
+              if (self.taskData.showAnswer) {
+                self.banner = bannerEnd;
+                self.imageList.forEach(function (elem) {
+                  elem.checkedBlock = elem.needCheckedAns;
+                });
+              }
+              attemptNum = 0;
+              self.btnDisabledState.restart = true;
+
+              // send data to userService (needs for statistics), query to staticService to show modal with comment
+              userService.setUserProgress(false, Number($stateParams.module) - 1, Number($stateParams.path) - 1);
+              return staticService.showModal('exerciseModal', self.taskData.attempts, false, Number($stateParams.module) - 1, Number($stateParams.path) - 1);
+            }
+
+            // send data to userService (needs for statistics), query to staticService to show modal with comment
+            userService.setUserProgress(false, Number($stateParams.module) - 1, Number($stateParams.path) - 1);
+            return staticService.showModal('exerciseModal', attemptNum, false, Number($stateParams.module) - 1, Number($stateParams.path) - 1);
+          }
+        }
+        self.banner = bannerEnd;
+        self.btnDisabledState.restart = true;
+
+        // send data to userService (needs for statistics), query to staticService to show modal with comment
+        userService.setUserProgress(true, Number($stateParams.module) - 1, Number($stateParams.path) - 1);
+        staticService.showModal('exerciseModal', 0, true, Number($stateParams.module) - 1, Number($stateParams.path) - 1);
+      };
+
+      // restart
+      self.removeRestart = function () {
+        var blockList = $('.gallery-item'),
+            numberArr = [],
+            currentElemIndex;
+
+        self.banner = bannerStart;
+        self.btnDisabledState.answer = false;
+
+        self.imageList.forEach(function (elem) {
+          elem.checkedBlock = false;
+        });
+
+        // shuffle variants if options "shuffle" === true (we define it in courseStructure.js)
+        if (self.taskData.shuffle) {
+
+          /* 
+          *  replacement answers variants in DOM
+          *  1. find exercise blocks
+          *  2. find variants -> create integer array "numberList" -> shuffle elements of "numberList" -> replace variants in DOM
+          */
+
+          for (var i = 0; i < blockList.length; i++) {
+            numberArr.push(i);
+          }
+
+          numberArr = _.shuffle(numberArr);
+
+          // Element displacement
+          currentElemIndex = numberArr[0];
+          for (var i = 1; i < blockList.length; i++) {
+            $(blockList[currentElemIndex]).after(blockList[numberArr[i]]);
+            currentElemIndex = numberArr[i];
+          }
+        };
+      };
+
+      // restart test before user start
+      self.removeRestart();
+    });
+  }
+})();
+
+(function () {
+  'use strict';
+
+  TaskImageSingleChoiceCtrl.$inject = ["$document", "$stateParams", "staticService", "userService"];
+  angular.module('app').controller('TaskImageSingleChoiceCtrl', TaskImageSingleChoiceCtrl);
+
+  /* @ngInject */
+  function TaskImageSingleChoiceCtrl($document, $stateParams, staticService, userService) {
+    var self = this,
+        attemptNum = 0,
+        // attempt number
+    bannerStart,
+        // banner that is shown in the beginning
+    bannerEnd; // banner that is shown at right answer
+
+    self.taskData = staticService.getExerciseObject($stateParams);
+
+    /* 
+    *  self.taskData - the main object for this exercise
+    * 
+    *  self.taskData = {
+    *    attempts: 3,                                 amount of attempt
+    *    shuffle: true/false,                         shuffle or not answers variants
+    *    showAnswer: true/false,                      show/not show right answer after final attempt
+    *    bannerStart: {                               banner that is shown in the beginning
+    *      src: "",
+    *      alt: ""
+    *    },
+    *    bannerEnd: {                                 banner that is shown at right answer
+    *      src: "",
+    *      alt: ""
+    *    },
+    *    answerList: [{                               answer array
+    *      needCheckedAns: number                     task (right) answer                 
+    *      checkedBlock: number                       user answer
+    *    }]
+    *  }
+    */
+
+    self.answerList = self.taskData.answerList;
+    bannerStart = self.taskData.bannerStart;
+    bannerEnd = self.taskData.bannerEnd;
+    self.banner = bannerStart;
+    self.stateNum = 0; // number of activated exercise block
+    self.btnDisabledState = {
+      restart: false,
+      answer: false
+    };
+
+    angular.element($document).ready(function () {
+
+      self.check = function (index, parentIndex) {
+
+        if (self.answerList[parentIndex].checkedBlock === '') {
+          self.stateNum++;
+        }
+        self.answerList[parentIndex].checkedBlock = index;
+      };
+
+      self.getBtnState = function () {
+        return self.btnDisabledState;
+      };
+
+      // check answers
+      self.checkAnswer = function () {
+        self.stateNum = 0;
+        self.btnDisabledState.answer = true;
+        attemptNum = attemptNum + 1;
+
+        for (var i = 0; i < self.answerList.length; i++) {
+          if (self.answerList[i].checkedBlock !== self.answerList[i].needCheckedAns) {
+            if (attemptNum === self.taskData.attempts) {
+              if (self.taskData.showAnswer) {
+                self.answerList.forEach(function (elem) {
+                  elem.checkedBlock = elem.needCheckedAns;
+                });
+              }
+              attemptNum = 0;
+              self.btnDisabledState.restart = true;
+
+              // send data to userService (needs for statistics), query to staticService to show modal with comment
+              userService.setUserProgress(false, Number($stateParams.module) - 1, Number($stateParams.path) - 1);
+              return staticService.showModal('exerciseModal', self.taskData.attempts, false, Number($stateParams.module) - 1, Number($stateParams.path) - 1);
+            }
+
+            // send data to userService (needs for statistics), query to staticService to show modal with comment
+            userService.setUserProgress(false, Number($stateParams.module) - 1, Number($stateParams.path) - 1);
+            return staticService.showModal('exerciseModal', attemptNum, false, Number($stateParams.module) - 1, Number($stateParams.path) - 1);
+          }
+        }
+        self.banner = bannerEnd;
+        self.btnDisabledState.restart = true;
+
+        // send data to userService (needs for statistics), query to staticService to show modal with comment
+        userService.setUserProgress(true, Number($stateParams.module) - 1, Number($stateParams.path) - 1);
+        return staticService.showModal('exerciseModal', 0, true, Number($stateParams.module) - 1, Number($stateParams.path) - 1);
+      };
+
+      // restart
+      self.removeRestart = function () {
+        var blockList = $('.box');
+
+        self.btnDisabledState.answer = false;
+
+        // clean user answers
+        self.answerList.forEach(function (elem) {
+          elem.checkedBlock = '';
+        });
+
+        // shuffle variants if options "shuffle" === true (we define it in courseStructure.js)
+        if (self.taskData.shuffle) {
+
+          /* 
+          *  replacement answers variants in DOM
+          *  1. find exercise blocks
+          *  2. find variants -> create integer array "numberList" -> shuffle elements of "numberList" -> replace variants in DOM
+          */
+
+          for (var i = 0; i < blockList.length; i++) {
+            var itemList = $(blockList[i]).find('.box__item'),
+                numberList = [],
+                currentElemIndex;
+
+            for (var j = 0; j < itemList.length; j++) {
+              numberList[j] = j;
+            };
+
+            numberList = _.shuffle(numberList);
+
+            currentElemIndex = numberList[0];
+            for (var j = 1; j < itemList.length; j++) {
+              $(itemList[currentElemIndex]).after(itemList[numberList[j]]);
+              currentElemIndex = numberList[j];
+            }
+          }
+        }
+      };
+
+      // restart test before user start
+      self.removeRestart();
+    });
+  };
+})();
+(function () {
+  'use strict';
+
   TaskRangingCtrl.$inject = ["$stateParams", "staticService", "userService"];
   angular.module('app').controller('TaskRangingCtrl', TaskRangingCtrl);
 
@@ -1226,7 +1523,9 @@
             // use data from courseStructure. Property .attempts need to show comment and show correct answers if this option is activated in courseStructure
             if (attemptNum === self.taskData.attempts) {
               if (self.taskData.showAnswer) {
-                showAnswer();
+                for (var i = 1; i < sortArr.length; i++) {
+                  $(sortArr[i - 1]).after(sortArr[i]);
+                }
               };
               attemptNum = 0;
               self.btnDisabledState.restart = true;
@@ -1248,15 +1547,6 @@
         return staticService.showModal('exerciseModal', 0, true, Number($stateParams.module) - 1, Number($stateParams.path) - 1);
       };
 
-      // show answer on the final attempt
-      function showAnswer() {
-
-        // Element displacement
-        for (var i = 1; i < sortArr.length; i++) {
-          $(sortArr[i - 1]).after(sortArr[i]);
-        }
-      }
-
       // restart
       self.removeRestart = function () {
         var sortList = $($element).find('.sort__content'),
@@ -1265,17 +1555,20 @@
 
         self.btnDisabledState.answer = false;
 
-        for (var i = 0; i < sortList.length; i++) {
-          numberArr.push(i);
-        }
+        if (self.taskData.shuffle) {
 
-        if (self.taskData.shuffle) numberArr = _.shuffle(numberArr);
+          for (var i = 0; i < sortList.length; i++) {
+            numberArr.push(i);
+          }
 
-        // Element displacement
-        currentElemIndex = numberArr[0];
-        for (i = 1; i < sortList.length; i++) {
-          $(sortList[currentElemIndex]).after(sortList[numberArr[i]]);
-          currentElemIndex = numberArr[i];
+          numberArr = _.shuffle(numberArr);
+
+          // Element displacement
+          currentElemIndex = numberArr[0];
+          for (i = 1; i < sortList.length; i++) {
+            $(sortList[currentElemIndex]).after(sortList[numberArr[i]]);
+            currentElemIndex = numberArr[i];
+          }
         }
       };
 
@@ -1293,33 +1586,43 @@
   /* @ngInject */
   function TaskRangingSwapableCtrl($stateParams, staticService, userService) {
     var self = this,
-        rightOrder = $('.sort').find('div'),
+        rightOrder = $('.sort').find('.swapable, .fixed'),
         fixedBlockList = $('.fixed'),
         fixedBlockPos = [],
         attemptNum = 0;
 
     self.taskData = staticService.getExerciseObject($stateParams);
-    self.disabledBtn = false;
+
+    /*
+    *  taskData = {
+    *    attempts: 3,                                 amount of attempt
+    *    shuffle: true/false,                         shuffle or not answers variants
+    *    showAnswer: true/false,                      show/not show right answer after final attempt
+    *    rangeCategory: true/false                    use/not use checking on attributes
+    *  }
+    */
 
     if (fixedBlockList.length) {
       for (var i = 0; i < rightOrder.length; i++) {
         if ($(rightOrder[i]).hasClass('fixed')) fixedBlockPos.push(i);
       }
     }
-    console.log(fixedBlockPos);
+
+    self.btnDisabledState = {
+      restart: false,
+      answer: false
+    };
 
     $(".swapable").draggable({
       zIndex: 2,
       containment: '.sort-wrapper',
-      start: function start(e, ui) {},
       stop: function stop(e, ui) {
-        console.log(ui);
-        ui.helper[0].style.top = '0px';
-        ui.helper[0].style.left = '0px';
+        ui.helper.css('top', '0');
+        ui.helper.css('left', '0');
       }
     }).droppable({
       drop: function drop(event, ui) {
-        // console.log('куда =>',$(this).get(0))
+        //  console.log('куда =>',$(this).get(0))
         //  console.log('что =>',$(ui.draggable).get(0))
         swapNodes($(this).get(0), $(ui.draggable).get(0));
       } });
@@ -1338,30 +1641,65 @@
       b.style.top = '0px';
     }
 
+    self.getBtnState = function () {
+      return self.btnDisabledState;
+    };
+
     // check answers
     self.checkAnswer = function () {
-      var answerList = $('.sort').find('div');
+      var answerList = $('.sort').find('.swapable, .fixed');
 
+      self.btnDisabledState.answer = true;
       attemptNum = attemptNum + 1;
-      for (var i = 0; i < rightOrder.length; i++) {
-        if ($(answerList[i]).index($(rightOrder)) !== i) {
-          // use data from courseStructure. Property .attempts need to show comment and show correct answers if this option is activated in courseStructure
-          if (attemptNum === self.taskData.attempts) {
-            if (self.taskData.showAnswer) {
-              self.disabledBtn = true;
-              showAnswer();
-            };
-            attemptNum = 0;
+
+      if (self.taskData.rangeCategory) {
+        for (var i = 0; i < rightOrder.length; i++) {
+
+          if ($(answerList[i]).attr('data-category') !== $(rightOrder[i]).attr('data-category')) {
+            // use data from courseStructure. Property .attempts need to show comment and show correct answers if this option is activated in courseStructure
+            if (attemptNum === self.taskData.attempts) {
+              if (self.taskData.showAnswer) {
+                showAnswer();
+              };
+              attemptNum = 0;
+              self.btnDisabledState.restart = true;
+
+              // send data to userService (needs for statistics), query to staticService to show modal with comment
+              userService.setUserProgress(false, Number($stateParams.module) - 1, Number($stateParams.path) - 1);
+              return staticService.showModal('exerciseModal', self.taskData.attempts, false, Number($stateParams.module) - 1, Number($stateParams.path) - 1);
+            }
+
             // send data to userService (needs for statistics), query to staticService to show modal with comment
             userService.setUserProgress(false, Number($stateParams.module) - 1, Number($stateParams.path) - 1);
-            return staticService.showModal('exerciseModal', self.taskData.attempts, false, Number($stateParams.module) - 1, Number($stateParams.path) - 1);
+            return staticService.showModal('exerciseModal', attemptNum, false, Number($stateParams.module) - 1, Number($stateParams.path) - 1);
           }
-          // send data to userService (needs for statistics), query to staticService to show modal with comment
-          userService.setUserProgress(false, Number($stateParams.module) - 1, Number($stateParams.path) - 1);
-          return staticService.showModal('exerciseModal', attemptNum, false, Number($stateParams.module) - 1, Number($stateParams.path) - 1);
+        }
+      } else {
+        for (var i = 0; i < rightOrder.length; i++) {
+
+          if ($(answerList[i]).index($(rightOrder)) !== i) {
+
+            // use data from courseStructure. Property .attempts need to show comment and show correct answers if this option is activated in courseStructure
+            if (attemptNum === self.taskData.attempts) {
+              if (self.taskData.showAnswer) {
+                showAnswer();
+              };
+              attemptNum = 0;
+              self.btnDisabledState.restart = true;
+
+              // send data to userService (needs for statistics), query to staticService to show modal with comment
+              userService.setUserProgress(false, Number($stateParams.module) - 1, Number($stateParams.path) - 1);
+              return staticService.showModal('exerciseModal', self.taskData.attempts, false, Number($stateParams.module) - 1, Number($stateParams.path) - 1);
+            }
+
+            // send data to userService (needs for statistics), query to staticService to show modal with comment
+            userService.setUserProgress(false, Number($stateParams.module) - 1, Number($stateParams.path) - 1);
+            return staticService.showModal('exerciseModal', attemptNum, false, Number($stateParams.module) - 1, Number($stateParams.path) - 1);
+          }
         }
       }
-      self.disabledBtn = true;
+      self.btnDisabledState.restart = true;
+
       // send data to userService (needs for statistics), query to staticService to show modal with comment
       userService.setUserProgress(true, Number($stateParams.module) - 1, Number($stateParams.path) - 1);
       return staticService.showModal('exerciseModal', 0, true, Number($stateParams.module) - 1, Number($stateParams.path) - 1);
@@ -1380,51 +1718,40 @@
 
     // restart
     self.removeRestart = function () {
-      var
-      // sortObj = {
-      //   initialArr: $($element).find('.sort').find('.sort__content, .sort__static'),
-      //   staticBlockPos: [],
-      //   finalArr: []
-      // },
-      numberArr = [],
-          currentElemIndex;
+      var numberArr = [],
+          currentElemIndex,
+          newOrder;
 
-      // for (var i = 0; i < sortObj.initialArr.length; i++) {
-      //   if ($(sortObj.initialArr[i]).hasClass('sort__static')) sortObj.staticBlockPos.push(i);
-      // }
+      self.btnDisabledState.answer = false;
 
-      for (var i = 0; i < rightOrder.length; i++) {
-        numberArr.push(i);
-      }
+      if (self.taskData.shuffle) {
 
-      if (self.taskData.shuffle) numberArr = _.shuffle(numberArr);
-
-      // Element displacement
-      currentElemIndex = numberArr[0];
-      for (i = 1; i < rightOrder.length; i++) {
-        $(rightOrder[currentElemIndex]).after(rightOrder[numberArr[i]]);
-        currentElemIndex = numberArr[i];
-      }
-
-      var newOrder = $('.sort').find('div');
-
-      if (fixedBlockList.length) {
-        for (var i = 0; i < fixedBlockList.length; i++) {
-          $(newOrder[newOrder.length - 1]).after(fixedBlockList[i]);
+        for (var i = 0; i < rightOrder.length; i++) {
+          numberArr.push(i);
         }
-        newOrder = $('.sort').find('div');
-        for (var i = 0; i < fixedBlockList.length; i++) {
-          $(newOrder[fixedBlockPos[i]]).before(fixedBlockList[i]);
-          newOrder = $('.sort').find('div');
-        }
-      };
 
-      // sortObj.finalArr = $($element).find('.sort').find('.sort__content, .sort__static');
-      // if (sortObj.staticBlockPos.length > 1) {
-      //   for (var i = 1; i < sortObj.finalArr.length; i++) {
-      //     $(sortObj.initialArr[sortObj.staticBlockPos[i]]).after(sortObj.finalArr[sortObj.staticBlockPos[i] - 1]);
-      //   }
-      // }
+        numberArr = _.shuffle(numberArr);
+
+        // Element displacement
+        currentElemIndex = numberArr[0];
+        for (i = 1; i < rightOrder.length; i++) {
+          $(rightOrder[currentElemIndex]).after(rightOrder[numberArr[i]]);
+          currentElemIndex = numberArr[i];
+        }
+
+        if (fixedBlockList.length) {
+          newOrder = $('.sort').find('.swapable, .fixed');
+
+          for (var i = 0; i < fixedBlockList.length; i++) {
+            $(newOrder[newOrder.length - 1]).after(fixedBlockList[i]);
+          }
+          newOrder = $('.sort').find('.swapable, .fixed');
+          for (var i = 0; i < fixedBlockList.length; i++) {
+            $(newOrder[fixedBlockPos[i]]).before(fixedBlockList[i]);
+            newOrder = $('.sort').find('.swapable, .fixed');
+          }
+        };
+      }
     };
 
     // restart test before user start 
@@ -1667,97 +1994,6 @@
 (function () {
   'use strict';
 
-  TaskImageCheckCtrl.$inject = ["$element", "$document", "$stateParams", "staticService", "userService"];
-  angular.module('app').component('taskImageCheck', {
-    bindings: {
-      shuffle: '@',
-      lastAttempt: '@',
-      showAnswer: '@'
-    },
-    templateUrl: 'js/components/task-image-check/taskImageCheckTmpl.html',
-    controller: 'TaskImageCheckCtrl',
-    controllerAs: '$ctrl'
-  }).controller('TaskImageCheckCtrl', TaskImageCheckCtrl);
-
-  /* @ngInject */
-  function TaskImageCheckCtrl($element, $document, $stateParams, staticService, userService) {
-    var self = this,
-        bannerStart = staticService.getData($stateParams, 'bannerStart'),
-        bannerEnd = staticService.getData($stateParams, 'bannerEnd'),
-        attemptNum = 0;
-
-    self.taskText = staticService.getData($stateParams, 'taskText');
-    self.imageList = staticService.getData($stateParams, 'imageList');
-    self.banner = bannerStart;
-
-    self.$onInit = function () {
-      self.lastAttempt = $($element).attr('lastAttempt');
-    };
-
-    angular.element($document).ready(function () {
-
-      var blockList = $('.gallery-item'),
-          i;
-
-      // Change item state on checked/unchecked
-      self.check = function (index) {
-        self.imageList[index].checkedBlock = !self.imageList[index].checkedBlock;
-      };
-
-      // Click function on button "Check answer"
-      self.checkAnswer = function () {
-        if (self.lastAttempt === 'none' || attemptNum === Number(self.lastAttempt)) {
-          attemptNum = 0;
-        }
-        attemptNum = attemptNum + 1;
-
-        for (i = 0; i < blockList.length; i++) {
-          var index = Number($(blockList[i]).attr('data-number'));
-
-          if (self.imageList[index].checkedBlock !== self.imageList[index].needCheckedAns) {
-            userService.setUserProgress(false, Number($stateParams.module) - 1, Number($stateParams.path) - 1);
-            return staticService.showModal('exerciseModal', attemptNum, false, Number($stateParams.module) - 1, Number($stateParams.path) - 1);
-          }
-        }
-        self.banner = bannerEnd;
-        userService.setUserProgress(true, Number($stateParams.module) - 1, Number($stateParams.path) - 1);
-        staticService.showModal('exerciseModal', 0, true, Number($stateParams.module) - 1, Number($stateParams.path) - 1);
-      };
-
-      // Click function on buttom "Restart"
-      self.removeRestart = function () {
-
-        self.banner = bannerStart;
-
-        var numberArr = [],
-            currentElemIndex;
-        for (var i = 0; i < blockList.length; i++) {
-          numberArr.push(i);
-        }
-
-        numberArr = _.shuffle(numberArr);
-
-        for (i = 0; i < self.imageList.length; i++) {
-          self.imageList[i].checkedBlock = false;
-        }
-
-        // Element displacement
-        currentElemIndex = numberArr[0];
-        for (i = 1; i < blockList.length; i++) {
-          $(blockList[currentElemIndex]).after(blockList[numberArr[i]]);
-          currentElemIndex = numberArr[i];
-        }
-      };
-
-      // Restart before start of the task
-      self.removeRestart();
-    });
-  }
-})();
-
-(function () {
-  'use strict';
-
   SingleChoiceCtrl.$inject = ["$stateParams", "$document", "$element", "staticService", "userService"];
   angular.module('app').component('taskSingleChoice', {
     templateUrl: 'js/components/task-single-choice/taskSingleChoiceTmpl.html',
@@ -1910,210 +2146,6 @@
 
       // restart test before user start 
       self.removeRestart();
-    });
-  }
-})();
-(function () {
-  'use strict';
-
-  taskTestCtrl.$inject = ["$attrs", "$stateParams", "staticService"];
-  angular.module('app').component('taskTest', {
-    bindings: {
-      score: '@'
-    },
-    templateUrl: './js/components/task-test/taskTestTmpl.html',
-    controller: 'taskTestCtrl',
-    controllerAs: '$ctrl'
-  }).controller('taskTestCtrl', taskTestCtrl);
-
-  /* @ngInject */
-  function taskTestCtrl($attrs, $stateParams, staticService) {
-    var self = this,
-        scoreList = $attrs.score.split(','),
-        i;
-
-    self.currentQuestNum = 0; // number of current question
-    /* 
-    * self.taskList - the main array of exercise
-    * self.taskList = [{
-    *   question: '',
-    *   state: false/true,            need for statistics (correct answered question or not)
-    *   type: 'single-choice'/'multi-choice',
-    *   variant: [{
-    *     content: '',                text or content of the question
-    *     rightAnswer: false/true,    from couseStructure 
-    *     answer: false (on default)  number of the element in array (need to compare futher with exercise right data)  
-    *   }]
-    * }]
-    */
-    self.taskList = staticService.getTestData($stateParams); // the main exercise array 
-    console.log(self.taskList);
-    self.taskList.forEach(function (element) {
-      element.variant.forEach(function (elem) {
-        return elem.answer = false;
-      });
-      return element.state = false;
-    });
-    self.state = 0; // show that exercise block was activated (checked answers number > 9)
-
-    // function that displays number of current question [0 ... taskList.length]  
-    self.getCurrentQuestNum = function () {
-      return self.currentQuestNum;
-    };
-
-    // function that displays number of current question  
-    self.checkItem = function (index, parentIndex) {
-      if (self.taskList[parentIndex].type === 'single-choice') {
-        self.taskList[parentIndex].variant.forEach(function (elem) {
-          return elem.answer = false;
-        });
-      };
-      self.taskList[parentIndex].variant[index].answer = !self.taskList[parentIndex].variant[index].answer;
-      if (self.taskList[parentIndex].variant.filter(function (elem) {
-        return elem.answer === true;
-      }).length !== 0) {
-        return self.state = 1;
-      } else {
-        return self.state = 0;
-      }
-    };
-
-    // check answers
-    self.checkAnswer = function () {
-      var compareList, // if compareList.length === 0 => user answer is correct
-      totalScore; // count user progress in points at the end of the test
-
-      compareList = self.taskList[self.currentQuestNum].variant.filter(function (elem) {
-        return elem.answer !== elem.rightAnswer;
-      });
-      if (compareList.length === 0) {
-        self.taskList[self.currentQuestNum].state = true;
-        totalScore = testProgress(totalScore, true);
-      } else {
-        self.taskList[self.currentQuestNum].state = false;
-        totalScore = testProgress(totalScore, false);
-      };
-    };
-
-    // count totalScore (amount of correct completed tasks)
-    function testProgress(totalScore, answer) {
-      if (self.currentQuestNum < self.taskList.length - 1) {
-        self.currentQuestNum++;
-      } else {
-        // count totalScore on the last question
-        totalScore = self.taskList.filter(function (elem) {
-          return elem.state === true;
-        }).length;
-        for (i = 0; i < scoreList.length; i++) {
-          if (totalScore / self.taskList.length * 100 >= Number(scoreList[i])) {
-            return console.log(totalScore / self.taskList.length * 100, scoreList[i]);
-          }
-        };
-      };
-      return totalScore;
-    }
-
-    // restart
-    self.removeRestart = function () {
-      self.currentQuestNum = 0;
-
-      self.taskList = _.shuffle(self.taskList);
-      self.taskList.forEach(function (elem) {
-        elem.state = false;
-        elem.variant.forEach(function (element) {
-          return element.answer = false;
-        });
-        return elem.variant = _.shuffle(elem.variant);
-      });
-    };
-
-    // restart test before user start 
-    self.removeRestart();
-  };
-})();
-(function () {
-  'use strict';
-
-  TaskSingleChoiceImgCtrl.$inject = ["$stateParams", "staticService", "userService"];
-  angular.module('app').component('taskSingleChoiceImg', {
-    bindings: {
-      shuffle: '@',
-      lastAttempt: '@',
-      showAnswer: '@'
-    },
-    templateUrl: 'js/components/task-single-choice-img/taskSingleChoiceImgTmpl.html',
-    controller: 'TaskSingleChoiceImgCtrl',
-    controllerAs: '$ctrl'
-  }).controller('TaskSingleChoiceImgCtrl', TaskSingleChoiceImgCtrl);
-
-  /* @ngInject */
-  function TaskSingleChoiceImgCtrl($stateParams, staticService, userService) {
-    var self = this;
-
-    self.answerList = staticService.getData($stateParams, 'answerList');
-    self.bannerStart = staticService.getData($stateParams, 'bannerStart');
-    self.bannerEnd = staticService.getData($stateParams, 'bannerEnd');
-
-    self.banner = {}, self.banner.src = self.bannerStart.src;
-    self.banner.alt = self.bannerStart.alt;
-
-    self.active = [];
-    self.state = 0;
-    self.attemptNum = 0;
-
-    for (var i = 0; i < self.answerList.length; i++) {
-      self.active[i] = {};
-      self.active[i].state = false;
-      self.active[i].answer = '';
-    }
-
-    self.showComment = false;
-
-    angular.element(document).ready(function () {
-
-      self.setColor = function ($event, index, parentIndex) {
-        console.log($event, index, parentIndex);
-        if (self.active[parentIndex].state === false) {
-          self.state = self.state + 1;
-          self.active[parentIndex].state = true;
-        }
-        self.active[parentIndex].answer = index;
-      };
-
-      self.checkAnswer = function () {
-        if (self.attemptNum === 3) {
-          self.attemptNum = 0;
-        }
-        self.attemptNum = self.attemptNum + 1;
-
-        for (var i = 0; i < self.answerList.length; i++) {
-          if (self.answerList[i].rightAnswer !== Number(self.active[i].answer)) {
-            if (self.attemptNum === 3) {
-              for (var j = 0; j < self.questionList.length; j++) {
-                self.active[j].state = true;
-                self.active[j].answer = self.questionList[j].rightAnswer;
-              }
-            }
-            userService.setUserProgress(false, Number($stateParams.module) - 1, Number($stateParams.path) - 1);
-            return staticService.showModal('exerciseModal', self.attemptNum, false, Number($stateParams.module) - 1, Number($stateParams.path) - 1);
-          }
-        }
-        userService.setUserProgress(true, Number($stateParams.module) - 1, Number($stateParams.path) - 1);
-        staticService.showModal('exerciseModal', 0, true, Number($stateParams.module) - 1, Number($stateParams.path) - 1);
-        self.banner.src = self.bannerEnd.src;
-        self.banner.alt = self.bannerEnd.alt;
-      };
-
-      self.removeRestart = function () {
-
-        for (var i = 0; i < self.active.length; i++) {
-          self.active[i].state = false;
-          self.active[i].answer = '';
-        }
-        self.state = 0;
-        self.banner.src = self.bannerStart.src;
-        self.banner.alt = self.bannerStart.alt;
-      };
     });
   }
 })();
@@ -2396,6 +2428,124 @@
     //   }
     // });
   }
+})();
+(function () {
+  'use strict';
+
+  taskTestCtrl.$inject = ["$attrs", "$stateParams", "staticService"];
+  angular.module('app').component('taskTest', {
+    bindings: {
+      score: '@'
+    },
+    templateUrl: './js/components/task-test/taskTestTmpl.html',
+    controller: 'taskTestCtrl',
+    controllerAs: '$ctrl'
+  }).controller('taskTestCtrl', taskTestCtrl);
+
+  /* @ngInject */
+  function taskTestCtrl($attrs, $stateParams, staticService) {
+    var self = this,
+        scoreList = $attrs.score.split(','),
+        i;
+
+    self.currentQuestNum = 0; // number of current question
+    /* 
+    * self.taskList - the main array of exercise
+    * self.taskList = [{
+    *   question: '',
+    *   state: false/true,            need for statistics (correct answered question or not)
+    *   type: 'single-choice'/'multi-choice',
+    *   variant: [{
+    *     content: '',                text or content of the question
+    *     rightAnswer: false/true,    from couseStructure 
+    *     answer: false (on default)  number of the element in array (need to compare futher with exercise right data)  
+    *   }]
+    * }]
+    */
+    self.taskList = staticService.getTestData($stateParams); // the main exercise array 
+    console.log(self.taskList);
+    self.taskList.forEach(function (element) {
+      element.variant.forEach(function (elem) {
+        return elem.answer = false;
+      });
+      return element.state = false;
+    });
+    self.state = 0; // show that exercise block was activated (checked answers number > 9)
+
+    // function that displays number of current question [0 ... taskList.length]  
+    self.getCurrentQuestNum = function () {
+      return self.currentQuestNum;
+    };
+
+    // function that displays number of current question  
+    self.checkItem = function (index, parentIndex) {
+      if (self.taskList[parentIndex].type === 'single-choice') {
+        self.taskList[parentIndex].variant.forEach(function (elem) {
+          return elem.answer = false;
+        });
+      };
+      self.taskList[parentIndex].variant[index].answer = !self.taskList[parentIndex].variant[index].answer;
+      if (self.taskList[parentIndex].variant.filter(function (elem) {
+        return elem.answer === true;
+      }).length !== 0) {
+        return self.state = 1;
+      } else {
+        return self.state = 0;
+      }
+    };
+
+    // check answers
+    self.checkAnswer = function () {
+      var compareList, // if compareList.length === 0 => user answer is correct
+      totalScore; // count user progress in points at the end of the test
+
+      compareList = self.taskList[self.currentQuestNum].variant.filter(function (elem) {
+        return elem.answer !== elem.rightAnswer;
+      });
+      if (compareList.length === 0) {
+        self.taskList[self.currentQuestNum].state = true;
+        totalScore = testProgress(totalScore, true);
+      } else {
+        self.taskList[self.currentQuestNum].state = false;
+        totalScore = testProgress(totalScore, false);
+      };
+    };
+
+    // count totalScore (amount of correct completed tasks)
+    function testProgress(totalScore, answer) {
+      if (self.currentQuestNum < self.taskList.length - 1) {
+        self.currentQuestNum++;
+      } else {
+        // count totalScore on the last question
+        totalScore = self.taskList.filter(function (elem) {
+          return elem.state === true;
+        }).length;
+        for (i = 0; i < scoreList.length; i++) {
+          if (totalScore / self.taskList.length * 100 >= Number(scoreList[i])) {
+            return console.log(totalScore / self.taskList.length * 100, scoreList[i]);
+          }
+        };
+      };
+      return totalScore;
+    }
+
+    // restart
+    self.removeRestart = function () {
+      self.currentQuestNum = 0;
+
+      self.taskList = _.shuffle(self.taskList);
+      self.taskList.forEach(function (elem) {
+        elem.state = false;
+        elem.variant.forEach(function (element) {
+          return element.answer = false;
+        });
+        return elem.variant = _.shuffle(elem.variant);
+      });
+    };
+
+    // restart test before user start 
+    self.removeRestart();
+  };
 })();
 (function () {
   'use strict';

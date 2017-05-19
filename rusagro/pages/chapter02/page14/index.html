@@ -1,4 +1,116 @@
-<div class="page-container">
-	<task-single-choice-img><div>Loading...</div></task-single-choice-img>
+<div class="page-container" ng-controller="TaskImageSingleChoiceCtrl as $ctrl">
+	<div class="banner-container">
+		<img class="banner-img" 
+			 ng-src="{{$ctrl.banner.src}}" 
+			 alt="{{$ctrl.banner.alt}}" 
+			 width="100%">
+	</div>
+	<p class="text">Вот так выглядит ваш цех без цветовой разметки. После введения 5S на вашем предприятии был разработан стандарт цветовой разметки в рабочих помещениях.</p>
+	<add-info class="add-info add-info_page-02-14" data-position="left" data-heading="Стандарт «цветовой разметки»">
+		<table>
+			<tr>
+				<td>Проходы, продукция</td>
+				<td>желтый</td>
+			</tr>
+			<tr>
+				<td>Паллеты</td>
+				<td>зеленый</td>
+			</tr>
+			<tr>
+				<td>Мусорные контейнеры</td>
+				<td>черно-белый</td>
+			</tr>
+			<tr>
+				<td>Брак</td>
+				<td>синий</td>
+			</tr>
+			<tr>
+				<td>Противопожарный инвентарь</td>
+				<td>красный</td>
+			</tr>
+		</table>
+	</add-info>
+	<p class="text">Используйте этот стандарт, чтобы нанести разметку в своем цеху. Выберите нужный цвет под каждым объектом.</p>
+	<div class="box-wrapper">	
+		<div class="box">
+			<div class="box__img-container">
+				<img class="box__img" 
+						 src="pages/chapter02/page14/img/passage.svg" 
+						 alt="Проход">
+			</div>
+			<div class="box__items-container">
+				<div class="box__item box__item_{{$index + 1}}" 
+						 ng-class="{'box__item_selected': $ctrl.answerList[0].checkedBlock === $index}" 
+						 ng-click="$ctrl.check($index, 0)" 
+						 ng-repeat="item in $ctrl.answerList">
+				</div>
+			</div>
+		</div>
+		<div class="box">
+			<div class="box__img-container">
+				<img class="box__img" 
+						 src="pages/chapter02/page14/img/pallet.svg" 
+						 alt="Паллет">
+			</div>
+			<div class="box__items-container">
+				<div class="box__item box__item_{{$index + 1}}" 
+						 ng-class="{'box__item_selected': $ctrl.answerList[1].checkedBlock === $index}" 
+						 ng-click="$ctrl.check($index, 1)" 
+						 ng-repeat="item in $ctrl.answerList">
+				</div>
+			</div>
+		</div>
+		<div class="box">
+			<div class="box__img-container">
+				<img class="box__img" 
+						 src="pages/chapter02/page14/img/dumpster.svg" 
+						 alt="Мусорный контейнер">
+			</div>
+			<div class="box__items-container">
+				<div class="box__item box__item_{{$index + 1}}" 
+						 ng-class="{'box__item_selected': $ctrl.answerList[2].checkedBlock === $index}" 
+						 ng-click="$ctrl.check($index, 2)" 
+						 ng-repeat="item in $ctrl.answerList">
+				</div>
+			</div>
+		</div>
+		<div class="box">
+			<div class="box__img-container">
+				<img class="box__img" 
+						 src="pages/chapter02/page14/img/defective-things-box.svg" 
+						 alt="Коробка с надписью «Брак»">
+			</div>
+			<div class="box__items-container">
+				<div class="box__item box__item_{{$index + 1}}" 
+						 ng-class="{'box__item_selected': $ctrl.answerList[3].checkedBlock === $index}" 
+						 ng-click="$ctrl.check($index, 3)" 
+						 ng-repeat="item in $ctrl.answerList">
+				</div>
+			</div>
+		</div>
+		<div class="box">
+			<div class="box__img-container">
+				<img class="box__img" 
+						 src="pages/chapter02/page14/img/extinguisher.svg" 
+						 alt="Огнетушитель">
+			</div>
+			<div class="box__items-container">
+				<div class="box__item box__item_{{$index + 1}}" 
+						 ng-class="{'box__item_selected': $ctrl.answerList[4].checkedBlock === $index}" 
+						 ng-click="$ctrl.check($index, 4)" 
+						 ng-repeat="item in $ctrl.answerList">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="btn-box">
+		<button class="btn btn_restart"
+	          ng-class="{'btn_disabled': $ctrl.getBtnState().restart}" 
+	          ng-click="$ctrl.removeRestart()">Начать заново
+	  </button>
+		<button class="btn btn_answer" 
+	          ng-class="{'btn_disabled': $ctrl.stateNum !== $ctrl.answerList.length || $ctrl.getBtnState().answer}" 
+	          ng-click="$ctrl.checkAnswer()">Принять ответ
+	  </button>
+	</div>
 </div>
-

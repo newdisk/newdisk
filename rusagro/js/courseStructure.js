@@ -149,7 +149,8 @@ var courseStructure = {
 			"type": "simple_page",
 			"messages": [""]
 		}]
-	}, {
+	},
+		{
 		"id": 2,
 		"title": "5S",
 		"pages": [{
@@ -158,25 +159,29 @@ var courseStructure = {
 			"location": "page01",
 			"type": "simple_page",
 			"messages": [""]
-		}, {
+		},
+			{
 			"id": 2,
 			"title": "Что такое 5S?",
 			"location": "page02",
 			"type": "simple_page",
 			"messages": [""]
-		}, {
+		},
+			{
 			"id": 3,
 			"title": "Этапы 5S",
 			"location": "page03",
 			"type": "simple_page",
 			"messages": [""]
-		}, {
+		},
+			{
 			"id": 4,
 			"title": "Цели и результаты внедрения 5S",
 			"location": "page04",
 			"type": "simple_page",
 			"messages": [""]
-		}, {
+		},
+			{
 			"id": 5,
 			"title": "Упражнение «Описание этапов 5S»",
 			"location": "page05",
@@ -273,6 +278,9 @@ var courseStructure = {
 			"location": "page08",
 			"type": "exercise",
 			"data": {
+				"attempts": 3,
+				"shuffle": true,
+				"showAnswer": true,
 				"taskText": "Перед вами офис, в котором нужно произвести сортировку. Отметьте красным ярлыком несущественные предметы, расположенные в списке. Для этого просто нажмите на них.",
 				"bannerStart": {
 					"src": "pages/chapter02/page08/img/bg_dirty.svg",
@@ -336,6 +344,9 @@ var courseStructure = {
 			"location": "page09",
 			"type": "exercise",
 			"data": {
+				"attempts": 3,
+				"shuffle": true,
+				"showAnswer": true,
 				"taskText": "А теперь произведите сортировку в цеху – несущественные предметы также нужно отметить красным ярлыком.",
 				"bannerStart": {
 					"src": "pages/chapter02/page09/img/bg_dirty.svg",
@@ -389,6 +400,9 @@ var courseStructure = {
 			"location": "page10",
 			"type": "exercise",
 			"data": {
+				"attempts": 3,
+				"shuffle": true,
+				"showAnswer": true,
 				"taskText": "«Рабочий стол» вашего компьютера тоже нуждается в сортировке. Найдите в списке и отметьте иконки, которые лучше удалить с «рабочего стола». Небольшая подсказка: помните, что вы не можете удалять ярлыки программного обеспечения, установленного IT-отделом. Стандарт 5S распространяется только на ярлыки и файлы, созданные самими сотрудниками. На рабочем столе должны быть только ярлыки, не более 10 шт.",
 				"bannerStart": {
 					"src": "pages/chapter02/page10/img/bg_dirty.svg",
@@ -470,6 +484,9 @@ var courseStructure = {
 			"location": "page14",
 			"type": "exercise",
 			"data": {
+				"attempts": 3,
+				"shuffle": true,
+				"showAnswer": true,
 				"bannerStart": {
 					"src": "pages/chapter02/page14/img/manufactory-dirty.svg",
 					"alt": "Цех без разметки"
@@ -479,25 +496,20 @@ var courseStructure = {
 					"alt": "Цех с разметкой"
 				},
 				"answerList": [{
-					"src": "pages/chapter02/page14/img/passage.svg",
-					"alt": "Проход",
-					"rightAnswer": 0
-				}, {
-					"src": "pages/chapter02/page14/img/pallet.svg",
-					"alt": "Паллет",
-					"rightAnswer": 1
-				}, {
-					"src": "pages/chapter02/page14/img/dumpster.svg",
-					"alt": "Мусорный контейнер",
-					"rightAnswer": 2
-				}, {
-					"src": "pages/chapter02/page14/img/defective-things-box.svg",
-					"alt": "Коробка с надписью «Брак»",
-					"rightAnswer": 3
-				}, {
-					"src": "pages/chapter02/page14/img/extinguisher.svg",
-					"alt": "Огнетушитель",
-					"rightAnswer": 4
+						"needCheckedAns": 0,
+						"checkedBlock": ""
+					}, {
+						"needCheckedAns": 1,
+						"checkedBlock": ""
+					}, {
+						"needCheckedAns": 2,
+						"checkedBlock": ""
+					}, {
+						"needCheckedAns": 3,
+						"checkedBlock": ""
+					}, {
+						"needCheckedAns": 4,
+						"checkedBlock": ""
 				}]
 			},
 			"messages": [
@@ -520,7 +532,8 @@ var courseStructure = {
 			"data": {
 				"attempts": 3,
 				"shuffle": true,
-				"showAnswer": true
+				"showAnswer": true,
+				"rangeCategory": true
 			},
 			"messages": [
 				"Вы справились с заданием! Все предметы на складе расположены в отведенных для них местах.",
@@ -552,23 +565,9 @@ var courseStructure = {
 			"location": "page20",
 			"type": "exercise",
 			"data": {
-				"taskText": "Представьте, что на вашем предприятии внедряется система 5S. Как вы будете готовиться к чистке? Перемещая этапы с помощью стрелок вверх или вниз, расположите их в правильном порядке.",
-				"answerList": [{
-					"variant": "Решим, что мы будем чистить.",
-					"section": "1"
-				}, {
-					"variant": "Распределим между собой обязанности по очистке.",
-					"section": "2"
-				}, {
-					"variant": "Определим, какие методы чистки применять.",
-					"section": "3"
-				}, {
-					"variant": "Подготовим инструменты и оборудование для чистки.",
-					"section": "4"
-				}, {
-					"variant": "Составим график чисток и будем следить за его выполнением.",
-					"section": "5"
-				}]
+				"attempts": 3,
+				"shuffle": true,
+				"showAnswer": true
 			},
 			"messages": [
 				"Совершенно верно! Это путь к чистке до блеска.",
@@ -625,7 +624,8 @@ var courseStructure = {
 			"type": "simple_page",
 			"messages": [""]
 		}]
-	}, {
+	},
+		{
 		"id": 3,
 		"title": "Описание деятельности подразделения",
 		"pages": [{
@@ -635,7 +635,8 @@ var courseStructure = {
 			"type": "simple_page",
 			"messages": [""]
 		}]
-	}, {
+	},
+		{
 		"id": 4,
 		"title": "KPI's",
 		"pages": [{
@@ -900,7 +901,8 @@ var courseStructure = {
 			"type": "simple_page",
 			"messages": [""]
 		}]
-	}, {
+	},
+		{
 		"id": 5,
 		"title": "Отчеты",
 		"pages": [{
@@ -1012,7 +1014,8 @@ var courseStructure = {
 			"type": "simple_page",
 			"messages": [""]
 		}]
-	}, {
+	},
+		{
 		"id": 6,
 		"title": "Эффективные совещания",
 		"pages": [{
@@ -1234,13 +1237,13 @@ var courseStructure = {
 				"questionList": [{
 					"question": "Что вы сделаете непосредственно в начале совещания?",
 					"variant": [{
-						"content": "Расскажу о целях и предполагаемых результатах совещания, а также распределю роли между участниками. ",
+						"content": "Расскажу о целях и предполагаемых результатах совещания, а также распределю роли между участниками.",
 						"rightAnswer": true
 					}, {
-						"content": "Попрошу каждого участника представиться и кратко рассказать о своей биографии, а также о своих впечатлениях от работы на предприятии.",
+						"content": "Попрошу каждого участника представиться и кратко рассказать о своей биографии.",
 						"rightAnswer": false
 					}, {
-						"content": "Выступлю с длинным докладом об истории предприятия, об успехах, достигнутых в предыдущие годы, и о стратегических целях.",
+						"content": "Выступлю с длинным докладом об истории предприятия и о стратегических целях.",
 						"rightAnswer": false
 					}]
 				}, {
@@ -1258,13 +1261,13 @@ var courseStructure = {
 				},{
 					"question": "Один из участников совещания начал агрессивно критиковать другого, обсуждая его личные качества. Ваши действия:",
 					"variant": [{
-						"content": "Попрошу агрессивного участника быть конструктивнее и напомню, что согласно правилам совещания переход на личности недопустим. ",
+						"content": "Попрошу агрессивного участника быть конструктивнее и напомню, что согласно правилам совещания переход на личности недопустим",
 						"rightAnswer": true
 					}, {
-						"content": "Предложу участнику, который подвергся критике, высказать в ответ все, что он думает о своем оппоненте.",
+						"content": "Предложу участнику, который подвергся критике, ответить оппоненту.",
 						"rightAnswer": false
 					}, {
-						"content": "Попрошу обоих участников покинуть совещание для выяснения отношений в другом месте",
+						"content": "Попрошу обоих участников продолжить разговор в другом месте.",
 						"rightAnswer": false
 					}]
 				}, {
@@ -1359,8 +1362,8 @@ var courseStructure = {
 			"type": "simple_page",
 			"messages": [""]
 		}]
-	}, {
-		"id": 7,
+	},
+		{"id": 7,
 		"title": "Карты процессов",
 		"pages": [{
 			"id": 1,
@@ -1557,7 +1560,8 @@ var courseStructure = {
 			"type": "simple_page",
 			"messages": [""]
 		}]
-	}, {
+	},
+		{
 		"id": 8,
 		"title": "Создание и исполнение стандартов",
 		"pages": [{
@@ -1568,138 +1572,139 @@ var courseStructure = {
 			"messages": [""]
 		}, {
 			"id": 2,
-			"title": "Важность стандартизации процедур",
+			"title": "Что такое стандарты?",
 			"location": "page02",
 			"type": "simple_page",
 			"messages": [""]
 		}, {
 			"id": 3,
-			"title": "База для создания рабочих документов",
+			"title": "Почему важно стандартизировать процедуры? ",
 			"location": "page03",
 			"type": "simple_page",
 			"messages": [""]
 		}, {
 			"id": 4,
-			"title": "Создание упорядоченной системы управления документами",
+			"title": "База для создания рабочих документови",
 			"location": "page04",
 			"type": "simple_page",
 			"messages": [""]
 		}, {
 			"id": 5,
-			"title": "Жизненный цикл документа",
+			"title": "Создание упорядоченной системы управления документами",
 			"location": "page05",
 			"type": "simple_page",
 			"messages": [""]
 		}, {
 			"id": 6,
-			"title": "5 правил оформления документов",
+			"title": "Жизненный цикл документа",
 			"location": "page06",
 			"type": "simple_page",
 			"messages": [""]
 		}, {
 			"id": 7,
-			"title": "Что такое SOP?",
+			"title": "Пять правил оформления документов",
 			"location": "page07",
 			"type": "simple_page",
 			"messages": [""]
 		}, {
 			"id": 8,
-			"title": "Концепция критической задачи",
+			"title": "Что такое SOP?",
 			"location": "page08",
 			"type": "simple_page",
 			"messages": [""]
 		}, {
 			"id": 9,
-			"title": "Наглядность оформления SOP",
+			"title": "Концепция критической задачи",
 			"location": "page09",
 			"type": "simple_page",
 			"messages": [""]
 		}, {
 			"id": 10,
-			"title": "Разработка SOPs на заводах и в операционной компании",
+			"title": "Наглядность оформления SOP",
 			"location": "page10",
 			"type": "simple_page",
 			"messages": [""]
 		}, {
 			"id": 11,
-			"title": "Типичные ошибки при создании SOPs",
+			"title": "Разработка SOPs на заводах и в операционной компании",
 			"location": "page11",
 			"type": "simple_page",
 			"messages": [""]
 		}, {
 			"id": 12,
-			"title": "Шаблон SOP",
+			"title": "Типичные ошибки при создании SOPs",
 			"location": "page12",
 			"type": "simple_page",
 			"messages": [""]
-		}, {
+		},{
 			"id": 13,
-			"title": "Матрица применимости SOPs ",
+			"title": "Шаблон SOP",
 			"location": "page13",
 			"type": "simple_page",
 			"messages": [""]
-		}, {
+		},   {
 			"id": 14,
-			"title": "Диагностика операционной работы (OWD)",
+			"title": "Матрица применимости SOPs ",
 			"location": "page14",
 			"type": "simple_page",
 			"messages": [""]
 		}, {
-			"id": 1,
-			"title": "",
-			"location": "page01",
-			"type": "simple_page",
-			"messages": [""]
-		}, {
 			"id": 15,
-			"title": "Шаблон OWD",
+			"title": "Диагностика операционной работы (OWD)",
 			"location": "page15",
 			"type": "simple_page",
 			"messages": [""]
-		}, {
+		},  {
 			"id": 16,
-			"title": "Что такое SWI?",
-			"location": "page016",
+			"title": "Шаблон OWD",
+			"location": "page16",
 			"type": "simple_page",
 			"messages": [""]
 		}, {
 			"id": 17,
-			"title": "Что такое OPL?",
-			"location": "page17",
+			"title": "Что такое SWI?",
+			"location": "page017",
 			"type": "simple_page",
 			"messages": [""]
 		}, {
 			"id": 18,
-			"title": "Последовательность шагов по внедрению стандартов",
+			"title": "Что такое OPL?",
 			"location": "page18",
 			"type": "simple_page",
 			"messages": [""]
 		}, {
 			"id": 19,
-			"title": "Упражнение «Шаги жизненного цикла документа»",
+			"title": "Последовательность шагов по внедрению стандартов",
 			"location": "page19",
-			"type": "exercise",
+			"type": "simple_page",
 			"messages": [""]
 		}, {
 			"id": 20,
-			"title": "Упражнение  «Определение вида стандарта» ",
+			"title": "Упражнение «Шаги жизненного цикла документа»",
 			"location": "page20",
 			"type": "exercise",
 			"messages": [""]
 		}, {
 			"id": 21,
-			"title": "Упражнение-кейс «Найдите ошибки при составлении SOP»",
+			"title": "Упражнение  «Определение вида стандарта» ",
 			"location": "page21",
 			"type": "exercise",
 			"messages": [""]
 		}, {
 			"id": 22,
-			"title": "Заключение",
+			"title": "Упражнение-кейс «Найдите ошибки при составлении SOP»",
 			"location": "page22",
+			"type": "exercise",
+			"messages": [""]
+		}, {
+			"id": 23,
+			"title": "Заключение",
+			"location": "page23",
 			"type": "simple_page",
 			"messages": [""]
 		}]
-	}, {
+	},
+		{
 		"id": 9,
 		"title": "",
 		"pages": [{
@@ -1709,7 +1714,8 @@ var courseStructure = {
 			"type": "simple_page",
 			"messages": [""]
 		}]
-	}, {
+	},
+		{
 		"id": 10,
 		"title": "",
 		"pages": [{
@@ -1719,7 +1725,8 @@ var courseStructure = {
 			"type": "simple_page",
 			"messages": [""]
 		}]
-	}, {
+	},
+		{
 		"id": 11,
 		"title": "",
 		"pages": [{
@@ -1729,7 +1736,8 @@ var courseStructure = {
 			"type": "simple_page",
 			"messages": [""]
 		}]
-	}, {
+	},
+		{
 		"id": 12,
 		"title": "",
 		"pages": [{
@@ -1739,7 +1747,8 @@ var courseStructure = {
 			"type": "simple_page",
 			"messages": [""]
 		}]
-	}, {
+	},
+		{
 		"id": 13,
 		"title": "",
 		"pages": [{
@@ -1749,7 +1758,8 @@ var courseStructure = {
 			"type": "simple_page",
 			"messages": [""]
 		}]
-	}, {
+	},
+		{
 		"id": 14,
 		"title": "",
 		"pages": [{

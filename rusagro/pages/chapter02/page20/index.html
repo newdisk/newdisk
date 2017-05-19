@@ -1,4 +1,35 @@
-<div class="page-container">
-	<task-ranging-text></task-ranging-text>
+<div class="page-container" ng-controller="TaskRangingSortCtrl as $ctrl">
+	<p class="text ng-binding">Представьте, что на вашем предприятии внедряется система 5S. Как вы будете готовиться к чистке? Перемещая этапы с помощью стрелок вверх или вниз, расположите их в правильном порядке.</p>
+	<div class="ranging-blocks ranging-blocks_text sort-wrapper">
+	  <div class="ranging-blocks__wrapper">
+	    <div class="ranging-blocks__block-wrapper sort">
+	    	<div class="ranging-blocks__item ranging-blocks__item_text ranging-blocks__row  sort__content">
+	        Составим график чисток и будем следить за его выполнением.
+	      </div>
+	      <div class="ranging-blocks__item ranging-blocks__item_text ranging-blocks__row  sort__content">
+	        Определим, какие методы чистки применять.
+	      </div>
+	      <div class="ranging-blocks__item ranging-blocks__item_text ranging-blocks__row  sort__content">
+	        Решим, что мы будем чистить.
+	      </div>
+	      <div class="ranging-blocks__item ranging-blocks__item_text ranging-blocks__row  sort__content">
+	        Распределим между собой обязанности по очистке.
+	      </div>
+	      <div class="ranging-blocks__item ranging-blocks__item_text ranging-blocks__row  sort__content">
+	        Подготовим инструменты и оборудование для чистки.
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<div class="btn-box">
+	<button class="btn btn_restart"
+          ng-class="{'btn_disabled': $ctrl.getBtnState().restart}" 
+          ng-click="$ctrl.removeRestart()">Начать заново
+  </button>
+	<button class="btn btn_answer" 
+          ng-class="{'btn_disabled': $ctrl.getBtnState().answer}" 
+          ng-click="$ctrl.checkAnswer()">Принять ответ
+  </button>
+</div>
 </div>
 
