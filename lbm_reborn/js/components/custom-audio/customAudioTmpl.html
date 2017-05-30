@@ -1,4 +1,4 @@
-<div class="audio">
+<div class="audio" ng-class="{'no-audio': $ctrl.hassound == 'false'}">
   <button class="btn btn_audio-play" ng-click="$ctrl.changePlayPause()">
     <svg width="24" height="24">
       <use xlink:href="{{$ctrl.play}}"></use>
@@ -6,7 +6,7 @@
   </button>
   <input class="audio__seek-slider" type="range" name="seekPos" min="0" max="100" value="0" step="1" ng-model="$ctrl.seekPos" ng-change="$ctrl.changeSeekPos()">
   <span class="audio__time-display">
-    <span class="audio__current-time">{{$ctrl.curTime}}</span> / 
+    <span class="audio__current-time">{{$ctrl.curTime}}</span>
     <span class="audio__full-time">{{$ctrl.durTime}}</span>
   </span> 
   <button class="btn btn_audio-mute" ng-click="$ctrl.changeMuteState()">

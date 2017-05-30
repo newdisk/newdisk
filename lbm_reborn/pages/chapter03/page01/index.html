@@ -1,5 +1,10 @@
 <div class="page-container page-01-03" ng-controller="HeaderCtrl as $ctrl">
-  <img class="page-01-03_manager" src="img/manager.png" alt="Легко ли быть менеджером?">
+  <svg viewBox="0 0 28 28"
+       height="635"
+       class="page-01-03_fon-svg">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" 
+         xlink:href="#fon">
+    </use>
   <div class="intro-text">
     <div class="intro-text_chapter">{{$ctrl.title.chapter}}</div>
     <div class="intro-text_subchapter">
@@ -9,6 +14,14 @@
     </div>
   </div>
   <div class="page-logo">
-    <img src="img/logo.svg" width="380" alt="Легко ли быть менеджером?">
+    <!-- <img src="img/logo.svg" width="380" alt="Легко ли быть менеджером?"> -->
+    <svg viewBox="0 0 380 140" 
+         width="380" 
+         height="140"
+         class="page-01-03_logo-svg">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" 
+           xlink:href="#logo">
+      </use>
+    </svg>
   </div>
 </div>

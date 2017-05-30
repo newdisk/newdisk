@@ -1,8 +1,16 @@
 <p class="page_paragraph">{{$ctrl.taskText}}</p>
 <div class="task__marker-choice-body">
   <div class="task__marker-choice_video" ng-if="$ctrl.useVideo">
+    
     <button class="btn btn_task-video"
             ng-click="$ctrl.showVideo()">
+      <svg viewBox="0 0 100 90"
+         height="100%"
+         class="video-svg">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" 
+           xlink:href="#video">
+      </use>
+    </svg>
       <svg viewBox="0 0 100 100">
         <use xmlns:xlink="http://www.w3.org/1999/xlink" 
              xlink:href="#play_video">
@@ -24,10 +32,27 @@
   <div class="marker-box">
     <button class="btn btn_task-marker btn_task-marker__green"
             ng-click="$ctrl.selectMarker(1)"
-            ng-class="{'selected': $ctrl.marker == 1}"></button>
+            ng-class="{'selected': $ctrl.marker == 1}">
+              
+    </button>
+    <svg viewBox="0 0 130 90"
+                   height="90"
+                   class="marker__green-svg">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" 
+                     xlink:href="#marker-green">
+                </use>
+              </svg>
     <button class="btn btn_task-marker btn_task-marker__red"
             ng-click="$ctrl.selectMarker(0)"
-            ng-class="{'selected': $ctrl.marker == 0}"></button>
+            ng-class="{'selected': $ctrl.marker == 0}">
+              <svg viewBox="0 0 130 90"
+                   height="90"
+                   class="marker__red-svg">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" 
+                     xlink:href="#marker-red">
+                </use>
+              </svg>
+    </button>
   </div>
 </div>
 <div class="btn-box">

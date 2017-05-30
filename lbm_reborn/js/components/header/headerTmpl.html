@@ -56,7 +56,7 @@
     <p class="modal_nav-menu_head">Меню курса</p>
     <ul class="modal_nav-menu_list">
       <li ng-repeat="chapter in $ctrl.chapters" class="menu_list__chapter-item">
-        <div class="modal_nav-menu_chapter">{{ chapter.title }}</div>
+        <div class="modal_nav-menu_chapter">{{ chapter.description }}</div>
         <ul ng-if="chapter.pages" class="modal_nav-menu_list__pages">
           <li ng-repeat="page in chapter.pages"
               ng-init="num = $ctrl.countPages()"
@@ -85,7 +85,8 @@
     <p class="modal_nav-stats_head">Статитсика</p>
     <div class="modal_nav-stats_total">Выполнено упражнений: {{$ctrl.countDoneExs()}} из {{$ctrl.countExs()}}</div>
     <div ng-repeat="item in $ctrl.getExs()" class="modal_nav-stats__item">
-          {{item.title}} {{item.score}}
+          <div class="nav-stats__item_name">{{item.title}}</div>
+          <div class="nav-stats__item_score">Баллы: {{item.score}}</div>
           <svg viewBox="0 0 28 28" 
                width="16" 
                height="16" 
@@ -144,6 +145,20 @@
   </div>
   <!-- video modal -->
   <div class="modal modal_video" ng-show="$ctrl.getModalState(5)">
+    <div class="modal_video__head">
+      <button class="btn close-modal-btn"
+            ng-click="$ctrl.closeModals()">
+      <svg viewBox="0 0 40 40" 
+           width="40" 
+           height="40" 
+           fill="#e50000">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" 
+             xlink:href="#cross_exercise">
+        </use>
+      </svg>
+    </button>
+    </div>
+    <div class="modal_video__body"></div>
     <!-- <video class="video-js vjs-default-skin" controls preload="auto" vjs-video vjs-media="$ctrl.videoData">
     </video> -->
   </div>
