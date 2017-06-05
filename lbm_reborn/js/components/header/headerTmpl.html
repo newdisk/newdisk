@@ -82,7 +82,7 @@
         </use>
       </svg>
     </button>
-    <p class="modal_nav-stats_head">Статитсика</p>
+    <p class="modal_nav-stats_head">Статистика</p>
     <div class="modal_nav-stats_total">Выполнено упражнений: {{$ctrl.countDoneExs()}} из {{$ctrl.countExs()}}</div>
     <div ng-repeat="item in $ctrl.getExs()" class="modal_nav-stats__item">
           <div class="nav-stats__item_name">{{item.title}}</div>
@@ -118,7 +118,31 @@
   </div>
   <!-- about -->
   <div class="modal modal_nav-about" ng-show="$ctrl.getModalState(2)">
-    <p>Об авторах</p>
+    <button class="btn close-modal-btn"
+            ng-click="$ctrl.closeModals()">
+      <svg viewBox="0 0 40 40" 
+           width="40" 
+           height="40" 
+           fill="#e50000">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" 
+             xlink:href="#cross_exercise">
+        </use>
+      </svg>
+    </button>
+    <p class="about-head">Об авторах</p>
+    <div class="about-author about-author1">
+      <p>© ЗАО <strong>«Тренинг Медиа»</strong>, 2005 - 2017.  Все права защищены. Текстовые материалы тренинга и видеосюжеты предоставлены компанией «Тренинг Медиа».</p>
+      <p><a href="http://tmedia.ru" target="_blank">tmedia.ru</a></p>
+      <p>По вопросам продаж обращаться по телефону: +7 (495) 979-24-33.</p>
+    </div>
+    <div class="about-author about-author2">
+      <p>© ЗАО <strong>«Новый Диск»</strong>, 2005 - 2017.  Все права защищены. Дизайн, интерактив и мультимедиа решения разработаны компанией <strong>«Новый Диск»</strong>.</p>
+      <p><a href="http://e-learning.nd.ru" target="_blank">e-learning.nd.ru</a></p>
+      <p>По вопросам продаж и разработки программ для корпоративного обучения обращаться по телефону:  +7 (495) 785-65-14.</p>
+    </div>
+    <div class="about-author about-author3">
+      <p>Данный курс был разработан с использованием опыта системного корпоративного обучения компании <strong>«MTI»</strong> (Management Training International).</p>
+    </div>
   </div>
   <!-- help -->
   <div class="modal modal_nav-help" ng-show="$ctrl.getModalState(3)">
