@@ -52,7 +52,7 @@
   </div>
   <!-- modal windows  -->
   <!-- menu -->
-  <div class="modal modal_nav-menu" ng-show="$ctrl.getModalState(0)">
+  <div class="modal modal_nav-menu" ng-class="{'menu-slide-in': $ctrl.getModalState(0)}" ng-show="$ctrl.getModalState(0)">
     <p class="modal_nav-menu_head">Меню курса</p>
     <ul class="modal_nav-menu_list">
       <li ng-repeat="chapter in $ctrl.chapters" class="menu_list__chapter-item">
@@ -84,7 +84,9 @@
     </button>
     <p class="modal_nav-stats_head">Статистика</p>
     <div class="modal_nav-stats_total">Выполнено упражнений: {{$ctrl.countDoneExs()}} из {{$ctrl.countExs()}}</div>
-    <div ng-repeat="item in $ctrl.getExs()" class="modal_nav-stats__item">
+    <div ng-repeat="item in $ctrl.getExs()" 
+          class="modal_nav-stats__item" 
+          ng-click="$ctrl.goFromMenu({page_id:item.page_id+1}, {chapter_id:item.chapter_id+1})">
           <div class="nav-stats__item_name">{{item.title}}</div>
           <div class="nav-stats__item_score">Баллы: {{item.score}}</div>
           <svg viewBox="0 0 28 28" 
