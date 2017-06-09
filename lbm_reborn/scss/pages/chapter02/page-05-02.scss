@@ -1,0 +1,35 @@
+.page-05-02 {
+  overflow: auto;
+
+  strong {
+    color: $first-color;
+  }
+  
+  .page_paragraph {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 25px;
+  }
+  .page-block-columns {
+    display: flex;
+    margin-bottom: 20px;
+    margin-right: -20px;
+  }
+  .page-block-columns_col {
+    width: 33%;
+    padding-right: 20px;
+    margin-right: 20px;
+    border-right: 7px solid $elem-bg-color;
+  
+    img {
+      width: 100%;
+    }
+    &:last-child {
+      margin-right: 0;
+      border: none;
+    }
+  }
+}
+
+@media #{$tablet} {}
+@media #{$mobile} {}

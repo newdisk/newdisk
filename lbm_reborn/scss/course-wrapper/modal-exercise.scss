@@ -1,0 +1,27 @@
+.modal_nav-ex {
+  top: 60px;
+  left: calc(50% - 380px);
+  width: 760px;
+  height: 300px;
+  background: #fff;
+  box-shadow: 4px 4px 4px rgba(100,100,100, 0.8);
+  z-index: 4;
+  overflow: auto;
+  font-family: Arial;
+  font-size: 18px;
+
+  .modal_head {
+    padding: 0 20px;
+  }
+  .modal_body {
+    padding: 0 20px;
+  }
+}
+
+@media #{$tablet} {
+  .modal_nav-ex {
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 59px - 58px);
+  }
+}

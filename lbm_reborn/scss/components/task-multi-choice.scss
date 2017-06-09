@@ -1,0 +1,41 @@
+.task__multi-choice-item {
+  cursor: pointer;
+}
+.task__multi-choice-question {
+  position: relative;
+  margin-bottom: 15px;
+  margin-left: 35px;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -35px;
+    width: 22px;
+    height: 22px;
+    border: 2px solid $first-color;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: background .2s;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: -31px;
+    width: 16px;
+    height: 10px;
+    border-color: transparent;
+    border-style: solid;
+    transform: rotate(-42deg);
+    box-sizing: border-box;
+  }
+  &.radio-selected:before {
+    background: $first-color;
+  }
+  &.radio-selected:after {
+    border-bottom-color: #fff;
+    border-left-color: #fff;
+    animation: select-checkbox .4s;
+  }
+}
+  

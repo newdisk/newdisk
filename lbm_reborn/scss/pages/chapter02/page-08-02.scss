@@ -1,0 +1,44 @@
+.page-08-02 {
+  background: url(../img/11.jpg) no-repeat;
+  background-size: cover;
+
+  .page-block-text {}
+
+  .page-columns {
+    margin-top: 180px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .page-column {
+    padding: 20px;
+    flex-basis: 32%;
+    box-sizing: border-box;
+    background: #fff;
+  }
+  .page-column_head {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  .page-column_list {
+    padding-left: 0;
+    margin-top: 10px;
+    margin-bottom: 0;
+    list-style: none;
+    color: $first-color;
+  }
+}
+
+@media #{$tablet} {
+  .page-08-02 {
+    
+    .page-columns {
+      margin-top: 10px;
+      flex-direction: column;
+    }
+    .page-column {
+      margin-bottom: 10px;
+    }
+    
+  } 
+}
+@media #{$mobile} {}

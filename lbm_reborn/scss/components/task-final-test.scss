@@ -1,0 +1,25 @@
+.page-final-test {
+  .test-q-num,
+  .test-task {
+    padding: 0 20px;
+    font-family: Arial;
+    font-size: 18px;
+  }
+  .test-q-num {
+    padding-top: 15px;
+  }
+  .text__hint {
+    font-size: 14px;
+  }
+  .btn-box__test {
+    margin-top: 60px;
+  }
+}
+
+@media #{$mobile} {
+  .page-final-test {
+    .btn-box__test {
+      margin-top: 20px;
+    }
+  }
+}

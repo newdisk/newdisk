@@ -1,0 +1,23 @@
+.page-04-04 {
+  .task__multi-choice-question:before {
+    width: 50px;
+    border-radius: 11px;
+  }
+  .task__multi-choice-question.radio-selected:before {
+    // background: #00FF40;
+  }
+  .task__multi-choice-question:after {
+    width: 18px;
+    height: 18px;
+    background: #104e99;
+    border: 1px solid #000;
+    border-radius: 50%;
+    transform: rotate(0deg);
+    transition: all .2s;
+  }
+  .task__multi-choice-question.radio-selected:after {
+    transform: translate(24px, 0);
+    border: 2px solid #eee;
+    animation: none;
+  }
+}

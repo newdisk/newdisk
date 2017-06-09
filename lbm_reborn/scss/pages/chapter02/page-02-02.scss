@@ -1,0 +1,42 @@
+.page-02-02 {
+  position: relative;
+  background: url(../img/5.jpg) no-repeat;
+  background-size: cover;
+
+  .page-block-text {
+    padding: 22px;
+    width: 390px;
+    background: rgba(255,255,255,0.8);
+    p {
+      margin: 0;
+    }
+  }
+  .page-block-text__info {
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    width: calc(100% - 40px);
+    height: 115px;
+    text-transform: uppercase;
+    color: #fff;
+    font-family: SegoeUIRegular;
+    font-size: 38px;
+    font-weight: bold;
+    background: rgba(0,0,0,0.3);
+
+    p {
+      margin: 0;
+      padding-left: 130px;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100px;
+      height: 115px;
+      background: url(../img/png_icons.png) no-repeat;
+      background-position: -130px -17px;
+    }
+  }
+}

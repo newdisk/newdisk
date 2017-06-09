@@ -1,0 +1,23 @@
+.page-03-02 {
+  background: url(../img/6_1.jpg) no-repeat;
+  background-size: cover;
+  
+  strong {
+    color: $first-color;
+  }
+  .page-block-text {
+    width: 475px;
+  }
+}
+@media #{$tablet} {
+  .page-03-02 {
+    .page-block-text {
+      width: calc(100% - 40px);
+    }
+  }
+}
+@media #{$mobile} {
+  .page-03-02 {
+    
+  }
+}

@@ -1,0 +1,35 @@
+$main-block-padding-side: 12px;
+
+$text-color: #000;
+
+$app-bg-color: #eee; /* background color outside pages */
+$main-theme-color: #fff; /* background color of all pages */
+
+/* Main colors of the theme */
+$first-color: #104e99; /* блуе */
+$second-color: #8db321; /* lime */
+$third-color: #f15e00; /* orange */
+$fourth-color: #FF0000; /* red */
+$fifth-color: #ED1C24; /* red */
+$sixth-color: #dddddd; /* grey */
+
+$chapter-color1: #59d2e2; /* intro */
+$chapter-color1-1: rgb(199,239,239); /* intro */
+$chapter-color2: #0080FF; /* golyboy */
+
+$green-text: rgb(102,207,176); /* бирюзовый */
+$main-title-color: #666; /* title text color in header */
+$dark-text-color: #000; /* simple text color on light blocks */
+$light-text-color: #fff; /* simple text color on dark blocks */
+
+$hover-color: #d1d3d4;
+$disable-color: #E1E2DE;
+
+$static-state-color: #666;
+$hover-state-color: #ccc;
+
+$elem-bg-color: #f1f1f1; /* lightgrey color for blocks and element panels */
+
+/* Media Queries */
+$tablet: "(max-width: 768px)";
+$mobile: "(max-width: 480px)";

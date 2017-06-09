@@ -1,0 +1,33 @@
+.modal_video {
+  top: 60px;
+  left: calc(50% - 380px);
+  width: 760px;
+  height: calc(100vh - 60px - 58px - 37px);
+  max-height: calc(756px - 60px - 58px);
+  background: #fff;
+  box-shadow: 4px 4px 4px rgba(100,100,100, 0.8);
+  z-index: 4;
+
+  .video-element {
+    width: 100%;
+    height: 100%;
+  }
+  .modal_video__head {
+    position: relative;
+  }
+  .modal_video__body {
+    height: 100%;
+  }
+  .close-modal-btn {
+    padding: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 1;
+  }
+}
+@media #{$tablet} {
+  .modal_video {
+    left: 0;
+    width: 100%;
+    height: 65vw;
+  }
+}
