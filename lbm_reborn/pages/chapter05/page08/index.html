@@ -1,4 +1,75 @@
-<div class="page-container page-08-05">
-  Задание 9
-  задание соответствие
+<div class="page-container page-08-05" ng-controller="TaskSequenceQuestCtrl as $ctrl">
+  <section class="page-head">
+    <p>Задание 9</p>
+  </section>
+  <p class="text text_page-08-05" ng-bind-html="$ctrl.taskData.taskText"></p>
+  <p class="text__hint">После выбора характеристики и вопроса нажмите кнопку «Проверить».</p>
+  <table class="table_page-08-05">
+  	<tr>
+  		<td class="table__cell_page-08-05">
+  			Формулировка
+  		</td>
+  		<td class="table__cell_page-08-05 table__cell_page-08-05_2">
+  			<div class="text_page-08-05_1"
+             ng-bind-html="item.initial" 
+		  		   ng-repeat="item in $ctrl.taskData.variant | filter: $ctrl.orderByQuest"></div>
+        <add-info class="table__toggler_page-08-05" data-heading="Формулировки">
+          <table class="table_page-08-05">
+            <tr ng-repeat="elem in $ctrl.taskData.variant | filter: $ctrl.getVariantList">
+              <td class="table__cell_page-08-05" ng-bind="$index + 1">
+              </td>
+              <td class="table__cell_page-08-05 table__cell_page-08-05_2">
+                <div ng-bind-html="elem.initial"></div>
+              </td>
+            </tr>
+          </table>
+        </add-info>
+  		</td>
+  	</tr>
+  </table>
+	<div class="flex-container"
+       ng-class="{'window-disabled': !$ctrl.btnDisabledState.restart || $ctrl.end}">
+		<div class="flex-container__item custom-block custom-block_page-08-05_0">
+			<p class="text">Выберите характеристику.</p>
+			<div class="custom-block__item_page-08-05_0" 
+					 ng-bind-html="character" 
+					 ng-class="{'custom-block__item_page-08-05_checked': $ctrl.userAnswer[$index].character === false || $ctrl.userAnswer[$index].character === true,
+           'custom-block__item_page-08-05_true': $ctrl.userAnswer[$index].character && $ctrl.show, 
+           'custom-block__item_page-08-05_false': $ctrl.userAnswer[$index].character === false && $ctrl.show}"
+					 ng-click="$ctrl.getAnswer('character', $index)"
+		  		 ng-repeat="character in $ctrl.characterList"></div>
+	  </div>
+	  <div class="flex-container__item custom-block custom-block_page-08-05_0">
+	  	<p class="text">Выберите вопрос.</p>
+		  <div class="custom-block__item_page-08-05_0" 
+					 ng-bind-html="question" 
+					 ng-class="{'custom-block__item_page-08-05_checked': $ctrl.userAnswer[$index].question === false || $ctrl.userAnswer[$index].question === true,
+           'custom-block__item_page-08-05_true': $ctrl.userAnswer[$index].question && $ctrl.show, 
+           'custom-block__item_page-08-05_false': $ctrl.userAnswer[$index].question === false && $ctrl.show}"
+					 ng-click="$ctrl.getAnswer('question', $index)"
+		  		 ng-repeat="question in $ctrl.questionList"></div>  		 	
+	  </div>		 
+	</div>
+  <table class="table_page-08-05">
+    <tr>
+      <td class="table__cell_page-08-05">
+        Цель
+      </td>
+      <td class="table__cell_page-08-05 table__cell_page-08-05_1">
+        <div ng-bind-html="item.final" 
+             ng-repeat="item in $ctrl.taskData.variant | filter: $ctrl.orderByQuest"></div>
+      </td>
+    </tr>
+  </table>
+	<div class="btn-box">
+    <button class="btn btn_restart"
+            ng-class="{'btn_disabled': $ctrl.btnDisabledState.restart}" 
+            ng-click="$ctrl.removeRestart()">Начать заново
+    </button>
+    <button class="btn btn_answer" 
+            ng-class="{'btn_disabled': $ctrl.btnDisabledState.answer}" 
+            ng-click="$ctrl.checkAnswer()"
+            ng-bind-html="$ctrl.show ? 'Далее': 'Проверить'">
+    </button>
+  </div>
 </div>

@@ -1,0 +1,42 @@
+<div class="task__multi-box-container">
+  <!-- multibox -->
+  <div class="box-table">
+    <div class="box-table__row box-table__head">
+      <div class="box-table__cell">Формулировка цели</div>
+      <div class="box-table__cell"><p class="text__rotate">Четкость</p></div>
+      <div class="box-table__cell"><p class="text__rotate">Измеримость</p></div>
+      <div class="box-table__cell"><p class="text__rotate">Ограниченность во времени</p></div>
+      <div class="box-table__cell"><p class="text__rotate">Достижимость</p></div>
+      <div class="box-table__cell"><p class="text__rotate">Мобилиз. фактор</p></div>
+      <div class="box-table__cell"><p class="text__rotate">Актуальность</p></div>
+      <div class="box-table__cell"><p class="text__rotate">Письменная формулировка</p></div>
+    </div>
+    <div class="box-table__row">
+      <div class="box-table__cell">Четко соблюдать график поставок</div>
+      <div class="box-table__cell">
+        <div class="box-table__cell_checker" 
+            ng-click="$ctrl.selectAnswer(0,0)"
+            ng-class="{'cheker__selected': $ctrl.active[0][0] == 1 }"></div>
+        </div>
+      <div class="box-table__cell"><div class="box-table__cell_checker" ng-click="$ctrl.selectAnswer(1,0)" ng-class="{'cheker__selected': $ctrl.active[0][1] == 1 }"></div></div>
+      <div class="box-table__cell"><div class="box-table__cell_checker" ng-click="$ctrl.selectAnswer(2,0)" ng-class="{'cheker__selected': $ctrl.active[0][2] == 1 }"></div></div>
+      <div class="box-table__cell"><div class="box-table__cell_checker" ng-click="$ctrl.selectAnswer(3,0)" ng-class="{'cheker__selected': $ctrl.active[0][3] == 1 }"></div></div>
+      <div class="box-table__cell"><div class="box-table__cell_checker" ng-click="$ctrl.selectAnswer(4,0)" ng-class="{'cheker__selected': $ctrl.active[0][4] == 1 }"></div></div>
+      <div class="box-table__cell"><div class="box-table__cell_checker" ng-click="$ctrl.selectAnswer(5,0)" ng-class="{'cheker__selected': $ctrl.active[0][5] == 1 }"></div></div>
+      <div class="box-table__cell"><div class="box-table__cell_checker" ng-click="$ctrl.selectAnswer(6,0)" ng-class="{'cheker__selected': $ctrl.active[0][6] == 1 }"></div></div>
+    </div>
+    <div class="box-table__row">
+      <div class="box-table__cell">Организовать обучение компьютерной грамотности всех, кто в этом нуждается.</div>
+      <div class="box-table__cell"><div class="box-table__cell_checker" ng-click="$ctrl.selectAnswer(0,1)" ng-class="{'cheker__selected': $ctrl.active[1][0] == 1 }"></div></div>
+      <div class="box-table__cell"><div class="box-table__cell_checker" ng-click="$ctrl.selectAnswer(1,1)" ng-class="{'cheker__selected': $ctrl.active[1][1] == 1 }"></div></div>
+      <div class="box-table__cell"><div class="box-table__cell_checker" ng-click="$ctrl.selectAnswer(2,1)" ng-class="{'cheker__selected': $ctrl.active[1][2] == 1 }"></div></div>
+      <div class="box-table__cell"><div class="box-table__cell_checker" ng-click="$ctrl.selectAnswer(3,1)" ng-class="{'cheker__selected': $ctrl.active[1][3] == 1 }"></div></div>
+      <div class="box-table__cell"><div class="box-table__cell_checker" ng-click="$ctrl.selectAnswer(4,1)" ng-class="{'cheker__selected': $ctrl.active[1][4] == 1 }"></div></div>
+      <div class="box-table__cell"><div class="box-table__cell_checker" ng-click="$ctrl.selectAnswer(5,1)" ng-class="{'cheker__selected': $ctrl.active[1][5] == 1 }"></div></div>
+      <div class="box-table__cell"><div class="box-table__cell_checker" ng-click="$ctrl.selectAnswer(6,1)" ng-class="{'cheker__selected': $ctrl.active[1][6] == 1 }"></div></div>
+    </div>
+</div>
+<div class="btn-box" ng-if="!$ctrl.test">
+  <button class="btn btn_restart" ng-click="$ctrl.removeRestart()">Начать заново</button>
+  <button class="btn btn_answer" ng-class="{'btn_disabled': $ctrl.state == 0 || $ctrl.state == 2}" ng-click="$ctrl.checkAnswer($event)">Принять ответ</button>
+</div>

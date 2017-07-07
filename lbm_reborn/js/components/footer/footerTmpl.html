@@ -1,26 +1,16 @@
 <footer class="footer">
-  <div class="footer_audio-box">
+  <!-- <div class="footer_audio-box">
     <custom-audio chapter="{{$ctrl.chapterLocation}}" page="{{$ctrl.pageLocation}}" hassound="{{$ctrl.pageHasSound}}"></custom-audio>
-  </div>
+  </div> -->
   <div class="footer_btn-box">
     <button class="btn btn_nav btn_nav-back"
-            ng-class="{'btn_nav-back-disabled': $ctrl.bookmark.page  === '1'}"
+            ng-class="{'btn_nav-back-disabled': $ctrl.bookmark.page  == '1'}"
             ng-click="$ctrl.toBack()"><!-- ← zurück -->
-      <svg viewBox="0 0 104 40">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" 
-             xlink:href="#btn_nav-back">
-        </use>
-      </svg>
     </button>
     <div class="paginator">99 / 99</div>
     <button class="btn btn_nav btn_nav-forward"
-            ng-class="{'btn_nav-forward-disabled': $ctrl.bookmark === '-1'}"
+            ng-class="{'btn_nav-forward-disabled': $ctrl.bookmark.page == $ctrl.pageAmountTotal}"
             ng-click="$ctrl.toForward()"><!-- vorwärts → -->
-      <svg viewBox="0 0 104 40">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" 
-             xlink:href="#btn_nav-forward">
-        </use>
-      </svg>
     </button>
   </div>
 

@@ -1,0 +1,42 @@
+<p class="text__hint">Выберите один вариант ответа на каждый вопрос.</p>
+
+<section class="task-set task-many-single-choice">
+  <p class="text">Какой вариант использовал Николай при принятии решения о премировании?</p>
+  <div class="task">
+    <div class="task__single-choice-body">
+      <div class="task__single-choice-item" 
+          ng-init="parentIndex = 0"
+          ng-repeat="question in $ctrl.rightArray"
+          ng-click="$ctrl.selectAnswer(parentIndex, $index)">
+        <div class="task__single-choice-question task-question" 
+            ng-class="{'radio-selected': $ctrl.active[parentIndex][$index].selected}">
+          {{question.label}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="text">Какой вариант он должен был бы использовать в данной ситуации?</p>
+  <div class="task">
+    <div class="task__single-choice-body">
+      <div class="task__single-choice-item"  
+          ng-init="parentIndex = 1"
+          ng-repeat="question in $ctrl.rightArray"
+          ng-click="$ctrl.selectAnswer(parentIndex, $index)">
+        <div class="task__single-choice-question task-question" 
+            ng-class="{'radio-selected': $ctrl.active[parentIndex][$index].selected}">
+          {{question.label}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+<div class="btn-box" ng-if="!$ctrl.test">
+  <button class="btn btn_restart" ng-click="$ctrl.removeRestart()">Начать заново</button>
+  <button class="btn btn_answer" ng-class="{'btn_disabled': $ctrl.state == 0 || $ctrl.state == 2}" ng-click="$ctrl.checkAnswer($event)">Принять ответ</button>
+</div>
+
+<!-- 
+            "taskText": "Какой вариант он должен был бы использовать в данной ситуации?"
+          } -->

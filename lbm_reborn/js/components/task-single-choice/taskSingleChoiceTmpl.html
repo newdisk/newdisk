@@ -1,6 +1,6 @@
 <p class="text">{{$ctrl.taskText}}</p>
-<p class="text__hint">Выберите одно верное утверждение.</p>
-<div class="tsak__single-choice-body">
+<p class="text__hint">Выберите один вариант ответа.</p>
+<div class="task__single-choice-body">
   <div class="task__single-choice-item" 
       ng-repeat="question in $ctrl.questionList"  
       ng-click="$ctrl.selectAnswer($index)">

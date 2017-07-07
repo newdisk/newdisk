@@ -1,48 +1,24 @@
 <header class="header">
-  <button class="btn btn_close-course"
+  
+  <button class="btn btn_nav-help"
+        ng-click="$ctrl.toggleModal('about')"><!-- помощь -->
+      </button>
+      <button class="btn btn_close-course"
           ng-click="$ctrl.closeCourse()">
-    <svg viewBox="0 0 22 22" 
-         width="22" 
-         height="22" 
-         fill="#e50000">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" 
-           xlink:href="#cross_exercise">
-      </use>
-    </svg>
   </button>
   <div class="header__content">
     <div class="header__btns">
       <button class="btn btn_nav btn_nav-menu"
-              ng-click="$ctrl.toggleMenu()"><!-- меню курса -->
-        <svg viewBox="0 0 60 50" width="60" height="50">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" 
-               xlink:href="#menu">
-          </use>
-        </svg>
+              ng-click="$ctrl.toggleModal('menu')"><!-- меню курса -->
       </button>
+      <button class="btn btn_nav btn_nav-note"
+              ng-click="$ctrl.toggleModal('notes')"><!-- записная книжка -->
+      </button>
+      <!-- <button class="btn btn_nav btn_nav-about"
+              ng-click="$ctrl.toggleAbout()"> об авторах 
+      </button> -->
       <button class="btn btn_nav btn_nav-stat"
-              ng-click="$ctrl.toggleStat()"><!-- статистика -->
-        <svg viewBox="0 0 60 50" width="60" height="50">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" 
-               xlink:href="#statistika2">
-          </use>
-        </svg>
-      </button>
-      <button class="btn btn_nav btn_nav-about"
-            ng-click="$ctrl.toggleAbout()"><!-- об авторах -->
-        <svg viewBox="0 0 60 50" width="60" height="50">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" 
-               xlink:href="#glossary2">
-          </use>
-        </svg>
-      </button>
-      <button class="btn btn_nav btn_nav-help"
-        ng-click="$ctrl.toggleHelp()"><!-- помощь -->
-        <svg viewBox="0 0 60 50" width="60" height="50">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" 
-               xlink:href="#vopros">
-          </use>
-        </svg>
+              ng-click="$ctrl.toggleModal('stats')"><!-- статистика -->
       </button>
     </div>
     <div class="header__title">
@@ -52,140 +28,198 @@
   </div>
   <!-- modal windows  -->
   <!-- menu -->
-  <div class="modal modal_nav-menu" ng-class="{'menu-slide-in': $ctrl.getModalState(0)}" ng-show="$ctrl.getModalState(0)">
+  <div class="modal modal_nav-menu" ng-class="{'menu-slide-in': $ctrl.getModalState('menu')}" ng-show="$ctrl.getModalState('menu')">
     <p class="modal_nav-menu_head">Меню курса</p>
     <ul class="modal_nav-menu_list">
       <li ng-repeat="chapter in $ctrl.chapters" class="menu_list__chapter-item">
-        <div class="modal_nav-menu_chapter">{{ chapter.description }}</div>
+        <div class="modal_nav-menu_chapter"><p>{{ chapter.description }}</p></div>
         <ul ng-if="chapter.pages" class="modal_nav-menu_list__pages">
           <li ng-repeat="page in chapter.pages"
               ng-init="num = $ctrl.countPages()"
               ng-click="$ctrl.goFromMenu(page, chapter)"
               class="menu_list__page-item"
               ng-class="{'current': num == $ctrl.getCurrent()}">
-            {{num}}. {{ page.title }}
+            <p>{{num}}. {{ page.title }}</p>
           </li>
         </ul>
       </li>
     </ul>
   </div>
   <!-- stats -->
-  <div class="modal modal_nav-stats" ng-show="$ctrl.getModalState(1)">
-    <button class="btn close-modal-btn"
-            ng-click="$ctrl.closeModals()">
-      <svg viewBox="0 0 40 40" 
-           width="40" 
-           height="40" 
-           fill="#e50000">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" 
-             xlink:href="#cross_exercise">
-        </use>
-      </svg>
-    </button>
-    <p class="modal_nav-stats_head">Статистика</p>
-    <div class="modal_nav-stats_total">Выполнено упражнений: {{$ctrl.countDoneExs()}} из {{$ctrl.countExs()}}</div>
-    <div ng-repeat="item in $ctrl.getExs()" 
-          class="modal_nav-stats__item" 
-          ng-click="$ctrl.goFromMenu({page_id:item.page_id+1}, {chapter_id:item.chapter_id+1})">
-          <div class="nav-stats__item_name">{{item.title}}</div>
-          <div class="nav-stats__item_score">Баллы: {{item.score}}</div>
-          <svg viewBox="0 0 28 28" 
-               width="16" 
-               height="16" 
-               fill="#989898"
-               ng-show="item.status === -1">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" 
-                 xlink:href="#minus">
-            </use>
-          </svg>
-          <svg viewBox="0 0 28 28" 
-               width="16" 
-               height="16" 
-               fill="#007300"
-               ng-show="item.status === 1">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" 
-                 xlink:href="#check">
-            </use>
-          </svg>
-          <svg viewBox="0 0 28 28" 
-               width="16" 
-               height="16" 
-               fill="#e50000"
-               ng-show="item.status === 0">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" 
-                 xlink:href="#cross_exercise">
-            </use>
-          </svg>
+  <div class="modal modal_nav-stats" 
+       ng-show="$ctrl.getModalState('stats')">
+    <div class="modal__container">
+      <div class="modal__title-container">
+        <p class="modal__title">Статистика</p>
+        <button class="btn btn_close-modal"
+                ng-click="$ctrl.closeModals()">
+        </button>
+      </div>
+      <div>
+        <div class="modal_nav-stats_total">Выполнено упражнений: {{$ctrl.countDoneExs()}} из {{$ctrl.countExs()}}</div>
+        <div class="modal_nav-stats__list">
+          <div ng-repeat="item in $ctrl.getExs()" 
+            class="modal_nav-stats__item" 
+            ng-click="$ctrl.goFromMenu({page_id:item.page_id+1}, {chapter_id:item.chapter_id+1})">
+            <div class="nav-stats__item_name">{{item.title}}</div>
+            <div class="nav-stats__item_score">Баллы: {{item.score}}</div>
+            <svg viewBox="0 0 28 28" 
+                 width="16" 
+                 height="16" 
+                 fill="#989898"
+                 ng-show="item.status === -1">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" 
+                   xlink:href="#minus">
+              </use>
+            </svg>
+            <svg viewBox="0 0 28 28" 
+                 width="16" 
+                 height="16" 
+                 fill="#007300"
+                 ng-show="item.status === 1">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" 
+                   xlink:href="#check">
+              </use>
+            </svg>
+            <svg viewBox="0 0 28 28" 
+                 width="16" 
+                 height="16" 
+                 fill="#e50000"
+                 ng-show="item.status === 0">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" 
+                   xlink:href="#cross_exercise">
+              </use>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- notes -->
+  <div class="modal modal_nav-notes" 
+       ng-show="$ctrl.getModalState('notes')">
+    <div class="modal__container">
+      <div class="modal__title-container">
+        <p class="modal__title">Записная книжка</p>
+        <button class="btn btn_close-modal"
+                ng-click="$ctrl.closeModals()">
+        </button>
+      </div>
+      <div class="modal_nav-notes_body">
+        <div ng-repeat="item in $ctrl.getNotes()"
+              ng-click="$ctrl.goFromMenu({page_id:item.page_id+1}, {chapter_id:item.chapter_id+1})"
+              class="modal_nav-notes_body_item">
+          {{item.title}}
+        </div>
+      </div>
     </div>
   </div>
   <!-- about -->
-  <div class="modal modal_nav-about" ng-show="$ctrl.getModalState(2)">
-    <button class="btn close-modal-btn"
-            ng-click="$ctrl.closeModals()">
-      <svg viewBox="0 0 40 40" 
-           width="40" 
-           height="40" 
-           fill="#e50000">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" 
-             xlink:href="#cross_exercise">
-        </use>
-      </svg>
-    </button>
-    <p class="about-head">Об авторах</p>
-    <div class="about-author about-author1">
-      <p>© ЗАО <strong>«Тренинг Медиа»</strong>, 2005 - 2017.  Все права защищены. Текстовые материалы тренинга и видеосюжеты предоставлены компанией «Тренинг Медиа».</p>
-      <p><a href="http://tmedia.ru" target="_blank">tmedia.ru</a></p>
-      <p>По вопросам продаж обращаться по телефону: +7 (495) 979-24-33.</p>
-    </div>
-    <div class="about-author about-author2">
-      <p>© ЗАО <strong>«Новый Диск»</strong>, 2005 - 2017.  Все права защищены. Дизайн, интерактив и мультимедиа решения разработаны компанией <strong>«Новый Диск»</strong>.</p>
-      <p><a href="http://e-learning.nd.ru" target="_blank">e-learning.nd.ru</a></p>
-      <p>По вопросам продаж и разработки программ для корпоративного обучения обращаться по телефону:  +7 (495) 785-65-14.</p>
-    </div>
-    <div class="about-author about-author3">
-      <p>Данный курс был разработан с использованием опыта системного корпоративного обучения компании <strong>«MTI»</strong> (Management Training International).</p>
+  <div class="modal modal_nav-about" 
+       ng-show="$ctrl.getModalState('about')">
+    <div class="modal__container">
+      <div class="modal__title-container">
+        <p class="modal__title">Помощь</p>
+        <button class="btn btn_close-modal"
+                ng-click="$ctrl.closeModals()">
+        </button>
+      </div>
+      <div class="modal__content">
+        <table>
+          <tr>
+            <td class="table-cell_about_1"><button class="btn btn_nav btn_nav-menu"></button></td>
+            <td class="table-cell_about_2">Меню</td>
+          </tr>
+          <tr>
+            <td class="table-cell_about_1"><button class="btn btn_nav btn_nav-note"></button></td>
+            <td class="table-cell_about_2">Записная книжка</td>
+          </tr>
+          <tr>
+            <td class="table-cell_about_1"><button class="btn btn_nav btn_nav-stat"></button></td>
+            <td class="table-cell_about_2">Статистика</td>
+          </tr>
+          <tr>
+            <td class="table-cell_about_1"><button class="btn btn_nav-help"></button></td>
+            <td class="table-cell_about_2">Помощь</td>
+          </tr>
+          <tr>
+            <td class="table-cell_about_1"><button class="btn btn_close-course"></button></td>
+            <td class="table-cell_about_2">Выход</td>
+          </tr>
+          <tr>
+            <td class="table-cell_about_1"><button class="btn btn_nav btn_nav-back"></button></td>
+            <td class="table-cell_about_2">Предыдущий слайд</td>
+          </tr>
+          <tr>
+            <td class="table-cell_about_1"><button class="btn btn_nav btn_nav-forward"></button></td>
+            <td class="table-cell_about_2">Следующий слайд</td>
+          </tr>
+        </table>
+      </div>
     </div>
   </div>
   <!-- help -->
-  <div class="modal modal_nav-help" ng-show="$ctrl.getModalState(3)">
+  <div class="modal modal_nav-help" ng-show="$ctrl.getModalState('help')">
     <p>Помощь</p>
   </div>
   <!-- exercise modal -->
-  <div class="modal modal_nav-ex" ng-show="$ctrl.getModalState(4)">
-    <button class="btn close-modal-btn"
-            ng-click="$ctrl.closeModals()">
-      <svg viewBox="0 0 40 40" 
-           width="40" 
-           height="40" 
-           fill="#e50000">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" 
-             xlink:href="#cross_exercise">
-        </use>
-      </svg>
-    </button>
-    <p class="modal_head">Результат</p>
-    <div class="modal_body">Далеко-далеко за словесными.</div>
+  <div class="modal modal_nav-ex" ng-show="$ctrl.getModalState('exercise')">
+    <div class="modal__container modal__container_ex">
+      <div class="modal__title-container">
+        <p class="modal__title modal_head"></p>
+        <button class="btn btn_close-modal"
+                ng-click="$ctrl.closeModals()">
+        </button>
+      </div>
+      <div class="modal__content modal__content_ex">
+        <div class="modal_body">Далеко-далеко за словесными.</div>
+        <button class="btn btn_continue"
+                ng-click="$ctrl.closeModals(); $ctrl.toForward($ctrl.exerciseData().answer)">Продолжить</button>
+        <img ng-show="$ctrl.exerciseData().answer === false"
+             class="modal__img" 
+             src="img/modal_false.jpg"
+             alt="Мужчина"
+             width="276">
+        <img ng-show="$ctrl.exerciseData().answer === true"
+             class="modal__img" 
+             src="img/modal_true.jpg"
+             alt="Мужчина"
+             width="276">
+      </div>
+    </div>
+    
    <!--  <p class="modal_nav-ex_text__head">Ваш результат</p>
     <p class="modal_nav-ex_text__result"></p>
     <p class="modal_nav-ex_text__text"></p> -->
   </div>
   <!-- video modal -->
-  <div class="modal modal_video" ng-show="$ctrl.getModalState(5)">
-    <div class="modal_video__head">
-      <button class="btn close-modal-btn"
-            ng-click="$ctrl.closeModals()">
-      <svg viewBox="0 0 40 40" 
-           width="40" 
-           height="40" 
-           fill="#e50000">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" 
-             xlink:href="#cross_exercise">
-        </use>
-      </svg>
-    </button>
-    </div>
-    <div class="modal_video__body"></div>
+  <div class="modal modal_video" ng-show="$ctrl.getModalState('video')">
+    <div class="modal__container">
+      <div class="modal__title-container">
+        <p class="modal__title">&nbsp;</p>
+        <button class="btn btn_close-modal"
+                ng-click="$ctrl.closeModals()">
+        </button>
+      </div>
+      <div class="modal_video__body"></div>
+    </div>    
     <!-- <video class="video-js vjs-default-skin" controls preload="auto" vjs-video vjs-media="$ctrl.videoData">
     </video> -->
+  </div>
+  <!-- ADD-INFO MODAL -->
+  <div class="modal modal_add-info" 
+       ng-show="$ctrl.getModalState('addInfo')">
+    <div class="modal__container">
+      <div class="modal__title-container">
+        <p class="modal__title"
+           ng-bind="$ctrl.addInfo(4).heading"></p>
+        <button class="btn btn_close-modal"
+                ng-click="$ctrl.closeModals()">
+        </button>
+      </div>
+      <div class="modal__content modal__content_add-info" 
+           ng-bind-html="$ctrl.addInfo().content">
+      </div>
+    </div>
   </div>
 </header>

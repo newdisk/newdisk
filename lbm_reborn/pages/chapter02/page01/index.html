@@ -1,30 +1,27 @@
-<div class="page-container page-01-02" ng-controller="HeaderCtrl as $ctrl">
-  <svg viewBox="0 0 28 28"
-       height="635"
-       class="page-01-02_fon-svg">
-    <use xmlns:xlink="http://www.w3.org/1999/xlink" 
-         xlink:href="#fon">
-    </use>
-  </svg>
-  <img class="page-01-02_manager" src="img/manager.png" alt="Легко ли быть менеджером?">
-  <div class="intro-text">
-    <div class="intro-text_chapter">{{$ctrl.title.chapter}}</div>
-    <div class="intro-text_subchapter">
-      <p>ОСНОВНЫЕ РАЗЛИЧИЯ</p>
-      <p>МЕЖДУ ПРОФЕССИОНАЛЬНОЙ</p>
-      <p>И УПРАВЛЕНЧЕНСКОЙ</p>
-      <p>ДЕЯТЕЛЬНОСТЬЮ</p>
-    </div>
-  </div>
-  <div class="page-logo">
-    <!-- <img src="img/logo.svg" width="380" alt="Легко ли быть менеджером?"> -->
-    <svg viewBox="0 0 380 140" 
-         width="380" 
-         height="140"
+<div class="page-container page-container_half-title page-01-02" ng-controller="HeaderCtrl as $ctrl">
+  <div class="page-container_half-title__page-logo">
+    <svg viewBox="0 0 250 100" 
+         width="250" 
+         height="100"
+         fill="#bcbcbc" 
          class="page-01-02_logo-svg">
       <use xmlns:xlink="http://www.w3.org/1999/xlink" 
            xlink:href="#logo">
       </use>
     </svg>
   </div>
+
+  <section class="page-block-text page-block-text_half-title">
+    <p class="page-container_half-title__text-title">ГЛАВА 1</p>
+    <div class="flex-container flex-container_half-title">
+      <div class="flex-container__item flex-container__item__half-title_cube"></div>
+      <div class="flex-container__item flex-container__item__half-title_text">
+        <p>ОСНОВНЫЕ РАЗЛИЧИЯ</p>
+        <p>МЕЖДУ ПРОФЕССИОНАЛЬНОЙ</p>
+        <p>И УПРАВЛЕНЧЕСКОЙ</p>
+        <p>ДЕЯТЕЛЬНОСТЬЮ</p>
+      </div>
+    </div>      
+  </section>
+
 </div>

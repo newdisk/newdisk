@@ -1,6 +1,6 @@
-<p class="text">{{$ctrl.taskText}}</p>
-<p class="text__hint">Выберите несколько вариантов.</p>
-<div class="tsak__multi-choice-body">
+<p class="task-text">{{$ctrl.taskText}}</p>
+<p class="text__hint">Выберите один или несколько вариантов ответа.</p>
+<div class="task__multi-choice-body">
   <div class="task__multi-choice-item" 
       ng-repeat="question in $ctrl.questionList"  
       ng-click="$ctrl.selectAnswer($index)">
