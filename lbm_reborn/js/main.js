@@ -68,8 +68,8 @@ var courseStructure = {
       "type": "simple_page",
       "messages": [""]
     }] // end of pages array in chapter 1 (intro)
-  } // end of chapter
-  , {
+    // end of chapter
+  }, {
     "chapter_id": 2,
     "chapter_location": "chapter02",
     "title": "Глава 1",
@@ -191,7 +191,7 @@ var courseStructure = {
       }
     }, {
       "page_id": 7, //10
-      "title": "В чем заключается труд менеджера",
+      "title": "Выводы: В чем заключается труд менеджера",
       "location": "page07",
       "hasSound": false,
       "type": "simple_page",
@@ -234,7 +234,8 @@ var courseStructure = {
         "options": {
           "attempts": 3, // кол-во попыток
           "shuffle": true, // мешать ответы?
-          "showAnswer": true },
+          "showAnswer": true // показывать правильный ответ в конце
+        },
         "exs": [{
           "taskText": "",
           "sameQ": true, // можно ли выбирать одни и теже ответы
@@ -353,7 +354,8 @@ var courseStructure = {
         "options": {
           "attempts": 3, // кол-во попыток; -1 бесконечно
           "shuffle": true, // мешать ответы?
-          "showAnswer": true },
+          "showAnswer": true // показывать правильный ответ в конце
+        },
         "exs": [{
           "taskText": "Почему, на ваш взгляд, Николай не реализовал эти роли?",
           "questionList": [{
@@ -403,7 +405,8 @@ var courseStructure = {
         "options": {
           "attempts": 3, // кол-во попыток
           "shuffle": true, // мешать ответы?
-          "showAnswer": true },
+          "showAnswer": true // показывать правильный ответ в конце
+        },
         "exs": [{
           "taskText": "Выберите правильные утверждения из списка",
           "sameQ": true, // можно ли выбирать одни и теже ответы
@@ -465,8 +468,8 @@ var courseStructure = {
       "type": "simple_page",
       "messages": [""]
     }] // end of pages array in chapter 2
-  } // end of chapter
-  , {
+    // end of chapter
+  }, {
     "chapter_id": 3,
     "chapter_location": "chapter03",
     "title": "Глава 2",
@@ -541,8 +544,8 @@ var courseStructure = {
       "type": "simple_page",
       "messages": [""]
     }] // end of pages array in chapter 3
-  } // end of chapter
-  , {
+    // end of chapter
+  }, {
     "chapter_id": 4,
     "chapter_location": "chapter04",
     "title": "Глава 3",
@@ -646,8 +649,8 @@ var courseStructure = {
         "messages": [""]
       }
     }] // end of pages array in chapter 4
-  } // end of chapter
-  , {
+    // end of chapter
+  }, {
     "chapter_id": 5,
     "chapter_location": "chapter05",
     "title": "Глава 4",
@@ -697,7 +700,8 @@ var courseStructure = {
         "options": {
           "attempts": 3, // кол-во попыток
           "shuffle": false, // мешать ответы?
-          "showAnswer": true },
+          "showAnswer": true // показывать правильный ответ в конце
+        },
         "exs": [{
           "taskText": "",
           "taskType": "textInput",
@@ -856,7 +860,8 @@ var courseStructure = {
         "options": {
           "attempts": 3, // кол-во попыток
           "shuffle": true, // мешать ответы?
-          "showAnswer": true },
+          "showAnswer": true // показывать правильный ответ в конце
+        },
         "exs": [{
           "taskText": "Николай разбил достижение желаемого результата на 2 этапа: Снизить срывы графика поставок с 20 до 10 % к концу квартала. Добиться снижения срывов до 2 % к концу года. Правильно ли он поступил?",
           "questionList": [{
@@ -902,7 +907,8 @@ var courseStructure = {
         "options": {
           "attempts": 3, // кол-во попыток
           "shuffle": true, // мешать ответы?
-          "showAnswer": true },
+          "showAnswer": true // показывать правильный ответ в конце
+        },
         "exs": [{
           "taskText": "Выберите правильные утверждения из списка",
           "sameQ": true, // можно ли выбирать одни и теже ответы
@@ -1080,7 +1086,8 @@ var courseStructure = {
         "options": {
           "attempts": 3, // кол-во попыток
           "shuffle": true, // мешать ответы?
-          "showAnswer": true },
+          "showAnswer": true // показывать правильный ответ в конце
+        },
         "exs": {
           "taskText": "Постройте модель дерева целей отдела логистики, опираясь на формулировки, которые мог бы использовать Николай.",
           "variant": [{
@@ -1300,7 +1307,8 @@ var courseStructure = {
         "options": {
           "attempts": 3, // кол-во попыток
           "shuffle": true, // мешать ответы?
-          "showAnswer": true },
+          "showAnswer": true // показывать правильный ответ в конце
+        },
         "exs": [{
           "taskText": "Используя матрицу A, B, C, D.",
           "questionList": [{
@@ -1604,7 +1612,8 @@ var courseStructure = {
         "options": {
           "attempts": 3, // кол-во попыток
           "shuffle": true, // мешать ответы?
-          "showAnswer": true },
+          "showAnswer": true // показывать правильный ответ в конце
+        },
         "exs": [{
           "taskText": "Какие потребности актуализированы у Виктора?",
           "sameQ": true, // можно ли выбирать одни и теже ответы
@@ -1680,7 +1689,8 @@ var courseStructure = {
         "options": {
           "attempts": 3, // кол-во попыток
           "shuffle": true, // мешать ответы?
-          "showAnswer": true },
+          "showAnswer": true // показывать правильный ответ в конце
+        },
         "exs": [{
           "taskText": "Какая из потребностей, по Макклеланду, актуализирована у Лены?",
           "questionList": [{
@@ -1768,7 +1778,8 @@ var courseStructure = {
         "options": {
           "attempts": 3, // кол-во попыток
           "shuffle": true, // мешать ответы?
-          "showAnswer": true },
+          "showAnswer": true // показывать правильный ответ в конце
+        },
         "exs": [{
           "taskText": "Какой из гигиенических факторов (по таблице Герцберга) вызывал чувство неудовлетворенности у Людмилы Петровны?",
           "taskType": "single",
@@ -1916,7 +1927,8 @@ var courseStructure = {
         "options": {
           "attempts": 3, // кол-во попыток
           "shuffle": true, // мешать ответы?
-          "showAnswer": true },
+          "showAnswer": true // показывать правильный ответ в конце
+        },
         "exs": [{
           "taskText": "",
           "sameQ": true, // можно ли выбирать одни и теже ответы
@@ -1999,7 +2011,8 @@ var courseStructure = {
         "options": {
           "attempts": 3, // кол-во попыток
           "shuffle": true, // мешать ответы?
-          "showAnswer": true },
+          "showAnswer": true // показывать правильный ответ в конце
+        },
         "exs": [{
           "taskText": "Какие из факторов условий трудового процесса привели к хорошему результату?",
           "taskType": "multi",
@@ -2341,7 +2354,8 @@ var courseStructure = {
         "options": {
           "attempts": 3, // кол-во попыток, -1 бесконечное кол-во
           "shuffle": true, // мешать ответы?
-          "showAnswer": true },
+          "showAnswer": true // показывать правильный ответ в конце
+        },
         "exs": [{
           "taskText": "«Работайте лучше»",
           "questionList": [{
@@ -2373,7 +2387,8 @@ var courseStructure = {
         "options": {
           "attempts": 3, // кол-во попыток
           "shuffle": true, // мешать ответы?
-          "showAnswer": true },
+          "showAnswer": true // показывать правильный ответ в конце
+        },
         "exs": [{
           "taskText": "Виктору",
           "questionList": [{
@@ -2432,9 +2447,10 @@ var courseStructure = {
         "options": {
           "attempts": 3, // кол-во попыток
           "shuffle": true, // мешать ответы?
-          "showAnswer": true },
+          "showAnswer": true // показывать правильный ответ в конце
+        },
         "exs": [{
-          "taskText": "",
+          "taskText": "Эпизод 1",
           "sameQ": true, // можно ли выбирать одни и теже ответы
           "questionList": {
             "questions": [{
@@ -2474,7 +2490,7 @@ var courseStructure = {
             }]
           }
         }, {
-          "taskText": "",
+          "taskText": "Эпизод 2",
           "sameQ": true, // можно ли выбирать одни и теже ответы
           "questionList": {
             "questions": [{
@@ -2538,8 +2554,8 @@ var courseStructure = {
         "messages": [""]
       }
     }] // end of pages array in chapter 5
-  } // end of chapter
-  , {
+    // end of chapter
+  }, {
     "chapter_id": 6,
     "chapter_location": "chapter06",
     "title": "Глава 5",
@@ -2641,7 +2657,8 @@ var courseStructure = {
         "options": {
           "attempts": 3, // кол-во попыток
           "shuffle": true, // мешать ответы?
-          "showAnswer": true },
+          "showAnswer": true // показывать правильный ответ в конце
+        },
         "exs": [{
           "taskText": "Какие коммуникации инициирует Николай в ходе первого собрания?",
           "questionList": [{
@@ -2687,7 +2704,8 @@ var courseStructure = {
         "options": {
           "attempts": 3, // кол-во попыток
           "shuffle": true, // мешать ответы?
-          "showAnswer": true },
+          "showAnswer": true // показывать правильный ответ в конце
+        },
         "exs": [{
           "taskText": "Эпизод 1",
           "questionList": [{
@@ -2892,7 +2910,8 @@ var courseStructure = {
         "options": {
           "attempts": 3, // кол-во попыток
           "shuffle": true, // мешать ответы?
-          "showAnswer": true },
+          "showAnswer": true // показывать правильный ответ в конце
+        },
         "exs": [{
           "taskText": "Какой вариант использовал Николай при принятии решения о премировании?",
           "questionList": [{
@@ -2921,8 +2940,8 @@ var courseStructure = {
         "messages": ["Да, таким распределением премии Николай вызвал недовольство подчиненных. Люди всегда должны понимать, за что их наказывают или поощряют.", "Ваш ответ неверный. Будьте внимательнее, ведь распределение премии существенно влияет на качество работы и мотивацию подчиненных.", "И снова ошибка. Безусловно, распределение премии – вещь директивная и должна распределяться руководителем. Но люди имеют право знать, за что их наказывают или поощряют.", "А вот какой был правильный ответ."]
       }
     }] // end of pages array in chapter 6
-  } // end of chapter
-  , {
+    // end of chapter
+  }, {
     "chapter_id": 7,
     "chapter_location": "chapter07",
     "title": "Итоговый тест",
@@ -2944,8 +2963,8 @@ var courseStructure = {
         "messages": [""]
       }
     }] // end of pages array in chapter 7
-  } // end of chapter
-  , {
+    // end of chapter
+  }, {
     "chapter_id": 8,
     "chapter_location": "chapter08",
     "title": "Заключение",
@@ -3362,32 +3381,31 @@ var testStructure = {
         }, {
           "label": "Уважение и доверие",
           "right": false
-        }
-        // ,{
-        //   "label":"Внимание к личности и интересам",
-        //   "right": false
-        // },
-        // {
-        //   "label": "Сочувствие",
-        //   "right": false
-        // },
-        // {
-        //   "label": "Похвала (с глазу на глаз или публичная, в том числе через прессу)",
-        //   "right": false
-        // },
-        // {
-        //   "label": "Соревновательный дух",
-        //   "right": false
-        // },
-        // {
-        //   "label": "Порицание (с глазу на глаз или публичное, устное – письменное)",
-        //   "right": false
-        // },
-        // {
-        //   "label": "Признание заслуг",
-        //   "right": false
-        // }
-        ]
+          // ,{
+          //   "label":"Внимание к личности и интересам",
+          //   "right": false
+          // },
+          // {
+          //   "label": "Сочувствие",
+          //   "right": false
+          // },
+          // {
+          //   "label": "Похвала (с глазу на глаз или публичная, в том числе через прессу)",
+          //   "right": false
+          // },
+          // {
+          //   "label": "Соревновательный дух",
+          //   "right": false
+          // },
+          // {
+          //   "label": "Порицание (с глазу на глаз или публичное, устное – письменное)",
+          //   "right": false
+          // },
+          // {
+          //   "label": "Признание заслуг",
+          //   "right": false
+          // }
+        }]
       }, {
         "question": "Отметьте моральные способы стимулирования.",
         "score": -1,
@@ -3449,20 +3467,19 @@ var testStructure = {
         }, {
           "label": "Похвала (с глазу на глаз или публичная, в том числе через прессу)",
           "right": true
-        }
-        // ,{
-        //   "label": "Соревновательный дух",
-        //   "right": true
-        // },
-        // {
-        //   "label": "Порицание (с глазу на глаз или публичное, устное – письменное)",
-        //   "right": true
-        // },
-        // {
-        //   "label": "Признание заслуг",
-        //   "right": true
-        // }
-        ]
+          // ,{
+          //   "label": "Соревновательный дух",
+          //   "right": true
+          // },
+          // {
+          //   "label": "Порицание (с глазу на глаз или публичное, устное – письменное)",
+          //   "right": true
+          // },
+          // {
+          //   "label": "Признание заслуг",
+          //   "right": true
+          // }
+        }]
       }, {
         "question": "Какие теории мотивации объясняют воздействие различных условий на достижение исполнителем рабочих результатов?",
         "score": -1,
@@ -3492,16 +3509,16 @@ var testStructure = {
           "label": "Менеджер устанавливает стандарты выполнения подчиненным функций и задач.",
           "right": false
         }, {
-          "label": "Менеджер распределяет поручения между подчиненными (это относится к функции организации). ",
+          "label": "Менеджер распределяет поручения между подчиненными. ",
           "right": true
         }, {
-          "label": "Менеджер информирует подчиненных о последствиях несоблюдения стандартов (мотивация). ",
+          "label": "Менеджер информирует подчиненных о последствиях несоблюдения стандартов. ",
           "right": true
         }, {
           "label": "Менеджер сравнивает фактическое положение дел со стандартами.",
           "right": false
         }, {
-          "label": "Менеджер по результатам сравнения вносит изменения  в работу подчиненного (осуществляет корректировку действий) или в стандарты.",
+          "label": "Менеджер по результатам сравнения вносит изменения  в работу подчиненного или в стандарты.",
           "right": false
         }]
       }, {
@@ -3610,10 +3627,10 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
     exercises: [],
     notes: [],
     testScore: 0
-  }).config(config).run(run);
+  }).config(config).run(run
 
   /* @ngInject */
-  function config($stateProvider, $urlRouterProvider, courseDataObj) {
+  );function config($stateProvider, $urlRouterProvider, courseDataObj) {
 
     $stateProvider.state('page', {
       url: '/chapter/:chapter/page/:page',
@@ -3641,10 +3658,11 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
           controllerAs: '$ctrl'
         }
       }
-    });
+    }
     // .state('test', {})
 
     // $urlRouterProvider.otherwise('/chapter/1/page/1')
+    );
   }
 
   /* @ngInject */
@@ -3926,10 +3944,10 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
   'use strict';
 
   staticService.$inject = ["courseDataObj", "courseInfo"];
-  angular.module('courseApp').service('staticService', staticService);
+  angular.module('courseApp').service('staticService', staticService
 
   /* @ngInject */
-  function staticService(courseDataObj, courseInfo) {
+  );function staticService(courseDataObj, courseInfo) {
     var _this = this,
         _arguments = arguments;
 
@@ -4153,13 +4171,13 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
           });
         }
       });
-    });
+    }
     // console.warn('userService:: setUp exs Arr', JSON.stringify(this.exs));
     // console.warn('userService:: setUp notes Arr', JSON.stringify(this.notes));
 
     // this.testData = _.shuffle(JSON.parse(JSON.stringify(testDataObj.tests[0].groups[0].questions)));
 
-    this.loadExs = function (data) {
+    );this.loadExs = function (data) {
       // alert('load exs!')
       if (data.length != 0) {
         // alert('exs not empty')
@@ -4202,10 +4220,10 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
           item.score = score;
           item.status = status;
         }
-      });
+      }
       // console.log('userService:: setUserProgress > this.exs',this.exs)
 
-      courseInfo.exercises = JSON.parse(JSON.stringify(_this2.exs));
+      );courseInfo.exercises = JSON.parse(JSON.stringify(_this2.exs));
       // courseInfo.excercises = this.exs;
 
       _this2.sendToLMS();
@@ -4345,11 +4363,11 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
     };
 
     var init = function init() {
-      console.warn('customAudio:: init');
+      console.warn('customAudio:: init'
       /* It's a better way to use createElement than create new Audio(), 
       /  because such object is easier to remove
        **/
-      _this3.audio = $document[0].createElement('audio');
+      );_this3.audio = $document[0].createElement('audio');
       _this3.audio.src = "pages/" + _this3.chapter + "/" + _this3.page + "/audio/page-" + _this3.chapter + "-" + _this3.page + ".mp3";
 
       _this3.audio.oncanplaythrough = function () {
@@ -4621,11 +4639,11 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
     };
 
     this.checkAnswer = function () {
-      var answersElements = document.getElementsByClassName('task-question');
+      var answersElements = document.getElementsByClassName('task-question'
       // console.warn('answersElements', answersElements) 
       // console.warn('questionList', this.questionList[this.currentQuest].answers) 
 
-      for (var i = 0; i < answersElements.length; i++) {
+      );for (var i = 0; i < answersElements.length; i++) {
         var answer = _this4.questionList[_this4.currentQuest].answers[i].right,
             question = answersElements[i].classList.contains('radio-selected');
 
@@ -4745,45 +4763,6 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
 ;(function () {
   'use strict';
 
-  LeaderLineCtrl.$inject = ["$element", "$attrs", "userService"];
-  angular.module('courseApp').component('makeLine', {
-    bindigs: {
-      lineTo: '@'
-    },
-    controller: 'LeaderLineCtrl'
-  }).controller('LeaderLineCtrl', LeaderLineCtrl);
-
-  /* @ngInject */
-  function LeaderLineCtrl($element, $attrs, userService) {
-
-    /*angular.element(document).ready(()=> {
-      this.elementsFrom = JSON.parse($attrs.linefrom);
-      this.elementsTo = JSON.parse($attrs.lineto);
-      // console.log(this.elementsFrom, this.elementsTo)
-      
-      for (var i = 0; i < this.elementsFrom.length; i++) {
-        console.log('draw line')
-        let start = document.getElementById(this.elementsFrom[i]),
-            end = document.getElementById(this.elementsTo[i]),
-            params = JSON.parse(start.getAttribute('data'));
-            // console.log(params)
-        new LeaderLine(
-            start,
-            end,
-            params
-          )
-      }
-    })*/
-
-    //TODO: 
-    // var e = document.getElementsByClassName('leader-line')
-    // e[0].remove()
-    // 
-  }
-})();
-;(function () {
-  'use strict';
-
   HeaderCtrl.$inject = ["$state", "$stateParams", "staticService", "userService"];
   angular.module('courseApp').controller('HeaderCtrl', HeaderCtrl);
 
@@ -4872,10 +4851,10 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
 
     var scrollMenu = function scrollMenu() {
       var currentItem = document.querySelector('.menu_list__page-item.current'),
-          menu = document.querySelector('.modal_nav-menu');
+          menu = document.querySelector('.modal_nav-menu'
 
       // console.warn('curr offsetTop',currentItem.offsetTop)
-      setTimeout(function () {
+      );setTimeout(function () {
         menu.scrollTop = currentItem.offsetTop;
       }, 30);
     };
@@ -4922,6 +4901,45 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
       _this6.coursePage.classList.remove('backward');
       $state.go('page', { chapter: _this6.curChapterNum, page: _this6.curPageNum });
     };
+  }
+})();
+;(function () {
+  'use strict';
+
+  LeaderLineCtrl.$inject = ["$element", "$attrs", "userService"];
+  angular.module('courseApp').component('makeLine', {
+    bindigs: {
+      lineTo: '@'
+    },
+    controller: 'LeaderLineCtrl'
+  }).controller('LeaderLineCtrl', LeaderLineCtrl
+
+  /* @ngInject */
+  );function LeaderLineCtrl($element, $attrs, userService) {
+
+    /*angular.element(document).ready(()=> {
+      this.elementsFrom = JSON.parse($attrs.linefrom);
+      this.elementsTo = JSON.parse($attrs.lineto);
+      // console.log(this.elementsFrom, this.elementsTo)
+      
+      for (var i = 0; i < this.elementsFrom.length; i++) {
+        console.log('draw line')
+        let start = document.getElementById(this.elementsFrom[i]),
+            end = document.getElementById(this.elementsTo[i]),
+            params = JSON.parse(start.getAttribute('data'));
+            // console.log(params)
+        new LeaderLine(
+            start,
+            end,
+            params
+          )
+      }
+    })*/
+
+    //TODO: 
+    // var e = document.getElementsByClassName('leader-line')
+    // e[0].remove()
+    // 
   }
 })();
 ;(function () {
@@ -5153,170 +5171,6 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
 ;(function () {
   'use strict';
 
-  ManySingleChoiceCtrl.$inject = ["$scope", "$stateParams", "$attrs", "staticService", "userService"];
-  angular.module('courseApp').component('taskManySingleChoice', {
-    templateUrl: 'js/components/task-many-single-choice/taskManySingleChoiceTmpl.html',
-    controller: 'ManySingleChoiceCtrl',
-    controllerAs: '$ctrl'
-  }).controller('ManySingleChoiceCtrl', ManySingleChoiceCtrl);
-
-  /* @ngInject */
-  function ManySingleChoiceCtrl($scope, $stateParams, $attrs, staticService, userService) {
-    var _this9 = this;
-
-    this.test = $attrs.test;
-    this.currentTestQuestion = userService.currentTestQuestion;
-
-    this.taskData = staticService.getData($stateParams, 'data');
-    this.taskOptions = this.taskData.options; // obj
-    this.taskExs = JSON.parse(angular.toJson(this.taskData.exs)); // arr
-    // console.warn('ManySingleCCtrl:: taskOptions:', this.taskOptions);
-    // console.warn('ManySingleCCtrl:: taskExs:', this.taskExs);
-
-    // массив для работы с ответами
-    this.active = [];
-    // состояние упражнения:
-    // 0 - ответа ещё нет, 1 - есть ответ, 2 - нажата кнопка «проверить»
-    this.state = 0;
-
-    if (this.test) {
-      // кол-во попыток
-      this.attemptNum = -1;
-
-      // test setup
-      // console.log('ManySingleCCtrl:: test mode on')
-      this.taskText = this.currentTestQuestion.question;
-      // console.log('Question:',this.taskText)
-
-      // TODO shuffle sync
-      // this.questionList = _.shuffle(this.currentTestQuestion.answers);
-      this.questionList = this.currentTestQuestion.answers;
-
-      // console.log('ManySingleCCtrl:: Answers:', this.questionList)
-    } else {
-      // кол-во попыток
-      this.attemptNum = this.taskOptions.attempts;
-
-      // мешаем вопросы
-      if (this.taskOptions.shuffle) {
-        this.taskExs.forEach(function (item, i) {
-          item.questionList = _.shuffle(item.questionList);
-          _this9.active[i] = item.questionList.map(function () {
-            return { selected: 0 };
-          });
-        });
-      }
-    }
-    // console.log('this.active', this.active)
-    this.userAttempt = 0;
-
-    this.showComment = false;
-
-    angular.element(document).ready(function () {
-
-      _this9.selectAnswer = function (parentIndex, index) {
-        if (_this9.state == 2) {
-          return;
-        }
-        // console.log('select', this.active[parentIndex][index])
-        _this9.active[parentIndex].forEach(function (item) {
-          item.selected = false;
-        });
-        _this9.active[parentIndex][index].selected = true;
-
-        var checkedTasks = 0,
-            check = false;
-
-        for (var i = 0; i < _this9.active.length; i++) {
-          for (var j = 0; j < _this9.active[i].length; j++) {
-            if (_this9.active[i][j].selected) {
-              check = true;
-            }
-          }
-          if (check) {
-            checkedTasks++;
-            check = false;
-          }
-        }
-
-        if (checkedTasks == _this9.active.length) {
-          if (_this9.test) {
-            $scope.$emit('myTestState', 1);
-          }
-          _this9.state = 1;
-        } else {
-          if (_this9.test) {
-            $scope.$emit('myTestState', 0);
-          }
-          _this9.state = 0;
-        }
-      };
-
-      _this9.checkAnswer = function (e) {
-        if (e.target.classList.contains('btn_disabled')) {
-          return;
-        }
-
-        if (_this9.userAttempt === _this9.attemptNum) {
-          _this9.userAttempt = 0;
-        }
-        _this9.userAttempt++;
-        _this9.state = 2;
-
-        // console.log('mas => r, s', this.questionList, this.active)
-        for (var i = 0; i < _this9.taskExs.length; i++) {
-          var item_i = _this9.taskExs[i].questionList;
-          // console.log('item_i =====================', item_i)
-
-          for (var j = 0; j < item_i.length; j++) {
-            // console.log('item_i[j].right =>', item_i[j].right)
-            if (item_i[j].right != _this9.active[i][j].selected) {
-              //упражнение провалено
-              // console.warn('taskManySingleChoice:: упражнение провалено')
-
-              if (_this9.userAttempt == _this9.attemptNum && _this9.taskOptions.showAnswer) {
-                showAnswer();
-              }
-              // to userService (баллы, статус, глава, страница)
-              userService.setUserProgress(0, 0, Number($stateParams.chapter) - 1, Number($stateParams.page) - 1);
-              staticService.showModal('exercise', 'Ваш результат', _this9.taskData.messages[_this9.userAttempt], false);
-              return;
-            }
-          }
-        }
-        // console.warn('taskManySingleChoice:: упражнение верно')
-        userService.setUserProgress(100, 1, Number($stateParams.chapter) - 1, Number($stateParams.page) - 1);
-        staticService.showModal('exercise', 'Ваш результат', _this9.taskData.messages[0], true);
-      };
-
-      _this9.removeRestart = function () {
-
-        _this9.state = 0;
-
-        if (_this9.taskOptions.shuffle) {
-          _this9.taskExs.forEach(function (item, i) {
-            item.questionList = _.shuffle(item.questionList);
-            _this9.active[i] = item.questionList.map(function (item, i) {
-              return { selected: 0 };
-            });
-          });
-        }
-      };
-
-      var showAnswer = function showAnswer() {
-        // console.log('taskSingleChoice:: showAnswer')
-        for (var i = 0; i < _this9.taskExs.length; i++) {
-          for (var j = 0; j < _this9.taskExs[i].questionList.length; j++) {
-            _this9.active[i][j].selected = _this9.taskExs[i].questionList[j].right;
-          }
-        }
-      };
-    });
-  }
-})();
-;(function () {
-  'use strict';
-
   ManyMultiChoiceCtrl.$inject = ["$scope", "$stateParams", "$attrs", "staticService", "userService"];
   angular.module('courseApp').component('taskManyMultiChoice', {
     templateUrl: 'js/components/task-many-multi-choice/taskManyMultiChoiceTmpl.html',
@@ -5326,7 +5180,7 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
 
   /* @ngInject */
   function ManyMultiChoiceCtrl($scope, $stateParams, $attrs, staticService, userService) {
-    var _this10 = this;
+    var _this9 = this;
 
     this.test = $attrs.test;
     this.currentTestQuestion = userService.currentTestQuestion;
@@ -5365,7 +5219,168 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
       if (this.taskOptions.shuffle) {
         this.taskExs.forEach(function (item, i) {
           item.questionList = _.shuffle(item.questionList);
-          _this10.active[i] = item.questionList.map(function (item, i) {
+          _this9.active[i] = item.questionList.map(function (item, i) {
+            return { selected: 0 };
+          });
+        });
+      }
+    }
+    // console.log('this.active', this.active)
+    this.userAttempt = 0;
+
+    this.showComment = false;
+
+    angular.element(document).ready(function () {
+
+      _this9.selectAnswer = function (parentIndex, index) {
+        if (_this9.state == 2) {
+          return;
+        }
+        // console.log('select', this.active[parentIndex][index])
+        _this9.active[parentIndex][index].selected = !_this9.active[parentIndex][index].selected;
+
+        var checkedTasks = 0,
+            check = false;
+
+        for (var i = 0; i < _this9.active.length; i++) {
+          for (var j = 0; j < _this9.active[i].length; j++) {
+            if (_this9.active[i][j].selected) {
+              check = true;
+            }
+          }
+          if (check) {
+            checkedTasks++;
+            check = false;
+          }
+        }
+
+        if (checkedTasks == _this9.active.length) {
+          if (_this9.test) {
+            $scope.$emit('myTestState', 1);
+          }
+          _this9.state = 1;
+        } else {
+          if (_this9.test) {
+            $scope.$emit('myTestState', 0);
+          }
+          _this9.state = 0;
+        }
+      }; // end of selectAnswer()
+
+      _this9.checkAnswer = function (e) {
+        if (e.target.classList.contains('btn_disabled')) {
+          return;
+        }
+
+        if (_this9.userAttempt === _this9.attemptNum) {
+          _this9.userAttempt = 0;
+        }
+        _this9.userAttempt++;
+        _this9.state = 2;
+
+        // console.log('mas => r, s', this.taskExs, this.active)
+        for (var i = 0; i < _this9.taskExs.length; i++) {
+          var item_i = _this9.taskExs[i].questionList;
+          // console.log('item_i =====================', item_i)
+
+          for (var j = 0; j < item_i.length; j++) {
+            // console.log('item_i[j].right =>', item_i[j].right, this.active[i][j])
+            if (item_i[j].right != _this9.active[i][j].selected) {
+              //упражнение провалено
+              // console.warn('taskManyMultiChoice:: упражнение провалено')
+
+              if (_this9.userAttempt == _this9.attemptNum && _this9.taskOptions.showAnswer) {
+                showAnswer();
+              }
+              // to userService (баллы, статус, глава, страница)
+              userService.setUserProgress(0, 0, Number($stateParams.chapter) - 1, Number($stateParams.page) - 1);
+              staticService.showModal('exercise', 'Ваш результат', _this9.taskData.messages[_this9.userAttempt], false);
+              return;
+            }
+          }
+        }
+        // console.warn('taskManyMultiChoice:: упражнение верно')
+        userService.setUserProgress(100, 1, Number($stateParams.chapter) - 1, Number($stateParams.page) - 1);
+        staticService.showModal('exercise', 'Ваш результат', _this9.taskData.messages[0], true);
+      }; // end of checkAnswer()
+
+      _this9.removeRestart = function () {
+
+        _this9.state = 0;
+
+        if (_this9.taskOptions.shuffle) {
+          _this9.taskExs.forEach(function (item, i) {
+            item.questionList = _.shuffle(item.questionList);
+            _this9.active[i] = item.questionList.map(function (item, i) {
+              return { selected: 0 };
+            });
+          });
+        }
+      };
+
+      var showAnswer = function showAnswer() {
+        // console.log('taskMultiChoice:: showAnswer')
+        for (var i = 0; i < _this9.taskExs.length; i++) {
+          for (var j = 0; j < _this9.taskExs[i].questionList.length; j++) {
+            _this9.active[i][j].selected = _this9.taskExs[i].questionList[j].right;
+          }
+        }
+      };
+    });
+  }
+})();
+;(function () {
+  'use strict';
+
+  ManySingleChoiceCtrl.$inject = ["$scope", "$stateParams", "$attrs", "staticService", "userService"];
+  angular.module('courseApp').component('taskManySingleChoice', {
+    templateUrl: 'js/components/task-many-single-choice/taskManySingleChoiceTmpl.html',
+    controller: 'ManySingleChoiceCtrl',
+    controllerAs: '$ctrl'
+  }).controller('ManySingleChoiceCtrl', ManySingleChoiceCtrl);
+
+  /* @ngInject */
+  function ManySingleChoiceCtrl($scope, $stateParams, $attrs, staticService, userService) {
+    var _this10 = this;
+
+    this.test = $attrs.test;
+    this.currentTestQuestion = userService.currentTestQuestion;
+
+    this.taskData = staticService.getData($stateParams, 'data');
+    this.taskOptions = this.taskData.options; // obj
+    this.taskExs = JSON.parse(angular.toJson(this.taskData.exs)); // arr
+    // console.warn('ManySingleCCtrl:: taskOptions:', this.taskOptions);
+    // console.warn('ManySingleCCtrl:: taskExs:', this.taskExs);
+
+    // массив для работы с ответами
+    this.active = [];
+    // состояние упражнения:
+    // 0 - ответа ещё нет, 1 - есть ответ, 2 - нажата кнопка «проверить»
+    this.state = 0;
+
+    if (this.test) {
+      // кол-во попыток
+      this.attemptNum = -1;
+
+      // test setup
+      // console.log('ManySingleCCtrl:: test mode on')
+      this.taskText = this.currentTestQuestion.question;
+      // console.log('Question:',this.taskText)
+
+      // TODO shuffle sync
+      // this.questionList = _.shuffle(this.currentTestQuestion.answers);
+      this.questionList = this.currentTestQuestion.answers;
+
+      // console.log('ManySingleCCtrl:: Answers:', this.questionList)
+    } else {
+      // кол-во попыток
+      this.attemptNum = this.taskOptions.attempts;
+
+      // мешаем вопросы
+      if (this.taskOptions.shuffle) {
+        this.taskExs.forEach(function (item, i) {
+          item.questionList = _.shuffle(item.questionList);
+          _this10.active[i] = item.questionList.map(function () {
             return { selected: 0 };
           });
         });
@@ -5383,7 +5398,10 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
           return;
         }
         // console.log('select', this.active[parentIndex][index])
-        _this10.active[parentIndex][index].selected = !_this10.active[parentIndex][index].selected;
+        _this10.active[parentIndex].forEach(function (item) {
+          item.selected = false;
+        });
+        _this10.active[parentIndex][index].selected = true;
 
         var checkedTasks = 0,
             check = false;
@@ -5411,7 +5429,7 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
           }
           _this10.state = 0;
         }
-      }; // end of selectAnswer()
+      };
 
       _this10.checkAnswer = function (e) {
         if (e.target.classList.contains('btn_disabled')) {
@@ -5424,16 +5442,16 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
         _this10.userAttempt++;
         _this10.state = 2;
 
-        // console.log('mas => r, s', this.taskExs, this.active)
+        // console.log('mas => r, s', this.questionList, this.active)
         for (var i = 0; i < _this10.taskExs.length; i++) {
           var item_i = _this10.taskExs[i].questionList;
           // console.log('item_i =====================', item_i)
 
           for (var j = 0; j < item_i.length; j++) {
-            // console.log('item_i[j].right =>', item_i[j].right, this.active[i][j])
+            // console.log('item_i[j].right =>', item_i[j].right)
             if (item_i[j].right != _this10.active[i][j].selected) {
               //упражнение провалено
-              // console.warn('taskManyMultiChoice:: упражнение провалено')
+              // console.warn('taskManySingleChoice:: упражнение провалено')
 
               if (_this10.userAttempt == _this10.attemptNum && _this10.taskOptions.showAnswer) {
                 showAnswer();
@@ -5445,10 +5463,10 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
             }
           }
         }
-        // console.warn('taskManyMultiChoice:: упражнение верно')
+        // console.warn('taskManySingleChoice:: упражнение верно')
         userService.setUserProgress(100, 1, Number($stateParams.chapter) - 1, Number($stateParams.page) - 1);
         staticService.showModal('exercise', 'Ваш результат', _this10.taskData.messages[0], true);
-      }; // end of checkAnswer()
+      };
 
       _this10.removeRestart = function () {
 
@@ -5465,7 +5483,7 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
       };
 
       var showAnswer = function showAnswer() {
-        // console.log('taskMultiChoice:: showAnswer')
+        // console.log('taskSingleChoice:: showAnswer')
         for (var i = 0; i < _this10.taskExs.length; i++) {
           for (var j = 0; j < _this10.taskExs[i].questionList.length; j++) {
             _this10.active[i][j].selected = _this10.taskExs[i].questionList[j].right;
@@ -6086,6 +6104,71 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
 ;(function () {
   'use strict';
 
+  NoteCtrl.$inject = ["$scope", "$stateParams", "$attrs", "staticService", "userService"];
+  angular.module('courseApp').component('taskNote', {
+    templateUrl: 'js/components/task-note/taskNoteTmpl.html',
+    controller: 'NoteCtrl',
+    controllerAs: '$ctrl'
+  }).controller('NoteCtrl', NoteCtrl);
+
+  /* @ngInject */
+  function NoteCtrl($scope, $stateParams, $attrs, staticService, userService) {
+    var _this15 = this;
+
+    this.items = [];
+    var chapter = Number($stateParams.chapter) - 1,
+        page = Number($stateParams.page) - 1;
+
+    this.taskData = staticService.getData($stateParams, 'data');
+    this.useColumns = this.taskData.useColumns;
+
+    var loadNotes = function loadNotes() {
+      var data = userService.getUserNotes();
+
+      data.forEach(function (item) {
+        if (item.chapter_id == chapter && item.page_id == page) {
+          _this15.items = item;
+        }
+      });
+    };
+
+    this.range = function (bool) {
+
+      var range = [],
+          from = 0,
+          to = _this15.items.fields.length / 2;
+
+      if (!bool) {
+        from = _this15.items.fields.length / 2;
+        to = _this15.items.fields.length;
+      }
+
+      for (var i = from; i < to; i++) {
+        range.push(_this15.items.fields[i]);
+      }
+      return range;
+    };
+
+    loadNotes
+
+    // console.log('NoteCtrl:: fields:', this.items)
+
+    ();this.saveNote = function () {
+      var inputs = document.getElementsByClassName('task-note_item_input');
+      // console.log(inputs)
+      for (var i = 0; i < inputs.length; i++) {
+        // console.log(inputs[i].value)
+        _this15.items.fields[i].text = inputs[i].value;
+      }
+
+      userService.setUserNotes(_this15.items, chapter, page);
+      staticService.showModal('exercise', 'Записная книжка', 'Записи сохранены');
+    };
+  }
+})();
+;(function () {
+  'use strict';
+
   SelectCtrl.$inject = ["$scope", "$stateParams", "$attrs", "staticService", "userService"];
   angular.module('courseApp').component('taskSelect', {
     templateUrl: 'js/components/task-select/taskSelectTmpl.html',
@@ -6095,7 +6178,7 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
 
   /* @ngInject */
   function SelectCtrl($scope, $stateParams, $attrs, staticService, userService) {
-    var _this15 = this;
+    var _this16 = this;
 
     this.test = $attrs.test;
     this.currentTestQuestion = userService.currentTestQuestion;
@@ -6108,7 +6191,7 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
 
     for (var i = 0; i < this.taskExs.length; i++) {
       this.taskExs[i].questionList.questions = this.taskExs[i].questionList.questions.map(function (item) {
-        item.default = _this15.taskData.defaultLabel;
+        item.default = _this16.taskData.defaultLabel;
         item.v_id = -1;
         item.open = 0;
         return item;
@@ -6146,41 +6229,41 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
       if (v_id == -1) {
         return;
       }
-      if (_this15.state == 2) {
+      if (_this16.state == 2) {
         return;
       }
       // console.log( index )
 
       // проверяем был ли уже дан ответ на вопрос
-      if (_this15.taskExs[taskIndex].questionList.questions[questIndex].v_id != -1) {
+      if (_this16.taskExs[taskIndex].questionList.questions[questIndex].v_id != -1) {
 
-        var _v_id = _this15.taskExs[taskIndex].questionList.questions[questIndex].v_id;
+        var _v_id = _this16.taskExs[taskIndex].questionList.questions[questIndex].v_id;
 
-        for (var _i11 = 0; _i11 < _this15.taskExs[taskIndex].questionList.variants.length; _i11++) {
-          if (_this15.taskExs[taskIndex].questionList.variants[_i11].v_id == _v_id) {
-            _this15.taskExs[taskIndex].questionList.variants[_i11].selected = -1;
+        for (var _i11 = 0; _i11 < _this16.taskExs[taskIndex].questionList.variants.length; _i11++) {
+          if (_this16.taskExs[taskIndex].questionList.variants[_i11].v_id == _v_id) {
+            _this16.taskExs[taskIndex].questionList.variants[_i11].selected = -1;
           }
           break;
         }
       }
 
       // в вопросе отмечаем какой на него дали ответ
-      _this15.taskExs[taskIndex].questionList.questions[questIndex].v_id = v_id;
+      _this16.taskExs[taskIndex].questionList.questions[questIndex].v_id = v_id;
 
       // отмечаем, что ответ использован
-      for (var _i12 = 0; _i12 < _this15.taskExs[taskIndex].questionList.variants.length; _i12++) {
-        if (_this15.taskExs[taskIndex].questionList.variants[_i12].v_id == v_id) {
-          _this15.taskExs[taskIndex].questionList.variants[_i12].selected = 1;
+      for (var _i12 = 0; _i12 < _this16.taskExs[taskIndex].questionList.variants.length; _i12++) {
+        if (_this16.taskExs[taskIndex].questionList.variants[_i12].v_id == v_id) {
+          _this16.taskExs[taskIndex].questionList.variants[_i12].selected = 1;
           // выводим лейбл ответа
-          _this15.taskExs[taskIndex].questionList.questions[questIndex].default = _this15.taskExs[taskIndex].questionList.variants[_i12].label;
+          _this16.taskExs[taskIndex].questionList.questions[questIndex].default = _this16.taskExs[taskIndex].questionList.variants[_i12].label;
         }
       }
 
       // проверяем везде ли выбрали ответ
       var check = true;
-      for (var _i13 = 0; _i13 < _this15.taskExs.length; _i13++) {
-        for (var j = 0; j < _this15.taskExs[_i13].questionList.questions.length; j++) {
-          if (_this15.taskExs[_i13].questionList.questions[j].v_id == -1) {
+      for (var _i13 = 0; _i13 < _this16.taskExs.length; _i13++) {
+        for (var j = 0; j < _this16.taskExs[_i13].questionList.questions.length; j++) {
+          if (_this16.taskExs[_i13].questionList.questions[j].v_id == -1) {
             check = false;
             break;
           }
@@ -6188,14 +6271,14 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
       }
 
       if (check) {
-        _this15.state = 1;
+        _this16.state = 1;
       }
 
       // можно ли выбирать одни и теже ответы
-      if (!_this15.taskExs[taskIndex].sameQ) {
-        _this15.filteredList = _this15.getNotSelected(taskIndex);
+      if (!_this16.taskExs[taskIndex].sameQ) {
+        _this16.filteredList = _this16.getNotSelected(taskIndex);
       }
-      _this15.toggleSelect(e, questIndex, taskIndex);
+      _this16.toggleSelect(e, questIndex, taskIndex);
 
       e.stopPropagation();
     }; // end of selectChange()
@@ -6203,24 +6286,24 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
 
     this.checkAnswer = function () {
       // console.log('SelectCtrl:: checkAnswer:')
-      if (_this15.userAttempt === _this15.attemptNum) {
-        _this15.userAttempt = 0;
+      if (_this16.userAttempt === _this16.attemptNum) {
+        _this16.userAttempt = 0;
       }
-      _this15.userAttempt++;
-      _this15.state = 2;
+      _this16.userAttempt++;
+      _this16.state = 2;
 
-      for (var _i14 = 0; _i14 < _this15.taskExs.length; _i14++) {
-        for (var j = 0; j < _this15.taskExs[_i14].questionList.questions.length; j++) {
+      for (var _i14 = 0; _i14 < _this16.taskExs.length; _i14++) {
+        for (var j = 0; j < _this16.taskExs[_i14].questionList.questions.length; j++) {
 
-          var thisQuestion = _this15.taskExs[_i14].questionList.questions[j];
+          var thisQuestion = _this16.taskExs[_i14].questionList.questions[j];
 
-          if (_this15.taskData.exs[_i14].questionList.variants[thisQuestion.v_id].q_id != thisQuestion.q_id) {
+          if (_this16.taskData.exs[_i14].questionList.variants[thisQuestion.v_id].q_id != thisQuestion.q_id) {
             // неправильно дан ответ
-            if (_this15.userAttempt == _this15.attemptNum && _this15.taskOptions.showAnswer) {
+            if (_this16.userAttempt == _this16.attemptNum && _this16.taskOptions.showAnswer) {
               showAnswer();
             }
             userService.setUserProgress(0, 0, Number($stateParams.chapter) - 1, Number($stateParams.page) - 1);
-            staticService.showModal('exercise', 'Ваш результат', _this15.taskData.messages[_this15.userAttempt], false);
+            staticService.showModal('exercise', 'Ваш результат', _this16.taskData.messages[_this16.userAttempt], false);
             return;
           }
         }
@@ -6228,44 +6311,44 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
 
       // упражнение верно
       userService.setUserProgress(100, 1, Number($stateParams.chapter) - 1, Number($stateParams.page) - 1);
-      staticService.showModal('exercise', 'Ваш результат', _this15.taskData.messages[0], true);
+      staticService.showModal('exercise', 'Ваш результат', _this16.taskData.messages[0], true);
     }; // end of checkAnswer()
 
     this.removeRestart = function () {
 
-      _this15.state = 0;
+      _this16.state = 0;
       // мешаем вопросы
-      if (_this15.taskOptions.shuffle) {
-        for (var _i15 = 0; _i15 < _this15.taskExs.length; _i15++) {
-          _this15.taskExs[_i15].questionList.variants = _.shuffle(_this15.taskExs[_i15].questionList.variants);
+      if (_this16.taskOptions.shuffle) {
+        for (var _i15 = 0; _i15 < _this16.taskExs.length; _i15++) {
+          _this16.taskExs[_i15].questionList.variants = _.shuffle(_this16.taskExs[_i15].questionList.variants);
           // this.taskExs[i].questionList.questions = _.shuffle(this.taskExs[i].questionList.questions);
         }
       }
       // this.active = angular.fromJson(angular.toJson(this.taskExs));
 
-      for (var _i16 = 0; _i16 < _this15.taskExs.length; _i16++) {
-        for (var j = 0; j < _this15.taskExs[_i16].questionList.questions.length; j++) {
-          _this15.taskExs[_i16].questionList.questions[j].default = _this15.taskData.defaultLabel;
-          _this15.taskExs[_i16].questionList.questions[j].open = 0;
-          _this15.taskExs[_i16].questionList.questions[j].v_id = -1;
+      for (var _i16 = 0; _i16 < _this16.taskExs.length; _i16++) {
+        for (var j = 0; j < _this16.taskExs[_i16].questionList.questions.length; j++) {
+          _this16.taskExs[_i16].questionList.questions[j].default = _this16.taskData.defaultLabel;
+          _this16.taskExs[_i16].questionList.questions[j].open = 0;
+          _this16.taskExs[_i16].questionList.questions[j].v_id = -1;
         }
-        for (var _j2 = 0; _j2 < _this15.taskExs[_i16].questionList.variants.length; _j2++) {
-          _this15.taskExs[_i16].questionList.variants[_j2].selected = -1;
+        for (var _j2 = 0; _j2 < _this16.taskExs[_i16].questionList.variants.length; _j2++) {
+          _this16.taskExs[_i16].questionList.variants[_j2].selected = -1;
         }
       }
-      _this15.filteredList = _this15.getNotSelected(-1);
+      _this16.filteredList = _this16.getNotSelected(-1);
     }; // end of removeRestart()
 
     var showAnswer = function showAnswer() {
-      console.log('SelectCtrl:: showAnswer:');
+      console.log('SelectCtrl:: showAnswer:'
 
       // this.userAttempt = 0;
 
-      for (var i = 0; i < _this15.taskExs.length; i++) {
-        for (var j = 0; j < _this15.taskExs[i].questionList.questions.length; j++) {
-          for (var k = 0; k < _this15.taskExs[i].questionList.variants.length; k++) {
-            if (_this15.taskExs[i].questionList.questions[j].q_id == _this15.taskExs[i].questionList.variants[k].q_id) {
-              _this15.taskExs[i].questionList.questions[j].default = _this15.taskExs[i].questionList.variants[k].label;
+      );for (var i = 0; i < _this16.taskExs.length; i++) {
+        for (var j = 0; j < _this16.taskExs[i].questionList.questions.length; j++) {
+          for (var k = 0; k < _this16.taskExs[i].questionList.variants.length; k++) {
+            if (_this16.taskExs[i].questionList.questions[j].q_id == _this16.taskExs[i].questionList.variants[k].q_id) {
+              _this16.taskExs[i].questionList.questions[j].default = _this16.taskExs[i].questionList.variants[k].label;
               break;
             }
           }
@@ -6275,23 +6358,23 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
 
     this.toggleSelect = function (e, questIndex, taskIndex) {
       // console.log('toggleSelect', questIndex, taskIndex);
-      _this15.taskExs[taskIndex].questionList.questions[questIndex].open = !_this15.taskExs[taskIndex].questionList.questions[questIndex].open;
+      _this16.taskExs[taskIndex].questionList.questions[questIndex].open = !_this16.taskExs[taskIndex].questionList.questions[questIndex].open;
       e.stopPropagation();
     }; // end of toggleSelect()
 
     this.getNotSelected = function (taskIndex) {
       // console.log('filering::', taskIndex)
       var filtered = [];
-      for (var _i17 = 0; _i17 < _this15.taskExs.length; _i17++) {
+      for (var _i17 = 0; _i17 < _this16.taskExs.length; _i17++) {
         filtered[_i17] = [];
         if (_i17 == taskIndex) {
-          for (var j = 0; j < _this15.taskExs[_i17].questionList.variants.length; j++) {
-            if (_this15.taskExs[_i17].questionList.variants[j].selected < 0) {
-              filtered[_i17].push(_this15.taskExs[_i17].questionList.variants[j]);
+          for (var j = 0; j < _this16.taskExs[_i17].questionList.variants.length; j++) {
+            if (_this16.taskExs[_i17].questionList.variants[j].selected < 0) {
+              filtered[_i17].push(_this16.taskExs[_i17].questionList.variants[j]);
             }
           }
         } else {
-          filtered[_i17] = angular.fromJson(angular.toJson(_this15.taskExs[_i17].questionList.variants));
+          filtered[_i17] = angular.fromJson(angular.toJson(_this16.taskExs[_i17].questionList.variants));
         }
       }
       return filtered;
@@ -6300,71 +6383,6 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
     //инициализация списка ответов
     this.filteredList = this.getNotSelected(-1);
   }; // end of SelectCtrl()
-})();
-;(function () {
-  'use strict';
-
-  NoteCtrl.$inject = ["$scope", "$stateParams", "$attrs", "staticService", "userService"];
-  angular.module('courseApp').component('taskNote', {
-    templateUrl: 'js/components/task-note/taskNoteTmpl.html',
-    controller: 'NoteCtrl',
-    controllerAs: '$ctrl'
-  }).controller('NoteCtrl', NoteCtrl);
-
-  /* @ngInject */
-  function NoteCtrl($scope, $stateParams, $attrs, staticService, userService) {
-    var _this16 = this;
-
-    this.items = [];
-    var chapter = Number($stateParams.chapter) - 1,
-        page = Number($stateParams.page) - 1;
-
-    this.taskData = staticService.getData($stateParams, 'data');
-    this.useColumns = this.taskData.useColumns;
-
-    var loadNotes = function loadNotes() {
-      var data = userService.getUserNotes();
-
-      data.forEach(function (item) {
-        if (item.chapter_id == chapter && item.page_id == page) {
-          _this16.items = item;
-        }
-      });
-    };
-
-    this.range = function (bool) {
-
-      var range = [],
-          from = 0,
-          to = _this16.items.fields.length / 2;
-
-      if (!bool) {
-        from = _this16.items.fields.length / 2;
-        to = _this16.items.fields.length;
-      }
-
-      for (var i = from; i < to; i++) {
-        range.push(_this16.items.fields[i]);
-      }
-      return range;
-    };
-
-    loadNotes();
-
-    // console.log('NoteCtrl:: fields:', this.items)
-
-    this.saveNote = function () {
-      var inputs = document.getElementsByClassName('task-note_item_input');
-      // console.log(inputs)
-      for (var i = 0; i < inputs.length; i++) {
-        // console.log(inputs[i].value)
-        _this16.items.fields[i].text = inputs[i].value;
-      }
-
-      userService.setUserNotes(_this16.items, chapter, page);
-      staticService.showModal('exercise', 'Записная книжка', 'Записи сохранены');
-    };
-  }
 })();
 (function () {
   'use strict';
@@ -6657,6 +6675,130 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
     });
   }
 })();
+(function () {
+  'use strict';
+
+  TaskStrictSortableCtrl.$inject = ["$element", "$stateParams", "staticService", "userService"];
+  angular.module('courseApp').controller('TaskStrictSortableCtrl', TaskStrictSortableCtrl);
+
+  /* @ngInject */
+  function TaskStrictSortableCtrl($element, $stateParams, staticService, userService) {
+    var self = this;
+
+    self.taskData = JSON.parse(angular.toJson(staticService.getData($stateParams, 'data')));
+    // console.log('taskData',self.taskData)
+    /* 
+    * self.taskData - the main object for this exercise
+    * 
+    *  "data": {
+    *    "options":{
+    *      "attempts": 3,       // кол-во попыток
+    *      "shuffle": true,     // мешать ответы?
+    *      "showAnswer": true,  // показывать правильный ответ в конце
+    *    },
+    *    "exs": {
+    *      "taskText": "",
+    *      "variant": [{
+    *        "content": ""
+    *      }]
+    *    }
+    *  }
+    */
+
+    // attempt number
+    var attemptNum = self.taskData.options.attempts,
+        userAttempt = 0;
+
+    self.taskText = self.taskData.exs.taskText;
+    self.end = false;
+
+    self.btnDisabledState = {
+      restart: true,
+      answer: false
+    };
+
+    angular.element(document).ready(function () {
+      var itemList = $($element).find(".sortable-box__item");
+      var basketsList = $($element).find(".sortable-box");
+
+      $($element).find('.sortable-box__item').draggable({
+        containment: ".sortable-container",
+        refreshPositions: true,
+        revert: true
+      });
+      $($element).find('.sortable-box').droppable({
+        drop: function drop(event, ui) {
+          var overBlock = $(event.target).find('.sortable-box__item'),
+              overBlockContent = overBlock.html(),
+              prevNumber = ui.draggable.attr("data-number"),
+              newNumber = overBlock.attr("data-number"),
+              topPos = $(basketsList[prevNumber]).position().top - overBlock.position().top,
+              leftPos = $(basketsList[prevNumber]).position().left - overBlock.position().left;
+
+          overBlock.html(ui.draggable.html()).css({ 'z-index': 10000 });
+          ui.draggable.html(overBlockContent);
+        }
+      });
+      self.checkAnswer = function () {
+        var answerList = $($element).find(".sortable-box__item");
+
+        self.btnDisabledState.restart = false;
+        self.btnDisabledState.answer = true;
+
+        userAttempt === attemptNum ? userAttempt = 0 : userAttempt++;
+
+        for (var i = 0; i < answerList.length; i++) {
+          // console.log(i, $.trim($(answerList[i]).html().replace(/'/g, '"')));
+          // console.log(i, $.trim(self.taskData.exs.variant[i].content.replace(/'/g, '"')));
+          if ($.trim($(answerList[i]).html().replace(/'/g, '"')) !== $.trim(self.taskData.exs.variant[i].content.replace(/'/g, '"'))) {
+            self.taskData.exs.variant[i].answer = false;
+          } else {
+            self.taskData.exs.variant[i].answer = true;
+          }
+        }
+        // console.log('=>',self.taskData.exs.variant.filter((elem) => elem.answer === true).length)
+        // console.log('=>',self.taskData.exs.variant.length)
+        console.log('=>', userAttempt);
+        if (self.taskData.exs.variant.filter(function (elem) {
+          return elem.answer === true;
+        }).length === self.taskData.exs.variant.length) {
+          // верно
+          userService.setUserProgress(100, 1, Number($stateParams.chapter) - 1, Number($stateParams.page) - 1);
+          return staticService.showModal('exercise', 'Ваш результат', self.taskData.messages[0], true);
+        } else {
+
+          if (userAttempt === attemptNum) {
+            showAnswer();
+          }
+
+          userService.setUserProgress(0, 0, Number($stateParams.chapter) - 1, Number($stateParams.page) - 1);
+          return staticService.showModal('exercise', 'Ваш результат', self.taskData.messages[userAttempt], false);
+        }
+      };
+
+      self.removeRestart = function () {
+        self.btnDisabledState.restart = true;
+        self.btnDisabledState.answer = false;
+
+        var numberList = _.shuffle(_.range(basketsList.length));
+        for (var i = 0; i < itemList.length; i++) {
+          $(itemList[i]).html(self.taskData.exs.variant[numberList[i]].content);
+        };
+        self.taskData.exs.variant.forEach(function (elem) {
+          return elem.answer = "";
+        });
+      };
+      self.removeRestart();
+
+      var showAnswer = function showAnswer() {
+        for (var i = 0; i < itemList.length; i++) {
+          $(itemList[i]).html(self.taskData.exs.variant[i].content);
+          self.taskData.exs.variant[i].answer = true;
+        }
+      };
+    });
+  };
+})();
 ;(function () {
   'use strict';
 
@@ -6782,130 +6924,6 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
       }
     });
   }; // end of SwapListCtrl()
-})();
-(function () {
-  'use strict';
-
-  TaskStrictSortableCtrl.$inject = ["$element", "$stateParams", "staticService", "userService"];
-  angular.module('courseApp').controller('TaskStrictSortableCtrl', TaskStrictSortableCtrl);
-
-  /* @ngInject */
-  function TaskStrictSortableCtrl($element, $stateParams, staticService, userService) {
-    var self = this;
-
-    self.taskData = JSON.parse(angular.toJson(staticService.getData($stateParams, 'data')));
-    // console.log('taskData',self.taskData)
-    /* 
-    * self.taskData - the main object for this exercise
-    * 
-    *  "data": {
-    *    "options":{
-    *      "attempts": 3,       // кол-во попыток
-    *      "shuffle": true,     // мешать ответы?
-    *      "showAnswer": true,  // показывать правильный ответ в конце
-    *    },
-    *    "exs": {
-    *      "taskText": "",
-    *      "variant": [{
-    *        "content": ""
-    *      }]
-    *    }
-    *  }
-    */
-
-    // attempt number
-    var attemptNum = self.taskData.options.attempts,
-        userAttempt = 0;
-
-    self.taskText = self.taskData.exs.taskText;
-    self.end = false;
-
-    self.btnDisabledState = {
-      restart: true,
-      answer: false
-    };
-
-    angular.element(document).ready(function () {
-      var itemList = $($element).find(".sortable-box__item");
-      var basketsList = $($element).find(".sortable-box");
-
-      $($element).find('.sortable-box__item').draggable({
-        containment: ".sortable-container",
-        refreshPositions: true,
-        revert: true
-      });
-      $($element).find('.sortable-box').droppable({
-        drop: function drop(event, ui) {
-          var overBlock = $(event.target).find('.sortable-box__item'),
-              overBlockContent = overBlock.html(),
-              prevNumber = ui.draggable.attr("data-number"),
-              newNumber = overBlock.attr("data-number"),
-              topPos = $(basketsList[prevNumber]).position().top - overBlock.position().top,
-              leftPos = $(basketsList[prevNumber]).position().left - overBlock.position().left;
-
-          overBlock.html(ui.draggable.html()).css({ 'z-index': 10000 });
-          ui.draggable.html(overBlockContent);
-        }
-      });
-      self.checkAnswer = function () {
-        var answerList = $($element).find(".sortable-box__item");
-
-        self.btnDisabledState.restart = false;
-        self.btnDisabledState.answer = true;
-
-        userAttempt === attemptNum ? userAttempt = 0 : userAttempt++;
-
-        for (var i = 0; i < answerList.length; i++) {
-          // console.log(i, $.trim($(answerList[i]).html().replace(/'/g, '"')));
-          // console.log(i, $.trim(self.taskData.exs.variant[i].content.replace(/'/g, '"')));
-          if ($.trim($(answerList[i]).html().replace(/'/g, '"')) !== $.trim(self.taskData.exs.variant[i].content.replace(/'/g, '"'))) {
-            self.taskData.exs.variant[i].answer = false;
-          } else {
-            self.taskData.exs.variant[i].answer = true;
-          }
-        }
-        // console.log('=>',self.taskData.exs.variant.filter((elem) => elem.answer === true).length)
-        // console.log('=>',self.taskData.exs.variant.length)
-        console.log('=>', userAttempt);
-        if (self.taskData.exs.variant.filter(function (elem) {
-          return elem.answer === true;
-        }).length === self.taskData.exs.variant.length) {
-          // верно
-          userService.setUserProgress(100, 1, Number($stateParams.chapter) - 1, Number($stateParams.page) - 1);
-          return staticService.showModal('exercise', 'Ваш результат', self.taskData.messages[0], true);
-        } else {
-
-          if (userAttempt === attemptNum) {
-            showAnswer();
-          }
-
-          userService.setUserProgress(0, 0, Number($stateParams.chapter) - 1, Number($stateParams.page) - 1);
-          return staticService.showModal('exercise', 'Ваш результат', self.taskData.messages[userAttempt], false);
-        }
-      };
-
-      self.removeRestart = function () {
-        self.btnDisabledState.restart = true;
-        self.btnDisabledState.answer = false;
-
-        var numberList = _.shuffle(_.range(basketsList.length));
-        for (var i = 0; i < itemList.length; i++) {
-          $(itemList[i]).html(self.taskData.exs.variant[numberList[i]].content);
-        };
-        self.taskData.exs.variant.forEach(function (elem) {
-          return elem.answer = "";
-        });
-      };
-      self.removeRestart();
-
-      var showAnswer = function showAnswer() {
-        for (var i = 0; i < itemList.length; i++) {
-          $(itemList[i]).html(self.taskData.exs.variant[i].content);
-          self.taskData.exs.variant[i].answer = true;
-        }
-      };
-    });
-  };
 })();
 ;(function () {
   'use strict';
