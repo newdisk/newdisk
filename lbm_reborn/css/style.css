@@ -1228,7 +1228,7 @@ body > object {
   position: relative;
   min-height: 450px;
   font-size: 0;
-  background: url("/pages/chapter05/page23/img/bg-mobile.png") no-repeat;
+  background: url("../pages/chapter05/page23/img/bg-mobile.png") no-repeat;
   background-size: 80%;
   background-position: 50% 0;
   border: 1px solid transparent; }
@@ -1272,7 +1272,7 @@ body > object {
   width: 26px;
   height: 26px;
   border: 1px solid transparent;
-  background: url("/pages/chapter05/page23/img/cross.png") no-repeat; }
+  background: url("../pages/chapter05/page23/img/cross.png") no-repeat; }
 
 .sortable-box__item_true::after {
   position: absolute;
@@ -1281,7 +1281,7 @@ body > object {
   content: '';
   width: 38px;
   height: 38px;
-  background: url("/pages/chapter05/page23/img/check.png") no-repeat; }
+  background: url("../pages/chapter05/page23/img/check.png") no-repeat; }
 
 .ui-draggable-dragging {
   background: rgba(255, 255, 255, 0.5);
@@ -6338,7 +6338,7 @@ p {
     display: block; }
   .sortable-container{
     height: 470px;
-    background: url("/pages/chapter05/page23/img/bg.png") no-repeat;
+    background: url("../pages/chapter05/page23/img/bg.png") no-repeat;
     background-size: 80%;
     background-position: 50% 0; }
   .sortable-box{
