@@ -192,7 +192,7 @@ const courseStructure = {
       }
     },{
       "page_id": 7,//10
-      "title": "В чем заключается труд менеджера",
+      "title": "Выводы: В чем заключается труд менеджера",
       "location": "page07",
       "hasSound": false,
       "type": "simple_page",
@@ -2618,7 +2618,7 @@ const courseStructure = {
         }, 
         "exs": [
           {
-            "taskText": "",
+            "taskText": "Эпизод 1",
             "sameQ": true, // можно ли выбирать одни и теже ответы
             "questionList": {
               "questions": [
@@ -2662,7 +2662,7 @@ const courseStructure = {
                 }]
             }
           },{
-            "taskText": "",
+            "taskText": "Эпизод 2",
             "sameQ": true, // можно ли выбирать одни и теже ответы
             "questionList": {
               "questions": [

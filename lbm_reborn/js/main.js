@@ -4334,6 +4334,125 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
 ;(function () {
   'use strict';
 
+  TestCtrl.$inject = ["$scope", "$state", "$compile", "$stateParams", "testDataObj", "staticService", "userService", "courseInfo"];
+  angular.module('courseApp').component('finalTest', {
+    templateUrl: 'js/components/final-test/finalTestTmpl.html',
+    controller: 'TestCtrl',
+    controllerAs: '$ctrl'
+  }).controller('TestCtrl', TestCtrl);
+
+  /* @ngInject */
+  function TestCtrl($scope, $state, $compile, $stateParams, testDataObj, staticService, userService, courseInfo) {
+    var _this3 = this;
+
+    /**
+    *   tasks:
+    *     single, multi, sortab
+    */
+
+    // составляем список вопросов и мешаем его
+    this.questionList = _.shuffle(JSON.parse(JSON.stringify(testDataObj.tests[0].groups[0].questions)));
+
+    //номер вопроса
+    this.currentQuest = 0;
+
+    // состояния теста: 
+    this.state = 0;
+    $scope.$on('myTestState', function (e, data) {
+      _this3.state = data;
+    });
+
+    this.testScore = 0;
+
+    this.testTask = document.getElementsByClassName('test-task')[0];
+
+    this.buildQuestion = function () {
+
+      _this3.questionList[_this3.currentQuest].answers = _.shuffle(_this3.questionList[_this3.currentQuest].answers);
+      userService.setCurrentTestQuestion(_this3.questionList[_this3.currentQuest]);
+
+      // console.warn('TestCtrl:: buildQuestion:',this.questionList[this.currentQuest])
+
+      var tmpstr = '';
+      switch (_this3.questionList[_this3.currentQuest].type) {
+        case 'single':
+          tmpstr = '<task-single-choice test="true"></task-single-choice>';
+          break;
+        case 'multi':
+          tmpstr = '<task-multi-choice test="true"></task-multi-choice>';
+          break;
+      }
+
+      _this3.testTask.appendChild($compile(tmpstr)($scope)[0]);
+      // console.warn($compile(tmpstr)($scope))
+    };
+
+    this.nextQuestion = function (e) {
+      if (e.target.classList.contains('btn_disabled')) {
+        return;
+      }
+
+      _this3.checkAnswer();
+
+      _this3.currentQuest++;
+      if (_this3.currentQuest < _this3.questionList.length) {
+        _this3.state = 0;
+        _this3.testTask.innerHTML = '';
+        _this3.buildQuestion();
+      } else {
+        _this3.state = 2;
+        _this3.currentQuest--;
+        // console.log('TEST::>', this.testScore/(this.questionList.length))
+        courseInfo.testScore = Math.round(_this3.testScore / _this3.questionList.length);
+        // alert('konec')
+        // show result window
+        // to showModal: modal id, head comment, text comment
+        staticService.showModal('exercise', 'Итоговое тестирование', 'Набрано баллов: ' + courseInfo.testScore);
+        userService.sendToLMS();
+      }
+    };
+
+    this.checkAnswer = function () {
+      var answersElements = document.getElementsByClassName('task-question'
+      // console.warn('answersElements', answersElements) 
+      // console.warn('questionList', this.questionList[this.currentQuest].answers) 
+
+      );for (var i = 0; i < answersElements.length; i++) {
+        var answer = _this3.questionList[_this3.currentQuest].answers[i].right,
+            question = answersElements[i].classList.contains('radio-selected');
+
+        // console.warn('check answers', answer, question)
+        if (answer !== question) {
+          // неверный ответ
+          // console.warn('ответ на вопрос теста неверен')
+          // console.info('score', this.testScore)
+          return;
+        }
+      }
+      // console.warn('ответ на вопрос верен')
+      _this3.testScore += 100;
+      // console.info('score', this.testScore)
+      // 
+    };
+
+    this.removeRestart = function () {
+      _this3.state = 0;
+      _this3.testScore = 0;
+      _this3.currentQuest = 0;
+      _this3.questionList = _.shuffle(JSON.parse(JSON.stringify(testDataObj.tests[0].groups[0].questions)));
+      _this3.testTask.innerHTML = '';
+      _this3.buildQuestion();
+    };
+
+    angular.element(document).ready(function () {
+      // console.log(this.questionList)
+      _this3.buildQuestion();
+    });
+  }
+})();
+;(function () {
+  'use strict';
+
   CustomAudioCtrl.$inject = ["$document", "$interval", "staticService"];
   angular.module('courseApp').component('customAudio', {
     bindings: {
@@ -4348,7 +4467,7 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
 
   /* @ngInject */
   function CustomAudioCtrl($document, $interval, staticService) {
-    var _this3 = this;
+    var _this4 = this;
 
     this.play = '#play'; // variable for play/pause btn that toggle icons
     this.mute = '#unmute'; // variable for mute/unmute btn that toggle icons
@@ -4357,7 +4476,7 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
 
     this.$onInit = function () {
       // console.warn('AudioCtrl:: hasSound', this.hassound)
-      if (_this3.hassound != 'false') {
+      if (_this4.hassound != 'false') {
         init();
       }
     };
@@ -4367,34 +4486,34 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
       /* It's a better way to use createElement than create new Audio(), 
       /  because such object is easier to remove
        **/
-      );_this3.audio = $document[0].createElement('audio');
-      _this3.audio.src = "pages/" + _this3.chapter + "/" + _this3.page + "/audio/page-" + _this3.chapter + "-" + _this3.page + ".mp3";
+      );_this4.audio = $document[0].createElement('audio');
+      _this4.audio.src = "pages/" + _this4.chapter + "/" + _this4.page + "/audio/page-" + _this4.chapter + "-" + _this4.page + ".mp3";
 
-      _this3.audio.oncanplaythrough = function () {
+      _this4.audio.oncanplaythrough = function () {
 
-        _this3.changePlayPause = function () {
+        _this4.changePlayPause = function () {
 
-          if (_this3.audio.paused) {
-            _this3.audio.play();
-            _this3.play = '#pause';
+          if (_this4.audio.paused) {
+            _this4.audio.play();
+            _this4.play = '#pause';
           } else {
-            _this3.audio.pause();
-            _this3.play = '#play';
+            _this4.audio.pause();
+            _this4.play = '#play';
           }
         };
 
-        _this3.updateSeekSlider = function () {
-          var seekNewPos = _this3.audio.currentTime * (100 / _this3.audio.duration),
+        _this4.updateSeekSlider = function () {
+          var seekNewPos = _this4.audio.currentTime * (100 / _this4.audio.duration),
               // position in seek slider
-          curmins = Math.floor(_this3.audio.currentTime / 60),
+          curmins = Math.floor(_this4.audio.currentTime / 60),
               // current minutes value
-          cursecs = Math.floor(_this3.audio.currentTime - curmins * 60),
+          cursecs = Math.floor(_this4.audio.currentTime - curmins * 60),
               // current seconds value
-          durmins = Math.floor(_this3.audio.duration / 60),
+          durmins = Math.floor(_this4.audio.duration / 60),
               // audio duration in minutes
-          dursecs = Math.floor(_this3.audio.duration - durmins * 60); // audio duration in rest seconds
+          dursecs = Math.floor(_this4.audio.duration - durmins * 60); // audio duration in rest seconds
 
-          _this3.seekPos = Math.floor(seekNewPos);
+          _this4.seekPos = Math.floor(seekNewPos);
 
           if (curmins < 10) {
             curmins = '0' + curmins;
@@ -4409,53 +4528,53 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
             dursecs = '0' + dursecs;
           };
 
-          _this3.curTime = curmins + ':' + cursecs; // display current time in the audio player
-          _this3.durTime = durmins + ':' + dursecs; //  display audio duration time in the audio player
-          if (_this3.audio.currentTime === _this3.audio.duration) {
-            _this3.play = '#play';
+          _this4.curTime = curmins + ':' + cursecs; // display current time in the audio player
+          _this4.durTime = durmins + ':' + dursecs; //  display audio duration time in the audio player
+          if (_this4.audio.currentTime === _this4.audio.duration) {
+            _this4.play = '#play';
           }
         };
 
-        _this3.changeSeekPos = function () {
-          _this3.audio.currentTime = _this3.audio.duration * (_this3.seekPos / 100);
+        _this4.changeSeekPos = function () {
+          _this4.audio.currentTime = _this4.audio.duration * (_this4.seekPos / 100);
         };
 
         $interval(function () {
 
-          if (!_this3.audio) return;
-          _this3.updateSeekSlider();
+          if (!_this4.audio) return;
+          _this4.updateSeekSlider();
 
           // set audio time position in staticService to animate images in pages
-          staticService.setAudioTime(_this3.audio.currentTime);
+          staticService.setAudioTime(_this4.audio.currentTime);
 
           // listen call from staticService at page state change
           if (staticService.getStopAudio()) {
-            _this3.audio.pause();
-            _this3.audio = null;
+            _this4.audio.pause();
+            _this4.audio = null;
             return;
           }
         }, 100);
 
-        _this3.changeMuteState = function () {
-          _this3.mute = '#unmute';
+        _this4.changeMuteState = function () {
+          _this4.mute = '#unmute';
 
-          if (_this3.audio.muted) {
-            _this3.audio.muted = false;
-            _this3.mute = '#unmute';
+          if (_this4.audio.muted) {
+            _this4.audio.muted = false;
+            _this4.mute = '#unmute';
           } else {
-            _this3.audio.muted = true;
-            _this3.mute = '#mute';
+            _this4.audio.muted = true;
+            _this4.mute = '#mute';
           }
         };
 
-        _this3.changeVolume = function () {
-          _this3.audio.volume = _this3.volume;
+        _this4.changeVolume = function () {
+          _this4.audio.volume = _this4.volume;
         };
 
-        _this3.restart = function () {
-          _this3.audio.currentTime = 0;
-          _this3.audio.play();
-          _this3.play = '#pause';
+        _this4.restart = function () {
+          _this4.audio.currentTime = 0;
+          _this4.audio.play();
+          _this4.play = '#pause';
         };
       };
     };
@@ -4555,125 +4674,6 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
         };
       };
     };
-  }
-})();
-;(function () {
-  'use strict';
-
-  TestCtrl.$inject = ["$scope", "$state", "$compile", "$stateParams", "testDataObj", "staticService", "userService", "courseInfo"];
-  angular.module('courseApp').component('finalTest', {
-    templateUrl: 'js/components/final-test/finalTestTmpl.html',
-    controller: 'TestCtrl',
-    controllerAs: '$ctrl'
-  }).controller('TestCtrl', TestCtrl);
-
-  /* @ngInject */
-  function TestCtrl($scope, $state, $compile, $stateParams, testDataObj, staticService, userService, courseInfo) {
-    var _this4 = this;
-
-    /**
-    *   tasks:
-    *     single, multi, sortab
-    */
-
-    // составляем список вопросов и мешаем его
-    this.questionList = _.shuffle(JSON.parse(JSON.stringify(testDataObj.tests[0].groups[0].questions)));
-
-    //номер вопроса
-    this.currentQuest = 0;
-
-    // состояния теста: 
-    this.state = 0;
-    $scope.$on('myTestState', function (e, data) {
-      _this4.state = data;
-    });
-
-    this.testScore = 0;
-
-    this.testTask = document.getElementsByClassName('test-task')[0];
-
-    this.buildQuestion = function () {
-
-      _this4.questionList[_this4.currentQuest].answers = _.shuffle(_this4.questionList[_this4.currentQuest].answers);
-      userService.setCurrentTestQuestion(_this4.questionList[_this4.currentQuest]);
-
-      // console.warn('TestCtrl:: buildQuestion:',this.questionList[this.currentQuest])
-
-      var tmpstr = '';
-      switch (_this4.questionList[_this4.currentQuest].type) {
-        case 'single':
-          tmpstr = '<task-single-choice test="true"></task-single-choice>';
-          break;
-        case 'multi':
-          tmpstr = '<task-multi-choice test="true"></task-multi-choice>';
-          break;
-      }
-
-      _this4.testTask.appendChild($compile(tmpstr)($scope)[0]);
-      // console.warn($compile(tmpstr)($scope))
-    };
-
-    this.nextQuestion = function (e) {
-      if (e.target.classList.contains('btn_disabled')) {
-        return;
-      }
-
-      _this4.checkAnswer();
-
-      _this4.currentQuest++;
-      if (_this4.currentQuest < _this4.questionList.length) {
-        _this4.state = 0;
-        _this4.testTask.innerHTML = '';
-        _this4.buildQuestion();
-      } else {
-        _this4.state = 2;
-        _this4.currentQuest--;
-        // console.log('TEST::>', this.testScore/(this.questionList.length))
-        courseInfo.testScore = Math.round(_this4.testScore / _this4.questionList.length);
-        // alert('konec')
-        // show result window
-        // to showModal: modal id, head comment, text comment
-        staticService.showModal('exercise', 'Итоговое тестирование', 'Набрано баллов: ' + courseInfo.testScore);
-        userService.sendToLMS();
-      }
-    };
-
-    this.checkAnswer = function () {
-      var answersElements = document.getElementsByClassName('task-question'
-      // console.warn('answersElements', answersElements) 
-      // console.warn('questionList', this.questionList[this.currentQuest].answers) 
-
-      );for (var i = 0; i < answersElements.length; i++) {
-        var answer = _this4.questionList[_this4.currentQuest].answers[i].right,
-            question = answersElements[i].classList.contains('radio-selected');
-
-        // console.warn('check answers', answer, question)
-        if (answer !== question) {
-          // неверный ответ
-          // console.warn('ответ на вопрос теста неверен')
-          // console.info('score', this.testScore)
-          return;
-        }
-      }
-      // console.warn('ответ на вопрос верен')
-      _this4.testScore += 100;
-      // console.info('score', this.testScore)
-      // 
-    };
-
-    this.removeRestart = function () {
-      _this4.state = 0;
-      _this4.testScore = 0;
-      _this4.currentQuest = 0;
-      _this4.questionList = _.shuffle(JSON.parse(JSON.stringify(testDataObj.tests[0].groups[0].questions)));
-      _this4.testTask.innerHTML = '';
-      _this4.buildQuestion();
-    };
-
-    angular.element(document).ready(function () {
-      // console.log(this.questionList)
-      _this4.buildQuestion();
-    });
   }
 })();
 ;(function () {
