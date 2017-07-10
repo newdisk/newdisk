@@ -242,7 +242,8 @@ p,
   font-size: 16px; }
 
 .page-column_head,
-.blur-block_text__head {
+.blur-block_text__head,
+.menu-slide-in .ng-binding {
   font-size: 18px; }
 
 .text-info p {
@@ -1227,7 +1228,7 @@ body > object {
   position: relative;
   min-height: 450px;
   font-size: 0;
-  background: url("../pages/chapter05/page23/img/bg-mobile.png") no-repeat;
+  background: url("/pages/chapter05/page23/img/bg-mobile.png") no-repeat;
   background-size: 80%;
   background-position: 50% 0;
   border: 1px solid transparent; }
@@ -1271,7 +1272,7 @@ body > object {
   width: 26px;
   height: 26px;
   border: 1px solid transparent;
-  background: url("../pages/chapter05/page23/img/cross.png") no-repeat; }
+  background: url("/pages/chapter05/page23/img/cross.png") no-repeat; }
 
 .sortable-box__item_true::after {
   position: absolute;
@@ -1280,7 +1281,7 @@ body > object {
   content: '';
   width: 38px;
   height: 38px;
-  background: url("../pages/chapter05/page23/img/check.png") no-repeat; }
+  background: url("/pages/chapter05/page23/img/check.png") no-repeat; }
 
 .ui-draggable-dragging {
   background: rgba(255, 255, 255, 0.5);
@@ -2817,8 +2818,6 @@ input[type="range"]::-ms-thumb {
   font-weight: normal; }
 
 .page-container * {
-  max-height: 1000000em;
-  /* Chrome for Android */
   -moz-text-size-adjust: none;
   /* Firefox Mobile */ }
 
@@ -6339,7 +6338,7 @@ p {
     display: block; }
   .sortable-container{
     height: 470px;
-    background: url("../pages/chapter05/page23/img/bg.png") no-repeat;
+    background: url("/pages/chapter05/page23/img/bg.png") no-repeat;
     background-size: 80%;
     background-position: 50% 0; }
   .sortable-box{
