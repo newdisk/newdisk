@@ -835,7 +835,7 @@ body > object {
   position: absolute;
   top: calc(50% - 10px);
   left: calc(50% - 130px);
-  width: 260px;
+  width: 280px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center; }
@@ -858,11 +858,11 @@ body > object {
   height: 20px;
   background: #A3ADD8;
   border-radius: 50%; }
+  .course-spinner_item:nth-child(1) {
+    animation: spinner .9s linear .1s infinite; }
   .course-spinner_item:nth-child(2) {
-    animation: spinner .9s linear infinite; }
-  .course-spinner_item:nth-child(3) {
     animation: spinner .9s linear .2s infinite; }
-  .course-spinner_item:nth-child(4) {
+  .course-spinner_item:nth-child(3) {
     animation: spinner .9s linear .4s infinite; }
 
 .banner-container {
@@ -3202,7 +3202,7 @@ p {
 
 .page-10-02 .blur-block:nth-child(3) .blur-block_img {
   background: url(../img/13_3.jpg) no-repeat;
-  height: 180px; }
+  height: 166px; }
 
 .page-11-02 .blur-block {
   height: 132px;
@@ -3826,7 +3826,7 @@ p {
   background-position: -665px -375px; }
 
 .page-03-05 .blur-block:nth-child(4) .blur-block_content {
-  background: url(../img/35_blur.jpg) no-repeat 0 -390px; }
+  background: url(../img/35_blur.jpg) no-repeat 0 -450px; }
 
 .page-04-05 {
   background: url(../img/36.jpg) no-repeat top center;
@@ -7150,6 +7150,8 @@ p {
     position: relative;
     width: calc(100% - 40px);
     margin-left: 20px; }
+  .page-03-05 .blur-block:nth-child(4) .blur-block_content{
+    background: url(../img/35_blur.jpg) no-repeat 0 -330px; }
   .page-21-05 .task-item{
     flex-wrap: wrap; }
   .page-21-05 .task-item-label{
@@ -7227,6 +7229,8 @@ p {
     margin-left: -35px; }
   .page-67-05 .task-select_option-wrapper:before{
     margin-left: -35px; }
+  .page-73-05 .blur-block:nth-child(4) .blur-block_content{
+    background: url(../img/74_blur.png) no-repeat 0 -350px; }
   .page-86-05 .page-video-container{
     width: 100%;
     display: flex;
@@ -7258,6 +7262,8 @@ p {
     position: relative;
     width: calc(100% - 40px);
     margin-left: 20px; }
+  .page-12-06 .blur-block:nth-child(3) .blur-block_content{
+    background: url(../img/96_1_blur.png) no-repeat 0 -267px; }
   .page-01-07 .page-block-text{
     position: relative;
     width: calc(100% - 40px);
