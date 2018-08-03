@@ -1,3 +1,4 @@
 .idea
 .iml
 *.stackdump
+.DS_Store

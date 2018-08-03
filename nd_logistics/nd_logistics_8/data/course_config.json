@@ -1,0 +1,8 @@
+{
+  "god_mode": "true",
+  "page_block": "false",
+  "ex_block": "false",
+  "default_localization": 0,
+  "localizations": ["ru","en"],
+  "success_score": "100"
+}

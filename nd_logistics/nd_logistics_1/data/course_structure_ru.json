@@ -1,0 +1,283 @@
+{
+  "course": {
+    "title": "Основы логистики",
+    "modals": {
+      "winContents": {
+        "title": "Содержание",
+        "buttons": {
+          "backBtn": {
+            "title": "Назад"
+          }
+        },
+        "placeholders": {
+          "findChapter": "найти урок",
+          "findPage": "найти тему"
+        }
+      },
+      "winHelp": {
+        "title": "Помощь"
+      },
+      "winAbout": {
+        "title": "О программе"
+      },
+      "winGlossary": {
+        "title": "Словарь"
+      },
+      "winStatistics": {
+        "title": "Статистика"
+      },
+      "winOptions": {
+        "title": "Настройки",
+        "buttons": {
+          "closeBtn": {
+            "title": "Закрыть"
+          },
+          "aboutBtn": {
+            "title": "О программе"
+          },
+          "glossaryBtn": {
+            "title": "Словарь"
+          },
+          "statsBtn": {
+            "title": "Статистика"
+          }
+        }
+      },
+      "winExit": {
+        "title": "Завершить работу с курсом?",
+        "buttons": {
+          "okBtn": {
+            "title": "OK"
+          },
+          "cancelBtn": {
+            "title": "Отмена"
+          }
+        }
+      }
+    },
+    "templatesConfig": {
+      "pageCounter": {
+        "text": ""
+      }
+    },
+    "chapters": [
+      {
+        "id": "",
+        "title": "Основы логистики",
+        "pages": [
+          {
+            "id": "page_01_01",
+            "title": "Введение",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl":"page_01_01.html"
+              }
+            ]
+          },
+          {
+            "id": "page_01_02",
+            "title": "История логистики",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_01_02.html"
+              }
+            ]
+          },
+          {
+            "id": "page_01_03",
+            "title": "Цель логистики",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_01_03.html"
+              }
+            ]
+          },
+          {
+            "id": "page_01_04",
+            "title": "Введение в логистику",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_01_04.html"
+              }
+            ]
+          },
+          {
+            "id": "page_01_05",
+            "title": "Классификация материальных потоков",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_01_05.html"
+              }
+            ]
+          },
+          {
+            "id": "page_01_06",
+            "title": "Логистическая система",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_01_06.html"
+              }
+            ]
+          },
+          {
+            "id": "page_01_07",
+            "title": "Логистическая цепь",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_01_07.html"
+              }
+            ]
+          },
+          {
+            "id": "page_01_08",
+            "title": "Виды логистики",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_01_08.html"
+              }
+            ]
+          },
+          {
+            "id": "page_01_09",
+            "title": "Взаимодействие видов логистики",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_01_09.html"
+              }
+            ]
+          },
+          {
+            "id": "page_01_10",
+            "title": "Упражнение 1 ",
+            "type": "ex",
+            "components": [
+              {
+                "pageTemplateUrl": "page_01_10.html"
+              }
+            ]
+          },
+          {
+            "id": "page_01_18",
+            "title": "Логистические затраты",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_01_18.html"
+              }
+            ]
+          },
+          {
+            "id": "page_01_19",
+            "title": "Логистические затраты",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_01_19.html"
+              }
+            ]
+          },
+          {
+            "id": "page_01_20",
+            "title": "Логистические затраты",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_01_20.html"
+              }
+            ]
+          },
+          {
+            "id": "page_01_21",
+            "title": "Эффективность логистической системы",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_01_21.html"
+              }
+            ]
+          },
+          {
+            "id": "page_01_22",
+            "title": "Место логистики в организационной структуре предприятия",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_01_22.html"
+              }
+            ]
+          },
+          {
+            "id": "page_01_23",
+            "title": "Задачи отдела логистики",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_01_23.html"
+              }
+            ]
+          },
+          {
+            "id": "page_01_24",
+            "title": "Упражнение 2",
+            "type": "ex",
+            "components": [
+              {
+                "pageTemplateUrl": "page_01_24.html"
+              }
+            ]
+          },
+          {
+            "id": "page_01_25",
+            "title": "Упражнение 3",
+            "type": "ex",
+            "components": [
+              {
+                "pageTemplateUrl": "page_01_25.html"
+              }
+            ]
+          },
+          {
+            "id": "page_01_26",
+            "title": "Упражнение 4",
+            "type": "ex",
+            "components": [
+              {
+                "pageTemplateUrl": "page_01_26.html"
+              }
+            ]
+          },
+          {
+            "id": "page_01_27",
+            "title": "Упражнение 5",
+            "type": "ex",
+            "components": [
+              {
+                "pageTemplateUrl": "page_01_27.html"
+              }
+            ]
+          },
+          {
+            "id": "page_01_28",
+            "title": "Заключение",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_01_28.html"
+              }
+            ]
+          }
+
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,222 @@
+{
+  "course": {
+    "title": "Перевозка грузов в контейнерах",
+    "modals": {
+      "winContents": {
+        "title": "Содержание",
+        "buttons": {
+          "backBtn": {
+            "title": "Назад"
+          }
+        },
+        "placeholders": {
+          "findChapter": "найти урок",
+          "findPage": "найти тему"
+        }
+      },
+      "winHelp": {
+        "title": "Помощь"
+      },
+      "winAbout": {
+        "title": "О программе"
+      },
+      "winGlossary": {
+        "title": "Словарь"
+      },
+      "winStatistics": {
+        "title": "Статистика"
+      },
+      "winOptions": {
+        "title": "Настройки",
+        "buttons": {
+          "closeBtn": {
+            "title": "Закрыть"
+          },
+          "aboutBtn": {
+            "title": "О программе"
+          },
+          "glossaryBtn": {
+            "title": "Словарь"
+          },
+          "statsBtn": {
+            "title": "Статистика"
+          }
+        }
+      },
+      "winExit": {
+        "title": "Завершить работу с курсом?",
+        "buttons": {
+          "okBtn": {
+            "title": "OK"
+          },
+          "cancelBtn": {
+            "title": "Отмена"
+          }
+        }
+      }
+    },
+    "templatesConfig": {
+      "pageCounter": {
+        "text": ""
+      }
+    },
+    "chapters": [
+      {
+        "id": "",
+        "title": "Перевозка грузов в контейнерах",
+        "pages": [
+          {
+            "id": "page_08_01",
+            "title": "Введение",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_08_01.html"
+              }
+            ]
+          },
+          {
+            "id": "page_08_02",
+            "title": "Общие сведения о контейнерах",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_08_02.html"
+              }
+            ]
+          },
+          {
+            "id": "page_08_03",
+            "title": "Перевозка контейнеров",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_08_03.html"
+              }
+            ]
+          },
+          {
+            "id": "page_08_04",
+            "title": "Преимущества использования контейнеров",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_08_04.html"
+              }
+            ]
+          },
+          {
+            "id": "page_08_05",
+            "title": "Учет контейнеров",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_08_05.html"
+              }
+            ]
+          },
+          {
+            "id": "page_08_06",
+            "title": "Виды и типы контейнеров",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_08_06.html"
+              }
+            ]
+          },
+          {
+            "id": "page_08_07",
+            "title": "Маркировочный код",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_08_07.html"
+              }
+            ]
+          },
+          {
+            "id": "page_08_08",
+            "title": "Читаем маркировочный код",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_08_08.html"
+              }
+            ]
+          },
+          {
+            "id": "page_08_09",
+            "title": "Грузовая единица",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_08_09.html"
+              }
+            ]
+          },
+          {
+            "id": "page_08_10",
+            "title": "Размещение паллет в контейнере",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_08_10.html"
+              }
+            ]
+          },
+          {
+            "id": "page_08_11",
+            "title": "Надувные мешки – средство крепления тарного груза",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_08_11.html"
+              }
+            ]
+          },
+          {
+            "id": "page_08_12",
+            "title": "Упражнение 1",
+            "type": "ex",
+            "components": [
+              {
+                "pageTemplateUrl": "page_08_12.html"
+              }
+            ]
+          },
+          {
+            "id": "page_08_13",
+            "title": "Упражнение 2",
+            "type": "ex",
+            "components": [
+              {
+                "pageTemplateUrl": "page_08_13.html"
+              }
+            ]
+          },
+          {
+            "id": "page_08_14",
+            "title": "Упражнение 3",
+            "type": "ex",
+            "components": [
+              {
+                "pageTemplateUrl": "page_08_14_1.html"
+              }
+            ]
+          },
+          {
+            "id": "page_08_15",
+            "title": "Заключение",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_08_15.html"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

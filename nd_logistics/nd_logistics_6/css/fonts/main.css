@@ -1,0 +1,1136 @@
+@charset "UTF-8";
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\000031}}
+.md-button {
+  min-width: 44px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\000035}}
+.page-content {
+  height: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\000039}}
+md-toast._md-bottom {
+  bottom: 65px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\0000313}}
+md-toast._md-top {
+  top: 65px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\0000318}}
+md-toast.md-success-toast-theme .md-toast-content {
+  background-color: #0c880c;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\0000324}}
+md-toast.md-failed-toast-theme .md-toast-content {
+  background-color: #c1111e;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\0000330}}
+.dialogdemoBasicUsage #popupContainer {
+  position: relative;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\0000333}}
+.dialogdemoBasicUsage .footer {
+  width: 100%;
+  text-align: center;
+  margin-left: 20px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\0000338}}
+.dialogdemoBasicUsage .footer, .dialogdemoBasicUsage .footer > code {
+  font-size: 0.8em;
+  margin-top: 50px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\0000342}}
+.dialogdemoBasicUsage button {
+  width: 200px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\0000345}}
+.dialogdemoBasicUsage div#status {
+  color: #c60008;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\0000348}}
+.dialogdemoBasicUsage .dialog-demo-prerendered md-checkbox {
+  margin-bottom: 0;
+}
+
+/*md-dialog {
+  opacity: 0;
+  min-width: 80%;
+  max-width: 60%;
+  max-height: 60%;
+  position: relative;
+  overflow: auto;
+  box-shadow: 0 7px 8px -4px rgba(0,0,0,.2),0 13px 19px 2px rgba(0,0,0,.14),0 5px 24px 4px rgba(0,0,0,.12);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  align-items: center;
+  //margin-bottom: 20px;
+}*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\0000367}}
+md-dialog.md-failed-dialog-theme flex-gt-xs {
+  min-width: 60%;
+  max-width: 60%;
+  max-height: 50%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\0000373}}
+md-dialog.md-failed-dialog-theme flex-xs {
+  min-width: 90%;
+  max-width: 80%;
+  max-height: 50%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\0000379}}
+md-dialog.md-failed-dialog-theme {
+  border-radius: 4px;
+  background-color: white;
+  color: rgba(0, 0, 0, 0.87);
+  margin-bottom: 20px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\0000386}}
+md-dialog.md-failed-dialog-theme .md-dialog-content {
+  padding-bottom: 1px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\0000390}}
+.md-button.md-default-theme.md-primary, .md-button.md-primary {
+  color: #131212;
+}
+
+/*md-dialog .md-actions .md-button, md-dialog md-dialog-actions .md-button {
+  margin: 8px 0 8px 8px;
+}*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003100}}
+.md-button.md-failed-dialog-theme {
+  min-width: 44px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003103}}
+.md-button, .md-button:focus {
+  outline: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003106}}
+.md-button.md-failed-dialog-theme {
+  padding: 0 6px;
+  margin-top: 0px;
+  background: #c1111e !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003116}}
+.md-button.md-failed-dialog-theme {
+  letter-spacing: .01em;
+  color: #fff;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003121}}
+.md-button.md-failed-dialog-theme:hover {
+  background-color: rgba(192, 17, 64, 0.7) !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003125}}
+.crs-container-img2 {
+  width: 90%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003129}}
+crs-task-multi-choice {
+  width: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003141}}
+.crs-task-variant-single-choice {
+  width: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003145}}
+.crs-catalog-item {
+  margin-bottom: 15px;
+}
+
+@media all and (max-width: 599px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003150}}
+  .layout-xs-column {
+    display: block;
+  }
+}
+@media (min-width: 960px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003157}}
+  .layout-gt-sm-row > .flex-gt-sm-30 {
+    max-width: 60%;
+  }
+}
+@media (min-width: 600px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/lib-custom\/_mdcustom\.scss}line{font-family:\00003165}}
+  .crs-task-single-choice .flex-gt-xs-20, .crs-task-single-choice .layout-column > .flex-gt-xs-20, .crs-task-single-choice .layout-row > .flex-gt-xs-20 {
+    -ms-flex: none;
+        flex: none;
+  }
+}
+
+/*.crs-catalog-item-many{
+  @media all and (min-width: 600px){
+    .layout-gt-xs, .layout-gt-xs-column, .layout-gt-xs-row {
+      display-flex: none;
+    }
+  }
+}*/
+/*.crs-catalog-item-many{
+   display-flex: none;
+ }*/
+@font-face {
+  font-family: "AAvanteBs";
+  src: url('../fonts/aavantebs.woff?1533220321') format('woff'), url('../fonts/aavantebs.woff2?1533220321') format('woff2');
+}
+@font-face {
+  font-family: "AAvanteTckHeavy";
+  src: url('../fonts/aavantetck_heavy.woff2?1533220321') format('woff2'), url('../fonts/AAvanteTckHeavy.woff?1533220321') format('woff');
+}
+@font-face {
+  font-family: "AAvanteTckMedium";
+  src: url('../fonts/aavantetck_medium.ttf?1533220321') format('truetype'), url('../fonts/aavantebs.woff?1533220321') format('woff'), url('../fonts/aavantebs.woff2?1533220321') format('woff2');
+}
+@font-face {
+  font-family: "StampsProMetal";
+  src: url('../fonts/PFStampsPro-Metal.woff?1533220324') format('woff'), url('../fonts/PFStampsPro-Metal.woff2?1533220324') format('woff2');
+}
+@font-face {
+  font-family: "StampsProSolid";
+  src: url('../fonts/PFStampsPro-Solid.woff?1533220323') format('woff'), url('../fonts/PFStampsPro-Solid.woff2?1533220323') format('woff2');
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\000032}}
+.crs-container {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\000038}}
+.crs-single-img .crs-img {
+  border-radius: 15px;
+  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\0000324}}
+.crs-single-img .crs-img img {
+  box-shadow: none;
+  border-radius: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\0000332}}
+fi {
+  font-family: 'Times New Roman';
+  font-weight: bold;
+  font-size: 18px;
+  font-style: italic;
+  display: inline-block;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\0000341}}
+.crs-modal-search .crs-modal-search--wrapper {
+  position: relative;
+  width: 90%;
+  margin: 10px auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\0000345}}
+.crs-modal-search .crs-modal-search--wrapper .crs-modal-search--icon {
+  position: absolute;
+  font-size: 32px;
+  left: 5px;
+  top: 1px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\0000351}}
+.crs-modal-search .crs-modal-search--wrapper .crs-modal-search--input {
+  height: 36px;
+  border-radius: 2px;
+  border: 1px solid;
+  padding: 0;
+  padding-left: 44px;
+  font-size: 28px;
+  width: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\0000359}}
+.crs-modal-search .crs-modal-search--wrapper .crs-modal-search--input:hover {
+  cursor: initial;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\0000362}}
+.crs-modal-search .crs-modal-search--wrapper .crs-modal-search--input:focus {
+  box-shadow: 0 0 19px -5px #5c676b;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\0000369}}
+.crs-glossary-search__result {
+  overflow-x: hidden;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\0000375}}
+uib-accordion .panel-group .panel {
+  border-radius: 0;
+  border-color: transparent;
+  text-decoration: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\0000380}}
+uib-accordion .panel-group .panel a, uib-accordion .panel-group .panel a:hover {
+  text-decoration: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\0000385}}
+uib-accordion .panel-default > .panel-heading {
+  background-color: #728085;
+  color: white;
+  text-align: center;
+  padding: 0;
+  height: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\0000394}}
+uib-accordion .panel-default > .panel-heading h4 {
+  min-height: 50px;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  font-family: "AAvanteBs";
+  font-size: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003101}}
+uib-accordion .panel-default > .panel-heading h4 a {
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003109}}
+uib-accordion .panel-default > .panel-heading h4 a:before {
+  content: '';
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003113}}
+uib-accordion .panel-default > .panel-heading h4 a:after {
+  font-family: 'FontAwesome';
+  content: "\f0d8";
+  margin-right: 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003121}}
+uib-accordion .panel-default > .panel-heading:hover {
+  background-color: #C1111E;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003126}}
+uib-accordion .panel-collapse {
+  background-color: #DFE4E7;
+  color: #333333;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003132}}
+uib-accordion .panel-open .panel-heading {
+  background-color: #C1111E;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003134}}
+uib-accordion .panel-open .panel-heading h4 a:after {
+  content: "";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003141}}
+.crs-bullet-list {
+  text-align: left;
+  font-size: 16px;
+  color: #333333;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003146}}
+.crs-bullet-list p {
+  margin-bottom: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003150}}
+.crs-bullet-list ul {
+  margin-top: 5px;
+  list-style-type: none;
+  padding-left: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003154}}
+.crs-bullet-list ul li {
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003157}}
+.crs-bullet-list ul li:before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: -10px;
+  background-image: url("../img/bullet.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
+  width: 4px;
+  height: 4px;
+  border-radius: 2px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003174}}
+.crs-catalog .crs-catalog-item {
+  background: #DFE4E7;
+  border-radius: 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003178}}
+.crs-catalog .crs-catalog-item .crs-catalog-item-footer {
+  padding: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003181}}
+.crs-catalog .crs-catalog-item .crs-catalog-item-header {
+  font-family: "AAvanteBs";
+  font-size: 20px;
+  color: #000000;
+  text-align: center;
+  padding: 10px 10px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003193}}
+.crs-catalog .crs-catalog-item .crs-catalog-item-content {
+  color: #333333;
+  text-align: left;
+  padding: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003198}}
+.crs-catalog .crs-catalog-item .crs-catalog-item-content .crs-img {
+  background: white;
+  padding: 15px;
+  border-radius: 15px;
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003204}}
+.crs-catalog .crs-catalog-item .crs-catalog-item-content .crs-img img {
+  border: 0;
+  margin: 0 auto;
+  width: 80%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003217}}
+.crs-text-descr {
+  padding: 5px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003224}}
+.crs-page-footer-img {
+  margin-top: 15px;
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-bottom: -15px;
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  height: 285px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003237}}
+.crs-img-scale {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003244}}
+.crs-img-scale .crs-img-scale-magnify {
+  position: absolute;
+  bottom: 25px;
+  right: 5px;
+  z-index: 1;
+  font-size: 50px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003253}}
+.img-block {
+  display: block;
+  height: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003260}}
+.crs-table.table-responsive {
+  box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003264}}
+.crs-table table {
+  border-collapse: separate;
+  border-spacing: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003269}}
+.crs-table table thead > tr > th, .crs-table table tbody > tr > td, .crs-table table tbody > tr > th {
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 10px;
+  border: 0;
+  box-shadow: inset 0px 1px 6px -2px rgba(0, 0, 0, 0.5);
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003280}}
+.crs-formula {
+  padding: 5px;
+  margin: 9px auto;
+  display: inline-block;
+  border-radius: 4px;
+  box-shadow: 0 0 0 4px #DFE4E7;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003288}}
+.crs-formula-wrapper {
+  border-radius: 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003290}}
+.crs-formula-wrapper .crs-formula {
+  box-shadow: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003298}}
+page-counter .page-counter {
+  color: #C1111E;
+  font-size: 15px;
+  font-family: "AAvanteBs";
+  border-radius: 4px;
+  background: #eeeeee;
+  padding: 2px 4px;
+  box-shadow: 0 2px 4px 0px rgba(0, 0, 0, 0.26);
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003316}}
+.crs-menu-item .crs-menu-item__mark {
+  width: 20px;
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003327}}
+.crs-menu-item .mark-default {
+  opacity: 0.1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003331}}
+.crs-menu-item .has-na {
+  color: white;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003336}}
+.crs-menu-item .has-not-passed {
+  color: white;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003341}}
+.crs-menu-item .has-passed {
+  color: white;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003345}}
+.crs-menu-item .has-passed.has-na, .crs-menu-item .has-passed.has-not-passed {
+  color: white;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003354}}
+.no-touchevents .crs-menu-item:hover {
+  color: white;
+  background-color: #C1111E;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003358}}
+.no-touchevents .crs-menu-item:hover .has-na {
+  color: white;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003363}}
+.no-touchevents .crs-menu-item:hover .has-not-passed {
+  color: white;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003368}}
+.no-touchevents .crs-menu-item:hover .has-passed {
+  color: white;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003372}}
+.no-touchevents .crs-menu-item:hover .has-passed.has-na, .no-touchevents .crs-menu-item:hover .has-passed.has-not-passed {
+  color: white;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003379}}
+crs-app-header, crs-app-footer {
+  z-index: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003381}}
+crs-app-header h2, crs-app-footer h2 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003388}}
+.toolbar-bg-img {
+  background-image: url("../img/background_head.jpg");
+  background-size: contain;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003393}}
+.crs-menu-btn {
+  min-width: 44px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003397}}
+.md-toolbar-tools h2 {
+  text-align: left;
+}
+@media (min-width: 600px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003397}}
+  .md-toolbar-tools h2 {
+    font-size: 34px;
+    text-align: center;
+  }
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003406}}
+crs-app-mainmenu, .crs-app-menu {
+  background: inherit;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003411}}
+crs-app-mainmenu .crs-app-menu__toolbar-top,
+crs-app-mainmenu .crs-app-menu__toolbar-bottom, .crs-app-menu .crs-app-menu__toolbar-top,
+.crs-app-menu .crs-app-menu__toolbar-bottom {
+  max-height: 65px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003417}}
+.crs-app-menu-cover {
+  content: '';
+  position: absolute;
+  right: 100%;
+  top: 0;
+  background: inherit;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003428}}
+.crs-cover-right {
+  content: '';
+  position: absolute;
+  left: 100%;
+  top: 0;
+  background: inherit;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003439}}
+.crs-app-header-logo {
+  height: auto;
+  width: 180px;
+  padding: 5px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003445}}
+.crs-statistics--content md-list-item:before {
+  min-height: 5px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003451}}
+.crs-statistics__progressbar ._md-container {
+  background-color: #cfe2cf;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003454}}
+.crs-statistics__progressbar ._md-bar2 {
+  background-color: #008000;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003459}}
+.task-list {
+  list-style: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003463}}
+.task-list .task-list__item.has-na {
+  color: grey;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003467}}
+.task-list .task-list__item.has-not-passed {
+  color: #c1111e;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003471}}
+.task-list .task-list__item.has-passed {
+  color: green;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003475}}
+.task-list .task-list__item.has-passed.has-na, .task-list .task-list__item.has-passed.has-not-passed {
+  color: #c1111e;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003483}}
+.task-list .task-list__item .task-list__item__mark {
+  font-size: 32px;
+  margin-right: 15px;
+  text-align: center;
+  width: 32px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003492}}
+.variant-wrapper {
+  padding: 25px;
+}
+
+@media (min-width: 600px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003497}}
+  md-sidenav {
+    max-width: 80%;
+    width: auto;
+    padding: 10px;
+    padding: 10px;
+  }
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003506}}
+.crs-content-page h3 {
+  margin: inherit;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003511}}
+.crs-task__completed {
+  background-color: #0c880c;
+  color: white;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003519}}
+.crs-task-range-moving-blocks .form__list {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003525}}
+.crs-task-range-moving-blocks .form__item {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  width: 100%;
+  font-size: 16px;
+  min-height: 40px;
+  background: #eef0f3;
+  border: 1px solid grey;
+  border-radius: 7px;
+  box-shadow: 0 1px 0 0 gray;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003537}}
+.crs-task-range-moving-blocks .form__arrow {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  padding: 14px;
+  font-size: 20px;
+  min-height: 45px;
+  color: red;
+  cursor: pointer;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003546}}
+.crs-task-range-moving-blocks .form__item-text {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  text-align: center;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003554}}
+.crs-task-multiply-choice-disappeared {
+  /* Laces */
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003555}}
+.crs-task-multiply-choice-disappeared .list {
+  margin: 0;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  padding: 0;
+  list-style: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003563}}
+.crs-task-multiply-choice-disappeared .item {
+  margin-bottom: 3px;
+  padding: 5px;
+  padding-left: 20px;
+  font-size: 16px;
+  background: rgba(232, 236, 239, 0.7);
+  border: 1px solid grey;
+  border-radius: 7px;
+  box-shadow: 0 1px 0 0 gray;
+  transition: opacity 0.35s ease-out, border-width 0.35s linear, padding 0.35s linear 0.28s, font-size 0.35s linear 0.28s;
+  cursor: pointer;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003576}}
+.crs-task-multiply-choice-disappeared .variant {
+  margin: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003580}}
+.crs-task-multiply-choice-disappeared .item.disappeared {
+  padding: 0;
+  font-size: 0;
+  border-width: 0;
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003586}}
+.crs-task-multiply-choice-disappeared .right {
+  background: #0f0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003592}}
+.crs-task-multiply-choice-disappeared svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: table-cell;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003603}}
+.crs-task-multiply-choice-disappeared .task-container {
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003607}}
+.crs-task-multiply-choice-disappeared .task-box {
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  font-size: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003613}}
+.crs-task-multiply-choice-disappeared .task-list {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  width: 50%;
+  vertical-align: top;
+  list-style: none;
+  font-size: 16px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003623}}
+.crs-task-multiply-choice-disappeared .task-item {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 20px;
+  padding: 5px 20px;
+  background: rgba(232, 236, 239, 0.7);
+  border: 1px solid gray;
+  border-radius: 7px;
+  box-shadow: 0 1px 0 0 gray;
+  cursor: pointer;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003635}}
+.crs-task-multiply-choice-disappeared .task-text {
+  margin: 10px 0;
+  width: calc(100% - 30px);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003640}}
+.crs-task-multiply-choice-disappeared .task-item--2 .task-text {
+  width: 100%;
+  padding-left: 30px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003645}}
+.crs-task-multiply-choice-disappeared .task-item-point {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  content: '';
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 1px 0 1px gray inset;
+  transform: translateY(-50%);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003658}}
+.crs-task-multiply-choice-disappeared .act {
+  background: gray;
+  box-shadow: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/template\/_components\.scss}line{font-family:\00003663}}
+.crs-task-multiply-choice-disappeared .task-item--2 .task-item-point {
+  left: 12px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/animations\/_animations\.scss}line{font-family:\000032}}
+.sample-show-hide {
+  transition: .3s linear all;
+  -webkit-transition: .3s linear all;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/animations\/_animations\.scss}line{font-family:\000037}}
+.sample-show-hide.ng-enter {
+  opacity: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000311}}
+.sample-show-hide.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000315}}
+.sample-show-hide.ng-leave {
+  opacity: 1;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000319}}
+.sample-show-hide.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000325}}
+.slide-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000330}}
+.slide-left.ng-enter, .slide-left.ng-leave {
+  transition: all 0.3s ease;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000335}}
+.slide-left.ng-enter {
+  left: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000338}}
+.slide-left.ng-enter-active {
+  left: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000341}}
+.slide-left.ng-leave {
+  left: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000344}}
+.slide-left.ng-leave-active {
+  left: -100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000349}}
+.slide-right {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000353}}
+.slide-right.ng-enter, .slide-right.ng-leave {
+  transition: all 0.3s ease;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000358}}
+.slide-right.ng-enter {
+  left: -100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000361}}
+.slide-right.ng-enter-active {
+  left: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000364}}
+.slide-right.ng-leave {
+  left: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000367}}
+.slide-right.ng-leave-active {
+  left: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000372}}
+.fading {
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000375}}
+.fading.ng-enter, .fading.ng-leave {
+  transition: all 1s ease;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000380}}
+.fading.ng-enter {
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000383}}
+.fading.ng-enter-active {
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000386}}
+.fading.ng-leave {
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000389}}
+.fading.ng-leave-active {
+  opacity: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/animations\/_animations\.scss}line{font-family:\0000394}}
+.slide-down {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/animations\/_animations\.scss}line{font-family:\00003100}}
+.slide-down.ng-enter, .slide-down.ng-leave {
+  transition: all 1s ease;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/animations\/_animations\.scss}line{font-family:\00003105}}
+.slide-down.ng-enter {
+  top: -100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/animations\/_animations\.scss}line{font-family:\00003108}}
+.slide-down.ng-enter-active {
+  top: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/animations\/_animations\.scss}line{font-family:\00003111}}
+.slide-down.ng-leave {
+  top: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/animations\/_animations\.scss}line{font-family:\00003114}}
+.slide-down.ng-leave-active {
+  top: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/main\.scss}line{font-family:\0000334}}
+html {
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  max-width: 1280px;
+  margin: 0 auto;
+  background-color: #FAFAFA;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/main\.scss}line{font-family:\0000337}}
+html *:focus {
+  outline: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/main\.scss}line{font-family:\0000348}}
+html body {
+  font-family: "AAvanteBs";
+  font-size: 16px;
+  overflow: hidden;
+  background: inherit;
+  background: url("../img/bg.jpg");
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/main\.scss}line{font-family:\0000356}}
+html body .crs-main-content, html body .crs-main-content-spanner {
+  background: transparent;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/main\.scss}line{font-family:\0000362}}
+html body .crs-content-page h3:first-child {
+  padding-bottom: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/main\.scss}line{font-family:\0000367}}
+html body .crs-content-page .crs-content-page-num {
+  border-radius: 50%;
+  background: white;
+  margin: 5px;
+  margin-right: 15px;
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/main\.scss}line{font-family:\0000381}}
+html body .crs-content-page .crs-content-page-card {
+  border-radius: 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/main\.scss}line{font-family:\0000388}}
+html body crs-app-mainmenu md-sidenav {
+  padding: 0;
+  border-right: 2px solid #9a9596;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/main\.scss}line{font-family:\0000391}}
+html body crs-app-mainmenu md-sidenav md-content {
+  border-top: 2px solid #c1111e;
+  border-bottom: 2px solid #c1111e;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/main\.scss}line{font-family:\0000395}}
+html body crs-app-mainmenu md-sidenav h2 {
+  margin: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/main\.scss}line{font-family:\00003102}}
+html h2 {
+  font-family: "StampsProMetal";
+  font-size: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/main\.scss}line{font-family:\00003107}}
+html h3 {
+  font-family: "StampsProSolid";
+  font-size: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/main\.scss}line{font-family:\00003112}}
+html h4 {
+  font-family: "AAvanteBs";
+  font-size: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/main\.scss}line{font-family:\00003117}}
+html img {
+  -webkit-user-drag: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/main\.scss}line{font-family:\00003125}}
+html .text-solid {
+  font-family: "AAvanteTckMedium";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/main\.scss}line{font-family:\00003132}}
+md-backdrop {
+  height: 100% !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/main\.scss}line{font-family:\00003136}}
+.md-dialog-container {
+  height: 100% !important;
+}
+
+/*
+ * IOS flex-shrink bugfix
+ * https://github.com/philipwalton/flexbugs#1-minimum-content-sizing-of-flex-items-not-honored
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/main\.scss}line{font-family:\00003144}}
+crs-app-footer, crs-app-header {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/main\.scss}line{font-family:\00003148}}
+.shrink-fix {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/main\.scss}line{font-family:\00003152}}
+.flex-min-wrapper {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+}
+
+/**
+ * Flexbug IE10-11 images + aspect ratio (workaround)
+ * Expected behavior: Flex item height reflects resized image
+ * Actual behavior: Flex item height reflects image height before resizing
+ *
+ * 1. Add min-height: 1px to the flex item.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/main\.scss}line{font-family:\00003164}}
+.flex * {
+  min-height: 1px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/WORK\/ND_Projects\/nd_logistics\/src\/sass\/main\.scss}line{font-family:\00003168}}
+.column-fix > * {
+  max-width: 100%;
+}

@@ -1,0 +1,232 @@
+{
+  "course": {
+    "title": "Транспорт как часть логистической цепи",
+    "modals": {
+      "winContents": {
+        "title": "Содержание",
+        "buttons": {
+          "backBtn": {
+            "title": "Назад"
+          }
+        },
+        "placeholders": {
+          "findChapter": "найти урок",
+          "findPage": "найти тему"
+        }
+      },
+      "winHelp": {
+        "title": "Помощь"
+      },
+      "winAbout": {
+        "title": "О программе"
+      },
+      "winGlossary": {
+        "title": "Словарь"
+      },
+      "winStatistics": {
+        "title": "Статистика"
+      },
+      "winOptions": {
+        "title": "Настройки",
+        "buttons": {
+          "closeBtn": {
+            "title": "Закрыть"
+          },
+          "aboutBtn": {
+            "title": "О программе"
+          },
+          "glossaryBtn": {
+            "title": "Словарь"
+          },
+          "statsBtn": {
+            "title": "Статистика"
+          }
+        }
+      },
+      "winExit": {
+        "title": "Завершить работу с курсом?",
+        "buttons": {
+          "okBtn": {
+            "title": "OK"
+          },
+          "cancelBtn": {
+            "title": "Отмена"
+          }
+        }
+      }
+    },
+    "templatesConfig": {
+      "pageCounter": {
+        "text": ""
+      }
+    },
+    "chapters": [
+      {
+        "id": "",
+        "title": "Транспорт как часть логистической цепи",
+        "pages": [
+          {
+            "id": "page_06_01",
+            "title": "Введение",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_06_01.html"
+              }
+            ]
+          },
+          {
+            "id": "page_06_02",
+            "title": "Транспортная отрасль России",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_06_02.html"
+              }
+            ]
+          },
+          {
+            "id": "page_06_03",
+            "title": "Транспортная стратегия России",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_06_03.html"
+              }
+            ]
+          },
+          {
+            "id": "page_06_04",
+            "title": "Виды транспортных систем",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_06_04.html"
+              }
+            ]
+          },
+          {
+            "id": "page_06_05",
+            "title": "Транспортные коридоры",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_06_05.html"
+              }
+            ]
+          },
+          {
+            "id": "page_06_06",
+            "title": "Классификация перевозок",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_06_06.html"
+              }
+            ]
+          },
+          {
+            "id": "page_06_07",
+            "title": "Комплекс услуг по доставке груза",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_06_07.html"
+              }
+            ]
+          },
+          {
+            "id": "page_06_08",
+            "title": "Интегрирующие системы",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_06_08.html"
+              }
+            ]
+          },
+          {
+            "id": "page_06_09",
+            "title": "Достоинства и недостатки различных видов транспорта",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_06_09.html"
+              }
+            ]
+          },
+          {
+            "id": "page_06_10",
+            "title": "Выбор способа перевозки",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_06_10.html"
+              }
+            ]
+          },
+          {
+            "id": "page_06_11",
+            "title": "Факторы выбора вида транспорта",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_06_11.html"
+              }
+            ]
+          },
+          {
+            "id": "page_06_12",
+            "title": "Упражнение 1",
+            "type": "ex",
+            "components": [
+              {
+                "pageTemplateUrl": "page_06_12.html"
+              }
+            ]
+          },
+          {
+            "id": "page_06_13",
+            "title": "Упражнение 2",
+            "type": "ex",
+            "components": [
+              {
+                "pageTemplateUrl": "page_06_13.html"
+              }
+            ]
+          },
+          {
+            "id": "page_06_14",
+            "title": "Упражнение 3",
+            "type": "ex",
+            "components": [
+              {
+                "pageTemplateUrl": "page_06_14.html"
+              }
+            ]
+          },
+          {
+            "id": "page_06_15",
+            "title": "Упражнение 4",
+            "type": "ex",
+            "components": [
+              {
+                "pageTemplateUrl": "page_06_15.html"
+              }
+            ]
+          },
+          {
+            "id": "page_06_16",
+            "title": "Заключение",
+            "type": "simple-page",
+            "components": [
+              {
+                "pageTemplateUrl": "page_06_16.html"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

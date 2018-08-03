@@ -1,0 +1,114 @@
+{
+  "course": {
+    "title": "Demo Course",
+    "modals": {
+      "winContents": {
+        "title": "Contents",
+        "buttons": {
+          "backBtn": {
+            "title": "Back"
+          }
+        },
+        "placeholders": {
+          "findChapter": "find chapter",
+          "findPage": "find page"
+        }
+      },
+      "winHelp": {
+        "title": "Help"
+      },
+      "winAbout": {
+        "title": "About"
+      },
+      "winGlossary": {
+        "title": "Glossary"
+      },
+      "winStatistics": {
+        "title": "Statistics"
+      },
+      "winOptions": {
+        "title": "Options",
+        "buttons": {
+          "closeBtn": {
+            "title": "Close"
+          },
+          "aboutBtn": {
+            "title": "About"
+          },
+          "glossaryBtn": {
+            "title": "Glossary"
+          },
+          "statsBtn": {
+            "title": "Statistics"
+          }
+        }
+      },
+      "winExit": {
+        "title": "Do you want to close course?",
+        "buttons": {
+          "okBtn": {
+            "title": "OK"
+          },
+          "cancelBtn": {
+            "title": "Cancel"
+          }
+        }
+      }
+    },
+    "templatesConfig": {
+      "pageCounter":{
+        "text":"Page: "
+      }
+    },
+    "chapters": [
+      {
+        "id": "1",
+        "title": "Chapter 1 title",
+        "pages": [
+          {
+            "id": "page_1_0",
+            "title": "Page 1_0 title",
+            "components": [
+              {
+                "component": "text-bubble-dialog",
+                "data": {
+                  "text": "You are in 1st chapter on 1 page"
+                }
+              }
+            ]
+          },
+          {
+            "id": "page_1_1",
+            "title": "Page 1_1 title",
+            "components": [
+              {
+                "component": "text-bubble-dialog",
+                "data": {
+                  "text": "You're in 1nd chapter on 2 page"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "title": "Chapter 2 title",
+        "pages": [
+          {
+            "id": "page_2_0",
+            "title": "Page 2_0 title",
+            "components": [
+              {
+                "component": "text-bubble-dialog",
+                "data": {
+                  "text": "You're in 2nd chapter on 1 page"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "lrs": [
+    {
+      "id": "scorm_cloud",
+      "endpoint": "",
+      "username": "ralict@mail.ru",
+      "password": "MegaLearner2016"
+    },
+    {
+      "id": "webtutor",
+      "endpoint": "",
+      "username": "user1",
+      "password": "user1"
+    }
+  ],
+  "defaultActor":{
+    "mbox":"mailto:user@usermail.com",
+    "name":"Mr User"
+  },
+  "defaultActivity":{
+    "id": "nd/course_id/module_id",
+    "title": {
+      "ru": "Демо Курс",
+      "en-US": "Demo Course"
+    },
+    "description": {
+      "ru": "Описание курса на русском языке",
+      "en-US": "Course description in English"
+    }
+  },
+
+  "course":{
+    "id": "nd/course_id/module_id",
+    "name": {
+      "ru": "Демо Курс",
+      "en-US": "Demo Course"
+    },
+    "description": {
+      "ru": "Описание курса на русском языке",
+      "en-US": "Course description in English"
+    },
+
+    "chapters":[
+      {
+        "id": "nd/course_id/chapter_1",
+        "name": {
+          "ru": "Глава 1",
+          "en-US": "Chapter 1"
+        },
+        "description": {
+          "ru": "Описание главы на русском языке",
+          "en-US": "Chapter description in English"
+        },
+
+        "pages":[
+          {
+            "id": "nd/course_id/chapter_1/page_1",
+            "name": {
+              "ru": "Страница 1",
+              "en-US": "Страница 1"
+            },
+            "description": {
+              "ru": "Описание страницы на русском языке",
+              "en-US": "Page description in English"
+            },
+
+            "components":[
+              {
+                "id": "nd/course_id/chapter_1/page_1/component_1",
+                "name": {
+                  "ru": "Компонент 1",
+                  "en-US": "Component 1"
+                },
+                "description": {
+                  "ru": "Описание компонента на русском языке",
+                  "en-US": "Component description in English"
+                }
+              },{
+
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
