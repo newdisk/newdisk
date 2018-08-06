@@ -1,0 +1,69 @@
+<div class="page-container page-36-04  page-task">
+	<section class="page-head">
+		<p>Задание 20</p>
+	</section>
+	<section class="flex-container">
+		<div>
+			<p class="task-text">Посмотрите киноэпизод. Какие варианты соглашения может подготовить Владимир для переговоров с представителями гостиничного комплекса? При ответе на этот вопрос учитывайте желаемые результаты (дополнительные условия) и возможные уступки, которые могут сделать поставщики кофе в ходе переговоров. Варианты соглашения отличаются уступками по цене в 1 $.</p>
+		</div>
+		<page-video videourl="video/72.mp4" videoposter="video/posters/72.jpg" suburl="video/subtitles/72.vtt" videowidth="696" videoheight="572"></page-video>
+	</section>
+	<p class="text__hint">Перетащите каждую иконку в нужное место таблицы.</p>
+
+	<section class="task-drag-table" ng-controller="taskDragTableCtrl as $ctrl">
+		<div class="task-drag-table__drag-list">
+			<div class="drag-list">
+				<div class="drag-list__item-title">
+					<p class="title"><span class="text-accent">Уступки</span></p>
+				</div>
+				<div class="drag-list__item">
+					<img class="drag-image draggable" src="img/73-01.png" alt="" order="a">
+					<span class="drag-title">Меню для баров и рецептура кофе</span>
+				</div>
+				<div class="drag-list__item">
+					<img class="drag-image draggable" src="img/73-02.png" alt="" order="b">
+					<span class="drag-title">Предоставление оборудования для варки кофе бесплатно</span>
+				</div>
+				<div class="drag-list__item">
+					<img class="drag-image draggable" src="img/73-03.png" alt="" order="c">
+					<span class="drag-title">Аренда оборудования для варки кофе по минимальной цене</span>
+				</div>
+				<div class="drag-list__item-title">
+					<p class="title"><span class="text-accent">Доп. условия</span></p>
+				</div>
+				<div class="drag-list__item">
+					<img class="drag-image draggable" src="img/73-04.png" alt="" order="d">
+					<span class="drag-title">Логотип компании в меню баров гостиничного комплекса.</span>
+				</div>
+				<div class="drag-list__item">
+					<img class="drag-image draggable" src="img/73-05.png" alt="" order="e">
+					<span class="drag-title">Аренда залов на льготных условиях.</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="task-drag-table__drop-list">
+			<div class="drop-list">
+				<div class="drop-list__item">
+					<div class="drop-number"><div>№</div></div>
+					<div class="drop-cost"><div>Цена</div></div>
+					<div class="drop-conditions"><div>Доп. условия</div></div>
+					<div class="drop-concessions"><div>Уступки</div></div>
+				</div>
+
+				<div class="drop-list__item" ng-repeat="item in $ctrl.questionList">
+					<div class="drop-number"><div>{{$index+1}}</div></div>
+					<div class="drop-cost"><div>{{item.cost}}</div></div>
+					<div class="drop-conditions sortable task__drop-item" id="cond{{$index}}" order="{{item.conditions}}"></div>
+					<div class="drop-concessions sortable task__drop-item" id="conc{{$index}}" order="{{item.concessions}}"></div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="btn-box" ng-if="!$ctrl.test">
+			<button class="btn btn_restart" ng-click="$ctrl.removeRestart()">Начать заново</button>
+			<button class="btn btn_answer" ng-class="{'btn_disabled': $ctrl.state == 0 || $ctrl.state == 2}" ng-click="$ctrl.checkAnswer($event)">Принять ответ</button>
+		</div>
+	</section>
+</div>

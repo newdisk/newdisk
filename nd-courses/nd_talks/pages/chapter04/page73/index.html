@@ -1,0 +1,45 @@
+<div class="page-container page-73-04">
+  <section class="page-head">
+    <p>ЗАДАНИЕ 27 </p>
+  </section>
+
+  <p class="task-text">
+    Посмотрите киноэпизоды и укажите, какой вид аргументации используется в каждом случае.
+  </p>
+
+  <p class="text__hint">Выберите один ответ для каждого киноэпизода.</p>
+
+  <div ng-controller="SelectCtrl as $ctrl">
+    <div class="select-container">
+      <div class="task task-select-wrapper" ng-repeat="task in $ctrl.taskExs" ng-init="taskIndex = $index">
+        <p class="task-text">{{task.taskText}}</p>
+        <div ng-repeat="item in task.questionList.questions" ng-init="questIndex = $index" class="task-item">
+
+          <div class="task-item-label">
+            <page-video videourl="video/{{item.label}}.mp4" videoposter="video/posters/{{item.label}}.jpg" suburl="video/subtitles/{{item.label}}.vtt" videowidth="640" videoheight="480"></page-video>
+          </div>
+
+          <div class="task-select" ng-click="$ctrl.toggleSelect($event, $index, taskIndex)">
+            <div class="task-select_option-wrapper"
+                 ng-class="{'task-select_option-wrapper__open': task.questionList.questions[$index].open}">
+              <div class="task-select_option" ng-click="$ctrl.selectChange($event, -1, questIndex, taskIndex)">
+                <p>{{item.default}}</p>
+              </div>
+              <div class="task-select_option" ng-repeat="option in $ctrl.filteredList[taskIndex]"
+                   ng-click="$ctrl.selectChange($event, option.v_id, questIndex, taskIndex)">
+                <p>{{option.label}}</p></div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="btn-box" ng-if="!$ctrl.test">
+      <button class="btn btn_restart" ng-click="$ctrl.removeRestart()">Начать заново</button>
+      <button class="btn btn_answer" ng-class="{'btn_disabled': $ctrl.state == 0 || $ctrl.state == 2}" ng-click="$ctrl.checkAnswer()">Принять ответ</button>
+    </div>
+  </div>
+
+</div>

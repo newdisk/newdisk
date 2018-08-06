@@ -1,52 +1,19 @@
 <div class="page-container task-note-style page-22-03">
 	<section class="page-head">
-		<p>Записная книжка. Задание 9</p>
+		<p>Записная книжка. Задание&nbsp;3</p>
 	</section>
-	<section class="page-descr">
+	<section class="flex-container">
 		<div class="page-block-text">
-			<p>Составьте 2–3 вопроса, которые вы можете задать клиенту и которые затем помогут вам продемонстрировать необходимые выгоды товара/услуги.</p>
-			<p class="text__hint">Введите нужный ответ с помощью клавиатуры.</p>
+			<p>Посмотрите киноэпизод.</p>
+			<p class="text-number text-number-1">Проанализируйте эпизод фильма, в котором мать Светланы – Анна – объясняет  ей, как нужно построить разговор с мужем. </p>
+			<p class="text-number text-number-2">Опираясь на эти объяснения, проанализируйте какую-нибудь текущую переговорную ситуацию. Что можно предпринять для создания атмосферы сотрудничества и взаимопомощи? </p>
+			<p class="text-number text-number-3">Подумайте, как можно изменить психологический климат на переговорах, предстоящих вам на будущей неделе с партнерами, или сослуживцами, или членами семьи?</p>
+			<p class="text__hint">Введите ответ с помощью клавиатуры. </p>
 		</div>
-
-		<!-- <task-note></task-note> -->
-
-    <div class="task-note" ng-controller="NoteCtrl as $ctrl">
-    	<!-- useColumns -->
-			<div class="task-note__body flex-container__task-note" ng-if="$ctrl.useColumns">
-				<div class="flex-container__task-note__item">
-					<div class="task-title">{{$ctrl.taskData.titles[0]}}</div>
-					<div class="task-note_column" ng-repeat="item in $ctrl.range(true)">
-						<textarea class="task-note_item_input" maxlength="{{$ctrl.taskData.maxlength}}">{{item.text}}</textarea>
-					</div>
-				</div>
-				<div class="flex-container__task-note__item">
-					<div class="task-title">{{$ctrl.taskData.titles[1]}}</div>
-					<div class="task-note_column" ng-repeat="item in $ctrl.range(false)">
-						<textarea class="task-note_item_input" maxlength="{{$ctrl.taskData.maxlength}}">{{item.text}}</textarea>
-					</div>
-				</div>
-				<div class="flex-container__task-note__item">
-					<div class="task-title">{{$ctrl.taskData.titles[2]}}</div>
-					<div class="task-note_column" ng-repeat="item in $ctrl.range(false)">
-						<textarea class="task-note_item_input" maxlength="{{$ctrl.taskData.maxlength}}">{{item.text}}</textarea>
-					</div>
-				</div>
-			</div>
-
-			<!-- don`t use -->
-			<div class="task-note__body" ng-if="!$ctrl.useColumns">
-			<div class="flex-container__task-note">
-				<div class="task-note_item flex-container__task-note__item"
-					ng-repeat="item in $ctrl.items.fields">
-					<textarea class="task-note_item_input" maxlength="{{$ctrl.taskData.maxlength}}">{{item.text}}</textarea>
-				</div>
-				</div>
-			</div>
+		<div>
+			<page-video videourl="video/37.mp4" videoposter="video/posters/37.jpg" suburl="video/subtitles/37.vtt" videowidth="640" videoheight="480"></page-video>
 		</div>
-
-    <section class="btn-box">
-    	<button class="btn btn_answer" ng-click="$ctrl.saveNote()">СОХРАНИТЬ</button>
-    </section>
-
 	</section>
+
+	<task-note></task-note>
 </div>

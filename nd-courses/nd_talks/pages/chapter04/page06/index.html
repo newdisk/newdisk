@@ -1,0 +1,141 @@
+<div class="page-container task-note-style page-06-04">
+	<section class="page-head">
+		<p>Записная книжка. Задание&nbsp;4</p>
+	</section>
+	<section class="page-descr">
+		<div class="page-block-text">
+			<p>Cформулируйте ваши цели для ближайшего переговорного процесса. Каковы ваши интересы в этом переговорном процессе? Каковы предполагаемые цели и интересы вашего будущего партнера?</p>
+			<p class="text__hint">Введите ответ с помощью клавиатуры.</p>
+		</div>
+
+		<!--<task-note></task-note>-->
+        <section ng-controller="NoteCtrl as $ctrl">
+            <div class="flex-container">
+
+                <div class="desktop">
+                    <!--<div class="flex-container__item">-->
+                        <div class="title-head"></div>
+                        <div class="title target">
+                            <p class="text-accent">Цели</p>
+                            <p>(чего хочу достичь в ходе переговоров?)</p>
+                        </div>
+                        <div class="title interests">
+                            <p class="text-accent">Интересы</p>
+                            <p>(почему я хочу этого добиться? Что стоит за названными целями?)</p>
+                        </div>
+                    <!--</div>-->
+                </div>
+
+                <div class="flex-container__item">
+                    <!---->
+                    <div class="mobile">
+                        <div class="title target">
+                            <p class="text-accent">Цели</p>
+                            <p>(чего хочу достичь в ходе переговоров?)</p>
+                        </div>
+                    </div>
+                    <div class="task-note">
+                        <div class="task-note__body">
+                            <div class="task-title">{{$ctrl.taskData.titles[0]}}</div>
+                            <div class="task-note_item">
+                                <textarea class="task-note_item_input" maxlength="{{$ctrl.taskData.maxlength}}">{{$ctrl.items.fields[0].text}}</textarea>
+                            </div>
+                            <div class="task-note_item">
+                                <textarea class="task-note_item_input" maxlength="{{$ctrl.taskData.maxlength}}">{{$ctrl.items.fields[1].text}}</textarea>
+                            </div>
+                            <div class="task-note_item">
+                                <textarea class="task-note_item_input" maxlength="{{$ctrl.taskData.maxlength}}">{{$ctrl.items.fields[2].text}}</textarea>
+                            </div>
+                        </div>
+                        <div class="task-note__body">
+                            <div class="task-title">{{$ctrl.taskData.titles[1]}}</div>
+                            <div class="task-note_item">
+                                <textarea class="task-note_item_input" maxlength="{{$ctrl.taskData.maxlength}}">{{$ctrl.items.fields[3].text}}</textarea>
+                            </div>
+                            <div class="task-note_item">
+                                <textarea class="task-note_item_input" maxlength="{{$ctrl.taskData.maxlength}}">{{$ctrl.items.fields[4].text}}</textarea>
+                            </div>
+                            <div class="task-note_item">
+                                <textarea class="task-note_item_input" maxlength="{{$ctrl.taskData.maxlength}}">{{$ctrl.items.fields[5].text}}</textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!---->
+                    <div class="mobile">
+                        <div class="title interests mobile">
+                            <p class="text-accent">Интересы</p>
+                            <p>(почему я хочу этого добиться? Что стоит за названными целями?)</p>
+                        </div>
+                    </div>
+                    <div class="task-note">
+                        <div class="task-note__body">
+                            <div class="mobile">
+                                <div class="task-title">{{$ctrl.taskData.titles[0]}}</div>
+                            </div>
+                            <div class="task-note_item">
+                                <textarea class="task-note_item_input" maxlength="{{$ctrl.taskData.maxlength}}">{{$ctrl.items.fields[6].text}}</textarea>
+                            </div>
+                            <div class="task-note_item">
+                                <textarea class="task-note_item_input" maxlength="{{$ctrl.taskData.maxlength}}">{{$ctrl.items.fields[7].text}}</textarea>
+                            </div>
+                            <div class="task-note_item">
+                                <textarea class="task-note_item_input" maxlength="{{$ctrl.taskData.maxlength}}">{{$ctrl.items.fields[8].text}}</textarea>
+                            </div>
+                        </div>
+                        <div class="task-note__body">
+                            <div class="mobile">
+                                <div class="task-title">{{$ctrl.taskData.titles[1]}}</div>
+                            </div>
+                            <div class="task-note_item">
+                                <textarea class="task-note_item_input" maxlength="{{$ctrl.taskData.maxlength}}">{{$ctrl.items.fields[9].text}}</textarea>
+                            </div>
+                            <div class="task-note_item">
+                                <textarea class="task-note_item_input" maxlength="{{$ctrl.taskData.maxlength}}">{{$ctrl.items.fields[10].text}}</textarea>
+                            </div>
+                            <div class="task-note_item">
+                                <textarea class="task-note_item_input" maxlength="{{$ctrl.taskData.maxlength}}">{{$ctrl.items.fields[11].text}}</textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <!--<div class="flex-container flex-container1">-->
+                <!--<textarea class="task-note_item_input" maxlength="{{$ctrl.taskData.maxlength}}">{{$ctrl.items.fields[0].text}}</textarea>-->
+                <!--<textarea class="task-note_item_input" maxlength="{{$ctrl.taskData.maxlength}}">{{$ctrl.items.fields[1].text}}</textarea>-->
+            <!--</div>-->
+
+            <!--<div class="page-block-text page-block-text_title"><p>ПРОЯСНИТЕ ВАШИ ЦЕЛИ</p></div>-->
+
+            <!--<div class="flex-container">-->
+                <!--<div class="task-note">-->
+                    <!--<div class="task-note__body">-->
+                        <!--<div class="task-title">{{$ctrl.taskData.titles[0]}}</div>-->
+                        <!--<textarea class="task-note_item_input" maxlength="{{$ctrl.taskData.maxlength}}">{{$ctrl.items.fields[2].text}}</textarea>-->
+                        <!--<textarea class="task-note_item_input" maxlength="{{$ctrl.taskData.maxlength}}">{{$ctrl.items.fields[3].text}}</textarea>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <!--<div class="task-note">-->
+                    <!--<div class="task-note__body">-->
+                        <!--<div class="task-title">{{$ctrl.taskData.titles[1]}}</div>-->
+                        <!--<textarea class="task-note_item_input" maxlength="{{$ctrl.taskData.maxlength}}">{{$ctrl.items.fields[4].text}}</textarea>-->
+                        <!--<textarea class="task-note_item_input" maxlength="{{$ctrl.taskData.maxlength}}">{{$ctrl.items.fields[5].text}}</textarea>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <!--<div class="page-block-text page-block-text_title"><p>СФОРМУЛИРУЙТЕ КЛЮЧЕВУЮ КОНЦЕПЦИЮ ВАШЕЙ ПРЕДСТОЯЩЕЙ ПРЕЗЕНТАЦИИ</p></div>-->
+
+            <!--<div class="flex-container2">-->
+                <!--<textarea class="task-note_item_input" maxlength="{{$ctrl.taskData.maxlength}}">{{$ctrl.items.fields[6].text}}</textarea>-->
+            <!--</div>-->
+
+            <section class="btn-box">
+                <button class="btn btn_answer" ng-click="$ctrl.saveNote()">СОХРАНИТЬ</button>
+            </section>
+        </section>
+	</section>
+</div>

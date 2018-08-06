@@ -1,27 +1,12 @@
 <div class="task-note">
-	<!-- useColumns -->
-	<div class="task-note__body flex-container__task-note" ng-if="$ctrl.useColumns">
-		<div class="flex-container__task-note__item">
-			<div class="task-title" compile="$ctrl.taskData.titles[0]"></div>
-			<div class="task-note_column" ng-repeat="item in $ctrl.range(true)">
+	<div class="task-note__body flex-container__task-note">
+		<div class="flex-container__task-note__item"
+					ng-repeat="column in $ctrl.titles track by $index"
+					ng-init="columnIndex = $index">
+			<div class="task-title" ng-show="$ctrl.taskData.showTitle">{{column}}</div>
+			<div class="task-note_column" ng-repeat="item in $ctrl.range(columnIndex) track by $index">
 				<textarea class="task-note_item_input" maxlength="{{$ctrl.taskData.maxlength}}">{{item.text}}</textarea>
 			</div>
-		</div>
-		<div class="flex-container__task-note__item">
-			<div class="task-title" compile="$ctrl.taskData.titles[1]"></div>
-			<div class="task-note_column" ng-repeat="item in $ctrl.range(false)">
-				<textarea class="task-note_item_input" maxlength="{{$ctrl.taskData.maxlength}}">{{item.text}}</textarea>
-			</div>
-		</div>
-	</div>
-
-	<!-- don`t use -->
-	<div class="task-note__body" ng-if="!$ctrl.useColumns">
-	<div class="flex-container__task-note">
-		<div class="task-note_item flex-container__task-note__item"
-			ng-repeat="item in $ctrl.items.fields">
-			<textarea class="task-note_item_input" maxlength="{{$ctrl.taskData.maxlength}}">{{item.text}}</textarea>
-		</div>
 		</div>
 	</div>
 </div>

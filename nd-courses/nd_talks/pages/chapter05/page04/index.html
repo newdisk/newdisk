@@ -1,0 +1,131 @@
+<div class="page-container page-04-05">
+  <section class="page-head">
+    <p>Комментарии</p>
+  </section>
+  <!-- for mobile -->
+    <div class="flex-container mobile">
+      <section class="page-block-text">
+        <p class="text-accent">Описание</p>
+        <p>Партнер приводит неправдоподобные факты.</p>
+        <p class="text-accent">Как противостоять </p>
+        <p>Не можете проверить – не верьте. Возможно, партнер считает, что доверие и переговоры не связаны друг с другом.</p>
+      </section>
+      <section class="page-block-text">
+        <p class="text-accent">Описание</p>
+        <p>В последний момент партнер говорит, что ему нужно согласие начальника.</p>
+        <p class="text-accent">Как противостоять</p>
+        <p>Постарайтесь как можно больше узнать о человеке, который будет принимать решение.</p>
+      </section>
+      <section class="page-block-text">
+        <p class="text-accent">Описание</p>
+        <p>Легко выполнимое условие преподносится как большое одолжение.</p>
+        <p class="text-accent">Как противостоять</p>
+        <p>Задавайте вопросы, помогающие прояснить ситуацию: «Где расположены ваши склады? С каким транспортным агентством вы имеете дело?»</p>
+      </section>
+      <section class="page-block-text">
+        <p class="text-accent">Описание</p>
+        <p>Вас заставляют долго ждать в приемной, хотя время встречи было согласовано заранее.</p>
+        <p class="text-accent">Как противостоять</p>
+        <p>Воспользуйтесь их телефоном, завяжите знакомство с секретарем, — словом, обратите ожидание в свою пользу.</p>
+      </section>
+      <section class="page-block-text">
+        <p class="text-accent">Описание</p>
+        <p>Два разных предложения от одной компании: в одном – неприемлемые условия, в другом – невыгодные для вас, но лучше, чем в первом.</p>
+        <p>Другой вариант – переговоры ведут два человека, демонстрирующие два разных подхода: мягкий и жесткий.</p>
+        <p class="text-accent">Как противостоять</p>
+        <p>Скажите себе: «Это уловка». Можете рассказать собеседникам о своей догадке в форме шутки. Ориентируйтесь на «мягкого» переговорщика, но ведите с ним жесткий торг.</p>
+      </section>
+      <section class="page-block-text">
+        <p class="text-accent">Описание</p>
+        <p>Когда все уже согласовано, оппонент выдвигает новое требование.</p>
+        <p class="text-accent">Как противостоять</p>
+        <p>«Перемотайте пленку» назад: просмотрите свои записи, напомните, что это условие вы не обсуждали. Cкажите, что его надо оговорить отдельно.</p>
+      </section>
+    </div>
+    <!-- for desktop -->
+  <section class="televisor desktop">
+    <div class="televisor__sidebar">
+        <p class="televisor__sidebar-tab text"
+           ng-click="$ctrl.tabNum = 1"
+           ng-class="{'televisor__sidebar-tab_active':$ctrl.tabNum === 1}">
+            <span class="text_bold">Подтасовка</span>
+        </p>
+        <p class="televisor__sidebar-tab text"
+           ng-click="$ctrl.tabNum = 2"
+           ng-class="{'televisor__sidebar-tab_active':$ctrl.tabNum === 2}">
+            <span class="text_bold">Воображаемый «Босс»</span>
+        </p>
+        <p class="televisor__sidebar-tab text"
+           ng-click="$ctrl.tabNum = 3"
+           ng-class="{'televisor__sidebar-tab_active':$ctrl.tabNum === 3}">
+            <span class="text_bold">Ложная уступка</span>
+        </p>
+        <p class="televisor__sidebar-tab text"
+           ng-click="$ctrl.tabNum = 4"
+           ng-class="{'televisor__sidebar-tab_active':$ctrl.tabNum === 4}">
+            <span class="text_bold">Пусть подождет</span>
+        </p>
+        <p class="televisor__sidebar-tab text"
+           ng-click="$ctrl.tabNum = 5"
+           ng-class="{'televisor__sidebar-tab_active':$ctrl.tabNum === 5}">
+            <span class="text_bold">Добрый полицейский, злой полицейский</span>
+        </p>
+        <p class="televisor__sidebar-tab text"
+           ng-click="$ctrl.tabNum = 6"
+           ng-class="{'televisor__sidebar-tab_active':$ctrl.tabNum === 6}">
+            <span class="text_bold">Требование в последний момент</span>
+        </p>
+    </div>
+
+    <div class="televisor__content text" ng-show="$ctrl.tabNum === 1">
+        <section class="page-block-text">
+          <p class="text-accent">Описание</p>
+          <p>Партнер приводит неправдоподобные факты.</p>
+          <p class="text-accent">Как противостоять </p>
+          <p>Не можете проверить – не верьте. Возможно, партнер считает, что доверие и переговоры не связаны друг с другом.</p>
+        </section>
+    </div>
+    <div class="televisor__content text" ng-show="$ctrl.tabNum === 2">
+        <section class="page-block-text">
+          <p class="text-accent">Описание</p>
+          <p>В последний момент партнер говорит, что ему нужно согласие начальника.</p>
+          <p class="text-accent">Как противостоять</p>
+          <p>Постарайтесь как можно больше узнать о человеке, который будет принимать решение.</p>
+        </section>
+    </div>
+    <div class="televisor__content text" ng-show="$ctrl.tabNum === 3">
+        <section class="page-block-text">
+          <p class="text-accent">Описание</p>
+          <p>Легко выполнимое условие преподносится как большое одолжение.</p>
+          <p class="text-accent">Как противостоять</p>
+          <p>Задавайте вопросы, помогающие прояснить ситуацию: «Где расположены ваши склады? С каким транспортным агентством вы имеете дело?»</p>
+        </section>
+    </div>
+    <div class="televisor__content text" ng-show="$ctrl.tabNum === 4">
+        <section class="page-block-text">
+          <p class="text-accent">Описание</p>
+          <p>Вас заставляют долго ждать в приемной, хотя время встречи было согласовано заранее.</p>
+          <p class="text-accent">Как противостоять</p>
+          <p>Воспользуйтесь их телефоном, завяжите знакомство с секретарем, – словом, обратите ожидание в свою пользу.</p>
+        </section>
+    </div>
+    <div class="televisor__content text" ng-show="$ctrl.tabNum === 5">
+        <section class="page-block-text">
+          <p class="text-accent">Описание</p>
+          <p>Два разных предложения от одной компании: в одном – неприемлемые условия, в другом – невыгодные для вас, но лучше, чем в первом.</p>
+          <p>Другой вариант – переговоры ведут два человека, демонстрирующие два разных подхода: мягкий и жесткий.</p>
+          <p class="text-accent">Как противостоять</p>
+          <p>Скажите себе: «Это уловка». Можете рассказать собеседникам о своей догадке в форме шутки. Ориентируйтесь на «мягкого» переговорщика, но ведите с ним жесткий торг.</p>
+        </section>
+    </div>
+    <div class="televisor__content text" ng-show="$ctrl.tabNum === 6">
+        <section class="page-block-text">
+          <p class="text-accent">Описание</p>
+          <p>Когда все уже согласовано, оппонент выдвигает новое требование.</p>
+          <p class="text-accent">Как противостоять</p>
+          <p>«Перемотайте пленку» назад: просмотрите свои записи, напомните, что это условие вы не обсуждали. Cкажите, что его надо оговорить отдельно.</p>
+        </section>
+    </div>
+  </section>
+
+</div>

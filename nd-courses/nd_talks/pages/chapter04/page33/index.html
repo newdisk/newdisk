@@ -1,0 +1,96 @@
+<div class="page-container page-33-04">
+  <!--<div class="page-container page-33-04   page-task">-->
+  <section class="page-head">
+    <p>Задание 19</p>
+  </section>
+  <p>Прочитайте описание предстоящей ситуации переговоров для каждой стороны.</p>
+
+  <div class="flex-container">
+    <div class="flex-container-item">
+      <section class="page-block-text">
+        <add-info heading="Менеджеры крупной гостиницы" >
+        <div class="add-info__image">
+          <div class="content_modal">
+            <p> Им необходимо закупать кофе в объеме <span class="text-accent">300-400&nbsp;кг</span> ежемесячно. Этот объем включает: кофе для приготовления по-американски (недорогой кофе), кофе эспрессо и <span class="text-accent">20-30&nbsp;кг</span> для кофе по-восточному. Разброс цен на рынке кофе от <span class="text-accent">10 до 16&nbsp;$</span> за кг кофе. Один из поставщиков, с которым они собираются провести переговоры, просит <span class="text-accent">15&nbsp;$.</span> Начать торг они решили с <span class="text-accent">9&nbsp;$.</span> Они не хотят приобретать кофе по <span class="text-accent">15&nbsp;$</span> за кг. Максимальная цена, которую они готовы заплатить – <span class="text-accent">14 $</span>. Цена ниже <span class="text-accent">10&nbsp;$</span> для них «Супер!».<br>
+              У компании уже есть подобное предложение от других поставщиков кофе. Но у тех нет собственного производства, они не обжаривают кофе сами, а это сказывается на качестве и влияет на сроки поставки, а эти факторы очень важны для менеджеров гостиницы.
+              Им также необходимо оборудование для 5-ти баров и рецептура приготовления кофе (опыта работающих барменов недостаточно), в противном случае придется нанимать дорогого специалиста. Стоимость покупки <span class="text-accent">1</span> кофе-машины – <span class="text-accent">3600&nbsp;$</span>. Средняя стоимость аренды <span class="text-accent">1-й</span> машины в специализированных компаниях – <span class="text-accent">150&nbsp;$</span> в месяц.
+            </p>
+          </div>
+        </div>
+      </add-info>
+        <p class="text-button">Менеджеры крупной<br> гостиницы</p>
+      </section>
+    </div>
+    <div class="flex-container-item">
+      <section class="page-block-text">
+        <add-info heading="Компания-поставщик кофе" >
+        <div class="add-info__image">
+          <div class="content_modal">
+            <p> Они сделали предложение поставить кофе по <span class="text-accent">15&nbsp;$</span> за кг при условии закупок в  объемах <span class="text-accent">300-400&nbsp;кг</span> ежемесячно для приготовления американского кофе (недорогой кофе), кофе эспрессо и <span class="text-accent">20-30&nbsp;кг</span> для кофе по-восточному.<br>
+              Цена в <span class="text-accent">15&nbsp;$</span> для них – «Супер!». «Точка сопротивления» – <span class="text-accent">12&nbsp;$.</span><br>
+              Их конкурентное преимущество - собственное производство. Они сами обжаривают кофе, а это залог его высокого качества и своевременности поставок.
+              Они могут поставить оборудование для приготовления кофе бесплатно или с небольшой арендной платой – <span class="text-accent">100-150&nbsp;$</span> за единицу. Они также могут разрабатывать меню и предоставлять точную рецептуру для приготовления кофе.
+              Им было бы очень важно поставить свой логотип в меню гостиницы. По расчетам  маркетолога компании, это бы сэкономило <span class="text-accent">9000&nbsp;$</span> рекламного бюджета.
+            </p>
+          </div>
+        </div>
+      </add-info>
+        <p class="text-button">Компания-поставщик<br> кофе</p>
+      </section>
+    </div>
+  </div>
+
+
+
+  <p class="task-text">Определите цену и ценность уступок для менеджеров гостиницы и их партнеров по переговорам,  раскрасив их в соответствующий цвет.</p>
+  <p class="text__hint">Нажмите на краску, а затем на уступку.</p>
+  <div class="flex-container">
+    <section ng-controller="MarkerChoiceDoubleCtrl as $ctrl">
+      <div class="task__marker-choice-body">
+        <div class="marker-box">
+          <div class="marker"
+             ng-repeat="marker in $ctrl.markers"
+             ng-click="$ctrl.selectMarker(marker.id)"
+             ng-class="{'selected': $ctrl.marker == marker.id}">
+            <div class="marker_label">{{marker.label}}</div>
+          </div>
+
+        </div>
+        <div class="flex-container">
+          <div class="task__marker-choice_items">
+            <p class="text-name">Менеджеры крупной гостиницы </p>
+            <div class="task__marker-choice-item task__marker-choice-item1"
+               data="marker"
+               ng-repeat="question in $ctrl.questionList"
+               ng-click="$ctrl.selectAnswer($index, $event)">
+              <div class="task__marker-choice-question"
+                 ng-class="{'marker-selected': $ctrl.active[$index].selected}"
+                 ng-class="marker+$ctrl.marker">
+                {{question.label}}
+              </div>
+            </div>
+          </div>
+
+          <div class="task__marker-choice_items">
+            <p class="text-name">Компания-поставщик кофе </p>
+          <div class="task__marker-choice-item  task__marker-choice-item2"
+             data="marker"
+             ng-repeat="question in $ctrl.questionList"
+             ng-click="$ctrl.selectAnswer1($index, $event)">
+            <div class="task__marker-choice-question"
+               ng-class="{'marker-selected': $ctrl.active[$index].selected}"
+               ng-class="marker+$ctrl.marker">
+              {{question.label}}
+            </div>
+          </div>
+        </div>
+        </div>
+
+      </div>
+      <div class="btn-box">
+        <button class="btn btn_restart" ng-click="$ctrl.removeRestart()">Начать заново</button>
+        <button class="btn btn_answer" ng-class="{'btn_disabled': $ctrl.state == 0 || $ctrl.state == 2}" ng-click="$ctrl.checkAnswer($event)">Принять ответ</button>
+      </div>
+    </section>
+  </div>
+</div>

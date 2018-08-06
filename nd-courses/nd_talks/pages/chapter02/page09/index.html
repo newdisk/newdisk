@@ -1,39 +1,15 @@
-<div class="page-container page-09-02 task-note-style">
-	<section class="page-head">
-		<p>Записная книжка. Задание 1</p>
-	</section>
+<div class="page-container page-09-02">
+  <section class="page-head">
+    <p>Что такое переговоры?</p>
+  </section>
 
-	<div class="page-block-text">
-		<p>Отметьте те фразы вежливости, которые вы пока не использовали в телефонном общении. Какие из них, по вашему мнению, стоило бы ввести в ваш лексикон?</p>
-	</div>	
-
-<section ng-controller="MarkerNoteCtrl as $ctrl">
-	<div class="task__marker-choice-body">
-		<div class="marker-box">	    
-	    <div class="marker"
-	        ng-repeat="marker in $ctrl.markers"
-	        ng-click="$ctrl.selectMarker(marker.id)"
-	        ng-class="{'selected': $ctrl.marker == marker.id}">
-	      <div class="marker_label">{{marker.label}}</div>
-	    </div>	
-	  </div>
-
-	  <div class="task__marker-choice_items">
-	    <div class="task__marker-choice-item"
-	        data="marker{{$ctrl.active[$index].marker}}"
-	        ng-repeat="question in $ctrl.questionList"  
-	        ng-click="$ctrl.selectAnswer($index, $event)">
-	      <div class="task__marker-choice-question" 
-	          ng-class="{'marker-selected': $ctrl.active[$index].selected}"
-	          ng-class="marker+$ctrl.active[$index].marker">
-	        {{question.label}}
-	      </div>
-	    </div>
-	  </div>	  
-	</div>
-	<section class="btn-box">
-		<button class="btn btn_answer" ng-click="$ctrl.saveNote()">СОХРАНИТЬ</button>
-	</section>
-</section>
+  <section class="page-block-text">
+    <p>
+      Если продавец не видит разницы между продажей и переговорами, он рискует допустить серьезную ошибку: использовать скидки как аргумент продажи, то есть перейти к процессу переговоров слишком рано. Нередко бывает, что, получив право давать скидку, например, до 10 процентов, продавец использует это право в 100 процентах случаев, стремясь облегчить себе процесс убеждения. В результате цена падает на 10 процентов, а с ней и объем продаж.
+    </p>
+    <p class="page_paragraph">
+      Чем раньше вы идете на уступки, тем меньший эффект они производят. Нельзя смягчать свои условия, пока не станет ясно, что без этого контракта не подписать. Отсюда вытекает «золотое правило переговоров» – <span class="text-accent">не&nbsp;вступайте в переговоры, пока вас к этому не вынудили.</span>
+    </p>
+  </section>
 
 </div>

@@ -1,19 +1,46 @@
 <div class="page-container page-03-02">
   <section class="page-head">
-    <p>ТЕЛЕФОННЫЙ ЭТИКЕТ. ТЕЛЕФОННЫЙ ИМИДЖ КОМПАНИИ</p>
+    <p>ЗАДАНИЕ 1 </p>
   </section>
 
-  <section class="page-video-container">
-    <page-video videourl="video/r2.mp4" videoposter="video/posters/02.jpg" suburl="video/subtitles/r2.vtt" videowidth="640" videoheight="480"></page-video>
-    <p class="text__hint">Посмотрите киноэпизод.</p>
-  </section>
+    <P>На первый взгляд, продажа и переговоры кажутся одним и тем же, поскольку у них одна цель – добиться заключения контракта. Тем не менее, это два разных процесса.</P>
+    <p class="task-text">
+      Сравните два киноэпизода. В каком из эпизодов представлен процесс продажи, а в каком – процесс переговоров?
+    </p>
 
-  <section class="page-block-text">
-    <p class="page_paragraph"><span class="text-accent">ПРАВИЛА ТЕЛЕФОННОГО ЭТИКЕТА:</span><br/>
-      На вопрос: «Умеете ли вы разговаривать по телефону?», каждый сотрудник, не раздумывая, ответит «да». Кажется, что ничего сложного в этом обыденном для нас занятии нет. Чаще всего мы разговариваем, абсолютно не заботясь о соблюдении правил телефонного этикета, то есть о том, <span class="text-accent">насколько нашему партнеру удобно и комфортно общаться с нами.</span>  Впечатление о компании складывается с первых же секунд разговора. Даже одной «неправильной» фразы бывает достаточно, чтобы у клиента появилось желание положить трубку и набрать другой номер.</p>
+  <p class="text__hint">Выберите один ответ для каждого киноэпизода.</p>
 
-      <p class="page_paragraph"><span class="text-accent">Неумение сотрудников правильно вести деловые разговоры, в конечном счете, обходится достаточно дорого.</span> Это выражается в потере доверия к компании и упущенных деловых возможностях. Поэтому очень важно формировать позитивный телефонный образ компании. В этом огромную роль играет коммуникативная компетентность сотрудников, знание ими правил телефонного этикета.
-      </p>
-    </section>
+  <div ng-controller="SelectCtrl as $ctrl">
+    <div class="select-container">
+      <div class="task task-select-wrapper" ng-repeat="task in $ctrl.taskExs" ng-init="taskIndex = $index">
+        <p class="task-text">{{task.taskText}}</p>
+        <div ng-repeat="item in task.questionList.questions" ng-init="questIndex = $index" class="task-item">
 
+          <div class="task-item-label">
+            <page-video videourl="video/{{item.label}}.mp4" videoposter="video/posters/{{item.label}}.jpg" suburl="video/subtitles/{{item.label}}.vtt" videowidth="640" videoheight="480"></page-video>
+          </div>
+
+          <div class="task-select" ng-click="$ctrl.toggleSelect($event, $index, taskIndex)">
+            <div class="task-select_option-wrapper" 
+                  ng-class="{'task-select_option-wrapper__open': task.questionList.questions[$index].open}">
+              <div class="task-select_option" ng-click="$ctrl.selectChange($event, -1, questIndex, taskIndex)">
+                <p>{{item.default}}</p>
+              </div>
+              <div class="task-select_option" ng-repeat="option in $ctrl.filteredList[taskIndex]" 
+                    ng-click="$ctrl.selectChange($event, option.v_id, questIndex, taskIndex)">
+                  <p>{{option.label}}</p></div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="btn-box" ng-if="!$ctrl.test">
+      <button class="btn btn_restart" ng-click="$ctrl.removeRestart()">Начать заново</button>
+      <button class="btn btn_answer" ng-class="{'btn_disabled': $ctrl.state == 0 || $ctrl.state == 2}" ng-click="$ctrl.checkAnswer()">Принять ответ</button>
+    </div>
   </div>
+
+</div>

@@ -1,0 +1,9 @@
+<div class="btn-box" ng-if="$ctrl.currentScreen == 0">
+  <button class="btn btn_restart" ng-click="$ctrl.nextScreen()">Начать</button>
+  <!--<button class="btn btn_answer" ng-class="{'btn_disabled': $ctrl.state == 0 || $ctrl.state == 2}" ng-click="$ctrl.checkAnswer()">Принять ответ</button>-->
+</div>
+
+<div class="btn-box" ng-if="!$ctrl.currentScreen == 0">
+  <button class="btn btn_restart" ng-click="$ctrl.previousScreen()">Назад</button>
+  <button class="btn btn_restart" ng-click="$ctrl.nextScreen()">Далее</button>
+</div>

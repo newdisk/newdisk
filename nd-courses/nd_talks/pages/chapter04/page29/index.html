@@ -1,0 +1,83 @@
+<div class="page-container page-29-04 ">
+
+	<section class="page-head">
+		<p>Задание 17</p>
+	</section>
+
+	<section ng-controller="ScreensCtrl as $ctrl">
+
+		<div ng-show="$ctrl.currentScreen  == 0" class="screen1">
+			<div>
+				<p class="page_paragraph">
+					Прочитайте описание предстоящей ситуации переговоров.
+				</p>
+				<p class=" page_paragraph">
+					Михаил – менеджер коммерческого отдела компании «Скринз», которая производит компьютерные мониторы.
+					Алексей – руководитель отдела закупок «Суперкомпьютер» – розничного магазина, который заинтересован в покупке этих мониторов.
+					Это вторая встреча для того, чтобы обсудить итоговые условия сделки. Основные параметры сделки (включая цены и объем поставки) уже были согласованы и далее не обсуждаются.
+					Осталось согласовать три параметра: <span class="text-accent">сроки поставки, размер скидки и условия оплаты</span>. Ценность сделки для каждой из сторон складывается только из этих трех параметров.
+					В процессе переговоров будут обсуждаться только эти три параметра. Для завершения переговоров необходимо, чтобы обе стороны пришли к соглашению по всем параметрам.
+				</p>
+				<p class="page_paragraph">
+					Для каждого из параметров возможны <span class="text-accent">9 альтернатив от «А» до «И»</span>. Бухгалтеры каждой компании составили таблицу условной прибыли, – какой она будет в зависимости от выбора альтернативы по каждому параметру сделки.
+					Перед переговорами каждый переговорщик получил таблицу расчетов от своего бухгалтера.
+				</p>
+				<p class="page_paragraph">
+					Таблицы прибыли каждой из компаний представлены ниже.
+				</p>
+				<p class="page_paragraph">
+					Чтобы приступить к выполнению задания, нажмите кнопку «Начать».
+				</p>
+			</div>
+			<!--<screens></screens>-->
+			<div class="btn-box" ng-if="$ctrl.currentScreen == 0">
+				<button class="btn btn_restart" ng-click="$ctrl.nextScreen()">Начать</button>
+			</div>
+		</div>
+
+		<div ng-show="$ctrl.currentScreen  == 1">
+			<p class="task-text">Посмотрите три сравнительных таблицы.</p>
+
+			<section class="compare-table">
+				<div class="compare-table__item">
+					<p>Срок поставки</p>
+					<add-info>
+						<div class="add-info__image">
+							<img src="img/66-01.png" alt="">
+							<img src="img/66-02.png" alt="">
+						</div>
+					</add-info>
+				</div>
+				<div class="compare-table__item">
+					<p>Размер скидки</p>
+					<add-info>
+						<div class="add-info__image">
+							<img src="img/66-03.png" alt="">
+							<img src="img/66-04.png" alt="">
+						</div>
+					</add-info>
+				</div>
+				<div class="compare-table__item">
+					<p>Условия оплаты</p>
+					<add-info>
+						<div class="add-info__image">
+							<img src="img/66-05.png" alt="">
+							<img src="img/66-06.png" alt="">
+						</div>
+					</add-info>
+				</div>
+
+			</section>
+
+
+			<p class="task-text">Укажите, какое, по вашему мнению, наиболее выгодное соглашение могут заключить стороны.</p>
+
+			<section class="flex-container">
+				<div class="flex-container__item"></div>
+				<div class="flex-container__item title-task-select"><p>Альтернатива</p></div>
+				<task-select></task-select>
+			</section>
+		</div>
+
+	</section>
+</div>

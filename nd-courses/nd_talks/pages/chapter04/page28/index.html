@@ -1,0 +1,55 @@
+<div class="page-container page-28-04">
+  <section class="page-head">
+    <p>Неравноценные интересы: взаимовыгодное решение</p>
+  </section>
+
+  <p class="text">В случае неравноценности интересов по каким-то параметрам взаимовыгодное решение достигается путем обмена. В нашем задании взаимовыгодное решение следующее: <span class="text-accent">по срокам поставки – 60 дней</span> (альтернатива&nbsp;А), <span class="text-accent">по условиям оплаты – 9 платежей </span>(альтернатива&nbsp;И).  </p>
+
+  <tabs>
+    <div class="flex-container flex-container1">
+      <div class="flex-container-item1">
+        <tabs-item data-item="$ctrl.tabNum"
+                   ng-class="{'tab__item_active': $ctrl.tabNum === 1}"
+                   ng-click="$ctrl.tabNum = 1">Неравноценные интересы по срокам поставки</tabs-item>
+      </div>
+      <div class="flex-container-item1">
+        <tabs-item data-item="$ctrl.tabNum"
+                   ng-class="{'tab__item_active': $ctrl.tabNum === 2}"
+                   ng-click="$ctrl.tabNum = 2">Неравноценные интересы по условиям оплаты</tabs-item>
+      </div>
+    </div>
+  </tabs>
+
+  <div class="container_page text" ng-show="$ctrl.tabNum === 1">
+    <div class="flex-container__item">
+      <div class="image image1">
+        <img src="img/61-02.png" alt="">
+        <img src="img/61-03.png" alt="">
+      </div>
+      <add-info>
+        <div class="add-info__image">
+          <img src="img/61-02.png" alt="">
+          <img src="img/61-03.png" alt="">
+        </div>
+      </add-info>
+    </div>
+  </div>
+
+  <div class="container_page text" ng-show="$ctrl.tabNum === 2">
+    <div class="flex-container__item">
+      <div class="image image2">
+        <img src="img/64-01.png" alt="">
+        <img src="img/64-02.png" alt="">
+      </div>
+      <add-info>
+        <div class="add-info__image">
+          <img src="img/64-01.png" alt="">
+          <img src="img/64-02.png" alt="">
+        </div>
+      </add-info>
+    </div>
+
+  </div>
+
+
+</div>

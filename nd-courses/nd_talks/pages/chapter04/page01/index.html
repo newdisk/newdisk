@@ -1,14 +1,31 @@
-<div class="page-container page-container_half-title page-01-04">
-  <div class="page-content">
-    <div class="page-container_half-title__page-logo">
-    </div>
-    <section class="page-block-text page-block-text_half-title">
-      <p class="page-container_half-title__text-title">Глава 3</p>
-      <div class="flex-container flex-container_half-title">
-        <div class="flex-container__item flex-container__item__half-title_cube"></div>
-        <div class="flex-container__item flex-container__item__half-title_text"><p>ИТОГОВЫЙ ТЕСТ</p></div>
-      </div>      
-    </section>
-    
+<div class="page-container page-container_half-title page-01-04" ng-controller="HeaderCtrl as $ctrl">
+  <div class="page-container_half-title__page-logo">
+    <svg viewBox="0 0 250 100"
+         width="250"
+         height="100"
+         fill="#bcbcbc"
+         class="page-01-02_logo-svg">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink"
+           xlink:href="#logo">
+      </use>
+    </svg>
   </div>
+
+  <section class="page-block-text page-block-text_half-title">
+    <p class="page-container_half-title__text-title">ГЛАВА 3</p>
+    <div class="flex-container flex-container_half-title">
+      <div class="flex-container__item flex-container__item__half-title_cube"></div>
+      <div class="flex-container__item flex-container__item__half-title_text">
+        <p>Этапы переговорного процесса</p>
+      </div>
+    </div>
+
+    <ul class="page-block_list bullet__cube">
+      <li><p class="page_paragraph">Подготовка</p></li>
+      <li><p class="page_paragraph">Начало переговоров</p></li>
+      <li><p class="page_paragraph">Изложение позиций и их обсуждение</p></li>
+      <li><p class="page_paragraph">Поиск решения и выработка соглашения</p></li>
+    </ul>
+  </section>
+
 </div>

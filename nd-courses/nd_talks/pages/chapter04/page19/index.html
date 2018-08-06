@@ -1,0 +1,40 @@
+<div class="page-container page-19-04 page-task">
+    <section class="page-head">
+        <p>Задание 14</p>
+    </section>
+    <section class="page-block-text"><p>Покупатель готов приобрести товар максимум за <span class="text-accent">150 тыс. руб.</span> (это его точка сопротивления). Его желаемой ценой является <span class="text-accent">75 тыс. руб.</span> (целевая точка). Минимальная цена, за которую Продавец готов отдать товар, составляет <span class="text-accent">95 тыс. руб.</span> Его желаемой ценой является <span class="text-accent">190 тыс. руб.</span></p></section>
+
+    <p class="task-text">Определите область обсуждения (или «арену переговоров»).</p>
+    <p class="text__hint">Перетащите метки в нужные позиции.</p>
+    <section ng-controller="taskDragAlongYaxCtrl as $ctrl">
+        <div class="flex-container">
+            <div class="flex-container-item">
+                <div id="snapper0" class="ui-widget-header "><span class ="sp"></span></div>
+                <div id="snapper01" class="ui-widget-header "><span class ="sp"></span></div>
+                <div id="snapper1"><span class ="sp"></span></div>
+                <div id="snapper12"><span class ="sp"></span></div>
+
+                <div id="snapper2"><span class ="sp"></span></div>
+                <div id="snapper13"><span class ="sp"></span></div>
+                <div id="snapper3"><span class ="sp"></span></div>
+
+                <div id="container" class="task__drop-container task__drop-container1 vol_bg">
+                    <div id="drag1" class="dragElement ui-widget ui-corner-all ui-state-error">
+                        <!--<div id="drag1" class="dragElement ui-widget ui-corner-all ui-state-error">-->
+                    </div>
+                </div>
+                <div id="container2" class="task__drop-container  task__drop-container2 vol_bg">
+                    <div id="drag2" class="dragElement ui-widget ui-corner-all ui-state-error">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="btn-box" ng-if="!$ctrl.test">-->
+        <div class="btn-box" >
+            <button class="btn btn_restart" ng-click="$ctrl.removeRestart(); ">Начать заново</button>
+            <button class="btn btn_answer" ng-class="{'btn_disabled': $ctrl.state == 0 || $ctrl.state == 2}" ng-click="$ctrl.checkAnswer($event)">Принять ответ</button>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</div>
