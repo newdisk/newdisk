@@ -1,0 +1,51 @@
+<!-- TODO: -->
+
+<div class="title">
+  <div class="title-phrase"><p>{{$ctrl.taskData.exs[0].taskTitle[0]}}</p></div>
+  <div class="title-lable"><p>{{$ctrl.taskData.exs[0].taskTitle[1]}}</p></div>
+</div>
+
+<div class="task-swap-list-sortable"
+     ng-repeat="task in $ctrl.taskExs"
+     ng-if="!$ctrl.showRight">
+  <ul class="task-swap-list__phrase-container">
+    <li class="task-swap-list__phrase-item"
+        ng-repeat="item in $ctrl.taskData.exs[0].questionList">
+      <add-info class="phrase" heading="{{item.phrase}}" ng-show="item.modInfo">{{item.modInfo}}</add-info>
+      <img src="{{item.image}}" alt="" ng-show="item.image">
+      <p>{{item.phrase}}</p>
+    </li>
+  </ul>
+  <ul class="task-swap-list__label-container sortable">
+    <li class="task-swap-list__label-item"
+        ng-repeat="item in task.questionList"
+        data-order="{{item.order}}">
+      <p>{{item.label}}</p>
+    </li>
+  </ul>
+</div>
+
+<div class="task-swap-list-sortable"
+     ng-repeat="task in $ctrl.taskExs"
+     ng-if="$ctrl.showRight">
+  <ul class="task-swap-list__phrase-container">
+    <li class="task-swap-list__phrase-item"
+        ng-repeat="item in $ctrl.taskData.exs[0].questionList">
+      <add-info heading="{{item.phrase}}" ng-show="item.modInfo" ng-click="$ctrl.getAddInfoCustom(item.modInfo)"></add-info>
+      <img src="{{item.image}}" alt="" ng-show="item.image">
+      <p>{{item.phrase}}</p>
+    </li>
+  </ul>
+  <ul class="task-swap-list__label-container sortable">
+    <li class="task-swap-list__label-item"
+        ng-repeat="item in $ctrl.taskData.exs[0].questionList"
+        data-order="{{item.order}}">
+      <p>{{item.label}}</p>
+    </li>
+  </ul>
+</div>
+
+<div class="btn-box" ng-if="!$ctrl.test">
+  <button class="btn btn_restart" ng-click="$ctrl.removeRestart()">Начать заново</button>
+  <button class="btn btn_answer" ng-class="{'btn_disabled': $ctrl.state == 0 || $ctrl.state == 2}" ng-click="$ctrl.checkAnswer()">Принять ответ</button>
+</div>

@@ -1,0 +1,21 @@
+<p class="text__hint">Выберите один вариант ответа на каждый вопрос.</p>
+
+<section class="task-set task-many-single-choice">
+  <div class="task" ng-repeat="task in $ctrl.taskExs" ng-init="parentIndex = $index">
+    <p class="text">{{task.taskText}}</p>
+    <div class="task__single-choice-body">
+      <div class="task__single-choice-item" 
+          ng-repeat="question in task.questionList"
+          ng-click="$ctrl.selectAnswer(parentIndex, $index)">
+        <div class="task__single-choice-question task-question" 
+            ng-class="{'radio-selected': $ctrl.active[parentIndex][$index].selected}">
+          {{question.label}}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="btn-box" ng-if="!$ctrl.test">
+  <button class="btn btn_restart" ng-click="$ctrl.removeRestart()">Начать заново</button>
+  <button class="btn btn_answer" ng-class="{'btn_disabled': $ctrl.state == 0 || $ctrl.state == 2}" ng-click="$ctrl.checkAnswer($event)">Принять ответ</button>
+</div>
