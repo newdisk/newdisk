@@ -1,0 +1,38 @@
+<div class="page-container task-note-style page-09-03">
+	<section class="page-head">
+		<p>Записная книжка. Задание&nbsp;2</p>
+	</section>
+	<section>
+		<div class="page-block-text">
+			<p class="text">Проанализируйте состав вашей будущей аудитории на предстоящей презентации. Ответьте на вопросы, имея в виду предстоящую вам презентацию.</p>
+			<p class="text__hint">Введите ответ с помощью клавиатуры.</p>
+		</div>
+	</section>
+	<div>
+
+
+		<section ng-controller="NoteCtrl as $ctrl">
+			<div class="task-note">
+				<div class="task-note__body flex-container__task-note">
+
+					<div class="flex-container__task-note__title">
+						<div class="task-title" ng-show="$ctrl.taskData.showTitle">ВОПРОСЫ</div>
+						<div class="task-title" ng-show="$ctrl.taskData.showTitle">ОТВЕТЫ</div>
+					</div>
+
+					<div class="flex-container__task-note__item">
+						<div class="task-note_column" ng-repeat="item in $ctrl.range(0) track by $index">
+							<div class="task-note_item_label">{{$ctrl.taskData.labels[$index]}}</div>
+							<textarea class="task-note_item_input" maxlength="{{$ctrl.taskData.maxlength}}">{{item.text}}</textarea>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			
+			<section class="btn-box">
+				<button class="btn btn_answer" ng-click="$ctrl.saveNote()">СОХРАНИТЬ</button>
+			</section>
+		</section>
+	</div>
+</div>

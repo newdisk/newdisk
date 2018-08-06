@@ -1,0 +1,23 @@
+<!-- TODO: -->
+<div class="task-swap-list"
+      ng-repeat="task in $ctrl.taskExs"
+      ng-if="!$ctrl.showRight">
+  <ul>
+    <li class="task-swap-list_item"
+        ng-repeat="item in task.questionList"
+        data-order="{{item.order}}">{{item.label}}</li>
+  </ul>
+</div>
+<div class="task-swap-list task-swap-list__right"
+      ng-repeat="task in $ctrl.taskData.exs"
+      ng-if="$ctrl.showRight">
+  <ul>
+    <li class="task-swap-list_item"
+        ng-repeat="item in task.questionList"
+        data-order="{{item.order}}">{{item.label}}</li>
+  </ul>
+</div>
+<div class="btn-box" ng-if="!$ctrl.test">
+  <button class="btn btn_restart" ng-click="$ctrl.removeRestart()">Начать заново</button>
+  <button class="btn btn_answer" ng-class="{'btn_disabled': $ctrl.state == 0 || $ctrl.state == 2}" ng-click="$ctrl.checkAnswer()">Принять ответ</button>
+</div>

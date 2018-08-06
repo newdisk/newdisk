@@ -1,0 +1,33 @@
+<div class="page-container page-09-04 page-task">
+	<section class="page-head">
+		<p>Задание 23</p>
+	</section>
+	<section class="task-set">
+		<p class="task-text text">Какие типы «крючков внимания» были использованы в перечисленных примерах?</p>
+		<p class="text__hint">Переместите описание каждого типа напротив соответствующего «крючка внимания».</p>
+	</section>
+
+	<div ng-controller="SwapListCtrl as $ctrl">
+		<div class="task-swap-list" ng-repeat="task in $ctrl.taskExs" ng-if="!$ctrl.showRight">
+			<div class="flex-container flex-container_def">
+				<p class="text-accent">«Крючок внимания»</p>
+				<p class="text-accent">Описание</p>
+			</div>
+
+			<ul>
+				<div class="task-swap-list_item_wrapper" ng-repeat="item in task.questionList">
+					<div class="task-swap-list_item_left">
+						<p class="">{{$ctrl.taskData.exs[0].questionList[$index].phrase}}</p>
+					</div>
+					<li class="task-swap-list_item task-swap-list_item1" data-order="{{item.order}}">{{item.label}}</li>
+				</div>
+			</ul>
+		</div>
+
+		<div class="btn-box" ng-if="!$ctrl.test">
+			<button class="btn btn_restart" ng-click="$ctrl.removeRestart()">Начать заново</button>
+			<button class="btn btn_answer" ng-class="{'btn_disabled': $ctrl.state == 0 || $ctrl.state == 2}" ng-click="$ctrl.checkAnswer()">Принять ответ</button>
+		</div>
+
+	</div>
+</div>

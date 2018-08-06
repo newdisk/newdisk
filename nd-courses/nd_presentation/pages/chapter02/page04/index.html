@@ -1,0 +1,56 @@
+<div class="page-container page-04-02">
+<section class="page-head">
+    <p>ЗАДАНИЕ 1</p>
+  </section>
+	
+	<p class="task-text">Постройте «здание» презентации, заложив в его каркас четыре основополагающие характеристики – те признаки презентации, без которых это будет уже другое понятие. Начните строительство с фундамента.</p>
+	<p class="text__hint">Перетащите каждую характеристику<br/> на соответствующее ей место в «здании».</p>
+  
+  <section ng-controller="taskDragCtrl as $ctrl">
+		<div ng-if="!$ctrl.showRight" class="task-drag-drop">
+			<div class="task__drop-container">
+				<div class="task__drop-flex">
+					<div class="task__drop-item" order="0" droppable></div>  				
+					<div class="task__drop-item" order="1" droppable></div>  				
+					<div class="task__drop-item" order="1" droppable></div>			
+					<div class="task__drop-item" order="2" droppable></div>
+				</div>
+			</div>
+			
+			  	<div class="task__drag-container" droppable>
+			  		<div class="task__drag-item"
+			  				ng-repeat="item in $ctrl.questionList"
+			  				id="{{$index}}"
+			  				order="{{item.order}}"
+			  				draggable>
+			  			{{item.label}}
+			  		</div>
+			  	</div>
+		</div>
+
+		<div ng-if="$ctrl.showRight" class="task-drag-drop">
+			<div class="task__drop-container">
+				<div class="task__drop-flex">
+					<div class="task__drop-item"><div class="task__drag-item">Аудитория (собравшиеся люди)</div></div>  				
+					<div class="task__drop-item"><div class="task__drag-item">Информация (смысловое содержание)</div></div>  				
+					<div class="task__drop-item"><div class="task__drag-item">Продуманная форма подачи информации</div></div>			
+					<div class="task__drop-item"><div class="task__drag-item">Цели презентующего</div></div>
+				</div>
+			</div>
+			
+			  	<div class="task__drag-container" droppable>
+			  		<div class="task__drag-item"
+			  				ng-repeat="item in $ctrl.questionList"
+			  				ng-if="item.order == -1">
+			  			{{item.label}}
+			  		</div>
+			  	</div>
+		</div>
+
+
+		<div class="btn-box" ng-if="!$ctrl.test">
+		  <button class="btn btn_restart" ng-click="$ctrl.removeRestart()">Начать заново</button>
+		  <button class="btn btn_answer" ng-class="{'btn_disabled': $ctrl.state == 0 || $ctrl.state == 2}" ng-click="$ctrl.checkAnswer($event)">Принять ответ</button>
+		</div>
+  </section>
+</div>

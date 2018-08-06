@@ -1,0 +1,129 @@
+<div class="page-container page-08-07">
+  <section class="page-head">
+    <p>ЗАДАНИЕ 68</p>
+  </section>
+
+	<p class="task-text">Разместите проектор с экраном и выберите место для презентующего так, чтобы внимание аудитории концентрировалось на том, что говорит презентующий, но было видно экран.</p>
+	<p class="text__hint">Перетащите экран с проектором и фигуру презентующего в соответствующие клетки, а также расположите экран под правильным углом.</p>
+
+  <section ng-controller="taskDragPresentationCtrl as $ctrl">
+
+		<div ng-if="!$ctrl.showRight" class="task-drag-drop">
+			<div class="task__drop-container">
+				<div class="task__drop-flex">
+          <div class="task__drop-row">
+            <div class="task__drop-item" order="-1" droppable></div>
+            <div class="task__drop-item" order="-1" droppable></div>
+            <div class="task__drop-item" order="-1" droppable></div>
+          </div>
+          <div class="task__drop-row">
+            <div class="task__drop-item" order="-1" droppable></div>
+            <div class="task__drop-item" order="0" droppable></div>
+            <div class="task__drop-item" order="-1" droppable></div>
+          </div>
+          <div class="task__drop-row">
+            <div class="task__drop-item" order="{{$ctrl.setProjectorOrder(2)}}" droppable></div>
+            <div class="task__drop-item" order="-1" droppable></div>
+            <div class="task__drop-item" order="{{$ctrl.setProjectorOrder(1)}}" droppable></div>
+          </div>
+				</div>
+			</div>
+
+      <div class="task__drag-container" droppable>
+        <div class="task__drag-item task__drag-item_presenter"
+            id="0"
+            order="0"
+            draggable>
+          <div class="task__drag-item-pic">
+            <div class="desktop">
+              <img class="image presenter" src="img/163-05.png">
+            </div>
+            <div class="mobile">
+              <img class="image presenter" src="img/163_mob-05.png">
+            </div>
+          </div>
+        </div>
+        <div class="task__drag-item task__drag-item_projector"
+            id="1"
+            order="{{$ctrl.projectorOrder}}"
+            draggable>
+          <div class="task__drag-item-pic">
+            <div class="desktop">
+              <img class="image projector" src="{{$ctrl.projectorImage}}">
+            </div>
+            <div class="mobile">
+              <img class="image projector" src="{{$ctrl.projectorImageMobile}}">
+            </div>
+            <div>
+              <img class="image pointer" src="img/163-pointer1.png" ng-click="$ctrl.rotateProjector(1)">
+              <img class="image pointer" src="img/163-pointer2.png" ng-click="$ctrl.rotateProjector(2)">
+            </div>
+          </div>
+        </div>
+      </div>
+
+		</div>
+
+
+    <div ng-if="$ctrl.showRight" class="task-drag-drop">
+      <div class="task__drop-container">
+        <div class="task__drop-flex">
+          <div class="task__drop-row">
+            <div class="task__drop-item" order="-1" droppable></div>
+            <div class="task__drop-item" order="-1" droppable></div>
+            <div class="task__drop-item" order="-1" droppable></div>
+          </div>
+          <div class="task__drop-row">
+            <div class="task__drop-item" order="-1" droppable></div>
+            <div class="task__drop-item" order="0" droppable>
+                  <div class="task__drag-item task__drag-item_presenter"
+                      id="0"
+                      order="0"
+                      draggable>
+                    <div class="task__drag-item-pic">
+                      <div class="desktop">
+                        <img class="image presenter" src="img/163-05.png">
+                      </div>
+                      <div class="mobile">
+                        <img class="image presenter" src="img/163_mob-05.png">
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="task__drop-item" order="-1" droppable></div>
+          </div>
+          <div class="task__drop-row">
+            <div class="task__drop-item" order="-1" droppable></div>
+            <div class="task__drop-item" order="-1" droppable></div>
+            <div class="task__drop-item" order="1" droppable>
+                  <div class="task__drag-item task__drag-item_projector"
+                      id="1"
+                      order="{{$ctrl.projectorOrder}}"
+                      draggable>
+                    <div class="task__drag-item-pic">
+                      <div class="desktop">
+                        <img class="image projector" src="img/163-02.png">
+                      </div>
+                      <div class="mobile">
+                        <img class="image projector" src="img/163_mob-02.png">
+                      </div>
+                      <div>
+                        <img class="image pointer" src="img/163-pointer1.png">
+                        <img class="image pointer" src="img/163-pointer2.png">
+                      </div>
+                    </div>
+                  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="task__drag-container" droppable></div>
+  </div>
+
+		<div class="btn-box" ng-if="!$ctrl.test">
+		  <button class="btn btn_restart" ng-click="$ctrl.removeRestart()">Начать заново</button>
+		  <button class="btn btn_answer" ng-class="{'btn_disabled': $ctrl.state == 0 || $ctrl.state == 2}" ng-click="$ctrl.checkAnswer($event)">Принять ответ</button>
+		</div>
+  </section>
+</div>

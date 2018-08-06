@@ -1,0 +1,27 @@
+<div class="page-container page-37-03 page-task">
+	<section class="page-head">
+  	<p>Задание 19</p>
+	</section>
+
+  <section ng-controller="SingleChoiceCtrl as $ctrl">
+    <p class="task-text" compile="$ctrl.taskText"></p>
+    <p class="text__hint">Выберите один вариант ответа.</p>
+
+    <div class="task__single-choice-body">
+      <div class="task__single-choice-item" 
+          ng-repeat="question in $ctrl.questionList"  
+          ng-click="$ctrl.selectAnswer($index)">
+        <div class="task__single-choice-question task-question" 
+            ng-class="{'radio-selected': $ctrl.active[$index].selected}">         
+          <page-video class="page-video-{{question.label}}" videourl="video/v{{question.label}}.mp4" videoposter="video/posters/{{question.label}}.jpg" suburl="video/subtitles/v{{question.label}}.vtt" videowidth="696" videoheight="572"></page-video>
+        </div>
+      </div>
+    </div>
+
+    <div class="btn-box" ng-if="!$ctrl.test">
+      <button class="btn btn_restart" ng-click="$ctrl.removeRestart()">Начать заново</button>
+      <button class="btn btn_answer" ng-class="{'btn_disabled': $ctrl.state == 0 || $ctrl.state == 2}" ng-click="$ctrl.checkAnswer($event)">Принять ответ</button>
+    </div>
+  </section>
+
+</div>

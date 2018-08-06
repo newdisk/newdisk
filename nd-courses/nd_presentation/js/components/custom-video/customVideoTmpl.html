@@ -1,0 +1,20 @@
+<div class="custom-video">
+	<video class="custom-video__video" ng-src="{{$ctrl.src}}" width="100%" autoplay="autoplay"></video>
+	<div class="custom-video__controls">
+		<button class="btn btn_video-{{$ctrl.play}}" 
+						ng-click="$ctrl.changePlayPause()">
+		</button>
+		<input class="custom-video__seek-slider" type="range" name="seekPos" min="0" max="100" value="$ctrl.seekPos" step="1" ng-model="$ctrl.seekPos" ng-change="$ctrl.changeSeekPos()">
+		<span class="custom-video__time">
+			<span class="custom-video__current-time-text"
+						ng-bind="$ctrl.curtimetext">
+			</span>&nbsp;/&nbsp;<span class="custom-video__duration-time-text"
+																ng-bind="$ctrl.durtimetext">
+			</span>			
+		</span>
+		<button class="btn btn_video-{{$ctrl.mute}}" 
+						ng-click="$ctrl.changeMuteState()">			
+		</button>
+		<input class="custom-video__volume-slider" type="range" name="volume" min="0" max="1" step="0.05" ng-model="$ctrl.volume" ng-change="$ctrl.changeVolume()">
+	</div>
+</div>

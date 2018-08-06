@@ -1,0 +1,108 @@
+<div class="page-container page-24-04">
+	<section class="page-head">
+		<p>Задание 31</p>
+	</section>
+
+	<section>
+    <p class="task-text text">Соотнесите факторы проведения презентации с выбором эмоциональных и рациональных аргументов.
+		Для этого раскрасьте ячейки правильной колонки таблицы в нужные цвета.</p>
+		<p class="text__hint">Для того чтобы выбрать цвет, нажмите на него. Выбрав цвет, нажмите на утверждение.</p>
+  </section>
+    <!-- <task-marker-choice></task-marker-choice> -->
+  <section ng-controller="MarkerChoiceCtrl as $ctrl">
+    <div class="task__marker-choice-body">
+      <!-- <div class="task__marker-choice_video" ng-if="$ctrl.useVideo">
+
+        <button class="btn btn_task-video"
+                ng-click="$ctrl.showVideo()">
+          <svg viewBox="0 0 100 100">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                 xlink:href="#play_video">
+            </use>
+          </svg>
+        </button>
+      </div> -->
+      <div class="task__marker-choice_items">
+        <!-- Group 1 -->
+        <div class="task__marker-choice_group-title"><p>Время проведения презентации</p></div>
+        <div class="task__marker-choice_group">
+          <div class="task__marker-choice-item"
+              ng-repeat="question in $ctrl.questionList"
+              ng-if="$index == 0 || $index == 1 || $index == 2"
+              data="marker"
+              ng-click="$ctrl.selectAnswer($index, $event)">
+            <div class="task__marker-choice-question"
+                ng-class="{'marker-selected': $ctrl.active[$index].selected}"
+                ng-class="marker+$ctrl.marker">
+              {{question.label}}
+            </div>
+          </div>
+        </div>
+
+        <!-- Group 2 -->
+        <div class="task__marker-choice_group-title"><p>Момент принятия решения</p></div>
+        <div class="task__marker-choice_group">
+          <div class="task__marker-choice-item"
+              ng-repeat="question in $ctrl.questionList"
+              ng-if="$index == 3 || $index == 4"
+              data="marker"
+              ng-click="$ctrl.selectAnswer($index, $event)">
+            <div class="task__marker-choice-question"
+                ng-class="{'marker-selected': $ctrl.active[$index].selected}"
+                ng-class="marker+$ctrl.marker">
+              {{question.label}}
+            </div>
+          </div>
+        </div>
+
+        <!-- Group 3 -->
+        <div class="task__marker-choice_group-title"><p>Возраст слушателей</p></div>
+        <div class="task__marker-choice_group">
+          <div class="task__marker-choice-item"
+              ng-repeat="question in $ctrl.questionList"
+              ng-if="$index == 5 || $index == 6 || $index == 7"
+              data="marker"
+              ng-click="$ctrl.selectAnswer($index, $event)">
+            <div class="task__marker-choice-question"
+                ng-class="{'marker-selected': $ctrl.active[$index].selected}"
+                ng-class="marker+$ctrl.marker">
+              {{question.label}}
+            </div>
+          </div>
+        </div>
+
+        <!-- Group 4 -->
+        <div class="task__marker-choice_group-title"><p>Пол слушателей</p></div>
+        <div class="task__marker-choice_group">
+          <div class="task__marker-choice-item"
+              ng-repeat="question in $ctrl.questionList"
+              ng-if="$index == 8 || $index == 9"
+              data="marker"
+              ng-click="$ctrl.selectAnswer($index, $event)">
+            <div class="task__marker-choice-question"
+                ng-class="{'marker-selected': $ctrl.active[$index].selected}"
+                ng-class="marker+$ctrl.marker">
+              {{question.label}}
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="marker-box">
+        <div class="marker"
+            ng-repeat="marker in $ctrl.markers"
+            ng-click="$ctrl.selectMarker(marker.id)"
+            ng-class="{'selected': $ctrl.marker == marker.id}">
+          <div class="marker_label">{{marker.label}}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="btn-box">
+      <button class="btn btn_restart" ng-click="$ctrl.removeRestart()">Начать заново</button>
+      <button class="btn btn_answer" ng-class="{'btn_disabled': $ctrl.state == 0 || $ctrl.state == 2}" ng-click="$ctrl.checkAnswer($event)">Принять ответ</button>
+    </div>
+
+	</section>
+</div>

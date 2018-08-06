@@ -1,0 +1,40 @@
+<div class="page-container page-11-02 page-task">
+<section class="page-head">
+  <p>Задание 6</p>
+</section>
+
+<section ng-controller="ManySingleChoiceCtrl as $ctrl">
+  <div class="page-video-container">
+    <div>
+      <p class="text">Посмотрите киноэпизод. Ответьте на вопросы.</p>
+      <p class="text__hint">Выберите один ответ на каждый вопрос. </p>
+    </div>
+    <page-video videourl="video/v02.mp4" videoposter="video/posters/02.jpg" suburl="video/subtitles/v02.vtt" videowidth="696" videoheight="572"></page-video>
+  </div>
+
+  <div class="flex-container">
+    <section class="task-set task-many-single-choice">
+      <div class="task" ng-repeat="task in $ctrl.taskExs" ng-init="parentIndex = $index">
+        <p class="text">{{task.taskText}}</p>
+        <div class="task__single-choice-body">
+          <div class="task__single-choice-item" 
+              ng-repeat="question in task.questionList"
+              ng-click="$ctrl.selectAnswer(parentIndex, $index)">
+            <div class="task__single-choice-question task-question" 
+                ng-class="{'radio-selected': $ctrl.active[parentIndex][$index].selected}">
+              {{question.label}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <img src="img/15.png" alt="Схема">
+  </div>
+
+  <div class="btn-box" ng-if="!$ctrl.test">
+    <button class="btn btn_restart" ng-click="$ctrl.removeRestart()">Начать заново</button>
+    <button class="btn btn_answer" ng-class="{'btn_disabled': $ctrl.state == 0 || $ctrl.state == 2}" ng-click="$ctrl.checkAnswer($event)">Принять ответ</button>
+  </div>
+</section>
+
+</div>

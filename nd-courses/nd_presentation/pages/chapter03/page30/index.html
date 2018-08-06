@@ -1,0 +1,43 @@
+<div class="page-container page-30-03 page-task">
+  <section class="page-head">
+    <p>ЗАДАНИЕ 16</p>
+  </section>
+
+  <section ng-controller="MultiChoiceCtrl as $ctrl">
+    <p class="task-text text" compile="$ctrl.taskText"></p>
+    <p class="text__hint">Выберите один или несколько вариантов ответа.</p>
+    <div class="task-multi-choice">
+      <div class="task__multi-choice-body">
+        <div class="task__multi-choice-item"
+            ng-repeat="question in $ctrl.questionList"
+            ng-click="$ctrl.selectAnswer($index)">
+              <div ng-show="$index > -1 && $index < 10">
+                <div class="task__multi-choice-question task-question"
+                    ng-class="{'radio-selected': $ctrl.active[$index].selected}">
+                  {{question.label}}
+                </div>
+              </div>
+        </div>
+      </div>
+
+      <div class="task__multi-choice-body">
+          <div class="task__multi-choice-item"
+              ng-repeat="question in $ctrl.questionList"
+              ng-click="$ctrl.selectAnswer($index)">
+                <div class="" ng-show="$index > 9">
+                  <div class="task__multi-choice-question task-question"
+                      ng-class="{'radio-selected': $ctrl.active[$index].selected}">
+                    {{question.label}}
+                  </div>
+                </div>
+          </div>
+      </div>
+    </div>
+
+    <div class="btn-box" ng-if="!$ctrl.test">
+      <button class="btn btn_restart" ng-click="$ctrl.removeRestart()">Начать заново</button>
+      <button class="btn btn_answer" ng-class="{'btn_disabled': $ctrl.state == 0 || $ctrl.state == 2}" ng-click="$ctrl.checkAnswer($event)">Принять ответ</button>
+    </div>
+
+  </section>
+</div>

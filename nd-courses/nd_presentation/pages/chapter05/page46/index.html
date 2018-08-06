@@ -1,0 +1,50 @@
+<div class="page-container page-46-05 task-note-style">
+  <section class="page-head">
+    <p>Задание 55</p>
+  </section>
+
+  <section class="page-block-text">
+    <p class="text">Устная речь принципиально отличается от письменной. Дело не только в подборе лексики, но и в разных подходах к построению фраз. Проанализируйте приведенные ниже фразы. Чем они вам не нравятся? Дайте свой вариант.</p>
+    <p class="text__hint">Введите свой ответ с клавиатуры.</p>
+  </section>
+  
+  <section ng-controller="NoteEx4Ctrl as $ctrl">
+    <div class="task__current-question">{{$ctrl.questionList[$ctrl.currentQuestion].label}}</div>
+    <div class="task-note__body">
+      <div>
+        <div class="task__title">Ваш вариант:</div>
+        <div class="flex-container__task-note">
+          <div class="task-note_item flex-container__task-note__item"
+          ng-repeat="item in $ctrl.items.fields"
+          ng-show="$index == $ctrl.currentQuestion">
+          <textarea class="task-note_item_input" maxlength="{{$ctrl.taskData.maxlength}}">{{item.text}}</textarea>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="task__title">Правильный вариант:</div>
+      <div class="task__current-answer"><div ng-if="$ctrl.displayAnswer" compile="$ctrl.questionList[$ctrl.currentQuestion].right"></div></div>
+    </div>
+  </div>
+
+  <div class="btn-box" ng-if="!$ctrl.test">
+    <button class="btn btn_prev-question"  ng-class="{'btn_disabled': $ctrl.currentQuestion < 1}" ng-click="$ctrl.prevQuestion()">Предыдущий вопрос</button>
+    <button class="btn btn_answer" ng-class="{'btn_disabled': !$ctrl.state == 1 || $ctrl.end}" ng-click="$ctrl.checkAnswer($event)">Принять ответ</button>      
+    <button class="btn btn_next-question" ng-class="{'btn_disabled': ($ctrl.state == 1 && !$ctrl.end) || $ctrl.currentQuestion >= $ctrl.questionList.length - 1}" ng-click="$ctrl.nextQuestion()">Следующий вопрос</button>  
+
+    <add-info heading="Комментарий" ng-show="$ctrl.end">
+    <div class="modal_add-info_number-container">
+      <p class="modal_add-info_number">Надо учитывать «сочетаемость» слов, принятую в русском языке. Еще один часто встречающийся пример неверного сочетания – «играть значение» (верно «иметь значение» и «играть роль»).</p>
+      <p class="modal_add-info_number">Во-первых, в причастном обороте был неправильный порядок слов. Надо: «Приведенные в последнем статотчете сведения….». Во-вторых, использование причастных оборотов в устной речи «утяжеляет» ее, поэтому их лучше менять на другие конструкции.</p>
+      <p class="modal_add-info_number">Пассивный залог усложняет понимание устной речи.</p>
+    </div>
+  </add-info>
+  </div>
+
+
+  
+</section>
+
+
+</div>

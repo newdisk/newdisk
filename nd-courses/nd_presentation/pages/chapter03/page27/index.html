@@ -1,0 +1,50 @@
+<div class="page-container page-27-03 task-note-style">
+	<section class="page-head">
+		<p>Записная книжка. Задание&nbsp;6</p>
+	</section>
+
+	<div class="page-block-text">
+		<p class="text">Разработайте тезисный план вашего выступления. </p>
+		<p class="text text__hint">Введите ответ с помощью клавиатуры.</p>
+		<p><span class="text-accent">Шаг 1.</span> Выберите ключевые тезисы (от 2 до 5).</p>
+		<p><span class="text-accent">Шаг 2.</span> Подберите подпункты, раскрывающие содержание тезисов. Отбросьте лишние.</p>
+	</div>
+
+	<section ng-controller="NoteCtrl as $ctrl">
+		<div class="task-note">
+			<div class="task-note__body flex-container__task-note">
+				<div class="flex-container__task-note__item"
+							ng-repeat="column in $ctrl.titles track by $index"
+							ng-init="columnIndex = $index">
+					<div class="task-title" ng-show="$ctrl.taskData.showTitle">{{column}}</div>
+					<div class="task-note_column" ng-repeat="item in $ctrl.range(columnIndex) track by $index">
+						<textarea class="task-note_item_input" maxlength="{{$ctrl.taskData.maxlength}}">{{item.text}}</textarea>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="page-block-text flex-container">
+			<p><span class="text-accent">Шаг 3.</span> Проверьте соответствие записанного плана</p>
+			<div class="flex-container">
+				<add-info heading="Правилам построения системы тезисов" >
+					<div class="modal_add-info_number-container modal_add-info_page-27-03">
+						<p class="modal_add-info_number text-number-1">Каждый тезис должен быть подкреплен достаточным количеством пунктов.</p>
+						<p class="modal_add-info_number text-number-2">Если у тезиса есть подпункты, их должно быть не менее двух.</p>
+						<p class="modal_add-info_number text-number-3">Не закладывайте в тезис несколько мыслей с разным содержанием.</p>
+						<p class="modal_add-info_number text-number-4">Избегайте частичного совпадения тезисов.</p>
+						<p class="modal_add-info_number text-number-5">Нельзя допускать несовместимости тезисов.</p>
+						<p class="modal_add-info_number text-number-6">При подборе аргументации нужно воздействовать и на разум, и на эмоции слушателей.</p>
+					</div>
+				</add-info>
+				<p><span class="text-accent">«Правилам построения системы тезисов»</span>. </p>
+			</div>
+		</div>
+
+		<section class="btn-box">
+			<button class="btn btn_answer" ng-click="$ctrl.saveNote()">СОХРАНИТЬ</button>
+		</section>
+	</section>
+
+
+</div>

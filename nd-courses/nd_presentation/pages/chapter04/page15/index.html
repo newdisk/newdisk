@@ -1,0 +1,58 @@
+<div class="page-container task-note-style page-15-04">
+	<section class="page-head">
+		<p>Задание 26</p>
+	</section>
+	<section class="page-descr">
+		<div class="page-block-text">
+			<p>«Доработайте» простые формулировки целей в зависимости от типа аудитории и сравните ваши формулировки с рекомендованными.</p>
+			<p class="text">Простая цель: «Я расскажу о подготовке похода».</p>
+			<p class="text__hint">Введите ответ с помощью клавиатуры.</p>
+		</div>
+
+		<!-- <task-note></task-note> -->
+		<section ng-controller="NoteEx26Ctrl as $ctrl">
+			<div class="task-note__body">
+
+				<div class="task__current-question"><p>{{$ctrl.questionList[0].label}}</p></div>
+				<div class="flex-container">
+					<div class="flex-container__task-note">
+						<div class="task__title"><p>Ваша формулировка</p></div>
+						<div class="task-note_item flex-container__task-note__item">
+							<textarea class="task-note_item_input" maxlength="{{$ctrl.taskData.maxlength}}">{{$ctrl.items.fields.text}}</textarea>
+						</div>
+					</div>
+					<div class="flex-container__task-note">
+						<div class="task__title"><p>Рекомендованная формулировка</p></div>
+						<div class="task__current-answer flex-container__task-note__item"><div ng-if="$ctrl.displayAnswer[0]">{{$ctrl.questionList[0].right}}</div></div>
+					</div>
+				</div>
+
+				<div class="task__current-question"><p>{{$ctrl.questionList[1].label}}</p></div>
+				<div class="flex-container">
+					<div class="flex-container__task-note">
+						<div class="mobile">
+							<div class="task__title"><p>Ваша формулировка</p></div>
+						</div>
+						<div class="task-note_item flex-container__task-note__item">
+							<textarea class="task-note_item_input" maxlength="{{$ctrl.taskData.maxlength}}">{{$ctrl.items.fields.text}}</textarea>
+						</div>
+					</div>
+					<div class="flex-container__task-note">
+						<div class="mobile">
+							<div class="task__title"><p>Рекомендованная формулировка</p></div>
+						</div>
+						<div class="task__current-answer flex-container__task-note__item"><div ng-if="$ctrl.displayAnswer[1]">{{$ctrl.questionList[1].right}}</div></div>
+					</div>
+				</div>
+
+			</div>
+			<div class="btn-box" ng-if="!$ctrl.test">
+				<button class="btn btn_restart" ng-click="$ctrl.removeRestart()">Начать заново</button>
+				<button class="btn btn_answer" ng-class="{'btn_disabled': $ctrl.state == 2 }" ng-click="$ctrl.checkAnswer($event)">Принять ответ</button>
+
+			</div>
+		</section>
+
+	</section>
+</div>
+

@@ -1,0 +1,47 @@
+<div class="page-container page-16-03">
+    <section class="page-head">
+        <p>Подготовка полного текста: за и против</p>
+    </section>
+    
+    <div class="flex-container">
+        <p>Нередко задают вопрос: «Надо ли писать полный текст презентации?» Среди мастеров презентаций есть много убежденных сторонников «за» написание полного текста, но есть и немало противников.</p>
+        <div>
+            <img class="banner-container__img" src="img/16_03.jpg" alt="Весы" height="227" width="412">
+        </div>
+    </div>
+    
+
+    <tabs>
+        <div class="flex-container">
+            <div class="flex-container-item1">
+                <tabs-item data-item="$ctrl.tabNum"
+                ng-class="{'tab__item_active': $ctrl.tabNum === 1}"
+                ng-click="$ctrl.tabNum = 1">«За»</tabs-item>
+            </div>
+            <div class="flex-container-item1">
+                <tabs-item data-item="$ctrl.tabNum"
+                ng-class="{'tab__item_active': $ctrl.tabNum === 2}"
+                ng-click="$ctrl.tabNum = 2">«Против»</tabs-item>
+            </div>
+        </div>
+    </tabs>
+
+    <div class="container_page-04-02 text" ng-show="$ctrl.tabNum === 1">
+        <section class="page-block-text">
+            <p class="text-number text-number-1">Когда текст презентации записывается – <span class="text-accent">оттачиваются</span> формулировки, шлифуется логика, убираются шероховатости стиля. В свое время еще Цицерон отмечал: «Перо – лучший учитель. Написанная речь лучше составленной устно». </p>
+            <p class="text-number text-number-2">Написанный текст помогает нам <span class="text-accent">запомнить</span> содержание выступления, поскольку у  многих преобладает зрительная память. Как известно, «самые бледные чернила ярче самой хорошей памяти».  </p>
+            <p class="text-number text-number-3">Написанный текст придает <span class="text-accent">спокойствие</span>, так как выступающий знает, что всегда может к нему обратиться и не растеряться во время выступления. </p>
+            <p class="text-number text-number-4">Без полного текста очень сложно  <span class="text-accent">рассчитать время</span> выступления. <br>
+            К доводам «За» написание полного текста стоит прислушаться, особенно неопытным выступающим. </p>
+        </section>
+    </div>
+    <div class="container_page-04-02 text" ng-show="$ctrl.tabNum === 2">
+        <section class="page-block-text">
+            <p class="text-number text-number-1">Письменная речь отличается от устной. Зафиксировав полный текст выступления, вы будете привязаны к нему, а слушателям он может показаться <span class="text-accent">тяжеловесным</span> из-за своей «письменной» формы.                                                </p>
+            <p class="text-number text-number-2">Есть опасность <span class="text-accent">забыть об аудитории</span>, уткнувшись глазами в текст.                                                      </p>
+            <p class="text-number text-number-3">К тем, кто «выступает по бумажке», <span class="text-accent">отношение скорее негативное</span>, поскольку слушателям кажется, что, кроме того, что написано, презентующий ничего не знает. </p>
+
+        </section>
+    </div>
+
+</div>

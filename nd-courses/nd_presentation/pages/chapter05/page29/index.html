@@ -1,0 +1,41 @@
+<div class="page-container page-29-05 page-task">
+	<section class="page-head">
+		<p>Задание 6</p>
+	</section>
+
+	<section class="flex-container">
+		<p class="task-text">Посмотрите киноэпизоды. Что характеризует манеру первого выступающего, а что – второго?</p>
+		<div class="page-video-container">
+			<page-video videourl="video/v32.mp4" videoposter="video/posters/32.jpg" suburl="video/subtitles/v32.vtt" videowidth="696" videoheight="572"></page-video>
+			<page-video videourl="video/v33.mp4" videoposter="video/posters/33.jpg" suburl="video/subtitles/v33.vtt" videowidth="696" videoheight="572"></page-video>
+		</div>
+	</section>
+
+	
+	<div class="task-answer">
+		<div><p class="text__hint">Выберите один или несколько вариантов ответа.</p></div>
+		<div class="mobile"><div></div><div></div></div>
+	</div>
+	<section ng-controller="ManyMultiChoiceCtrl as $ctrl">
+		<section class="task-set task-many-multi-choice">
+		  <div class="task" ng-repeat="task in $ctrl.taskExs" ng-init="parentIndex = $index">
+		    <p class="text">{{task.taskText}}</p>
+		    <div class="task__multi-choice-body">
+		      <div class="task__multi-choice-item" 
+		          ng-repeat="question in task.questionList"
+		          ng-click="$ctrl.selectAnswer(parentIndex, $index)">
+		        <div class="task__multi-choice-question task-question" 
+		            ng-class="{'radio-selected': $ctrl.active[parentIndex][$index].selected}">
+		          <!-- {{question.label}} -->
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+		</section>
+		<div class="btn-box" ng-if="!$ctrl.test">
+		  <button class="btn btn_restart" ng-click="$ctrl.removeRestart()">Начать заново</button>
+		  <button class="btn btn_answer" ng-class="{'btn_disabled': $ctrl.state1 == 0}" ng-click="$ctrl.checkAnswer($event)">Принять ответ</button>
+		</div>
+	</section>
+
+</div>

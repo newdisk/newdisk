@@ -1,0 +1,147 @@
+<div class="page-container page-26-03  page-task">
+  <section class="page-head">
+    <p>Задание 15</p>
+  </section>
+  <section ng-controller="taskComplexCtrl as $ctrl">
+
+  <div ng-show="$ctrl.tabNum === 1">
+    <section>
+      <p>Вас попросили выступить на собрании вместо вашего заболевшего коллеги на тему «Подготовка похода» (в рамках плана по формированию команды).</p>
+      <p>Вы нашли на столе у вашего заболевшего коллеги карточки с тезисами его будущего выступления. Вам предстоит выстроить тезисы в определенном порядке, руководствуясь правилами построения системы аргументации.</p>
+      <p>Отберите тезисы и постройте систему аргументации для выступления на тему: «Подготовка похода».</p>
+      <p>Задание состоит из 2 шагов. </p>
+      <p>Чтобы приступить к выполнению задания, нажмите кнопку «Начать».</p>
+      <p>Для перехода к следующему шагу нажмите кнопку «Продолжить».</p>
+    </section>
+    <div class="img-container"><img src="img/26_03.jpg" alt="Женщина"></div>
+        
+    <div class="btn-box" ng-if="!$ctrl.test">
+      <button class="btn btn_restart"
+              data-item="$ctrl.tabNum"
+              ng-click="$ctrl.setTab(2)">Начать</button>
+    </div>
+  </div>
+
+  <div ng-show="$ctrl.tabNum === 2">
+    <p class="task-text">Выберите 4 ключевых тезиса в соответствии с темой выступления – «Подготовка похода». Помните о том, что поход рассматривается как инструмент построения команды.
+    </p>
+    <section>
+      <!--<task-multi-choice-prez></task-multi-choice-prez>-->
+      <!--<section ng-controller="MultiChoicePrezCtrl as $ctrll">-->
+      <!--<section ng-controller="taskComplexCtrl as $ctrll">-->
+        <p class="text" compile="$ctrl.taskText"></p>
+        <p class="text__hint">Выберите один или несколько вариантов ответа.</p>
+        <div class="task__multi-choice-body">
+          <div class="task__multi-choice-item"
+               ng-repeat="question in $ctrl.questionList"
+               ng-click="$ctrl.selectAnswer($index)">
+            <div class="task__multi-choice-question task-question"
+                 ng-class="{'radio-selected': $ctrl.active[$index].selected}">
+              {{question.label}}
+            </div>
+          </div>
+        </div>
+        <div class="btn-box" ng-if="!$ctrl.test">
+          <button class="btn btn_restart"
+                  ng-click="$ctrl.removeRestart1()">Начать заново</button>
+          <button class="btn btn_answer"
+                  ng-class="{'btn_disabled': $ctrl.state == 0 || $ctrl.state == 2}"
+                  ng-click=" $ctrl.checkAnswer1($event); $ctrl.removeRestart();">Принять ответ</button>
+          <!--ng-click=" $ctrl.checkAnswer1($event); $ctrl.removeRestart(); $ctrl.tabNum = 3">Принять ответ</button>-->
+        </div>
+      <!--</section>-->
+    </section>
+
+  </div>
+
+    <div ng-show="$ctrl.tabNum === 3">
+      <p class="task-text">Выберите 4 ключевых тезиса в соответствии с темой выступления – «Подготовка похода». Помните о том, что поход рассматривается как инструмент построения команды.
+      </p>
+      <section>
+        <p class="task-text"> Ответьте на вопросы: </p>
+        <p class="text" compile="$ctrl.taskText"></p>
+        <p class="text__hint">Выберите один или несколько вариантов ответа.</p>
+        <div class="task__multi-choice-body">
+          <div class="task__multi-choice-item"
+               ng-repeat="question in $ctrl.questionList"
+               ng-click="$ctrl.selectAnswer($index)">
+            <div class="task__multi-choice-question task-question"
+                 ng-class="{'radio-selected': $ctrl.active[$index].selected}">
+              {{question.label}}
+            </div>
+          </div>
+        </div>
+        <div class="btn-box" ng-if="!$ctrl.test">
+          <button class="btn btn_restart"
+                  data-item="$ctrl.tabNum"
+                  ng-click="$ctrl.setTab(4)">Продолжить</button>
+        </div>
+
+
+
+        <!--</section>-->
+      </section>
+
+    </div>
+
+  <div ng-show="$ctrl.tabNum === 4">
+    <section class="task-set">
+      <p class="task-text text">Подберите подпункты, раскрывающие содержание ключевых тезисов.</p>
+      <p class="text__hint">Переместите блок с подпунктами на соответствующую позицию.</p>
+    </section>
+      <div class="task-swap-list"
+           ng-repeat="task in $ctrl.taskExs"
+           ng-if="!$ctrl.showRight">
+        <ul>
+          <div class="task-swap-list_item_wrapper"
+               ng-repeat="item in task.questionList">
+            <div class="task-swap-list_item_left break_word">
+              <p class="">{{$ctrl.taskExs0.questionList[$index].phrase}}</p>
+            </div>
+            <li class="task-swap-list_item" data-order="{{item.order}}">
+              <p class="break_word">{{item.label[0]}}</p>
+              <p class="break_word">{{item.label[1]}}</p>
+            </li>
+          </div>
+        </ul>
+      </div>
+
+      <div class="btn-box" ng-if="!$ctrl.test">
+        <button class="btn btn_restart" ng-click="$ctrl.state1 = 2; $ctrl.removeRestart()">Начать заново</button>
+        <button class="btn btn_answer"
+                ng-class="{'btn_disabled': $ctrl.state1 == 1 || $ctrl.state1 == 2}"
+                ng-click=" $ctrl.checkAnswer($event); $ctrl.removeRestart1()">Принять ответ</button>
+      </div>
+  </div>
+
+  <div ng-show="$ctrl.tabNum === 6">
+    <section class="task-set">
+      <p class="task-text">Соотнесите цели с различными этапами презентации.</p>
+      <p class="text__hint">Переместите каждую цель к соответствующему этапу презентации.</p>
+    </section>
+    <p>Правильные ответы</p>
+
+    <div class="flex-container__item flex-container__item_page-26-03  flex-container__item_page-26-03_02">
+      <div class="task-swap-list"
+           ng-repeat="task in $ctrl.taskExs">
+        <ul>
+          <div class="task-swap-list_item_wrapper" ng-repeat="item in task.questionList">
+            <div class="task-swap-list_item_left ">
+              <p class="break-word break_word_right ">{{$ctrl.taskData.exs[0].questionList[$index].phrase}}</p>
+            </div>
+            <li class="task-swap-list_item " data-order="{{item.order}}">
+              <p class="break_word break_word_right">{{$ctrl.itemsS[$index][0]}}</p>
+              <p class="break_word break_word_right">{{$ctrl.itemsS[$index][1]}}</p>
+            </li>
+          </div>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+</div>
+

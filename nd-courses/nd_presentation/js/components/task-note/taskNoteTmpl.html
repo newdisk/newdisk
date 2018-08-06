@@ -1,0 +1,16 @@
+<div class="task-note">
+	<div class="task-note__body flex-container__task-note">
+		<div class="flex-container__task-note__item"
+					ng-repeat="column in $ctrl.titles track by $index"
+					ng-init="columnIndex = $index">
+			<div class="task-title" ng-show="$ctrl.taskData.showTitle">{{column}}</div>
+			<div class="task-note_column" ng-repeat="item in $ctrl.range(columnIndex) track by $index">
+				<textarea class="task-note_item_input" maxlength="{{$ctrl.taskData.maxlength}}">{{item.text}}</textarea>
+			</div>
+		</div>
+	</div>
+</div>
+
+<section class="btn-box">
+	<button class="btn btn_answer" ng-click="$ctrl.saveNote()">СОХРАНИТЬ</button>
+</section>

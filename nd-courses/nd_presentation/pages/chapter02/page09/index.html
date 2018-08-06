@@ -1,0 +1,34 @@
+<div class="page-container page-09-02 task-note-style">
+	<section class="page-head">
+		<p>Задание 4</p>
+	</section>
+
+	<p class="task-text text">Сформулируйте цели презентаций в разных аудиториях. Тема презентации: «Вуз, который я окончил».</p>
+	<p class="text__hint">Введите ответ с помощью клавиатуры. Нажмите кнопку «Принять ответ» для сравнения своего ответа с корректно сформулированной целью.</p>
+	
+	<section ng-controller="NoteEx4Ctrl as $ctrl">
+		<div class="task__current-question text-accent">{{$ctrl.questionList[$ctrl.currentQuestion].label}}</div>
+		<div class="task-note__body">
+			<div>
+				<div class="task__title">Цель (ваша формулировка):</div>
+				<div class="flex-container__task-note">
+					<div class="task-note_item flex-container__task-note__item"
+						ng-repeat="item in $ctrl.items.fields"
+						ng-show="$index == $ctrl.currentQuestion">
+						<textarea class="task-note_item_input" maxlength="{{$ctrl.taskData.maxlength}}">{{item.text}}</textarea>
+					</div>
+				</div>
+				<div class="task__title">Цель (корректная формулировка):</div>
+				<div class="task__current-answer"><div ng-if="$ctrl.displayAnswer">{{$ctrl.questionList[$ctrl.currentQuestion].right}}</div></div>
+			</div>
+			<img src="img/14.png" alt="Схема">
+		</div>
+		<div class="btn-box" ng-if="!$ctrl.test">
+		  <button class="btn btn_prev-question"  ng-class="{'btn_disabled': $ctrl.currentQuestion < 1}" ng-click="$ctrl.prevQuestion()">Предыдущий вопрос</button>
+		  <button class="btn btn_answer" ng-class="{'btn_disabled': !$ctrl.state == 1 || $ctrl.end}" ng-click="$ctrl.checkAnswer($event)">Принять ответ</button>		  
+		  <button class="btn btn_next-question" ng-class="{'btn_disabled': ($ctrl.state == 1 && !$ctrl.end) || $ctrl.currentQuestion >= $ctrl.questionList.length - 1}" ng-click="$ctrl.nextQuestion()">Следующий вопрос</button>
+		</div>
+	</section>
+	
+
+</div>

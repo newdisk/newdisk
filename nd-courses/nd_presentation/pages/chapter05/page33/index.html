@@ -1,0 +1,32 @@
+<div class="page-container page-33-05">
+  <section class="page-head">
+    <p>Задание 51</p>
+  </section>
+  <section class="flex-container">
+    <p class="task-text text">С кем установил зрительный контакт презентующий?</p>
+  </section>
+  <p class="text__hint">Перетащите объект контакта напротив соответствующего киноэпизода.</p>
+  <!-- <task-swap-list></task-swap-list> -->
+
+  <div ng-controller="SwapListCtrl as $ctrl">
+    <div class="task-swap-list" ng-repeat="task in $ctrl.taskExs" ng-if="!$ctrl.showRight">
+      <ul>
+        <div class="task-swap-list_item_wrapper" ng-repeat="item in task.questionList" ng-init="questionListIndex = $index">
+          <div class="task-swap-list_item_left">
+            <page-video class="page-video-{{$index+35}}" videourl="video/v{{$index+35}}.mp4" videoposter="video/posters/{{$index+35}}.jpg" suburl="video/subtitles/v{{$index+35}}.vtt" videowidth="640" videoheight="480"></page-video>
+            <!--<page-video class="page-video-{{$index+35}}" videourl="video/v{{question.video}}.mp4" videoposter="video/posters/{{question.video}}.jpg" suburl="video/subtitles/v{{question.video}}.vtt" videowidth="696" videoheight="572"></page-video>-->
+
+          </div>
+          <li class="task-swap-list_item" data-order="{{item.order}}">
+            {{item.label}}
+          </li>
+        </div>
+      </ul>
+    </div>
+
+    <div class="btn-box" ng-if="!$ctrl.test">
+      <button class="btn btn_restart" ng-click="$ctrl.removeRestart()">Начать заново</button>
+      <button class="btn btn_answer" ng-class="{'btn_disabled': $ctrl.state == 0 || $ctrl.state == 2}" ng-click="$ctrl.checkAnswer()">Принять ответ</button>
+    </div>
+  </div>
+</div>

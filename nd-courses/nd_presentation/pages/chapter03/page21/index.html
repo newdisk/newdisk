@@ -1,0 +1,54 @@
+<div class="page-container page-21-03 task-note-style">
+	<section class="page-head">
+		<p>ЗАПИСНАЯ КНИЖКА. ЗАДАНИЕ&nbsp;5</p>
+	</section>
+
+	<div class="page-block-text">
+		<p class="text">Имея в виду предстоящую вам презентацию, продумайте ее содержание, используя алгоритм «мыслительных схем» Тони Бьюзена.</p>
+		<p class="text__hint">Введите ответ с помощью клавиатуры.</p>
+	</div>
+
+	<section ng-controller="NoteCtrl as $ctrl">
+		<div class="task-note">
+			<div class="task-note__body flex-container__task-note">
+
+				<div class="flex-container__task-note__item">
+					<div class="task-title">Тема:</div>
+					<div class="task-note_column">
+						<textarea class="task-note_item_input" maxlength="{{$ctrl.taskData.maxlength}}">{{$ctrl.items.fields[0].text}}</textarea>
+					</div>
+				</div>
+
+				<div class="flex-container__task-note__item">
+					<div class="task-title">Цель(и):</div>
+					<div class="task-note_column">
+						<textarea class="task-note_item_input" maxlength="{{$ctrl.taskData.maxlength}}">{{$ctrl.items.fields[1].text}}</textarea>
+					</div>
+				</div>
+
+				<div class="flex-container__task-note__item">
+					<div class="task-title">Ключевая концепция:</div>
+					<div class="task-note_column">
+						<textarea class="task-note_item_input" maxlength="{{$ctrl.taskData.maxlength}}">{{$ctrl.items.fields[2].text}}</textarea>
+					</div>
+				</div>
+
+				<div class="flex-container__task-note__item">
+					<div class="task-title">Основные мысли и идеи:</div>
+					<div class="task-note_column" ng-repeat="item in $ctrl.items.fields | limitTo:6:3">
+						<textarea class="task-note_item_input" maxlength="{{$ctrl.taskData.maxlength}}">{{item.text}}</textarea>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="page-block-text">
+			<p>Что можно отбросить? Какие идеи можно соединить? Какие мысли являются наиболее важными?</p>
+		</div>
+
+		<section class="btn-box">
+			<button class="btn btn_answer" ng-click="$ctrl.saveNote()">СОХРАНИТЬ</button>
+		</section>
+</section>
+</div>

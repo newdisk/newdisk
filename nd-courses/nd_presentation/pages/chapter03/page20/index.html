@@ -1,0 +1,34 @@
+<div class="page-container page-20-03  page-task">
+  <section class="page-head">
+    <p>Задание 13</p>
+  </section>
+  
+  <section ng-controller = "MiniTestCtrl as $ctrl">
+    <section ng-show="!$ctrl.startTest">
+      <section>
+        <p>Вы – руководитель отдела, и вы обеспокоены тем, что межличностные отношения в вашем отделе достаточно сложные. Вы надеетесь, что совместный трехдневный поход поможет сдружиться членам вашего коллектива и наладить отношения. Вам необходимо подготовить презентацию для ваших коллег на тему: «Туристический поход – лучший способ построения команды». </p>
+        <p>Имея в виду предстоящую вам презентацию, выполните указанные действия в соответствии с алгоритмом «мыслительных схем» Тони Бьюзена.</p>
+        <p>Задание состоит из 6 шагов.</p>
+        <p>Чтобы приступить к выполнению задания, нажмите кнопку «Начать».</p>
+        <p>Для перехода к следующему шагу нажмите кнопку «Далее».</p> 
+      </section>
+      <img src="img/20_03.jpg" alt="Мужчина" class="desktop">
+      <img src="img/20_03_s.jpg" alt="Мужчина" class="mobile">
+      <div class="btn-box">
+        <button class="btn btn_start-test" 
+        ng-click="$ctrl.startTest = true">Начать</button>
+      </div>
+    </section>
+    
+    <section ng-show="$ctrl.startTest">
+      <div class="test-q-num">Шаг {{$ctrl.currentQuest+1}}<!--  из {{$ctrl.taskExs.length}} --></div>
+      <div class="test-task"></div>
+      <div class="btn-box btn-box__test">
+        <button class="btn btn_restart" ng-click="$ctrl.removeRestart()">Начать заново</button>
+        <button class="btn btn_answer" ng-class="{'btn_disabled': $ctrl.state == 0 || $ctrl.state == 2}" ng-click="$ctrl.nextQuestion($event)">Принять ответ</button>
+        <button class="btn btn_answer" ng-class="{'btn_disabled': !$ctrl.showNextQ}" ng-click="$ctrl.showNextQuestion($event)">Далее</button>
+      </div>
+    </section>
+  </section>
+
+</div>
