@@ -49,7 +49,8 @@ var courseStructure = {
     "chapter_id": 1,
     "chapter_location": "chapter01",
     "title": "Введение",
-    "description": "Мультимедийный курс «Коммерческие переговоры»",
+    //"description": "Мультимедийный курс «Коммерческие переговоры»",
+    "description": "Введение",
     "pages": [{
       "page_id": 1, //01
       "title": "Коммерческие переговоры",
@@ -4400,6 +4401,136 @@ var manifest = ["img/01-01.png"];
 ;(function () {
   'use strict';
 
+  CustomAudioCtrl.$inject = ["$document", "$interval", "staticService"];
+  angular.module('courseApp').component('customAudio', {
+    bindings: {
+      chapter: '@',
+      page: '@',
+      hassound: '@'
+    },
+    templateUrl: 'js/components/custom-audio/customAudioTmpl.html',
+    controller: 'CustomAudioCtrl',
+    controllerAs: '$ctrl'
+  }).controller('CustomAudioCtrl', CustomAudioCtrl);
+
+  /* @ngInject */
+  function CustomAudioCtrl($document, $interval, staticService) {
+    var _this3 = this;
+
+    this.play = '#play'; // variable for play/pause btn that toggle icons
+    this.mute = '#unmute'; // variable for mute/unmute btn that toggle icons
+    this.volume = 1; // define volume in volume slider
+    this.seekPos = 0;
+
+    this.$onInit = function () {
+      // console.warn('AudioCtrl:: hasSound', this.hassound)
+      if (_this3.hassound != 'false') {
+        init();
+      }
+    };
+
+    var init = function init() {
+      console.warn('customAudio:: init'
+      /* It's a better way to use createElement than create new Audio(), 
+      /  because such object is easier to remove
+       **/
+      );_this3.audio = $document[0].createElement('audio');
+      _this3.audio.src = "pages/" + _this3.chapter + "/" + _this3.page + "/audio/page-" + _this3.chapter + "-" + _this3.page + ".mp3";
+
+      _this3.audio.oncanplaythrough = function () {
+
+        _this3.changePlayPause = function () {
+
+          if (_this3.audio.paused) {
+            _this3.audio.play();
+            _this3.play = '#pause';
+          } else {
+            _this3.audio.pause();
+            _this3.play = '#play';
+          }
+        };
+
+        _this3.updateSeekSlider = function () {
+          var seekNewPos = _this3.audio.currentTime * (100 / _this3.audio.duration),
+              // position in seek slider
+          curmins = Math.floor(_this3.audio.currentTime / 60),
+              // current minutes value
+          cursecs = Math.floor(_this3.audio.currentTime - curmins * 60),
+              // current seconds value
+          durmins = Math.floor(_this3.audio.duration / 60),
+              // audio duration in minutes
+          dursecs = Math.floor(_this3.audio.duration - durmins * 60); // audio duration in rest seconds
+
+          _this3.seekPos = Math.floor(seekNewPos);
+
+          if (curmins < 10) {
+            curmins = '0' + curmins;
+          };
+          if (cursecs < 10) {
+            cursecs = '0' + cursecs;
+          };
+          if (durmins < 10) {
+            durmins = '0' + durmins;
+          };
+          if (dursecs < 10) {
+            dursecs = '0' + dursecs;
+          };
+
+          _this3.curTime = curmins + ':' + cursecs; // display current time in the audio player
+          _this3.durTime = durmins + ':' + dursecs; //  display audio duration time in the audio player
+          if (_this3.audio.currentTime === _this3.audio.duration) {
+            _this3.play = '#play';
+          }
+        };
+
+        _this3.changeSeekPos = function () {
+          _this3.audio.currentTime = _this3.audio.duration * (_this3.seekPos / 100);
+        };
+
+        $interval(function () {
+
+          if (!_this3.audio) return;
+          _this3.updateSeekSlider();
+
+          // set audio time position in staticService to animate images in pages
+          staticService.setAudioTime(_this3.audio.currentTime);
+
+          // listen call from staticService at page state change
+          if (staticService.getStopAudio()) {
+            _this3.audio.pause();
+            _this3.audio = null;
+            return;
+          }
+        }, 100);
+
+        _this3.changeMuteState = function () {
+          _this3.mute = '#unmute';
+
+          if (_this3.audio.muted) {
+            _this3.audio.muted = false;
+            _this3.mute = '#unmute';
+          } else {
+            _this3.audio.muted = true;
+            _this3.mute = '#mute';
+          }
+        };
+
+        _this3.changeVolume = function () {
+          _this3.audio.volume = _this3.volume;
+        };
+
+        _this3.restart = function () {
+          _this3.audio.currentTime = 0;
+          _this3.audio.play();
+          _this3.play = '#pause';
+        };
+      };
+    };
+  }
+})();
+;(function () {
+  'use strict';
+
   CustomMiniAudioCtrl.$inject = ["$attrs", "$document", "$interval", "staticService"];
   angular.module('courseApp').component('customMiniAudio', {
     bindings: {
@@ -4415,75 +4546,6 @@ var manifest = ["img/01-01.png"];
 
   /* @ngInject */
   function CustomMiniAudioCtrl($attrs, $document, $interval, staticService) {
-    var _this3 = this;
-
-    this.play = '#play'; // variable for play/pause btn that toggle icons
-    this.mute = '#unmute'; // variable for mute/unmute btn that toggle icons
-    this.volume = 1; // define volume in volume slider
-    this.seekPos = 0;
-
-    this.$onInit = function () {
-      // console.warn('AudioCtrl:: hasSound', this.hasSound)
-      if (_this3.hasSound != 'false') {
-        init();
-      }
-    };
-
-    var init = function init() {
-      console.warn('customAudio:: init'
-      /* It's a better way to use createElement than create new Audio(), 
-      /  because such object is easier to remove
-       **/
-      );_this3.audio = $document[0].createElement('audio');
-      _this3.audio.src = _this3.src;
-      console.log("SRC ", _this3.audio.src);
-      _this3.audio.autoplay = false;
-
-      _this3.audio.oncanplaythrough = function () {
-
-        _this3.changePlayPause = function () {
-
-          if (_this3.audio.paused) {
-            _this3.audio.play();
-            _this3.play = '#pause';
-          } else {
-            _this3.audio.pause();
-            _this3.play = '#play';
-          }
-        };
-
-        $interval(function () {
-          if (!_this3.audio) return;
-          // set audio time position in staticService to animate images in pages
-          staticService.setAudioTime(_this3.audio.currentTime);
-          // listen call from staticService at page state change
-          if (staticService.getStopAudio()) {
-            _this3.audio.pause();
-            _this3.audio = null;
-            return;
-          }
-        }, 100);
-      };
-    };
-  }
-})();
-;(function () {
-  'use strict';
-
-  CustomAudioCtrl.$inject = ["$document", "$interval", "staticService"];
-  angular.module('courseApp').component('customAudio', {
-    bindings: {
-      chapter: '@',
-      page: '@',
-      hassound: '@'
-    },
-    templateUrl: 'js/components/custom-audio/customAudioTmpl.html',
-    controller: 'CustomAudioCtrl',
-    controllerAs: '$ctrl'
-  }).controller('CustomAudioCtrl', CustomAudioCtrl);
-
-  /* @ngInject */
-  function CustomAudioCtrl($document, $interval, staticService) {
     var _this4 = this;
 
     this.play = '#play'; // variable for play/pause btn that toggle icons
@@ -4492,8 +4554,8 @@ var manifest = ["img/01-01.png"];
     this.seekPos = 0;
 
     this.$onInit = function () {
-      // console.warn('AudioCtrl:: hasSound', this.hassound)
-      if (_this4.hassound != 'false') {
+      // console.warn('AudioCtrl:: hasSound', this.hasSound)
+      if (_this4.hasSound != 'false') {
         init();
       }
     };
@@ -4504,7 +4566,9 @@ var manifest = ["img/01-01.png"];
       /  because such object is easier to remove
        **/
       );_this4.audio = $document[0].createElement('audio');
-      _this4.audio.src = "pages/" + _this4.chapter + "/" + _this4.page + "/audio/page-" + _this4.chapter + "-" + _this4.page + ".mp3";
+      _this4.audio.src = _this4.src;
+      console.log("SRC ", _this4.audio.src);
+      _this4.audio.autoplay = false;
 
       _this4.audio.oncanplaythrough = function () {
 
@@ -4519,51 +4583,10 @@ var manifest = ["img/01-01.png"];
           }
         };
 
-        _this4.updateSeekSlider = function () {
-          var seekNewPos = _this4.audio.currentTime * (100 / _this4.audio.duration),
-              // position in seek slider
-          curmins = Math.floor(_this4.audio.currentTime / 60),
-              // current minutes value
-          cursecs = Math.floor(_this4.audio.currentTime - curmins * 60),
-              // current seconds value
-          durmins = Math.floor(_this4.audio.duration / 60),
-              // audio duration in minutes
-          dursecs = Math.floor(_this4.audio.duration - durmins * 60); // audio duration in rest seconds
-
-          _this4.seekPos = Math.floor(seekNewPos);
-
-          if (curmins < 10) {
-            curmins = '0' + curmins;
-          };
-          if (cursecs < 10) {
-            cursecs = '0' + cursecs;
-          };
-          if (durmins < 10) {
-            durmins = '0' + durmins;
-          };
-          if (dursecs < 10) {
-            dursecs = '0' + dursecs;
-          };
-
-          _this4.curTime = curmins + ':' + cursecs; // display current time in the audio player
-          _this4.durTime = durmins + ':' + dursecs; //  display audio duration time in the audio player
-          if (_this4.audio.currentTime === _this4.audio.duration) {
-            _this4.play = '#play';
-          }
-        };
-
-        _this4.changeSeekPos = function () {
-          _this4.audio.currentTime = _this4.audio.duration * (_this4.seekPos / 100);
-        };
-
         $interval(function () {
-
           if (!_this4.audio) return;
-          _this4.updateSeekSlider();
-
           // set audio time position in staticService to animate images in pages
           staticService.setAudioTime(_this4.audio.currentTime);
-
           // listen call from staticService at page state change
           if (staticService.getStopAudio()) {
             _this4.audio.pause();
@@ -4571,28 +4594,6 @@ var manifest = ["img/01-01.png"];
             return;
           }
         }, 100);
-
-        _this4.changeMuteState = function () {
-          _this4.mute = '#unmute';
-
-          if (_this4.audio.muted) {
-            _this4.audio.muted = false;
-            _this4.mute = '#unmute';
-          } else {
-            _this4.audio.muted = true;
-            _this4.mute = '#mute';
-          }
-        };
-
-        _this4.changeVolume = function () {
-          _this4.audio.volume = _this4.volume;
-        };
-
-        _this4.restart = function () {
-          _this4.audio.currentTime = 0;
-          _this4.audio.play();
-          _this4.play = '#pause';
-        };
       };
     };
   }
@@ -4725,7 +4726,7 @@ var manifest = ["img/01-01.png"];
 
     //номер вопроса
     this.currentQuest = 0;
-
+    this.startTest = 0;
     // состояния теста:
     this.state = 0;
     $scope.$on('myTestState', function (e, data) {
@@ -4772,6 +4773,7 @@ var manifest = ["img/01-01.png"];
         _this5.buildQuestion();
       } else {
         _this5.state = 2;
+        _this5.startTest = 1;
         _this5.currentQuest--;
         // console.log('TEST::>', this.testScore/(this.questionList.length))
         courseInfo.testScore = Math.round(_this5.testScore / _this5.questionList.length);
@@ -4848,6 +4850,7 @@ var manifest = ["img/01-01.png"];
     };
 
     this.removeRestart = function () {
+      _this5.startTest = 0;
       _this5.state = 0;
       _this5.testScore = 0;
       _this5.testRight = 0;
@@ -5198,7 +5201,7 @@ var manifest = ["img/01-01.png"];
 
     this.openVideo = function () {
       var videoElement = document.querySelector('.modal_video__body'),
-          videoStr = "<video class=\"video-js vjs-default-skin video-element my-home-video\" controls preload=\"auto\"\n                               width=\"" + _this8.videowidth + "\" height=\"" + _this8.videoheight + "\" poster=\"" + _this8.videoposter + "\" vjs-video>\n                            <source src=\"/" + _this8.videourl + "\" type=\"video/mp4\">\n                            <track enabled kind=\"captions\" src=\"" + _this8.suburl + "\" srclang=\"ru\" label=\"Russian Subtitles\" default />\n                        </video>";
+          videoStr = "<video class=\"video-js vjs-default-skin video-element my-home-video\" controls preload=\"auto\"\n                               width=\"" + _this8.videowidth + "\" height=\"" + _this8.videoheight + "\" poster=\"" + _this8.videoposter + "\" vjs-video>\n                            <source src=\"" + _this8.videourl + "\" type=\"video/mp4\">\n                            <track enabled kind=\"captions\" src=\"" + _this8.suburl + "\" srclang=\"ru\" label=\"Russian Subtitles\" default />\n                        </video>";
       staticService.showModal('video');
       videoElement.innerHTML = videoStr;
       // делаем субтитры изначально невидимыми
@@ -5233,6 +5236,56 @@ var manifest = ["img/01-01.png"];
       _this9.currentScreen = _this9.currentScreen - 1;
     };
   }
+})();
+;(function () {
+  'use strict';
+
+  TabsItemCtrl.$inject = ["$scope", "$stateParams", "$attrs", "staticService", "userService"];
+  angular.module('courseApp').component('tabs', {
+    transclude: true,
+    templateUrl: 'js/components/tabs/tabsTmpl.html',
+    controller: 'TabsCtrl',
+    controllerAs: '$ctrl'
+  }).controller('TabsCtrl', TabsCtrl).component('tabsItem', {
+    require: {
+      'parent': '^tabs'
+    },
+    bindings: {
+      item: '='
+    },
+    transclude: true,
+    templateUrl: 'js/components/tabs/tabsTmpl.html',
+    controller: 'TabsItemCtrl',
+    controllerAs: '$ctrl'
+  }).controller('TabsItemCtrl', TabsItemCtrl);
+
+  /* @ngInject */
+  function TabsCtrl() {
+    var self = this;
+  }
+
+  /* @ngInject */
+  function TabsItemCtrl($scope, $stateParams, $attrs, staticService, userService) {
+
+    this.items = [];
+  }
+
+  //function TabsItemCtrl($element, $timeout, $interval, $attrs) {
+  //  const self = this;
+  //
+  //  self.hintShow = false;
+  //  const index = $($element).index();
+  //  if (index === 1) {
+  //    $timeout(() => {
+  //      self.hintShow = '' ? self.hintShow : true;
+  //  }, 10000);
+  //    $interval(() => {
+  //      if ($($($element).parent().children()[index]).hasClass('tab__item_active')) {
+  //      self.hintShow = '';
+  //    }
+  //  }, 200);
+  //  }
+  //}
 })();
 ;(function () {
   'use strict';
@@ -6859,74 +6912,6 @@ var manifest = ["img/01-01.png"];
 ;(function () {
   'use strict';
 
-  MarkerNoteCtrl.$inject = ["$scope", "$stateParams", "staticService", "userService"];
-  angular.module('courseApp').component('taskMarkerNote', {
-    controller: 'MarkerNoteCtrl',
-    controllerAs: '$ctrl'
-  }).controller('MarkerNoteCtrl', MarkerNoteCtrl);
-
-  /* @ngInject */
-  function MarkerNoteCtrl($scope, $stateParams, staticService, userService) {
-    var _this18 = this;
-
-    this.taskData = staticService.getData($stateParams, 'data');
-
-    // Вопрос упражнения
-    this.taskText = this.taskData.taskText;
-
-    // массив маркеров
-    this.markers = this.taskData.markers;
-
-    //массив утверждений
-    this.questionList = this.taskData.questionList;
-
-    // массив для работы с ответами
-    this.active = [];
-    // выделенный маркер
-    this.marker = -1;
-
-    for (var i = 0; i < this.questionList.length; i++) {
-      this.active[i] = {};
-      this.active[i].marker = this.questionList[i].marker;
-      this.active[i].marker == -1 ? this.active[i].selected = 0 : this.active[i].selected = 1;
-    }
-
-    angular.element(document).ready(function () {
-      /**
-      *   Выбор цвета маркера
-      */
-      _this18.selectMarker = function (marker) {
-        _this18.marker = marker;
-      };
-
-      /**
-      *   Подкрашиваем вариант
-      */
-      _this18.selectAnswer = function (index, $event) {
-        if (_this18.active[index].selected == 1) {
-          _this18.active[index].selected = 0;
-          _this18.active[index].marker = -1;
-          $event.currentTarget.setAttribute('data', 'marker-1');
-        } else {
-          _this18.active[index].selected = 1;
-          _this18.active[index].marker = _this18.marker;
-          $event.currentTarget.setAttribute('data', 'marker' + _this18.marker);
-        }
-      };
-
-      _this18.saveNote = function () {
-        for (var i = 0; i < _this18.questionList.length; i++) {
-          staticService.setMarkerNote($stateParams, i, _this18.active[i].marker);
-        }
-
-        staticService.showModal('exercise', 'Записная книжка', 'Записи сохранены');
-      };
-    });
-  }
-})();
-;(function () {
-  'use strict';
-
   MarkerChoiceCtrl.$inject = ["$scope", "$stateParams", "staticService", "userService"];
   angular.module('courseApp').component('taskMarkerChoice', {
     templateUrl: 'js/components/task-marker-choice/taskMarkerChoiceTmpl.html',
@@ -6936,7 +6921,7 @@ var manifest = ["img/01-01.png"];
 
   /* @ngInject */
   function MarkerChoiceCtrl($scope, $stateParams, staticService, userService) {
-    var _this19 = this;
+    var _this18 = this;
 
     this.taskData = staticService.getData($stateParams, 'data');
 
@@ -7018,91 +7003,91 @@ var manifest = ["img/01-01.png"];
     }
 
     angular.element(document).ready(function () {
-      if (_this19.useVideo) {
+      if (_this18.useVideo) {
         // set video bg
-        document.getElementsByClassName('btn_task-video')[0].style.background = 'url(' + _this19.videoPoster + ')';
+        document.getElementsByClassName('btn_task-video')[0].style.background = 'url(' + _this18.videoPoster + ')';
       }
 
       /**
       *   Выбор цвета маркера
       */
-      _this19.selectMarker = function (marker) {
-        _this19.marker = marker;
+      _this18.selectMarker = function (marker) {
+        _this18.marker = marker;
       };
 
       /**
       *   Подкрашиваем вариант
       */
-      _this19.selectAnswer = function (index, $event) {
-        if (_this19.marker == -1 || _this19.state == 2) {
+      _this18.selectAnswer = function (index, $event) {
+        if (_this18.marker == -1 || _this18.state == 2) {
           return;
         }
 
-        _this19.active[index].selected = 1;
-        _this19.active[index].marker = _this19.marker;
-        $event.currentTarget.setAttribute('data', 'marker' + _this19.marker);
-        _this19.state = 1;
+        _this18.active[index].selected = 1;
+        _this18.active[index].marker = _this18.marker;
+        $event.currentTarget.setAttribute('data', 'marker' + _this18.marker);
+        _this18.state = 1;
       };
     });
 
     this.checkAnswer = function (e) {
 
-      if (_this19.userAttempt === _this19.attemptNum) {
-        _this19.userAttempt = 0;
+      if (_this18.userAttempt === _this18.attemptNum) {
+        _this18.userAttempt = 0;
       }
-      _this19.userAttempt++;
-      _this19.state = 2;
+      _this18.userAttempt++;
+      _this18.state = 2;
 
-      for (var _i4 = 0; _i4 < _this19.questionList.length; _i4++) {
+      for (var _i4 = 0; _i4 < _this18.questionList.length; _i4++) {
         // console.log('rightAnswer:', this.questionList[i].rightAnswer, 'userAnswer:', this.active[i].marker)
-        if (_this19.questionList[_i4].right != _this19.active[_i4].marker) {
+        if (_this18.questionList[_i4].right != _this18.active[_i4].marker) {
           //упражнение провалено
-          if (_this19.userAttempt === 3) {
+          if (_this18.userAttempt === 3) {
             // console.log('taskMarkerChoice:: attempt 3')
             showAnswer();
           }
           // to userService (баллы, статус, глава, страница)
           userService.setUserProgress(0, 0, Number($stateParams.chapter) - 1, Number($stateParams.page) - 1);
-          staticService.showModal('exercise', 'Ваш результат', _this19.taskData.messages[_this19.userAttempt], false);
+          staticService.showModal('exercise', 'Ваш результат', _this18.taskData.messages[_this18.userAttempt], false);
           return;
         }
       }
       // console.log('taskMarkerChoice:: упражнение верно')
       userService.setUserProgress(100, 1, Number($stateParams.chapter) - 1, Number($stateParams.page) - 1);
-      staticService.showModal('exercise', 'Ваш результат', _this19.taskData.messages[0], true);
+      staticService.showModal('exercise', 'Ваш результат', _this18.taskData.messages[0], true);
     };
     this.removeRestart = function () {
       var aItems = document.getElementsByClassName('task__marker-choice-item');
 
-      for (var i = 0; i < _this19.active.length; i++) {
-        _this19.active[i].selected = false;
-        _this19.active[i].marker = -1;
+      for (var i = 0; i < _this18.active.length; i++) {
+        _this18.active[i].selected = false;
+        _this18.active[i].marker = -1;
         aItems[i].setAttribute('data', 'marker');
       }
-      _this19.state = 0;
-      _this19.marker = -1;
+      _this18.state = 0;
+      _this18.marker = -1;
 
-      _this19.questionList = _.shuffle(_this19.questionList);
+      _this18.questionList = _.shuffle(_this18.questionList);
     }; // end of removeRestart
 
     this.showVideo = function () {
       var videoElement = document.querySelector('.modal_video__body');
 
-      _this19.videoUrl = staticService.getData($stateParams, 'videoUrl');
+      _this18.videoUrl = staticService.getData($stateParams, 'videoUrl');
       // console.warn('HeaderCtrl:: this.videoUrl:', this.videoUrl)
-      _this19.videoPoster = staticService.getData($stateParams, 'videoPoster');
-      _this19.videoWidth = staticService.getData($stateParams, 'videoWidth');
-      _this19.videoHeight = staticService.getData($stateParams, 'videoHeight');
+      _this18.videoPoster = staticService.getData($stateParams, 'videoPoster');
+      _this18.videoWidth = staticService.getData($stateParams, 'videoWidth');
+      _this18.videoHeight = staticService.getData($stateParams, 'videoHeight');
 
       staticService.showModal('video');
-      var videoStr = "<video class=\"video-js vjs-default-skin video-element\" controls preload=\"auto\"\n                               width=\"" + _this19.videoWidth + "\" height=\"" + _this19.videoHeight + "\" poster=\"" + _this19.videoPoster + "\" vjs-video>\n                            <source src=\"" + _this19.videoUrl + "\" type=\"video/mp4\">\n                        </video>";
+      var videoStr = "<video class=\"video-js vjs-default-skin video-element\" controls preload=\"auto\"\n                               width=\"" + _this18.videoWidth + "\" height=\"" + _this18.videoHeight + "\" poster=\"" + _this18.videoPoster + "\" vjs-video>\n                            <source src=\"" + _this18.videoUrl + "\" type=\"video/mp4\">\n                        </video>";
       videoElement.innerHTML = videoStr;
     }; // end of showVideo()
 
     var showAnswer = function showAnswer() {
       var itemList = document.querySelectorAll('.task__marker-choice-item');
       for (var i = 0; i < itemList.length; i++) {
-        itemList[i].setAttribute('data', 'marker' + _this19.questionList[i].right);
+        itemList[i].setAttribute('data', 'marker' + _this18.questionList[i].right);
       }
     };
   }
@@ -7119,7 +7104,7 @@ var manifest = ["img/01-01.png"];
 
   /* @ngInject */
   function MarkerChoiceDoubleCtrl($scope, $stateParams, staticService, userService) {
-    var _this20 = this;
+    var _this19 = this;
 
     this.taskData = staticService.getData($stateParams, 'data');
     // Вопрос упражнения
@@ -7182,120 +7167,120 @@ var manifest = ["img/01-01.png"];
     }
 
     angular.element(document).ready(function () {
-      if (_this20.useVideo) {
+      if (_this19.useVideo) {
         // set video bg
-        document.getElementsByClassName('btn_task-video')[0].style.background = 'url(' + _this20.videoPoster + ')';
+        document.getElementsByClassName('btn_task-video')[0].style.background = 'url(' + _this19.videoPoster + ')';
       }
 
       /**
       *   Выбор цвета маркера
       */
-      _this20.selectMarker = function (marker) {
-        _this20.marker = marker;
+      _this19.selectMarker = function (marker) {
+        _this19.marker = marker;
       };
 
       /**
       *   Подкрашиваем вариант
       */
-      _this20.selectAnswer = function (index, $event) {
-        if (_this20.marker == -1 || _this20.state == 2) {
+      _this19.selectAnswer = function (index, $event) {
+        if (_this19.marker == -1 || _this19.state == 2) {
           return;
         }
-        _this20.active[index].selected = 1;
-        _this20.active[index].marker = _this20.marker;
+        _this19.active[index].selected = 1;
+        _this19.active[index].marker = _this19.marker;
         _active[index].selected = 1;
-        _active[index].marker = _this20.marker;
+        _active[index].marker = _this19.marker;
         ThisActive();
-        $event.currentTarget.setAttribute('data', 'marker' + _this20.marker);
-        _this20.state = 1;
+        $event.currentTarget.setAttribute('data', 'marker' + _this19.marker);
+        _this19.state = 1;
       };
 
-      _this20.selectAnswer1 = function (index, $event) {
+      _this19.selectAnswer1 = function (index, $event) {
         var _index = index + 3;
 
-        if (_this20.marker == -1 || _this20.state == 2) {
+        if (_this19.marker == -1 || _this19.state == 2) {
           return;
         }
 
-        _this20.active[_index].selected = 1;
-        _this20.active[_index].marker = _this20.marker;
+        _this19.active[_index].selected = 1;
+        _this19.active[_index].marker = _this19.marker;
         _active[_index].selected = 1;
-        _active[_index].marker = _this20.marker;
-        $event.currentTarget.setAttribute('data', 'marker' + _this20.marker);
-        _this20.state = 1;
+        _active[_index].marker = _this19.marker;
+        $event.currentTarget.setAttribute('data', 'marker' + _this19.marker);
+        _this19.state = 1;
         ThisActive();
       };
     });
 
     this.checkAnswer = function (e) {
 
-      if (_this20.userAttempt === _this20.attemptNum) {
-        _this20.userAttempt = 0;
+      if (_this19.userAttempt === _this19.attemptNum) {
+        _this19.userAttempt = 0;
       }
-      _this20.userAttempt++;
-      _this20.state = 2;
+      _this19.userAttempt++;
+      _this19.state = 2;
 
-      for (var _i7 = 0; _i7 < _this20.questionList.length * 2; _i7++) {
+      for (var _i7 = 0; _i7 < _this19.questionList.length * 2; _i7++) {
 
-        if (_questionList[_i7].right != _this20.active[_i7].marker) {
+        if (_questionList[_i7].right != _this19.active[_i7].marker) {
           //упражнение провалено
-          if (_this20.userAttempt === 3) {
+          if (_this19.userAttempt === 3) {
             // console.log('taskMarkerChoice:: attempt 3')
             showAnswer();
           }
           // to userService (баллы, статус, глава, страница)
           userService.setUserProgress(0, 0, Number($stateParams.chapter) - 1, Number($stateParams.page) - 1);
-          staticService.showModal('exercise', 'Ваш результат', _this20.taskData.messages[_this20.userAttempt], false);
+          staticService.showModal('exercise', 'Ваш результат', _this19.taskData.messages[_this19.userAttempt], false);
           return;
         }
       }
       // console.log('taskMarkerChoice:: упражнение верно')
-      _this20.userAttempt = 0;
+      _this19.userAttempt = 0;
       userService.setUserProgress(100, 1, Number($stateParams.chapter) - 1, Number($stateParams.page) - 1);
-      staticService.showModal('exercise', 'Ваш результат', _this20.taskData.messages[0], true);
+      staticService.showModal('exercise', 'Ваш результат', _this19.taskData.messages[0], true);
     };
     this.removeRestart = function () {
       var aItems = document.getElementsByClassName('task__marker-choice-item');
 
-      for (var _i8 = 0; _i8 < _this20.active.length; _i8++) {
-        _this20.active[_i8].selected = false;
-        _this20.active[_i8].marker = -1;
+      for (var _i8 = 0; _i8 < _this19.active.length; _i8++) {
+        _this19.active[_i8].selected = false;
+        _this19.active[_i8].marker = -1;
         aItems[_i8].setAttribute('data', 'marker');
       }
-      for (var _i9 = 0; _i9 < _this20.questionList.length * 2; _i9++) {
-        _this20.active[_i9] = {};
-        _this20.active[_i9].selected = 0;
-        _this20.active[_i9].marker = -1;
+      for (var _i9 = 0; _i9 < _this19.questionList.length * 2; _i9++) {
+        _this19.active[_i9] = {};
+        _this19.active[_i9].selected = 0;
+        _this19.active[_i9].marker = -1;
         _active[_i9] = {};
         _active[_i9].selected = 0;
         _active[_i9].marker = -1;
       }
 
-      _this20.state = 0;
-      _this20.marker = -1;
+      _this19.state = 0;
+      _this19.marker = -1;
 
-      _this20.questionList = _.shuffle(_this20.questionList);
-      _this20.questionList1 = _.shuffle(_this20.questionList1);
-      for (var _i10 = 0; _i10 < _this20.questionList.length; _i10++) {
-        _questionList[_i10].right = _this20.questionList[_i10].right;
+      _this19.questionList = _.shuffle(_this19.questionList);
+      _this19.questionList1 = _.shuffle(_this19.questionList1);
+      for (var _i10 = 0; _i10 < _this19.questionList.length; _i10++) {
+        _questionList[_i10].right = _this19.questionList[_i10].right;
       }
-      for (var _i11 = 0; _i11 < _this20.questionList.length; _i11++) {
+      for (var _i11 = 0; _i11 < _this19.questionList.length; _i11++) {
         var _j2 = _i11 + 3;
-        _questionList[_j2].right = _this20.questionList1[_i11].right;
+        _questionList[_j2].right = _this19.questionList1[_i11].right;
       }
     }; // end of removeRestart
 
     this.showVideo = function () {
       var videoElement = document.querySelector('.modal_video__body');
 
-      _this20.videoUrl = staticService.getData($stateParams, 'videoUrl');
+      _this19.videoUrl = staticService.getData($stateParams, 'videoUrl');
       // console.warn('HeaderCtrl:: this.videoUrl:', this.videoUrl)
-      _this20.videoPoster = staticService.getData($stateParams, 'videoPoster');
-      _this20.videoWidth = staticService.getData($stateParams, 'videoWidth');
-      _this20.videoHeight = staticService.getData($stateParams, 'videoHeight');
+      _this19.videoPoster = staticService.getData($stateParams, 'videoPoster');
+      _this19.videoWidth = staticService.getData($stateParams, 'videoWidth');
+      _this19.videoHeight = staticService.getData($stateParams, 'videoHeight');
 
       staticService.showModal('video');
-      var videoStr = "<video class=\"video-js vjs-default-skin video-element\" controls preload=\"auto\"\n                               width=\"" + _this20.videoWidth + "\" height=\"" + _this20.videoHeight + "\" poster=\"" + _this20.videoPoster + "\" vjs-video>\n                            <source src=\"" + _this20.videoUrl + "\" type=\"video/mp4\">\n                        </video>";
+      var videoStr = "<video class=\"video-js vjs-default-skin video-element\" controls preload=\"auto\"\n                               width=\"" + _this19.videoWidth + "\" height=\"" + _this19.videoHeight + "\" poster=\"" + _this19.videoPoster + "\" vjs-video>\n                            <source src=\"" + _this19.videoUrl + "\" type=\"video/mp4\">\n                        </video>";
       videoElement.innerHTML = videoStr;
     }; // end of showVideo()
 
@@ -7310,6 +7295,74 @@ var manifest = ["img/01-01.png"];
         itemList1[_i13].setAttribute('data', 'marker' + _questionList[_j3].right);
       }
     };
+  }
+})();
+;(function () {
+  'use strict';
+
+  MarkerNoteCtrl.$inject = ["$scope", "$stateParams", "staticService", "userService"];
+  angular.module('courseApp').component('taskMarkerNote', {
+    controller: 'MarkerNoteCtrl',
+    controllerAs: '$ctrl'
+  }).controller('MarkerNoteCtrl', MarkerNoteCtrl);
+
+  /* @ngInject */
+  function MarkerNoteCtrl($scope, $stateParams, staticService, userService) {
+    var _this20 = this;
+
+    this.taskData = staticService.getData($stateParams, 'data');
+
+    // Вопрос упражнения
+    this.taskText = this.taskData.taskText;
+
+    // массив маркеров
+    this.markers = this.taskData.markers;
+
+    //массив утверждений
+    this.questionList = this.taskData.questionList;
+
+    // массив для работы с ответами
+    this.active = [];
+    // выделенный маркер
+    this.marker = -1;
+
+    for (var i = 0; i < this.questionList.length; i++) {
+      this.active[i] = {};
+      this.active[i].marker = this.questionList[i].marker;
+      this.active[i].marker == -1 ? this.active[i].selected = 0 : this.active[i].selected = 1;
+    }
+
+    angular.element(document).ready(function () {
+      /**
+      *   Выбор цвета маркера
+      */
+      _this20.selectMarker = function (marker) {
+        _this20.marker = marker;
+      };
+
+      /**
+      *   Подкрашиваем вариант
+      */
+      _this20.selectAnswer = function (index, $event) {
+        if (_this20.active[index].selected == 1) {
+          _this20.active[index].selected = 0;
+          _this20.active[index].marker = -1;
+          $event.currentTarget.setAttribute('data', 'marker-1');
+        } else {
+          _this20.active[index].selected = 1;
+          _this20.active[index].marker = _this20.marker;
+          $event.currentTarget.setAttribute('data', 'marker' + _this20.marker);
+        }
+      };
+
+      _this20.saveNote = function () {
+        for (var i = 0; i < _this20.questionList.length; i++) {
+          staticService.setMarkerNote($stateParams, i, _this20.active[i].marker);
+        }
+
+        staticService.showModal('exercise', 'Записная книжка', 'Записи сохранены');
+      };
+    });
   }
 })();
 ;(function () {
@@ -7727,174 +7780,6 @@ var manifest = ["img/01-01.png"];
   }
 })();
 
-(function () {
-  'use strict';
-
-  TaskSequenceQuestCtrl.$inject = ["$stateParams", "$document", "$element", "staticService", "userService"];
-  angular.module('courseApp').controller('TaskSequenceQuestCtrl', TaskSequenceQuestCtrl);
-
-  /* @ngInject */
-  function TaskSequenceQuestCtrl($stateParams, $document, $element, staticService, userService) {
-    var self = this,
-        variantNum = 3,
-        // number of variants in blocks
-    currentQuestNum = 0; // current question number
-
-    self.taskData = staticService.getData($stateParams, 'exs');
-
-    /* 
-    *  self.taskData - the main object for this exercise
-    * 
-    *  "data": {
-    *    "exs": {
-    *      "taskText": "<p>Какой характеристики не хватает формулировке для того, чтобы стать целью?</p><p>Какой вопрос необходимо задать, чтобы трансформировать данную формулировку в цель?</p><p>Выберите правильный уточняющий вопрос и характеристику. Переход далее осуществляется только при правильном ответе.</p><p>Темным цветом написана формулировка, светлым – цель, которой она должна стать.</p>",
-    *      "variant": [{
-    *        "final": "Нашему отделу необходимо поднять уровень продаж. ",
-    *        "initial": "Необходимо работать более эффективно.",
-    *        "characterNum": 0,
-    *        "questionNum": 0
-    *      }],
-    *      "characterList": [
-    *        "Четкость, ясность",
-    *        "Измеримость",
-    *        "Ограниченность во времени",
-    *        "Достижимость",
-    *        "Актуальность",
-    *        "Письменная формулировка",
-    *        "Мобилизующий фактор"
-    *      ],
-    *      "questionList": [
-    *        "Кому необходимо работать более эффективно? Что значит «более эффективно»?",
-    *        "На сколько процентов необходимо поднять уровень продаж?",
-    *        "К какому сроку?",
-    *        "Какими путями?",
-    *        "Зачем надо работать более эффективно?",
-    *        "Как долго надо работать более эффективно?"
-    *      ]
-    *    }
-    *  }
-    */
-
-    self.showVariant = false;
-    self.show = false;
-    self.end = false;
-
-    self.btnDisabledState = {
-      restart: true,
-      answer: true
-    };
-
-    self.userAnswer = [];
-    self.userAnswer.length = variantNum + 1;
-    for (var i = 0; i < self.userAnswer.length; i++) {
-      self.userAnswer[i] = {};
-      self.userAnswer[i].character = "";
-      self.userAnswer[i].characterNum = "";
-      self.userAnswer[i].question = "";
-      self.userAnswer[i].questionNum = "";
-    };
-
-    function getArr(type, arr, num) {
-      var newArr = _.shuffle(arr.filter(function (elem, i) {
-        return i !== num;
-      })),
-          randomNum = _.random(0, variantNum);
-
-      newArr.splice(randomNum, 0, arr[num]);
-      newArr.length = variantNum + 1;
-
-      self.userAnswer.forEach(function (elem) {
-        elem[type + "Num"] = randomNum;
-      });
-      return newArr;
-    };
-
-    self.getVariantList = function (elem, i) {
-      return i <= currentQuestNum;
-    };
-
-    self.orderByQuest = function (elem, i) {
-      return i === currentQuestNum;
-    };
-
-    self.getAnswer = function (prop, index) {
-      if (prop === "character") {
-        self.userAnswer.forEach(function (elem) {
-          return elem.character = "";
-        });
-        self.userAnswer[index].character = index === self.userAnswer[index].characterNum ? true : false;
-      } else {
-        self.userAnswer.forEach(function (elem) {
-          return elem.question = "";
-        });
-        self.userAnswer[index].question = index === self.userAnswer[index].questionNum ? true : false;
-      }
-      if (self.userAnswer.filter(function (elem) {
-        return elem.character !== "";
-      }).length && self.userAnswer.filter(function (elem) {
-        return elem.question !== "";
-      }).length) {
-        self.btnDisabledState.answer = false;
-      }
-    };
-
-    // check answers
-    self.checkAnswer = function () {
-      if (self.userAnswer.filter(function (elem) {
-        return elem.character === true;
-      }).length && self.userAnswer.filter(function (elem) {
-        return elem.question === true;
-      }).length) {
-        if (self.show === false && currentQuestNum + 1 !== self.taskData.variant.length) {
-          self.show = true;
-          return staticService.showModal('exercise', 'Результат', 'Верно! Следующая цель: ' + self.taskData.variant[currentQuestNum + 1].final + ' Закройте окно и нажмите кнопку "Далее".', true);
-        }
-        self.show = false;
-        if (currentQuestNum + 1 !== self.taskData.variant.length) {
-          currentQuestNum++;
-          self.userAnswer.forEach(function (elem) {
-            return elem.character = "";
-          });
-          self.userAnswer.forEach(function (elem) {
-            return elem.question = "";
-          });
-          self.characterList = getArr("character", self.taskData.characterList, self.taskData.variant[currentQuestNum].characterNum);
-          self.questionList = getArr("question", self.taskData.questionList, self.taskData.variant[currentQuestNum].questionNum);
-          self.btnDisabledState.answer = true;
-        } else {
-          self.btnDisabledState.answer = true;
-          self.show = true;
-          self.end = true;
-          // send data to userService (needs for statistics), query to staticService to show modal with comment
-          userService.setUserProgress(100, 1, Number($stateParams.chapter) - 1, Number($stateParams.page) - 1);
-          return staticService.showModal('exercise', 'Ваш результат', 'Верный ответ!', true);
-        }
-      } else {
-        self.show = true;
-        self.btnDisabledState.answer = true;
-        self.btnDisabledState.restart = false;
-        return staticService.showModal('exercise', 'Ваш результат', 'Неверно! Начните заново.', false);
-      }
-    };
-
-    // restart
-    self.removeRestart = function () {
-      self.show = false;
-      self.btnDisabledState.answer = true;
-      self.btnDisabledState.restart = true;
-      self.userAnswer.forEach(function (elem) {
-        return elem.character = "";
-      });
-      self.userAnswer.forEach(function (elem) {
-        return elem.question = "";
-      });
-      self.characterList = getArr("character", self.taskData.characterList, self.taskData.variant[currentQuestNum].characterNum);
-      self.questionList = getArr("question", self.taskData.questionList, self.taskData.variant[currentQuestNum].questionNum);
-    };
-
-    self.removeRestart();
-  }
-})();
 ;(function () {
   'use strict';
 
@@ -8116,6 +8001,174 @@ var manifest = ["img/01-01.png"];
     //инициализация списка ответов
     this.filteredList = this.getNotSelected(-1);
   }; // end of SelectCtrl()
+})();
+(function () {
+  'use strict';
+
+  TaskSequenceQuestCtrl.$inject = ["$stateParams", "$document", "$element", "staticService", "userService"];
+  angular.module('courseApp').controller('TaskSequenceQuestCtrl', TaskSequenceQuestCtrl);
+
+  /* @ngInject */
+  function TaskSequenceQuestCtrl($stateParams, $document, $element, staticService, userService) {
+    var self = this,
+        variantNum = 3,
+        // number of variants in blocks
+    currentQuestNum = 0; // current question number
+
+    self.taskData = staticService.getData($stateParams, 'exs');
+
+    /* 
+    *  self.taskData - the main object for this exercise
+    * 
+    *  "data": {
+    *    "exs": {
+    *      "taskText": "<p>Какой характеристики не хватает формулировке для того, чтобы стать целью?</p><p>Какой вопрос необходимо задать, чтобы трансформировать данную формулировку в цель?</p><p>Выберите правильный уточняющий вопрос и характеристику. Переход далее осуществляется только при правильном ответе.</p><p>Темным цветом написана формулировка, светлым – цель, которой она должна стать.</p>",
+    *      "variant": [{
+    *        "final": "Нашему отделу необходимо поднять уровень продаж. ",
+    *        "initial": "Необходимо работать более эффективно.",
+    *        "characterNum": 0,
+    *        "questionNum": 0
+    *      }],
+    *      "characterList": [
+    *        "Четкость, ясность",
+    *        "Измеримость",
+    *        "Ограниченность во времени",
+    *        "Достижимость",
+    *        "Актуальность",
+    *        "Письменная формулировка",
+    *        "Мобилизующий фактор"
+    *      ],
+    *      "questionList": [
+    *        "Кому необходимо работать более эффективно? Что значит «более эффективно»?",
+    *        "На сколько процентов необходимо поднять уровень продаж?",
+    *        "К какому сроку?",
+    *        "Какими путями?",
+    *        "Зачем надо работать более эффективно?",
+    *        "Как долго надо работать более эффективно?"
+    *      ]
+    *    }
+    *  }
+    */
+
+    self.showVariant = false;
+    self.show = false;
+    self.end = false;
+
+    self.btnDisabledState = {
+      restart: true,
+      answer: true
+    };
+
+    self.userAnswer = [];
+    self.userAnswer.length = variantNum + 1;
+    for (var i = 0; i < self.userAnswer.length; i++) {
+      self.userAnswer[i] = {};
+      self.userAnswer[i].character = "";
+      self.userAnswer[i].characterNum = "";
+      self.userAnswer[i].question = "";
+      self.userAnswer[i].questionNum = "";
+    };
+
+    function getArr(type, arr, num) {
+      var newArr = _.shuffle(arr.filter(function (elem, i) {
+        return i !== num;
+      })),
+          randomNum = _.random(0, variantNum);
+
+      newArr.splice(randomNum, 0, arr[num]);
+      newArr.length = variantNum + 1;
+
+      self.userAnswer.forEach(function (elem) {
+        elem[type + "Num"] = randomNum;
+      });
+      return newArr;
+    };
+
+    self.getVariantList = function (elem, i) {
+      return i <= currentQuestNum;
+    };
+
+    self.orderByQuest = function (elem, i) {
+      return i === currentQuestNum;
+    };
+
+    self.getAnswer = function (prop, index) {
+      if (prop === "character") {
+        self.userAnswer.forEach(function (elem) {
+          return elem.character = "";
+        });
+        self.userAnswer[index].character = index === self.userAnswer[index].characterNum ? true : false;
+      } else {
+        self.userAnswer.forEach(function (elem) {
+          return elem.question = "";
+        });
+        self.userAnswer[index].question = index === self.userAnswer[index].questionNum ? true : false;
+      }
+      if (self.userAnswer.filter(function (elem) {
+        return elem.character !== "";
+      }).length && self.userAnswer.filter(function (elem) {
+        return elem.question !== "";
+      }).length) {
+        self.btnDisabledState.answer = false;
+      }
+    };
+
+    // check answers
+    self.checkAnswer = function () {
+      if (self.userAnswer.filter(function (elem) {
+        return elem.character === true;
+      }).length && self.userAnswer.filter(function (elem) {
+        return elem.question === true;
+      }).length) {
+        if (self.show === false && currentQuestNum + 1 !== self.taskData.variant.length) {
+          self.show = true;
+          return staticService.showModal('exercise', 'Результат', 'Верно! Следующая цель: ' + self.taskData.variant[currentQuestNum + 1].final + ' Закройте окно и нажмите кнопку "Далее".', true);
+        }
+        self.show = false;
+        if (currentQuestNum + 1 !== self.taskData.variant.length) {
+          currentQuestNum++;
+          self.userAnswer.forEach(function (elem) {
+            return elem.character = "";
+          });
+          self.userAnswer.forEach(function (elem) {
+            return elem.question = "";
+          });
+          self.characterList = getArr("character", self.taskData.characterList, self.taskData.variant[currentQuestNum].characterNum);
+          self.questionList = getArr("question", self.taskData.questionList, self.taskData.variant[currentQuestNum].questionNum);
+          self.btnDisabledState.answer = true;
+        } else {
+          self.btnDisabledState.answer = true;
+          self.show = true;
+          self.end = true;
+          // send data to userService (needs for statistics), query to staticService to show modal with comment
+          userService.setUserProgress(100, 1, Number($stateParams.chapter) - 1, Number($stateParams.page) - 1);
+          return staticService.showModal('exercise', 'Ваш результат', 'Верный ответ!', true);
+        }
+      } else {
+        self.show = true;
+        self.btnDisabledState.answer = true;
+        self.btnDisabledState.restart = false;
+        return staticService.showModal('exercise', 'Ваш результат', 'Неверно! Начните заново.', false);
+      }
+    };
+
+    // restart
+    self.removeRestart = function () {
+      self.show = false;
+      self.btnDisabledState.answer = true;
+      self.btnDisabledState.restart = true;
+      self.userAnswer.forEach(function (elem) {
+        return elem.character = "";
+      });
+      self.userAnswer.forEach(function (elem) {
+        return elem.question = "";
+      });
+      self.characterList = getArr("character", self.taskData.characterList, self.taskData.variant[currentQuestNum].characterNum);
+      self.questionList = getArr("question", self.taskData.questionList, self.taskData.variant[currentQuestNum].questionNum);
+    };
+
+    self.removeRestart();
+  }
 })();
 ;(function () {
   'use strict';
@@ -8640,56 +8693,6 @@ var manifest = ["img/01-01.png"];
   } // end of SwapListCtrl()
 })();
 
-;(function () {
-  'use strict';
-
-  TabsItemCtrl.$inject = ["$scope", "$stateParams", "$attrs", "staticService", "userService"];
-  angular.module('courseApp').component('tabs', {
-    transclude: true,
-    templateUrl: 'js/components/tabs/tabsTmpl.html',
-    controller: 'TabsCtrl',
-    controllerAs: '$ctrl'
-  }).controller('TabsCtrl', TabsCtrl).component('tabsItem', {
-    require: {
-      'parent': '^tabs'
-    },
-    bindings: {
-      item: '='
-    },
-    transclude: true,
-    templateUrl: 'js/components/tabs/tabsTmpl.html',
-    controller: 'TabsItemCtrl',
-    controllerAs: '$ctrl'
-  }).controller('TabsItemCtrl', TabsItemCtrl);
-
-  /* @ngInject */
-  function TabsCtrl() {
-    var self = this;
-  }
-
-  /* @ngInject */
-  function TabsItemCtrl($scope, $stateParams, $attrs, staticService, userService) {
-
-    this.items = [];
-  }
-
-  //function TabsItemCtrl($element, $timeout, $interval, $attrs) {
-  //  const self = this;
-  //
-  //  self.hintShow = false;
-  //  const index = $($element).index();
-  //  if (index === 1) {
-  //    $timeout(() => {
-  //      self.hintShow = '' ? self.hintShow : true;
-  //  }, 10000);
-  //    $interval(() => {
-  //      if ($($($element).parent().children()[index]).hasClass('tab__item_active')) {
-  //      self.hintShow = '';
-  //    }
-  //  }, 200);
-  //  }
-  //}
-})();
 ;(function () {
   'use strict';
 

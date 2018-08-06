@@ -44,7 +44,8 @@ const courseStructure = {
       "chapter_id": 1,
       "chapter_location": "chapter01",
       "title": "Введение",
-      "description": "Мультимедийный курс «Коммерческие переговоры»",
+      //"description": "Мультимедийный курс «Коммерческие переговоры»",
+      "description": "Введение",
       "pages": [
         {
           "page_id": 1, //01
