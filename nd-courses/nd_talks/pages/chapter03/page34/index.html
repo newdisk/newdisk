@@ -1,0 +1,86 @@
+<div class="page-container page-34-03">
+
+    <section class="page-head">
+      <p>ЗАДАНИЕ 32</p>
+    </section>
+
+    <section class="page-block-text">
+      <p class="task-text">Прослушайте фразы. Оцените, как звучит речь и голос по четырем параметрам:</p>
+      <div class="task-text-param">
+        <p class="task-text-param__item">Громкость</p>
+        <p class="task-text-param__item">Скорость</p>
+        <p class="task-text-param__item">Уверенность</p>
+        <p class="task-text-param__item">Дикция</p>
+      </div>
+      <p class="text__hint">Перетащите каждый набор характеристик на нужное место</p>
+    </section>
+    <section class="swap-list-container">
+
+      <div class="swap-list-container__part1">
+        <ul class="phrase">
+          <li class="phrase__item">
+            <div class="phrase__item-img">
+              <custom-mini-audio src="audio/a7.mp3"></custom-mini-audio>
+            </div>
+            <p class="phrase__item-text">фрагмент 1</p>
+          </li>
+          <li class="phrase__item">
+            <div class="phrase__item-img">
+              <custom-mini-audio src="audio/a8.mp3"></custom-mini-audio>
+            </div>
+            <p class="phrase__item-text">фрагмент 2</p>
+          </li>
+          <li class="phrase__item">
+            <div class="phrase__item-img">
+              <custom-mini-audio src="audio/a9.mp3"></custom-mini-audio>
+            </div>
+            <p class="phrase__item-text">фрагмент 3</p>
+          </li>
+          <li class="phrase__item">
+            <div class="phrase__item-img">
+              <custom-mini-audio src="audio/a10.mp3"></custom-mini-audio>
+            </div>
+            <p class="phrase__item-text">фрагмент 4</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="swap-list-container__part2" ng-controller="SwapListCtrl as $ctrl">
+        <!-- <task-swap-list></task-swap-list> BEGINNING-->
+        <!-- TODO: -->
+        <div class="task-swap-list"
+              ng-repeat="task in $ctrl.taskExs"
+              ng-if="!$ctrl.showRight">
+          <ul>
+            <li class="task-swap-list_item"
+                ng-repeat="item in task.questionList"
+                data-order="{{item.order}}">
+              <div class="task-swap-list_item-phrase">
+                <div>{{item.label[0]}}</div>
+                <div>{{item.label[1]}}</div>
+                <div>{{item.label[2]}}</div>
+                <div>{{item.label[3]}}</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="task-swap-list task-swap-list__right"
+              ng-repeat="task in $ctrl.taskData.exs"
+              ng-if="$ctrl.showRight">
+          <ul>
+            <li class="task-swap-list_item"
+                ng-repeat="item in task.questionList"
+                data-order="{{item.order}}">{{item.label}}</li>
+          </ul>
+        </div>
+        <div class="btn-box" ng-if="!$ctrl.test">
+          <button class="btn btn_restart" ng-click="$ctrl.removeRestart()">Начать заново</button>
+          <button class="btn btn_answer" ng-class="{'btn_disabled': $ctrl.state == 0 || $ctrl.state == 2}" ng-click="$ctrl.checkAnswer()">Принять ответ</button>
+        </div>
+        <!-- <task-swap-list></task-swap-list> END-->
+      </div>
+
+    </section>
+
+
+</div>

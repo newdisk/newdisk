@@ -1,0 +1,49 @@
+<div class="page-container page-27-02">
+  <section class="page-head">
+    <p>Задание 10</p>
+  </section>
+  
+  <section>    
+    <p class="task-text">В ходе консультации важно уметь слушать, то есть воспринимать смысл сообщения, улавливать эмоции говорящего.<br/>
+      Посмотрите киноэпизоды.<br/>
+      Какой элемент эффективного слушания был упущен продавцом-консультантом?
+    </p>   
+    <p class="text__hint">Выберите один вариант ответа для каждого киноэпизода.</p>
+  </section>
+
+  <section ng-controller="SelectCtrl as $ctrl">
+    <div class="select-container">
+      <div class="task task-select-wrapper" 
+            ng-repeat="task in $ctrl.taskExs"
+            ng-init="taskIndex = $index">
+        <p class="task-text">{{task.taskText}}</p>
+        <div ng-repeat="item in task.questionList.questions"
+            ng-init="questIndex = $index"
+            class="task-item">
+          <div class="task-item-label">{{item.label}}</div>
+    
+          <div class="task-select" 
+              ng-click="$ctrl.toggleSelect($event, $index, taskIndex)">
+            <div class="task-select_option-wrapper"
+                ng-class="{'task-select_option-wrapper__open': task.questionList.questions[$index].open}">
+              <div class="task-select_option"
+                  ng-click="$ctrl.selectChange($event, -1, questIndex, taskIndex)">{{item.default}}</div>
+              <div class="task-select_option"
+                  ng-repeat="option in $ctrl.filteredList[taskIndex]"
+                  ng-click="$ctrl.selectChange($event, option.v_id, questIndex, taskIndex)">{{option.label}}</div>
+            </div>
+          </div>
+          
+          <page-video videourl="video/{{item.video}}.mp4" videoposter="video/posters/{{item.video}}.jpg" suburl="video/subtitles/{{item.video}}.vtt" videowidth="696" videoheight="572"></page-video>
+
+        </div>
+    
+      </div>
+    </div>
+    <div class="btn-box" ng-if="!$ctrl.test">
+      <button class="btn btn_restart" ng-click="$ctrl.removeRestart()">Начать заново</button>
+      <button class="btn btn_answer" ng-class="{'btn_disabled': $ctrl.state == 0 || $ctrl.state == 2}" ng-click="$ctrl.checkAnswer()">Принять ответ</button>
+    </div>
+  </section>
+
+</div>

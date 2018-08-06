@@ -1,0 +1,56 @@
+<div class="page-container page-37-03">
+	<section class="page-head">
+  	<p>Задание 34</p>
+	</section>
+	<p class="task-text">Определите, какую, на ваш взгляд, реакцию (позитивную или негативную?) вызывают у клиента те или иные слова продавца на каждом этапе разговора. </p>
+	<p class="text__hint">Нажмите на краску, а затем на фразу.</p>
+
+  <section ng-controller="MarkerChoiceCtrl as $ctrl">
+
+    <div class="task__marker-choice-body" >
+      <div class="task__marker-choice_container">
+
+        <div class="flex-container flex-container_def">
+          <p class="text-accent">Этапы</p>
+          <p class="text-accent">Фразы</p>
+        </div> 
+
+        <div class="task__marker-choice_items">
+          <div class="task__marker-choice_items_container" ng-repeat="question in $ctrl.questionList">
+            <div class="task__stage-item-question">
+              {{$ctrl.taskData.stageTalk[$index].label}}
+            </div>
+
+            <div class="task__marker-choice-item"
+                data="marker"              
+                ng-click="$ctrl.selectAnswer($index, $event)">   
+            
+              <div class="task__marker-choice-question"
+                  ng-class="{'marker-selected': $ctrl.active[$index].selected}"
+                  ng-class="marker+$ctrl.marker">
+                {{question.label}}
+              </div>            
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="marker-box">
+        <div class="marker"
+            ng-repeat="marker in $ctrl.markers"
+            ng-click="$ctrl.selectMarker(marker.id)"
+            ng-class="{'selected': $ctrl.marker == marker.id}">
+          <div class="marker_label">{{marker.label}}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="btn-box">
+      <button class="btn btn_restart" ng-click="$ctrl.removeRestart()">Начать заново</button>
+      <button class="btn btn_answer" ng-class="{'btn_disabled': $ctrl.state == 0 || $ctrl.state == 2}" ng-click="$ctrl.checkAnswer($event)">Принять ответ</button>
+    </div>
+
+  </section>
+
+</div>

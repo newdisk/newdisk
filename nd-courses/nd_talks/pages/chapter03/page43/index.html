@@ -1,0 +1,47 @@
+<div class="page-container page-43-03">
+	<section class="page-head">
+		<p>Задание 37</p>
+	</section>
+	<section class="task-set">
+		<p class="task-text">Подберите к фразам клиента подходящие уточняющие вопросы.</p>
+		<p class="text__hint">Перетащите каждый вопрос на нужное место.</p>
+	</section>
+
+	<div ng-controller="SwapListCtrl as $ctrl">    
+		<div class="task-swap-list" ng-repeat="task in $ctrl.taskExs" ng-if="!$ctrl.showRight">
+			<div class="flex-container flex-container_def">
+				<p class="text-accent">Фразы клиента</p>
+				<p class="text-accent">Вопросы</p>
+			</div> 
+
+			<ul>
+				<div class="task-swap-list_item_wrapper" ng-repeat="item in task.questionList" >
+					<div class="task-swap-list_item_left">
+						<p class="">{{$ctrl.taskData.exs[0].questionList[$index].phrase}}</p>
+					</div>
+					<li class="task-swap-list_item" data-order="{{item.order}}">{{item.label}}</li>
+				</div>
+			</ul>
+		</div>
+
+		<div class="task-swap-list task-swap-list__right" ng-repeat="task in $ctrl.taskData.exs" ng-if="$ctrl.showRight">
+			<div class="flex-container flex-container_def">
+				<p class="text-accent">Фразы клиента</p>
+				<p class="text-accent">Вопросы</p>
+			</div> 
+		  <ul>
+		    <div class="task-swap-list_item_wrapper" ng-repeat="item in task.questionList" >
+					<div class="task-swap-list_item_left">
+						<p class="">{{item.phrase}}</p>
+					</div>
+					<li class="task-swap-list_item" data-order="{{item.order}}">{{item.label}}</li>
+				</div>
+		  </ul>
+		</div>
+
+		<div class="btn-box" ng-if="!$ctrl.test">
+			<button class="btn btn_restart" ng-click="$ctrl.removeRestart()">Начать заново</button>
+			<button class="btn btn_answer" ng-class="{'btn_disabled': $ctrl.state == 0 || $ctrl.state == 2}" ng-click="$ctrl.checkAnswer()">Принять ответ</button>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,51 @@
+<div class="page-container page-36-03">
+	<section class="page-head">
+		<p>Задание 33</p>
+	</section>
+	<section class="task-set">
+		<div>
+			<p class="task-text">Посмотрите киноэпизод и соотнесите фразы продавца с этапами разговора.</p>
+			<p class="text__hint">Перетащите каждую фразу на нужное место.</p>
+		</div>
+		<page-video videourl="video/r26.mp4" videoposter="video/posters/26.jpg" suburl="video/subtitles/r26.vtt" videowidth="696" videoheight="572"></page-video>
+	</section>
+
+
+	<div ng-controller="SwapListCtrl as $ctrl">    
+		<div class="task-swap-list" ng-repeat="task in $ctrl.taskExs" ng-if="!$ctrl.showRight">
+			
+			<div class="flex-container flex-container_def">
+				<p class="text-accent">Этап разговора</p>
+				<p class="text-accent">Фразы продавца</p>
+			</div> 
+
+			<ul>
+				<div class="task-swap-list_item_wrapper" ng-repeat="item in task.questionList" >
+					<div class="task-swap-list_item_left"><p class="">{{$ctrl.taskData.exs[0].questionList[$index].phrase}}</p></div>
+					<li class="task-swap-list_item" data-order="{{item.order}}">{{item.label}}</li>
+				</div>
+			</ul>
+		</div>
+
+		<div class="task-swap-list task-swap-list__right" ng-repeat="task in $ctrl.taskData.exs" ng-if="$ctrl.showRight">
+			<div class="flex-container flex-container_def">
+				<p class="text-accent">Этап разговора</p>
+				<p class="text-accent">Фразы продавца</p>
+			</div> 
+			<ul>
+				<div class="task-swap-list_item_wrapper" ng-repeat="item in task.questionList" >
+					<div class="task-swap-list_item_left">
+						<p class="">{{item.phrase}}</p>
+					</div>
+					<li class="task-swap-list_item" data-order="{{item.order}}">{{item.label}}</li>
+				</div>
+			</ul>
+		</div>
+
+		<div class="btn-box" ng-if="!$ctrl.test">
+			<button class="btn btn_restart" ng-click="$ctrl.removeRestart()">Начать заново</button>
+			<button class="btn btn_answer" ng-class="{'btn_disabled': $ctrl.state == 0 || $ctrl.state == 2}" ng-click="$ctrl.checkAnswer()">Принять ответ</button>
+		</div>
+	</div>
+
+</div>

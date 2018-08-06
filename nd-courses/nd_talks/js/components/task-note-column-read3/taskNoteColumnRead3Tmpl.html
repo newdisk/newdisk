@@ -1,0 +1,29 @@
+<div class="task-note-column-read3">
+	 useColumns
+	<div class="task-note__body flex-container__task-note" ng-if="$ctrl.useColumns">
+		<div class="flex-container__task-note__item">
+			<div class="task-title">{{$ctrl.taskData.titles[1]}}</div>
+			<div class="task-note_column" ng-repeat="item in $ctrl.indicators">
+				<p class="task-note_item_input task-note_item_input3">{{$index + 1 + '. '}}{{item}}</p>
+			</div>
+		</div>
+		<!--<div class="flex-container__task-note__item">-->
+			<!--<div class="task-title">{{$ctrl.taskData.titles[1]}}</div>-->
+			<!--<div class="task-note_column" ng-repeat="item in $ctrl.indicators2 track by $index">-->
+				<!--<p class="task-note_item_input">{{$index + 1 + '. '}}{{item}}</p>-->
+			<!--</div>-->
+		<!--</div>-->
+	</div>
+
+	<!-- don`t use -->
+	<div class="task-note__body" ng-if="!$ctrl.useColumnss">
+		<div class="task-title">{{$ctrl.taskData.titles[1]}}</div>
+		<div class="task-note_column" ng-repeat="item in $ctrl.indicatorss">
+			<p class="task-note_item_input task-note_item_input3">{{$index + 1 + '. '}}{{item}}</p>
+		</div>
+	</div>
+</div>
+
+<!--<section class="btn-box">-->
+	<!--<button class="btn btn_answer" ng-click="$ctrl.saveNote()">Сохранить</button>-->
+<!--</section>-->
