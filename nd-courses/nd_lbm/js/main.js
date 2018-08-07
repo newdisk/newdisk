@@ -2935,7 +2935,7 @@ var courseStructure = {
       "messages": [""]
     }, {
       "page_id": 2, //140
-      "title": "Итоговое тестирование",
+      "title": "Итоговый тест",
       "location": "page02",
       "hasSound": false,
       "type": "test",
@@ -4486,6 +4486,102 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
     };
   }
 })();
+(function () {
+  'use strict';
+
+  CustomVideoCtrl.$inject = ["$document", "$timeout", "staticService"];
+  angular.module('courseApp').component('customVideo', {
+    bindings: {
+      src: '@'
+    },
+    templateUrl: 'js/components/custom-video/customVideoTmpl.html',
+    controller: 'CustomVideoCtrl',
+    controllerAs: '$ctrl'
+  }).controller('CustomVideoCtrl', CustomVideoCtrl);
+
+  /* @ngInject */
+  function CustomVideoCtrl($document, $timeout, staticService) {
+    var self = this;
+
+    self.play = 'pause'; // variable for play/pause btn that toggle icons
+    self.mute = 'unmute'; // variable for mute/unmute btn that toggle icons
+    self.volume = 1; // define volume in volume slider
+    self.seekPos = 0;
+
+    self.$onInit = function () {
+      var video = $($document).find('.custom-video__video')[0];
+
+      video.oncanplaythrough = function () {
+        console.log('here');
+        $(video).on('timeupdate', updateSeekSlider);
+
+        updateSeekSlider();
+
+        self.changePlayPause = function () {
+          if (video.paused) {
+            video.play();
+            self.play = 'pause';
+          } else {
+            video.pause();
+            self.play = 'play';
+          }
+        };
+
+        self.changeSeekPos = function () {
+          video.currentTime = video.duration * (self.seekPos / 100);
+        };
+
+        function updateSeekSlider() {
+          var seekNewPos = video.currentTime * (100 / video.duration),
+              curhours = Math.floor(video.currentTime / 3600),
+              curmins = Math.floor(video.currentTime / 60),
+              cursecs = Math.floor(video.currentTime - curmins * 60),
+              durhours = Math.floor(video.duration / 3600),
+              durmins = Math.floor(video.duration / 60),
+              dursecs = Math.floor(video.duration - durmins * 60);
+
+          self.seekPos = Math.floor(seekNewPos);
+          if (video.currentTime === video.duration) {
+            self.play = 'play';
+          }
+
+          if (curmins < 10) {
+            curmins = '0' + curmins || '00';
+          };
+          if (cursecs < 10) {
+            cursecs = '0' + cursecs || '00';
+          };
+          if (durmins < 10) {
+            durmins = '0' + durmins || '00';
+          };
+          if (dursecs < 10) {
+            dursecs = '0' + dursecs || '00';
+          };
+          $timeout(function () {
+
+            self.curtimetext = curmins + ':' + cursecs;
+            self.durtimetext = durmins + ':' + dursecs;
+          });
+        }
+
+        self.changeMuteState = function () {
+
+          if (video.muted) {
+            video.muted = false;
+            self.mute = 'unmute';
+          } else {
+            video.muted = true;
+            self.mute = 'mute';
+          }
+        };
+
+        self.changeVolume = function () {
+          video.volume = self.volume;
+        };
+      };
+    };
+  }
+})();
 ;(function () {
   'use strict';
 
@@ -4616,102 +4712,6 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
     };
   }
 })();
-(function () {
-  'use strict';
-
-  CustomVideoCtrl.$inject = ["$document", "$timeout", "staticService"];
-  angular.module('courseApp').component('customVideo', {
-    bindings: {
-      src: '@'
-    },
-    templateUrl: 'js/components/custom-video/customVideoTmpl.html',
-    controller: 'CustomVideoCtrl',
-    controllerAs: '$ctrl'
-  }).controller('CustomVideoCtrl', CustomVideoCtrl);
-
-  /* @ngInject */
-  function CustomVideoCtrl($document, $timeout, staticService) {
-    var self = this;
-
-    self.play = 'pause'; // variable for play/pause btn that toggle icons
-    self.mute = 'unmute'; // variable for mute/unmute btn that toggle icons
-    self.volume = 1; // define volume in volume slider
-    self.seekPos = 0;
-
-    self.$onInit = function () {
-      var video = $($document).find('.custom-video__video')[0];
-
-      video.oncanplaythrough = function () {
-        console.log('here');
-        $(video).on('timeupdate', updateSeekSlider);
-
-        updateSeekSlider();
-
-        self.changePlayPause = function () {
-          if (video.paused) {
-            video.play();
-            self.play = 'pause';
-          } else {
-            video.pause();
-            self.play = 'play';
-          }
-        };
-
-        self.changeSeekPos = function () {
-          video.currentTime = video.duration * (self.seekPos / 100);
-        };
-
-        function updateSeekSlider() {
-          var seekNewPos = video.currentTime * (100 / video.duration),
-              curhours = Math.floor(video.currentTime / 3600),
-              curmins = Math.floor(video.currentTime / 60),
-              cursecs = Math.floor(video.currentTime - curmins * 60),
-              durhours = Math.floor(video.duration / 3600),
-              durmins = Math.floor(video.duration / 60),
-              dursecs = Math.floor(video.duration - durmins * 60);
-
-          self.seekPos = Math.floor(seekNewPos);
-          if (video.currentTime === video.duration) {
-            self.play = 'play';
-          }
-
-          if (curmins < 10) {
-            curmins = '0' + curmins || '00';
-          };
-          if (cursecs < 10) {
-            cursecs = '0' + cursecs || '00';
-          };
-          if (durmins < 10) {
-            durmins = '0' + durmins || '00';
-          };
-          if (dursecs < 10) {
-            dursecs = '0' + dursecs || '00';
-          };
-          $timeout(function () {
-
-            self.curtimetext = curmins + ':' + cursecs;
-            self.durtimetext = durmins + ':' + dursecs;
-          });
-        }
-
-        self.changeMuteState = function () {
-
-          if (video.muted) {
-            video.muted = false;
-            self.mute = 'unmute';
-          } else {
-            video.muted = true;
-            self.mute = 'mute';
-          }
-        };
-
-        self.changeVolume = function () {
-          video.volume = self.volume;
-        };
-      };
-    };
-  }
-})();
 ;(function () {
   'use strict';
 
@@ -4736,7 +4736,7 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
 
     //номер вопроса
     this.currentQuest = 0;
-
+    this.startTest = 0;
     // состояния теста: 
     this.state = 0;
     $scope.$on('myTestState', function (e, data) {
@@ -4784,6 +4784,7 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
         _this4.buildQuestion();
       } else {
         _this4.state = 2;
+        _this4.startTest = 1;
         _this4.currentQuest--;
         // console.log('TEST::>', this.testScore/(this.questionList.length))
         courseInfo.testScore = Math.round(_this4.testScore / _this4.questionList.length);
@@ -4851,6 +4852,7 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
     };
 
     this.removeRestart = function () {
+      _this4.startTest = 0;
       _this4.state = 0;
       _this4.testScore = 0;
       _this4.testRight = 0;

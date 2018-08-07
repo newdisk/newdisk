@@ -13,14 +13,14 @@
         ng-repeat="item in $ctrl.taskData.exs[0].questionList">
       <add-info class="phrase" heading="{{item.phrase}}" ng-show="item.modInfo">{{item.modInfo}}</add-info>
       <img src="{{item.image}}" alt="" ng-show="item.image">
-      <p>{{item.phrase}}</p>
+      <p class="item_phrase">{{item.phrase}}</p>
     </li>
   </ul>
   <ul class="task-swap-list__label-container sortable">
     <li class="task-swap-list__label-item"
         ng-repeat="item in task.questionList"
         data-order="{{item.order}}">
-      <p>{{item.label}}</p>
+      <p class="item_label">{{item.label}}</p>
     </li>
   </ul>
 </div>

@@ -3173,7 +3173,7 @@ const courseStructure = {
     },
     {
       "page_id": 2,//140
-      "title": "Итоговое тестирование",
+      "title": "Итоговый тест",
       "location": "page02",
       "hasSound": false,
       "type": "test",
