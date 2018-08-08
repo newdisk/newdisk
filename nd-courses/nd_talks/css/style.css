@@ -222,8 +222,7 @@
 .text__hint,
 .text__hint p {
   font-style: italic;
-  color: #e5e5e5;
-  font-size: 16px; }
+  color: #e5e5e5; }
 
 .text__hint {
   margin-bottom: 16px;
@@ -238,24 +237,7 @@
   font-weight: bold;
   color: #ff6700; }
 
-p,
-.page-paragraph,
-.text,
-.text__hint,
-.page-column_list,
-.blur-block_text__body,
-.task-item-label,
-.task-select_option,
-.page-block-text,
-.task__marker-choice-item,
-.task-title,
-.task-note_column,
-.text-bold,
-.task-text,
-.task__single-choice-question,
-.task__multi-choice-question,
-.task__combo-choice-question,
-.marker_label {
+* {
   font-size: 16px; }
 
 .page-column_head,
@@ -1239,8 +1221,7 @@ accordion-panel .accordion_active {
     height: 10px; }
 
 .task-text {
-  color: #ff6700;
-  font-size: 18px; }
+  color: #ff6700; }
 
 .task__single-choice-body {
   padding: 5px 0 5px 10px;
@@ -1290,8 +1271,7 @@ accordion-panel .accordion_active {
   color: gray; }
 
 .task-text {
-  color: #ff6700;
-  font-size: 18px; }
+  color: #ff6700; }
 
 .task__multi-choice-body {
   padding: 10px 0 5px 10px;
@@ -3428,7 +3408,6 @@ p {
 
 .page-05-02 .task .text {
   color: #ff6700;
-  font-size: 18px;
   margin-left: 32px;
   position: relative; }
 
@@ -5297,6 +5276,9 @@ p {
 .page-36-04 * {
   box-sizing: border-box; }
 
+.page-36-04 .drop-list * {
+  font-size: 16px; }
+
 .page-36-04 .flex-container {
   justify-content: space-between; }
 
@@ -5312,6 +5294,9 @@ p {
   margin-bottom: 5px; }
   .page-36-04 .text__hint:nth-child(3) {
     margin-top: -11px; }
+
+.page-36-04 .select {
+  outline: 2px solid red; }
 
 .page-36-04 .task-drag-table {
   display: flex;
@@ -5335,7 +5320,11 @@ p {
 .page-36-04 .drag-image {
   margin-right: 5px;
   margin-left: 5px;
-  cursor: pointer; }
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
 
 .page-36-04 .task-drag-table__drop-list {
   width: calc(65% - 5px); }
@@ -5438,6 +5427,8 @@ p {
   flex-flow: row nowrap;
   justify-content: space-between;
   width: 100%; }
+  .page-37-04 .task-swap-list-sortable p {
+    font-size: 14px; }
   .page-37-04 .task-swap-list-sortable ul {
     list-style: none;
     margin: 0;
@@ -5453,9 +5444,6 @@ p {
     height: 55px;
     padding: 11px;
     margin-bottom: 8px; }
-    .page-37-04 .task-swap-list-sortable .task-swap-list__phrase-item p,
-    .page-37-04 .task-swap-list-sortable .task-swap-list__label-item p {
-      font-size: 14px; }
   .page-37-04 .task-swap-list-sortable .task-swap-list__phrase-item {
     padding: 11px;
     background: #f0f0f0; }
@@ -8383,7 +8371,7 @@ p {
   .page-37-04 .btn-box{
     margin: 22px 0; }
   .page-37-04 .task-swap-list-sortable p{
-    font-size: 16px; }
+    font-size: 18px; }
   .page-37-04 .task-swap-list-sortable .task-swap-list__phrase-item,
   .page-37-04 .task-swap-list-sortable .task-swap-list__label-item,
   .page-37-04 .task-swap-list-sortable .empty-space{
@@ -8456,16 +8444,22 @@ p {
   .page-70-04 .page-block-text{
     margin: 0;
     margin-bottom: 10px; }
+  .page-75-04{
+    display: block; }
   .page-75-04 .flex-container{
     display: block; }
   .page-75-04 .page-block-text{
     margin-bottom: 10px; }
+  .page-77-04{
+    display: block; }
   .page-77-04 .flex-container{
     display: block; }
   .page-77-04 .page-block-text{
     margin-bottom: 10px; }
   .page-78-04 .btn-box{
     margin: 22px 0; }
+  .page-79-04{
+    display: block; }
   .page-79-04 .flex-container{
     display: block; }
   .page-79-04 .page-block-text{
@@ -8548,26 +8542,7 @@ p {
     width: calc(100% - 40px);
     margin-left: 20px; } }
   @media screen and (max-width: 480px){
-  .page-block-hint{
-    font-size: 18px; }
-  p,
-  .page-paragraph,
-  .text,
-  .text__hint,
-  .page-column_list,
-  .blur-block_text__body,
-  .page-block-text,
-  .task__marker-choice-item,
-  .task-title,
-  .task-note_column,
-  .text-bold,
-  .task-text,
-  .task-select-wrapper .task-text,
-  .task__single-choice-question,
-  .task__multi-choice-question,
-  .task__combo-choice-question,
-  .task-swap-list_item,
-  .accordion-heading__title{
+  *{
     font-size: 20px; }
   .page-head p,
   .flex-container__item__half-title_text p{
