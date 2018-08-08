@@ -947,7 +947,7 @@ var courseStructure = {
       "hasSound": false,
       "type": "note_page",
       "data": {
-        "task_fields": 16,
+        "task_fields": 8,
         "showTitle": false,
         "maxlength": 100,
         "titles": ['', ''],
@@ -5020,7 +5020,20 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-05.png", "img/01-08.pn
     };
 
     this.getUserNotes = function () {
-      console.log('this.getUserNotes ----this.notes------------------------------------------:', _this2.notes);
+      // console.warn('this.getUserNotes - this.notes', this.notes);
+      var notesLS = JSON.parse(myStorage.getItem('notes'));
+      // console.log('notesLS', notesLS);
+      if (notesLS) {
+        notesLS.forEach(function (exercise, indexEx) {
+          // if (!exercise) return;
+          exercise.fields.forEach(function (field, indexFl) {
+            // console.log(field);
+            // if (!field) return;
+            _this2.notes[indexEx].fields[indexFl].text = field.text;
+          });
+        });
+      };
+      // console.warn('this.getUserNotes - this.notes', this.notes);
       return _this2.notes;
     };
 
@@ -5030,14 +5043,21 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-05.png", "img/01-08.pn
 
     this.setUserNotes = function (notes, chapter, page) {
 
-      console.log('userService:: setNotes-------------------------------------------------------:', notes, chapter, page);
+      // console.log('userService:: setNotes-------------------------------------------------------:', notes, chapter, page);
 
+      // let notesLS = myStorage.getItem('notes');
+      // console.log('notesLS');
+      //
+      // if (notesLS) { this.note = notesLS}
+      // else {
       _this2.notes.forEach(function (item) {
         if (item.chapter_id == chapter && item.page_id == page) {
           item = notes;
         }
       });
-      console.log('this.notes-+-+-+-+-+-+-+-+:', _this2.notes);
+      // };
+
+      // console.log('userService.setNotes - this.notes', this.notes);
 
       function supports_html5_storage() {
         try {
@@ -5050,9 +5070,10 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-05.png", "img/01-08.pn
       }
 
       courseInfo.notes = JSON.parse(JSON.stringify(_this2.notes));
-      console.warn('courseInfo.notes', courseInfo.notes);
+      // console.warn('courseInfo.notes', courseInfo.notes);
 
       // https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API
+      myStorage.setItem('notes', JSON.stringify(_this2.notes));
       _this2.sendToLMS();
     };
 
@@ -5091,7 +5112,7 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-05.png", "img/01-08.pn
         return value;
       }).replace(/\[/g, '*#').replace(/\]/g, '#*');
 
-      console.info('sendToLMS myStor : ', myStor);
+      // console.info('sendToLMS myStor : ', myStor);
       // console.info('sendToLMS suspendData: ', suspendData);
 
       console.info('sendToLMS suspendData.length: ', suspendData.length);
@@ -5692,7 +5713,7 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-05.png", "img/01-08.pn
 
     //номер вопроса
     this.currentQuest = 0;
-
+    this.startTest = 0;
     // состояния теста:
     this.state = 0;
     $scope.$on('myTestState', function (e, data) {
@@ -5739,6 +5760,7 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-05.png", "img/01-08.pn
         _this5.buildQuestion();
       } else {
         _this5.state = 2;
+        _this5.startTest = 1;
         _this5.currentQuest--;
         // console.log('TEST::>', this.testScore/(this.questionList.length))
         courseInfo.testScore = Math.round(_this5.testScore / _this5.questionList.length);
@@ -5817,6 +5839,7 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-05.png", "img/01-08.pn
     };
 
     this.removeRestart = function () {
+      _this5.startTest = 0;
       _this5.state = 0;
       _this5.testScore = 0;
       _this5.testRight = 0;
@@ -6389,64 +6412,80 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-05.png", "img/01-08.pn
     templateUrl: 'js/components/task-drag/taskDragTmpl.html',
     controller: 'taskDragCtrl',
     controllerAs: '$ctrl'
-  }).directive('draggable', draggable).directive('droppable', droppable).controller('taskDragCtrl', taskDragCtrl);
-
-  function draggable() {
-    return function ($scope, $element) {
-      var elem = $element[0];
-      elem.draggable = true;
-
-      elem.addEventListener('dragstart', function (e) {
-        e.dataTransfer.effectAllowed = 'move';
-        e.dataTransfer.setData('Text', this.id);
-        this.classList.add('drag');
-        return false;
-      }, false);
-
-      elem.addEventListener('dragend', function (e) {
-        this.classList.remove('drag');
-        return false;
-      }, false);
-    };
   }
+  // .directive('draggable', draggable)
+  // .directive('droppable', droppable)
+  ).controller('taskDragCtrl', taskDragCtrl);
 
-  function droppable() {
-    return function ($scope, $element) {
-      var elem = $element[0];
-
-      elem.addEventListener('dragover', function (e) {
-        e.dataTransfer.dropEffect = 'move';
-        e.preventDefault();
-        this.classList.add('over');
-        return false;
-      }, false);
-
-      elem.addEventListener('dragenter', function (e) {
-        this.classList.add('over');
-        return false;
-      }, false);
-
-      elem.addEventListener('dragleave', function (e) {
-        this.classList.remove('over');
-        return false;
-      }, false);
-
-      elem.addEventListener('drop', function (e) {
-        var dragContainer = document.getElementsByClassName('task__drag-container')[0];
-        this.classList.remove('over');
-
-        if (this.firstChild) {
-          dragContainer.appendChild(this.firstChild);
-        }
-
-        var item = document.getElementById(e.dataTransfer.getData('Text'));
-        this.appendChild(item);
-        e.preventDefault();
-
-        return false;
-      }, false);
-    };
-  }
+  // function draggable(){
+  //   return function($scope, $element){
+  //     var elem = $element[0];
+  //     elem.draggable = true;
+  //
+  //     elem.addEventListener('dragstart', function(e) {
+  //           e.dataTransfer.effectAllowed = 'move';
+  //           e.dataTransfer.setData('Text', this.id);
+  //           this.classList.add('drag');
+  //           return false;
+  //       },
+  //       false
+  //     );
+  //
+  //     elem.addEventListener('dragend', function(e) {
+  //           this.classList.remove('drag');
+  //           return false;
+  //       },
+  //       false
+  //     );
+  //   }
+  // }
+  //
+  // function droppable(){
+  //   return function($scope, $element){
+  //       var elem = $element[0];
+  //
+  //       elem.addEventListener('dragover', function(e) {
+  //           e.dataTransfer.dropEffect = 'move';
+  //           e.preventDefault();
+  //           this.classList.add('over');
+  //           return false;
+  //         },
+  //         false
+  //       );
+  //
+  //       elem.addEventListener('dragenter', function(e) {
+  //           this.classList.add('over');
+  //           return false;
+  //         },
+  //         false
+  //       );
+  //
+  //       elem.addEventListener('dragleave', function(e) {
+  //           this.classList.remove('over');
+  //           return false;
+  //         },
+  //         false
+  //       );
+  //
+  //       elem.addEventListener('drop', function(e) {
+  //           var dragContainer = document.getElementsByClassName('task__drag-container')[0];
+  //           this.classList.remove('over');
+  //
+  //           if (this.firstChild) {
+  //             dragContainer.appendChild(this.firstChild);
+  //           }
+  //
+  //           var item = document.getElementById(e.dataTransfer.getData('Text'));
+  //           this.appendChild(item);
+  //           e.preventDefault();
+  //
+  //           return false;
+  //         },
+  //         false
+  //       );
+  //
+  //   }
+  // }
 
   /* @ngInject */
   function taskDragCtrl($scope, $stateParams, $attrs, staticService, userService) {
@@ -6474,8 +6513,34 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-05.png", "img/01-08.pn
 
     angular.element(document).ready(function () {
 
+      var dragItemList = document.getElementsByClassName('task__drag-item');
+      var dropItemList = document.getElementsByClassName('task__drop-item');
+
+      // JQuery
+      $(dragItemList).draggable({
+        containment: ".task-drag-drop",
+        revert: true,
+        start: function start(event, ui) {
+          // console.log("ui", ui.helper[0]);
+          $(ui.helper[0]).addClass("active");
+        },
+        stop: function stop(event, ui) {
+          $(ui.helper[0]).removeClass("active");
+        }
+      });
+
+      $(dropItemList).droppable({
+        hoverClass: "over",
+        tolerance: "touch",
+        drop: function drop(event, ui) {
+          // console.log('this', this);
+          // console.log('ui.draggable[0]', ui.draggable[0]);
+          if (this.childNodes.length == 0) this.appendChild(ui.draggable[0]);
+        }
+      });
+
       _this10.checkAnswer = function (e) {
-        var dropItemList = document.getElementsByClassName('task__drop-item');
+        // let dropItemList = document.getElementsByClassName('task__drop-item');
         if (_this10.userAttempt === _this10.attemptNum) {
           _this10.userAttempt = 0;
         }
@@ -6499,24 +6564,49 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-05.png", "img/01-08.pn
         userService.setUserProgress(100, 1, Number($stateParams.chapter) - 1, Number($stateParams.page) - 1);
         staticService.showModal('exercise', 'Ваш результат', _this10.taskData.messages[0], true);
       };
+      // });
+
+      _this10.removeRestart = function () {
+        var dropItemList = document.getElementsByClassName('task__drop-item');
+        for (var i = 0; i < dropItemList.length; i++) {
+          if (dropItemList[i].firstChild) dropItemList[i].removeChild(dropItemList[i].firstChild);
+        }
+        _this10.state = 1;
+
+        if (_this10.taskOptions.shuffle) _this10.questionList = _.shuffle(_this10.questionList);
+
+        _this10.showRight = 0;
+
+        // JQuery
+        setTimeout(function () {
+          $('.task__drag-item').draggable({
+            containment: ".task-drag-drop",
+            revert: true,
+            start: function start(event, ui) {
+              $(ui.helper[0]).addClass("active");
+            },
+            stop: function stop(event, ui) {
+              $(ui.helper[0]).removeClass("active");
+            }
+          });
+          $(dropItemList).droppable({
+            hoverClass: "over",
+            tolerance: "touch",
+            drop: function drop(event, ui) {
+              if (this.childNodes.length == 0) this.appendChild(ui.draggable[0]);
+            }
+          });
+        }, 1);
+      }; // end of removeRestart
+
+      var showAnswer = function showAnswer() {
+        console.log("why not?");
+        _this10.showRight = 1;
+      };
     });
-
-    this.removeRestart = function () {
-      var dropItemList = document.getElementsByClassName('task__drop-item');
-      for (var i = 0; i < dropItemList.length; i++) {
-        if (dropItemList[i].firstChild) dropItemList[i].removeChild(dropItemList[i].firstChild);
-      }
-      _this10.state = 1;
-
-      if (_this10.taskOptions.shuffle) _this10.questionList = _.shuffle(_this10.questionList);
-    }; // end of removeRestart
-
-    var showAnswer = function showAnswer() {
-      console.log("why not?");
-      _this10.showRight = 1;
-    };
   }
 })();
+
 ;(function () {
   'use strict';
 
@@ -6525,80 +6615,98 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-05.png", "img/01-08.pn
     templateUrl: 'js/components/task-drag-presentation/taskDragPresentationTmpl.html',
     controller: 'taskDragPresentationCtrl',
     controllerAs: '$ctrl'
-  }).directive('draggable', draggable).directive('droppable', droppable).controller('taskDragPresentationCtrl', taskDragPresentationCtrl);
-
-  function draggable() {
-    return function ($scope, $element) {
-      var elem = $element[0];
-      elem.draggable = true;
-
-      elem.addEventListener('dragstart', function (e) {
-        e.dataTransfer.effectAllowed = 'move';
-        e.dataTransfer.setData('Text', this.id);
-        this.classList.add('drag');
-        // console.log("dragstart");
-        return false;
-      }, false);
-
-      elem.addEventListener('drag', function (e) {
-        this.style.pointerEvents = "none";
-        this.querySelector('.task__drag-item-pic').style.pointerEvents = "none";
-        this.querySelector('.image').style.pointerEvents = "none";
-        // console.log("drag");
-        return false;
-      }, false);
-
-      elem.addEventListener('dragend', function (e) {
-        this.classList.remove('drag');
-        this.style.pointerEvents = "auto";
-        this.querySelector('.task__drag-item-pic').style.pointerEvents = "auto";
-        this.querySelector('.image').style.pointerEvents = "auto";
-        // console.log("dragend");
-        return false;
-      }, false);
-    };
   }
+  // .directive('draggable', draggable)
+  // .directive('droppable', droppable)
+  ).controller('taskDragPresentationCtrl', taskDragPresentationCtrl);
 
-  function droppable() {
-    return function ($scope, $element) {
-      var elem = $element[0];
-
-      elem.addEventListener('dragover', function (e) {
-        e.dataTransfer.dropEffect = 'move';
-        e.preventDefault();
-        this.classList.add('over');
-        // console.log("dragover");
-        return false;
-      }, false);
-
-      elem.addEventListener('dragenter', function (e) {
-        this.classList.add('over');
-        // console.log("dragenter");
-        return false;
-      }, false);
-
-      elem.addEventListener('dragleave', function (e) {
-        this.classList.remove('over');
-        // console.log("dragleave");
-        return false;
-      }, false);
-
-      elem.addEventListener('drop', function (e) {
-        var dragContainer = document.getElementsByClassName('task__drag-container')[0];
-        this.classList.remove('over');
-
-        if (this.firstChild) {
-          dragContainer.appendChild(this.firstChild);
-        }
-
-        var item = document.getElementById(e.dataTransfer.getData('Text'));
-        this.appendChild(item);
-        e.preventDefault();
-        // console.log("dragdrop");
-        return false;
-      }, false);
-    };
-  }
+  // function draggable(){
+  //   return function($scope, $element){
+  //     var elem = $element[0];
+  //     elem.draggable = true;
+  //
+  //     elem.addEventListener('dragstart', function(e) {
+  //           e.dataTransfer.effectAllowed = 'move';
+  //           e.dataTransfer.setData('Text', this.id);
+  //           this.classList.add('drag');
+  //           // console.log("dragstart");
+  //           return false;
+  //       },
+  //       false
+  //     );
+  //
+  //     elem.addEventListener('drag', function(e) {
+  //           this.style.pointerEvents = "none";
+  //           this.querySelector('.task__drag-item-pic').style.pointerEvents = "none";
+  //           this.querySelector('.image').style.pointerEvents = "none";
+  //           // console.log("drag");
+  //           return false;
+  //       },
+  //       false
+  //     );
+  //
+  //     elem.addEventListener('dragend', function(e) {
+  //           this.classList.remove('drag');
+  //           this.style.pointerEvents = "auto";
+  //           this.querySelector('.task__drag-item-pic').style.pointerEvents = "auto";
+  //           this.querySelector('.image').style.pointerEvents = "auto";
+  //           // console.log("dragend");
+  //           return false;
+  //       },
+  //       false
+  //     );
+  //   }
+  // }
+  //
+  // function droppable(){
+  //   return function($scope, $element){
+  //       var elem = $element[0];
+  //
+  //       elem.addEventListener('dragover', function(e) {
+  //           e.dataTransfer.dropEffect = 'move';
+  //           e.preventDefault();
+  //           this.classList.add('over');
+  //           // console.log("dragover");
+  //           return false;
+  //         },
+  //         false
+  //       );
+  //
+  //       elem.addEventListener('dragenter', function(e) {
+  //           this.classList.add('over');
+  //           // console.log("dragenter");
+  //           return false;
+  //         },
+  //         false
+  //       );
+  //
+  //       elem.addEventListener('dragleave', function(e) {
+  //           this.classList.remove('over');
+  //           // console.log("dragleave");
+  //           return false;
+  //         },
+  //         false
+  //       );
+  //
+  //       elem.addEventListener('drop', function(e) {
+  //           var dragContainer = document.getElementsByClassName('task__drag-container')[0];
+  //           this.classList.remove('over');
+  //
+  //           if (this.firstChild) {
+  //             dragContainer.appendChild(this.firstChild);
+  //           }
+  //
+  //           var item = document.getElementById(e.dataTransfer.getData('Text'));
+  //           this.appendChild(item);
+  //           e.preventDefault();
+  //           // console.log("dragdrop");
+  //           return false;
+  //         },
+  //         false
+  //       );
+  //
+  //   }
+  // }
 
   /* @ngInject */
   function taskDragPresentationCtrl($scope, $stateParams, $attrs, staticService, userService) {
@@ -6623,6 +6731,35 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-05.png", "img/01-08.pn
     if (this.taskOptions.shuffle) this.questionList = _.shuffle(staticService.getData($stateParams, 'questionList'));else this.questionList = this.taskData.questionList;
 
     this.showRight = 0;
+
+    this.setJQ = function () {
+      // JQuery
+      $('.task__drag-item').draggable({
+        containment: ".task-drag-drop",
+        revert: true,
+        start: function start(event, ui) {
+          // console.log("ui", ui.helper[0]);
+          $(ui.helper[0]).addClass("active");
+          $(ui.helper[0]).removeClass("in-cell");
+        },
+        stop: function stop(event, ui) {
+          $(ui.helper[0]).removeClass("active");
+        }
+      });
+
+      $('.task__drop-item').droppable({
+        // hoverClass: "over",
+        tolerance: "pointer",
+        drop: function drop(event, ui) {
+          // console.log('this', this);
+          // console.log('ui.draggable[0]', ui.draggable[0]);
+          if (this.childNodes.length == 0) {
+            this.appendChild(ui.draggable[0]);
+            ui.draggable[0].classList.add('in-cell');
+          };
+        }
+      });
+    };
 
     // Изображение позиция по умолчанию
     this.projectorImage = this.taskData.questionList[0].projectorImage[1];
@@ -6649,6 +6786,8 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-05.png", "img/01-08.pn
     };
 
     angular.element(document).ready(function () {
+
+      _this11.setJQ();
 
       _this11.checkAnswer = function (e) {
         var dropItemList = document.getElementsByClassName('task__drop-item');
@@ -6679,14 +6818,23 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-05.png", "img/01-08.pn
     this.removeRestart = function () {
       var dropItemList = document.getElementsByClassName('task__drop-item');
       var drugContainer = document.getElementsByClassName('task__drag-container')[0];
+
       for (var i = 0; i < dropItemList.length; i++) {
         if (dropItemList[i].firstChild) {
           drugContainer.appendChild(dropItemList[i].firstChild);
         }
       }
+
       _this11.state = 1;
 
       if (_this11.taskOptions.shuffle) _this11.questionList = _.shuffle(_this11.questionList);
+
+      _this11.showRight = 0;
+      // Повторная инициализация JQuery
+      setTimeout(function () {
+        _this11.setJQ();
+      }, 1);
+      $(".task__drag-item").removeClass("in-cell");
     }; // end of removeRestart
 
     var showAnswer = function showAnswer() {
@@ -8592,8 +8740,9 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-05.png", "img/01-08.pn
       var inputs = document.getElementsByClassName('task-note_item_input');
       // console.log(inputs)
       for (var i = 0; i < inputs.length; i++) {
-        //console.log(this.items.fields[i]);
+        // console.log(this.items.fields[i]);
         _this23.items.fields[i].text = inputs[i].value;
+        // console.log('TaskNote.items',this.items.fields[i].text);
       }
 
       userService.setUserNotes(_this23.items, chapter, page);
@@ -8862,6 +9011,104 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-05.png", "img/01-08.pn
 ;(function () {
   'use strict';
 
+  NoteEx4Ctrl.$inject = ["$scope", "$stateParams", "$attrs", "staticService", "userService"];
+  angular.module('courseApp').component('taskNoteEx4', {
+    controller: 'NoteEx4Ctrl',
+    controllerAs: '$ctrl'
+  }).controller('NoteEx4Ctrl', NoteEx4Ctrl);
+
+  /* @ngInject */
+  function NoteEx4Ctrl($scope, $stateParams, $attrs, staticService, userService) {
+    var _this27 = this;
+
+    //ex
+    this.taskData = staticService.getData($stateParams, 'data');
+    this.questionList = staticService.getData($stateParams, 'questionList');
+
+    // состояние упражнения:
+    // 0 - ответа ещё нет, 1 - есть ответ, 2 - нажата кнопка «проверить»
+    this.state = 1;
+    this.currentQuestion = 0;
+    this.displayAnswer = false;
+    this.end = false; //упражнение пройдено
+
+    //note
+    this.items = [];
+    var chapter = Number($stateParams.chapter) - 1,
+        page = Number($stateParams.page) - 1;
+
+    this.useColumns = this.taskData.useColumns;
+
+    var loadNotes = function loadNotes() {
+      var data = userService.getUserNotes1();
+      data.forEach(function (item) {
+        if (item.chapter_id == chapter && item.page_id == page) {
+          _this27.items = item;
+        }
+      });
+    };
+
+    this.range = function (bool) {
+
+      var range = [],
+          from = 0,
+          to = _this27.items.fields.length / 2;
+
+      if (!bool) {
+        from = _this27.items.fields.length / 2;
+        to = _this27.items.fields.length;
+      }
+
+      for (var i = from; i < to; i++) {
+        range.push(_this27.items.fields[i]);
+      }
+      return range;
+    };
+
+    loadNotes();
+
+    angular.element(document).ready(function () {
+
+      _this27.checkAnswer = function (e) {
+        //saveNote
+        var inputs = document.getElementsByClassName('task-note_item_input');
+        for (var i = 0; i < inputs.length; i++) {
+          _this27.items.fields[i].text = inputs[i].value;
+          console.log(inputs[i].value);
+        }
+        userService.setUserNotes(_this27.items, chapter, page);
+        if (e.target.classList.contains('btn_disabled') || inputs[_this27.currentQuestion].value.length < 1) {
+          return;
+        }
+
+        _this27.state = 2;
+
+        if (_this27.currentQuestion == _this27.questionList.length - 1) {
+          _this27.end = true;
+          userService.setUserProgress(100, 1, Number($stateParams.chapter) - 1, Number($stateParams.page) - 1);
+        }
+
+        _this27.displayAnswer = true;
+      };
+
+      _this27.nextQuestion = function () {
+        // if (this.currentQuestion < this.questionList)
+        _this27.state = 1;
+        if (!_this27.end) _this27.displayAnswer = false;
+
+        _this27.currentQuestion++;
+      };
+
+      _this27.prevQuestion = function () {
+        _this27.currentQuestion--;
+      };
+    });
+  }
+})();
+
+;(function () {
+  'use strict';
+
   SelectCtrl.$inject = ["$scope", "$stateParams", "$attrs", "staticService", "userService"];
   angular.module('courseApp').component('taskSelect', {
     templateUrl: 'js/components/task-select/taskSelectTmpl.html',
@@ -8871,7 +9118,7 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-05.png", "img/01-08.pn
 
   /* @ngInject */
   function SelectCtrl($scope, $stateParams, $attrs, staticService, userService) {
-    var _this27 = this;
+    var _this28 = this;
 
     this.test = $attrs.test;
     this.currentTestQuestion = userService.currentTestQuestion;
@@ -8884,7 +9131,7 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-05.png", "img/01-08.pn
 
     for (var i = 0; i < this.taskExs.length; i++) {
       this.taskExs[i].questionList.questions = this.taskExs[i].questionList.questions.map(function (item) {
-        item.default = _this27.taskData.defaultLabel;
+        item.default = _this28.taskData.defaultLabel;
         item.v_id = -1;
         item.open = 0;
         return item;
@@ -8922,41 +9169,41 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-05.png", "img/01-08.pn
       if (v_id == -1) {
         return;
       }
-      if (_this27.state == 2) {
+      if (_this28.state == 2) {
         return;
       }
       // console.log( index )
 
       // проверяем был ли уже дан ответ на вопрос
-      if (_this27.taskExs[taskIndex].questionList.questions[questIndex].v_id != -1) {
+      if (_this28.taskExs[taskIndex].questionList.questions[questIndex].v_id != -1) {
 
-        var _v_id = _this27.taskExs[taskIndex].questionList.questions[questIndex].v_id;
+        var _v_id = _this28.taskExs[taskIndex].questionList.questions[questIndex].v_id;
 
-        for (var _i25 = 0; _i25 < _this27.taskExs[taskIndex].questionList.variants.length; _i25++) {
-          if (_this27.taskExs[taskIndex].questionList.variants[_i25].v_id == _v_id) {
-            _this27.taskExs[taskIndex].questionList.variants[_i25].selected = -1;
+        for (var _i25 = 0; _i25 < _this28.taskExs[taskIndex].questionList.variants.length; _i25++) {
+          if (_this28.taskExs[taskIndex].questionList.variants[_i25].v_id == _v_id) {
+            _this28.taskExs[taskIndex].questionList.variants[_i25].selected = -1;
           }
           break;
         }
       }
 
       // в вопросе отмечаем какой на него дали ответ
-      _this27.taskExs[taskIndex].questionList.questions[questIndex].v_id = v_id;
+      _this28.taskExs[taskIndex].questionList.questions[questIndex].v_id = v_id;
 
       // отмечаем, что ответ использован
-      for (var _i26 = 0; _i26 < _this27.taskExs[taskIndex].questionList.variants.length; _i26++) {
-        if (_this27.taskExs[taskIndex].questionList.variants[_i26].v_id == v_id) {
-          _this27.taskExs[taskIndex].questionList.variants[_i26].selected = 1;
+      for (var _i26 = 0; _i26 < _this28.taskExs[taskIndex].questionList.variants.length; _i26++) {
+        if (_this28.taskExs[taskIndex].questionList.variants[_i26].v_id == v_id) {
+          _this28.taskExs[taskIndex].questionList.variants[_i26].selected = 1;
           // выводим лейбл ответа
-          _this27.taskExs[taskIndex].questionList.questions[questIndex].default = _this27.taskExs[taskIndex].questionList.variants[_i26].label;
+          _this28.taskExs[taskIndex].questionList.questions[questIndex].default = _this28.taskExs[taskIndex].questionList.variants[_i26].label;
         }
       }
 
       // проверяем везде ли выбрали ответ
       var check = true;
-      for (var _i27 = 0; _i27 < _this27.taskExs.length; _i27++) {
-        for (var j = 0; j < _this27.taskExs[_i27].questionList.questions.length; j++) {
-          if (_this27.taskExs[_i27].questionList.questions[j].v_id == -1) {
+      for (var _i27 = 0; _i27 < _this28.taskExs.length; _i27++) {
+        for (var j = 0; j < _this28.taskExs[_i27].questionList.questions.length; j++) {
+          if (_this28.taskExs[_i27].questionList.questions[j].v_id == -1) {
             check = false;
             break;
           }
@@ -8964,14 +9211,14 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-05.png", "img/01-08.pn
       }
 
       if (check) {
-        _this27.state = 1;
+        _this28.state = 1;
       }
 
       // можно ли выбирать одни и теже ответы
-      if (!_this27.taskExs[taskIndex].sameQ) {
-        _this27.filteredList = _this27.getNotSelected(taskIndex);
+      if (!_this28.taskExs[taskIndex].sameQ) {
+        _this28.filteredList = _this28.getNotSelected(taskIndex);
       }
-      _this27.toggleSelect(e, questIndex, taskIndex);
+      _this28.toggleSelect(e, questIndex, taskIndex);
 
       e.stopPropagation();
     }; // end of selectChange()
@@ -8979,24 +9226,24 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-05.png", "img/01-08.pn
 
     this.checkAnswer = function () {
       // console.log('SelectCtrl:: checkAnswer:')
-      if (_this27.userAttempt === _this27.attemptNum) {
-        _this27.userAttempt = 0;
+      if (_this28.userAttempt === _this28.attemptNum) {
+        _this28.userAttempt = 0;
       }
-      _this27.userAttempt++;
-      _this27.state = 2;
+      _this28.userAttempt++;
+      _this28.state = 2;
 
-      for (var _i28 = 0; _i28 < _this27.taskExs.length; _i28++) {
-        for (var j = 0; j < _this27.taskExs[_i28].questionList.questions.length; j++) {
+      for (var _i28 = 0; _i28 < _this28.taskExs.length; _i28++) {
+        for (var j = 0; j < _this28.taskExs[_i28].questionList.questions.length; j++) {
 
-          var thisQuestion = _this27.taskExs[_i28].questionList.questions[j];
+          var thisQuestion = _this28.taskExs[_i28].questionList.questions[j];
 
-          if (_this27.taskData.exs[_i28].questionList.variants[thisQuestion.v_id].q_id != thisQuestion.q_id) {
+          if (_this28.taskData.exs[_i28].questionList.variants[thisQuestion.v_id].q_id != thisQuestion.q_id) {
             // неправильно дан ответ
-            if (_this27.userAttempt == _this27.attemptNum && _this27.taskOptions.showAnswer) {
+            if (_this28.userAttempt == _this28.attemptNum && _this28.taskOptions.showAnswer) {
               showAnswer();
             }
             userService.setUserProgress(0, 0, Number($stateParams.chapter) - 1, Number($stateParams.page) - 1);
-            staticService.showModal('exercise', 'Ваш результат', _this27.taskData.messages[_this27.userAttempt], false);
+            staticService.showModal('exercise', 'Ваш результат', _this28.taskData.messages[_this28.userAttempt], false);
             return;
           }
         }
@@ -9004,32 +9251,32 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-05.png", "img/01-08.pn
 
       // упражнение верно
       userService.setUserProgress(100, 1, Number($stateParams.chapter) - 1, Number($stateParams.page) - 1);
-      staticService.showModal('exercise', 'Ваш результат', _this27.taskData.messages[0], true);
+      staticService.showModal('exercise', 'Ваш результат', _this28.taskData.messages[0], true);
     }; // end of checkAnswer()
 
     this.removeRestart = function () {
 
-      _this27.state = 0;
+      _this28.state = 0;
       // мешаем вопросы
-      if (_this27.taskOptions.shuffle) {
-        for (var _i29 = 0; _i29 < _this27.taskExs.length; _i29++) {
-          _this27.taskExs[_i29].questionList.variants = _.shuffle(_this27.taskExs[_i29].questionList.variants);
+      if (_this28.taskOptions.shuffle) {
+        for (var _i29 = 0; _i29 < _this28.taskExs.length; _i29++) {
+          _this28.taskExs[_i29].questionList.variants = _.shuffle(_this28.taskExs[_i29].questionList.variants);
           // this.taskExs[i].questionList.questions = _.shuffle(this.taskExs[i].questionList.questions);
         }
       }
       // this.active = angular.fromJson(angular.toJson(this.taskExs));
 
-      for (var _i30 = 0; _i30 < _this27.taskExs.length; _i30++) {
-        for (var j = 0; j < _this27.taskExs[_i30].questionList.questions.length; j++) {
-          _this27.taskExs[_i30].questionList.questions[j].default = _this27.taskData.defaultLabel;
-          _this27.taskExs[_i30].questionList.questions[j].open = 0;
-          _this27.taskExs[_i30].questionList.questions[j].v_id = -1;
+      for (var _i30 = 0; _i30 < _this28.taskExs.length; _i30++) {
+        for (var j = 0; j < _this28.taskExs[_i30].questionList.questions.length; j++) {
+          _this28.taskExs[_i30].questionList.questions[j].default = _this28.taskData.defaultLabel;
+          _this28.taskExs[_i30].questionList.questions[j].open = 0;
+          _this28.taskExs[_i30].questionList.questions[j].v_id = -1;
         }
-        for (var _j5 = 0; _j5 < _this27.taskExs[_i30].questionList.variants.length; _j5++) {
-          _this27.taskExs[_i30].questionList.variants[_j5].selected = -1;
+        for (var _j5 = 0; _j5 < _this28.taskExs[_i30].questionList.variants.length; _j5++) {
+          _this28.taskExs[_i30].questionList.variants[_j5].selected = -1;
         }
       }
-      _this27.filteredList = _this27.getNotSelected(-1);
+      _this28.filteredList = _this28.getNotSelected(-1);
     }; // end of removeRestart()
 
     var showAnswer = function showAnswer() {
@@ -9037,11 +9284,11 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-05.png", "img/01-08.pn
 
       // this.userAttempt = 0;
 
-      );for (var i = 0; i < _this27.taskExs.length; i++) {
-        for (var j = 0; j < _this27.taskExs[i].questionList.questions.length; j++) {
-          for (var k = 0; k < _this27.taskExs[i].questionList.variants.length; k++) {
-            if (_this27.taskExs[i].questionList.questions[j].q_id == _this27.taskExs[i].questionList.variants[k].q_id) {
-              _this27.taskExs[i].questionList.questions[j].default = _this27.taskExs[i].questionList.variants[k].label;
+      );for (var i = 0; i < _this28.taskExs.length; i++) {
+        for (var j = 0; j < _this28.taskExs[i].questionList.questions.length; j++) {
+          for (var k = 0; k < _this28.taskExs[i].questionList.variants.length; k++) {
+            if (_this28.taskExs[i].questionList.questions[j].q_id == _this28.taskExs[i].questionList.variants[k].q_id) {
+              _this28.taskExs[i].questionList.questions[j].default = _this28.taskExs[i].questionList.variants[k].label;
               break;
             }
           }
@@ -9051,23 +9298,23 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-05.png", "img/01-08.pn
 
     this.toggleSelect = function (e, questIndex, taskIndex) {
       // console.log('toggleSelect', questIndex, taskIndex);
-      _this27.taskExs[taskIndex].questionList.questions[questIndex].open = !_this27.taskExs[taskIndex].questionList.questions[questIndex].open;
+      _this28.taskExs[taskIndex].questionList.questions[questIndex].open = !_this28.taskExs[taskIndex].questionList.questions[questIndex].open;
       e.stopPropagation();
     }; // end of toggleSelect()
 
     this.getNotSelected = function (taskIndex) {
       // console.log('filering::', taskIndex)
       var filtered = [];
-      for (var _i31 = 0; _i31 < _this27.taskExs.length; _i31++) {
+      for (var _i31 = 0; _i31 < _this28.taskExs.length; _i31++) {
         filtered[_i31] = [];
         if (_i31 == taskIndex) {
-          for (var j = 0; j < _this27.taskExs[_i31].questionList.variants.length; j++) {
-            if (_this27.taskExs[_i31].questionList.variants[j].selected < 0) {
-              filtered[_i31].push(_this27.taskExs[_i31].questionList.variants[j]);
+          for (var j = 0; j < _this28.taskExs[_i31].questionList.variants.length; j++) {
+            if (_this28.taskExs[_i31].questionList.variants[j].selected < 0) {
+              filtered[_i31].push(_this28.taskExs[_i31].questionList.variants[j]);
             }
           }
         } else {
-          filtered[_i31] = angular.fromJson(angular.toJson(_this27.taskExs[_i31].questionList.variants));
+          filtered[_i31] = angular.fromJson(angular.toJson(_this28.taskExs[_i31].questionList.variants));
         }
       }
       return filtered;
@@ -9077,104 +9324,6 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-05.png", "img/01-08.pn
     this.filteredList = this.getNotSelected(-1);
   }; // end of SelectCtrl()
 })();
-;(function () {
-  'use strict';
-
-  NoteEx4Ctrl.$inject = ["$scope", "$stateParams", "$attrs", "staticService", "userService"];
-  angular.module('courseApp').component('taskNoteEx4', {
-    controller: 'NoteEx4Ctrl',
-    controllerAs: '$ctrl'
-  }).controller('NoteEx4Ctrl', NoteEx4Ctrl);
-
-  /* @ngInject */
-  function NoteEx4Ctrl($scope, $stateParams, $attrs, staticService, userService) {
-    var _this28 = this;
-
-    //ex
-    this.taskData = staticService.getData($stateParams, 'data');
-    this.questionList = staticService.getData($stateParams, 'questionList');
-
-    // состояние упражнения:
-    // 0 - ответа ещё нет, 1 - есть ответ, 2 - нажата кнопка «проверить»
-    this.state = 1;
-    this.currentQuestion = 0;
-    this.displayAnswer = false;
-    this.end = false; //упражнение пройдено
-
-    //note
-    this.items = [];
-    var chapter = Number($stateParams.chapter) - 1,
-        page = Number($stateParams.page) - 1;
-
-    this.useColumns = this.taskData.useColumns;
-
-    var loadNotes = function loadNotes() {
-      var data = userService.getUserNotes1();
-      data.forEach(function (item) {
-        if (item.chapter_id == chapter && item.page_id == page) {
-          _this28.items = item;
-        }
-      });
-    };
-
-    this.range = function (bool) {
-
-      var range = [],
-          from = 0,
-          to = _this28.items.fields.length / 2;
-
-      if (!bool) {
-        from = _this28.items.fields.length / 2;
-        to = _this28.items.fields.length;
-      }
-
-      for (var i = from; i < to; i++) {
-        range.push(_this28.items.fields[i]);
-      }
-      return range;
-    };
-
-    loadNotes();
-
-    angular.element(document).ready(function () {
-
-      _this28.checkAnswer = function (e) {
-        //saveNote
-        var inputs = document.getElementsByClassName('task-note_item_input');
-        for (var i = 0; i < inputs.length; i++) {
-          _this28.items.fields[i].text = inputs[i].value;
-          console.log(inputs[i].value);
-        }
-        userService.setUserNotes(_this28.items, chapter, page);
-        if (e.target.classList.contains('btn_disabled') || inputs[_this28.currentQuestion].value.length < 1) {
-          return;
-        }
-
-        _this28.state = 2;
-
-        if (_this28.currentQuestion == _this28.questionList.length - 1) {
-          _this28.end = true;
-          userService.setUserProgress(100, 1, Number($stateParams.chapter) - 1, Number($stateParams.page) - 1);
-        }
-
-        _this28.displayAnswer = true;
-      };
-
-      _this28.nextQuestion = function () {
-        // if (this.currentQuestion < this.questionList)
-        _this28.state = 1;
-        if (!_this28.end) _this28.displayAnswer = false;
-
-        _this28.currentQuestion++;
-      };
-
-      _this28.prevQuestion = function () {
-        _this28.currentQuestion--;
-      };
-    });
-  }
-})();
-
 (function () {
   'use strict';
 

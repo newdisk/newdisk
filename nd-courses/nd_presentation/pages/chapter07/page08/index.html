@@ -12,24 +12,24 @@
 			<div class="task__drop-container">
 				<div class="task__drop-flex">
           <div class="task__drop-row">
-            <div class="task__drop-item" order="-1" droppable></div>
-            <div class="task__drop-item" order="-1" droppable></div>
-            <div class="task__drop-item" order="-1" droppable></div>
+            <div class="task__drop-item" order="-1" ></div>
+            <div class="task__drop-item" order="-1" ></div>
+            <div class="task__drop-item" order="-1" ></div>
           </div>
           <div class="task__drop-row">
-            <div class="task__drop-item" order="-1" droppable></div>
-            <div class="task__drop-item" order="0" droppable></div>
-            <div class="task__drop-item" order="-1" droppable></div>
+            <div class="task__drop-item" order="-1" ></div>
+            <div class="task__drop-item" order="0" ></div>
+            <div class="task__drop-item" order="-1" ></div>
           </div>
           <div class="task__drop-row">
-            <div class="task__drop-item" order="{{$ctrl.setProjectorOrder(2)}}" droppable></div>
-            <div class="task__drop-item" order="-1" droppable></div>
-            <div class="task__drop-item" order="{{$ctrl.setProjectorOrder(1)}}" droppable></div>
+            <div class="task__drop-item" order="{{$ctrl.setProjectorOrder(2)}}" ></div>
+            <div class="task__drop-item" order="-1" ></div>
+            <div class="task__drop-item" order="{{$ctrl.setProjectorOrder(1)}}" ></div>
           </div>
 				</div>
 			</div>
 
-      <div class="task__drag-container" droppable>
+      <div class="task__drag-container" >
         <div class="task__drag-item task__drag-item_presenter"
             id="0"
             order="0"
@@ -69,14 +69,14 @@
       <div class="task__drop-container">
         <div class="task__drop-flex">
           <div class="task__drop-row">
-            <div class="task__drop-item" order="-1" droppable></div>
-            <div class="task__drop-item" order="-1" droppable></div>
-            <div class="task__drop-item" order="-1" droppable></div>
+            <div class="task__drop-item" order="-1"></div>
+            <div class="task__drop-item" order="-1"></div>
+            <div class="task__drop-item" order="-1"></div>
           </div>
           <div class="task__drop-row">
-            <div class="task__drop-item" order="-1" droppable></div>
-            <div class="task__drop-item" order="0" droppable>
-                  <div class="task__drag-item task__drag-item_presenter"
+            <div class="task__drop-item" order="-1"></div>
+            <div class="task__drop-item" order="0">
+                  <div class="task__drag-item task__drag-item_presenter in-cell"
                       id="0"
                       order="0"
                       draggable>
@@ -90,13 +90,13 @@
                     </div>
                   </div>
             </div>
-            <div class="task__drop-item" order="-1" droppable></div>
+            <div class="task__drop-item" order="-1"></div>
           </div>
           <div class="task__drop-row">
-            <div class="task__drop-item" order="-1" droppable></div>
-            <div class="task__drop-item" order="-1" droppable></div>
-            <div class="task__drop-item" order="1" droppable>
-                  <div class="task__drag-item task__drag-item_projector"
+            <div class="task__drop-item" order="-1"></div>
+            <div class="task__drop-item" order="-1"></div>
+            <div class="task__drop-item" order="1">
+                  <div class="task__drag-item task__drag-item_projector in-cell"
                       id="1"
                       order="{{$ctrl.projectorOrder}}"
                       draggable>
@@ -118,7 +118,7 @@
         </div>
       </div>
 
-      <div class="task__drag-container" droppable></div>
+      <div class="task__drag-container"></div>
   </div>
 
 		<div class="btn-box" ng-if="!$ctrl.test">

@@ -1090,7 +1090,7 @@ const courseStructure = {
           "hasSound": false,
           "type": "note_page",
           "data": {
-            "task_fields": 16,
+            "task_fields": 8,
             "showTitle": false,
             "maxlength": 100,
             "titles": ['', ''],
