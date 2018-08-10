@@ -38,10 +38,11 @@
  */
 const courseStructure = {
   "course": "Презентация: обеспечь себе успех",
+  "course_name": "presentation",
   "description": "Модульный курс для дистанционного обучения",
   "chapters": [
     {
-      "chapter_id": 1,
+      "c_id": 1,
       "chapter_location": "chapter01",
       "title": "Введение",
       "description": "Презентация: обеспечь себе успех",
@@ -90,7 +91,7 @@ const courseStructure = {
       ] // end of pages array in chapter 1 (intro)
     }, // end of chapter
     {
-      "chapter_id": 2,
+      "c_id": 2,
       "chapter_location": "chapter02",
       "title": "Глава 1",
       "description": "Глава 1. Определение понятия «презентация», ее отличие от других типов коммуникации",
@@ -224,7 +225,7 @@ const courseStructure = {
         },
         {
           "page_id": 8, //13
-          "title": "Завершающий этап разговора",
+          "title": "Задание 3",
           "location": "page08",
           "hasSound": false,
           "type": "exercise",
@@ -397,7 +398,7 @@ const courseStructure = {
       ] // end of pages array in chapter 2
     }, // end 1of chapter
     {
-      "chapter_id": 3,
+      "c_id": 3,
       "chapter_location": "chapter03",
       "title": "Глава 2",
       "description": "Глава 2. Подготовка к презентации",
@@ -1378,7 +1379,7 @@ const courseStructure = {
       ] // end of pages array in chapter 3
     }, // end 2of chapter
     {
-      "chapter_id": 4,
+      "c_id": 4,
       "chapter_location": "chapter04",
       "title": "Глава 3",
       "description": "Глава 3. Построение презентации",
@@ -2262,7 +2263,7 @@ const courseStructure = {
       ] // end of pages array in chapter 2
     }, // end 3of chapter
     {
-      "chapter_id": 5,
+      "c_id": 5,
       "chapter_location": "chapter05",
       "title": "Глава 4",
       "description": "Глава 4. Эффективная коммуникация в ходе презентации",
@@ -3566,7 +3567,7 @@ const courseStructure = {
       ] // end of pages array in chapter 2
     }, // end 4of chapter
     {
-      "chapter_id": 6,
+      "c_id": 6,
       "chapter_location": "chapter06",
       "title": "Глава 5",
       "description": "Глава 5. Технологии работы с аудиторией разной численности",
@@ -3710,7 +3711,7 @@ const courseStructure = {
       ] // end of pages array in chapter 2
     }, // end 5of chapter
     {
-      "chapter_id": 7,
+      "c_id": 7,
       "chapter_location": "chapter07",
       "title": "Глава 6",
       "description": "Глава 6. Технический аспект презентации",
@@ -4013,7 +4014,7 @@ const courseStructure = {
       ] // end of pages array in chapter 2
     }, // end 6of chapter
     {
-      "chapter_id": 8,
+      "c_id": 8,
       "chapter_location": "chapter08",
       "title": "Глава 7",
       "description": "Глава 7. Итоговый тест",

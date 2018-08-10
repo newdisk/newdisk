@@ -57,7 +57,7 @@
               ng-click="$ctrl.goFromMenu(page, chapter)"
               class="menu_list__page-item"
               ng-class="{'current': num == $ctrl.getCurrent()}"
-              id="page_{{chapter.chapter_id}}_{{page.page_id}}">
+              id="page_{{chapter.c_id}}_{{page.page_id}}">
             <p>{{num}}. {{ page.title }}</p>
           </li>
         </ul>
@@ -79,9 +79,9 @@
         <div class="modal_nav-stats__list">
           <div ng-repeat="item in $ctrl.getExs()"
             class="modal_nav-stats__item"
-            ng-click="$ctrl.goFromMenu({page_id:item.page_id+1}, {chapter_id:item.chapter_id+1})">
+            ng-click="$ctrl.goFromMenu({page_id:item.p_id+1}, {c_id:item.c_id+1})">
             <div class="nav-stats__item_name">Задание {{$index + 1}}</div>
-            <div class="nav-stats__item_score">Баллы: {{item.score}}</div>
+            <div class="nav-stats__item_score">Баллы: {{item.sc}}</div>
             <svg viewBox="0 0 28 28"
                  width="16"
                  height="16"
@@ -125,8 +125,8 @@
         </button>
       </div>
       <div class="modal_nav-notes_body">
-        <div ng-repeat="item in $ctrl.getNotes()"
-              ng-click="$ctrl.goFromMenu({page_id:item.page_id+1}, {chapter_id:item.chapter_id+1})"
+        <div ng-repeat="item in $ctrl.notes"
+              ng-click="$ctrl.goFromMenu({page_id:item.page_id+1}, {c_id:item.c_id+1})"
               class="modal_nav-notes_body_item">
           Записная книжка. Задание {{$index + 1}}
         </div>
