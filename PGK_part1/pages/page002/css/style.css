@@ -21,3 +21,6 @@
 .flex-container .page__text {
 	width: 100%;
 }
+body {
+	overflow: hidden;
+}
