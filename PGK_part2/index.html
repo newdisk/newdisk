@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+	<link rel="stylesheet" href="css/jquery-ui.min.css">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Антикоррупционная политика АО «ПГК»</title>
+</head>
+<body>
+	<div id="main-preloader">
+		<img src="img/preloader/pre_pic.png" class="preload-wheel">
+		<div class="preload-msg"></div>
+	</div>
+	<div id="intro">
+		<!-- <div id="intro-play">Пропустить</div> -->
+		<!-- Course starting... no Flash Player... -->
+		<object width="1024" height="768">
+			<param name='AllowScriptAccess' value='always'/>
+			<param name="movie" value="flash/intro.swf">
+			<embed src="flash/intro.swf" width="1024" height="768">
+			</embed>
+		</object>
+
+	</div>
+	<div id="container">
+		<div id="header">
+			<div id="logo"></div>
+			<div id="helpBtn"></div>
+			<div id="statsBtn"></div>
+			<div id="exitBtn"></div>
+			<div id="course-title"><p>Добро пожаловать в обучающий курс!</p></div>
+			<!-- <div id="glossaryBtn">gloss</div> -->
+			<div id="page-title"><!-- <div id="page-num"></div>--><p></p></div>
+			
+		</div>
+		<div id="progress-bar"></div>
+		<!--  -->
+		<div id="hello">Course starting...</div>
+		
+		<div id="course-nav">
+			<div class="paginator">0/0</div>
+			<div class="nextBtn navBtn"></div>
+			<div class="prevBtn navBtn"></div>
+		</div>
+		
+		<div id="page-container-wr">
+		<!-- // -->
+			<div id="page-preloader">
+				<img src="img/preloader/pre_pic.png" class="preload-wheel">
+				<div class="preload-msg"></div>
+			</div>
+			<div id="page-container-before-l"></div>
+			<div id="page-container-before-r"></div>
+			<div id="page-container"></div>
+			<div id="page-container-after-l"></div>
+			<div id="page-container-after-r"></div>
+		</div>
+		
+
+		<div id="footer">
+			<div id="menuBtn"></div>
+		</div>
+		<div id="dark"></div>
+		<div id="menu">
+			<div id="menu-head"><p>Содержание:</p></div>
+			<div id="menu-body">
+				<!-- <ul id="menu-list">
+					<li>
+						<p>item1</p>
+						<div class="menu-item-status"></div>
+					</li> 
+				</ul>-->
+			</div>
+			<div id="menu-foot">
+				<div id="closeMenuBtn" class="closeAssetBtn"></div>
+			</div>
+		</div>
+		<div id="stats">
+			<div id="stats-head">
+				<div id="closeStatsBtn" class="closeAssetBtn"></div>
+				<p>Статистика</p>
+			</div>
+			<div id="stats-exs">
+				<div id="stats-msg">Вы еще не выполнили ни одного упражнения</div>
+				<div id="stats-progress"><div class="progress-label">0%</div></div>
+			</div>
+			<!-- <div id="stats-tests">
+				<div id="stats-tests-msg">Итоговое тестирование</div>
+				<div id="tests-progress"><div class="progress-label">0%</div></div>
+			</div> -->
+		</div>
+		<div id="feedback">
+			<div id="feedback-head">
+				<div id="closeFeedBtn" class="closeAssetBtn"></div>
+				<p>Комментарий к ответу</p>
+			</div>
+			<div id="feedback-body"></div>
+			<div id="feedback-foot">
+				<div id="againBtn"></div>
+				<div id="continueBtn"></div>
+			</div>
+		</div>
+		<div id="glossary"></div>
+		<div id="help">
+			<div id="help-head">
+				<div id="closeHelpBtn" class="closeAssetBtn"></div>
+				<p>навигация в курсе</p>
+			</div>
+			<div id="help-body">
+				<div id="help-body-img"></div>
+			</div>
+		</div>
+	</div>
+
+<script type="text/javascript" src='js/APIWrapper.js'></script>
+<script type="text/javascript" src='js/jquery-1.11.3.min.js'></script>
+<script type="text/javascript" src='js/jquery-ui.min.js'></script>
+<script type="text/javascript" src='js/jQueryRotate.js'></script>
+<script type="text/javascript" src='js/underscore-min.js'></script>
+<script type="text/javascript" src='js/main.js'></script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+.container {
+	overflow: hidden;
+	padding-top: 0;
+}
+.text1 {
+	margin-top: 5px;
+}
+
+.page__wrapper {
+	position: relative;
+	height: 540px;
+}
+
+.page__text {
+	padding-bottom: 4px;
+}
+
+.page__list {
+	float: left;
+	width: 600px;
+	padding-right: 0;
+}
+.text-float {
+	float: left;
+	width: 100%;
+}
+.page__text--important {
+	position: relative;
+	float: right;
+	width: 340px;
+	margin-top: 4px;
+	margin-right: 15px;
+	margin-bottom: 10px;
+	text-align: center;
+	border: 2px solid #7c002f;
+}
+
+.important {
+	text-decoration: underline;
+	padding: 20px 15px;
+}
+
+.subtext-person {
+	position: absolute;
+	bottom: 16px;
+	left: -268px;
+	display: none;
+	padding: 14px 30px;
+	padding-right: 30px;
+	width: 779px;
+	height: 234px;
+	background: url(../img/shafl_01.png) no-repeat;
+	background-size: 100% 100%;
+}
+
+.text-person {
+	position: relative;
+	text-decoration: underline;
+}
+
+.text-person:hover .subtext-person {
+	display: block;
+}
+
+.page__text--important-before {
+	position: absolute;
+	top: 7px;
+	left: 15px;
+	width: 31px;
+	height: 49px;
+	background: url(../img/icon_01.png);
+}
+
+.subtext {
+	position: absolute;
+	bottom: 68px;
+	right: 10px;
+	display: none;
+	padding: 10px;
+	padding-right: 30px;
+	width: 634px;
+	height: 275px;
+	background: url(../img/shafl_01.png) no-repeat;
+	text-align: left;
+}
+
+.subtext__list {
+	list-style: none;
+}
+
+.page__text--important:hover .subtext {
+	display: block;
+}
+
+.page__btn-box {
+	margin-top: 2px;
+}
+
+.btn-bribe {
+	position: relative;
+	margin: 0px;
+	/*padding-top: 7px;*/
+	width: 490px;
+	height: 40px;
+	text-align: center;
+	background: #7C7C7C;
+	color: #fff;
+	cursor: pointer;
+}
+.btn-bribe p {
+	padding-top: 7px;
+}
+.btn--simple {
+	float: left;	
+}
+
+.btn--commercial {
+	float: right;
+}
+
+.btn-bribe__icon {
+	position: absolute;
+	top: 6px;
+	left: 20px;
+	width: 38px;
+	height: 25px;
+	background: url(../img/10_icon_01.png);
+}
+
+.btn-box {
+	padding-top: 8px;
+}
+
+.slider-active {
+	background: rgb(124,0,47);
+}
+
+.slider-block {
+	position: absolute;
+	bottom: 0px;
+	left: 0;
+	display: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	background: #fff;
+	cursor: pointer;
+	height: 545px;
+	overflow: auto;
+}
+
+.slider-block--simple {
+	/*padding-bottom: 70px;*/
+}
+
+.slider-block--simple 
+.slider-block--commercial {
+	height: 556px;
+	overflow: auto;
+}
+
+/*.slider-block--commercial .slider-block__text {
+	margin: 32px 0px 0px 10px;
+	padding-bottom: 20px;
+}*/
+
+.slider-block__text {
+	margin: 15px 10px 0;
+	width: 970px;
+}
+.slider-block--simple .slider-block__text {
+	margin-top: 10px;
+}
+
+.slider-block ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.slider-block__arrow {
+	position: absolute;
+	top: 14px;
+	right: 14px;
+	content: '';
+	width: 20px;
+	height: 12px;
+	background: url('../../../img/arrow-up-down-white.png') no-repeat;
+}
+
+.slider-active .slider-block__arrow {
+	background-position: 0 -12px;
+}

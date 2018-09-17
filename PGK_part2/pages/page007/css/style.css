@@ -1,0 +1,60 @@
+.page__block-important {
+	position: relative;
+	width: 970px;
+	margin: 0 auto 10px;
+	padding: 5px;
+	padding-left: 86px;
+	border: 2px solid #7c002f;
+}
+
+.page__block-important--small {
+	float: right;
+	margin-right: 15px;
+	width: 300px;
+}
+
+.page__block-important-gift {
+	position: absolute;
+	top: 10px;
+	left: 21px;
+	content: '';
+	width: 56px;
+	height: 60px;
+	background: url('../img/page033_gift.png') no-repeat;
+}
+
+.page__block-important-rubles {
+	position: absolute;
+	top: 11px;
+	left: 39px;
+	content: '';
+	width: 20px;
+	height: 34px;
+	background: url('../img/page033_rubles.png') no-repeat;
+}
+
+.page__block--gray {
+	width: 980px;
+	background-color: #f2f2f2;
+	padding: 3px 0px;
+	margin: 10px;
+}
+
+.num__list {
+	margin-bottom: 10px;
+	padding-right: 15px;
+	padding-left: 32px;
+}
+
+.num__list li {
+	color: #7c002f; 
+}
+
+.num__list li span {
+	color: #000; 
+}
+
+.page__text-left {
+	float: left;
+	width: 666px;
+}

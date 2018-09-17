@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<manifest identifier="PGK_anticorruption_part2" version="1" xmlns="http://www.imsglobal.org/xsd/imscp_v1p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_v1p3" xmlns:adlseq="http://www.adlnet.org/xsd/adlseq_v1p3" xmlns:adlnav="http://www.adlnet.org/xsd/adlnav_v1p3" xmlns:imsss="http://www.imsglobal.org/xsd/imsss" xsi:schemaLocation="http://www.imsglobal.org/xsd/imscp_v1p1 imscp_v1p1.xsd http://www.adlnet.org/xsd/adlcp_v1p3 adlcp_v1p3.xsd http://www.adlnet.org/xsd/adlseq_v1p3 adlseq_v1p3.xsd http://www.adlnet.org/xsd/adlnav_v1p3 adlnav_v1p3.xsd http://www.imsglobal.org/xsd/imsss imsss_v1p0.xsd">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>2004 3rd Edition</schemaversion>
+  </metadata>
+  <organizations default="PGK_anticorruption_part2">
+    <organization identifier="PGK_anticorruption_part2">
+      <title>Антикоррупционная политика АО «ПГК». Конфликт интересов. Часть 2</title>
+      <item identifier="item_1" identifierref="resource_1">
+        <title>Антикоррупционная политика АО «ПГК». Конфликт интересов. Часть 2</title>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="resource_1" type="webcontent" href="index.html" adlcp:scormType="sco">
+      <file href="container.html"/>
+      <file href="index.html"/>
+      <file href="readme.txt"/>
+      <file href="start.html"/>
+      <file href="css/jquery-ui.min.css"/>
+      <file href="css/normalize.css"/>
+      <file href="css/style-components.css"/>
+      <file href="css/style.css"/>
+      <file href="flash/intro.swf"/>
+      <file href="doc/declaracia.pdf"/>
+      <file href="doc/prilojenie.pdf"/>
+      <file href="fonts/Arial.eot"/>
+      <file href="fonts/Arial.ttf"/>
+      <file href="fonts/Arial.woff"/>
+      <file href="fonts/ArialBold.eot"/>
+      <file href="fonts/ArialBold.ttf"/>
+      <file href="fonts/ArialBold.woff"/>
+      <file href="fonts/BrutalBold.eot"/>
+      <file href="fonts/BrutalBold.ttf"/>
+      <file href="fonts/BrutalBold.woff"/>
+      <file href="fonts/BrutalRegular.eot"/>
+      <file href="fonts/BrutalRegular.ttf"/>
+      <file href="fonts/BrutalRegular.woff"/>
+      <file href="img/accept_answer.png"/>
+      <file href="img/arrow-up-down-white.png"/>
+      <file href="img/bg_diagonals.png"/>
+      <file href="img/bullit.png"/>
+      <file href="img/but_back.png"/>
+      <file href="img/but_back_stats.png"/>
+      <file href="img/but_close.png"/>
+      <file href="img/but_exit.png"/>
+      <file href="img/but_glossary.png"/>
+      <file href="img/but_help.png"/>
+      <file href="img/but_menu.png"/>
+      <file href="img/but_next.png"/>
+      <file href="img/but_statistic.png"/>
+      <file href="img/cert.jpg"/>
+      <file href="img/checkbox.png"/>
+      <file href="img/continueBtn.png"/>
+      <file href="img/exclam.png"/>
+      <file href="img/footheadback.jpg"/>
+      <file href="img/logo.png"/>
+      <file href="img/menu_statuses.png"/>
+      <file href="img/no.png"/>
+      <file href="img/page_num.png"/>
+      <file href="img/paginac.png"/>
+      <file href="img/paginaciya.png"/>
+      <file href="img/radiobutton.png"/>
+      <file href="img/rama.png"/>
+      <file href="img/start_again.png"/>
+      <file href="img/stat_statuses.png"/>
+      <file href="img/title.png"/>
+      <file href="img/wind_all.png"/>
+      <file href="js/APIWrapper.js"/>
+      <file href="js/courseStructure.json"/>
+      <file href="js/jQueryRotate.js"/>
+      <file href="js/jquery-1.11.3.min.js"/>
+      <file href="js/jquery-ui.min.js"/>
+      <file href="js/main.js"/>
+      <file href="js/test.json"/>
+      <file href="js/underscore-min.js"/>
+      <file href="img/help/help.jpg"/>
+      <file href="img/preloader/pre_pic.png"/>
+      <file href="img/preloader/pre_txt.png"/>
+      <file href="js/tasks/animation-easy.js"/>
+      <file href="js/tasks/dialogs.js"/>
+      <file href="js/tasks/multichoice.js"/>
+      <file href="js/tasks/singlechoice.js"/>
+      <file href="js/tasks/slider-easy.js"/>
+      <file href="pages/page001/index.html"/>
+      <file href="pages/page002/index.html"/>
+      <file href="pages/page003/index.html"/>
+      <file href="pages/page004/index.html"/>
+      <file href="pages/page005/index.html"/>
+      <file href="pages/page006/index.html"/>
+      <file href="pages/page007/index.html"/>
+      <file href="pages/page008/index.html"/>
+      <file href="pages/page009/index.html"/>
+      <file href="pages/page010/index.html"/>
+      <file href="pages/page001/css/style.css"/>
+      <file href="pages/page001/img/1_1.jpg"/>
+      <file href="pages/page002/css/style.css"/>
+      <file href="pages/page002/img/25_anim.swf"/>
+      <file href="pages/page002/img/element0002.png"/>
+      <file href="pages/page003/css/style.css"/>
+      <file href="pages/page003/img/26_bunner.png"/>
+      <file href="pages/page004/css/style.css"/>
+      <file href="pages/page004/img/29_icon_01.png"/>
+      <file href="pages/page004/img/29_icon_02.png"/>
+      <file href="pages/page005/css/style.css"/>
+      <file href="pages/page005/img/31_1.jpg"/>
+      <file href="pages/page006/css/style.css"/>
+      <file href="pages/page006/img/31_bunner.png"/>
+      <file href="pages/page007/css/style.css"/>
+      <file href="pages/page007/img/page033_gift.png"/>
+      <file href="pages/page007/img/page033_rubles.png"/>
+      <file href="pages/page008/css/style.css"/>
+      <file href="pages/page008/img/36_1.png"/>
+      <file href="pages/page008/img/36_10.png"/>
+      <file href="pages/page008/img/36_11.png"/>
+      <file href="pages/page008/img/36_12.png"/>
+      <file href="pages/page008/img/36_13.png"/>
+      <file href="pages/page008/img/36_14.png"/>
+      <file href="pages/page008/img/36_15.png"/>
+      <file href="pages/page008/img/36_16.png"/>
+      <file href="pages/page008/img/36_2.png"/>
+      <file href="pages/page008/img/36_3.png"/>
+      <file href="pages/page008/img/36_4.png"/>
+      <file href="pages/page008/img/36_5.png"/>
+      <file href="pages/page008/img/36_6.png"/>
+      <file href="pages/page008/img/36_7.png"/>
+      <file href="pages/page008/img/36_8.png"/>
+      <file href="pages/page008/img/36_9.png"/>
+      <file href="pages/page008/img/36_box-false.png"/>
+      <file href="pages/page008/img/36_box-true.png"/>
+      <file href="pages/page008/js/script.js"/>
+      <file href="pages/page009/css/style.css"/>
+      <file href="pages/page009/img/36_bubble.png"/>
+      <file href="pages/page009/img/36_icon_02.png"/>
+      <file href="pages/page009/img/contacts_sprite.png"/>
+      <file href="pages/page009/img/page035.png"/>
+      <file href="pages/page009/img/page035_no.png"/>
+      <file href="pages/page009/img/page035_yes.png"/>
+      <file href="pages/page010/css/style.css"/>
+      <file href="pages/page010/img/38_1.jpg"/>
+      <file href="pages/page009/js/script.js"/>
+    </resource>
+  </resources>
+</manifest>

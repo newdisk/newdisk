@@ -1,0 +1,23 @@
+.container {
+    height: auto;
+}
+.page__img-wrapper {
+	text-align: center;
+	overflow: hidden;
+	min-width: 360px;
+	width: 360px;
+	margin: 15px;
+}
+.page__img-wrapper img {
+	width: 160%;
+}
+.page__item--text {
+	width: 926px;
+}
+.flex-container {
+	display: flex;
+	flex-flow: row nowrap;
+}
+.flex-container .page__text {
+	width: 100%;
+}

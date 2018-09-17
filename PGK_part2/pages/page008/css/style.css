@@ -1,0 +1,46 @@
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.wrapper__cards-box {
+  margin: 40px 0;
+  height: 170px;
+}
+
+.wrapper__cards-clone--dark {
+  background: gray;
+}
+
+.wrapper__cards-img {
+  float: left;
+  margin: 0 19px;
+  width: 160px;
+  height: 130px;
+  cursor: pointer;
+}
+
+.wrapper__box {
+  margin-bottom: 40px;
+}
+
+.wrapper__box-basket--gifts {
+  float: left;
+  margin-left: 200px;
+}
+
+.wrapper__box-basket--bribes {
+  float: right;
+  margin-right: 200px;
+}
+
+.dropped {
+  visibility: hidden;
+}
