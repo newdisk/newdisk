@@ -4503,10 +4503,11 @@ p {
     text-align: center;
     font-size: 16px; }
 
-.page-31-05 .flex-container1 {
-  display: flex; }
-  .page-31-05 .flex-container1 .task-text {
-    width: 95%; }
+.page-31-05 > .flex-container .task-text {
+  width: 95%; }
+
+.page-31-05 > .flex-container .page-video-container {
+  width: 200px; }
 
 .page-31-05 .icon-info {
   display: inline-block;
@@ -4808,9 +4809,8 @@ p {
       background-size: cover; }
 
 .page-42-05 {
-  background: url(../img/74.jpg) no-repeat;
-  background-size: cover;
-  background-position: top center; }
+  background: url(../img/74.jpg) top center no-repeat;
+  background-size: cover; }
   .page-42-05 .page-block-text {
     width: 500px;
     padding-bottom: 20px;
@@ -5019,8 +5019,13 @@ p {
     .page-49-05 .task-select_option:nth-child(odd):hover {
       background: #F15A29; }
 
-.page-50-05 .flex-container {
-  margin: 20px 0px; }
+.page-50-05 {
+  background: url(../img/72.jpg) no-repeat;
+  background-size: cover;
+  background-position: top center; }
+  .page-50-05 .page-block-text {
+    width: 495px;
+    margin-bottom: 10px; }
 
 .page-51-05 {
   overflow: auto; }
@@ -6003,8 +6008,11 @@ p {
   overflow: auto; }
   .page-10-06 .flex-container > * {
     width: 100%; }
+  .page-10-06 .task-text {
+    margin-left: 15px; }
   .page-10-06 .task__multi-choice-body {
-    margin-bottom: 10px; }
+    margin-bottom: 10px;
+    margin-left: 15px; }
   .page-10-06 task-many-multi-choice .text__hint {
     display: none; }
   .page-10-06 .page-video-container {
@@ -6764,7 +6772,8 @@ p {
     min-height: 100px;
     display: flex;
     flex-direction: column;
-    justify-content: center; }
+    justify-content: center;
+    width: calc(100% - 40px); }
   .text-info p{
     padding-left: 0;
     text-align: center; }
@@ -6806,7 +6815,7 @@ p {
     display: none; }
   .page-01-01{
     background-size: cover;
-    background-position: right top; }
+    background-position: left top; }
   .page-02-01{
     overflow: auto; }
   .page-03-01{
@@ -6823,7 +6832,7 @@ p {
     margin: auto; }
   .page-01-02{
     background-size: cover;
-    background-position: right top; }
+    background-position: left top; }
   .page-02-02{
     background-size: cover;
     background-position: right top; }
@@ -6870,6 +6879,12 @@ p {
     margin-bottom: 10px;
     min-width: 372px;
     height: 168px; }
+  .page-09-02 .blur-block_content{
+    background-size: 100% auto !important; }
+  .page-10-02 .blur-block_content{
+    background-size: 100% auto !important; }
+  .page-11-02 .blur-block_content{
+    background-size: 100% auto !important; }
   .page-11-02 .blur-block{
     height: auto; }
   .page-15-02 .page-block-text{
@@ -6880,7 +6895,7 @@ p {
     width: calc(100% - 40px); }
   .page-01-03{
     background-size: cover;
-    background-position: right top; }
+    background-position: left top; }
   .page-04-03 .task__marker-choice_items{
     order: 2;
     margin-right: 0; }
@@ -6936,7 +6951,7 @@ p {
     margin-bottom: 10px; }
   .page-01-04{
     background-size: cover;
-    background-position: right top; }
+    background-position: left top; }
   .page-02-04{
     display: flex;
     flex-direction: column;
@@ -6964,7 +6979,7 @@ p {
     height: 82px; }
   .page-01-05{
     background-size: cover;
-    background-position: right top; }
+    background-position: left top; }
   .page-02-05 .page-block-text{
     box-sizing: border-box;
     padding: 10px;
@@ -7111,6 +7126,8 @@ p {
   .page-41-05 .text-info:before{
     background-position: -145px -17px;
     position: relative; }
+  .page-42-05{
+    background-size: auto 100%; }
   .page-44-05 .page-block-text{
     width: calc(100% - 40px); }
   .page-44-05 .text-info{
@@ -7125,8 +7142,18 @@ p {
   .page-46-05 .marker-box{
     order: 1;
     flex-wrap: wrap; }
+  .page-50-05{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; }
+  .page-50-05 .page-block-text{
+    width: calc(100% - 40px); }
+  .page-52-05{
+    background-size: auto 100%; }
   .page-52-05 .page-block-text{
     width: calc(100% - 40px); }
+  .page-53-05{
+    background-size: auto 100%; }
   .page-53-05 .page-block-text{
     box-sizing: border-box;
     padding: 10px;
@@ -7199,6 +7226,8 @@ p {
     width: auto; }
   .page-81-05{
     overflow-x: hidden; }
+  .page-86-05 .task-text{
+    width: 100%; }
   .page-86-05 .page-video-container{
     flex-wrap: wrap;
     justify-content: space-around; }
@@ -7208,10 +7237,12 @@ p {
     height: 195px; }
   .page-01-06{
     background-size: cover;
-    background-position: right top; }
+    background-position: left top; }
   .page-02-06 .banner-container_page-02-06 img{
     width: 100%;
     height: 100%; }
+  .page-03-06{
+    background-size: auto 100%; }
   .page-03-06 .text-info:before{
     background-position: -145px -17px; }
   .page-03-06 .page-block-text{
@@ -7219,6 +7250,7 @@ p {
     padding: 10px;
     width: auto; }
   .page-04-06{
+    background-size: auto 100%;
     overflow: auto; }
   .page-04-06 .page-block-text{
     width: auto; }
@@ -7278,7 +7310,7 @@ p {
     padding-top: 30px; }
   .page-01-07{
     background-size: cover;
-    background-position: right top; }
+    background-position: left top; }
   .page-01-08{
     display: flex;
     flex-direction: column;
@@ -7333,6 +7365,9 @@ p {
   .modal_nav-help .btn_close-course,
   .modal_nav-help .btn_nav-help{
     top: 0px; }
+  .text-info{
+    position: absolute;
+    width: calc(100% - 40px); }
   .task__single-choice-body{
     margin-left: 5px; }
   .task-many-single-choice .task__single-choice-body{
@@ -7512,6 +7547,8 @@ p {
     margin-bottom: 10px; }
   .page-31-05 .task-swap-list__label-item .item_label{
     font-size: 20px; }
+  .page-31-05 .flex-container .page-video-container{
+    width: 100%; }
   .page-40-05{
     display: block; }
   .page-40-05 .flex-container{
@@ -7553,6 +7590,10 @@ p {
     margin-left: -35px; }
   .page-49-05 .task-select_option-wrapper:before{
     margin-left: -35px; }
+  .page-50-05{
+    display: block; }
+  .page-50-05 .flex-container{
+    display: block; }
   .page-52-05{
     background-size: auto 100%; }
   .page-54-05 .page-block-text{

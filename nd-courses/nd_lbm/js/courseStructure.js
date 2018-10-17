@@ -38,6 +38,7 @@
 */
 const courseStructure = {
   "course": "Легко ли быть менеджером?",
+  "course_name": "lbm_html",
   "description": "Модульный курс для дистанционного обучения",
   "chapters": [
     {

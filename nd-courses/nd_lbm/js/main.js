@@ -40,6 +40,7 @@
 */
 var courseStructure = {
   "course": "Легко ли быть менеджером?",
+  "course_name": "lbm_html",
   "description": "Модульный курс для дистанционного обучения",
   "chapters": [{
     "chapter_id": 1,
@@ -3661,15 +3662,13 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
     };
 
     var onFileload = function onFileload() {
-      // 
+      $state.go('page', { chapter: courseInfo.bookmark.chapter, page: courseInfo.bookmark.chapterPage });
     };
     var onProgress = function onProgress() {
       // 
     };
     var onComplete = function onComplete() {
-      // alert('img laded!')
-      // console.log('all img loaded!')
-      $state.go('page', { chapter: courseInfo.bookmark.chapter, page: courseInfo.bookmark.chapterPage });
+      // 
     };
     var onError = function onError(e) {
       console.error('can`t load image!', e.data.src);
@@ -3707,13 +3706,20 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
           window.exercises = courseInfo.exercises;
           window.exercises.loaded = false;
           userService.loadExs(courseInfo.exercises);
-          userService.loadNotes(courseInfo.notes);
         } catch (e) {
           console.error('Что-то пошло не так... \n', e);
         }
       }
 
       console.info('main:: courseInfo', courseInfo);
+    }
+
+    if (localStorage) {
+      if (localStorage.getItem(courseDataObj.course_name)) {
+        userService.loadNotes();
+      } else {
+        localStorage.setItem(courseDataObj.course_name, '');
+      }
     }
 
     // alert('start change bookmark')
@@ -4140,6 +4146,7 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
       };
     });
 
+    var myStorage = localStorage;
     this.exs = [];
     this.notes = [];
     if (!this.start_date) {
@@ -4276,13 +4283,18 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
       }
       courseInfo.exercises = JSON.parse(JSON.stringify(_this2.exs));
     };
-    this.loadNotes = function (data) {
+    this.loadNotes = function () {
+      var data = localStorage.getItem(courseDataObj.course_name);
+      data = JSON.parse(data);
       // alert('load saved notes!')
+      // console.warn('load saved notes!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!:', data);
       if (data.length != 0) {
-        // alert('notes not empty')
         _this2.notes = data;
       }
-      courseInfo.notes = JSON.parse(JSON.stringify(_this2.notes));
+      // console.warn(this.notes)
+
+      courseInfo.notes = _this2.notes;
+      // console.warn('courseInfo.notes -1-1-1-1-1-1-1-1-1-1', courseInfo.notes);
     };
 
     this.currentTestQuestion = null;
@@ -4340,7 +4352,23 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
         }
       });
 
-      courseInfo.notes = JSON.parse(JSON.stringify(_this2.notes));
+      function supports_html5_storage() {
+        try {
+          console.log('supports_html5_storage------:');
+          return 'localStorage' in window && window['localStorage'] !== null;
+        } catch (e) {
+          console.log('NO_supports_html5_storage------:');
+          return false;
+        }
+      }
+
+      // https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API
+      myStorage.setItem(courseDataObj.course_name, JSON.stringify(_this2.notes, function (key, value) {
+        if (key === "$$hashKey") {
+          return undefined;
+        }
+        return value;
+      }));
       _this2.sendToLMS();
     };
 
@@ -4355,9 +4383,7 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
       _this2.dataCourse.exercises.forEach(function (elem) {
         delete elem.title;
       });
-      _this2.dataCourse.notes.forEach(function (elem) {
-        delete elem.title;
-      });
+      delete _this2.dataCourse.notes;
 
       var suspendData = JSON.stringify(_this2.dataCourse, function (key, value) {
         if (key === "$$hashKey") {
@@ -4366,6 +4392,7 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
 
         return value;
       }).replace(/\[/g, '*#').replace(/\]/g, '#*');
+
       console.info('sendToLMS suspendData: ', suspendData);
       console.info('sendToLMS suspendData.length: ', suspendData.length);
       console.warn('Put => session_time: ' + session_time);
@@ -4483,102 +4510,6 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
 
     self.getAddInfo = function () {
       staticService.addInfo($element.find('ng-transclude').prop('innerHTML'), true, $attrs.heading);
-    };
-  }
-})();
-(function () {
-  'use strict';
-
-  CustomVideoCtrl.$inject = ["$document", "$timeout", "staticService"];
-  angular.module('courseApp').component('customVideo', {
-    bindings: {
-      src: '@'
-    },
-    templateUrl: 'js/components/custom-video/customVideoTmpl.html',
-    controller: 'CustomVideoCtrl',
-    controllerAs: '$ctrl'
-  }).controller('CustomVideoCtrl', CustomVideoCtrl);
-
-  /* @ngInject */
-  function CustomVideoCtrl($document, $timeout, staticService) {
-    var self = this;
-
-    self.play = 'pause'; // variable for play/pause btn that toggle icons
-    self.mute = 'unmute'; // variable for mute/unmute btn that toggle icons
-    self.volume = 1; // define volume in volume slider
-    self.seekPos = 0;
-
-    self.$onInit = function () {
-      var video = $($document).find('.custom-video__video')[0];
-
-      video.oncanplaythrough = function () {
-        console.log('here');
-        $(video).on('timeupdate', updateSeekSlider);
-
-        updateSeekSlider();
-
-        self.changePlayPause = function () {
-          if (video.paused) {
-            video.play();
-            self.play = 'pause';
-          } else {
-            video.pause();
-            self.play = 'play';
-          }
-        };
-
-        self.changeSeekPos = function () {
-          video.currentTime = video.duration * (self.seekPos / 100);
-        };
-
-        function updateSeekSlider() {
-          var seekNewPos = video.currentTime * (100 / video.duration),
-              curhours = Math.floor(video.currentTime / 3600),
-              curmins = Math.floor(video.currentTime / 60),
-              cursecs = Math.floor(video.currentTime - curmins * 60),
-              durhours = Math.floor(video.duration / 3600),
-              durmins = Math.floor(video.duration / 60),
-              dursecs = Math.floor(video.duration - durmins * 60);
-
-          self.seekPos = Math.floor(seekNewPos);
-          if (video.currentTime === video.duration) {
-            self.play = 'play';
-          }
-
-          if (curmins < 10) {
-            curmins = '0' + curmins || '00';
-          };
-          if (cursecs < 10) {
-            cursecs = '0' + cursecs || '00';
-          };
-          if (durmins < 10) {
-            durmins = '0' + durmins || '00';
-          };
-          if (dursecs < 10) {
-            dursecs = '0' + dursecs || '00';
-          };
-          $timeout(function () {
-
-            self.curtimetext = curmins + ':' + cursecs;
-            self.durtimetext = durmins + ':' + dursecs;
-          });
-        }
-
-        self.changeMuteState = function () {
-
-          if (video.muted) {
-            video.muted = false;
-            self.mute = 'unmute';
-          } else {
-            video.muted = true;
-            self.mute = 'mute';
-          }
-        };
-
-        self.changeVolume = function () {
-          video.volume = self.volume;
-        };
-      };
     };
   }
 })();
@@ -4707,6 +4638,102 @@ var manifest = ["img/01-01.png", "img/01-02.png", "img/01-03.png", "img/01-04.pn
           _this3.audio.currentTime = 0;
           _this3.audio.play();
           _this3.play = '#pause';
+        };
+      };
+    };
+  }
+})();
+(function () {
+  'use strict';
+
+  CustomVideoCtrl.$inject = ["$document", "$timeout", "staticService"];
+  angular.module('courseApp').component('customVideo', {
+    bindings: {
+      src: '@'
+    },
+    templateUrl: 'js/components/custom-video/customVideoTmpl.html',
+    controller: 'CustomVideoCtrl',
+    controllerAs: '$ctrl'
+  }).controller('CustomVideoCtrl', CustomVideoCtrl);
+
+  /* @ngInject */
+  function CustomVideoCtrl($document, $timeout, staticService) {
+    var self = this;
+
+    self.play = 'pause'; // variable for play/pause btn that toggle icons
+    self.mute = 'unmute'; // variable for mute/unmute btn that toggle icons
+    self.volume = 1; // define volume in volume slider
+    self.seekPos = 0;
+
+    self.$onInit = function () {
+      var video = $($document).find('.custom-video__video')[0];
+
+      video.oncanplaythrough = function () {
+        console.log('here');
+        $(video).on('timeupdate', updateSeekSlider);
+
+        updateSeekSlider();
+
+        self.changePlayPause = function () {
+          if (video.paused) {
+            video.play();
+            self.play = 'pause';
+          } else {
+            video.pause();
+            self.play = 'play';
+          }
+        };
+
+        self.changeSeekPos = function () {
+          video.currentTime = video.duration * (self.seekPos / 100);
+        };
+
+        function updateSeekSlider() {
+          var seekNewPos = video.currentTime * (100 / video.duration),
+              curhours = Math.floor(video.currentTime / 3600),
+              curmins = Math.floor(video.currentTime / 60),
+              cursecs = Math.floor(video.currentTime - curmins * 60),
+              durhours = Math.floor(video.duration / 3600),
+              durmins = Math.floor(video.duration / 60),
+              dursecs = Math.floor(video.duration - durmins * 60);
+
+          self.seekPos = Math.floor(seekNewPos);
+          if (video.currentTime === video.duration) {
+            self.play = 'play';
+          }
+
+          if (curmins < 10) {
+            curmins = '0' + curmins || '00';
+          };
+          if (cursecs < 10) {
+            cursecs = '0' + cursecs || '00';
+          };
+          if (durmins < 10) {
+            durmins = '0' + durmins || '00';
+          };
+          if (dursecs < 10) {
+            dursecs = '0' + dursecs || '00';
+          };
+          $timeout(function () {
+
+            self.curtimetext = curmins + ':' + cursecs;
+            self.durtimetext = durmins + ':' + dursecs;
+          });
+        }
+
+        self.changeMuteState = function () {
+
+          if (video.muted) {
+            video.muted = false;
+            self.mute = 'unmute';
+          } else {
+            video.muted = true;
+            self.mute = 'mute';
+          }
+        };
+
+        self.changeVolume = function () {
+          video.volume = self.volume;
         };
       };
     };
